@@ -1,0 +1,25 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "desert-of-desolation",
+  "version": "0.4.0",
+  "description": "Drive-authoritative Desert of Desolation gameplay orchestration with GitHub/Codespaces-ready MCP audio, spoiler-safe preloading, strict player agency, and fast turn execution.",
+  "keywords": ["dnd","adnd","desert-of-desolation","tabletop","game"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Desert of Desolation",
+        "shortDescription": "Play the Drive-backed Desert of Desolation campaign.",
+        "longDescription": "Runs the Desert of Desolation campaign with Google Drive as the authoritative game/media store, ChatGPT as the gameplay orchestrator, and an optional GitHub-hosted MCP audio renderer for layered playback. Preserves AD&D state, player agency, discovery boundaries, checkpoints, and progressive media fallbacks.",
+        "developerName": "Desert of Desolation Project",
+        "category": "Games",
+        "capabilities": ["Read","Write"],
+        "defaultPrompt": [
+          "Start the Desert of Desolation game from the current certified Drive-backed state.",
+          "Resume the Desert of Desolation campaign and preload the current scene media.",
+          "Audit the Desert of Desolation runtime without advancing gameplay state."
+        ]
+      },
+      "apps": "./.app.json"
+    }
+  }
+}
