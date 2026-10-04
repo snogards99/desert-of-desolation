@@ -1,0 +1,8 @@
+{
+  "apps": {
+    "google-drive": {
+      "id": "connector_1p_ab21a553bfbc81919ea8fd1858e3ffa7",
+      "required": true
+    }
+  }
+}
