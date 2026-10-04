@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DOD Audio</title>
+<style>
+:root{font-family:system-ui,sans-serif;color-scheme:dark}body{margin:0;padding:12px;background:#111;color:#eee}.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.status{font-size:13px;opacity:.82;margin:6px 0 10px}.buses{display:grid;grid-template-columns:auto 1fr 42px;gap:6px 8px;align-items:center}.buses input{width:100%}button{padding:8px 12px;border:0;border-radius:8px;font-weight:650}button:disabled{opacity:.5}.pill{font-size:12px;padding:3px 7px;border:1px solid #555;border-radius:999px}.meter{height:4px;background:#333;border-radius:4px;overflow:hidden}.meter>i{display:block;height:100%;width:0;background:#aaa}</style>
+</head>
+<body>
+<div class="row"><strong>Desert of Desolation Audio</strong><span class="pill" id="epoch">epoch 0</span></div>
+<div class="status" id="status">Audio is locked until you enable it once.</div>
+<div class="row"><button id="enable">Enable audio</button><button id="stopall">Stop all</button></div>
+<div class="buses" id="buses"></div>
+<script type="module">
+const rendererId=`dod-${Math.random().toString(36).slice(2)}`;
+let rpcId=0, bridgeReadyPromise, currentEpoch=0, unlocked=false, ctx=null;
+const pending=new Map(), voices=new Map(), preloaded=new Map();
+const busNames=["narrator","dialogue","ambience","music","sfx"];
+const defaults={narrator:1,dialogue:.9,ambience:.45,music:.25,sfx:.8};
+let master=.95, masterNode=null; const busNodes=new Map();
+const statusEl=document.querySelector('#status'), enableEl=document.querySelector('#enable'), epochEl=document.querySelector('#epoch');
+
+function rpcNotify(method,params={}){ parent.postMessage({jsonrpc:'2.0',method,params},'*'); }
+function rpcRequest(method,params={}){ return new Promise((resolve,reject)=>{ const id=++rpcId; pending.set(id,{resolve,reject}); parent.postMessage({jsonrpc:'2.0',id,method,params},'*'); }); }
+async function callTool(name,args){ await bridgeReadyPromise; return rpcRequest('tools/call',{name,arguments:args}); }
+function setStatus(s){ statusEl.textContent=s; }
+async function report(audio_id,audio_epoch,status,detail=''){ try{ await callTool('report_audio_status',{audio_id,audio_epoch,status,renderer_id:rendererId,detail,started_at:status==='PLAYING'?new Date().toISOString():undefined}); }catch(e){ console.error(e); } }
+function rejectStale(d){ return d.audio_epoch!=null && d.audio_epoch<currentEpoch; }
+function updateEpoch(e){ if(e!=null && e>=currentEpoch){currentEpoch=e;epochEl.textContent=`epoch ${e}`;} }
+function audioCtx(){ if(!ctx){ ctx=new AudioContext(); masterNode=ctx.createGain();masterNode.gain.value=master;masterNode.connect(ctx.destination); for(const b of busNames){const g=ctx.createGain();g.gain.value=defaults[b];g.connect(masterNode);busNodes.set(b,g);} } return ctx; }
+function ensureGraph(v,bus='sfx'){ if(v.source) return; const ac=audioCtx(); v.source=ac.createMediaElementSource(v.el); v.panner=ac.createStereoPanner(); v.gain=ac.createGain(); v.source.connect(v.panner).connect(v.gain).connect(busNodes.get(bus)||busNodes.get('sfx')); }
+function applyVoice(v,d){ v.bus=d.bus||v.bus||'sfx'; ensureGraph(v,v.bus); const dist=d.distance??v.distance??0; v.distance=dist; const attenuation=Math.max(.12,1-(Math.max(0,Math.min(1,dist))*.88)); v.gain.gain.setTargetAtTime((d.gain??v.baseGain??1)*attenuation,audioCtx().currentTime,.03); v.baseGain=d.gain??v.baseGain??1; v.panner.pan.setTargetAtTime(d.pan??v.pan??0,audioCtx().currentTime,.03); v.pan=d.pan??v.pan??0; }
+async function makeVoice(d){ let v=voices.get(d.audio_id)||preloaded.get(d.audio_id); if(!v){ if(!d.url) throw new Error('No staged URL for audio_id'); const el=new Audio(); el.preload='auto'; el.crossOrigin='anonymous'; el.src=d.url; v={el,bus:d.bus||'sfx',baseGain:d.gain??1,pan:d.pan??0,distance:d.distance??0,epoch:d.audio_epoch}; preloaded.set(d.audio_id,v); } ensureGraph(v,d.bus||v.bus); applyVoice(v,d); return v; }
+async function preload(d){ if(rejectStale(d)){report(d.audio_id,d.audio_epoch,'STALE');return;} updateEpoch(d.audio_epoch); try{ const v=await makeVoice(d); v.el.loop=!!d.loop; await new Promise((resolve,reject)=>{ if(v.el.readyState>=3)return resolve(); const ok=()=>{cleanup();resolve()}; const bad=()=>{cleanup();reject(new Error('media load failed'))}; const cleanup=()=>{v.el.removeEventListener('canplay',ok);v.el.removeEventListener('error',bad)}; v.el.addEventListener('canplay',ok,{once:true});v.el.addEventListener('error',bad,{once:true});v.el.load(); }); await report(d.audio_id,d.audio_epoch,'READY'); setStatus(`Ready: ${d.audio_id}`); }catch(e){ await report(d.audio_id,d.audio_epoch,'FAILED',e.message); setStatus(`Preload failed: ${d.audio_id}`); }
+}
+async function play(d){ if(rejectStale(d)){report(d.audio_id,d.audio_epoch,'STALE');return;} updateEpoch(d.audio_epoch); try{ const v=await makeVoice(d); v.el.loop=!!d.loop; applyVoice(v,d); preloaded.delete(d.audio_id); voices.set(d.audio_id,v); if(!unlocked){ setStatus('Audio queued — tap Enable audio.'); return; } await audioCtx().resume(); await v.el.play(); await report(d.audio_id,d.audio_epoch,'PLAYING'); setStatus(`Playing: ${d.audio_id}`); v.el.onended=()=>{voices.delete(d.audio_id);report(d.audio_id,d.audio_epoch,'STOPPED','ended')}; }catch(e){ await report(d.audio_id,d.audio_epoch,'FAILED',e.message); setStatus(`Playback failed: ${d.audio_id}`); }
+}
+async function stopOne(d){ const v=voices.get(d.audio_id)||preloaded.get(d.audio_id); if(!v)return; const fade=Math.max(0,d.fade_ms||0); if(fade&&v.gain&&ctx){ const t=ctx.currentTime;v.gain.gain.cancelScheduledValues(t);v.gain.gain.setValueAtTime(v.gain.gain.value,t);v.gain.gain.linearRampToValueAtTime(0,t+fade/1000);await new Promise(r=>setTimeout(r,fade)); } v.el.pause();v.el.currentTime=0;voices.delete(d.audio_id);preloaded.delete(d.audio_id);await report(d.audio_id,d.audio_epoch,'STOPPED'); }
+function stopAll(){ for(const [id,v] of [...voices,...preloaded]){try{v.el.pause();v.el.currentTime=0}catch{}} voices.clear();preloaded.clear();setStatus('All audio stopped.'); }
+function busGain(d){ updateEpoch(d.audio_epoch); const n=busNodes.get(d.bus); if(n&&ctx)n.gain.setTargetAtTime(d.gain,ctx.currentTime,.04); const input=document.querySelector(`[data-bus="${d.bus}"]`);if(input){input.value=d.gain;input.nextElementSibling.textContent=Math.round(d.gain*100)} }
+function duck(d){ updateEpoch(d.audio_epoch); const n=busNodes.get(d.bus); if(!n||!ctx)return; const t=ctx.currentTime, normal=Number(document.querySelector(`[data-bus="${d.bus}"]`)?.value??defaults[d.bus]); n.gain.cancelScheduledValues(t);n.gain.linearRampToValueAtTime(d.gain,t+d.attack_ms/1000); const hold=t+(d.attack_ms+d.hold_ms)/1000;n.gain.setValueAtTime(d.gain,hold);n.gain.linearRampToValueAtTime(normal,hold+d.release_ms/1000); }
+async function handle(d){ if(!d||typeof d!=='object')return; if(rejectStale(d)&&d.command!=='CLEAR_EPOCH')return; if(d.audio_epoch!=null)updateEpoch(d.audio_epoch); switch(d.command){case'SHOW':break;case'PRELOAD':await preload(d);break;case'PLAY':await play(d);break;case'STOP':await stopOne(d);break;case'CLEAR_EPOCH':stopAll();updateEpoch(d.audio_epoch);break;case'MASTER':master=d.gain;if(masterNode)masterNode.gain.setTargetAtTime(master,ctx.currentTime,.04);break;case'BUS_GAIN':busGain(d);break;case'DUCK':duck(d);break;case'POSITION':{const v=voices.get(d.audio_id);if(v)applyVoice(v,d);break;}} }
+function updateFromResponse(response){ handle(response?.structuredContent||response); }
+window.addEventListener('message',(event)=>{ if(event.source!==window.parent)return; const m=event.data;if(!m||m.jsonrpc!=='2.0')return; if(typeof m.id==='number'){const p=pending.get(m.id);if(!p)return;pending.delete(m.id);m.error?p.reject(m.error):p.resolve(m.result);return;} if(m.method==='ui/notifications/tool-result')updateFromResponse(m.params); },{passive:true});
+async function init(){await rpcRequest('ui/initialize',{appInfo:{name:'dod-audio-widget',version:'0.2.0'},appCapabilities:{},protocolVersion:'2026-01-26'});rpcNotify('ui/notifications/initialized',{});} bridgeReadyPromise=init();
+enableEl.addEventListener('click',async()=>{try{audioCtx();await ctx.resume();unlocked=true;enableEl.disabled=true;setStatus('Audio enabled.');for(const [id,v] of voices){if(v.el.paused){try{await v.el.play();await report(id,v.epoch,'PLAYING');}catch(e){await report(id,v.epoch,'FAILED',e.message)}}}}catch(e){setStatus(`Audio enable failed: ${e.message}`)}});
+document.querySelector('#stopall').addEventListener('click',stopAll);
+const busesEl=document.querySelector('#buses');for(const b of busNames){const lab=document.createElement('label');lab.textContent=b;const inp=document.createElement('input');inp.type='range';inp.min='0';inp.max='1';inp.step='.01';inp.value=defaults[b];inp.dataset.bus=b;const out=document.createElement('span');out.textContent=Math.round(defaults[b]*100);inp.addEventListener('input',()=>{audioCtx();busNodes.get(b).gain.setTargetAtTime(Number(inp.value),ctx.currentTime,.03);out.textContent=Math.round(Number(inp.value)*100)});busesEl.append(lab,inp,out)}
+</script>
+</body></html>
