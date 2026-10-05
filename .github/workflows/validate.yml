@@ -1,26 +1,36 @@
 name: validate
-on: [push, pull_request]
+on:
+  push:
+  pull_request:
 
 jobs:
   release-candidate:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: npm
+
+      - name: Install root dependencies
+        run: npm install
 
       - name: Validate hosted renderer adapter
         run: |
-          npm install
           node --check api/healthz.js
           node --check api/mcp.js
           node --check audio-renderer/mcp-app.js
 
-      - name: Validate local renderer contract
+      - name: Install renderer dependencies
+        working-directory: audio-renderer
+        run: npm install
+
+      - name: Validate renderer contract
         working-directory: audio-renderer
         run: |
-          npm install
           npm run check
           npm test
 
@@ -31,7 +41,8 @@ jobs:
           PID=$!
           trap 'kill $PID || true' EXIT
           for i in 1 2 3 4 5 6 7 8 9 10; do
-            if curl --fail --silent http://127.0.0.1:8787/healthz | grep -q '"ok":true'; then
+            BODY=$(curl --fail --silent http://127.0.0.1:8787/healthz || true)
+            if echo "$BODY" | grep -q '"ok":true' && echo "$BODY" | grep -q '"version":"0.5.0-rc.2"'; then
               exit 0
             fi
             sleep 1
