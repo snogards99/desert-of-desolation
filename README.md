@@ -1,30 +1,37 @@
 # Desert of Desolation
 
-## Active runtime
+## Required runtime
 
-The game itself is intentionally simple:
+Normal gameplay requires all three layers:
 
-**Google Drive = authoritative game state, canon, manifests, checkpoints, and media identity**
+**Google Drive** — authoritative campaign state, canon, manifests, checkpoints, and media identity.
 
-**ChatGPT Desert of Desolation plugin = gameplay, AD&D resolution, narration, state orchestration, preload decisions, and save/resume**
+**Desert of Desolation ChatGPT plugin** — gameplay orchestration, AD&D resolution, narration, state mutation, preload planning, and session control.
 
-That is the complete game runtime.
-
-GitHub is **not required to play the game**. It exists only for source control, CI, and optional audio-renderer experiments.
-
-If the external audio renderer is unavailable, gameplay continues normally with text and silent media fallback. GitHub/Codespaces must never block a turn, save, resume, encounter, or narration.
-
-## Optional audio renderer
-
-`audio-renderer/` contains an optional MCP Apps playback sidecar for real layered browser/mobile audio. It is presentation infrastructure only. Do not couple campaign state or normal gameplay to it.
+**GitHub-hosted advanced audio renderer** — required playback layer for music, ambience, narration/dialogue, SFX, spatial audio, ducking, and playback-state confirmation.
 
 Railway is not used.
 
+## Readiness gate
+
+Before starting or resuming normal play, verify once per session:
+
+1. Drive runtime specification and certified state are reachable.
+2. Active plugin release is valid.
+3. GitHub renderer source and CI are valid.
+4. A live HTTPS renderer exists and `/healthz` succeeds.
+5. ChatGPT can reach/register the renderer `/mcp` endpoint.
+6. The audio player mounts and reports capabilities.
+7. A harmless test cue reaches `READY -> QUEUED -> PLAYING` for the current audio epoch.
+
+If a gate fails, preserve campaign state and repair the failed layer before play. After readiness succeeds, do not repeat GitHub deployment checks every turn unless renderer health changes.
+
 ## Source layout
 
-- `plugin/` — plugin/skill source
-- `audio-renderer/` — optional MCP audio sidecar
-- `.github/workflows/` — CI only
-- `.devcontainer/` — optional renderer development environment
+- `plugin/` — active plugin/skill source
+- `audio-renderer/` — required MCP audio renderer
+- `.github/workflows/` — renderer/plugin CI
+- `.devcontainer/` — GitHub Codespaces runtime configuration
+- `scripts/` — Codespaces bootstrap and endpoint publication
 
-For the active runtime rules, see `plugin/skills/desert-of-desolation-game/SKILL.md`.
+Google Drive remains the only persistent gameplay authority. GitHub must never become a second campaign database.
