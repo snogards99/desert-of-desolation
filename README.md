@@ -1,47 +1,44 @@
-# Desert of Desolation
+# Desert of Desolation — v0.5.0-rc.2
 
-## Release candidate architecture
+## Release-candidate architecture
 
-Normal gameplay requires all three layers:
+**Google Drive** is the sole authoritative store for campaign state, canon, manifests, checkpoints, and media identity.
 
-**Google Drive** — sole persistent authority for campaign state, canon, manifests, checkpoints, and media identity.
+**ChatGPT Desert of Desolation plugin** runs gameplay, AD&D resolution, narration, state orchestration, preload decisions, and session control.
 
-**Desert of Desolation ChatGPT plugin** — gameplay orchestration, AD&D resolution, narration, state mutation, preload planning, and session control.
+**GitHub** is mandatory for source, CI, tests, release provenance, and deployment of the advanced-audio renderer.
 
-**GitHub-controlled advanced audio** — GitHub is mandatory for renderer source, CI, release history, and rollback. The renderer itself must run on a stable public HTTPS application host.
+**Stable HTTPS MCP renderer** is mandatory for normal-play audio readiness. It is built from this GitHub release line. The hosting vendor is replaceable presentation infrastructure and is never a game-state authority.
 
-Railway is not used. GitHub Codespaces remains useful for development, but it is no longer treated as the production audio host.
+Railway is not used.
 
-## Current release candidate
+## Renderer endpoints
 
-- Plugin: `v0.5.0-rc.1`
-- Renderer: `v0.5.0-rc.1`
-- Audio source: this repository
-- Stable-host adapter: `api/mcp.js`, `api/healthz.js`, `vercel.json`
-- Drive authority: unchanged
+The release deployment must expose:
 
-## Final readiness gate
+- `GET /healthz`
+- Streamable HTTP MCP at `/mcp`
 
-Before normal play:
+The repository includes a hosted/serverless adapter in `api/`, a `vercel.json` deployment configuration, and a standalone development renderer under `audio-renderer/`.
 
-1. Drive specification and certified state are reachable.
-2. Active plugin release is valid.
-3. GitHub CI is green for the current renderer commit.
-4. Stable public `/healthz` returns healthy.
-5. Stable public `/mcp` initializes through Streamable HTTP.
-6. ChatGPT mounts the audio widget and reports renderer capabilities.
-7. A harmless current-epoch cue reaches `READY -> QUEUED -> PLAYING` and the widget's `report_audio_status` acknowledgement is accepted.
+Codespaces/devcontainers remain useful for development and local smoke testing, but normal gameplay does not depend on an ephemeral Codespace.
 
-Only after these checks pass should the RC be promoted to final.
+## Session readiness gate
 
-## Why the architecture stays simple
+Before normal play begins, verify once per session:
 
-Drive never becomes a web server. GitHub never becomes a campaign database. The application host never owns game state. The audio host only renders approved current-scene assets and reports playback state.
+1. Drive authority is reachable.
+2. Active plugin release matches the release candidate.
+3. GitHub release-line CI is green.
+4. Public `/healthz` succeeds.
+5. ChatGPT initializes `/mcp` and discovers renderer tools.
+6. The audio widget mounts and reports capabilities.
+7. A harmless same-epoch cue reaches READY -> QUEUED -> renderer-acknowledged PLAYING.
 
-## Source layout
+After that, cache readiness for the session. Do not put GitHub/deployment checks on every turn.
 
-- `plugin/` — plugin/skill source
-- `audio-renderer/` — audio engine + MCP App widget
-- `api/` — stable hosted MCP and health endpoints
-- `.github/workflows/` — release validation
-- `.devcontainer/` — development-only Codespaces environment
+## Game maturity
+
+The authoritative Drive runtime already records green structural evidence for the campaign graph, combat, save/resume, preload planning, monster audio coverage, lossless masters, and campaign regression testing. Remaining source-uncertain AD&D/custom mechanics stay explicitly fail-closed instead of being invented.
+
+The final release blocker is `RG-AUDIOTRANSPORT`: prove the stable public renderer end-to-end without mutating campaign state.
