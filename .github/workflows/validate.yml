@@ -1,20 +1,27 @@
 name: validate
 on: [push, pull_request]
 jobs:
-  audio:
+  renderer:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: audio-renderer
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: npm install
-      - run: npm run check
-      - run: npm test
-      - name: Runtime health smoke test
+      - name: Validate hosted adapter
+        run: |
+          npm install
+          node --check api/healthz.js
+          node --check api/mcp.js
+          node --check audio-renderer/mcp-app.js
+      - name: Validate standalone renderer
+        working-directory: audio-renderer
+        run: |
+          npm install
+          npm run check
+          npm test
+      - name: Standalone runtime health smoke test
+        working-directory: audio-renderer
         run: |
           npm start > /tmp/dod-audio.log 2>&1 &
           PID=$!
