@@ -3,7 +3,7 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { registerAppResource, registerAppTool, RESOURCE_MIME_TYPE } from "@modelcontextprotocol/ext-apps/server";
 import { z } from "zod";
 
-export const VERSION="0.5.0-rc.1";
+export const VERSION="0.5.0-rc.2";
 export const UI_URI="ui://dod-audio/v3.html";
 const html=readFileSync(new URL("./public/audio-widget.html",import.meta.url),"utf8");
 const bus=z.enum(["narrator","dialogue","ambience","music","sfx"]);
