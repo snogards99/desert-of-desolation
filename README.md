@@ -1,21 +1,30 @@
-# Desert of Desolation Game Runtime
+# Desert of Desolation
 
-Architecture: **Google Drive = authoritative state/media**, **ChatGPT = gameplay/orchestration**, **GitHub = source/CI/Codespaces audio compute**.
+## Active runtime
 
-This repository intentionally contains no Railway configuration.
+The game itself is intentionally simple:
 
-## Start the audio renderer in GitHub Codespaces
+**Google Drive = authoritative game state, canon, manifests, checkpoints, and media identity**
 
-1. Open this repository in a new GitHub Codespace on `main`.
-2. The devcontainer installs dependencies, runs validation, and starts the renderer automatically.
-3. In the Codespaces **Ports** panel, make port `8787` Public if ChatGPT cannot reach it.
-4. Run:
-   ```bash
-   bash scripts/codespace-ready.sh
-   ```
-5. Copy the printed HTTPS `/mcp` endpoint into the ChatGPT MCP/plugin connection.
-6. Confirm `/healthz` works before testing game audio.
+**ChatGPT Desert of Desolation plugin = gameplay, AD&D resolution, narration, state orchestration, preload decisions, and save/resume**
 
-The Codespace is presentation compute only. Google Drive remains authoritative for campaign state, manifests, checkpoints, and media identity.
+That is the complete game runtime.
 
-See `plugin/skills/desert-of-desolation-game/references/github-runtime.md`.
+GitHub is **not required to play the game**. It exists only for source control, CI, and optional audio-renderer experiments.
+
+If the external audio renderer is unavailable, gameplay continues normally with text and silent media fallback. GitHub/Codespaces must never block a turn, save, resume, encounter, or narration.
+
+## Optional audio renderer
+
+`audio-renderer/` contains an optional MCP Apps playback sidecar for real layered browser/mobile audio. It is presentation infrastructure only. Do not couple campaign state or normal gameplay to it.
+
+Railway is not used.
+
+## Source layout
+
+- `plugin/` — plugin/skill source
+- `audio-renderer/` — optional MCP audio sidecar
+- `.github/workflows/` — CI only
+- `.devcontainer/` — optional renderer development environment
+
+For the active runtime rules, see `plugin/skills/desert-of-desolation-game/SKILL.md`.
