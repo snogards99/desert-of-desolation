@@ -12,6 +12,21 @@ Normal gameplay requires all three layers:
 
 Railway is not used.
 
+## One-time GitHub audio activation
+
+Create one GitHub Codespace from this repository on `main`.
+
+The devcontainer then:
+1. installs and validates the audio renderer;
+2. starts the renderer on port 8787;
+3. verifies local `/healthz`;
+4. attempts to make port 8787 reachable;
+5. writes the live endpoint to `runtime/codespace-endpoint.json`.
+
+After that, ChatGPT can discover the renderer endpoint from the repository without asking you to copy URLs.
+
+The optional `bootstrap-codespace` workflow can create the Codespace only when repository secret `CODESPACE_PAT` contains a user token with **Codespaces: write**. The ordinary GitHub Actions token cannot create Codespaces.
+
 ## Readiness gate
 
 Before starting or resuming normal play, verify once per session:
