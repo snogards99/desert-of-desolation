@@ -1,26 +1,30 @@
 name: validate
 on: [push, pull_request]
+
 jobs:
-  renderer:
+  release-candidate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Validate hosted adapter
+
+      - name: Validate hosted renderer adapter
         run: |
           npm install
           node --check api/healthz.js
           node --check api/mcp.js
           node --check audio-renderer/mcp-app.js
-      - name: Validate standalone renderer
+
+      - name: Validate local renderer contract
         working-directory: audio-renderer
         run: |
           npm install
           npm run check
           npm test
-      - name: Standalone runtime health smoke test
+
+      - name: Runtime health smoke test
         working-directory: audio-renderer
         run: |
           npm start > /tmp/dod-audio.log 2>&1 &
