@@ -34,3 +34,10 @@ test("widget enforces user gesture and stale-epoch rejection",()=>{
 test("widget preserves separate semantic buses",()=>{
   for(const name of ["narrator","dialogue","ambience","music","sfx"]) assert.match(widget,new RegExp(name));
 });
+
+
+test("every MCP app tool supplies metadata required by ext-apps",()=>{
+  const calls=[...mcp.matchAll(/registerAppTool\(mcp,[\s\S]*?\},async/g)].map(m=>m[0]);
+  assert.ok(calls.length>=11);
+  for(const call of calls) assert.match(call,/_meta:\{/);
+});
