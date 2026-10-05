@@ -1,52 +1,47 @@
 # Desert of Desolation
 
-## Required runtime
+## Release candidate architecture
 
 Normal gameplay requires all three layers:
 
-**Google Drive** — authoritative campaign state, canon, manifests, checkpoints, and media identity.
+**Google Drive** — sole persistent authority for campaign state, canon, manifests, checkpoints, and media identity.
 
 **Desert of Desolation ChatGPT plugin** — gameplay orchestration, AD&D resolution, narration, state mutation, preload planning, and session control.
 
-**GitHub-hosted advanced audio renderer** — required playback layer for music, ambience, narration/dialogue, SFX, spatial audio, ducking, and playback-state confirmation.
+**GitHub-controlled advanced audio** — GitHub is mandatory for renderer source, CI, release history, and rollback. The renderer itself must run on a stable public HTTPS application host.
 
-Railway is not used.
+Railway is not used. GitHub Codespaces remains useful for development, but it is no longer treated as the production audio host.
 
-## One-time GitHub audio activation
+## Current release candidate
 
-Create one GitHub Codespace from this repository on `main`.
+- Plugin: `v0.5.0-rc.1`
+- Renderer: `v0.5.0-rc.1`
+- Audio source: this repository
+- Stable-host adapter: `api/mcp.js`, `api/healthz.js`, `vercel.json`
+- Drive authority: unchanged
 
-The devcontainer then:
-1. installs and validates the audio renderer;
-2. starts the renderer on port 8787;
-3. verifies local `/healthz`;
-4. attempts to make port 8787 reachable;
-5. writes the live endpoint to `runtime/codespace-endpoint.json`.
+## Final readiness gate
 
-After that, ChatGPT can discover the renderer endpoint from the repository without asking you to copy URLs.
+Before normal play:
 
-The optional `bootstrap-codespace` workflow can create the Codespace only when repository secret `CODESPACE_PAT` contains a user token with **Codespaces: write**. The ordinary GitHub Actions token cannot create Codespaces.
-
-## Readiness gate
-
-Before starting or resuming normal play, verify once per session:
-
-1. Drive runtime specification and certified state are reachable.
+1. Drive specification and certified state are reachable.
 2. Active plugin release is valid.
-3. GitHub renderer source and CI are valid.
-4. A live HTTPS renderer exists and `/healthz` succeeds.
-5. ChatGPT can reach/register the renderer `/mcp` endpoint.
-6. The audio player mounts and reports capabilities.
-7. A harmless test cue reaches `READY -> QUEUED -> PLAYING` for the current audio epoch.
+3. GitHub CI is green for the current renderer commit.
+4. Stable public `/healthz` returns healthy.
+5. Stable public `/mcp` initializes through Streamable HTTP.
+6. ChatGPT mounts the audio widget and reports renderer capabilities.
+7. A harmless current-epoch cue reaches `READY -> QUEUED -> PLAYING` and the widget's `report_audio_status` acknowledgement is accepted.
 
-If a gate fails, preserve campaign state and repair the failed layer before play. After readiness succeeds, do not repeat GitHub deployment checks every turn unless renderer health changes.
+Only after these checks pass should the RC be promoted to final.
+
+## Why the architecture stays simple
+
+Drive never becomes a web server. GitHub never becomes a campaign database. The application host never owns game state. The audio host only renders approved current-scene assets and reports playback state.
 
 ## Source layout
 
-- `plugin/` — active plugin/skill source
-- `audio-renderer/` — required MCP audio renderer
-- `.github/workflows/` — renderer/plugin CI
-- `.devcontainer/` — GitHub Codespaces runtime configuration
-- `scripts/` — Codespaces bootstrap and endpoint publication
-
-Google Drive remains the only persistent gameplay authority. GitHub must never become a second campaign database.
+- `plugin/` — plugin/skill source
+- `audio-renderer/` — audio engine + MCP App widget
+- `api/` — stable hosted MCP and health endpoints
+- `.github/workflows/` — release validation
+- `.devcontainer/` — development-only Codespaces environment
