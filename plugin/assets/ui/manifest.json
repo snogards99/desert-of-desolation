@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "visibility": "PLAYER_SAFE_STATIC_UI",
+  "art_engine": "dod.art-engine@1.1.0",
+  "entries": [
+    {
+      "id": "dod.ui.home.desktop.v1",
+      "path": "dod.ui.home.desktop.v1.png",
+      "mode": "DOD_SITE",
+      "role": "TITLE_HOME_MASTER",
+      "layout": "desktop",
+      "available": true,
+      "runtime_eligible": true,
+      "interactive": false,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "sha256": "1d7f067c6b60d8aa70b109edce87895ef40077654a7342c93ff8fda6579549c9"
+    },
+    {
+      "id": "dod.ui.home.mobile.v1",
+      "path": "dod.ui.home.mobile.v1.png",
+      "mode": "DOD_SITE",
+      "role": "TITLE_HOME_MASTER",
+      "layout": "mobile",
+      "available": true,
+      "runtime_eligible": true,
+      "interactive": false,
+      "dimensions": [
+        941,
+        1672
+      ],
+      "sha256": "ee33558ddfdbbca3628e6d8c37a0aa0ede5c9afe3be416c07f397219de468132"
+    }
+  ],
+  "semantic_controls_required": true,
+  "hotspot_overlay_forbidden": true
+}

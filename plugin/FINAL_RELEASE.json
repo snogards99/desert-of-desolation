@@ -1,0 +1,35 @@
+{
+  "plugin_id": "Plugin_3352cc65ee508191abeb37ffa759294d",
+  "version": "1.4.3",
+  "release_focus": "Published Site runtime repairs and scoped theme CSS; preserves concurrent ten-pass engine hardening",
+  "node_master_count": 361,
+  "node_knowledge_rows": 361,
+  "site_project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
+  "site_url": "https://desert-of-desolation.nreach-1221.chatgpt.site",
+  "site_media_transfer_complete": true,
+  "site_media_files": 397,
+  "site_media_bytes": 61963206,
+  "site_primary_cutover_complete": false,
+  "live_site_theme_integration": false,
+  "art_engine": "dod.art-engine@1.1.0",
+  "title_home_assets_bundled": true,
+  "physical_iphone_qa": "NOT_COMPLETED",
+  "campaign_state_advanced": false,
+  "access_policy": "PRIVATE",
+  "optimization_passes": 10,
+  "optimization_log": "OPTIMIZATION_PASSES.json",
+  "preserved_release_base": "1.4.2",
+  "local_verification_preserved": {
+    "static_theme_checks": 82,
+    "prompt_tests": 16,
+    "art_engine_tests": 11,
+    "adapter_checks": 37,
+    "browser_fixture_checks": 19
+  },
+  "site_version": 6,
+  "site_deployment_id": "appgdep_6ac417ca32bc8191869cf0796ce354d5",
+  "scoped_live_site_theme_css": true,
+  "audio_modified": true,
+  "maintenance_report": "SITE_MAINTENANCE_QA.json"
+}
+

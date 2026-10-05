@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "engine_id": "dod.art-engine",
+  "engine_version": "1.1.0",
+  "plugin_release": "1.4.1",
+  "theme_id": "dod.moonlit-ink",
+  "modes": {
+    "site": "DOD_SITE",
+    "ordinary_gameplay": "DOD_INK",
+    "major_presentation": "DOD_PAINTED"
+  },
+  "surface_policy": {
+    "TITLE_SPLASH": {
+      "mode": "DOD_SITE",
+      "responsive_master": true,
+      "semantic_controls": true
+    },
+    "HOME": {
+      "mode": "DOD_SITE",
+      "responsive_master": true,
+      "semantic_controls": true
+    },
+    "CHAPTER_OPEN": {
+      "mode": "DOD_PAINTED"
+    },
+    "MAJOR_DISCOVERY": {
+      "mode": "DOD_PAINTED"
+    },
+    "CLIMAX": {
+      "mode": "DOD_PAINTED"
+    },
+    "EXPLORATION": {
+      "mode": "DOD_INK"
+    },
+    "NPC_DIALOGUE": {
+      "mode": "DOD_INK"
+    },
+    "COMBAT": {
+      "mode": "DOD_INK"
+    },
+    "JOURNAL": {
+      "mode": "DOD_INK"
+    },
+    "INVENTORY": {
+      "mode": "DOD_INK"
+    },
+    "MAP": {
+      "mode": "DOD_INK",
+      "known_areas_only": true
+    }
+  },
+  "responsive_master": {
+    "breakpoint_px": 760,
+    "desktop": {
+      "asset_id": "dod.ui.home.desktop.v1",
+      "skill_path": "reference-ui/home-desktop-approved.png",
+      "runtime_path": "assets/ui/dod.ui.home.desktop.v1.png",
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    "mobile": {
+      "asset_id": "dod.ui.home.mobile.v1",
+      "skill_path": "reference-ui/home-mobile-approved.png",
+      "runtime_path": "assets/ui/dod.ui.home.mobile.v1.png",
+      "dimensions": [
+        941,
+        1672
+      ]
+    }
+  },
+  "runtime_rules": {
+    "master_images_role": "APPROVED_MASTER_UI_REFERENCE_AND_NONINTERACTIVE_SPLASH_POSTER",
+    "semantic_ui_required": true,
+    "do_not_use_invisible_hotspots_over_baked_controls": true,
+    "new_game_requires_existing_confirmation_reset_flow": true,
+    "continue_restores_authoritative_state": true,
+    "presentation_does_not_advance_state": true,
+    "audio_engine_ownership": "EXISTING_GAME_AUDIO_ENGINE",
+    "theme_must_not_create_audio_context": true,
+    "fail_closed_on_hidden_or_unapproved_art": true,
+    "missing_art_fallback": "TEXT_OR_APPROVED_BACKGROUND",
+    "predictive_preload": "CURRENT_PLUS_ONE_LIKELY_PLUS_TWO_PLAYER_SAFE_ALTERNATES_MAX"
+  }
+}

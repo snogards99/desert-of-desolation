@@ -1,0 +1,35 @@
+{
+  "status": "VERIFIED_LOCAL",
+  "plugin_target": "1.4.1",
+  "engine": "dod.art-engine@1.1.0",
+  "theme": "dod.moonlit-ink@1.1.0",
+  "desktop_asset": {
+    "id": "dod.ui.home.desktop.v1",
+    "sha256": "1d7f067c6b60d8aa70b109edce87895ef40077654a7342c93ff8fda6579549c9",
+    "dimensions": [
+      1536,
+      1024
+    ]
+  },
+  "mobile_asset": {
+    "id": "dod.ui.home.mobile.v1",
+    "sha256": "ee33558ddfdbbca3628e6d8c37a0aa0ede5c9afe3be416c07f397219de468132",
+    "dimensions": [
+      941,
+      1672
+    ]
+  },
+  "campaign_state_modified": false,
+  "audio_modified": false,
+  "live_site_modified": false,
+  "verification": {
+    "static_theme_checks": 82,
+    "prompt_tests": 16,
+    "art_engine_tests": 11,
+    "adapter_checks": 37,
+    "browser_fixture_checks": 19,
+    "live_site_qa": false,
+    "audio_playback_qa": false,
+    "physical_iphone_qa": false
+  }
+}

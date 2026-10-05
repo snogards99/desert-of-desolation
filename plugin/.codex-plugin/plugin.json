@@ -1,0 +1,37 @@
+{
+  "interface": {
+    "displayName": "Desert of Desolation V1",
+    "shortDescription": "Mobile-first desert RPG",
+    "longDescription": "Runs Desert of Desolation with 361-node knowledge routing, deterministic media IDs, bounded spoiler-safe preload, rollback-safe Site media, Eye branding, and the responsive art engine: DOD_SITE for title/home, DOD_INK for ordinary play, and DOD_PAINTED for major presentation. Site-primary media is governed by explicit browser/auth cutover gates; historical external-host records remain provenance only.",
+    "developerName": "Desert of Desolation Project",
+    "category": "Games",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "icon": "./assets/icon.png",
+    "defaultPrompt": [
+      "Start Desert of Desolation from the packaged campaign state with mobile-first presentation and predictive preload.",
+      "Resume Desert of Desolation and prepare the current integrated node knowledge, legal nearby interactions, spoiler-safe media cues, and mobile-friendly narration.",
+      "Show my character sheet."
+    ]
+  },
+  "name": "desert-of-desolation",
+  "version": "1.4.3",
+  "description": "Mobile-first Desert of Desolation campaign engine with 361-node state/knowledge routing, stable media IDs, private ChatGPT Sites presentation, rollback-safe audio/media, bounded preload, spoiler-safe UI, approved eye branding, and the responsive DOD_SITE/DOD_PAINTED/DOD_INK art engine.",
+  "author": {
+    "name": "Workspace upload"
+  },
+  "keywords": [
+    "dnd",
+    "adnd",
+    "desert-of-desolation",
+    "tabletop",
+    "game",
+    "mobile",
+    "audio",
+    "instant",
+    "sites"
+  ],
+  "skills": "./skills"
+}

@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "visibility": "DM_AUTHORING_ONLY",
+  "theme_id": "dod.moonlit-ink",
+  "entries": [
+    {
+      "id": "dod.theme.icon",
+      "path": "icon.png",
+      "role": "UI_BRANDING",
+      "available": true,
+      "status": "SUPPLIED_OR_MECHANICALLY_DERIVED",
+      "runtime_eligible": true,
+      "sha256": "0beb9f45455f3365f53458edf3a85a80ed2687f1fe4e2c803b1973c0853a6478"
+    },
+    {
+      "id": "dod.theme.icons.app-180",
+      "path": "icons/app-180.png",
+      "role": "UI_BRANDING",
+      "available": true,
+      "status": "SUPPLIED_OR_MECHANICALLY_DERIVED",
+      "runtime_eligible": true,
+      "sha256": "14ccff6ef3bbe8d2e23646268c3888d0cb9a266c12f104de5b0a48de0e135ee7"
+    },
+    {
+      "id": "dod.theme.icons.app-192",
+      "path": "icons/app-192.png",
+      "role": "UI_BRANDING",
+      "available": true,
+      "status": "SUPPLIED_OR_MECHANICALLY_DERIVED",
+      "runtime_eligible": true,
+      "sha256": "d67629c29e36a7b6df99ddd864219403b470b8783d7b07608e986df718cb9d91"
+    },
+    {
+      "id": "dod.theme.icons.app-512",
+      "path": "icons/app-512.png",
+      "role": "UI_BRANDING",
+      "available": true,
+      "status": "SUPPLIED_OR_MECHANICALLY_DERIVED",
+      "runtime_eligible": true,
+      "sha256": "7654a69c1aec0201e1d4d40b82d997c1c3ca01ab1ecd8160747ec2be989a9bc1"
+    },
+    {
+      "id": "dod.theme.icons.eye-gold",
+      "path": "icons/eye-gold.png",
+      "role": "UI_BRANDING",
+      "available": true,
+      "status": "SUPPLIED_OR_MECHANICALLY_DERIVED",
+      "runtime_eligible": true,
+      "sha256": "0323093677d4d19574b4ba72d6a1c97c28b3f8af58dc501a08450324aa73083b"
+    },
+    {
+      "id": "dod.theme.icons.eye-ivory",
+      "path": "icons/eye-ivory.png",
+      "role": "UI_BRANDING",
+      "available": true,
+      "status": "SUPPLIED_OR_MECHANICALLY_DERIVED",
+      "runtime_eligible": true,
+      "sha256": "1f75ec84e41f1d6c5c5fa96a9d48ced9b98226ee7a128bcdc3207372b8fa0789"
+    },
+    {
+      "id": "dod.theme.icons.favicon-16",
+      "path": "icons/favicon-16.png",
+      "role": "UI_BRANDING",
+      "available": true,
+      "status": "SUPPLIED_OR_MECHANICALLY_DERIVED",
+      "runtime_eligible": true,
+      "sha256": "995f9f6995497dea45334ae05bea43a9efb6644ffb5c593901cf755452fcd6b5"
+    },
+    {
+      "id": "dod.theme.icons.favicon-32",
+      "path": "icons/favicon-32.png",
+      "role": "UI_BRANDING",
+      "available": true,
+      "status": "SUPPLIED_OR_MECHANICALLY_DERIVED",
+      "runtime_eligible": true,
+      "sha256": "edf7a0d8a113c53423be5ccd2bbe2de02087dbddd5d5109c02adf39c608de08a"
+    },
+    {
+      "id": "dod.theme.icons.favicon-48",
+      "path": "icons/favicon-48.png",
+      "role": "UI_BRANDING",
+      "available": true,
+      "status": "SUPPLIED_OR_MECHANICALLY_DERIVED",
+      "runtime_eligible": true,
+      "sha256": "12bc817c4cffa0a817a2460fb0113aa7a044c77abf556d23af434bc7409dd067"
+    },
+    {
+      "id": "dod.reference.i3-painted-reference",
+      "path": "../references/specimens/i3-painted-reference.png",
+      "role": "PRIVATE_STYLE_REFERENCE",
+      "source_id": "src.i3.cover",
+      "available": true,
+      "status": "EXTRACTED_SOURCE_NOT_NEW_ART",
+      "runtime_eligible": false,
+      "public_reuse_verified": false,
+      "sha256": "0a5d409f80924e558967d2df9b657eed2ca73df4810aa551f1664abb827605f4"
+    },
+    {
+      "id": "dod.reference.i3-ink-reference",
+      "path": "../references/specimens/i3-ink-reference.png",
+      "role": "PRIVATE_STYLE_REFERENCE",
+      "source_id": "src.i3.ink",
+      "available": true,
+      "status": "EXTRACTED_SOURCE_NOT_NEW_ART",
+      "runtime_eligible": false,
+      "public_reuse_verified": false,
+      "sha256": "cb8274eea24ad55089973b1e1786ab7314532026f1bcfcae08d4ab43cbf9272d"
+    },
+    {
+      "id": "dod.art.sample.dod_painted",
+      "mode": "DOD_PAINTED",
+      "path": null,
+      "available": false,
+      "runtime_eligible": false,
+      "status": "GENERATION_PLACEHOLDER",
+      "description": "A spoiler-free desert campfire specimen; no named party members or implied current campaign location.",
+      "source_policy": "New original illustration, not a source scan."
+    },
+    {
+      "id": "dod.art.sample.dod_ink",
+      "mode": "DOD_INK",
+      "path": null,
+      "available": false,
+      "runtime_eligible": false,
+      "status": "GENERATION_PLACEHOLDER",
+      "description": "A spoiler-free desert campfire specimen; no named party members or implied current campaign location.",
+      "source_policy": "New original illustration, not a source scan."
+    },
+    {
+      "id": "dod.ui.home.desktop.v1",
+      "path": "reference-ui/home-desktop-approved.png",
+      "role": "APPROVED_MASTER_UI_REFERENCE",
+      "mode": "DOD_SITE",
+      "available": true,
+      "status": "USER_APPROVED_GENERATED_PROJECT_ART",
+      "runtime_eligible": true,
+      "player_visible": true,
+      "interaction_policy": "NONINTERACTIVE_SPLASH_POSTER_OR_VISUAL_REFERENCE; SEMANTIC_CONTROLS_REQUIRED",
+      "layout": "desktop",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "sha256": "1d7f067c6b60d8aa70b109edce87895ef40077654a7342c93ff8fda6579549c9"
+    },
+    {
+      "id": "dod.ui.home.mobile.v1",
+      "path": "reference-ui/home-mobile-approved.png",
+      "role": "APPROVED_MASTER_UI_REFERENCE",
+      "mode": "DOD_SITE",
+      "available": true,
+      "status": "USER_APPROVED_GENERATED_PROJECT_ART",
+      "runtime_eligible": true,
+      "player_visible": true,
+      "interaction_policy": "NONINTERACTIVE_SPLASH_POSTER_OR_VISUAL_REFERENCE; SEMANTIC_CONTROLS_REQUIRED",
+      "layout": "mobile",
+      "dimensions": [
+        941,
+        1672
+      ],
+      "sha256": "ee33558ddfdbbca3628e6d8c37a0aa0ede5c9afe3be416c07f397219de468132"
+    }
+  ],
+  "rules": {
+    "whole_manifest_to_client": false,
+    "source_scans_autopublished": false,
+    "unknown_means_unavailable": true,
+    "existing_ids_renamed": false,
+    "generated_assets_in_this_package": 2,
+    "approved_master_ui_reference_count": 2,
+    "interactive_hotspot_overlay_forbidden": true
+  }
+}

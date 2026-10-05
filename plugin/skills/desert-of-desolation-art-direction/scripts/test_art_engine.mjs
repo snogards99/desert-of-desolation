@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import {resolvePresentation,selectMasterUi,ART_ENGINE_VERSION} from '../assets/art-engine.mjs';
+const checks=[]; const ok=(n,v)=>{assert.ok(v,n);checks.push(n)};
+ok('engine version',ART_ENGINE_VERSION==='1.1.0');
+ok('320 mobile',selectMasterUi(320).assetId==='dod.ui.home.mobile.v1');
+ok('760 mobile',selectMasterUi(760).layout==='mobile');
+ok('761 desktop',selectMasterUi(761).assetId==='dod.ui.home.desktop.v1');
+ok('title semantic',resolvePresentation({surface:'TITLE_SPLASH',viewportWidth:390}).semanticControls===true);
+ok('title no hotspots',resolvePresentation({surface:'TITLE_SPLASH',viewportWidth:390}).interactiveHotspots===false);
+ok('title no state advance',resolvePresentation({surface:'TITLE_SPLASH',viewportWidth:390}).advancesState===false);
+ok('chapter painted',resolvePresentation({surface:'CHAPTER_OPEN'}).mode==='DOD_PAINTED');
+ok('exploration ink',resolvePresentation({surface:'EXPLORATION'}).mode==='DOD_INK');
+ok('unknown fallback',resolvePresentation({surface:'UNKNOWN'}).mode==='TEXT_FALLBACK');
+assert.throws(()=>selectMasterUi(0));checks.push('invalid width rejected');
+console.log(JSON.stringify({status:'PASS',checks_passed:checks.length,checks},null,2));

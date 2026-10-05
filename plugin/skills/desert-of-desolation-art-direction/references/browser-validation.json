@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "checks_passed": 19,
+  "checks": [
+    "no overflow at 320px",
+    "44px controls at 320px",
+    "no overflow at 390px",
+    "44px controls at 390px",
+    "no overflow at 768px",
+    "44px controls at 768px",
+    "no overflow at 1440px",
+    "44px controls at 1440px",
+    "journal preview switches",
+    "inventory preview switches",
+    "map preview switches",
+    "dialogue preview switches",
+    "action fixture does not dispatch game action",
+    "reduced motion preference visible",
+    "visible keyboard focus",
+    "200% text no horizontal overflow",
+    "private preview no external requests",
+    "all preview images decode",
+    "no script errors"
+  ],
+  "environment": "Headless Chromium, local HTML via set_content, no navigation",
+  "live_site_tested": false,
+  "audio_playback_tested": false,
+  "physical_device_tested": false
+}

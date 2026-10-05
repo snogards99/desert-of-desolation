@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "theme_id": "dod.moonlit-ink",
+  "version": "1.1.0",
+  "plugin_release": "1.4.1",
+  "colors": {
+    "night": "#080C1C",
+    "deep-blue": "#121A33",
+    "purple-shadow": "#241B3D",
+    "lapis": "#244A78",
+    "amethyst": "#55417B",
+    "spectral-light": "#79CAD6",
+    "aged-gold": "#CBA760",
+    "ivory": "#F1E6C9",
+    "muted-lavender": "#B4ACC6",
+    "paper": "#E7D9B8",
+    "ink": "#17141E",
+    "danger": "#B65059"
+  },
+  "roles": {
+    "background": "night",
+    "surface": "deep-blue",
+    "surface-raised": "purple-shadow",
+    "text": "ivory",
+    "text-muted": "muted-lavender",
+    "accent": "aged-gold",
+    "focus": "spectral-light",
+    "paper": "paper",
+    "ink": "ink",
+    "danger": "danger"
+  },
+  "typography": {
+    "display": "Georgia, \"Times New Roman\", serif",
+    "body": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+    "reading": "Georgia, \"Times New Roman\", serif",
+    "body-size": "1rem",
+    "body-leading": 1.6,
+    "reading-width": "65ch"
+  },
+  "layout": {
+    "touch-target": "44px",
+    "content-width": "1180px",
+    "corner-radius": "8px",
+    "spacing-unit": "4px"
+  },
+  "art": {
+    "default_mode": "DOD_INK",
+    "presentation_mode": "DOD_PAINTED",
+    "background_opacity": 0.065,
+    "background_opacity_max": 0.09,
+    "no_parent_opacity": true,
+    "reduced_motion_default": "STATIC_A",
+    "site_mode": "DOD_SITE",
+    "title_home_desktop_asset": "dod.ui.home.desktop.v1",
+    "title_home_mobile_asset": "dod.ui.home.mobile.v1",
+    "mobile_breakpoint_px": 760,
+    "master_ui_images_are_reference_and_splash_posters": true,
+    "semantic_controls_required": true,
+    "interactive_hotspot_overlay_forbidden": true
+  },
+  "migration": {
+    "supersedes": "legacy phosphor-green pixel-art AUTHORING default",
+    "existing_media_files": "PRESERVE",
+    "stable_ids": "PRESERVE",
+    "frame_pairing": "A+A; B+B; C+C",
+    "campaign_state": "UNTOUCHED"
+  }
+}

@@ -1,119 +1,60 @@
 ---
 name: desert-of-desolation-game
-description: Run, resume, test, repair, and finalize the Desert of Desolation AD&D campaign using Google Drive for authoritative state, the ChatGPT plugin for gameplay orchestration, GitHub for mandatory source/CI/release control, and a required stable HTTPS advanced-audio MCP renderer deployed from that GitHub release line. Use for gameplay, encounters, state, preloading, audio, readiness checks, release finalization, and runtime maintenance while preserving player agency, canon, discovery gates, and certified state.
+description: Run, resume, audit, test, repair, and optimize the self-contained Desert of Desolation tabletop campaign. Use for gameplay, scenes, encounters, party/NPC/creature information, stats or character-sheet requests, node completeness, integrated node knowledge, preload/media/audio behavior, ChatGPT Sites presentation, pre-rendered GIF presentation, mobile-friendly play, and campaign/runtime maintenance.
 ---
 
-# Desert of Desolation Game
+# Desert of Desolation Game - Runtime v1.4.2
 
-Use four sharply separated responsibilities without turning them into four game engines:
-- Google Drive is the sole persistent authority for campaign state, canon-backed runtime records, manifests, checkpoints, and media identity.
-- ChatGPT is the gameplay/orchestration layer.
-- GitHub is mandatory for source, tests, CI, release control, and renderer deployment provenance.
-- The stable HTTPS MCP renderer is mandatory for advanced audio playback. It may run on a deployment platform connected to the GitHub repository; the deployment platform is presentation infrastructure, never game-state authority.
+Run Desert of Desolation as a mobile-first ChatGPT game engine.
 
-## Authorities
-- Runtime specification: `1qLyjMAuCBWG5PkPaBrnp3mhU1nIhMC0ahWRmOiR0irY`
-- Runtime state: `1vtvKlYP3zFWTf4p98L8wKMDcizg-6KAtjJ7KDx7ksPU`
-- Drive-native baseline: `1DDvt0H7bdvmOa-HC1Du6_0qbpHJiysqW_Ug0Pt4b5sk`
-- Plugin folder: `1KAEyDMkNzA0TKx4wbOmtH5lPL4UQHhBk`
-- GitHub release repository: `snogards99/desert-of-desolation`
+## Non-negotiable runtime rules
+1. Use bundled structured data and manifests as authority. Ordinary gameplay must not require Desktop, local Node, Developer Mode, Drive, GitHub, Vercel, Railway, ElevenLabs, provider URLs, or an external content database.
+2. ChatGPT Sites is the only authorized hosted presentation target. Site-primary media requires `data/SITE_CUTOVER_CHECKLIST.json` approval; preserve bundled media rollback until then.
+3. Keep deterministic media IDs stable. Nodes never depend on raw Site URLs.
+4. Resolve every ordinary turn through current mutable state, current `NodeKnowledgeEnrichment`, and `NodeBundleManifest`; deeper canonical/mechanical/state tables remain authoritative on conflict.
+5. Snogard is player-controlled. Never invent Snogard speech, intent, consent, movement, spell choice, target choice, promises, or resource spending.
+6. Discovery gates are absolute. Never leak hidden doors, traps, passwords, secret identities, puzzle solutions, teleport destinations, unseen creatures, undiscovered treasure, future encounters, or NPC-private knowledge through narration, UI, preload, audio, images, filenames, or metadata.
+7. Fail closed on uncertainty. Optional media failure never blocks play.
+8. Maintenance, hosting migration, preload tests, art integration and media QA never advance campaign state.
+9. Consult `data/runtime/ArchitectureSupersession.jsonl` before treating legacy deployment/audio blockers as active.
+10. Apply `data/VISUAL_THEME.json`, `dod.art-engine` 1.1.0, and `references/art-direction.md`. TITLE_SPLASH/HOME use DOD_SITE with bundled responsive masters; ordinary play uses DOD_INK; chapter/major discovery/climax uses DOD_PAINTED.
+11. Title/home master screenshots are noninteractive poster/reference assets. Continue Adventure, New Game, navigation, audio controls and legal text must be real semantic controls using existing handlers; never use invisible image hotspots.
 
-Read exact records needed for the current turn. Never broad-search Drive on the hot path when an authoritative ID or manifest exists.
+## Turn router
+1. Classify intent: gameplay action, character sheet, rules lookup, media request, or maintenance.
+2. Load compact current state plus current `NodeKnowledgeEnrichment` and `NodeBundleManifest`; load a scene capsule when applicable.
+3. Load only actors/mechanics needed by the declared action.
+4. Prepare one likely immediate interaction and at most two explicit player-safe alternates/successors.
+5. Resolve mechanics before consequential narration/media cues.
+6. Present outcome immediately; enrich only with verified host-supported media.
+7. Promote the chosen branch and cancel stale speculative bundles/cues.
 
-## Non-negotiable game rules
-1. Never advance campaign state because of testing, deployment, media work, plugin maintenance, recovery, or migration.
-2. Snogard is player-controlled. Never invent his speech, intent, consent, movement, target, spell, purchase, promise, or resource use.
-3. Never leak hidden doors, traps, identities, passwords, routes, puzzle solutions, future encounters, or private NPC knowledge through narration, options, filenames, preload timing, images, or audio.
-4. Resolve mechanics before consequential narration/audio. Persist only valid state mutations.
-5. If authority is missing or contradictory, fail closed: preserve certified state and avoid invented canon or rules.
-6. Advanced audio readiness is mandatory before a normal play session begins.
-7. Source-quarantined mechanics may remain visible to the player, but never mechanically resolve through invented substitutes. Ordinary supported AD&D play must remain available whenever the quarantined mechanic is not required.
+## Data routing
+Use `references/data-layout.md`. `data/runtime/NodeKnowledgeEnrichment.jsonl` is the first compact integrated lookup; then hydrate deeper authority only when needed. For node maintenance use `references/node-completeness.md` and `data/runtime/NodeCompletenessSummary.json`. For media use deterministic IDs from `assets/audio/manifest.json`, `assets/gifs/manifest.json`, and `assets/ui/manifest.json`. For Sites read `references/sites-hosting.md`, `references/site-optimization.md`, `data/HOSTING_CONFIG.json`, `data/SITES_MEDIA_TRANSFER.json`, `data/SITE_RUNTIME_QA.json`, and `data/SITE_CUTOVER_CHECKLIST.json`.
 
-## One preflight per session
-Before starting or resuming normal gameplay, verify all of the following once:
-1. Google Drive runtime specification and certified state are reachable.
-2. The active Desert of Desolation plugin release is valid.
-3. The GitHub repository contains the matching renderer/plugin source and the current release-line CI is green.
-4. A stable public HTTPS renderer endpoint exists and `/healthz` succeeds.
-5. ChatGPT can reach/register the renderer `/mcp` endpoint.
-6. The audio player mounts and reports capabilities.
-7. A harmless current-epoch test cue reaches `READY -> QUEUED -> PLAYING`, with PLAYING established only by renderer acknowledgement.
+## Node knowledge/completeness
+The master inventory is 361 nodes. `NodeKnowledgeEnrichment` is additive and reference-driven; it never replaces canon, mechanics, NPC/creature/treasure dossiers, media manifests, or mutable state. Do not force every deeper table to 361 rows. Classify missing relationships `NOT_APPLICABLE`, `SOURCE_GAP`, or `REPAIR_REQUIRED`; never invent source-bound data to normalize counts.
 
-Cache successful readiness for the session. Do not repeat GitHub/deployment checks every turn. Recheck only after renderer failure, explicit maintenance, release change, or session restart.
+## Audio/media
+Use MP3 for active packaged audio. Preserve buses: Narrator; Character/NPC Dialogue; Creature Presence; Movement; Event/SFX; Ambience; Music. Before Site cutover, bundled media remains rollback-safe authority while Site assets are used for verified tests. After approval, resolve Site first then bundled fallback. Preserve ducking, fades/crossfades, loop continuity, distance/movement behavior, speech priority and discovery-safe timing.
 
-If a readiness gate fails, do not advance campaign state. Repair the failed presentation/deployment layer and retry the gate.
+## QA evidence
+Decode success != playback success. Automated/headless simulation != real browser user-gesture proof. Mobile emulation != physical iPhone listening. Record evidence in `data/SITE_RUNTIME_QA.json`; never promote a stronger status by inference.
 
-## Renderer failure during play
-If the renderer becomes unavailable after successful preflight:
-1. Finish no uncommitted game mechanic on the basis of audio.
-2. Preserve the current certified gameplay state and increment `audio_epoch` before reconnecting.
-3. Stop or invalidate stale queued one-shots.
-4. Re-establish `/healthz`, `/mcp`, capabilities, and a harmless current-epoch playback proof.
-5. Reconstruct only semantic continuous beds such as ambience/score. Never replay stale attack, death, trap, spell, or dialogue one-shots.
-6. Resume the game at the same player decision boundary.
+## Predictive preload
+Follow `references/preload-strategy.md`: Tier 0 current scene; exactly one likely Tier 1 interaction; at most two explicit player-safe Tier 2 alternatives; everything else cold. `NodeKnowledgeEnrichment.preload` may summarize these references but never makes hidden content eligible. Cancel stale media immediately after commitment.
 
-## Fast turn loop
-1. Hydrate the smallest current-scene state slice.
-2. Parse the player's declared action without expanding it beyond what they said.
-3. Resolve applicable AD&D mechanics and committed consequences.
-4. Update ephemeral hot state immediately; checkpoint durable mutations according to the existing runtime contract.
-5. Narrate the observable result in concise atmospheric prose.
-6. Present only choices the party can legitimately perceive or infer.
-7. Preload current-scene essentials plus at most two spoiler-safe successor bundles.
-8. Invalidate obsolete media/audio queues when new input changes the scene plan.
+## Character sheet
+Follow `references/character-sheet.md`. Trigger on `stats`, `statistics`, `show my character sheet`, `character sheet`, or standalone `sheet`; not `spreadsheet`.
 
-Prefer one decisive round-trip over repeated confirmation for ordinary reversible gameplay choices. Ask only when choosing for the player would spend a resource, choose a target/path, or materially change agency.
+## Visual output
+Read `../desert-of-desolation-art-direction/SKILL.md`. Use DOD_SITE for title/home, DOD_INK for normal gameplay, and DOD_PAINTED for major presentation. Keep the approved eye silhouette and real semantic controls. Prompt/specimen/planned paths are not generated runtime art; missing node imagery remains unavailable and falls back safely.
 
-## Encounter quality
-- Keep initiative, HP, conditions, resources, range, cover, lighting, surprise, morale, and ongoing effects explicit in state even when prose is cinematic.
-- Announce meaningful mechanical consequences briefly; avoid bookkeeping dumps unless requested.
-- Batch obvious multi-actor resolution where legal while preserving player decision points.
-- Avoid repetitive attack prose. Vary sensory description without inventing mechanical effects.
-- End each combat beat with the tactical situation and the player's meaningful decision surface.
+## Sites maintenance
+Never claim Site deployment, theme integration, playback, authenticated connection or physical-device QA unless verified by actual operations. Reuse the existing private Site. The final art engine/title-home assets are bundled but live Site theme integration remains pending a native Site-editing session. Do not repeat media migration unless reconciliation fails.
 
-## Exploration and storytelling
-- Preserve location identity, dread, ancient-history clues, environmental continuity, and escalating doom.
-- Reward inspection and experimentation with source-backed clues rather than arbitrary exposition.
-- Keep secrets gated by perception, investigation, language, magic, prior knowledge, or explicit discovery.
-- NPC dialogue must remain persona/canon consistent and should advance tension, information, or choice; avoid filler banter.
-- Do not narrate player-character emotions or decisions as established facts unless the player already expressed them.
+## State and saves
+Follow `references/state-and-save.md`. Package files are immutable during play; conversation/host runtime carries mutable state/checkpoints. Never silently reintroduce Drive as runtime persistence.
 
-## Media and preload
-Use deterministic media IDs. Current-scene required assets outrank speculative successors. Preload order:
-1. mechanics-critical current cue
-2. selected narration/dialogue
-3. current ambience
-4. current score
-5. current encounter SFX/monster cue family
-6. first safe successor
-7. second safe successor
-
-Cancel speculative fetches immediately when their branch becomes invalid. Never let preload metadata or timing reveal hidden content.
-
-## Advanced audio
-Read `references/audio-runtime.md`, `references/audio-qa.md`, and `references/github-runtime.md` during session preflight.
-
-Maintain the explicit audio state machine: `UNRESOLVED -> RESOLVED -> FETCHING -> READY -> QUEUED -> PLAYING`, with `FAILED`, `STOPPED`, and `STALE` as applicable. File resolution, fetch, decode, and queueing never prove audible playback. Only a same-epoch renderer acknowledgement establishes `PLAYING`.
-
-Use buses: Narrator, Character Dialogue, Ambience, Music, Sound Effects. Support up to 12 active voices when the client permits. Speech intelligibility and mechanics-critical cues outrank decorative layers. Increment `audio_epoch` whenever new player input invalidates queued audio.
-
-Monster cues: NORMAL/PRESENCE only after legitimate observability/audibility; ATTACK only after the attack event commits; DEATH only after resolved defeat/death.
-
-## Platform profile
-Target ChatGPT web, desktop, and supported mobile with one rules engine. On constrained devices preserve speech and mechanics-critical SFX, keep one music and one ambience bed, then cull far/decorative emitters first.
-
-Driving/reduced-interaction mode must minimize visual interaction and never require small-control manipulation while driving.
-
-## Release-candidate discipline
-For finalization:
-1. Treat green Drive health/release gates as inherited evidence until a relevant subsystem changes.
-2. Close stale defects when later evidence explicitly supersedes them; do not preserve obsolete blockers for history's sake.
-3. Keep genuine source gaps quarantined and documented rather than fabricating mechanics.
-4. Do not add new infrastructure unless it directly closes a demonstrated release blocker.
-5. Promote only after the blocking `RG-AUDIOTRANSPORT` gate passes and current release-line CI is green.
-6. Do not claim final or production-ready until real `/healthz`, `/mcp`, widget mount, and current-epoch PLAYING proof are observed.
-
-Railway is not part of the active architecture. GitHub is mandatory for source/CI/release provenance. The HTTPS deployment host is replaceable infrastructure and must not become game-state authority.
-
-## Output during play
-Use immersive, restrained prose. Keep rules consequences and actionable choices easy to understand. Do not turn ordinary turns into maintenance reports.
+## Output style
+During play use atmospheric, restrained, sensory, mobile-friendly narration with clear mechanics and free-form agency. During maintenance report actual inspected state, changes, verification evidence, and real remaining boundaries.

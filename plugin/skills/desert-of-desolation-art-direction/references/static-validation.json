@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "checks_passed": 82,
+  "lowest_text_contrast": 7.1089,
+  "uncompressed_bytes": 7052470,
+  "scope": "LOCAL_FINAL_ART_ENGINE",
+  "live_site_qa": false,
+  "physical_iphone_qa": false
+}

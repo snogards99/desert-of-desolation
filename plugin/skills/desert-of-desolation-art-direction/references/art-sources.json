@@ -1,0 +1,71 @@
+[
+  {
+    "id": "src.i3.cover",
+    "file": "I3 - Pharaoh.pdf",
+    "page": 1,
+    "supplied_image": "page_0001_img_001_xref_1384.png",
+    "role": "primary painted atmosphere",
+    "observed": "Blue mist; full moon; pyramid; empty-faced spectral figure; restrained gold.",
+    "artist": "Jim Holloway",
+    "attribution_status": "USER_SUPPLIED_ATTRIBUTION_NOT_CONFIRMED_ON_SCANNED_CREDIT_PAGE",
+    "rights_status": "USER_PROVIDED_PRIVATE_REFERENCE; PUBLIC_REUSE_NOT_VERIFIED"
+  },
+  {
+    "id": "src.i3.ink",
+    "file": "I3 - Pharaoh.pdf",
+    "page": 6,
+    "printed_page": 5,
+    "role": "primary expressive ink reference",
+    "observed": "Bold contour; solid black background; exaggerated readable expressions; distinct group silhouettes.",
+    "artist": "Jim Holloway",
+    "attribution_status": "USER_SUPPLIED_ATTRIBUTION_NOT_CONFIRMED_ON_SCANNED_CREDIT_PAGE",
+    "rights_status": "USER_PROVIDED_PRIVATE_REFERENCE; PUBLIC_REUSE_NOT_VERIFIED"
+  },
+  {
+    "id": "src.i4.cover",
+    "file": "TSR 9053 - I4 - Oasis of the White Palm.pdf",
+    "page": 1,
+    "credit_page": 69,
+    "role": "secondary painted gesture/light reference",
+    "artist": "Jim Holloway",
+    "attribution_status": "VERIFIED_IN_UPLOADED_PDF_CREDITS",
+    "rights_status": "USER_PROVIDED_REFERENCE"
+  },
+  {
+    "id": "src.i4.interiors",
+    "file": "TSR 9053 - I4 - Oasis of the White Palm.pdf",
+    "credit_page": 69,
+    "role": "supporting illustration reference",
+    "artist": "Keith Parkinson",
+    "attribution_status": "VERIFIED_IN_UPLOADED_PDF_CREDITS",
+    "rights_status": "USER_PROVIDED_REFERENCE"
+  },
+  {
+    "id": "src.i5.cover",
+    "file": "TSR 9054 - I5 - Lost Tomb of Martek.pdf",
+    "page": 1,
+    "role": "secondary violet/action reference",
+    "observed": "A vessel and large creature across the Skysea; not an interior tomb scene.",
+    "artist": "Jim Holloway",
+    "attribution_status": "USER_SUPPLIED_ATTRIBUTION_NOT_CONFIRMED_ON_SCANNED_CREDIT_PAGE",
+    "rights_status": "USER_PROVIDED_REFERENCE"
+  },
+  {
+    "id": "src.compilation.cover",
+    "file": "I3-5 - Desert of Desolation.pdf",
+    "page": 1,
+    "credit_page": 2,
+    "role": "secondary gold framing and pharaonic costume reference",
+    "artist": "Keith Parkinson",
+    "attribution_status": "VERIFIED_VISUALLY_IN_UPLOADED_PDF_CREDITS",
+    "rights_status": "USER_PROVIDED_REFERENCE"
+  },
+  {
+    "id": "src.icon",
+    "file": "icon.png",
+    "role": "APP_IDENTITY",
+    "sha256": "0beb9f45455f3365f53458edf3a85a80ed2687f1fe4e2c803b1973c0853a6478",
+    "attribution_status": "USER_SUPPLIED",
+    "rights_status": "USER_APPROVED_APP_ICON"
+  }
+]

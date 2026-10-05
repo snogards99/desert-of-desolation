@@ -1,34 +1,39 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "desert-of-desolation",
-  "version": "0.5.0-rc.3",
-  "description": "Drive-authoritative Desert of Desolation gameplay with a production HTTPS MCP audio renderer, spoiler-safe preloading, strict player agency, and fail-closed canon boundaries.",
+  "version": "1.4.3",
+  "description": "Mobile-first Desert of Desolation campaign engine with 361-node state/knowledge routing, stable media IDs, private ChatGPT Sites presentation, rollback-safe audio/media, bounded preload, spoiler-safe UI, approved eye branding, and the responsive DOD_SITE/DOD_PAINTED/DOD_INK art engine.",
   "keywords": [
     "dnd",
     "adnd",
     "desert-of-desolation",
     "tabletop",
-    "game"
+    "game",
+    "mobile",
+    "audio",
+    "instant",
+    "sites"
   ],
   "extensions": {
     "com.openai": {
       "interface": {
-        "displayName": "Desert of Desolation",
-        "shortDescription": "Play the Drive-backed Desert of Desolation campaign.",
-        "longDescription": "Runs Desert of Desolation with Google Drive as the authoritative game/media store, ChatGPT as gameplay orchestrator, GitHub as source/CI authority, and the production HTTPS MCP audio renderer at desert-of-desolation-main.vercel.app. Normal play preflights Drive, plugin, renderer health/MCP reachability, widget mount, and current-epoch playback without advancing campaign state.",
+        "displayName": "Desert of Desolation V1",
+        "shortDescription": "Mobile-first desert RPG",
+        "longDescription": "Runs Desert of Desolation with 361-node knowledge routing, deterministic media IDs, bounded spoiler-safe preload, rollback-safe Site media, Eye branding, and the responsive art engine: DOD_SITE for title/home, DOD_INK for ordinary play, and DOD_PAINTED for major presentation. Site-primary media is governed by explicit browser/auth cutover gates; historical external-host records remain provenance only.",
         "developerName": "Desert of Desolation Project",
         "category": "Games",
         "capabilities": [
           "Read",
           "Write"
         ],
+        "icon": "./assets/icon.png",
         "defaultPrompt": [
-          "Start the Desert of Desolation game from the current certified Drive-backed state.",
-          "Resume the Desert of Desolation campaign and preload the current scene media.",
-          "Audit the Desert of Desolation runtime without advancing gameplay state."
+          "Start Desert of Desolation from the packaged campaign state with mobile-first presentation and predictive preload.",
+          "Resume Desert of Desolation and prepare the current integrated node knowledge, legal nearby interactions, spoiler-safe media cues, and mobile-friendly narration.",
+          "Show my character sheet."
         ]
-      },
-      "apps": "./.app.json"
+      }
     }
   }
 }
+

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Desert of Desolation Art Direction"
+  short_description: "Moonlit painted and expressive ink campaign theme."
+  icon_small: "./assets/icons/favicon-32.png"
+  icon_large: "./assets/icons/app-512.png"
+  brand_color: "#241B3D"
