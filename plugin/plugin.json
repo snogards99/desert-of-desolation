@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "desert-of-desolation",
-  "version": "0.5.0-rc.1",
-  "description": "Drive-authoritative Desert of Desolation release candidate with required GitHub-controlled advanced audio, strict readiness gates, spoiler-safe preloading, and player-agency preservation.",
+  "version": "0.5.0-rc.2",
+  "description": "Release-candidate Drive-authoritative Desert of Desolation gameplay with mandatory GitHub-controlled advanced audio, cached readiness, spoiler-safe preloading, strict player agency, and fail-closed canon boundaries.",
   "keywords": [
     "dnd",
     "adnd",
@@ -15,7 +15,7 @@
       "interface": {
         "displayName": "Desert of Desolation",
         "shortDescription": "Play the Drive-backed Desert of Desolation campaign.",
-        "longDescription": "Runs Desert of Desolation with Google Drive as the authoritative game/media store, ChatGPT as gameplay orchestrator, and a required GitHub-controlled advanced audio renderer deployed to a stable HTTPS runtime. Normal play begins only after Drive, plugin, renderer health, MCP reachability, and real playback readiness gates pass.",
+        "longDescription": "Runs Desert of Desolation with Google Drive as the authoritative game/media store, ChatGPT as gameplay orchestrator, GitHub as mandatory source/CI authority, and a required stable HTTPS advanced-audio MCP renderer deployed from the GitHub release line. Normal play begins only after one session preflight proves Drive, plugin, GitHub CI, renderer health/MCP reachability, widget mount, and real current-epoch playback.",
         "developerName": "Desert of Desolation Project",
         "category": "Games",
         "capabilities": [
