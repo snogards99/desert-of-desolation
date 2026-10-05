@@ -1,11 +1,11 @@
 ---
 name: desert-of-desolation-game
-description: Run, resume, test, repair, and improve the Drive-authoritative Desert of Desolation AD&D campaign. Use for gameplay turns, encounters, party/NPC/world state, scene/media preloading, audio orchestration, checkpointing, plugin/runtime maintenance, and GitHub/Codespaces audio integration while preserving player agency, canon, discovery gates, and certified state.
+description: Run, resume, test, repair, and improve the Desert of Desolation AD&D campaign using Google Drive for authoritative state, the ChatGPT plugin for gameplay orchestration, and a required GitHub-hosted advanced audio renderer. Use for gameplay, encounters, state, preloading, audio, readiness checks, and runtime maintenance while preserving player agency, canon, discovery gates, and certified state.
 ---
 
 # Desert of Desolation Game
 
-Use Google Drive as the sole persistent authority for game state, canon-backed runtime records, manifests, checkpoints, and media identity. Use ChatGPT as the gameplay/orchestration layer. Treat GitHub/Codespaces only as code/CI and optional MCP audio compute; never as authoritative campaign state.
+Use a three-part runtime with one clear responsibility each: Google Drive is the sole persistent authority for game state, canon-backed runtime records, manifests, checkpoints, and media identity; ChatGPT is the gameplay/orchestration layer; GitHub hosts and validates the required advanced audio renderer. Advanced audio is a gameplay-readiness prerequisite, but GitHub must not become a second state authority or be queried on every turn once preflight succeeds.
 
 ## Authorities
 - Runtime specification: `1qLyjMAuCBWG5PkPaBrnp3mhU1nIhMC0ahWRmOiR0irY`
@@ -21,7 +21,19 @@ Read exact records needed for the current turn. Never broad-search Drive on the 
 3. Never leak hidden doors, traps, identities, passwords, routes, puzzle solutions, future encounters, or private NPC knowledge through narration, options, filenames, preload timing, images, or audio.
 4. Resolve mechanics before consequential narration/audio. Persist only valid state mutations.
 5. If authority is missing or contradictory, fail closed: preserve certified state and avoid invented canon.
-6. Optional media may fail silently to text; media failure never blocks mechanics or story progression.
+6. Advanced audio readiness is mandatory before a normal play session begins. If the renderer fails during an already-active session, preserve state and pause audio-dependent continuation rather than silently downgrading the configured experience.
+
+## Session readiness gate
+Before starting or resuming normal gameplay, verify all of the following once per session:
+1. Google Drive runtime specification and certified state are reachable.
+2. The active Desert of Desolation plugin release is valid.
+3. The GitHub repository contains the current renderer source and its latest validation is green.
+4. A live GitHub-hosted renderer endpoint exists and `/healthz` succeeds.
+5. ChatGPT can reach/register the renderer `/mcp` endpoint.
+6. The audio player mounts and reports capabilities.
+7. A harmless test cue can progress through READY -> QUEUED -> PLAYING for the current `audio_epoch`.
+
+If any readiness gate fails, do not advance campaign state. Report the exact failed gate and repair it. Once the session is ready, do not repeat GitHub setup checks on every turn unless renderer health changes.
 
 ## Fast turn loop
 1. Hydrate the smallest current-scene state slice.
@@ -62,7 +74,7 @@ Use deterministic media IDs. Current-scene required assets outrank speculative s
 Cancel speculative fetches immediately when their branch becomes invalid. Missing optional assets fall back to approved family alternatives or silence/text; never broad-search during play.
 
 ## Audio
-Read `references/audio-runtime.md` for playback/preload work and `references/audio-qa.md` for validation. Read `references/github-runtime.md` when configuring or troubleshooting the GitHub-hosted renderer.
+Read `references/audio-runtime.md`, `references/audio-qa.md`, and `references/github-runtime.md` during session preflight. The GitHub-hosted renderer is required for normal play readiness. After preflight succeeds, keep GitHub out of ordinary turn-by-turn mechanics except for audio renderer calls/status needed by the current scene.
 
 Maintain the explicit audio state machine: `UNRESOLVED -> RESOLVED -> FETCHING -> READY -> QUEUED -> PLAYING`, with `FAILED`, `STOPPED`, and `STALE` as applicable. Only a real renderer acknowledgement may establish `PLAYING`.
 
@@ -78,7 +90,7 @@ Driving/reduced-interaction mode must minimize visual interaction and never requ
 ## Maintenance
 For updates: inspect the active Drive baseline and current plugin release; keep one active runtime baseline; do not alter campaign state; validate representative exploration, combat, dialogue, transition, interruption, and save/resume scenarios. Prefer measurable latency, correctness, intelligibility, and player-choice improvements over architectural growth.
 
-Railway is not part of the active architecture. Do not add Railway configuration or dependencies. GitHub repository/Codespaces may host development/runtime code, but Google Drive remains authoritative.
+Railway is not part of the active architecture. GitHub is required for the advanced audio renderer but is not authoritative for campaign state. Do not start or resume normal gameplay until preflight confirms: Drive authority reachable; plugin release valid; GitHub renderer source/CI valid; live HTTPS `/healthz` succeeds; live `/mcp` is reachable/registered; and the renderer can distinguish READY/QUEUED/PLAYING for the current audio epoch.
 
 ## Output during play
 Use immersive, restrained prose. Keep rules consequences and actionable choices easy to understand. Do not turn ordinary turns into maintenance reports.
