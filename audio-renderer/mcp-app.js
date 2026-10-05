@@ -33,7 +33,8 @@ export function createMcp(){
   registerAppTool(mcp,"get_audio_capabilities",{
     title:"Get audio capabilities",
     description:"Return the renderer feature contract before session playback begins.",
-    inputSchema:{}
+    inputSchema:{},
+    _meta:{}
   },async()=>reply({
     renderer:"dod-audio-renderer",
     version:VERSION,
@@ -107,7 +108,8 @@ export function createMcp(){
   registerAppTool(mcp,"report_audio_status",{
     title:"Report audio status",
     description:"Widget callback. This acknowledgement is the authoritative playback proof for READY, PLAYING, STOPPED, FAILED, or STALE.",
-    inputSchema:{...common,status:z.enum(["READY","PLAYING","STOPPED","FAILED","STALE"]),renderer_id:z.string().min(1),detail:z.string().optional(),started_at:z.string().optional()}
+    inputSchema:{...common,status:z.enum(["READY","PLAYING","STOPPED","FAILED","STALE"]),renderer_id:z.string().min(1),detail:z.string().optional(),started_at:z.string().optional()},
+    _meta:{}
   },async x=>reply({accepted:true,proof:"renderer_ack",...x,acknowledged_at:new Date().toISOString()}));
 
   return mcp;
