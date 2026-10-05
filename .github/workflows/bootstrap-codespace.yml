@@ -1,0 +1,27 @@
+name: bootstrap-codespace
+on:
+  push:
+    paths:
+      - ".github/workflows/bootstrap-codespace.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  create:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Attempt GitHub-native Codespace creation
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY_ID: "1404927856"
+        run: |
+          set -eu
+          gh api --method POST /user/codespaces \
+            -f repository_id="$REPOSITORY_ID" \
+            -f ref="main" \
+            -f idle_timeout_minutes=60 \
+            -f display_name="Desert of Desolation Audio" \
+            > /tmp/codespace.json
+          cat /tmp/codespace.json
