@@ -1,6 +1,6 @@
 {
   "name": "dod-audio-renderer",
-  "version": "0.3.0",
+  "version": "0.5.0-rc.2",
   "private": true,
   "type": "module",
   "engines": {
@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "node server.js",
-    "check": "node --check server.js",
+    "check": "node --check server.js && node --check mcp-app.js",
     "test": "node --test tests/*.test.js"
   },
   "dependencies": {
