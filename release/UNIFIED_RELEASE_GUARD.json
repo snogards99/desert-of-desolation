@@ -15,7 +15,14 @@
   "github": {
     "repository": "snogards99/desert-of-desolation",
     "branch": "main",
-    "source_sync_commit": "2deb31432252a549721f78de44809ea1fe341b96"
+    "source_sync_commit": "2ad42c5848ec0b8dc6bf64f7938c50664f6df1d3",
+    "actions": {
+      "workflow": "validate",
+      "run_id": 37484489925,
+      "conclusion": "success",
+      "repaired_from_commit": "2deb31432252a549721f78de44809ea1fe341b96",
+      "failure_root_cause": "actions/setup-node@v4 requested npm cache without a supported lockfile"
+    }
   },
   "media": {
     "plugin_file_count": 797,
@@ -25,5 +32,5 @@
     "github_media_complete": false
   },
   "status": "PARTIAL",
-  "verification_rule": "status may become VERIFIED only after native Site source and all plugin media binaries are present and inventory comparison passes"
+  "verification_rule": "status may become VERIFIED only after native Site source and all plugin media binaries are present, inventory comparison passes, and required GitHub Actions are green"
 }
