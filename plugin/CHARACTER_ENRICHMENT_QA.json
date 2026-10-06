@@ -1,0 +1,23 @@
+{
+  "release": "1.5.1-alpha.13",
+  "task": "party character enrichment and spell audit",
+  "status": "PASS_WITH_BOUNDED_RULE_GAPS",
+  "characters": ["party.snogard","party.malekith","party.vaelis","party.syrra","party.talanis","party.zarvak"],
+  "passes_per_character": 10,
+  "total_character_passes": 60,
+  "findings": {
+    "snogard": "Existing Cleric 10 / Sha'ir 9 magic is already substantially complete; added verified AD&D 2e desert/tomb utility candidates without replacing current preparation.",
+    "azhar": "Paladin 9 should not be permanently presented as a noncaster; exact 2e slot/access table remains a source-binding gap, so 3.5 progression was not imported.",
+    "dakarai": "Ranger 8 spell capacity requires exact 2e progression/sphere binding; 3.5 Ranger spell list used only as a thematic reference.",
+    "cyrra": "No verified spellcasting; attached 3.5 Assassin spell sheet is not applicable to the current Desert Ninja 6 / Thief 5 record.",
+    "eryon": "Bard 3 spell capacity should be surfaced as pending 2e binding rather than silently blank; 3.5 Bard list used only to rank useful themes.",
+    "barak": "No verified spellcasting; Fighter 5 / Desert Handler remains noncaster absent source authority."
+  },
+  "safety": {
+    "campaign_state_advanced": false,
+    "resources_spent": false,
+    "free_magic_items_added": false,
+    "3e_rules_promoted_to_runtime": false
+  },
+  "next_rules_binding": ["AD&D 2e Paladin 9 spell progression/access", "AD&D 2e Ranger 8 spell progression/spheres", "AD&D 2e Bard 3 spell progression/learning"]
+}
