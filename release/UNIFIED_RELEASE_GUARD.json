@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "shared_release_id": "dod-alpha16-unified-sync",
+  "plugin": {
+    "plugin_id": "Plugin_3352cc65ee508191abeb37ffa759294d",
+    "version": "1.5.1-alpha.16",
+    "release_id": "pluginrel_6ac503c3ad788191b045d01ddf0064de"
+  },
+  "site": {
+    "project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
+    "deployment_id": "appgdep_6ac47804515c81918d6b3e5f15d884f4",
+    "recorded_source_commit": "a48c6d7837e49276d045b145cb9fdf118b74cafe",
+    "native_source_exported_to_github": false
+  },
+  "github": {
+    "repository": "snogards99/desert-of-desolation",
+    "branch": "main",
+    "source_sync_commit": "2deb31432252a549721f78de44809ea1fe341b96"
+  },
+  "media": {
+    "plugin_file_count": 797,
+    "plugin_total_bytes": 267295703,
+    "media_file_count": 484,
+    "media_bytes": 239565650,
+    "github_media_complete": false
+  },
+  "status": "PARTIAL",
+  "verification_rule": "status may become VERIFIED only after native Site source and all plugin media binaries are present and inventory comparison passes"
+}

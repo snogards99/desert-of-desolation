@@ -1,0 +1,15 @@
+{
+  "run": "10-pass unified plugin-site-media synchronization",
+  "passes": [
+    {"pass":1,"focus":"authority","result":"PASS","finding":"current published plugin alpha.16 selected as sync authority"},
+    {"pass":2,"focus":"repository baseline","result":"PASS","finding":"GitHub lagged latest plugin manifest sync"},
+    {"pass":3,"focus":"file inventory","result":"PASS","finding":"plugin inventory verified at 797 files / 267295703 bytes"},
+    {"pass":4,"focus":"media inventory","result":"BLOCKED","finding":"484 media files / 239565650 bytes are not fully mirrored to GitHub"},
+    {"pass":5,"focus":"Site identity","result":"PASS","finding":"existing Site project/deployment/source references recovered from plugin"},
+    {"pass":6,"focus":"Site presentation source","result":"PASS_PARTIAL","finding":"Site configuration/theme source mirrored; native Site project export unavailable"},
+    {"pass":7,"focus":"manifest parity","result":"PASS","finding":"plugin and Codex manifests synced to alpha.16"},
+    {"pass":8,"focus":"drift prevention","result":"PASS","finding":"unified sync policy and release guard added"},
+    {"pass":9,"focus":"failure behavior","result":"PASS","finding":"release guard fails closed as PARTIAL while media/native Site source remain incomplete"},
+    {"pass":10,"focus":"checkpoint readiness","result":"PASS_WITH_BLOCKERS","finding":"repository improved and committed; full coordinated parity intentionally not claimed"}
+  ]
+}
