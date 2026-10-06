@@ -2,7 +2,7 @@
   "interface": {
     "displayName": "Desert of Desolation V1",
     "shortDescription": "Mobile-first desert RPG",
-    "longDescription": "Runs Desert of Desolation with 361-node knowledge routing, deterministic media IDs, bounded spoiler-safe preload, rollback-safe Site media, Eye branding, and the responsive art engine: DOD_SITE for title/home, DOD_INK for ordinary play, and DOD_PAINTED for major presentation. Site-primary media is governed by explicit browser/auth cutover gates; historical external-host records remain provenance only.",
+    "longDescription": "Runs Desert of Desolation with custom Rev 4.6 party master sheets, authoritative game-time/daylight tracking, time-matched outdoor scene selection, 361-node knowledge routing, deterministic media IDs, bounded spoiler-safe preload, rollback-safe Site media, responsive DOD_SITE/DOD_PAINTED/DOD_INK presentation, a full-color 32-bit RGBA pixel-art authoring profile, and bundled Cinzel/Noto typography.",
     "developerName": "Desert of Desolation Project",
     "category": "Games",
     "capabilities": [
@@ -17,8 +17,8 @@
     ]
   },
   "name": "desert-of-desolation",
-  "version": "1.4.3",
-  "description": "Mobile-first Desert of Desolation campaign engine with 361-node state/knowledge routing, stable media IDs, private ChatGPT Sites presentation, rollback-safe audio/media, bounded preload, spoiler-safe UI, approved eye branding, and the responsive DOD_SITE/DOD_PAINTED/DOD_INK art engine.",
+  "version": "1.5.1-alpha.9",
+  "description": "Mobile-first Desert of Desolation campaign engine with custom Rev 4.6 party master sheets, 361-node state/knowledge routing, authoritative game-time/daylight tracking, full-color 32-bit RGBA pixel-art authoring for the first 20 nodes, stable media IDs, ChatGPT Sites presentation, rollback-safe audio, bounded preload, discovery-safe UI, and bundled Cinzel/Noto typography.",
   "author": {
     "name": "Workspace upload"
   },

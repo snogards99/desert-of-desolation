@@ -1,0 +1,32 @@
+{
+  "schema_version": "dod.imagery.plan.v2",
+  "visibility": "DM_AUTHORING_ONLY",
+  "runtime_activation": "FIRST20_PIXEL_PROFILE_CONFIGURED_ASSETS_PENDING",
+  "style": {
+    "profile_id": "dod.pixel32-rgba",
+    "default_mode": "DOD_INK",
+    "presentation_mode": "DOD_PAINTED",
+    "medium": "FULL_COLOR_32_BIT_RGBA_PIXEL_ART",
+    "prompt_prefix": "Full-color 32-bit RGBA fantasy pixel art with deliberate pixel clusters, crisp silhouettes, controlled hard-edged shading, selective dithering, readable mobile focal hierarchy, and strong Desert of Desolation atmosphere. DOD_INK uses ink-like contours and restrained texture; DOD_PAINTED uses denser cinematic pixel detail while retaining visible pixel construction. Preserve verified visible scene facts, camera, geometry, actor identity, and discovery state.",
+    "negative_prompt": "No hidden doors, route indicators, readable puzzle solutions, hidden loot, unseen occupants, future outcomes, unapproved magical glow, extra anatomy, camera jumps, modern objects, fake mosaic filters, smooth painterly runtime art, contact sheets, sprite sheets, GIFs, or animations in the first-20 still-art pass.",
+    "logical_size": [512,768],
+    "color_depth_bits": 32,
+    "channels": "RGBA_8_8_8_8",
+    "palette_limit": null,
+    "alpha_supported": true,
+    "scaling": "NEAREST_NEIGHBOR_WHEN_ENLARGED",
+    "mobile_validation_widths": [320,375,390,430],
+    "time_variants": ["MORNING","DAY","EVENING","NIGHT"],
+    "monster_still_variants": ["NEUTRAL","ALERT","ATTACK","DEFEATED"],
+    "animation": "DEFERRED"
+  },
+  "legacy_style": {
+    "status": "PROVENANCE_ONLY",
+    "notes": "Legacy phosphor-green and monochrome prompt rows remain historical source metadata and are not concatenated into active prompts."
+  },
+  "style_configured_in_release": "1.5.1-alpha.8",
+  "style_authority": "../VISUAL_THEME.json",
+  "first20_manifest": "FIRST20_STILL_ART.json",
+  "row_prompt_policy": "RECONSTRUCT_FROM_VERIFIED_VISIBLE_SCENE_WITH_PIXEL32_PROFILE; DO_NOT_CONCATENATE_LEGACY_PROMPTS",
+  "stable_id_policy": "PRESERVE_EXISTING_BACKGROUND_AND_ACTOR_IDS; ADD TIME_AND_STATE SUFFIXES ONLY WHERE NEEDED"
+}

@@ -1,0 +1,24 @@
+{
+  "release_target": "1.5.1-alpha.8",
+  "requested_profile": "dod.pixel32-rgba",
+  "first20_nodes_reassessed": 20,
+  "unique_environments": 18,
+  "outdoor_or_exterior_nodes": 17,
+  "indoor_nodes": 3,
+  "unique_visible_monsters": 1,
+  "required_outdoor_phases": ["MORNING","DAY","EVENING","NIGHT"],
+  "required_monster_states": ["NEUTRAL","ALERT","ATTACK","DEFEATED"],
+  "gif_generation": "DEFERRED_NOT_CREATED",
+  "sprite_sheet_generation": "FORBIDDEN_FOR_RUNTIME_ASSETS",
+  "render_attempt": {
+    "status": "REJECTED_NOT_INTEGRATED",
+    "reason": "The available image-generation surface repeatedly returned aggregate contact-sheet/atlas concepts instead of node-specific canonical render bytes. Those outputs were rejected rather than published because they invented unsupported nodes/monsters and could leak or corrupt canon.",
+    "approved_runtime_images": 0
+  },
+  "site_integration": "PENDING_APPROVED_RENDER_BYTES; LIVE_SITE_NOT_MUTATED_BY_THIS ART PASS",
+  "plugin_integration": "PROFILE_AND_FIRST20_MANIFEST_UPDATED; RUNTIME FLAGS REMAIN FALSE UNTIL REAL FILES PASS QA",
+  "campaign_state_modified": false,
+  "audio_modified": false,
+  "access_policy_modified": false,
+  "verification_rule": "Never mark unavailable generated art as available; never deploy incorrect aggregate atlas art as node media."
+}

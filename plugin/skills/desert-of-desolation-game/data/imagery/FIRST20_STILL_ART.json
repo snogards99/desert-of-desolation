@@ -1,0 +1,872 @@
+{
+  "schema_version": "dod.first20.still-art.v1",
+  "configured_in_plugin_version": "1.5.1-alpha.8",
+  "art_engine": "dod.art-engine@1.3.0",
+  "rendering_profile": "dod.pixel32-rgba",
+  "scope": {
+    "ordered_node_count": 20,
+    "unique_environment_count": 18,
+    "outdoor_or_exterior_node_count": 17,
+    "indoor_node_count": 3,
+    "unique_visible_monsters": 1
+  },
+  "rules": {
+    "outdoor_time_variants": [
+      "MORNING",
+      "DAY",
+      "EVENING",
+      "NIGHT"
+    ],
+    "time_source": "WorldState.total_minutes via TIME_OF_DAY_POLICY.json",
+    "same_composition_across_phases": true,
+    "monster_still_variants": [
+      "NEUTRAL",
+      "ALERT",
+      "ATTACK",
+      "DEFEATED"
+    ],
+    "gif_generation": false,
+    "sprite_sheet_generation": false,
+    "site_integration": "ONLY_AFTER_APPROVED_BYTES_EXIST",
+    "fallback": "EXACT_PHASE_VARIANT -> TIME_NEUTRAL_SAME_SCENE -> TEXT_OR_APPROVED_NEUTRAL_BACKGROUND"
+  },
+  "nodes": [
+    {
+      "idx": 1,
+      "node_id": "dod.bralizzar.entry",
+      "title": "Bralizzar — Expedition Business",
+      "environment_id": "bg.location.bralizzar_room",
+      "scene_context": "INDOOR",
+      "art_mode": "DOD_INK",
+      "rendering_profile": "dod.pixel32-rgba",
+      "environment_description": "A shaded upper caravan-house room in Bralizzar centered on a plain meeting table and unmarked papers; eastern daylight may graze the wall, but the room itself is time-neutral for runtime art. Keep the party out of the background.",
+      "mobile_composition": "Table remains the central mobile focal anchor; arched daylight source stays secondary.",
+      "color_depth_bits": 32,
+      "format": "PNG_RGBA_8_8_8_8",
+      "palette_limit": null,
+      "animation": "DEFERRED",
+      "spoiler_policy": "CURRENT_VISIBLE_STATE_ONLY",
+      "reuse_group": "bg.location.bralizzar_room",
+      "time_variants": [],
+      "runtime_status": "PENDING_APPROVED_RENDER_BYTES"
+    },
+    {
+      "idx": 2,
+      "node_id": "dod.citadel_martek.entry",
+      "title": "Citadel of Martek — Garden of the Cursed",
+      "environment_id": "bg.default.garden",
+      "scene_context": "OUTDOOR",
+      "art_mode": "DOD_PAINTED",
+      "rendering_profile": "dod.pixel32-rgba",
+      "environment_description": "An enclosed ancient garden with layered foliage, a plain path fragment, distant masonry, water/plant detail only where already visible, and no people or concealed-passage cues.",
+      "mobile_composition": "Path and masonry remain fixed; keep a clear central route-shaped negative space without implying a secret route.",
+      "color_depth_bits": 32,
+      "format": "PNG_RGBA_8_8_8_8",
+      "palette_limit": null,
+      "animation": "DEFERRED",
+      "spoiler_policy": "CURRENT_VISIBLE_STATE_ONLY",
+      "reuse_group": "bg.default.garden",
+      "time_variants": [
+        {
+          "phase": "MORNING",
+          "asset_id": "dod.env.bg.default.garden.morning",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "DAY",
+          "asset_id": "dod.env.bg.default.garden.day",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "EVENING",
+          "asset_id": "dod.env.bg.default.garden.evening",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "NIGHT",
+          "asset_id": "dod.env.bg.default.garden.night",
+          "available": false,
+          "runtime_eligible": false
+        }
+      ],
+      "runtime_status": "PENDING_APPROVED_RENDER_BYTES"
+    },
+    {
+      "idx": 3,
+      "node_id": "dod.crypt_badr.entry",
+      "title": "Crypt of Badr Al-Mosak — Threshold",
+      "environment_id": "bg.location.badr_entry",
+      "scene_context": "EXTERIOR",
+      "art_mode": "DOD_PAINTED",
+      "rendering_profile": "dod.pixel32-rgba",
+      "environment_description": "A weathered exterior threshold into the Crypt of Badr Al-Mosak, stark stone framing, empty foreground, desert rock and dust, with the interior remaining unreadable in shadow.",
+      "mobile_composition": "Threshold occupies the central upper half; foreground remains uncluttered and spoiler-safe.",
+      "color_depth_bits": 32,
+      "format": "PNG_RGBA_8_8_8_8",
+      "palette_limit": null,
+      "animation": "DEFERRED",
+      "spoiler_policy": "CURRENT_VISIBLE_STATE_ONLY",
+      "reuse_group": "bg.location.badr_entry",
+      "time_variants": [
+        {
+          "phase": "MORNING",
+          "asset_id": "dod.env.bg.location.badr_entry.morning",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "DAY",
+          "asset_id": "dod.env.bg.location.badr_entry.day",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "EVENING",
+          "asset_id": "dod.env.bg.location.badr_entry.evening",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "NIGHT",
+          "asset_id": "dod.env.bg.location.badr_entry.night",
+          "available": false,
+          "runtime_eligible": false
+        }
+      ],
+      "runtime_status": "PENDING_APPROVED_RENDER_BYTES"
+    },
+    {
+      "idx": 4,
+      "node_id": "dod.desert_wilderness.entry",
+      "title": "Desert Wilderness — Sandvoyagers Trail",
+      "environment_id": "bg.default.desert_trail",
+      "scene_context": "OUTDOOR",
+      "art_mode": "DOD_INK",
+      "rendering_profile": "dod.pixel32-rgba",
+      "environment_description": "A worn track crossing bare sand between low dunes, with foreground grains, sparse rock, and distant haze creating depth without revealing a destination.",
+      "mobile_composition": "Trail enters from lower center and dissolves before revealing a destination.",
+      "color_depth_bits": 32,
+      "format": "PNG_RGBA_8_8_8_8",
+      "palette_limit": null,
+      "animation": "DEFERRED",
+      "spoiler_policy": "CURRENT_VISIBLE_STATE_ONLY",
+      "reuse_group": "bg.default.desert_trail",
+      "time_variants": [
+        {
+          "phase": "MORNING",
+          "asset_id": "dod.env.bg.default.desert_trail.morning",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "DAY",
+          "asset_id": "dod.env.bg.default.desert_trail.day",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "EVENING",
+          "asset_id": "dod.env.bg.default.desert_trail.evening",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "NIGHT",
+          "asset_id": "dod.env.bg.default.desert_trail.night",
+          "available": false,
+          "runtime_eligible": false
+        }
+      ],
+      "runtime_status": "PENDING_APPROVED_RENDER_BYTES"
+    },
+    {
+      "idx": 5,
+      "node_id": "dod.lost_city_phoenix.entry",
+      "title": "Lost City of Phoenix — Lands of Carthag",
+      "environment_id": "bg.location.phoenix_city",
+      "scene_context": "EXTERIOR",
+      "art_mode": "DOD_PAINTED",
+      "rendering_profile": "dod.pixel32-rgba",
+      "environment_description": "Weathered outer architecture of the City of Phoenix partially obscured by desert atmosphere. Show no phoenix creature, magical reveal, or route to the interior.",
+      "mobile_composition": "Monumental exterior remains readable in the central safe area; no doorway is emphasized as a route.",
+      "color_depth_bits": 32,
+      "format": "PNG_RGBA_8_8_8_8",
+      "palette_limit": null,
+      "animation": "DEFERRED",
+      "spoiler_policy": "CURRENT_VISIBLE_STATE_ONLY",
+      "reuse_group": "bg.location.phoenix_city",
+      "time_variants": [
+        {
+          "phase": "MORNING",
+          "asset_id": "dod.env.bg.location.phoenix_city.morning",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "DAY",
+          "asset_id": "dod.env.bg.location.phoenix_city.day",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "EVENING",
+          "asset_id": "dod.env.bg.location.phoenix_city.evening",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "NIGHT",
+          "asset_id": "dod.env.bg.location.phoenix_city.night",
+          "available": false,
+          "runtime_eligible": false
+        }
+      ],
+      "runtime_status": "PENDING_APPROVED_RENDER_BYTES"
+    },
+    {
+      "idx": 6,
+      "node_id": "dod.medinat_muskawoon.entry",
+      "title": "Medinat Muskawoon — Cursed City of Stone",
+      "environment_id": "bg.location.medinat",
+      "scene_context": "EXTERIOR",
+      "art_mode": "DOD_PAINTED",
+      "rendering_profile": "dod.pixel32-rgba",
+      "environment_description": "Severe deserted stone architecture in Medinat Muskawoon with grit banked along worn foundations and an empty foreground. Do not depict transformed people or reveal the curse mechanism.",
+      "mobile_composition": "Use receding masonry and one dominant street/court axis; keep all figures absent.",
+      "color_depth_bits": 32,
+      "format": "PNG_RGBA_8_8_8_8",
+      "palette_limit": null,
+      "animation": "DEFERRED",
+      "spoiler_policy": "CURRENT_VISIBLE_STATE_ONLY",
+      "reuse_group": "bg.location.medinat",
+      "time_variants": [
+        {
+          "phase": "MORNING",
+          "asset_id": "dod.env.bg.location.medinat.morning",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "DAY",
+          "asset_id": "dod.env.bg.location.medinat.day",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "EVENING",
+          "asset_id": "dod.env.bg.location.medinat.evening",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "NIGHT",
+          "asset_id": "dod.env.bg.location.medinat.night",
+          "available": false,
+          "runtime_eligible": false
+        }
+      ],
+      "runtime_status": "PENDING_APPROVED_RENDER_BYTES"
+    },
+    {
+      "idx": 7,
+      "node_id": "dod.northknife_pass.entry",
+      "title": "Northknife Pass — Sweepaway Ford",
+      "environment_id": "bg.location.northknife_ford",
+      "scene_context": "OUTDOOR",
+      "art_mode": "DOD_INK",
+      "rendering_profile": "dod.pixel32-rgba",
+      "environment_description": "A difficult ford at the threshold of Northknife Pass, with rough banks, exposed rocks, moving water, and receding rock faces. Do not imply a successful crossing.",
+      "mobile_composition": "Water and nearest bank dominate lower half; opposite bank remains visible but not presented as safely crossed.",
+      "color_depth_bits": 32,
+      "format": "PNG_RGBA_8_8_8_8",
+      "palette_limit": null,
+      "animation": "DEFERRED",
+      "spoiler_policy": "CURRENT_VISIBLE_STATE_ONLY",
+      "reuse_group": "bg.location.northknife_ford",
+      "time_variants": [
+        {
+          "phase": "MORNING",
+          "asset_id": "dod.env.bg.location.northknife_ford.morning",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "DAY",
+          "asset_id": "dod.env.bg.location.northknife_ford.day",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "EVENING",
+          "asset_id": "dod.env.bg.location.northknife_ford.evening",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "NIGHT",
+          "asset_id": "dod.env.bg.location.northknife_ford.night",
+          "available": false,
+          "runtime_eligible": false
+        }
+      ],
+      "runtime_status": "PENDING_APPROVED_RENDER_BYTES"
+    },
+    {
+      "idx": 8,
+      "node_id": "dod.oasis_white_palm.entry",
+      "title": "Oasis of the White Palm — Arrival",
+      "environment_id": "bg.default.oasis",
+      "scene_context": "OUTDOOR",
+      "art_mode": "DOD_PAINTED",
+      "rendering_profile": "dod.pixel32-rgba",
+      "environment_description": "Palm silhouettes and foliage frame a sheltered patch of water and sand, with foreground fronds, middle-bank texture, and distant dunes. No hidden danger or unrevealed occupant is shown.",
+      "mobile_composition": "Water sits centrally with palms framing both sides; settlement detail remains non-revelatory.",
+      "color_depth_bits": 32,
+      "format": "PNG_RGBA_8_8_8_8",
+      "palette_limit": null,
+      "animation": "DEFERRED",
+      "spoiler_policy": "CURRENT_VISIBLE_STATE_ONLY",
+      "reuse_group": "bg.default.oasis",
+      "time_variants": [
+        {
+          "phase": "MORNING",
+          "asset_id": "dod.env.bg.default.oasis.morning",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "DAY",
+          "asset_id": "dod.env.bg.default.oasis.day",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "EVENING",
+          "asset_id": "dod.env.bg.default.oasis.evening",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "NIGHT",
+          "asset_id": "dod.env.bg.default.oasis.night",
+          "available": false,
+          "runtime_eligible": false
+        }
+      ],
+      "runtime_status": "PENDING_APPROVED_RENDER_BYTES"
+    },
+    {
+      "idx": 9,
+      "node_id": "dod.prologue.bralizzar.charter",
+      "title": "Bralizzar — The Charter",
+      "environment_id": "bg.location.bralizzar_room",
+      "scene_context": "INDOOR",
+      "art_mode": "DOD_INK",
+      "rendering_profile": "dod.pixel32-rgba",
+      "environment_description": "Reuse the Bralizzar caravan-house room master: shaded upper room, plain meeting table, unmarked papers, eastern light, no party figures baked into the environment.",
+      "mobile_composition": "Reuse bg.location.bralizzar_room; table remains the central anchor.",
+      "color_depth_bits": 32,
+      "format": "PNG_RGBA_8_8_8_8",
+      "palette_limit": null,
+      "animation": "DEFERRED",
+      "spoiler_policy": "CURRENT_VISIBLE_STATE_ONLY",
+      "reuse_group": "bg.location.bralizzar_room",
+      "time_variants": [],
+      "runtime_status": "PENDING_APPROVED_RENDER_BYTES"
+    },
+    {
+      "idx": 10,
+      "node_id": "dod.prologue.frontier.last_camp",
+      "title": "The Last Camp Before the Cave",
+      "environment_id": "bg.default.camp",
+      "scene_context": "OUTDOOR",
+      "art_mode": "DOD_INK",
+      "rendering_profile": "dod.pixel32-rgba",
+      "environment_description": "A quiet frontier campsite of simple travel canvas, bedroll-like bundles, fire ring, rope, water vessels, and ground shadows, with no people, beasts, or plot-specific possessions.",
+      "mobile_composition": "Campfire ring or cold ash ring anchors center; tents remain readable around it.",
+      "color_depth_bits": 32,
+      "format": "PNG_RGBA_8_8_8_8",
+      "palette_limit": null,
+      "animation": "DEFERRED",
+      "spoiler_policy": "CURRENT_VISIBLE_STATE_ONLY",
+      "reuse_group": "bg.default.camp",
+      "time_variants": [
+        {
+          "phase": "MORNING",
+          "asset_id": "dod.env.bg.default.camp.morning",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "DAY",
+          "asset_id": "dod.env.bg.default.camp.day",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "EVENING",
+          "asset_id": "dod.env.bg.default.camp.evening",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "NIGHT",
+          "asset_id": "dod.env.bg.default.camp.night",
+          "available": false,
+          "runtime_eligible": false
+        }
+      ],
+      "runtime_status": "PENDING_APPROVED_RENDER_BYTES"
+    },
+    {
+      "idx": 11,
+      "node_id": "dod.pyramid_amun_re.entry",
+      "title": "Pyramid of Amun-Re — Temple",
+      "environment_id": "bg.location.pyramid_entry",
+      "scene_context": "EXTERIOR",
+      "art_mode": "DOD_PAINTED",
+      "rendering_profile": "dod.pixel32-rgba",
+      "environment_description": "Monumental exterior associated with Amun-Re's pyramid and temple over sparse sand-and-stone foreground. No guards, opened secret entrance, or inner chambers are visible.",
+      "mobile_composition": "Pyramid/temple mass dominates upper center; foreground is sparse and safe for UI overlap.",
+      "color_depth_bits": 32,
+      "format": "PNG_RGBA_8_8_8_8",
+      "palette_limit": null,
+      "animation": "DEFERRED",
+      "spoiler_policy": "CURRENT_VISIBLE_STATE_ONLY",
+      "reuse_group": "bg.location.pyramid_entry",
+      "time_variants": [
+        {
+          "phase": "MORNING",
+          "asset_id": "dod.env.bg.location.pyramid_entry.morning",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "DAY",
+          "asset_id": "dod.env.bg.location.pyramid_entry.day",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "EVENING",
+          "asset_id": "dod.env.bg.location.pyramid_entry.evening",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "NIGHT",
+          "asset_id": "dod.env.bg.location.pyramid_entry.night",
+          "available": false,
+          "runtime_eligible": false
+        }
+      ],
+      "runtime_status": "PENDING_APPROVED_RENDER_BYTES"
+    },
+    {
+      "idx": 12,
+      "node_id": "dod.skysea.entry",
+      "title": "Skysea — Surface",
+      "environment_id": "bg.default.skysea",
+      "scene_context": "OUTDOOR",
+      "art_mode": "DOD_PAINTED",
+      "rendering_profile": "dod.pixel32-rgba",
+      "environment_description": "A vast strange glasslike desert surface under a high empty sky, with reflective or crystalline texture suggested without revealing routes, islands, monsters, or future hazards.",
+      "mobile_composition": "Low horizon and broad reflective foreground; avoid landmarking future destinations.",
+      "color_depth_bits": 32,
+      "format": "PNG_RGBA_8_8_8_8",
+      "palette_limit": null,
+      "animation": "DEFERRED",
+      "spoiler_policy": "CURRENT_VISIBLE_STATE_ONLY",
+      "reuse_group": "bg.default.skysea",
+      "time_variants": [
+        {
+          "phase": "MORNING",
+          "asset_id": "dod.env.bg.default.skysea.morning",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "DAY",
+          "asset_id": "dod.env.bg.default.skysea.day",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "EVENING",
+          "asset_id": "dod.env.bg.default.skysea.evening",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "NIGHT",
+          "asset_id": "dod.env.bg.default.skysea.night",
+          "available": false,
+          "runtime_eligible": false
+        }
+      ],
+      "runtime_status": "PENDING_APPROVED_RENDER_BYTES"
+    },
+    {
+      "idx": 13,
+      "node_id": "dod.sunken_city_pazar.entry",
+      "title": "Sunken City of Pazar — Maniozimus",
+      "environment_id": "bg.location.pazar_entry",
+      "scene_context": "EXTERIOR",
+      "art_mode": "DOD_PAINTED",
+      "rendering_profile": "dod.pixel32-rgba",
+      "environment_description": "Half-buried architectural fragments of Pazar rise from the sand around the already-visible monumental focal area. Keep any statue-specific form source-bound and do not reveal buried entrances or guardians.",
+      "mobile_composition": "Monumental focal area sits upper-middle; buried masonry leads toward it without showing a hidden access route.",
+      "color_depth_bits": 32,
+      "format": "PNG_RGBA_8_8_8_8",
+      "palette_limit": null,
+      "animation": "DEFERRED",
+      "spoiler_policy": "CURRENT_VISIBLE_STATE_ONLY",
+      "reuse_group": "bg.location.pazar_entry",
+      "time_variants": [
+        {
+          "phase": "MORNING",
+          "asset_id": "dod.env.bg.location.pazar_entry.morning",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "DAY",
+          "asset_id": "dod.env.bg.location.pazar_entry.day",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "EVENING",
+          "asset_id": "dod.env.bg.location.pazar_entry.evening",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "NIGHT",
+          "asset_id": "dod.env.bg.location.pazar_entry.night",
+          "available": false,
+          "runtime_eligible": false
+        }
+      ],
+      "runtime_status": "PENDING_APPROVED_RENDER_BYTES"
+    },
+    {
+      "idx": 14,
+      "node_id": "dod.temple_set.entry",
+      "title": "Temple of Set — Approach",
+      "environment_id": "bg.location.set_entry",
+      "scene_context": "EXTERIOR",
+      "art_mode": "DOD_PAINTED",
+      "rendering_profile": "dod.pixel32-rgba",
+      "environment_description": "A forbidding exterior crop of ancient temple masonry and a worn approach surface. Sacred iconography remains abstract unless already player-visible; no cultists or secret entrances.",
+      "mobile_composition": "Temple face fills upper two-thirds; approach surface provides negative space for mobile UI.",
+      "color_depth_bits": 32,
+      "format": "PNG_RGBA_8_8_8_8",
+      "palette_limit": null,
+      "animation": "DEFERRED",
+      "spoiler_policy": "CURRENT_VISIBLE_STATE_ONLY",
+      "reuse_group": "bg.location.set_entry",
+      "time_variants": [
+        {
+          "phase": "MORNING",
+          "asset_id": "dod.env.bg.location.set_entry.morning",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "DAY",
+          "asset_id": "dod.env.bg.location.set_entry.day",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "EVENING",
+          "asset_id": "dod.env.bg.location.set_entry.evening",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "NIGHT",
+          "asset_id": "dod.env.bg.location.set_entry.night",
+          "available": false,
+          "runtime_eligible": false
+        }
+      ],
+      "runtime_status": "PENDING_APPROVED_RENDER_BYTES"
+    },
+    {
+      "idx": 15,
+      "node_id": "dod.troll_cave.aftermath.withdrawn",
+      "title": "Outside the Troll Cave",
+      "environment_id": "bg.default.cave_mouth",
+      "scene_context": "EXTERIOR",
+      "art_mode": "DOD_INK",
+      "rendering_profile": "dod.pixel32-rgba",
+      "environment_description": "A rough rock face and dark cave recess meeting open ground, with wind-moving grit and sparse scrub. No occupant silhouette appears.",
+      "mobile_composition": "Cave mouth remains readable but interior detail stays black and non-revelatory.",
+      "color_depth_bits": 32,
+      "format": "PNG_RGBA_8_8_8_8",
+      "palette_limit": null,
+      "animation": "DEFERRED",
+      "spoiler_policy": "CURRENT_VISIBLE_STATE_ONLY",
+      "reuse_group": "bg.default.cave_mouth",
+      "time_variants": [
+        {
+          "phase": "MORNING",
+          "asset_id": "dod.env.bg.default.cave_mouth.morning",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "DAY",
+          "asset_id": "dod.env.bg.default.cave_mouth.day",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "EVENING",
+          "asset_id": "dod.env.bg.default.cave_mouth.evening",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "NIGHT",
+          "asset_id": "dod.env.bg.default.cave_mouth.night",
+          "available": false,
+          "runtime_eligible": false
+        }
+      ],
+      "runtime_status": "PENDING_APPROVED_RENDER_BYTES"
+    },
+    {
+      "idx": 16,
+      "node_id": "dod.troll_cave.entry.choice",
+      "title": "Troll Cave — First Contact",
+      "environment_id": "bg.default.cave",
+      "scene_context": "INDOOR",
+      "art_mode": "DOD_INK",
+      "rendering_profile": "dod.pixel32-rgba",
+      "environment_description": "A natural cavern of rough rock walls, gritty floor, broad shadow planes, and stable ground anchors. The environment plate contains no creature silhouette or hidden opening.",
+      "mobile_composition": "Open center/lower floor area reserved for actor layer; cave geometry remains stable.",
+      "color_depth_bits": 32,
+      "format": "PNG_RGBA_8_8_8_8",
+      "palette_limit": null,
+      "animation": "DEFERRED",
+      "spoiler_policy": "CURRENT_VISIBLE_STATE_ONLY",
+      "reuse_group": "bg.default.cave",
+      "time_variants": [],
+      "runtime_status": "PENDING_APPROVED_RENDER_BYTES",
+      "visible_actors": [
+        {
+          "actor_id": "actor.troll",
+          "states": [
+            {
+              "state": "NEUTRAL",
+              "asset_id": "dod.actor.actor.troll.neutral",
+              "available": false,
+              "runtime_eligible": false
+            },
+            {
+              "state": "ALERT",
+              "asset_id": "dod.actor.actor.troll.alert",
+              "available": false,
+              "runtime_eligible": false
+            },
+            {
+              "state": "ATTACK",
+              "asset_id": "dod.actor.actor.troll.attack",
+              "available": false,
+              "runtime_eligible": false
+            },
+            {
+              "state": "DEFEATED",
+              "asset_id": "dod.actor.actor.troll.defeated",
+              "available": false,
+              "runtime_eligible": false
+            }
+          ],
+          "rule": "Same canonical troll design across all four stills; ATTACK never implies a hit; DEFEATED only after authoritative state confirmation."
+        }
+      ]
+    },
+    {
+      "idx": 17,
+      "node_id": "i3.A",
+      "title": "Start of the Adventure",
+      "environment_id": "bg.default.sand",
+      "scene_context": "OUTDOOR",
+      "art_mode": "DOD_INK",
+      "rendering_profile": "dod.pixel32-rgba",
+      "environment_description": "Layered wind-combed dunes beneath a vast sky, dark granular foreground, a low middle ridge, and faint distant horizon; no destination or encounter cue.",
+      "mobile_composition": "One sweeping dune ridge crosses center; keep lower center clear for narration overlay.",
+      "color_depth_bits": 32,
+      "format": "PNG_RGBA_8_8_8_8",
+      "palette_limit": null,
+      "animation": "DEFERRED",
+      "spoiler_policy": "CURRENT_VISIBLE_STATE_ONLY",
+      "reuse_group": "bg.default.sand",
+      "time_variants": [
+        {
+          "phase": "MORNING",
+          "asset_id": "dod.env.bg.default.sand.morning",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "DAY",
+          "asset_id": "dod.env.bg.default.sand.day",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "EVENING",
+          "asset_id": "dod.env.bg.default.sand.evening",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "NIGHT",
+          "asset_id": "dod.env.bg.default.sand.night",
+          "available": false,
+          "runtime_eligible": false
+        }
+      ],
+      "runtime_status": "PENDING_APPROVED_RENDER_BYTES"
+    },
+    {
+      "idx": 18,
+      "node_id": "i3.B",
+      "title": "The Gates of Sule",
+      "environment_id": "bg.location.sule_gates",
+      "scene_context": "EXTERIOR",
+      "art_mode": "DOD_PAINTED",
+      "rendering_profile": "dod.pixel32-rgba",
+      "environment_description": "The Gates of Sule appear as a monumental weathered gate fragment against open desert. Preserve the approved silhouette without inventing the way through or any guardians.",
+      "mobile_composition": "Gate silhouette dominates upper-middle; no opening is highlighted as a solved route.",
+      "color_depth_bits": 32,
+      "format": "PNG_RGBA_8_8_8_8",
+      "palette_limit": null,
+      "animation": "DEFERRED",
+      "spoiler_policy": "CURRENT_VISIBLE_STATE_ONLY",
+      "reuse_group": "bg.location.sule_gates",
+      "time_variants": [
+        {
+          "phase": "MORNING",
+          "asset_id": "dod.env.bg.location.sule_gates.morning",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "DAY",
+          "asset_id": "dod.env.bg.location.sule_gates.day",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "EVENING",
+          "asset_id": "dod.env.bg.location.sule_gates.evening",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "NIGHT",
+          "asset_id": "dod.env.bg.location.sule_gates.night",
+          "available": false,
+          "runtime_eligible": false
+        }
+      ],
+      "runtime_status": "PENDING_APPROVED_RENDER_BYTES"
+    },
+    {
+      "idx": 19,
+      "node_id": "i3.C",
+      "title": "Sinkholes",
+      "environment_id": "bg.default.sand",
+      "scene_context": "OUTDOOR",
+      "art_mode": "DOD_INK",
+      "rendering_profile": "dod.pixel32-rgba",
+      "environment_description": "Reuse the generic sand master: layered wind-combed dunes beneath a vast sky with no visible sinkhole outline, hazard cue, or destination reveal.",
+      "mobile_composition": "Reuse bg.default.sand; do not add depressions that telegraph the hazard.",
+      "color_depth_bits": 32,
+      "format": "PNG_RGBA_8_8_8_8",
+      "palette_limit": null,
+      "animation": "DEFERRED",
+      "spoiler_policy": "CURRENT_VISIBLE_STATE_ONLY",
+      "reuse_group": "bg.default.sand",
+      "time_variants": [
+        {
+          "phase": "MORNING",
+          "asset_id": "dod.env.bg.default.sand.morning",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "DAY",
+          "asset_id": "dod.env.bg.default.sand.day",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "EVENING",
+          "asset_id": "dod.env.bg.default.sand.evening",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "NIGHT",
+          "asset_id": "dod.env.bg.default.sand.night",
+          "available": false,
+          "runtime_eligible": false
+        }
+      ],
+      "runtime_status": "PENDING_APPROVED_RENDER_BYTES"
+    },
+    {
+      "idx": 20,
+      "node_id": "i3.D",
+      "title": "Hills",
+      "environment_id": "bg.default.hills",
+      "scene_context": "OUTDOOR",
+      "art_mode": "DOD_INK",
+      "rendering_profile": "dod.pixel32-rgba",
+      "environment_description": "Low barren ridges overlap beyond a rocky foreground while sparse atmospheric haze softens the farthest slopes. No occupants or route solution.",
+      "mobile_composition": "Strong foreground rocks frame overlapping ridgelines; central midground stays readable.",
+      "color_depth_bits": 32,
+      "format": "PNG_RGBA_8_8_8_8",
+      "palette_limit": null,
+      "animation": "DEFERRED",
+      "spoiler_policy": "CURRENT_VISIBLE_STATE_ONLY",
+      "reuse_group": "bg.default.hills",
+      "time_variants": [
+        {
+          "phase": "MORNING",
+          "asset_id": "dod.env.bg.default.hills.morning",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "DAY",
+          "asset_id": "dod.env.bg.default.hills.day",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "EVENING",
+          "asset_id": "dod.env.bg.default.hills.evening",
+          "available": false,
+          "runtime_eligible": false
+        },
+        {
+          "phase": "NIGHT",
+          "asset_id": "dod.env.bg.default.hills.night",
+          "available": false,
+          "runtime_eligible": false
+        }
+      ],
+      "runtime_status": "PENDING_APPROVED_RENDER_BYTES"
+    }
+  ]
+}

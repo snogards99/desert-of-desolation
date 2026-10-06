@@ -1,74 +1,62 @@
 {
   "schema_version": 1,
   "engine_id": "dod.art-engine",
-  "engine_version": "1.1.0",
-  "plugin_release": "1.4.1",
+  "engine_version": "1.3.0",
+  "plugin_release": "1.5.1-alpha.8",
   "theme_id": "dod.moonlit-ink",
   "modes": {
     "site": "DOD_SITE",
     "ordinary_gameplay": "DOD_INK",
     "major_presentation": "DOD_PAINTED"
   },
+  "rendering_profile": {
+    "id": "dod.pixel32-rgba",
+    "medium": "FULL_COLOR_PIXEL_ART",
+    "storage": "PNG_RGBA_8_8_8_8",
+    "color_depth_bits": 32,
+    "indexed_palette_limit": null,
+    "alpha_supported": true,
+    "logical_mobile_canvas": [512, 768],
+    "primary_mobile_width_px": 390,
+    "scaling": "NEAREST_NEIGHBOR_WHEN_ENLARGED",
+    "pixel_rules": [
+      "DELIBERATE_PIXEL_CLUSTERS",
+      "CRISP_SILHOUETTES",
+      "CONTROLLED_HARD_EDGED_SHADING",
+      "SELECTIVE_DITHERING",
+      "NO_FAKE_PIXELATION_FILTER",
+      "NO_SMOOTH_PAINTERLY_RUNTIME_ART"
+    ],
+    "animation_status": "DEFERRED_STILLS_ONLY",
+    "first20_manifest": "../../desert-of-desolation-game/data/imagery/FIRST20_STILL_ART.json"
+  },
   "surface_policy": {
-    "TITLE_SPLASH": {
-      "mode": "DOD_SITE",
-      "responsive_master": true,
-      "semantic_controls": true
-    },
-    "HOME": {
-      "mode": "DOD_SITE",
-      "responsive_master": true,
-      "semantic_controls": true
-    },
-    "CHAPTER_OPEN": {
-      "mode": "DOD_PAINTED"
-    },
-    "MAJOR_DISCOVERY": {
-      "mode": "DOD_PAINTED"
-    },
-    "CLIMAX": {
-      "mode": "DOD_PAINTED"
-    },
-    "EXPLORATION": {
-      "mode": "DOD_INK"
-    },
-    "NPC_DIALOGUE": {
-      "mode": "DOD_INK"
-    },
-    "COMBAT": {
-      "mode": "DOD_INK"
-    },
-    "JOURNAL": {
-      "mode": "DOD_INK"
-    },
-    "INVENTORY": {
-      "mode": "DOD_INK"
-    },
-    "MAP": {
-      "mode": "DOD_INK",
-      "known_areas_only": true
-    }
+    "TITLE_SPLASH": {"mode":"DOD_SITE","responsive_master":true,"semantic_controls":true},
+    "HOME": {"mode":"DOD_SITE","responsive_master":true,"semantic_controls":true},
+    "CHAPTER_OPEN": {"mode":"DOD_PAINTED","pixel_profile":"dod.pixel32-rgba"},
+    "MAJOR_DISCOVERY": {"mode":"DOD_PAINTED","pixel_profile":"dod.pixel32-rgba"},
+    "CLIMAX": {"mode":"DOD_PAINTED","pixel_profile":"dod.pixel32-rgba"},
+    "EXPLORATION": {"mode":"DOD_INK","pixel_profile":"dod.pixel32-rgba"},
+    "NPC_DIALOGUE": {"mode":"DOD_INK","pixel_profile":"dod.pixel32-rgba"},
+    "COMBAT": {"mode":"DOD_INK","pixel_profile":"dod.pixel32-rgba"},
+    "JOURNAL": {"mode":"DOD_INK","pixel_profile":"dod.pixel32-rgba"},
+    "INVENTORY": {"mode":"DOD_INK","pixel_profile":"dod.pixel32-rgba"},
+    "MAP": {"mode":"DOD_INK","known_areas_only":true,"pixel_profile":"dod.pixel32-rgba"}
+  },
+  "time_of_day": {
+    "policy": "../../desert-of-desolation-game/data/TIME_OF_DAY_POLICY.json",
+    "clock_source": "WorldState.total_minutes",
+    "sunrise_minute": 360,
+    "sunset_minute": 1200,
+    "phases": ["MORNING","DAY","EVENING","NIGHT"],
+    "outdoor_exact_phase_required": true,
+    "same_composition_across_phases": true,
+    "mismatched_lighting_fallback_forbidden": true
   },
   "responsive_master": {
     "breakpoint_px": 760,
-    "desktop": {
-      "asset_id": "dod.ui.home.desktop.v1",
-      "skill_path": "reference-ui/home-desktop-approved.png",
-      "runtime_path": "assets/ui/dod.ui.home.desktop.v1.png",
-      "dimensions": [
-        1536,
-        1024
-      ]
-    },
-    "mobile": {
-      "asset_id": "dod.ui.home.mobile.v1",
-      "skill_path": "reference-ui/home-mobile-approved.png",
-      "runtime_path": "assets/ui/dod.ui.home.mobile.v1.png",
-      "dimensions": [
-        941,
-        1672
-      ]
-    }
+    "desktop": {"asset_id":"dod.ui.home.desktop.v1","skill_path":"reference-ui/home-desktop-approved.png","runtime_path":"assets/ui/dod.ui.home.desktop.v1.png","dimensions":[1536,1024]},
+    "mobile": {"asset_id":"dod.ui.home.mobile.v1","skill_path":"reference-ui/home-mobile-approved.png","runtime_path":"assets/ui/dod.ui.home.mobile.v1.png","dimensions":[941,1672]}
   },
   "runtime_rules": {
     "master_images_role": "APPROVED_MASTER_UI_REFERENCE_AND_NONINTERACTIVE_SPLASH_POSTER",
@@ -81,6 +69,9 @@
     "theme_must_not_create_audio_context": true,
     "fail_closed_on_hidden_or_unapproved_art": true,
     "missing_art_fallback": "TEXT_OR_APPROVED_BACKGROUND",
-    "predictive_preload": "CURRENT_PLUS_ONE_LIKELY_PLUS_TWO_PLAYER_SAFE_ALTERNATES_MAX"
+    "predictive_preload": "CURRENT_PLUS_ONE_LIKELY_PLUS_TWO_PLAYER_SAFE_ALTERNATES_MAX",
+    "outdoor_scene_uses_authoritative_game_time": true,
+    "preload_all_time_variants": false,
+    "preload_all_monster_states": false
   }
 }

@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "format": "gif",
+  "entries": [],
+  "notes": "GIF runtime support remains available, but the first-20 32-bit pixel-art production pass explicitly defers all animation. No new GIFs or sprite sheets are created or runtime-eligible in this release.",
+  "first20_animation_status": "DEFERRED",
+  "authoring_catalog": {
+    "path": "../../skills/desert-of-desolation-game/data/imagery/index.json",
+    "visibility": "DM_AUTHORING_ONLY",
+    "status": "STILL_ART_PROFILE_CONFIGURED_RENDER_PENDING",
+    "runtime_eligible": false
+  }
+}
