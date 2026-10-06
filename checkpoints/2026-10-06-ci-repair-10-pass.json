@@ -1,0 +1,82 @@
+{
+  "run": "GitHub validate repair + commit skill GitHub-sync hardening",
+  "passes": [
+    {
+      "pass": 1,
+      "focus": "reproduce failure",
+      "result": "PASS",
+      "evidence": "validate run 37483351757 failed on commit 2deb314"
+    },
+    {
+      "pass": 2,
+      "focus": "root cause",
+      "result": "PASS",
+      "evidence": "setup-node npm cache requested without package-lock.json/npm-shrinkwrap.json/yarn.lock"
+    },
+    {
+      "pass": 3,
+      "focus": "workflow repair",
+      "result": "PASS",
+      "evidence": "removed invalid setup-node cache setting; commit 2ad42c5"
+    },
+    {
+      "pass": 4,
+      "focus": "CI rerun",
+      "result": "PASS",
+      "evidence": "validate run 37484489925 completed successfully"
+    },
+    {
+      "pass": 5,
+      "focus": "dependency install",
+      "result": "PASS",
+      "evidence": "root and audio-renderer npm install steps succeeded"
+    },
+    {
+      "pass": 6,
+      "focus": "runtime QA",
+      "result": "PASS",
+      "evidence": "syntax checks, renderer contract tests, and runtime health smoke test succeeded"
+    },
+    {
+      "pass": 7,
+      "focus": "GitHub sync policy",
+      "result": "PASS",
+      "evidence": "release guard updated to require green CI and current source commit"
+    },
+    {
+      "pass": 8,
+      "focus": "commit skill",
+      "result": "PASS",
+      "evidence": "skill updated to make GitHub sync and Actions inspection mandatory"
+    },
+    {
+      "pass": 9,
+      "focus": "skill validation",
+      "result": "PASS",
+      "evidence": "skill-creator package validation succeeded; skill.zip produced"
+    },
+    {
+      "pass": 10,
+      "focus": "checkpoint",
+      "result": "PASS_WITH_EXISTING_PROJECT_BLOCKERS",
+      "evidence": "CI repaired; remaining unified-release blockers are native Site export and full media mirror"
+    }
+  ],
+  "github": {
+    "repository": "snogards99/desert-of-desolation",
+    "branch": "main",
+    "ci_fix_commit": "2ad42c5848ec0b8dc6bf64f7938c50664f6df1d3",
+    "guard_commit": "2ae528237b88cf0d3ba3ad99eebeab2d6cb2f1c0",
+    "validate_run_id": 37484489925,
+    "validate_conclusion": "success"
+  },
+  "plugin": {
+    "version": "1.5.1-alpha.16",
+    "release_id": "pluginrel_6ac503c3ad788191b045d01ddf0064de"
+  },
+  "status": "CI_REPAIRED_AND_COMMIT_SKILL_HARDENED",
+  "unresolved": [
+    "native Site source export unavailable through current tools",
+    "full 484-file media mirror remains incomplete"
+  ]
+}
