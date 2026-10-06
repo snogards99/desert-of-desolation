@@ -1,0 +1,92 @@
+/* Desert of Desolation bundled typography layer.
+   Load after theme.css. No runtime network font request is required. */
+
+@font-face {
+  font-family: "DOD Cinzel VF";
+  src: url("./fonts/Cinzel-VariableFont_wght.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DOD Cinzel Static";
+  src: url("./fonts/Cinzel-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DOD Cinzel Static";
+  src: url("./fonts/Cinzel-Medium.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DOD Cinzel Static";
+  src: url("./fonts/Cinzel-SemiBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DOD Cinzel Static";
+  src: url("./fonts/Cinzel-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DOD Cinzel Static";
+  src: url("./fonts/Cinzel-ExtraBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DOD Cinzel Static";
+  src: url("./fonts/Cinzel-Black.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DOD Noto Egyptian";
+  src: url("./fonts/NotoSansEgyptianHieroglyphs-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+[data-dod-theme="moonlit-ink"] {
+  --dod-font-display: "DOD Cinzel VF", "DOD Cinzel Static", Georgia, "Times New Roman", serif;
+  --dod-font-body: "DOD Cinzel VF", "DOD Cinzel Static", Georgia, "Times New Roman", serif;
+  --dod-font-reading: "DOD Cinzel VF", "DOD Cinzel Static", Georgia, "Times New Roman", serif;
+  --dod-font-egyptian: "DOD Noto Egyptian", sans-serif;
+}
+
+[data-dod-theme="moonlit-ink"] [data-dod-script="egyptian-hieroglyphs"] {
+  font-family: var(--dod-font-egyptian);
+  font-style: normal;
+  font-weight: 400;
+  font-synthesis: none;
+  line-height: 1.45;
+  letter-spacing: .02em;
+}
+
+[data-dod-theme="moonlit-ink"] .dod-ancient-unknown {
+  font-family: var(--dod-font-reading);
+  letter-spacing: .04em;
+}
+
+[data-dod-theme="moonlit-ink"] .dod-translation {
+  font-family: var(--dod-font-reading);
+  margin-top: .45em;
+}
+
+[data-dod-theme="moonlit-ink"] .dod-ancient-pair {
+  display: grid;
+  gap: .35rem;
+}

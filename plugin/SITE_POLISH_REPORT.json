@@ -1,0 +1,19 @@
+{
+  "release_target": "1.5.1-alpha.12",
+  "scope": "WHOLE_SITE_SUBTLE_GRAPHICS_AND_BACKGROUND_THEME_CONFIGURATION",
+  "visual_changes": ["faint etched gold rules","low-opacity lapis/violet depth","restrained inset framing","soft title/icon glow","subtle parchment journal texture","minimal hover lift"],
+  "visual_intensity": "SUBTLE",
+  "background_theme": {
+    "configured": true,
+    "primary": "assets/audio/dod.audio.opening_replacement.opening_title_theme_v2_9Dq7u0xBJoyGGDuSNbya.mp3",
+    "fallback": "assets/audio/dod_score_campaign_opening_overture_v396.mp3",
+    "base_gain": 0.08,
+    "speech_duck_gain": 0.025,
+    "audio_engine_owner": "EXISTING_GAME_AUDIO_ENGINE"
+  },
+  "campaign_state_modified": false,
+  "audio_bytes_modified": false,
+  "live_site_modified": false,
+  "live_site_reason": "No native ChatGPT Sites editing/publish tool is available in this chat session; the plugin-side Site presentation package is ready for native Site application.",
+  "physical_audio_qa": false
+}

@@ -17,7 +17,7 @@
     ]
   },
   "name": "desert-of-desolation",
-  "version": "1.5.1-alpha.13",
+  "version": "1.5.1-alpha.16",
   "description": "Mobile-first Desert of Desolation campaign engine with enriched Rev 4.6 party sheets, AD&D 2e-safe spell auditing, subtle Art Engine Site stylization, faint theme-score presentation, 361-node routing, time-aware imagery, stable media IDs, rollback-safe audio, bounded preload, discovery-safe UI, and bundled Cinzel/Noto typography.",
   "author": {
     "name": "Workspace upload"

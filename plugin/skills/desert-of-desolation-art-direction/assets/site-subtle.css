@@ -1,0 +1,69 @@
+/* DOD_SITE subtle whole-site polish. Additive only; no layout ownership. */
+[data-dod-theme="moonlit-ink"] {
+  --dod-site-line: color-mix(in srgb, var(--dod-aged-gold) 34%, transparent);
+  --dod-site-line-soft: color-mix(in srgb, var(--dod-aged-gold) 14%, transparent);
+  --dod-site-glow: color-mix(in srgb, var(--dod-spectral-light) 10%, transparent);
+  --dod-site-violet: color-mix(in srgb, var(--dod-amethyst) 16%, transparent);
+  --dod-site-panel: color-mix(in srgb, var(--dod-deep-blue) 94%, var(--dod-purple-shadow));
+  background-image:
+    radial-gradient(120% 70% at 50% -10%, var(--dod-site-violet), transparent 58%),
+    linear-gradient(180deg, rgba(255,255,255,.012), transparent 22%),
+    repeating-linear-gradient(90deg, rgba(203,167,96,.018) 0 1px, transparent 1px 64px),
+    linear-gradient(155deg, var(--dod-deep-blue), var(--dod-night) 72%);
+}
+[data-dod-theme="moonlit-ink"] :where(.dod-header,.dod-home-nav,.dod-section-head,.dod-footer) {
+  position: relative;
+}
+[data-dod-theme="moonlit-ink"] :where(.dod-header,.dod-home-nav,.dod-footer)::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--dod-site-line), transparent);
+  pointer-events: none;
+}
+[data-dod-theme="moonlit-ink"] :where(.dod-panel,.dod-feature-card,.dod-plate,.dod-journal) {
+  box-shadow: inset 0 1px rgba(241,230,201,.025), 0 14px 34px rgba(0,0,0,.12);
+}
+[data-dod-theme="moonlit-ink"] :where(.dod-panel,.dod-feature-card) {
+  background-image: linear-gradient(145deg, rgba(121,202,214,.018), transparent 36%, rgba(203,167,96,.018));
+}
+[data-dod-theme="moonlit-ink"] :where(.dod-panel,.dod-feature-card,.dod-plate)::before {
+  content: ""; position: absolute; inset: 7px; pointer-events: none; opacity: .42;
+  border: 1px solid var(--dod-site-line-soft); border-radius: max(1px, calc(var(--dod-radius) - 4px));
+}
+[data-dod-theme="moonlit-ink"] :where(.dod-panel,.dod-feature-card,.dod-plate) { position: relative; }
+[data-dod-theme="moonlit-ink"] :where(h1,h2,h3,.dod-wordmark,.dod-home-title) {
+  text-shadow: 0 1px 0 rgba(0,0,0,.65), 0 0 20px rgba(85,65,123,.10);
+}
+[data-dod-theme="moonlit-ink"] .dod-eye {
+  filter: drop-shadow(0 0 10px rgba(203,167,96,.10));
+}
+[data-dod-theme="moonlit-ink"] .dod-button {
+  box-shadow: inset 0 1px rgba(241,230,201,.03);
+  transition: border-color 140ms ease, background-color 140ms ease, transform 140ms ease;
+}
+[data-dod-theme="moonlit-ink"] .dod-button:not([disabled]):hover { transform: translateY(-1px); }
+[data-dod-theme="moonlit-ink"] .dod-button-primary {
+  box-shadow: inset 0 1px rgba(255,255,255,.18), 0 6px 20px rgba(0,0,0,.16);
+}
+[data-dod-theme="moonlit-ink"] .dod-site-poster::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(180deg, transparent 62%, rgba(8,12,28,.46));
+}
+[data-dod-theme="moonlit-ink"] .dod-narration::first-letter {
+  color: var(--dod-aged-gold);
+}
+[data-dod-theme="moonlit-ink"] .dod-journal {
+  background-image: linear-gradient(rgba(23,20,30,.018), rgba(23,20,30,.018)),
+                    repeating-linear-gradient(0deg, transparent 0 29px, rgba(23,20,30,.025) 29px 30px);
+}
+[data-dod-theme="moonlit-ink"] [data-dod-site-ornament="true"] {
+  border-block: 1px solid var(--dod-site-line-soft);
+  background-image: radial-gradient(circle at 50% 50%, var(--dod-site-glow), transparent 66%);
+}
+@media (max-width:760px) {
+  [data-dod-theme="moonlit-ink"] :where(.dod-panel,.dod-feature-card,.dod-plate)::before { inset: 5px; }
+  [data-dod-theme="moonlit-ink"] :where(.dod-panel,.dod-feature-card,.dod-plate) { box-shadow: inset 0 1px rgba(241,230,201,.02), 0 8px 22px rgba(0,0,0,.10); }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-dod-theme="moonlit-ink"] .dod-button { transition: none; }
+  [data-dod-theme="moonlit-ink"] .dod-button:not([disabled]):hover { transform: none; }
+}

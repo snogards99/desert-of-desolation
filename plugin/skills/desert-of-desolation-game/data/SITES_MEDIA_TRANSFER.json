@@ -1,0 +1,72 @@
+{
+  "schema_version": 2,
+  "prepared_in_version": "1.3.6",
+  "reviewed_in_version": "1.5.1-alpha.14",
+  "source_plugin_id": "Plugin_3352cc65ee508191abeb37ffa759294d",
+  "target_provider": "CHATGPT_SITES",
+  "status": "UPLOADED_CHECKSUM_VERIFIED_BROWSER_QA_PENDING",
+  "source_release": "1.3.5",
+  "source_release_id": "pluginrel_6ac3e17e4e6481918fce611cf1459c30",
+  "inventory": {
+    "total_plugin_files_at_transfer": 606,
+    "media_files": 397,
+    "media_bytes": 61963206,
+    "audio_files": 394,
+    "audio_mp3_files": 393,
+    "audio_mp3_bytes": 61772726,
+    "logical_audio_ids": 398
+  },
+  "source_sets": [
+    {
+      "path_prefix": "assets/audio/",
+      "authoritative_index": "assets/audio/manifest.json",
+      "transfer": "ALL_FILES"
+    },
+    {
+      "path_prefix": "assets/gifs/",
+      "authoritative_index": "assets/gifs/manifest.json",
+      "transfer": "ALL_FILES"
+    },
+    {
+      "path": "assets/icon.png",
+      "transfer": "FILE"
+    }
+  ],
+  "preserve": [
+    "deterministic_media_ids",
+    "original_mp3_bytes",
+    "filenames",
+    "mime_types",
+    "spoiler_gates",
+    "bus_assignments"
+  ],
+  "site_path_policy": "/media/<existing-relative-path>",
+  "runtime_resolution_before_cutover": [
+    "bundled_plugin_path",
+    "verified_site_url_for_tests"
+  ],
+  "runtime_resolution_after_cutover": [
+    "verified_site_url",
+    "bundled_plugin_path"
+  ],
+  "cutover_rule": "DO_NOT_MAKE_SITE_PRIMARY_UNTIL_SITE_CUTOVER_CHECKLIST_REQUIRED_BROWSER_GATES_PASS",
+  "deletion_rule": "RETAIN_BUNDLED_MEDIA_FOR_ROLLBACK THROUGH AT_LEAST THE FIRST VERIFIED SITE_PRIMARY RELEASE",
+  "verification_required": [
+    "byte_count_or_checksum_reconciliation",
+    "safe_campfire_decode",
+    "browser_gesture_unlock",
+    "play_stop_repeat",
+    "persistent_audio_context",
+    "ambience_plus_sfx",
+    "stale_cue_cancel",
+    "bounded_preload",
+    "narrow_mobile_layout"
+  ],
+  "site_project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
+  "site_url": "https://desert-of-desolation.nreach-1221.chatgpt.site",
+  "storage": "SITE_NATIVE_R2",
+  "transferred_files": 397,
+  "transferred_bytes": 61963206,
+  "primary_cutover_complete": false,
+  "notes": "Transfer facts remain the verified 1.3.6 migration evidence. 1.4.2 clarifies that decode/simulation is not browser playback proof and that bundled media remains rollback-safe until the explicit cutover checklist passes. No media bytes were re-uploaded."
+}

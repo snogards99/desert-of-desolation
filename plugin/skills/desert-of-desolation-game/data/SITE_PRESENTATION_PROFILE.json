@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "profile_id": "dod.site.presentation.subtle-v1",
+  "configured_in_plugin_version": "1.5.1-alpha.12",
+  "visual": {
+    "base_theme": "dod.moonlit-ink",
+    "art_engine": "dod.art-engine@1.3.0",
+    "additive_css": "../../desert-of-desolation-art-direction/assets/site-subtle.css",
+    "intensity": "SUBTLE",
+    "scope": ["HOME","SCENE","PARTY","JOURNAL","MAP","SOUND","SETTINGS","LOADING","FALLBACK","LEGAL_FOOTER"],
+    "rules": ["NO_LAYOUT_OWNERSHIP","NO_SECRET_ART","SEMANTIC_CONTROLS_PRESERVED","MOBILE_FIRST"]
+  },
+  "background_theme": {
+    "enabled": true,
+    "asset_path": "../../../assets/audio/dod.audio.opening_replacement.opening_title_theme_v2_9Dq7u0xBJoyGGDuSNbya.mp3",
+    "fallback_asset_path": "../../../assets/audio/dod_score_campaign_opening_overture_v396.mp3",
+    "bus": "Music",
+    "base_gain": 0.08,
+    "speech_duck_gain": 0.025,
+    "fade_in_seconds": 2.5,
+    "fade_out_seconds": 1.5,
+    "navigation_policy": "KEEP_POSITION_ACROSS_SITE_NAVIGATION_WHEN_EXISTING_AUDIO_CONTEXT_PERSISTS",
+    "loop_policy": "LOOP_ONLY_IF_EXISTING_ENGINE_MARKS_SOURCE_LOOP_SAFE; OTHERWISE_RESTART_WITH_CROSSFADE_AFTER_NATURAL_END",
+    "autoplay_policy": "NEVER_BYPASS_BROWSER_USER_GESTURE_REQUIREMENT",
+    "mute_policy": "HONOR_EXISTING_SOUND_OFF_AND_SAVED_VOLUME",
+    "speech_priority": "NARRATOR_AND_NPC_ALWAYS_OUTRANK_THEME",
+    "failure_policy": "SILENCE_AND_CONTINUE"
+  },
+  "state_mutation": false,
+  "audio_context_ownership": "EXISTING_GAME_AUDIO_ENGINE_ONLY"
+}

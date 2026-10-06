@@ -1,0 +1,69 @@
+{
+  "release": "1.4.5",
+  "site_version": 9,
+  "scope": "MAINTENANCE",
+  "findings_fixed": [
+    "audio unlock cancellation race",
+    "late play completion after Stop",
+    "scene cues leaking into maintenance test",
+    "inaccessible scene-enable path",
+    "fading source surviving Stop",
+    "stale campaign fetch race",
+    "GET creating checkpoint rows",
+    "master mute control absent",
+    "theme CSS pending",
+    "DOD_SITE home art-engine not wired",
+    "campaign switching left old ambience running",
+    "decoded media cache was not scoped to revision",
+    "empty or revoked scene media left ambience running",
+    "bounded preload was policy-only",
+    "mobile home oversized and duplicated baked UI",
+    "sound enable silently armed an empty scene",
+    "media redirect pattern failure path",
+    "audio failures concealed by generic status",
+    "fixed bottom controls overlapped enlarged text"
+  ],
+  "checks": {
+    "audio_simulation": "PASS",
+    "typescript": "PASS",
+    "build": "PASS",
+    "theme_static": "82 PASS",
+    "theme_prompt_tests": "16 PASS",
+    "desktop_overflow": "NONE",
+    "narrow_frame_overflow": "NONE at 320 and 390 pixels",
+    "safe_browser_audio": "STATUS_OBSERVED; NOT_PHYSICAL_LISTENING",
+    "live_campaign_rows_unchanged": true,
+    "current_release_audio_simulation": "PASS INCLUDING PRELOAD REVISION_CACHE REVOKED_AMBIENCE",
+    "media_policy": "PASS_SIMULATED",
+    "art_engine": "11 PASS",
+    "mobile_widths_px": [
+      320,
+      375,
+      390,
+      430,
+      768,
+      1440
+    ],
+    "mobile_min_button_height_px": 44,
+    "text_200_percent": "NO_HORIZONTAL_OVERFLOW_AT_390_FRAME; DOCK_240.77PX_PADDING_320PX",
+    "preview_audio_controls": "CAMPFIRE_SFX_PAUSE_RESUME_NAVIGATION_CAMPAIGN_SWITCH_STATUS_OBSERVED",
+    "pattern_error": "SIMULATED_FETCH_AND_DECODE_FAILURES_RECOVER; ORIGINAL_PHYSICAL_ERROR_NOT_REPRODUCED"
+  },
+  "not_verified": [
+    "authenticated live Site connection",
+    "live Site R2 versus fallback playback origin",
+    "all-category bundled fallback",
+    "live browser bounded branch preload",
+    "physical iPhone speaker/headphones",
+    "current responsive home browser visual QA"
+  ],
+  "site_primary_cutover_approved": false,
+  "physical_iphone_qa": "PARTIAL_USER_REPORTED_PREVIOUS_RELEASE; UPDATED_RELEASE_RECHECK_PENDING",
+  "site_deployment_id": "appgdep_6ac4230b29048191ba19eb200f0264e4",
+  "site_source_commit": "ba327e565f73deb81ab11a9f92d22eb2a377cecb",
+  "user_reported_previous_release": {
+    "campfire_audible": true,
+    "controls_worked": true,
+    "device_details": "NOT_PROVIDED"
+  }
+}

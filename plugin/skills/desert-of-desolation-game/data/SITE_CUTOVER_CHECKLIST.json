@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "release": "1.4.4",
+  "site_primary_cutover_approved": false,
+  "required_gates": [
+    {
+      "id": "site_identity",
+      "status": "PASS"
+    },
+    {
+      "id": "private_access",
+      "status": "PASS"
+    },
+    {
+      "id": "media_transfer",
+      "status": "PASS"
+    },
+    {
+      "id": "media_reconciliation",
+      "status": "PASS"
+    },
+    {
+      "id": "safe_decode",
+      "status": "PASS"
+    },
+    {
+      "id": "browser_gesture_unlock",
+      "status": "PENDING"
+    },
+    {
+      "id": "browser_play_stop_repeat",
+      "status": "PENDING"
+    },
+    {
+      "id": "persistent_audio_context",
+      "status": "PENDING"
+    },
+    {
+      "id": "browser_layering",
+      "status": "PENDING"
+    },
+    {
+      "id": "stale_cue_cancel",
+      "status": "PENDING"
+    },
+    {
+      "id": "bounded_preload",
+      "status": "PASS_SIMULATED_LIVE_PENDING"
+    },
+    {
+      "id": "bundled_fallback",
+      "status": "SAFE_DIAGNOSTICS_PASS_OTHER_CATEGORIES_LIVE_PENDING"
+    },
+    {
+      "id": "narrow_mobile_layout",
+      "status": "PENDING"
+    }
+  ],
+  "separate_visual_gate": {
+    "id": "live_site_theme_integration",
+    "status": "IMPLEMENTED_PUBLISHED_BROWSER_QA_PENDING",
+    "blocks_audio_cutover": false,
+    "blocks_visual_finalization": true
+  },
+  "nonblocking_post_cutover_qa": [
+    {
+      "id": "physical_iphone_headphones",
+      "status": "NOT_COMPLETED"
+    },
+    {
+      "id": "physical_iphone_speaker",
+      "status": "NOT_COMPLETED"
+    }
+  ],
+  "approval_rule": "Approve Site-primary media only when every required gate is PASS, PASS_BY_POLICY, or PASS_BY_PACKAGE with current evidence. Physical-device QA remains separately reported; visual theme deployment is a distinct finalization gate.",
+  "rollback_rule": "Keep bundled plugin media through at least the first verified Site-primary release.",
+  "reviewed_in_version": "1.5.1-alpha.14"
+}

@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "release": "1.5.1-alpha.1",
+  "site_project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
+  "site_url": "https://desert-of-desolation.nreach-1221.chatgpt.site",
+  "mode": "MAINTENANCE_NONMUTATING",
+  "evidence_levels": {
+    "CONFIGURED": "Configuration exists but runtime behavior is not proven.",
+    "SIMULATED": "Automated/headless/synthetic behavior passed; not audible real-browser proof.",
+    "BROWSER_VERIFIED": "Observed through a real browser/user-gesture path.",
+    "PHYSICAL_DEVICE_VERIFIED": "Observed on the named physical device/output."
+  },
+  "gates": [
+    {
+      "id": "site_identity",
+      "status": "PASS",
+      "evidence": "Existing project ID and live URL recorded; duplicate Site not required."
+    },
+    {
+      "id": "audience_policy",
+      "status": "PASS_USER_AUTHORIZED_PUBLIC",
+      "evidence": "Native Site reports public access; user explicitly authorized public publication. Plugin audience remains private."
+    },
+    {
+      "id": "media_transfer",
+      "status": "PASS",
+      "evidence": "397/397 source assets and 61,963,206 bytes reconciled."
+    },
+    {
+      "id": "campfire_decode",
+      "status": "PASS",
+      "evidence": "Safe Site campfire bytes fetched/checksum-matched/decoded."
+    },
+    {
+      "id": "audio_simulation",
+      "status": "PASS_SIMULATED",
+      "evidence": "Automated Web Audio control simulation passed."
+    },
+    {
+      "id": "browser_gesture_unlock",
+      "status": "PENDING",
+      "evidence": "No real user-gesture browser proof recorded."
+    },
+    {
+      "id": "browser_play_stop_repeat",
+      "status": "PENDING",
+      "evidence": "Decode is not playback proof."
+    },
+    {
+      "id": "browser_persistent_audio_context",
+      "status": "PENDING",
+      "evidence": "Requires navigation in live Site UI."
+    },
+    {
+      "id": "browser_layering",
+      "status": "PENDING",
+      "evidence": "Ambience + SFX not verified in a real browser."
+    },
+    {
+      "id": "browser_stale_cue_cancel",
+      "status": "PENDING",
+      "evidence": "Requires real speculative-queue test."
+    },
+    {
+      "id": "live_site_theme_integration",
+      "status": "IMPLEMENTED_PUBLISHED_BROWSER_QA_PENDING",
+      "evidence": "Native Site source now imports art-engine 1.1.0 and approved responsive noninteractive masters with real semantic controls. No existing New Game reset handler."
+    },
+    {
+      "id": "narrow_mobile_layout",
+      "status": "PASS_PREVIEW_BROWSER",
+      "evidence": "Custom Party checked at 320/375/390/430/768/1440 and 200% text with no horizontal overflow; not physical iPhone."
+    },
+    {
+      "id": "mobile_browser_playback",
+      "status": "PENDING",
+      "evidence": "Not verified."
+    },
+    {
+      "id": "physical_iphone_headphones",
+      "status": "NOT_COMPLETED",
+      "evidence": "No physical-device listening evidence."
+    },
+    {
+      "id": "physical_iphone_speaker",
+      "status": "NOT_COMPLETED",
+      "evidence": "No physical-device listening evidence."
+    },
+    {
+      "id": "media_policy_regression",
+      "status": "PASS_SIMULATED",
+      "evidence": "Discovery/revision gates, malformed state, missing/corrupt R2, safe bundled fallback and bounded server-authorized preload."
+    },
+    {
+      "id": "revision_scoped_cache",
+      "status": "PASS_SIMULATED",
+      "evidence": "Decoded buffers scoped by resolver URL/campaign/revision; revoked empty-scene ambience stops."
+    },
+    {
+      "id": "party_master_sheets",
+      "status": "PASS_PREVIEW_BROWSER",
+      "evidence": "Six unique DOD_INK portraits loaded; matching Rev4.6 actor records, conditional spell/thieving/class sections and excluded psionics/family checks passed."
+    },
+    {
+      "id": "alpha1_publication",
+      "status": "PASS_NATIVE_DEPLOYMENT",
+      "evidence": "Site version 11 deployed successfully; public audience and live campaign rows preserved."
+    }
+  ],
+  "campaign_state_mutation": "NONE",
+  "spoiler_policy": "TEST_ONLY_DISCOVERY_SAFE_FIXTURES",
+  "next_action": "Complete current-release browser and physical iPhone evidence; direct browser mode has no external connection prerequisite.",
+  "reviewed_in_version": "1.5.1-alpha.14"
+}
