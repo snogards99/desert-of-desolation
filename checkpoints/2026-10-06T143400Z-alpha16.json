@@ -1,0 +1,48 @@
+{
+  "checkpoint_version": 1,
+  "timestamp_utc": "2026-10-06T14:34:00Z",
+  "shared_release_identifier": "dod-2026-10-06-alpha16-checkpoint",
+  "canonical_source": {
+    "repository": "snogards99/desert-of-desolation",
+    "branch": "main",
+    "pre_checkpoint_head": "9ade27ddae9265911041d711530cbfab6853550a"
+  },
+  "plugin": {
+    "plugin_id": "Plugin_3352cc65ee508191abeb37ffa759294d",
+    "name": "desert-of-desolation",
+    "version": "1.5.1-alpha.16",
+    "release_id": "pluginrel_6ac503c3ad788191b045d01ddf0064de",
+    "scope": "WORKSPACE",
+    "discoverability": "PRIVATE",
+    "release_created_at": "2026-10-06T14:20:51.677826Z"
+  },
+  "site": {
+    "target": "desert-of-desolation",
+    "deployment_reference": null,
+    "status": "not_independently_verifiable_with_available project tools in this checkpoint"
+  },
+  "source_state": {
+    "latest_visible_commit_before_checkpoint": "9ade27ddae9265911041d711530cbfab6853550a",
+    "latest_visible_commit_message": "Add character enrichment release data",
+    "latest_explicit_plugin_manifest_sync_commit": "dc2a6f9ca986c13e91241577105c04beb4a34ce6",
+    "latest_explicit_plugin_manifest_sync_version": "1.5.1-alpha.13",
+    "synchronization_status": "PARTIAL",
+    "note": "The current plugin release is alpha.16. GitHub contains later character-enrichment commits after the alpha.13 manifest sync, but this checkpoint does not assert a complete alpha.16 source mirror without file-level evidence."
+  },
+  "qa": {
+    "plugin_metadata_verified": true,
+    "plugin_release_history_verified": true,
+    "github_repository_verified": true,
+    "github_push_permission_verified": true,
+    "campaign_state_advanced": false,
+    "full_cross_target_diff_verified": false,
+    "site_runtime_qa_executed": false,
+    "status": "CHECKPOINTED_WITH_SYNC_GAP"
+  },
+  "rollback": {
+    "github_pre_checkpoint_head": "9ade27ddae9265911041d711530cbfab6853550a",
+    "plugin_previous_release_id": "pluginrel_6ac4f8fd03288191804dc384f55652da",
+    "plugin_previous_version": "1.5.1-alpha.15"
+  },
+  "sync_instructions": "Treat plugin alpha.16 as the current published plugin release and GitHub main as the canonical source history. Before claiming a coordinated alpha.16 release, reconcile plugin alpha.14-alpha.16 file changes into GitHub, verify Site state, run proportional gameplay/mobile/audio QA, then update this checkpoint with verified refs."
+}
