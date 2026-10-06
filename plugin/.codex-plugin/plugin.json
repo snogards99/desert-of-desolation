@@ -2,7 +2,7 @@
   "interface": {
     "displayName": "Desert of Desolation V1",
     "shortDescription": "Mobile-first desert RPG",
-    "longDescription": "Runs Desert of Desolation with custom Rev 4.6 party master sheets, authoritative game-time/daylight tracking, time-matched outdoor scene selection, 361-node knowledge routing, deterministic media IDs, bounded spoiler-safe preload, rollback-safe Site media, responsive DOD_SITE/DOD_PAINTED/DOD_INK presentation, a full-color 32-bit RGBA pixel-art authoring profile, and bundled Cinzel/Noto typography.",
+    "longDescription": "Runs Desert of Desolation with enriched AD&D 2e-safe party sheets, explicit spell-capacity/source boundaries, subtle DOD_SITE Art Engine styling, a faint nonblocking campaign-theme bed, authoritative game-time/daylight tracking, 361-node knowledge routing, deterministic media IDs, bounded spoiler-safe preload, responsive DOD_SITE/DOD_PAINTED/DOD_INK presentation, 32-bit RGBA pixel-art authoring, and bundled Cinzel/Noto typography.",
     "developerName": "Desert of Desolation Project",
     "category": "Games",
     "capabilities": [
@@ -17,8 +17,8 @@
     ]
   },
   "name": "desert-of-desolation",
-  "version": "1.5.1-alpha.9",
-  "description": "Mobile-first Desert of Desolation campaign engine with custom Rev 4.6 party master sheets, 361-node state/knowledge routing, authoritative game-time/daylight tracking, full-color 32-bit RGBA pixel-art authoring for the first 20 nodes, stable media IDs, ChatGPT Sites presentation, rollback-safe audio, bounded preload, discovery-safe UI, and bundled Cinzel/Noto typography.",
+  "version": "1.5.1-alpha.13",
+  "description": "Mobile-first Desert of Desolation campaign engine with enriched Rev 4.6 party sheets, AD&D 2e-safe spell auditing, subtle Art Engine Site stylization, faint theme-score presentation, 361-node routing, time-aware imagery, stable media IDs, rollback-safe audio, bounded preload, discovery-safe UI, and bundled Cinzel/Noto typography.",
   "author": {
     "name": "Workspace upload"
   },
