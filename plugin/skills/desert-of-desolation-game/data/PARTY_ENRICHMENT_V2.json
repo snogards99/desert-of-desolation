@@ -1,0 +1,226 @@
+{
+  "schema_version": 2,
+  "release": "1.5.1-alpha.13",
+  "campaign_id": "dod-main",
+  "purpose": "Authoritative additive character-enrichment overlay for the six active Seekers of Ra. Preserves recorded campaign state while completing character-sheet context, expedition roles, equipment doctrine, and spell recommendations without silently converting the campaign to D&D 3.5.",
+  "authority": {
+    "ruleset": "AD&D 2e",
+    "precedence": [
+      "mutable runtime state",
+      "verified AD&D 2e spell/rules records",
+      "this enrichment overlay",
+      "PARTY_SHEET_MASTER recorded baseline"
+    ],
+    "attached_spell_sheets": "D&D 3.5 reference-only selection aids. Names/themes may inspire 2e-equivalent choices, but 3.5 mechanics, slots, DCs, ranges, domains and class progressions never become executable unless separately bound to verified 2e authority.",
+    "no_free_resources": true,
+    "no_silent_magic_items": true,
+    "player_control_boundary": "Snogard remains player-controlled; enrichment never chooses his in-play actions or spends resources."
+  },
+  "completion_model": {
+    "passes_per_character": 10,
+    "passes": [
+      "core_record_integrity",
+      "class_and_racial_abilities",
+      "skills_and_proficiencies",
+      "weapons_armor_combat_loadout",
+      "exploration_and_desert_equipment",
+      "spellcasting_and_magic",
+      "personality_and_roleplay",
+      "campaign_and_tomb_utility",
+      "weaknesses_and_constraints",
+      "final_sheet_audit"
+    ],
+    "stop_rule": "Do not manufacture changes. A pass may record VERIFIED_NO_CHANGE when the existing record is already sufficient."
+  },
+  "characters": [
+    {
+      "character_id": "party.snogard",
+      "display_name": "Snogard Snoegnud",
+      "classes_levels": "Cleric 10; Sha'ir Wizard 9; Desert Sage 6",
+      "party_role": "Commander; divine caster; Sha'ir; healer; battlefield controller; magical investigator",
+      "enrichment_passes": {
+        "core_record_integrity": "KEEP recorded HP 64, AC 3, THAC0 14 and saves as campaign authority; multiclass levels remain tracked separately.",
+        "class_and_racial_abilities": "KEEP Cleric 10 and verified Sha'ir features including Gen retrieval, Recognize Genie Work, Call Upon the Jann, Elemental Protection and Call a Genie; Desert Sage mechanics remain source-bound where unverified.",
+        "skills_and_proficiencies": "KEEP Desert Survival, Ancient History, Religion, Spellcraft, Astrology and Elemental Lore. Recommended sheet annotation: explicitly identify Ancient Languages/Hieroglyph interpretation as party-supported rather than silently granting a new proficiency unless already recorded elsewhere.",
+        "weapons_armor_combat_loadout": "KEEP Staff of Solar Authority as primary. Do not infer unrecorded staff powers. Preserve cloak/boots as recorded magic items.",
+        "exploration_and_desert_equipment": "KEEP spell-component harness, desert survival kit and flash-protection lenses. Recommended mundane checklist: waterskin reserve, rope, chalk, mirror, oil/light fallback, mapping notes and sealed component pouches; only mark carried when inventory authority confirms them.",
+        "spellcasting_and_magic": "COMPLETE: Cleric 10 uses verified priest progression 4/4/3/3/2 plus current prepared state; Sha'ir 9 retains Gen-fetch access through wizard spell level 5 and current six-spell cache. Utility doctrine below supplements selection without replacing current state.",
+        "personality_and_roleplay": "Strategic spiritual guide whose curiosity about ancient magic can pull against expedition caution. Delegates to specialists and treats divine order and elemental reality as complementary.",
+        "campaign_and_tomb_utility": "Primary magical answer to healing, magical wards, elemental hazards, curses/hostile magic, stone obstacles and emergency battlefield control.",
+        "weaknesses_and_constraints": "Arcane curiosity; source-bound custom mechanics; Gen retrieval time/risk; component dependence; player-control boundary forbids automatic spell choice or spending.",
+        "final_sheet_audit": "READY with explicit separation of Cleric slots, Sha'ir fetched cache, verified class features, source-bound custom abilities, components, familiar/companions and current resources."
+      },
+      "spell_profile": {
+        "status": "ACTIVE_VERIFIED_CORE_PLUS_USER_CANON",
+        "cleric_slots": {"1": 4, "2": 4, "3": 3, "4": 3, "5": 2},
+        "current_cleric_preparation": {
+          "1": ["Cure Light Wounds", "Cure Light Wounds", "Protection from Evil", "Sanctuary"],
+          "2": ["Aid", "Resist Fire", "Flame Blade", "Slow Poison"],
+          "3": ["Cure Disease", "Protection from Fire", "Dispel Magic"],
+          "4": ["Cure Serious Wounds", "Cure Serious Wounds", "Protection from Evil 10' Radius"],
+          "5": ["Cure Critical Wounds", "Flame Strike"]
+        },
+        "current_shair_cache": ["Fireball", "Darkness 15' Radius", "Stoneskin", "Wall of Sand", "Wall of Fire", "Wall of Stone"],
+        "recommended_2e_verified_utility_candidates": [
+          {"name": "Endure Cold/Endure Heat", "level": 1, "reason": "desert temperature survival"},
+          {"name": "Create Water", "level": 1, "reason": "desert logistics and emergency water"},
+          {"name": "Purify Food & Drink", "level": 1, "reason": "tainted provisions and tomb contamination"},
+          {"name": "Dust Devil", "level": 2, "reason": "sand/dust control and combat utility"},
+          {"name": "Produce Flame", "level": 2, "reason": "light, fire and combat"},
+          {"name": "Resist Fire/Resist Cold", "level": 2, "reason": "desert, elemental and efreet hazards"},
+          {"name": "Create Food & Water", "level": 3, "reason": "expedition sustainment"},
+          {"name": "Meld Into Stone", "level": 3, "reason": "tomb and stone exploration"},
+          {"name": "Stone Shape", "level": 3, "reason": "tomb access and stone obstacles"},
+          {"name": "Water Breathing", "level": 3, "reason": "flooded ruins and water hazards"},
+          {"name": "Lower Water", "level": 4, "reason": "flooded tomb control"},
+          {"name": "Spike Stones", "level": 4, "reason": "defensive terrain control"},
+          {"name": "Transmute Rock to Mud", "level": 5, "reason": "stone/desert terrain manipulation"},
+          {"name": "Control Winds", "level": 5, "reason": "sandstorms and desert weather"}
+        ],
+        "note": "Candidates are verified AD&D 2e entries from the packaged canonical spell database; deity/sphere and current-preparation legality still apply at preparation time."
+      }
+    },
+    {
+      "character_id": "party.malekith",
+      "display_name": "Azhar ibn Rashid al-Shams (Az)",
+      "classes_levels": "Desert Paladin 9",
+      "party_role": "Front-line paladin; tank; anti-evil/anti-efreet shock fighter",
+      "enrichment_passes": {
+        "core_record_integrity": "KEEP HP 88, AC 1, THAC0 12, 3/2 attacks and recorded saves as campaign authority.",
+        "class_and_racial_abilities": "KEEP Lay on Hands, Detect Evil, Aura of Protection and Turn Undead. Solar Cleave remains source-bound custom execution.",
+        "skills_and_proficiencies": "KEEP Scimitar, Dagger, Shield, camel riding, Desert Survival, Religion, Etiquette and Endurance. Recommended nonweapon emphasis: leadership/watch discipline is narrative unless a recorded proficiency exists.",
+        "weapons_armor_combat_loadout": "Primary Malik +3 scimitar and shield; lance from mount; short composite bow/throwing spears for range; backup scimitar and ceremonial dagger retained.",
+        "exploration_and_desert_equipment": "Keep desert-adapted armor/shield, survival kit and flash lenses. Add no new carried gear without Inventory confirmation.",
+        "spellcasting_and_magic": "Paladin 9 is now flagged SPELL_CAPACITY_REQUIRES_2E_TABLE_BINDING. Do not leave his sheet implying permanently no spells. Populate a recommended first prepared choice only after exact 2e Paladin-9 slot progression is bound.",
+        "personality_and_roleplay": "Solemn, devout, quietly compassionate, brave to the point of dangerous overcommitment.",
+        "campaign_and_tomb_utility": "Front-line protection, undead pressure, anti-evil presence, door/line holding and emergency healing.",
+        "weaknesses_and_constraints": "Reckless courage; custom Desert Paladin/Solar Cleave text remains unbound; exact spell slots not guessed from 3.5.",
+        "final_sheet_audit": "READY except exact 2e paladin spell-slot progression; sheet must show this as a bounded rules gap rather than 'no spellcasting'."
+      },
+      "spell_profile": {
+        "status": "CAPACITY_EXPECTED_FROM_CLASS_LEVEL_BUT_SLOT_TABLE_NOT_YET_BOUND",
+        "reference_only_3e_candidates": ["Endure Elements", "Protection from Evil", "Detect Undead", "Cure Light Wounds", "Bless Weapon"],
+        "preferred_2e_direction": "Protection/desert-survival first; exact spell must be selected from verified 2e paladin-accessible priest spheres once slot capacity is bound.",
+        "runtime_policy": "NO SLOT SPEND UNTIL 2E PALADIN-9 PROGRESSION IS VERIFIED."
+      }
+    },
+    {
+      "character_id": "party.vaelis",
+      "display_name": "Dakarai Dak Neferhotep",
+      "classes_levels": "Ranger 8 / Noble Warrior 7",
+      "party_role": "Master archer; ranged overwatch; tactical scout; mapper",
+      "enrichment_passes": {
+        "core_record_integrity": "KEEP HP 70, AC 4, THAC0 13, bow 2 attacks/round and 3/2 melee as current authority.",
+        "class_and_racial_abilities": "KEEP Ranger 8 base chassis and Eye of Horus identity; Noble Warrior/Eye mechanical bonuses remain source-bound.",
+        "skills_and_proficiencies": "KEEP Composite Longbow, Khopesh, Bowyer/Fletcher, Tracking, Desert Survival, Direction Sense, Cartography and Observation.",
+        "weapons_armor_combat_loadout": "Primary longbow +3; short bow +2 for compact spaces; khopesh for melee; preserve ammunition types/counts and mount reserve.",
+        "exploration_and_desert_equipment": "KEEP spyglass/navigation/map kit, bow repair kit and flash lenses. Mapping materials are mission-critical consumable context.",
+        "spellcasting_and_magic": "Ranger 8 is flagged SPELL_CAPACITY_REQUIRES_2E_TABLE_BINDING rather than 'none'. Do not import the 3.5 Ranger progression. Recommended first spell should favor tracking/concealment/survival only after exact 2e ranger spheres/slots are verified.",
+        "personality_and_roleplay": "Composed, aristocratic and exacting; trusts terrain and firing geometry more readily than improvisation.",
+        "campaign_and_tomb_utility": "Overwatch, route finding, map creation, ranged threat removal, retreat coverage and exterior reconnaissance.",
+        "weaknesses_and_constraints": "Can become tactically rigid; custom Noble Warrior/Eye effects unbound; limited close-quarters bow space.",
+        "final_sheet_audit": "READY except exact ranger spell progression/spheres; retain explicit source gap instead of silently denying class spellcasting."
+      },
+      "spell_profile": {
+        "status": "CAPACITY_EXPECTED_FROM_CLASS_LEVEL_BUT_SLOT_TABLE_NOT_YET_BOUND",
+        "reference_only_3e_candidates": ["Pass without Trace", "Detect Snares and Pits", "Endure Elements", "Resist Energy", "Longstrider"],
+        "preferred_2e_direction": "Tracking, concealment, animal/plant and desert-survival utility within verified ranger spheres.",
+        "runtime_policy": "NO SLOT SPEND UNTIL 2E RANGER-8 PROGRESSION AND SPHERES ARE VERIFIED."
+      }
+    },
+    {
+      "character_id": "party.syrra",
+      "display_name": "Cyrra Neferet",
+      "classes_levels": "Desert Ninja 6 / Thief 5",
+      "party_role": "Infiltrator; assassin; trap specialist; forward reconnaissance",
+      "enrichment_passes": {
+        "core_record_integrity": "KEEP HP 45, AC 5, THAC0 15 and custom combat baseline already preserved by campaign exception.",
+        "class_and_racial_abilities": "KEEP Thief 5 abilities and custom Desert Ninja identity; do not grant Assassin spellcasting from the attached 3.5 Assassin sheet because Cyrra is not an AD&D 3.5 Assassin class character.",
+        "skills_and_proficiencies": "KEEP Detect/Disarm Traps 90%, Move Silently 85%, Hide in Shadows 80%, Backstab x3, Open Locks, Climb Walls, Disguise and poison/trap lore.",
+        "weapons_armor_combat_loadout": "Twin daggers +1 for close work, short bow +1 for ranged stealth, short sword backup; poison kit remains tracked resource/context, not infinite supply.",
+        "exploration_and_desert_equipment": "Thieves' tools, scout shelter, flash lenses and stealth gear remain core. Recommended mundane additions are rope/chalk/mirror only when Inventory confirms them.",
+        "spellcasting_and_magic": "NONE_SOURCE_DEFINED. Explicitly reject 3.5 Assassin spell-table substitution. Magic comes only from recorded items/abilities unless a verified AD&D source changes class status.",
+        "personality_and_roleplay": "Elegant, suspicious, highly efficient and intensely loyal after trust is earned.",
+        "campaign_and_tomb_utility": "Trap detection/disarming, locks, stealth, close reconnaissance, bypass routes, ambush control and relic-security instincts.",
+        "weaknesses_and_constraints": "Lower durability; must avoid unsupported custom ninja powers; poison and tools are finite resources; distrust can slow group decisions.",
+        "final_sheet_audit": "READY. Spell section should show 'No verified spellcasting' rather than importing Assassin spells."
+      },
+      "spell_profile": {
+        "status": "NONE_SOURCE_DEFINED",
+        "reference_only_3e_assassin_sheet": "NOT_APPLICABLE_TO_CLASS; retained only as external reference material."
+      }
+    },
+    {
+      "character_id": "party.talanis",
+      "display_name": "Eryon Neferhotep (Ery)",
+      "classes_levels": "Bard 3 / Scribe 4",
+      "party_role": "Rear guard archer; hieroglyphist; tomb scholar; historian; wind-support scribe",
+      "enrichment_passes": {
+        "core_record_integrity": "KEEP HP 32, AC 6, THAC0 18 and recorded saves. Preserve alias party.talanis for runtime compatibility.",
+        "class_and_racial_abilities": "KEEP Bard 3 chassis and Scribe/wind identities. Thelarrs special mechanics remain source-bound.",
+        "skills_and_proficiencies": "KEEP Ancient Languages, Hieroglyphics +10, Cartography, Artifact Lore, Ancient History, Reading/Writing, Dagger and Singing/Oratory; surface tomb architecture/funerary lore/magical writing as recorded narrative specialties.",
+        "weapons_armor_combat_loadout": "Short bow rear guard; short sword +1 and dagger +1 backup; preserve 40 carried and 80 reserve arrows.",
+        "exploration_and_desert_equipment": "KEEP master tomb-scholar kit, field archive chest, flash lenses and camel. Writing/mapping materials are essential tracked context.",
+        "spellcasting_and_magic": "Bard 3 has a real arcane-capacity issue that should no longer be left as a blank sheet. Exact 2e Bard-3 slot progression and spell-learning method must be bound before runtime spending. Populate a recommended expedition spellbook direction from 3.5 references, then map each chosen spell to verified 2e wizard authority before activation.",
+        "personality_and_roleplay": "Youngest, curious and articulate; becomes excited around unique inscriptions and can let scholarship outrun field caution.",
+        "campaign_and_tomb_utility": "Ancient languages, inscriptions, tomb architecture, artifact context, historical interpretation, rear-guard archery and wind support.",
+        "weaknesses_and_constraints": "Low field experience; scholarly fixation; unbound Scribe/Thelarrs mechanics; spell slots cannot be guessed from 3.5.",
+        "final_sheet_audit": "READY except exact 2e Bard-3 spell capacity/known-spell binding. Sheet should show candidate spellbook direction and explicit pending authority."
+      },
+      "spell_profile": {
+        "status": "BARD_CAPACITY_REQUIRES_2E_TABLE_AND_SPELLBOOK_BINDING",
+        "reference_only_3e_candidates": ["Detect Magic", "Comprehend Languages", "Read Magic", "Feather Fall", "Identify", "Detect Secret Doors", "Unseen Servant"],
+        "preferred_2e_direction": "Languages/inscriptions, magical detection/identification, safe tomb traversal and emergency escape; activate only 2e-verified equivalents.",
+        "runtime_policy": "NO ARCANE SLOT SPEND UNTIL BARD-3 PROGRESSION AND LEARNED SPELLS ARE VERIFIED."
+      }
+    },
+    {
+      "character_id": "party.zarvak",
+      "display_name": "Barak al-Sahra (Bar)",
+      "classes_levels": "Fighter 5 / Desert Handler",
+      "party_role": "Tracker; combat archer; caravan master; animal/camp lead; flank defender",
+      "enrichment_passes": {
+        "core_record_integrity": "KEEP HP 58, AC 4, THAC0 16 and current fighter baseline.",
+        "class_and_racial_abilities": "KEEP fighter base chassis and Desert Handler identity. Fear-charge custom mechanic remains source-bound.",
+        "skills_and_proficiencies": "KEEP Spear, Scimitar, Short Bow, Camel Handling, Mounted Combat, Desert Navigation, Caravan Logistics, Animal Handling and Survival (Desert).",
+        "weapons_armor_combat_loadout": "Composite combat longbow +2 primary; short bow +1 backup/compact use; spear + shield when enemies close; scimitar reserve; preserve arrow counts.",
+        "exploration_and_desert_equipment": "Tracking/hunting kit, scout shelter, flash lenses and mount logistics remain central. Water/animal/ration management is a defined party responsibility, not background flavor.",
+        "spellcasting_and_magic": "NONE_SOURCE_DEFINED. Desert Handler does not receive spells by inference. Keep magic section limited to recorded items/abilities.",
+        "personality_and_roleplay": "Quiet, practical, dryly funny and protective through actions rather than speeches.",
+        "campaign_and_tomb_utility": "Desert survival, camp discipline, animals, tracking, route risk, flank defense, logistics and retreat preparation.",
+        "weaknesses_and_constraints": "Custom Handler mechanics unbound; no verified spellcasting; practical caution can conflict with aggressive plans.",
+        "final_sheet_audit": "READY; logistics responsibilities and finite expedition resources should be visible on sheet."
+      },
+      "spell_profile": {"status": "NONE_SOURCE_DEFINED"}
+    }
+  ],
+  "party_audit": {
+    "strengths": [
+      "Strong ranged coverage from Dak, Bar and Ery",
+      "Excellent tomb/trap coverage from Cyrra plus Ery scholarship",
+      "Strong frontline anchoring from Az",
+      "Broad verified divine/Sha'ir magic from Snogard",
+      "Strong desert travel, mapping, animal and logistics coverage"
+    ],
+    "material_gaps": [
+      "Exact AD&D 2e Paladin 9 spell-slot progression/access table is not packaged as an executable authority.",
+      "Exact AD&D 2e Ranger 8 spell-slot progression/sphere table is not packaged as an executable authority.",
+      "Exact AD&D 2e Bard 3 spell-slot/learning table is not packaged as an executable authority.",
+      "Several custom kit/item powers remain intentionally fail-closed because source mechanics are absent."
+    ],
+    "recommendations": [
+      "Bind verified 2e class spell-progression tables for Az, Dak and Ery next; then promote their prepared/known spell state without changing class identity.",
+      "Use attached 3.5 sheets only to rank useful spell themes; always map chosen names to 2e equivalents before runtime activation.",
+      "Keep Cyrra and Bar noncasters unless a verified AD&D source or explicit campaign rule establishes otherwise.",
+      "Do not add free magic items or replenish consumables during sheet enrichment.",
+      "Expose party role, finite expedition resources and source-bound mechanics clearly in the character-sheet UI."
+    ]
+  },
+  "qa": {
+    "passes_completed_per_character": 10,
+    "characters_completed": 6,
+    "ruleset_conversion_blocked": true,
+    "campaign_state_advanced": false,
+    "resource_spending": false
+  }
+}
