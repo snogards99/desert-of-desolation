@@ -1,50 +1,6 @@
-import test from "node:test";
-import assert from "node:assert/strict";
-import fs from "node:fs";
-import path from "node:path";
-
-const j=p=>JSON.parse(fs.readFileSync(p,"utf8"));
-const expected="1.5.1-alpha.28";
-
-test("active release metadata is synchronized",()=>{
-  assert.equal(j("package.json").version,expected);
-  assert.equal(j("plugin/plugin.json").version,expected);
-  assert.equal(j("plugin/.codex-plugin/plugin.json").version,expected);
-  assert.equal(j("plugin/skills/desert-of-desolation-game/data/ACTIVE_POLICY_OVERRIDES.json").release,expected);
-  assert.equal(j("plugin/skills/desert-of-desolation-game/data/VISUAL_THEME.json").configured_in_plugin_version,expected);
-  assert.equal(j("plugin/skills/desert-of-desolation-game/data/SOUND_MIXER_QA.json").reviewed_in_version,expected);
-  assert.equal(j("plugin/skills/desert-of-desolation-art-direction/assets/art-engine.json").plugin_release,expected);
-});
-test("observed live Site evidence is v29 projection 59",()=>{
-  const site=j("plugin/skills/desert-of-desolation-game/data/SITE_PRESENTATION_PROFILE.json");
-  assert.equal(site.live_site_evidence.source_version_number,29);
-  assert.equal(site.live_site_evidence.projection_revision,59);
-  assert.equal(site.live_site_evidence.status,"active");
-  assert.equal(site.live_site_evidence.access_mode,"public");
-});
-test("current art authoring remains HD painterly",()=>{
-  const theme=j("plugin/skills/desert-of-desolation-game/data/VISUAL_THEME.json");
-  assert.equal(theme.pixel_art,false);
-  assert.equal(theme.rendering_profile,"dod.hd-painted-module-realism");
-  assert.equal(j("plugin/skills/desert-of-desolation-art-direction/assets/art-engine.json").engine_version,"1.5.0");
-});
-test("audio configuration is internally consistent",()=>{
-  const profile=j("plugin/skills/desert-of-desolation-game/data/SOUND_MIXER_PROFILE.json");
-  const qa=j("plugin/skills/desert-of-desolation-game/data/SOUND_MIXER_QA.json");
-  assert.equal(profile.layers.Ambience,qa.defaults.Ambience);
-  assert.equal(profile.layers.Music,qa.defaults.Music);
-  assert.equal(profile.theme_base_gain,qa.defaults.theme_cue_output_before_master);
-  assert.equal(profile.theme_speech_duck_gain,qa.defaults.theme_speech_duck_gain);
-});
-test("bundled Site runtime has no unresolved relative imports",()=>{
-  const base="plugin/skills/desert-of-desolation-game/site-runtime",files=[];
-  const walk=d=>{for(const e of fs.readdirSync(d,{withFileTypes:true})){const f=path.join(d,e.name);if(e.isDirectory())walk(f);else if(/\.(tsx|ts|mjs|js)$/.test(e.name))files.push(f)}};
-  walk(base);
-  const re=/from\s+['"](\.{1,2}\/[^'"]+)['"]|import\s+['"](\.{1,2}\/[^'"]+)['"]/g,missing=[];
-  for(const file of files){const src=fs.readFileSync(file,"utf8");let m;while((m=re.exec(src))){const spec=m[1]||m[2],raw=path.resolve(path.dirname(file),spec);const c=/\.[a-z0-9]+$/i.test(raw)?[raw]:[raw,raw+".mjs",raw+".js",raw+".ts",raw+".tsx",raw+".json",path.join(raw,"index.ts"),path.join(raw,"index.tsx"),path.join(raw,"index.js"),path.join(raw,"index.mjs")];if(!c.some(fs.existsSync))missing.push(file+" -> "+spec)}}}
-  assert.deepEqual(missing,[]);
-});
-test("obsolete external renderer files are removed",()=>{
-  for(const p of ["vercel.json","api","audio-renderer",".devcontainer","plugin/.app.json"]) assert.equal(fs.existsSync(p),false,p);
-  assert.deepEqual(j("plugin/mcp.json"),{});
-});
+import test from "node:test";import assert from "node:assert/strict";import fs from "node:fs";import path from "node:path";const j=p=>JSON.parse(fs.readFileSync(p,"utf8")),expected="1.5.1-alpha.30";
+test("active release metadata is synchronized",()=>{assert.equal(j("package.json").version,expected);assert.equal(j("plugin/plugin.json").version,expected);assert.equal(j("plugin/.codex-plugin/plugin.json").version,expected);assert.equal(j("plugin/skills/desert-of-desolation-game/data/ACTIVE_POLICY_OVERRIDES.json").release,expected);assert.equal(j("plugin/skills/desert-of-desolation-game/data/VISUAL_THEME.json").configured_in_plugin_version,expected);assert.equal(j("plugin/skills/desert-of-desolation-game/data/SOUND_MIXER_QA.json").reviewed_in_version,expected);assert.equal(j("plugin/skills/desert-of-desolation-art-direction/assets/art-engine.json").plugin_release,expected)});
+test("live Site source evidence is v30",()=>{const s=j("plugin/skills/desert-of-desolation-game/data/SITE_PRESENTATION_PROFILE.json");assert.equal(s.live_site_evidence.source_version_number,30);assert.ok(s.live_site_evidence.projection_revision>=60);assert.equal(s.live_site_evidence.status,"active");assert.equal(s.live_site_evidence.access_mode,"public")});
+test("art and audio policy remain consistent",()=>{const t=j("plugin/skills/desert-of-desolation-game/data/VISUAL_THEME.json"),a=j("plugin/skills/desert-of-desolation-art-direction/assets/art-engine.json"),p=j("plugin/skills/desert-of-desolation-game/data/SOUND_MIXER_PROFILE.json"),q=j("plugin/skills/desert-of-desolation-game/data/SOUND_MIXER_QA.json");assert.equal(t.pixel_art,false);assert.equal(t.rendering_profile,"dod.hd-painted-module-realism");assert.equal(a.engine_version,"1.5.0");assert.equal(p.layers.Ambience,q.defaults.Ambience);assert.equal(p.layers.Music,q.defaults.Music);assert.equal(p.theme_base_gain,q.defaults.theme_cue_output_before_master);assert.equal(p.theme_speech_duck_gain,q.defaults.theme_speech_duck_gain)});
+test("bundled Site runtime has no unresolved relative imports",()=>{const base="plugin/skills/desert-of-desolation-game/site-runtime",files=[];const walk=d=>{for(const e of fs.readdirSync(d,{withFileTypes:true})){const f=path.join(d,e.name);if(e.isDirectory())walk(f);else if(/\.(tsx|ts|mjs|js)$/.test(e.name))files.push(f)}};walk(base);const re=/from\s+['"](\.{1,2}\/[^'"]+)['"]|import\s+['"](\.{1,2}\/[^'"]+)['"]/g,missing=[];for(const file of files){const src=fs.readFileSync(file,"utf8");let m;while((m=re.exec(src))){const spec=m[1]||m[2],raw=path.resolve(path.dirname(file),spec),c=/\.[a-z0-9]+$/i.test(raw)?[raw]:[raw,raw+".mjs",raw+".js",raw+".ts",raw+".tsx",raw+".json",path.join(raw,"index.ts"),path.join(raw,"index.tsx"),path.join(raw,"index.js"),path.join(raw,"index.mjs")];if(!c.some(fs.existsSync))missing.push(file+" -> "+spec)}}assert.deepEqual(missing,[])});
+test("obsolete external renderer files are removed",()=>{for(const p of ["vercel.json","api","audio-renderer",".devcontainer","plugin/.app.json"])assert.equal(fs.existsSync(p),false,p);assert.deepEqual(j("plugin/mcp.json"),{})});

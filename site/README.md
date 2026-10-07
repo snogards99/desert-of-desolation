@@ -2,14 +2,16 @@
 
 Existing ChatGPT Site project: `appgprj_6ac3ddb2142c81918d529d4c7504e59d`
 
-Observed live state:
+Latest observed live state:
 - Slug: `desert-of-desolation`
 - Status: active
 - Access: public
-- Site source version: 29
-- Projection revision: 59
+- Site source version: 30
+- Projection revision: 61
 - Live URL: `https://desert-of-desolation.nreach-1221.chatgpt.site`
 
-The v29 deployment identifier is not exposed by the current Site metadata surface, so no deployment ID is invented. Prior v28 deployment references remain historical only.
+Historical rollback evidence:
+- Verified v28 deployment ID: `appgdep_6ac53efc570c8191874ecd5b279d7e2d`
+- Recorded v28 native source commit: `bfc027dc21493b02f37b5096f9fab1c117b2f9ef`
 
-GitHub mirrors the current plugin presentation/runtime contracts and records the observed native Site identity/version. The native Site remains the browser presentation surface; GitHub is not a substitute host. Do not claim a new Site publish, deployment ID, browser-audio pass, or physical-device pass without direct evidence.
+The current Library Site artifact exposes source/projection metadata but not the v30 deployment ID, so none is invented. GitHub mirrors current plugin/runtime contracts and records Site evidence; it is not a substitute host.
