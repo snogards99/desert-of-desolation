@@ -1,9 +1,9 @@
 {
   "schema_version": 6,
-  "profile_id": "dod.site.presentation.alpha34",
-  "configured_in_plugin_version": "1.5.1-alpha.34",
+  "profile_id": "dod.site.presentation.alpha2-candidate",
+  "configured_in_plugin_version": "1.5.1-alpha.36",
   "architecture_policy": "PRESERVE_EXISTING_SITE_GAME_ENGINE_STATE_AND_HANDLERS; ADD_STATE_DRIVEN_PRIMARY_SCENE_IMAGE",
-  "source_runtime": "ALPHA34_SITE_RUNTIME_PLUS_ALPHA33_SCENE_IMAGE_RESOLVER",
+  "source_runtime": "ALPHA36_CANDIDATE_RUNTIME_PLUS_ALPHA33_SCENE_IMAGE_RESOLVER",
   "visual": {
     "base_theme": "dod.moonlit-ink",
     "art_engine": "dod.art-engine@1.5.0",
@@ -47,6 +47,7 @@
     "access_mode": "public",
     "source_version_number": 32,
     "projection_revision": 65,
-    "alpha34_republished": false
+    "alpha34_republished": false,
+    "alpha2_candidate_republished": false
   }
 }
