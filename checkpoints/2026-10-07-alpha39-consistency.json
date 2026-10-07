@@ -1,0 +1,105 @@
+{
+  "checkpoint_schema": "dod.commit-checkpoint.v2",
+  "timestamp_utc": "2026-10-07T23:46:20Z",
+  "shared_release_id": "dod-alpha39-consistency-hardened-2026-10-07",
+  "status": "PLUGIN_PUBLISHED_AND_SOURCE_SYNCHRONIZED; SOURCE_QA_GREEN; LIVE_SITE_PUBLICATION_PENDING_NATIVE_ACTION",
+  "coordinated_release_verified": false,
+  "canonical_source": {
+    "repository": "snogards99/desert-of-desolation",
+    "branch": "main",
+    "implementation_commit": "845599b74d2b96ac4a3034393b436166799d0fae",
+    "implementation_tree": "9fb918303f417eedb06cbe49e5216a44cda4fde9",
+    "release_guard_commit": "d786d39b6c167bc64e80f9b62726fd2f82eab79e",
+    "release_guard_path": "release/UNIFIED_RELEASE_GUARD.json",
+    "checkpoint_commit_policy": "This record follows implementation and guard commits; read its own commit from Git history to avoid circular self-reference."
+  },
+  "plugin": {
+    "plugin_id": "Plugin_3352cc65ee508191abeb37ffa759294d",
+    "version": "1.5.1-alpha.39",
+    "release_id": "pluginrel_6ac6d927a2fc8191a1644e16304c0b8e",
+    "scope": "WORKSPACE",
+    "discoverability": "PRIVATE",
+    "published": true,
+    "readback_verified": true,
+    "changed_text_parity": {
+      "checked": 14,
+      "exact_matches": 14,
+      "mismatches": 0
+    },
+    "full_binary_parity": "NOT_VERIFIED_TOOL_BOUNDARY"
+  },
+  "site": {
+    "project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
+    "slug": "desert-of-desolation",
+    "live_url": "https://desert-of-desolation.nreach-1221.chatgpt.site",
+    "observed_source_version": 32,
+    "observed_projection_revision": 65,
+    "status": "active",
+    "access_mode": "public",
+    "bundled_source_updated_in_github": true,
+    "bundled_source_commit": "845599b74d2b96ac4a3034393b436166799d0fae",
+    "alpha39_republished": false,
+    "fresh_deployment_verified": false,
+    "deployment_id": null,
+    "blocker": "No native ChatGPT Site source/export/save/publish mutation tool is exposed in the current environment."
+  },
+  "validation": {
+    "pull_request_ci": {
+      "workflow": "validate",
+      "run_id": 37703689702,
+      "conclusion": "success"
+    },
+    "implementation_main_ci": {
+      "workflow": "validate",
+      "run_id": 37703949786,
+      "conclusion": "success",
+      "tests_passed": 89,
+      "tests_failed": 0
+    },
+    "release_guard_ci": {
+      "workflow": "validate",
+      "run_id": 37704070269,
+      "conclusion": "success"
+    },
+    "runtime_relative_import_closure": "PASS_ZERO_UNRESOLVED",
+    "executable_art_engine_tests": "PASS",
+    "outdoor_time_alias_tests": "PASS",
+    "audio_regression_suite": "PASS_INHERITED_AND_CURRENT_SOURCE",
+    "campaign_state_mutation_for_qa": false
+  },
+  "repaired": [
+    "Art-direction executable planner updated from legacy 1.3.0 DOD_PAINTED/DOD_INK behavior to Art Engine 1.6.0 DOD_PIXEL32.",
+    "Outdoor physical-asset aliases aligned across time, visual, node and art-engine policies: MORNING -> DAY; dawn/sunrise/evening/sunset -> DUSK.",
+    "Release validation expanded so executable Art Engine/version and time-alias drift fail CI.",
+    "Site source documentation and bundled presentation policy advanced to alpha.39 while preserving the live Site evidence boundary."
+  ],
+  "preservation": {
+    "campaign_api_writes": 0,
+    "campaign_advanced_or_reset": false,
+    "resources_modified": false,
+    "pending_actions_executed": false,
+    "live_site_state_mutated": false,
+    "stable_media_ids_changed": false,
+    "audio_asset_bytes_changed": false,
+    "saved_mix_changed": false,
+    "plugin_audience_changed": false,
+    "site_access_changed": false,
+    "hosting_changed": false,
+    "gameplay_resolver_changed": false,
+    "unknown_rules_or_resources": "FAIL_CLOSED"
+  },
+  "open_boundaries": [
+    "Native Site republish and direct deployed-browser verification.",
+    "Server-side campaign write authorization, transaction/idempotency and resolver persistence.",
+    "Desktop/390px browser journeys, microphone permission/input, physical iPhone speaker/headphone listening and accessibility/device QA.",
+    "Complete binary-media Plugin/GitHub byte parity."
+  ],
+  "rollback": {
+    "previous_main_commit": "f0413da7fdda722966395d6f54fa364a914ab0e7",
+    "previous_plugin_release_id": "pluginrel_6ac67b89972c819197202788b96cb167",
+    "previous_plugin_version": "1.5.1-alpha.38",
+    "live_site_source_version": 32,
+    "live_site_projection_revision": 65
+  },
+  "next_release_rule": "Do not call alpha.39 a coordinated live Site+Plugin release until the existing Site is natively republished and independently verified. Until then, alpha.39 is the canonical published plugin and synchronized source release."
+}
