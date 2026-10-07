@@ -1,0 +1,78 @@
+{
+  "checkpoint_schema": "dod.commit-checkpoint.v1",
+  "timestamp_utc": "2026-10-07T14:50:00Z",
+  "shared_release_id": "dod-alpha36-ten-pass-reconciliation-2026-10-07",
+  "canonical_source": {
+    "repository": "snogards99/desert-of-desolation",
+    "branch": "main",
+    "implementation_commit": "8ee71397e294442c9c8dcb3b65963f6d57253d17",
+    "validated_source_head": "3a359740d11c38a01e89ccc52451e22ed71b6363",
+    "release_guard_commit": "972c5f000d2f89bf085c5bbd1ff3b8a2e084cef5",
+    "release_guard_path": "release/UNIFIED_RELEASE_GUARD.json"
+  },
+  "plugin": {
+    "plugin_id": "Plugin_3352cc65ee508191abeb37ffa759294d",
+    "version": "1.5.1-alpha.36",
+    "release_id": "pluginrel_6ac65a421be88191b52f808901c53e41",
+    "scope": "WORKSPACE",
+    "discoverability": "PRIVATE",
+    "status": "CURRENT_PUBLISHED_PLUGIN_RELEASE"
+  },
+  "site": {
+    "project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
+    "slug": "desert-of-desolation",
+    "status": "active",
+    "access_mode": "public",
+    "observed_source_version": 32,
+    "observed_projection_revision": 65,
+    "republished_by_alpha36": false,
+    "publication_required": true,
+    "publication_reason": "Alpha.36 adds microphone dictation source/UI and corrected Site/runtime metadata; native Site publish action was not available in this session.",
+    "deployment_id": null
+  },
+  "changes": {
+    "optimizer_passes": 10,
+    "version_drift_reconciled": true,
+    "stale_site_qa_reconciled": true,
+    "homepage_theme_authority": 0.16,
+    "ambience_default_gain": 0.42,
+    "microphone_dictation_source_added": true,
+    "microphone_auto_submit": false,
+    "verified_shair_mechanics_promoted": true,
+    "confirmed_character_item_records_reconciled": true,
+    "undefined_custom_magic_remains_fail_closed": true,
+    "portrait_identity_mapping_verified": true,
+    "new_hd_portrait_bytes_generated": false
+  },
+  "qa": {
+    "initial_source_run_id": 37639433212,
+    "initial_source_conclusion": "failure",
+    "initial_failure": "One stale state-driven-node-images test hard-coded alpha.34.",
+    "repair_commit": "3a359740d11c38a01e89ccc52451e22ed71b6363",
+    "repaired_source_run_id": 37639846046,
+    "repaired_source_conclusion": "success",
+    "guard_run_id": 37639969393,
+    "guard_conclusion": "success",
+    "published_plugin_readback": "PASS",
+    "sampled_plugin_github_byte_parity": "PASS",
+    "runtime_relative_import_closure": "PASS_ZERO_UNRESOLVED",
+    "campaign_state_advanced": false,
+    "access_changed": false,
+    "stable_media_ids_changed": false,
+    "architecture_rebuilt": false
+  },
+  "unresolved": [
+    "Native ChatGPT Site republish is required for alpha.36 microphone/UI source to become live; no Sites mutation action was exposed in this session.",
+    "Live browser narration timing, first-cue download/decode latency, play/stop/restart, mix intelligibility and quiet gaps require direct listening.",
+    "Microphone permission/input must be verified after Site republish.",
+    "Physical iPhone speaker/headphone and responsive-performance QA remains open.",
+    "New HD painterly character portrait bytes remain an art-production follow-up; verified identity-safe existing portraits are retained.",
+    "Gold Ankh of Amun-Ra, Staff of Solar Authority, Solar Cleave, Thelarrs/wind powers, Ultimate Shadow enhancement, camel fear-charge, current mutable daily/weekly usage counters, and unrecorded Az/Dak/Ery preparations remain fail-closed until authoritative evidence exists."
+  ],
+  "rollback": {
+    "previous_plugin_version": "1.5.1-alpha.35",
+    "previous_plugin_release_id": "pluginrel_6ac63501f2848191b047c6da6d540690",
+    "previous_verified_checkpoint_commit": "c5639c3e2b38ed4cddda05727bbf40558583b64a"
+  },
+  "status": "VERIFIED_PLUGIN_AND_CANONICAL_SOURCE_ALPHA36; LIVE_SITE_V32_REPUBLISH_REQUIRED; DEVICE_AND_UNBOUND_MAGIC_EVIDENCE_GATES_OPEN"
+}
