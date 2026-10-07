@@ -3,7 +3,7 @@
   "profile_id": "dod.site.presentation.alpha34",
   "configured_in_plugin_version": "1.5.1-alpha.34",
   "architecture_policy": "PRESERVE_EXISTING_SITE_GAME_ENGINE_STATE_AND_HANDLERS; ADD_STATE_DRIVEN_PRIMARY_SCENE_IMAGE",
-  "source_runtime": "ALPHA30_SITE_RUNTIME_PLUS_ALPHA33_SCENE_IMAGE_RESOLVER",
+  "source_runtime": "ALPHA34_SITE_RUNTIME_PLUS_ALPHA33_SCENE_IMAGE_RESOLVER",
   "visual": {
     "base_theme": "dod.moonlit-ink",
     "art_engine": "dod.art-engine@1.5.0",
@@ -27,7 +27,7 @@
       "REDUCED_MOTION_SAFE",
       "NO_HORIZONTAL_OVERFLOW"
     ],
-    "node_title": "CENTERED_GLOWING_TOMB_DOORWAY_WITH_PLACE_AND_NODE_NO_REVISION",
+    "node_title": "CENTERED_GLOWING_TOMB_DOORWAY_WITHOUT_PLACE_OR_NODE_LABELS",
     "scene_image": "STATE_DRIVEN_SINGLE_PRIMARY_IMAGE_ABOVE_TEXT; CURRENT_ENVIRONMENT_OR_VISIBLE_CREATURE_OR_DISCOVERED_ITEM_ONLY",
     "scene_image_policy": "data/imagery/NODE_IMAGE_STATE_POLICY.json",
     "scene_image_resolver": "site-runtime/lib/scene-image-resolver.mjs",
@@ -47,6 +47,6 @@
     "access_mode": "public",
     "source_version_number": 32,
     "projection_revision": 65,
-    "alpha33_republished": false
+    "alpha34_republished": false
   }
 }
