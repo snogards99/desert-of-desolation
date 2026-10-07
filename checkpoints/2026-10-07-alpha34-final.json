@@ -1,0 +1,67 @@
+{
+  "checkpoint_schema": "dod.commit-checkpoint.v1",
+  "timestamp_utc": "2026-10-07T12:00:20Z",
+  "shared_release_id": "dod-alpha34-ux-audio-final-2026-10-07",
+  "canonical_source": {
+    "repository": "snogards99/desert-of-desolation",
+    "branch": "main",
+    "artifact_source_head": "91fd8dd28cef97c95d55fbd867e081e90462b498",
+    "release_guard_path": "release/UNIFIED_RELEASE_GUARD.json",
+    "prior_verified_checkpoint": "checkpoints/2026-10-07-alpha34-ux-audio-source.json"
+  },
+  "plugin": {
+    "plugin_id": "Plugin_3352cc65ee508191abeb37ffa759294d",
+    "version": "1.5.1-alpha.34",
+    "release_id": "pluginrel_6ac6325cd794819187f554d195c92879",
+    "scope": "WORKSPACE",
+    "discoverability": "PRIVATE",
+    "runtime_verified": true,
+    "verified_behaviors": [
+      "Home dock item removed",
+      "legacy Explore/Company/Chronicle homepage buttons removed",
+      "Raurin/current-node doorway labels removed",
+      "The Seekers of Ra placed below main title",
+      "Eye of Horus grouped with Settings",
+      "Scene entry hard-stops prior audio",
+      "current node first cue preloaded and started before remaining node layers",
+      "Home theme isolated from story playback",
+      "enabled-bus scene health reporting present",
+      "Ambience default 0.42"
+    ]
+  },
+  "site": {
+    "project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
+    "slug": "desert-of-desolation",
+    "access_mode": "public",
+    "observed_source_version": 32,
+    "observed_projection_revision": 65,
+    "status": "UNCHANGED_NATIVE_REPUBLISH_UNAVAILABLE_IN_CURRENT_SESSION"
+  },
+  "qa": {
+    "github_final_source_run_id": 37617801025,
+    "github_final_source_conclusion": "success",
+    "github_guard_run_id": 37617868181,
+    "github_guard_job_id": 112780509029,
+    "github_guard_job_conclusion": "success",
+    "source_contract_tests": "PASS",
+    "installed_plugin_runtime_inspection": "PASS",
+    "campaign_state_advanced": false,
+    "stable_media_ids_changed": false,
+    "physical_device_audio_reverified": false
+  },
+  "package_reference": {
+    "candidate_overlay_sha256": "0abd0d2524b9c038ff97a264a51bbb096ed9e7d331ae89fb26102535c85010a0",
+    "note": "Candidate overlay retained in the execution workspace only; canonical source and published plugin release are authoritative."
+  },
+  "rollback": {
+    "previous_plugin_release_id": "pluginrel_6ac5dcab5b688191b8fbe927a851e57f",
+    "previous_plugin_version": "1.5.1-alpha.33",
+    "previous_verified_source_checkpoint": "d965ed3eeaf94260763d4ec55c2c42070768f6b6"
+  },
+  "unresolved": [
+    "Native live Site republish is not available through the tools exposed in this session; Site remains source version 32 / projection revision 65.",
+    "Physical iPhone speaker/headphone playback has not been reverified.",
+    "New HD painterly character portrait bytes remain pending; alpha34 retains verified existing portrait bindings."
+  ],
+  "status": "PLUGIN_AND_CANONICAL_SOURCE_VERIFIED; COORDINATED_RELEASE_PARTIAL_BECAUSE_LIVE_SITE_NOT_REPUBLISHED"
+}
