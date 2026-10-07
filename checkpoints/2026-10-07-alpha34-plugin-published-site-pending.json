@@ -1,0 +1,51 @@
+{
+  "checkpoint_schema": "dod.commit-checkpoint.v1",
+  "timestamp_utc": "2026-10-07T11:55:00Z",
+  "shared_release_id": "dod-alpha34-home-scene-audio-plugin-published-2026-10-07",
+  "canonical_source": {
+    "repository": "snogards99/desert-of-desolation",
+    "branch": "main",
+    "runtime_source_head": "d3fe6755e6957a97f93af9392aa45ff85bdc9c13",
+    "release_guard_commit": "2f44461d10c8172e0d9221010744a198a2506d7d",
+    "release_guard_path": "release/UNIFIED_RELEASE_GUARD.json"
+  },
+  "plugin": {
+    "plugin_id": "Plugin_3352cc65ee508191abeb37ffa759294d",
+    "version": "1.5.1-alpha.34",
+    "release_id": "pluginrel_6ac6325cd794819187f554d195c92879",
+    "scope": "WORKSPACE",
+    "discoverability": "PRIVATE",
+    "status": "PUBLISHED_AND_READBACK_VERIFIED"
+  },
+  "site": {
+    "project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
+    "slug": "desert-of-desolation",
+    "observed_source_version": 32,
+    "observed_projection_revision": 65,
+    "access_mode": "public",
+    "status": "UNCHANGED; NATIVE_SITE_MUTATION_PUBLISH_ACTION_NOT_EXPOSED"
+  },
+  "completed": [
+    "Home removed from bottom navigation; dock is Scene, Party, Journal",
+    "legacy Explore, Company, Chronicle homepage buttons removed",
+    "Raurin and node-name doorway labels removed",
+    "top title lockup removed; Eye of Horus aligned beside Settings",
+    "The Seekers of Ra placed beneath the main title graphic",
+    "Scene re-entry stops all current audio before restart",
+    "first current-node cue buffers and starts before remaining node audio layers",
+    "alpha.34 workspace plugin overlay published and read back successfully"
+  ],
+  "qa": {
+    "local_overlay_contract": "PASS",
+    "plugin_post_publish_readback": "PASS",
+    "campaign_state_advanced": false,
+    "stable_media_ids_changed": false,
+    "live_site_republished": false,
+    "physical_iphone_audio_verified": false
+  },
+  "genuine_boundaries": [
+    "Live Site cannot be republished from this session because no native ChatGPT Sites mutation/publish action is exposed.",
+    "Physical iPhone audio verification cannot be executed from this environment."
+  ],
+  "status": "PLUGIN_COMPLETE; SOURCE_CHECKPOINTED; SITE_PUBLICATION_PENDING_SUPPORTED_NATIVE_ACTION"
+}
