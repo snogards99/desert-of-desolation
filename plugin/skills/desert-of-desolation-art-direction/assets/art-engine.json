@@ -2,7 +2,7 @@
   "schema_version": 1,
   "engine_id": "dod.art-engine",
   "engine_version": "1.5.0",
-  "plugin_release": "1.5.1-alpha.34",
+  "plugin_release": "1.5.1-alpha.36",
   "theme_id": "dod.moonlit-ink",
   "modes": {
     "site": "DOD_SITE",
