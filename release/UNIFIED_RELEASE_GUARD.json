@@ -1,57 +1,54 @@
 {
-  "schema_version": 9,
-  "shared_release_id": "dod-alpha34-ux-audio-final-2026-10-07",
+  "schema_version": 10,
+  "shared_release_id": "dod-alpha2-candidate-alpha36-2026-10-07",
   "plugin": {
     "plugin_id": "Plugin_3352cc65ee508191abeb37ffa759294d",
-    "current_published_version": "1.5.1-alpha.34",
-    "current_release_id": "pluginrel_6ac6325cd794819187f554d195c92879",
+    "current_published_version": "1.5.1-alpha.35",
+    "current_release_id": "pluginrel_6ac63501f2848191b047c6da6d540690",
+    "candidate_version": "1.5.1-alpha.36",
     "scope": "WORKSPACE",
     "discoverability": "PRIVATE",
-    "alpha34_published": true
+    "alpha2_candidate_published": false
   },
   "github": {
     "repository": "snogards99/desert-of-desolation",
-    "branch": "main",
-    "source_version": "1.5.1-alpha.34",
-    "artifact_source_head": "de4c7f695900c015d19990d7a631fc5da793bb9a",
+    "branch": "alpha2-candidate-20261007",
+    "source_version": "1.5.1-alpha.36",
     "validation": {
       "workflow": "validate",
-      "run_id": 37617586659,
-      "conclusion": "success"
+      "conclusion": "PENDING_FINAL_BRANCH_CI",
+      "requirement": "PASS before verified checkpoint"
     },
     "implementation": [
-      "multi-select choice toggles and shared submit",
-      "Home dock item and legacy Explore/Company/Chronicle homepage controls removed",
-      "Raurin/current-node doorway labels removed and The Seekers of Ra placed below main title",
-      "Eye of Horus grouped with Settings in the top utility area",
-      "homepage theme restricted to Home at 0.16 base gain",
-      "Scene entry hard-stops prior audio and restarts current node audio",
-      "current node first cue is preloaded and started before remaining node layers",
-      "enabled-bus playback health reporting and user-gesture recovery",
-      "wrong-character portrait fallback removed and existing portrait URLs cache-refreshed"
-    ],
-    "source_head": "d3fe6755e6957a97f93af9392aa45ff85bdc9c13",
-    "release_guard_previous_commit": "5a93a3d701acd51193ef485564369ec666be518d"
+      "reconciled published alpha.35 release history into canonical source",
+      "legacy audio-engine/campfire/media-policy/listening-scene/sound-settings entrypoints re-export canonical lib modules",
+      "Scene audio health expects only configured enabled buses",
+      "Site runtime QA refreshed to observed source v32 / projection 65",
+      "Alpha 2 candidate validation guards version drift, wrapper drift, configured-bus health and Site publication truthfulness",
+      "obsolete deploy-optimize-20261004 branch reviewed and excluded"
+    ]
   },
   "site": {
     "project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
     "observed_source_version": 32,
     "observed_projection_revision": 65,
-    "republished_by_this_release": false,
+    "access_mode": "public",
+    "republished_by_candidate": false,
     "status": "UNCHANGED_OBSERVED_BASELINE_NATIVE_PUBLISH_ACTION_UNAVAILABLE"
   },
   "qa": {
-    "source_consistency": "PASS",
-    "github_ci": "PASS",
+    "source_consistency": "PENDING_CI",
     "campaign_state_advanced": false,
     "stable_media_ids_changed": false,
-    "new_character_portrait_bytes_generated": false,
-    "physical_device_audio_reverified": false
+    "node_master_count": 361,
+    "physical_device_audio_reverified": false,
+    "new_character_portrait_bytes_generated": false
   },
   "open_items": [
-    "Native live Site republish remains unavailable in the current tool environment; Site is still observed at source version 32 / projection revision 65.",
+    "Final candidate branch CI must pass before the Alpha 2 checkpoint is marked VERIFIED.",
+    "Native live Site republish remains unavailable in the current tool environment.",
     "Physical iPhone speaker/headphone playback remains an external evidence gate.",
-    "New HD painterly character portrait bytes remain pending; alpha34 retains verified existing portrait bindings."
+    "New HD painterly character portrait bytes remain pending separate art production."
   ],
-  "status": "ALPHA34_PLUGIN_PUBLISHED_AND_RUNTIME_VERIFIED; CANONICAL_SOURCE_COMMITTED; LIVE_SITE_REPUBLISH_PENDING_NATIVE_SITE_TOOL"
+  "status": "ALPHA2_CANDIDATE_SOURCE_COMPLETE_PENDING_BRANCH_CI; PUBLISHED_PLUGIN_ALPHA35; LIVE_SITE_V32_UNCHANGED"
 }
