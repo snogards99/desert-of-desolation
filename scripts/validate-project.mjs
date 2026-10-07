@@ -17,13 +17,16 @@ for(const [k,v] of [
   ["art",j("plugin/skills/desert-of-desolation-art-direction/assets/art-engine.json").plugin_release],
   ["nodePolicy",j("plugin/skills/desert-of-desolation-game/data/imagery/NODE_IMAGE_STATE_POLICY.json").release],
   ["siteProfile",j("plugin/skills/desert-of-desolation-game/data/SITE_PRESENTATION_PROFILE.json").configured_in_plugin_version],
-  ["siteQA",j("plugin/skills/desert-of-desolation-game/data/SITE_RUNTIME_QA.json").reviewed_in_version]
+  ["siteQA",j("plugin/skills/desert-of-desolation-game/data/SITE_RUNTIME_QA.json").reviewed_in_version],
+  ["finalRelease",j("plugin/FINAL_RELEASE.json").version],
+  ["candidateQA",j("plugin/ALPHA2_CANDIDATE_QA.json").release]
 ]) if(v!==expected) fail(k+" drift: "+v);
 
 const site=j("plugin/skills/desert-of-desolation-game/data/SITE_PRESENTATION_PROFILE.json");
 if(site.live_site_evidence?.source_version_number!==32||site.live_site_evidence?.projection_revision!==65) fail("site evidence drift");
 if(site.live_site_evidence?.alpha2_candidate_republished!==false) fail("candidate must not claim live Site republish");
 
+if(!fs.existsSync("plugin/ALPHA35_PLUGIN_SYNC_QA.json")) fail("alpha35 provenance missing");
 if(!fs.existsSync("plugin/skills/desert-of-desolation-game/site-runtime/lib/scene-image-resolver.mjs")) fail("resolver missing");
 if(!read("plugin/skills/desert-of-desolation-game/site-runtime/components/scene-plate.tsx").includes("resolveSceneImage")) fail("ScenePlate resolver wiring missing");
 
