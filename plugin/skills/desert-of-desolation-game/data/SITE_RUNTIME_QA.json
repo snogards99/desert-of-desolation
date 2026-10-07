@@ -1,12 +1,22 @@
 {
-  "schema_version":2,
-  "release":"1.5.1-alpha.24",
-  "site_project_id":"appgprj_6ac3ddb2142c81918d529d4c7504e59d",
-  "site_url":"https://desert-of-desolation.nreach-1221.chatgpt.site",
-  "mode":"MAINTENANCE_NONMUTATING",
-  "recorded_live_baseline":{"site_version":28,"deployment_id":"appgdep_6ac53efc570c8191874ecd5b279d7e2d","source_commit":"bfc027dc21493b02f37b5096f9fab1c117b2f9ef","alpha24_republished":false},
-  "evidence_levels":{"CONFIGURED":"Configuration exists but runtime behavior is not proven.","SIMULATED":"Automated or synthetic behavior passed; not audible physical proof.","BROWSER_VERIFIED":"Observed through a real browser and user-gesture path.","PHYSICAL_DEVICE_VERIFIED":"Observed on the named physical device and output."},
-  "gates":[
+  "schema_version": 2,
+  "release": "1.5.1-alpha.24",
+  "site_project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
+  "site_url": "https://desert-of-desolation.nreach-1221.chatgpt.site",
+  "mode": "MAINTENANCE_NONMUTATING",
+  "recorded_live_baseline": {
+    "site_version": 28,
+    "deployment_id": "appgdep_6ac53efc570c8191874ecd5b279d7e2d",
+    "source_commit": "bfc027dc21493b02f37b5096f9fab1c117b2f9ef",
+    "alpha24_republished": false
+  },
+  "evidence_levels": {
+    "CONFIGURED": "Configuration exists but runtime behavior is not proven.",
+    "SIMULATED": "Automated or synthetic behavior passed; not audible physical proof.",
+    "BROWSER_VERIFIED": "Observed through a real browser and user-gesture path.",
+    "PHYSICAL_DEVICE_VERIFIED": "Observed on the named physical device and output."
+  },
+  "gates": [
     {"id":"site_identity","status":"PASS_RECORDED","evidence":"Existing project ID and live URL preserved; duplicate Site not required."},
     {"id":"audience_policy","status":"PASS_RECORDED","evidence":"Existing Site audience preserved; plugin remains workspace-private."},
     {"id":"source_profile_alpha24","status":"PASS_CONFIGURED","evidence":"Alpha.24 presentation profile and CSS are packaged; live Site publication is not claimed."},
@@ -18,7 +28,7 @@
     {"id":"physical_iphone_headphones","status":"OPEN","evidence":"No new alpha.24 physical-device listening evidence."},
     {"id":"physical_iphone_speaker","status":"OPEN","evidence":"No new alpha.24 physical-device listening evidence."}
   ],
-  "campaign_state_mutation":"NONE",
-  "spoiler_policy":"TEST_ONLY_DISCOVERY_SAFE_FIXTURES",
-  "reviewed_in_version":"1.5.1-alpha.24"
+  "campaign_state_mutation": "NONE",
+  "spoiler_policy": "TEST_ONLY_DISCOVERY_SAFE_FIXTURES",
+  "reviewed_in_version": "1.5.1-alpha.24"
 }
