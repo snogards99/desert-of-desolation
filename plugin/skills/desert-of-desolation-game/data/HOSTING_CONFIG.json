@@ -1,7 +1,7 @@
 {
-  "schema_version": 7,
+  "schema_version": 8,
   "source_plugin_id": "Plugin_3352cc65ee508191abeb37ffa759294d",
-  "configured_in_version": "1.5.1-alpha.38",
+  "configured_in_version": "1.5.1-alpha.39",
   "provider": "CHATGPT_SITES",
   "deployment_status": "DIRECT_BROWSER_SITE_PUBLISHED_ACTIVE",
   "site_project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
@@ -37,10 +37,10 @@
     "physical_iphone_listening_qa_reverified_this_session": false
   },
   "site_primary_cutover_approved": false,
-  "site_primary_cutover_note": "Alpha.38 contains source/runtime deltas (pixel32 art authority and alias normalization). Native Site republish and direct browser/device verification remain required.",
+  "site_primary_cutover_note": "Alpha.39 aligns the packaged pixel32 Art Engine and DAY/DUSK/NIGHT time aliases. Native Site republish and direct browser/device verification remain required.",
   "default_access_path": "DIRECT_BROWSER",
   "automatic_site_plugin_provisioning": false,
   "save_sync_policy": "SEPARATE_SITE_D1_AND_CHATGPT_CHECKPOINTS; COPY_PLAYER_VISIBLE_SUMMARY_FOR_MANUAL_REVIEW",
   "sound_mixer_profile": "data/SOUND_MIXER_PROFILE.json",
-  "presentation_refinement": "Alpha.37 audio/save maintenance plus alpha.38 project-wide policy and alias reconciliation."
+  "presentation_refinement": "Alpha.37 audio/save maintenance, alpha.38 policy/alias reconciliation, and alpha.39 Art Engine/time-alias consistency hardening."
 }

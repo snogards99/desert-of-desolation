@@ -1,25 +1,15 @@
 {
-  "schema_version": 1,
-  "release": "1.5.1-alpha.38",
-  "pre_alpha38_audit": {
+  "schema_version": 2,
+  "release": "1.5.1-alpha.39",
+  "inherited_alpha38_audit": {
     "plugin_files": 883,
     "github_plugin_files": 140,
     "missing_from_github": 752,
-    "missing_by_type": {
-      "mp3": 397,
-      "png": 87,
-      "jsonl": 175,
-      "json": 50,
-      "md": 17,
-      "ttf": 8,
-      "xlsx": 7,
-      "other": 11
-    }
+    "note": "Historical pre-alpha38 count retained as provenance only; not reclassified as alpha39 parity."
   },
-  "readable_text_sync": "PENDING_GITHUB_WRITE_SURFACE_RECOVERY",
+  "readable_text_sync": "CURRENT_RELEASE_CHANGED_TEXT_IS_MIRRORED_TO_GITHUB_CANONICAL_SOURCE; EXACT COMMIT/RELEASE PAIR IS RECORDED IN THE EXTERNAL RELEASE GUARD",
   "binary_media_sync": "OPEN_TOOL_BOUNDARY",
-  "binary_boundary": "Current plugin text API exposes file paths/sizes but not binary bytes; the archive download cannot be materialized through the current execution surface, so binary media cannot be safely copied to GitHub in this session.",
-  "policy": "Never claim full plugin/GitHub parity until exact bytes can be checksummed.",
-  "text_source_sync": "PENDING_POST_PUBLISH_EXACT_TEXT_MIRROR_TO_GITHUB; GITHUB_WRITE_SURFACE_CONFIRMED_AVAILABLE",
-  "github_write_probe_commit": "82aa751e524ca0eaf5c521e89cfe53096489d827"
+  "binary_boundary": "Current text/source synchronization does not establish complete byte-for-byte parity for all bundled binary media.",
+  "policy": "Never claim full plugin/GitHub binary parity until exact bytes can be checksummed.",
+  "campaign_state_mutated": false
 }

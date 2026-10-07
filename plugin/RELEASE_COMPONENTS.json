@@ -1,16 +1,19 @@
 {
   "schema_version": 2,
-  "release": "1.5.1-alpha.38",
-  "scope": "PROJECT_WIDE_RECONCILIATION",
+  "release": "1.5.1-alpha.39",
+  "scope": "CONSISTENCY_HARDENING",
   "active": {
-    "policy": "1.5.1-alpha.38",
-    "theme": "1.5.1-alpha.38",
+    "policy": "1.5.1-alpha.39",
+    "theme": "1.5.1-alpha.39",
     "sound_profile": "1.5.1-alpha.38",
     "sound_qa": "1.5.1-alpha.38",
     "art_engine": "1.6.0",
+    "art_planner": "1.6.0",
     "node_policy": "1.5.1-alpha.38",
     "alias_authority": "1.5.1-alpha.38",
-    "gain_authority": "1.5.1-alpha.38"
+    "gain_authority": "1.5.1-alpha.38",
+    "time_policy": "1.5.1-alpha.39",
+    "site_profile": "1.5.1-alpha.39"
   },
   "runtime_contracts": {
     "art_profile": "dod.pixel32-rgba",
@@ -19,10 +22,21 @@
       "DUSK",
       "NIGHT"
     ],
+    "outdoor_aliases": {
+      "DAWN": "DUSK",
+      "SUNRISE": "DUSK",
+      "MORNING": "DAY",
+      "EVENING": "DUSK",
+      "SUNSET": "DUSK"
+    },
     "homepage_theme_base_gain": 0.16,
     "alias_normalization": true,
     "microphone_never_auto_submits": true,
     "campaign_state_mutation_for_qa": false
   },
+  "repaired_drift": [
+    "TIME_OF_DAY_POLICY visual MORNING alias now matches the DAY asset contract.",
+    "Art-direction executable planner now matches art-engine 1.6.0 and emits/accepts DOD_PIXEL32 instead of legacy DOD_PAINTED/DOD_INK."
+  ],
   "evidence_policy": "Source approval is distinct from native Site publication, browser listening, physical-device QA, server write authorization, transaction behavior, resolver persistence, and binary-media parity."
 }
