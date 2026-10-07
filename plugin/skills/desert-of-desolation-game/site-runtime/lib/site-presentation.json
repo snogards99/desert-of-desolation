@@ -1,11 +1,11 @@
 {
-  "background_theme":{
-    "enabled":true,
-    "media_id":"dod.audio.opening_replacement.opening_title_theme_v2",
-    "fallback_media_id":"scorefile.campaign_opening_overture.v397",
-    "base_gain":0.10,
-    "speech_duck_gain":0.03125,
-    "fade_in_seconds":0.35,
-    "fade_out_seconds":0.8
+  "background_theme": {
+    "enabled": true,
+    "media_id": "dod.audio.opening_replacement.opening_title_theme_v2",
+    "fallback_media_id": "scorefile.campaign_opening_overture.v397",
+    "base_gain": 0.16,
+    "speech_duck_gain": 0.03125,
+    "fade_in_seconds": 0.35,
+    "fade_out_seconds": 0.35
   }
 }
