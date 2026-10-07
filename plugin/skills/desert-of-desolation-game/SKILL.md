@@ -48,7 +48,7 @@ Tier 0 current legal scene/media; Tier 1 one likely immediate interaction; Tier 
 Use current Rev 4.6 sheets and approved portraits. Omit PSIONICS and FAMILY CHART. Keep full narration readable with accessible controls, practical touch targets, keyboard focus, reduced-motion support, and no horizontal overflow.
 
 ## Site maintenance
-Reuse the existing Site. Latest verified project evidence records Site source version 32 / projection revision 65. Alpha.33 updates the bundled source contract but does not claim a new live Site publication unless a native publish action is observed.
+Reuse the existing Site. Latest verified project evidence records Site source version 32 / projection revision 65. Alpha.34 synchronizes the bundled Site UX/audio contract, including final homepage cleanup and deterministic Scene audio restart, but does not claim a new live Site publication unless a native publish action is observed.
 
 ## State and saves
 Package files are immutable during play. Mutable state stays in active host/session checkpoints. Development never silently resets or advances the campaign.
