@@ -1,34 +1,78 @@
 {
-  "schema_version": 2,
-  "release": "1.5.1-alpha.24",
+  "schema_version": 3,
+  "release": "1.5.1-alpha.36",
+  "milestone": "ALPHA_2_CANDIDATE",
   "site_project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
   "site_url": "https://desert-of-desolation.nreach-1221.chatgpt.site",
   "mode": "MAINTENANCE_NONMUTATING",
   "recorded_live_baseline": {
-    "site_version": 28,
-    "deployment_id": "appgdep_6ac53efc570c8191874ecd5b279d7e2d",
-    "source_commit": "bfc027dc21493b02f37b5096f9fab1c117b2f9ef",
-    "alpha24_republished": false
+    "source_version_number": 32,
+    "projection_revision": 65,
+    "status": "active",
+    "access_mode": "public",
+    "deployment_id": null,
+    "source_commit": null,
+    "evidence": "ChatGPT Library Site metadata; deployment/source commit not exposed in current toolset"
   },
   "evidence_levels": {
     "CONFIGURED": "Configuration exists but runtime behavior is not proven.",
-    "SIMULATED": "Automated or synthetic behavior passed; not audible physical proof.",
+    "SOURCE_VERIFIED": "Static/runtime source contract is verified; live browser behavior is not implied.",
     "BROWSER_VERIFIED": "Observed through a real browser and user-gesture path.",
     "PHYSICAL_DEVICE_VERIFIED": "Observed on the named physical device and output."
   },
   "gates": [
-    {"id":"site_identity","status":"PASS_RECORDED","evidence":"Existing project ID and live URL preserved; duplicate Site not required."},
-    {"id":"audience_policy","status":"PASS_RECORDED","evidence":"Existing Site audience preserved; plugin remains workspace-private."},
-    {"id":"source_profile_alpha24","status":"PASS_CONFIGURED","evidence":"Alpha.24 presentation profile and CSS are packaged; live Site publication is not claimed."},
-    {"id":"audio_config_consistency","status":"PASS_STATIC","evidence":"Sound mixer profile and QA use the same current default gains and theme levels."},
-    {"id":"mobile_layout_contract","status":"PASS_STATIC","evidence":"Alpha.24 CSS includes narrow-width overflow, focus, reduced-motion, reading-width, and media-frame safeguards; live browser inspection remains open."},
-    {"id":"art_policy_consistency","status":"PASS_STATIC","evidence":"Active skills and policy now point to art-engine 1.5.0 HD painterly authoring; old pixel profile is legacy fallback only."},
-    {"id":"first20_hd_runtime_replacement","status":"OPEN","evidence":"Individual HD replacement bytes are not yet complete; legacy working art remains fail-safe."},
-    {"id":"browser_gesture_audio","status":"OPEN","evidence":"Current-release live browser play/stop/repeat evidence not observed in this maintenance session."},
-    {"id":"physical_iphone_headphones","status":"OPEN","evidence":"No new alpha.24 physical-device listening evidence."},
-    {"id":"physical_iphone_speaker","status":"OPEN","evidence":"No new alpha.24 physical-device listening evidence."}
+    {
+      "id": "site_identity",
+      "status": "PASS_RECORDED",
+      "evidence": "Existing project ID, slug, live URL, active status, and public access are preserved."
+    },
+    {
+      "id": "alpha2_candidate_source",
+      "status": "PASS_SOURCE_VERIFIED",
+      "evidence": "Candidate source reconciles alpha.35 publication history, canonical audio entrypoints, configured-bus health, homepage cleanup, and state-driven imagery."
+    },
+    {
+      "id": "audio_config_consistency",
+      "status": "PASS_SOURCE_VERIFIED",
+      "evidence": "Seven-bus profile, QA defaults, production lib engine, and compatibility wrappers are aligned."
+    },
+    {
+      "id": "mobile_layout_contract",
+      "status": "PASS_SOURCE_VERIFIED",
+      "evidence": "Responsive/focus/reduced-motion constraints remain in bundled Site styling; live browser inspection is not claimed."
+    },
+    {
+      "id": "campaign_state_safety",
+      "status": "PASS_SOURCE_VERIFIED",
+      "evidence": "Development/QA files prohibit campaign advancement and the candidate contains no state migration."
+    },
+    {
+      "id": "first20_hd_runtime_replacement",
+      "status": "OPEN",
+      "evidence": "Individually approved HD replacement bytes remain incomplete; legacy runtime art remains the fail-safe."
+    },
+    {
+      "id": "browser_gesture_audio",
+      "status": "OPEN",
+      "evidence": "Current live Site has not been republished to this candidate and current-release browser playback is not directly observed."
+    },
+    {
+      "id": "physical_iphone_headphones",
+      "status": "OPEN",
+      "evidence": "No new physical-device listening evidence."
+    },
+    {
+      "id": "physical_iphone_speaker",
+      "status": "OPEN",
+      "evidence": "No new physical-device listening evidence."
+    },
+    {
+      "id": "live_site_candidate_publication",
+      "status": "OPEN",
+      "evidence": "Native ChatGPT Site mutation/publish action is not exposed in the current environment."
+    }
   ],
   "campaign_state_mutation": "NONE",
   "spoiler_policy": "TEST_ONLY_DISCOVERY_SAFE_FIXTURES",
-  "reviewed_in_version": "1.5.1-alpha.24"
+  "reviewed_in_version": "1.5.1-alpha.36"
 }
