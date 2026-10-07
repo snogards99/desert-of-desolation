@@ -1,0 +1,90 @@
+{
+  "schema_version": 3,
+  "entries": [
+    {
+      "character_id": "party.snogard",
+      "canonical_alias": "party.snogard",
+      "image_path": "assets/character-sheet/snogard.png",
+      "gif_path": null,
+      "style": "DOD_INK",
+      "width": 1254,
+      "height": 1254,
+      "status": "GENERATED_INSPECTED",
+      "notes": "Decorative interpretation. Structured campaign values remain authoritative.",
+      "runtime_binding_verified": true,
+      "cache_bust": "alpha34",
+      "hd_painterly_rerender_status": "PENDING_NEW_IMAGE_BYTES"
+    },
+    {
+      "character_id": "party.malekith",
+      "canonical_alias": "party.malekith",
+      "image_path": "assets/character-sheet/azhar.png",
+      "gif_path": null,
+      "style": "DOD_INK",
+      "width": 1254,
+      "height": 1254,
+      "status": "GENERATED_INSPECTED",
+      "notes": "Decorative interpretation. Structured campaign values remain authoritative.",
+      "runtime_binding_verified": true,
+      "cache_bust": "alpha34",
+      "hd_painterly_rerender_status": "PENDING_NEW_IMAGE_BYTES"
+    },
+    {
+      "character_id": "party.vaelis",
+      "canonical_alias": "party.vaelis",
+      "image_path": "assets/character-sheet/dakarai.png",
+      "gif_path": null,
+      "style": "DOD_INK",
+      "width": 1254,
+      "height": 1254,
+      "status": "GENERATED_INSPECTED",
+      "notes": "Decorative interpretation. Structured campaign values remain authoritative.",
+      "runtime_binding_verified": true,
+      "cache_bust": "alpha34",
+      "hd_painterly_rerender_status": "PENDING_NEW_IMAGE_BYTES"
+    },
+    {
+      "character_id": "party.syrra",
+      "canonical_alias": "party.syrra",
+      "image_path": "assets/character-sheet/cyrra.png",
+      "gif_path": null,
+      "style": "DOD_INK",
+      "width": 1254,
+      "height": 1254,
+      "status": "GENERATED_INSPECTED",
+      "notes": "Decorative interpretation. Structured campaign values remain authoritative.",
+      "runtime_binding_verified": true,
+      "cache_bust": "alpha34",
+      "hd_painterly_rerender_status": "PENDING_NEW_IMAGE_BYTES"
+    },
+    {
+      "character_id": "party.tal",
+      "canonical_alias": "party.talanis",
+      "image_path": "assets/character-sheet/eryon.png",
+      "gif_path": null,
+      "style": "DOD_INK",
+      "width": 1254,
+      "height": 1254,
+      "status": "GENERATED_INSPECTED",
+      "notes": "Decorative interpretation. Structured campaign values remain authoritative.",
+      "runtime_binding_verified": true,
+      "cache_bust": "alpha34",
+      "hd_painterly_rerender_status": "PENDING_NEW_IMAGE_BYTES"
+    },
+    {
+      "character_id": "party.zarvak",
+      "canonical_alias": "party.zarvak",
+      "image_path": "assets/character-sheet/barak.png",
+      "gif_path": null,
+      "style": "DOD_INK",
+      "width": 1254,
+      "height": 1254,
+      "status": "GENERATED_INSPECTED",
+      "notes": "Decorative interpretation. Structured campaign values remain authoritative.",
+      "runtime_binding_verified": true,
+      "cache_bust": "alpha34",
+      "hd_painterly_rerender_status": "PENDING_NEW_IMAGE_BYTES"
+    }
+  ],
+  "release_note": "Alpha34 candidate verifies existing portrait bindings and forces cache refresh. HD painterly rerender bytes were not generated in this pass."
+}
