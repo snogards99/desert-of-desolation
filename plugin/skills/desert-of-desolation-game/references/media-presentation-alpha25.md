@@ -1,0 +1,7 @@
+# Site presentation supplement — 1.5.1-alpha.25
+
+The Site Settings gear is the sole audio-control surface. It operates the existing production `AudioEngine`: one persistent `AudioContext`, Master plus seven semantic buses, saved presentation-only mix, live gain/mute updates, ducking, crossfades, headroom protection and stale-cue cancellation. Opening Settings suppresses the website theme; closing it restores the continuing theme where browser policy permits. The 60-second Campfire Test remains nonmutating and uses only approved prerenders.
+
+Explore presents the exact supplied combined-edition back-cover introduction and credits with approved Narrator voice playback. I3, I4 and I5 presentation screens trigger only at verified source-bound module entry identifiers, store only a local presentation-seen flag, and never write campaign state. Unknown node IDs fail closed. Their overlay copy remains semantic HTML; generated artwork contains no baked text. Introduction narration uses the Narrator bus with the production Music bus, so the same live mixer, ducking and accessibility behavior applies.
+
+The homepage uses the existing branded title and a centered cyan-glowing tomb-doorway CTA containing the current place and node name without revision. The Sound card, standalone Sound page, duplicate node footer, browser-help disclosure and legacy Scene Sound button are removed. Browser autoplay restrictions remain authoritative; do not claim audible physical-device QA without performing it.

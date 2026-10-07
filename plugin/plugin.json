@@ -1,8 +1,8 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
-  "name": "desert-of-desolation",
-  "version": "1.5.1-alpha.24",
-  "description": "Mobile-first Desert of Desolation campaign engine with synchronized runtime policy, simplified Site-first architecture, seven-bus audio, HD painterly art direction, 361-node routing, bounded preload, accessibility hardening, and discovery-safe presentation.",
-  "keywords": ["dnd","adnd","desert-of-desolation","tabletop","game","mobile","audio","sites"],
-  "extensions": {"com.openai":{"interface":{"displayName":"Desert of Desolation","shortDescription":"Mobile-first desert RPG","longDescription":"Runs Desert of Desolation with a self-contained plugin runtime, the existing responsive Site play surface, seven-bus audio, HD painterly fantasy art, 361-node routing, bounded preload, explicit spoiler gates, and alpha.24 consistency and UX hardening.","developerName":"Desert of Desolation Project","category":"Games","capabilities":["Read","Write"],"icon":"./assets/icon.png","defaultPrompt":["Start Desert of Desolation from the packaged campaign state with mobile-first presentation and predictive preload.","Resume Desert of Desolation and prepare the current integrated node knowledge, legal nearby interactions, spoiler-safe media cues, and mobile-friendly narration.","Show my character sheet."]}}}
+  "$schema":"https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name":"desert-of-desolation",
+  "version":"1.5.1-alpha.28",
+  "description":"Mobile-first Desert of Desolation campaign engine reconciled to live Site v29 with a complete bundled Site runtime, synchronized active policy/theme metadata, Settings audio, narrated module introductions, seven-bus sound, HD painterly art direction, and discovery-safe presentation.",
+  "keywords":["dnd","adnd","desert-of-desolation","tabletop","game","mobile","audio","sites"],
+  "extensions":{"com.openai":{"interface":{"displayName":"Desert of Desolation","shortDescription":"Mobile-first desert RPG","longDescription":"Runs Desert of Desolation with its responsive Site, complete bundled runtime dependency set, synchronized active policies, persistent seven-bus mixer, narrated source-faithful module introductions, HD painterly fantasy art, bounded preload, explicit spoiler gates, and release-state reconciliation to observed live Site v29.","developerName":"Desert of Desolation Project","category":"Games","capabilities":["Read","Write"],"icon":"./assets/icon.png","defaultPrompt":["Start Desert of Desolation from the packaged campaign state with mobile-first presentation and predictive preload.","Resume Desert of Desolation and prepare the current integrated node knowledge, legal nearby interactions, spoiler-safe media cues, and mobile-friendly narration.","Show my character sheet."]}}}
 }

@@ -1,45 +1,53 @@
 {
-  "schema_version": 3,
-  "profile_id": "dod.site.presentation.alpha24",
-  "configured_in_plugin_version": "1.5.1-alpha.24",
-  "architecture_policy": "PRESERVE_EXISTING_SITE_GAME_ENGINE_STATE_AND_HANDLERS; ADDITIVE_PRESENTATION_ONLY",
+  "schema_version": 4,
+  "profile_id": "dod.site.presentation.alpha26",
+  "configured_in_plugin_version": "1.5.1-alpha.26",
+  "architecture_policy": "PRESERVE_EXISTING_SITE_GAME_ENGINE_STATE_AND_HANDLERS; RECONCILIATION_ONLY",
+  "source_runtime": "ALPHA25_SITE_RUNTIME_PRESERVED",
   "visual": {
     "base_theme": "dod.moonlit-ink",
     "art_engine": "dod.art-engine@1.5.0",
     "additive_css": "../../desert-of-desolation-art-direction/assets/site-subtle.css",
-    "refinement_css": "../../desert-of-desolation-art-direction/assets/site-refinement-alpha24.css",
-    "scope": ["HOME","SCENE","PARTY","JOURNAL","MAP","INVENTORY","SOUND","SETTINGS","LOADING","FALLBACK","LEGAL_FOOTER"],
+    "refinement_css": "../../desert-of-desolation-art-direction/assets/site-refinement-alpha25.css",
+    "scope": ["HOME","EXPLORE","SCENE","PARTY","JOURNAL","SETTINGS","LOADING","FALLBACK","LEGAL_FOOTER"],
     "rules": ["NO_LAYOUT_REBUILD","NO_SECRET_ART","SEMANTIC_CONTROLS_PRESERVED","MOBILE_FIRST","KEYBOARD_FOCUS_VISIBLE","REDUCED_MOTION_SAFE","NO_HORIZONTAL_OVERFLOW"],
     "fonts": "Bundled Cinzel for display; readable existing serif for long narration; bundled Noto Egyptian only for authentic Unicode glyphs",
-    "node_title": "ORNATE_TOP_LOCKUP_WITHOUT_DUPLICATE_PLAIN_TITLE",
-    "scene_image": "LEGAL_CURRENT_IMAGE_ABOVE_TEXT; CONTAIN_WITHOUT_CROPPING_CRITICAL_SUBJECT; LIMIT_HEIGHT_SO_ACTIONABLE_TEXT_REMAINS_REACHABLE",
-    "reading": "FULL_TEXT_REMAINS_IN_DOM; 58_TO_72_CHARACTER_READING_MEASURE; 1.55_PLUS_LINE_HEIGHT; CONTAINED_LONG_FORM_VIEW_WHEN_APPROPRIATE",
-    "choice_interaction": "CLEAR_SELECTED_STATE; ARIA_PRESSED_WHEN_MULTISELECT; ONE_EXPLICIT_SUBMIT_ACTION",
-    "character_sheets": "FULL_BODY_PORTRAIT_WHEN_AVAILABLE; OBJECT_FIT_CONTAIN; SECTION_TABS_OR_ACCORDIONS; AUTHORITATIVE_STATS_UNCHANGED",
-    "loading": "RESERVED_MEDIA_FRAME_TO_REDUCE_LAYOUT_SHIFT; TEXT_FALLBACK_IMMEDIATE",
+    "node_title": "CENTERED_GLOWING_TOMB_DOORWAY_WITH_PLACE_AND_NODE_NO_REVISION",
+    "scene_image": "LEGAL_CURRENT_IMAGE_ABOVE_TEXT; CONTAIN_WITHOUT_CROPPING_CRITICAL_SUBJECT",
     "decorative_detail": "LOW_OPACITY_EGYPTIAN_OR_DESERT_ORNAMENT_ONLY; NEVER_OBSCURE_TEXT_OR_CONTROLS",
-    "background": "DIM_ART_LAYER_WITH_TEXT_CONTRAST_OVERLAY; NO_POINTER_EVENTS; NO_SECRET_CONTENT",
-    "overflow": "NO_DOCUMENT_HORIZONTAL_OVERFLOW_AT_320_375_390_430; PREFER_INTERNAL_READING_SCROLL_TO_EXCESSIVE_PAGE_LENGTH"
+    "background": "COORDINATED_VIEW_SPECIFIC_DIM_ART_WITH_TEXT_CONTRAST_OVERLAY",
+    "overflow": "NO_DOCUMENT_HORIZONTAL_OVERFLOW_AT_320_375_390_430"
   },
   "audio": {
     "context_owner": "EXISTING_GAME_AUDIO_ENGINE_ONLY",
-    "start_stop_policy": "CANCEL_STALE_PENDING_AUDIO_AND_PREVIOUS_NODE_CUES_BEFORE_REPLACEMENT; STOP_CANCELS_DELAYED_STARTS",
+    "controls": "SETTINGS_GEAR_ONLY",
+    "start_stop_policy": "CANCEL_STALE_PENDING_AUDIO_AND_PREVIOUS_NODE_CUES_BEFORE_REPLACEMENT",
     "autoplay_policy": "NEVER_BYPASS_USER_GESTURE_REQUIREMENTS",
     "headroom_policy": "RETAIN_EXISTING_PRE_COMPRESSOR_GUARD_AND_COMPRESSOR",
-    "ambience_default_gain": 0.42,
     "homepage_theme": {
       "enabled": true,
       "bus": "Music",
-      "base_gain": 0.10,
-      "speech_duck_gain": 0.03125,
-      "fade_in_seconds": 0.35,
-      "fade_out_seconds": 0.8,
+      "repeat": "CROSSFADE_AFTER_NATURAL_END",
       "navigation_policy": "KEEP_POSITION_WHEN_EXISTING_AUDIO_CONTEXT_PERSISTS",
+      "settings_policy": "SUPPRESS_WHILE_SETTINGS_OPEN_AND_RESTORE_ON_CLOSE",
       "mute_policy": "HONOR_EXISTING_SOUND_OFF_AND_SAVED_VOLUME",
       "failure_policy": "SILENCE_AND_CONTINUE"
     }
   },
+  "module_introductions": {
+    "copy": "EXACT_SUPPLIED_COVER_COPY",
+    "narration_bus": "Narrator",
+    "music_bus": "Music",
+    "entry_policy": "VERIFIED_SOURCE_BOUND_IDS_ONLY_FAIL_CLOSED",
+    "seen_state": "BROWSER_PRESENTATION_STORAGE_ONLY"
+  },
   "state_mutation": false,
   "campaign_advance_allowed_during_qa": false,
-  "live_site_publication_status": "SOURCE_PREPARED_ONLY_UNLESS_A_NATIVE_SITE_PUBLISH_ACTION_IS_VERIFIED"
+  "live_site_evidence": {
+    "project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
+    "status": "active",
+    "access_mode": "public",
+    "source_version_number": 29,
+    "projection_revision": 59
+  }
 }

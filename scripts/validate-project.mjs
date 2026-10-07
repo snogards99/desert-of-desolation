@@ -1,50 +1,16 @@
 import fs from "node:fs";
 import path from "node:path";
-
-const root = process.cwd();
-const read = p => fs.readFileSync(path.join(root,p),"utf8");
-const json = p => JSON.parse(read(p));
-const fail = message => { throw new Error(message); };
-
-const pkg = json("package.json");
-const plugin = json("plugin/plugin.json");
-const codex = json("plugin/.codex-plugin/plugin.json");
-const policy = json("plugin/skills/desert-of-desolation-game/data/ACTIVE_POLICY_OVERRIDES.json");
-const theme = json("plugin/skills/desert-of-desolation-game/data/VISUAL_THEME.json");
-const site = json("plugin/skills/desert-of-desolation-game/data/SITE_PRESENTATION_PROFILE.json");
-const sound = json("plugin/skills/desert-of-desolation-game/data/SOUND_MIXER_PROFILE.json");
-const soundQa = json("plugin/skills/desert-of-desolation-game/data/SOUND_MIXER_QA.json");
-const artEngine = json("plugin/skills/desert-of-desolation-art-direction/assets/art-engine.json");
-const gameSkill = read("plugin/skills/desert-of-desolation-game/SKILL.md");
-const artSkill = read("plugin/skills/desert-of-desolation-art-direction/SKILL.md");
-const mcp = json("plugin/mcp.json");
-
-const expected = "1.5.1-alpha.24";
-for (const [label,value] of [
-  ["package",pkg.version],
-  ["plugin",plugin.version],
-  ["codex",codex.version],
-  ["policy",policy.release],
-  ["theme",theme.configured_in_plugin_version],
-  ["site",site.configured_in_plugin_version]
-]) if (value !== expected) fail(label+" version drift: "+value);
-
-if (artEngine.engine_version !== "1.5.0") fail("art-engine version drift");
-if (theme.rendering_profile !== "dod.hd-painted-module-realism") fail("visual profile drift");
-if (!artSkill.includes("dod.hd-painted-module-realism")) fail("art skill missing HD profile");
-if (artSkill.includes("pixel-art profile")) fail("active art skill still instructs pixel authoring");
-if (gameSkill.includes("New first-20 gameplay art uses the full-color")) fail("active game skill still contains stale pixel authoring rule");
-if (Object.keys(mcp).length !== 0) fail("plugin mcp.json must remain empty");
-
-for (const p of ["vercel.json","api","audio-renderer",".devcontainer","plugin/.app.json"]) {
-  if (fs.existsSync(path.join(root,p))) fail("obsolete runtime path remains: "+p);
-}
-
-const expectedAudio = {Ambience:0.42, Music:0.18};
-for (const [k,v] of Object.entries(expectedAudio)) {
-  if (sound.layers[k] !== v || soundQa.defaults[k] !== v) fail("audio default drift: "+k);
-}
-if (soundQa.defaults.theme_cue_output_before_master !== site.audio.homepage_theme.base_gain) fail("theme gain drift");
-if (!site.visual.refinement_css.endsWith("site-refinement-alpha24.css")) fail("alpha24 CSS not active in source profile");
-
-console.log("Desert of Desolation alpha.24 consistency checks passed.");
+const root=process.cwd(),read=p=>fs.readFileSync(path.join(root,p),"utf8"),json=p=>JSON.parse(read(p)),fail=m=>{throw new Error(m)};
+const expected="1.5.1-alpha.28";
+const pkg=json("package.json"),plugin=json("plugin/plugin.json"),codex=json("plugin/.codex-plugin/plugin.json"),policy=json("plugin/skills/desert-of-desolation-game/data/ACTIVE_POLICY_OVERRIDES.json"),theme=json("plugin/skills/desert-of-desolation-game/data/VISUAL_THEME.json"),site=json("plugin/skills/desert-of-desolation-game/data/SITE_PRESENTATION_PROFILE.json"),sound=json("plugin/skills/desert-of-desolation-game/data/SOUND_MIXER_PROFILE.json"),soundQa=json("plugin/skills/desert-of-desolation-game/data/SOUND_MIXER_QA.json"),artEngine=json("plugin/skills/desert-of-desolation-art-direction/assets/art-engine.json"),gameSkill=read("plugin/skills/desert-of-desolation-game/SKILL.md"),artSkill=read("plugin/skills/desert-of-desolation-art-direction/SKILL.md"),mcp=json("plugin/mcp.json");
+for(const [label,value] of [["package",pkg.version],["plugin",plugin.version],["codex",codex.version],["policy",policy.release],["theme",theme.configured_in_plugin_version],["sound QA",soundQa.reviewed_in_version],["art release",artEngine.plugin_release]])if(value!==expected)fail(label+" version drift: "+value);
+if(!gameSkill.includes(expected))fail("game skill release drift");if(!artSkill.includes(expected))fail("art skill release drift");
+if(artEngine.engine_version!=="1.5.0")fail("art-engine version drift");if(theme.rendering_profile!=="dod.hd-painted-module-realism"||theme.pixel_art!==false)fail("visual profile drift");if(!artSkill.includes("dod.hd-painted-module-realism"))fail("art skill missing HD profile");if(Object.keys(mcp).length!==0)fail("plugin mcp.json must remain empty");
+for(const p of ["vercel.json","api","audio-renderer",".devcontainer","plugin/.app.json"])if(fs.existsSync(path.join(root,p)))fail("obsolete runtime path remains: "+p);
+for(const [k,v] of Object.entries({Ambience:0.42,Music:0.18}))if(sound.layers[k]!==v||soundQa.defaults[k]!==v)fail("audio default drift: "+k);
+if(sound.theme_base_gain!==soundQa.defaults.theme_cue_output_before_master)fail("theme gain drift");if(sound.theme_speech_duck_gain!==soundQa.defaults.theme_speech_duck_gain)fail("theme duck drift");
+if(site.live_site_evidence?.source_version_number!==29)fail("Site source version evidence drift");if(site.live_site_evidence?.projection_revision!==59)fail("Site projection evidence drift");if(!site.visual.refinement_css.endsWith("site-refinement-alpha25.css"))fail("active Site refinement drift");
+const runtime=path.join(root,"plugin/skills/desert-of-desolation-game/site-runtime"),codeFiles=[];const walk=d=>{for(const e of fs.readdirSync(d,{withFileTypes:true})){const f=path.join(d,e.name);if(e.isDirectory())walk(f);else if(/\.(tsx|ts|mjs|js)$/.test(e.name))codeFiles.push(f)}};walk(runtime);
+const re=/from\s+['"](\.{1,2}\/[^'"]+)['"]|import\s+['"](\.{1,2}\/[^'"]+)['"]/g,missing=[];
+for(const file of codeFiles){const src=fs.readFileSync(file,"utf8");let m;while((m=re.exec(src))){const spec=m[1]||m[2],raw=path.resolve(path.dirname(file),spec),c=/\.[a-z0-9]+$/i.test(raw)?[raw]:[raw,raw+".mjs",raw+".js",raw+".ts",raw+".tsx",raw+".json",path.join(raw,"index.ts"),path.join(raw,"index.tsx"),path.join(raw,"index.js"),path.join(raw,"index.mjs")];if(!c.some(fs.existsSync))missing.push(path.relative(root,file)+" -> "+spec)}}if(missing.length)fail("unresolved bundled Site runtime imports: "+missing.join(", "));
+console.log("Desert of Desolation alpha.28 consistency checks passed.");

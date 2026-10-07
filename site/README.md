@@ -1,12 +1,15 @@
 # Desert of Desolation Site
 
-Existing Site project: `appgprj_6ac3ddb2142c81918d529d4c7504e59d`
+Existing ChatGPT Site project: `appgprj_6ac3ddb2142c81918d529d4c7504e59d`
 
-Recorded live baseline:
-- Site version: 28
-- Deployment: `appgdep_6ac53efc570c8191874ecd5b279d7e2d`
-- Recorded native source commit: `bfc027dc21493b02f37b5096f9fab1c117b2f9ef`
+Observed live state:
+- Slug: `desert-of-desolation`
+- Status: active
+- Access: public
+- Site source version: 29
+- Projection revision: 59
+- Live URL: `https://desert-of-desolation.nreach-1221.chatgpt.site`
 
-GitHub mirrors the active Site presentation contracts under the plugin source package, including `HOSTING_CONFIG.json`, `SITE_PRESENTATION_PROFILE.json`, `SITE_RUNTIME_QA.json`, and art-direction CSS.
+The previous v28 deployment identifier remains historical rollback evidence; no v29 deployment ID is asserted because the current Site artifact exposes source/projection metadata but not a deployment identifier.
 
-Alpha.24 prepares improved source contracts and CSS but does not claim a new live Site deployment unless a native Site publish action is observed. Preserve the existing Site and its access policy; do not create a replacement project for routine maintenance.
+GitHub mirrors the current plugin presentation/runtime contracts and records the observed native Site identity/version. The native Site remains the browser presentation surface; GitHub is not a substitute host. Do not claim a new Site publish, deployment ID, browser-audio pass, or physical-device pass without direct evidence.
