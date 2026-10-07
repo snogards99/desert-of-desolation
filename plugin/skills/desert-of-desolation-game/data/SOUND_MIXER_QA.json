@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "reviewed_in_version": "1.5.1-alpha.34-candidate",
+  "reviewed_in_version": "1.5.1-alpha.34",
   "implementation": "Existing AudioEngine; one persistent context, seven semantic buses, master and layer multipliers, cue gain, ducking, crossfades, stale-cue cancellation, and conservative decoded-peak headroom before the existing compressor.",
   "defaults": {
     "master": 0.5,
