@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "reviewed_in_version": "1.5.1-alpha.34",
+  "reviewed_in_version": "1.5.1-alpha.36",
   "implementation": "Existing AudioEngine; one persistent context, seven semantic buses, master and layer multipliers, cue gain, ducking, crossfades, stale-cue cancellation, and conservative decoded-peak headroom before the existing compressor.",
   "defaults": {
     "master": 0.5,
@@ -13,7 +13,7 @@
     "Music": 0.18,
     "theme_cue_output_before_master": 0.16,
     "theme_speech_duck_gain": 0.03125,
-    "evidence": "Alpha.34 synchronizes Ambience at 0.42, Home title theme at 0.16, hard Scene handoff, first-cue preload/start ordering, and enabled-bus health reporting."
+    "evidence": "Alpha 2 Candidate preserves Ambience at 0.42 and Home theme at 0.16, hard Scene handoff, first-cue ordering, and configured-bus-only health reporting."
   },
   "campfire": {
     "seconds": 60,
@@ -22,12 +22,14 @@
     "source_policy": "Use existing reviewed prerendered audio; ElevenLabs may create only genuinely missing audio when explicitly required."
   },
   "tests": {
-    "audio_behavior_change": "ALPHA34_HOME_TO_SCENE_LIFECYCLE_AND_FIRST_CUE_ORDERING",
+    "audio_behavior_change": "ALPHA2_CANDIDATE_CONFIGURED_BUS_HEALTH_AND_CANONICAL_ENTRYPOINTS",
     "campaign_state": "UNCHANGED",
     "homepage_to_scene_handoff": "PASS_SOURCE_TEST",
     "scene_auto_start": "PASS_SOURCE_TEST",
     "seven_bus_health_report": "PASS_SOURCE_TEST",
-    "autoplay_recovery": "PASS_SOURCE_TEST"
+    "autoplay_recovery": "PASS_SOURCE_TEST",
+    "scene_configured_bus_health": "PASS_SOURCE_TEST",
+    "legacy_audio_entrypoint_drift_guard": "PASS_SOURCE_TEST"
   },
   "remaining_limitations": [
     "Live Site was not republished in this source pass.",
