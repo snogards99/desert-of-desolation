@@ -1,52 +1,31 @@
-# Production deployment
+# Publication and release
 
-The Desert of Desolation hosted runtime is intentionally thin.
+The project does not require a separate hosted renderer.
 
-## Architecture
+## Runtime targets
 
-- Google Drive is authoritative for campaign state, manifests, media IDs, audio masters, checkpoints, and recovery.
-- GitHub is source/CI/version authority for the hosted adapter.
-- Vercel hosts the public HTTPS MCP/audio adapter.
-- Railway is excluded.
-- Live ElevenLabs is excluded from gameplay runtime.
+- Plugin: `Plugin_3352cc65ee508191abeb37ffa759294d`
+- Site: `appgprj_6ac3ddb2142c81918d529d4c7504e59d`
+- Canonical source: `snogards99/desert-of-desolation`, branch `main`
 
-## Required public routes
+The plugin is workspace-private. The existing Site is the responsive browser play surface. Preserve current access settings unless the user explicitly changes them.
 
-- `GET /healthz` -> healthy JSON response with the release version
-- `GET/POST/DELETE /mcp` -> MCP Streamable HTTP transport
-- `OPTIONS /mcp` -> CORS preflight
+## Release flow
 
-## Deployment target
+1. Inspect current plugin release, Site record, GitHub head, and latest checkpoint.
+2. Reconcile active source and remove stale deployment/runtime assumptions.
+3. Run `npm run verify`.
+4. Update the existing plugin with a guarded release ID.
+5. Publish the existing Site only through a supported native Site editor/publish action and only when publication is authorized.
+6. Verify published artifacts separately; services are non-atomic.
+7. Commit source and an evidence-backed checkpoint with rollback references.
 
-Repository: `snogards99/desert-of-desolation`
-Production branch: `main`
-Current release candidate: `0.5.0-rc.2`
+## Evidence rules
 
-Use a Git-linked Vercel project. Do not upload Drive campaign data or media masters into the Vercel project.
+Do not claim:
+- live Site publication without a real Site publish result;
+- browser audio without browser/user-gesture observation;
+- physical iPhone QA without physical-device evidence;
+- first-20 HD art completion until individual files exist, pass QA, and are bound.
 
-## Account prerequisite
-
-The Vercel team must have a GitHub Login Connection capable of accessing `snogards99/desert-of-desolation`. ChatGPT/Vercel connector authorization alone does not establish this Git provider link.
-
-If project creation reports:
-
-`You need to add a Login Connection to your GitHub account first`
-
-add GitHub under the Vercel account login/connections settings, grant repository access, then retry Git project creation.
-
-## Promotion gates
-
-A preview is promotable only when all of these pass:
-
-1. GitHub validation workflow is green.
-2. `/healthz` returns `ok:true` and version `0.5.0-rc.2`.
-3. MCP initialization succeeds.
-4. `get_audio_capabilities` reports the 12-voice v0.5 contract.
-5. The ChatGPT widget mounts.
-6. A harmless approved cue preloads to READY.
-7. PLAY remains QUEUED until the widget confirms PLAYING for the same epoch.
-8. `clear_audio_epoch` invalidates stale cues.
-9. Audio failure does not block text/gameplay fallback.
-10. Real-device QA passes in this order: iPhone + headphones, iPhone speaker, desktop + headphones.
-
-Promote the already-tested preview artifact rather than rebuilding production.
+Campaign state must not advance during release work.
