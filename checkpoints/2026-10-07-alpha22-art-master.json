@@ -1,0 +1,52 @@
+{
+  "checkpoint_schema": "dod.commit-checkpoint.v1",
+  "timestamp_utc": "2026-10-07T02:21Z",
+  "shared_release_id": "dod-alpha22-art-master-2026-10-07",
+  "canonical_source": {
+    "repository": "snogards99/desert-of-desolation",
+    "branch": "main",
+    "artifact_commit": "b94ef0c5f08807e5a0f28e523b7901a805d360a7",
+    "master_prompt_path": "plugin/skills/desert-of-desolation-art-direction/references/MASTER_ART_PRODUCTION_PROMPT.md"
+  },
+  "plugin": {
+    "plugin_id": "Plugin_3352cc65ee508191abeb37ffa759294d",
+    "version": "1.5.1-alpha.22",
+    "release_id": "pluginrel_6ac5a85fb2d4819197c9258b8672b708",
+    "art_engine": "dod.art-engine@1.5.0",
+    "release_status": "CURRENT_PUBLISHED_PLUGIN_RELEASE",
+    "source_note": "Repository source now contains a consolidated master prompt newer than the packaged alpha.22 prompt; runtime code/config remains aligned with alpha.22."
+  },
+  "site": {
+    "project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
+    "url": "https://desert-of-desolation.nreach-1221.chatgpt.site",
+    "deployment_status": "UNCHANGED_NOT_REPUBLISHED_THIS_COMMIT",
+    "source_status": "NOT_REVERIFIED_IN_NATIVE_SITE_EDITOR_THIS_COMMIT"
+  },
+  "qa": {
+    "verified": [
+      "current plugin metadata inspected",
+      "current art-engine/profile inspected",
+      "GitHub main recent commits inspected",
+      "master prompt consolidated and committed",
+      "campaign state not advanced",
+      "audio not modified",
+      "site access not modified"
+    ],
+    "not_executed": [
+      "native Site browser QA",
+      "new HD first-20 runtime image QA",
+      "physical iPhone QA"
+    ]
+  },
+  "unresolved": [
+    "first-20 HD environment/monster/treasure production assets are not complete until individual runtime files are rendered, QA-approved, bound, and tested",
+    "master prompt source commit is newer than current packaged plugin prompt and should be included in the next separately authorized plugin publication",
+    "live Site was not republished by this commit request"
+  ],
+  "rollback": {
+    "plugin_previous_release": "pluginrel_6ac59e6f4358819183c2dbfb5174d312",
+    "plugin_previous_version": "1.5.1-alpha.21",
+    "source_pre_master_prompt_commit": "94776d65f1ea12dc2230901b2d1959a1728e7464"
+  },
+  "sync_instructions": "Treat GitHub main as canonical source for the consolidated prompt. Before the next plugin/Site publication, reconcile this prompt into the package, verify manifests/runtime behavior, then publish existing targets without changing access."
+}
