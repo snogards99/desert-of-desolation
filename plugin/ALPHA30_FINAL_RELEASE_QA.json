@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "release": "1.5.1-alpha.30",
+  "approval": "APPROVED_COORDINATED_SOURCE_RELEASE_ALIGNMENT",
+  "site_project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
+  "site_observed": {
+    "status": "active",
+    "access_mode": "public",
+    "source_version_number": 30,
+    "projection_revision": 60
+  },
+  "resolved": [
+    "stale FINAL_RELEASE alpha.24/v28 evidence",
+    "GitHub source lag behind plugin runtime",
+    "missing bundled Site runtime dependencies",
+    "stale ACTIVE_POLICY_OVERRIDES alpha.24 release label",
+    "stale VISUAL_THEME configured release label",
+    "stale SOUND_MIXER_QA review/evidence release label",
+    "stale art-engine plugin_release label",
+    "incorrect historical v28 deployment ID in alpha.26 reconciliation metadata",
+    "Site evidence advanced from v29/projection 59 to v30/projection 60 during final synchronization",
+    "top-level plugin description still referred to the prior v29 Site wording after v30 evidence was recorded"
+  ],
+  "verified": {
+    "campaign_state_advanced": false,
+    "access_changed": false,
+    "stable_media_ids_changed": false,
+    "architecture_rebuilt": false,
+    "live_site_behavior_changed": false,
+    "relative_import_dependency_set_complete": true,
+    "intro_transcription_exact_match": true,
+    "active_policy_release_consistent": true,
+    "visual_theme_release_consistent": true,
+    "sound_defaults_consistent": true,
+    "art_engine_version": "1.5.0"
+  },
+  "evidence_levels": {
+    "static_runtime_import_closure": "PASS",
+    "active_metadata_alignment": "PASS",
+    "live_site_identity_and_projection": "OBSERVED",
+    "browser_audio_playback": "NOT_REVERIFIED_THIS_SESSION",
+    "microphone_permission_and_input": "NOT_REVERIFIED_THIS_SESSION",
+    "physical_iphone_audio": "NOT_REVERIFIED_THIS_SESSION"
+  },
+  "nonblocking_open_device_checks": [
+    "browser audible play-stop-play and narration timing",
+    "microphone permission/input on live Site",
+    "physical iPhone speaker/headphones and GPU performance"
+  ],
+  "policy": "All source/release issues found in this maintenance pass are resolved and approved. Device/browser observations not executable in this session remain explicit nonblocking evidence gates, not waived passes."
+}

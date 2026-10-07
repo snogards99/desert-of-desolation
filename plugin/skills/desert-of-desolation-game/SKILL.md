@@ -3,7 +3,7 @@ name: desert-of-desolation-game
 description: Run, resume, audit, test, repair, and optimize the self-contained Desert of Desolation tabletop campaign. Use for gameplay, scenes, encounters, party/NPC/creature information, character sheets, node completeness, preload/media/audio behavior, authoritative game time, time-aware imagery, Site presentation, and campaign/runtime maintenance.
 ---
 
-# Desert of Desolation Game - 1.5.1-alpha.28
+# Desert of Desolation Game - 1.5.1-alpha.30
 
 Run Desert of Desolation as a mobile-first campaign engine. The plugin owns runtime state, rules, node routing, media lookup/preload, Sound Engine, Art Engine, and UI contracts. The existing ChatGPT Site is the mobile/desktop play surface. GitHub is source, test, media, and release-history authority, but ordinary gameplay must not depend on GitHub availability.
 
@@ -44,7 +44,7 @@ Run Desert of Desolation as a mobile-first campaign engine. The plugin owns runt
 - Site configuration: `data/HOSTING_CONFIG.json`
 
 ## Audio
-Use the existing seven-bus Sound Engine: Narrator, Dialogue, Creature, Movement, SFX, Ambience, and Music. Preserve one audio context, saved mix, ducking, crossfades, stale-cue cancellation, distance/movement behavior, and graceful failure. Current alpha.28 configuration target is master 0.50, Narrator 1.00, Dialogue 0.90, Creature 0.35, Movement 0.25, SFX 0.80, Ambience 0.42, Music 0.18, with homepage theme base gain 0.10 and speech duck target 0.03125. Physical-device listening remains a separate evidence gate.
+Use the existing seven-bus Sound Engine: Narrator, Dialogue, Creature, Movement, SFX, Ambience, and Music. Preserve one audio context, saved mix, ducking, crossfades, stale-cue cancellation, distance/movement behavior, and graceful failure. Current alpha.30 configuration target is master 0.50, Narrator 1.00, Dialogue 0.90, Creature 0.35, Movement 0.25, SFX 0.80, Ambience 0.42, Music 0.18, with homepage theme base gain 0.10 and speech duck target 0.03125. Physical-device listening remains a separate evidence gate.
 
 ## Art and presentation
 Use the HD painterly module-realism profile. New art is not pixel art. Outdoor variants may use controlled viewpoint variation while preserving geography, route logic, landmarks, and discovery state. Monsters use NEUTRAL, ALERT, ATTACK, and DEFEATED states. Unique magical/story items receive dedicated discovery-gated stills. The legal current image sits above gameplay text; if no new legal image exists, reuse the last legal image or current legal environment.
