@@ -1,0 +1,46 @@
+{
+  "checkpoint_schema": "dod.commit-checkpoint.v1",
+  "timestamp_utc": "2026-10-07T07:16:00Z",
+  "shared_release_id": "dod-alpha34-ux-audio-source",
+  "canonical_source": {
+    "repository": "snogards99/desert-of-desolation",
+    "branch": "main",
+    "source_head": "1b155a425905298ac531eaf7c7d7b6a39811cc28",
+    "release_guard_path": "release/UNIFIED_RELEASE_GUARD.json",
+    "github_ci_run_id": 37586187866,
+    "github_ci_conclusion": "success"
+  },
+  "plugin": {
+    "plugin_id": "Plugin_3352cc65ee508191abeb37ffa759294d",
+    "current_published_version": "1.5.1-alpha.33",
+    "current_release_id": "pluginrel_6ac5dcab5b688191b8fbe927a851e57f",
+    "scope": "WORKSPACE",
+    "discoverability": "PRIVATE",
+    "alpha34_published": false
+  },
+  "site": {
+    "project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
+    "observed_source_version": 32,
+    "observed_projection_revision": 65,
+    "status": "UNCHANGED_NOT_REPUBLISHED"
+  },
+  "implemented": [
+    "one-or-many action selection with explicit shared submit",
+    "homepage theme restricted to Home and raised to 0.16 base gain",
+    "homepage theme fade/stop before introduction or Scene",
+    "node audio auto-start request on Scene entry/revision",
+    "user-gesture recovery when audio start is blocked",
+    "active/missing enabled audio bus reporting",
+    "wrong-character portrait fallback removed",
+    "existing portrait URLs cache-refreshed"
+  ],
+  "not_completed": [
+    "new HD painterly character portrait bytes",
+    "alpha34 plugin publication",
+    "native live Site republish",
+    "physical iPhone audio verification"
+  ],
+  "campaign_state_advanced": false,
+  "stable_media_ids_changed": false,
+  "status": "ALPHA34_SOURCE_VERIFIED_AND_COMMITTED; PUBLISHED_PLUGIN_REMAINS_ALPHA33; SITE_UNCHANGED"
+}
