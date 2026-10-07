@@ -1,7 +1,7 @@
 {
-  "schema_version": 5,
+  "schema_version": 6,
   "implemented_in_version": "1.5.1-alpha.23",
-  "reviewed_in_version": "1.5.1-alpha.36",
+  "reviewed_in_version": "1.5.1-alpha.38",
   "site_project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
   "site_observed_source_version": 32,
   "production_source": "lib/audio-engine.mjs",
@@ -25,6 +25,7 @@
   "headroom": "RETAIN_CURRENT_CONSERVATIVE_PRE_COMPRESSOR_GUARD",
   "test_seconds": 60,
   "test_mutates_campaign": false,
-  "scene_start_policy": "HARD_STOP_THEN_BUFFER_AND_START_FIRST_CURRENT_NODE_CUE_BEFORE_REMAINING_LAYERS",
-  "verification": "SOURCE_RUNTIME_AND_RELEASE_ALIGNMENT_REQUIRED; LIVE_BROWSER_LISTENING_AND_FIRST_CUE_TIMING_NOT_REVERIFIED_THIS_SESSION"
+  "scene_start_policy": "ALPHA37_SCENE_SAFE_FIRST_CUE_ORDER_PRESERVED",
+  "gain_authority": "GAIN_AUTHORITY.json",
+  "verification": "SOURCE_AUTHORITY_RECONCILED_ALPHA38; LIVE_BROWSER_LISTENING_AND_FIRST_CUE_TIMING_REQUIRE_DIRECT_EVIDENCE"
 }
