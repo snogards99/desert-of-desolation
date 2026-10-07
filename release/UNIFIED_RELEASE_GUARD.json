@@ -1,36 +1,42 @@
 {
-  "schema_version": 1,
-  "shared_release_id": "dod-alpha16-unified-sync",
-  "plugin": {
-    "plugin_id": "Plugin_3352cc65ee508191abeb37ffa759294d",
-    "version": "1.5.1-alpha.16",
-    "release_id": "pluginrel_6ac503c3ad788191b045d01ddf0064de"
+  "schema_version":2,
+  "shared_release_id":"dod-alpha24-maintenance-2026-10-07",
+  "plugin":{
+    "plugin_id":"Plugin_3352cc65ee508191abeb37ffa759294d",
+    "version":"1.5.1-alpha.24",
+    "release_id":"pluginrel_6ac5bd619ac88191809dfc13820523ec",
+    "scope":"WORKSPACE",
+    "discoverability":"PRIVATE",
+    "status":"PUBLISHED_CURRENT"
   },
-  "site": {
-    "project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
-    "deployment_id": "appgdep_6ac47804515c81918d6b3e5f15d884f4",
-    "recorded_source_commit": "a48c6d7837e49276d045b145cb9fdf118b74cafe",
-    "native_source_exported_to_github": false
+  "github":{
+    "repository":"snogards99/desert-of-desolation",
+    "branch":"main",
+    "artifact_source_head":"fbace86a1fafee5e71c5fb8b52aa5e9e6b4a5958",
+    "validation":{"workflow":"validate","run_id":37567536792,"conclusion":"success"},
+    "obsolete_paths_removed":["vercel.json","api/","audio-renderer/",".devcontainer/","plugin/.app.json"],
+    "plugin_mcp_config":"EMPTY"
   },
-  "github": {
-    "repository": "snogards99/desert-of-desolation",
-    "branch": "main",
-    "source_sync_commit": "2ad42c5848ec0b8dc6bf64f7938c50664f6df1d3",
-    "actions": {
-      "workflow": "validate",
-      "run_id": 37484489925,
-      "conclusion": "success",
-      "repaired_from_commit": "2deb31432252a549721f78de44809ea1fe341b96",
-      "failure_root_cause": "actions/setup-node@v4 requested npm cache without a supported lockfile"
-    }
+  "site":{
+    "project_id":"appgprj_6ac3ddb2142c81918d529d4c7504e59d",
+    "recorded_version":28,
+    "recorded_deployment_id":"appgdep_6ac53efc570c8191874ecd5b279d7e2d",
+    "recorded_source_commit":"bfc027dc21493b02f37b5096f9fab1c117b2f9ef",
+    "alpha24_republished":false,
+    "status":"UNCHANGED_RECORDED_BASELINE"
   },
-  "media": {
-    "plugin_file_count": 797,
-    "plugin_total_bytes": 267295703,
-    "media_file_count": 484,
-    "media_bytes": 239565650,
-    "github_media_complete": false
+  "qa":{
+    "ten_pass_audit":"plugin/ALPHA24_TEN_PASS_AUDIT.json",
+    "source_consistency":"PASS",
+    "campaign_state_advanced":false,
+    "stable_media_ids_changed":false,
+    "first20_hd_complete":false,
+    "browser_and_physical_device_evidence":"OPEN_UNCHANGED"
   },
-  "status": "PARTIAL",
-  "verification_rule": "status may become VERIFIED only after native Site source and all plugin media binaries are present, inventory comparison passes, and required GitHub Actions are green"
+  "rollback":{
+    "previous_plugin_release":"pluginrel_6ac5b9487c348191b1830e724cddf7ee",
+    "previous_plugin_version":"1.5.1-alpha.23",
+    "previous_verified_checkpoint":"590c4b54c81553fdd8cb65ed1228f4800aae8275"
+  },
+  "status":"VERIFIED_PLUGIN_AND_SOURCE; SITE_UNCHANGED; HD_FIRST20_INCOMPLETE"
 }
