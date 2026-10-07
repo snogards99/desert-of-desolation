@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "release": "1.5.1-alpha.35",
+  "scope": "PLUGIN_PACKAGE_SOURCE_SYNCHRONIZATION",
+  "reason": "The alpha.34 plugin contained the runtime fixes but its release metadata remained stale and three canonical alpha.34 QA/handoff artifacts were omitted.",
+  "added_or_corrected": [
+    "FINAL_RELEASE.json",
+    "FINAL_RELEASE_NOTES.md",
+    "ALPHA34_FINAL_RELEASE_QA.json",
+    "ALPHA34_UX_AUDIO_CANDIDATE_QA.json",
+    "skills/desert-of-desolation-game/references/alpha34-ux-audio-handoff.md"
+  ],
+  "preserved": {
+    "campaign_state_advanced": false,
+    "stable_media_ids_changed": false,
+    "audio_runtime_behavior_changed": false,
+    "homepage_runtime_behavior_changed": false,
+    "live_site_republished": false
+  },
+  "post_publish_contract": [
+    "version is 1.5.1-alpha.35",
+    "missing alpha.34 QA/handoff artifacts are present",
+    "Scene / Party / Journal remains the only bottom dock navigation",
+    "legacy homepage feature buttons and Raurin labels remain absent",
+    "Scene restart still force-stops current audio",
+    "first current-node cue still buffers and starts before remaining scene layers"
+  ]
+}
