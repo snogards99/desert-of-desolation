@@ -1,43 +1,61 @@
 {
-  "schema_version":2,
-  "shared_release_id":"dod-alpha24-maintenance-2026-10-07",
-  "plugin":{
-    "plugin_id":"Plugin_3352cc65ee508191abeb37ffa759294d",
-    "version":"1.5.1-alpha.24",
-    "release_id":"pluginrel_6ac5bd619ac88191809dfc13820523ec",
-    "scope":"WORKSPACE",
-    "discoverability":"PRIVATE",
-    "status":"PUBLISHED_CURRENT"
+  "schema_version": 3,
+  "shared_release_id": "dod-alpha28-runtime-coherence-2026-10-07",
+  "plugin": {
+    "plugin_id": "Plugin_3352cc65ee508191abeb37ffa759294d",
+    "version": "1.5.1-alpha.28",
+    "release_id": "pluginrel_6ac5c8f9ac8081918d190361e33ce786",
+    "scope": "WORKSPACE",
+    "discoverability": "PRIVATE",
+    "status": "PUBLISHED_CURRENT"
   },
-  "github":{
-    "repository":"snogards99/desert-of-desolation",
-    "branch":"main",
-    "artifact_source_head":"24fb7f75b59f46957481d5b6231596fbabc8df29",
-    "validation":{"workflow":"validate","run_id":37567764556,"conclusion":"success"},
-    "source_mirror":"EXACT_MATCH_FOR_ALPHA24_CHANGED_PLUGIN_FILES",
-    "obsolete_paths_removed":["vercel.json","api/","audio-renderer/",".devcontainer/","plugin/.app.json"],
-    "plugin_mcp_config":"EMPTY"
+  "github": {
+    "repository": "snogards99/desert-of-desolation",
+    "branch": "main",
+    "artifact_source_head": "b16d3e0496b42ac552acf5d6ebc19547244e796e",
+    "validation": {
+      "workflow": "validate",
+      "run_id": 37571745890,
+      "conclusion": "success"
+    },
+    "source_mirror": "CURRENT_ALPHA28_TEXT_RUNTIME_AND_RELEASE_FILES_MIRRORED",
+    "runtime_relative_import_closure": "PASS",
+    "obsolete_paths_removed": ["vercel.json","api/","audio-renderer/",".devcontainer/","plugin/.app.json"],
+    "plugin_mcp_config": "EMPTY"
   },
-  "site":{
-    "project_id":"appgprj_6ac3ddb2142c81918d529d4c7504e59d",
-    "recorded_version":28,
-    "recorded_deployment_id":"appgdep_6ac53efc570c8191874ecd5b279d7e2d",
-    "recorded_source_commit":"bfc027dc21493b02f37b5096f9fab1c117b2f9ef",
-    "alpha24_republished":false,
-    "status":"UNCHANGED_RECORDED_BASELINE"
+  "site": {
+    "project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
+    "slug": "desert-of-desolation",
+    "status": "active",
+    "access_mode": "public",
+    "observed_source_version": 29,
+    "observed_projection_revision": 59,
+    "republished_by_alpha28": false,
+    "previous_v28_deployment_id": "appgdep_6ac53efc570c81918d529d4c7504e59d",
+    "deployment_id_for_v29": null,
+    "deployment_note": "Current Library Site metadata exposes source version/projection but not a v29 deployment ID; none is invented."
   },
-  "qa":{
-    "ten_pass_audit":"plugin/ALPHA24_TEN_PASS_AUDIT.json",
-    "source_consistency":"PASS_EXACT_CHANGED_FILES",
-    "campaign_state_advanced":false,
-    "stable_media_ids_changed":false,
-    "first20_hd_complete":false,
-    "browser_and_physical_device_evidence":"OPEN_UNCHANGED"
+  "qa": {
+    "release_qa": "plugin/ALPHA28_FINAL_RELEASE_QA.json",
+    "source_consistency": "PASS",
+    "github_ci": "PASS",
+    "runtime_import_closure": "PASS",
+    "intro_transcription_exact_match": true,
+    "campaign_state_advanced": false,
+    "stable_media_ids_changed": false,
+    "access_changed": false,
+    "browser_audio_reverified_this_session": false,
+    "microphone_reverified_this_session": false,
+    "physical_iphone_reverified_this_session": false
   },
-  "rollback":{
-    "previous_plugin_release":"pluginrel_6ac5b9487c348191b1830e724cddf7ee",
-    "previous_plugin_version":"1.5.1-alpha.23",
-    "previous_verified_checkpoint":"590c4b54c81553fdd8cb65ed1228f4800aae8275"
+  "open_evidence_gates": [
+    "browser audible play-stop-play and narration timing",
+    "microphone permission/input on the live Site",
+    "physical iPhone speaker/headphones and GPU performance"
+  ],
+  "rollback": {
+    "previous_plugin_release": "pluginrel_6ac5c8f9ac8081918d190361e33ce786",
+    "previous_source_checkpoint": "de8036fb5f1a390a16360585fa9d874537b2c843"
   },
-  "status":"VERIFIED_PLUGIN_AND_SOURCE; SITE_UNCHANGED; HD_FIRST20_INCOMPLETE"
+  "status": "VERIFIED_PLUGIN_AND_SOURCE; SITE_V29_OBSERVED; DEVICE_EVIDENCE_GATES_OPEN"
 }
