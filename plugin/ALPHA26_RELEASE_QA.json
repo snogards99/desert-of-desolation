@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "release": "1.5.1-alpha.26",
+  "approval": "APPROVED_SOURCE_AND_RELEASE_ALIGNMENT",
+  "site_project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
+  "site_observed": {
+    "status": "active",
+    "access_mode": "public",
+    "source_version_number": 29,
+    "projection_revision": 59,
+    "projection_contains": [
+      "Settings",
+      "glowing open tomb doorway",
+      "The Last Camp Before the Cave",
+      "Explore Narrated introduction",
+      "Party and resources",
+      "Expedition journal"
+    ]
+  },
+  "resolved": [
+    "plugin metadata was alpha.25 while FINAL_RELEASE still claimed alpha.24",
+    "HOSTING_CONFIG still recorded Site v28",
+    "GitHub canonical source was behind the current alpha.25 plugin/runtime",
+    "release evidence did not record observed Site projection revision 59"
+  ],
+  "verified": {
+    "campaign_state_advanced": false,
+    "access_changed": false,
+    "stable_media_ids_changed": false,
+    "architecture_rebuilt": false,
+    "audio_runtime_changed": false,
+    "site_runtime_changed": false,
+    "intro_transcription_exact_match": true,
+    "current_plugin_manifest_consistent": true,
+    "live_site_identity_matches_target": true
+  },
+  "evidence_levels": {
+    "source_alignment": "PASS",
+    "live_site_identity_and_projection": "OBSERVED",
+    "browser_audio_playback": "NOT_REVERIFIED_THIS_SESSION",
+    "microphone_permission_and_input": "NOT_REVERIFIED_THIS_SESSION",
+    "physical_iphone_audio": "NOT_REVERIFIED_THIS_SESSION"
+  },
+  "nonblocking_open_device_checks": [
+    "browser audible play-stop-play and narration timing",
+    "microphone permission/input on live Site",
+    "physical iPhone speaker/headphones and GPU performance"
+  ],
+  "policy": "Do not promote unavailable browser/device checks to PASS. Approval applies to synchronized source/release state and observed live Site identity/projection."
+}
