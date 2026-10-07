@@ -1,0 +1,27 @@
+{
+  "plugin_target": "1.5.1-alpha.23",
+  "site_project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
+  "campaign_state_advanced": false,
+  "qa_passes": {
+    "audio_narration": {
+      "status": "CONFIG_AND_STATIC_SOURCE_PASS_LIVE_SITE_PENDING",
+      "verified": ["theme target 0.10 from 0.08 (+25%)", "ambience target 0.42 from 0.35 (+20%)", "existing headroom/compressor explicitly retained", "autoplay policy retained", "stop/stale-start cancellation is an acceptance gate"],
+      "open": ["byte-level homepage MP3 silence trim/re-render", "live Site play-stop-play and node-entry playback", "physical clipping/listening verification", "narration-to-text timing in native Site"]
+    },
+    "layout_interaction_character": {
+      "status": "ADDITIVE_CSS_AND_CONTRACT_PASS_NATIVE_SITE_INTEGRATION_PENDING",
+      "verified": ["multi-select selected-state CSS", "Submit control contract", "lower-right safe-area microphone control styling", "top ornate title contract", "darker green sheet tokens", "contained reading and tab styles", "full-body transparent portrait presentation contract"],
+      "open": ["native Site component/event wiring", "live microphone permission/input", "availability mapping for existing full-body transparent actor renders", "real browser overflow/200-percent-text verification"]
+    },
+    "graphics_responsive": {
+      "status": "ADDITIVE_CSS_STATIC_PASS_NATIVE_SITE_INTEGRATION_PENDING",
+      "verified": ["pyramid art is not replaced by source package", "separate CSS moonlight and dust overlays", "reduced-motion fallback", "low-opacity Egyptian/tomb corner ornament contract", "mobile breakpoints included"],
+      "open": ["native Site visual inspection", "Explore mummy artwork asset creation/binding", "physical iPhone GPU/performance review"]
+    }
+  },
+  "evidence_policy": "DO_NOT_LABEL_BROWSER_OR_DEVICE_CHECKS_PASS_WITHOUT_OBSERVATION",
+  "site_live_modified": false,
+  "site_live_reason": "Native ChatGPT Sites editor/publish surface is not available in this session.",
+  "previous_recorded_site_version": 28,
+  "previous_recorded_site_deployment_id": "appgdep_6ac53efc570c8191874ecd5b279d7e2d"
+}
