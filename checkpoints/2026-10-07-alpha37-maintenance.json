@@ -1,0 +1,137 @@
+{
+  "checkpoint_schema": "dod.commit-checkpoint.v2",
+  "timestamp_utc": "2026-10-07T16:37:00Z",
+  "shared_release_id": "dod-alpha37-assessment-maintenance-2026-10-07",
+  "status": "PLUGIN_MAINTENANCE_PUBLISHED_AND_SOURCE_TESTED; SITE_NOT_PUBLISHED; OVERALL_REMEDIATION_OPEN",
+  "coordinated_release_verified": false,
+  "canonical_source": {
+    "repository": "snogards99/desert-of-desolation",
+    "branch": "main",
+    "starting_commit": "4d64430e13f7da3cf4ccf14517086b0028ca29ce",
+    "implementation_commit": "fad52b9569102e13abd7ee0e520bdb0a1ac8932d",
+    "implementation_tree": "58dddb0102863dbede69ab1b430f8464a097673f",
+    "committed": true,
+    "pushed_to_main": true,
+    "local_tested_tree_matches_remote_tree": true,
+    "source_export_commit": "d80dba829e46241f30ff88254f77f676294a0bf0",
+    "baseline_tracked_files_verified": 164,
+    "checkpoint_commit_policy": "This record follows the artifact commit. Read its own commit from Git history; it does not contain a circular self-reference."
+  },
+  "plugin": {
+    "plugin_id": "Plugin_3352cc65ee508191abeb37ffa759294d",
+    "version": "1.5.1-alpha.37",
+    "release_id": "pluginrel_6ac6746d7d908191af93d988a5b8a14b",
+    "scope": "WORKSPACE",
+    "discoverability": "PRIVATE",
+    "published": true,
+    "update_method": "GUARDED_TEXT_OVERLAY_WITH_NO_DELETE_PATHS",
+    "overlay_text_files": 14,
+    "overlay_sha256": "44837b6f90e3c1dde6e6377e648ae27814c680ae10caede30d48aefd5934635f",
+    "readback": "CURRENT_RELEASE_METADATA_AND_SEVEN_CORE_FILES_INSPECTED",
+    "readback_scope": "Manifest, release record, component pins, save poller, canonical session and two compatibility entry points. Not a full plugin archive or binary comparison.",
+    "omitted_files_and_media": "PRESERVED_BY_OVERLAY_CONTRACT",
+    "full_archive_media_github_parity": "NOT_VERIFIED"
+  },
+  "site": {
+    "project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
+    "slug": "desert-of-desolation",
+    "inherited_observation": {"source_version": 32, "projection_revision": 65, "access": "public", "status": "active"},
+    "fresh_native_source_or_deployment_verified": false,
+    "source_saved_this_session": false,
+    "published_this_session": false,
+    "deployment_id": null,
+    "publication_required": true,
+    "blocker": "Native Sites source/export/build/save/publish tools were not available. GitHub contains bundled presentation source, not the full Site persistence routes, authentication, lockfiles or build configuration."
+  },
+  "state_and_media": {
+    "campaign_api_writes": 0,
+    "campaign_advanced_or_reset": false,
+    "resources_modified": false,
+    "pending_actions_executed": false,
+    "migrations_applied": false,
+    "live_schema_version": "NOT_VERIFIED",
+    "packaged_gameplay_data": "UNCHANGED",
+    "media_bytes_or_ids_changed": false,
+    "saved_mix_changed": false,
+    "canonical_theme_gain_changed": false,
+    "access_or_hosting_changed": false
+  },
+  "shared_source": {
+    "manifest_path": "plugin/RELEASE_COMPONENTS.json",
+    "manifest_sha256": "63bee76730cdcd6324254d16c1f45ac3a2947083dcaeb8deb75c630700473221",
+    "runtime_files_pinned": 27,
+    "legacy_entry_points_canonicalized": 5,
+    "inherited_components_pinned": 5,
+    "historical_qa": "Original component versions and bytes retained; no new device or listening evidence inferred."
+  },
+  "validation": {
+    "local_tests": {"passed": 84, "failed": 0, "skipped": 0, "inherited": 17, "session_fixtures": 43, "engine_session_simulations": 8, "polling_and_page_wiring": 11, "compatibility_exports": 5},
+    "source_pin_negative_checks": {"passed": 2, "meaning": "Modified runtime and inherited QA bytes rejected; exact baseline bytes restored."},
+    "typescript": {"version": "5.8.3", "files": 8, "syntax_errors": 0, "scope": "TRANSPILE_SYNTAX_ONLY_NOT_TYPECHECK_OR_SITE_BUILD"},
+    "ci": [
+      {"run_id": 37652853504, "workflow": "source-checkpoint", "branch": "work/alpha37-review-20261007", "conclusion": "success"},
+      {"run_id": 37652853621, "workflow": "validate", "branch": "work/alpha37-review-20261007", "conclusion": "success"},
+      {"run_id": 37653103535, "job_id": 112901253654, "workflow": "validate", "branch": "main", "conclusion": "success", "tests_passed_in_job_log": 84}
+    ],
+    "ci_source_commit": "fad52b9569102e13abd7ee0e520bdb0a1ac8932d",
+    "not_performed": ["native Site full build/typecheck/publication", "desktop or 390px browser journey", "physical iPhone or actual listening", "real audio decoding", "production authorization or transaction tests", "full plugin binary/media synchronization", "full campaign playthrough"]
+  },
+  "improvements": [
+    "Scene-bound audio retries cannot substitute campfire preview narration; exact voice keys and first-cue plans are validated.",
+    "Required narration and optional cue failures are distinct; finished cues and unused buses are not missing assets.",
+    "Introduction/campfire pause watchers and stale callbacks are safe; the 60-second deadline begins before the earliest preview voice.",
+    "Site source no longer auto-restarts on playback status alone; generic gesture recovery does not undo Pause or Stop.",
+    "Read-only refresh avoids overlapping polls, stops hidden scheduling, backs off on errors and exposes a stale-save warning.",
+    "Five compatibility entry points use canonical lib modules; component hashes detect drift without relabeling old QA as new evidence."
+  ],
+  "findings": {
+    "F01": "PARTIAL_SOURCE_SYNC; NATIVE_SITE_BLOCKED",
+    "F02": "BLOCKED_NATIVE_WRITE_AUTHORIZATION",
+    "F03": "BLOCKED_NATIVE_TRANSACTION_AND_IDEMPOTENCY",
+    "F04": "BLOCKED_SUPPORTED_RESOLVER_AND_SAVE_ROUND_TRIP",
+    "F05": "OPEN_LIVE_SUBMISSION_BEHAVIOR",
+    "F06": "OPEN_BROWSER_ACCESSIBILITY_AND_DEVICE_QA",
+    "F07": "PARTIAL_SOURCE_VERIFIED; LIVE_LIFECYCLE_AND_LISTENING_OPEN",
+    "F08": "OPEN_GAIN_AUTHORITY_AND_MIX_LISTENING",
+    "F09": "OPEN_ART_AUTHORITY_AND_ASSET_COVERAGE",
+    "F10": "OPEN_FIRST_PERSON_NARRATIVE_AND_AUDIO_ALIGNMENT",
+    "F11": "OPEN_ALIAS_AND_CHARACTER_LEDGER_RECONCILIATION",
+    "F12": "PARTIAL_CLIENT_REFRESH; SERVER_REVISION_PROJECTION_AND_DEVICE_MEASUREMENTS_OPEN",
+    "F13": "OPEN_PROFILING_BEFORE_OPTIMIZATION",
+    "F14": "PARTIAL_CANONICAL_RUNTIME; COMPLETE_PACKAGE_AND_MEDIA_SYNC_OPEN"
+  },
+  "work_packages": {
+    "WP01": "MAINTENANCE_SCOPE_COMPLETE; PLAYABLE_SLICE_CONTRACT_OPEN",
+    "WP02": "BLOCKED_NATIVE_STATE_AUTHORITY_AND_AUTHENTICATION",
+    "WP03": "BLOCKED_NATIVE_SUBMISSION_PERSISTENCE",
+    "WP04": "BLOCKED_SUPPORTED_RESOLVER_INTEGRATION",
+    "WP05": "PARTIAL_SOURCE_CONTROLS; BROWSER_JOURNEY_OPEN",
+    "WP06": "PARTIAL_SOURCE_AND_SIMULATIONS_VERIFIED; LIVE_AUDIO_OPEN",
+    "WP07": "OPEN_NARRATIVE_AND_ALIASES",
+    "WP08": "OPEN_ART_POLICY_AND_MEDIA_QA",
+    "WP09": "PARTIAL_TEST_COVERAGE; DEVICE_METRICS_OPEN",
+    "WP10": "PLUGIN_PUBLISHED_AND_GITHUB_PUSHED; NATIVE_SITE_PUBLICATION_BLOCKED"
+  },
+  "iteration_accounting": {
+    "distinct_review_areas_this_batch": 10,
+    "completed_100_pass_program": false,
+    "no_manufactured_cycles": true,
+    "detail": "plugin/ALPHA37_REMEDIATION_QA.json",
+    "score": "No rescore. The PDF 4.5/10 remains a dated baseline, not a current verified rating."
+  },
+  "rollback": {
+    "previous_main_commit": "4d64430e13f7da3cf4ccf14517086b0028ca29ce",
+    "previous_plugin_version": "1.5.1-alpha.36",
+    "previous_plugin_release_id": "pluginrel_6ac65a421be88191b52f808901c53e41",
+    "previous_checkpoint_path": "checkpoints/2026-10-07-alpha36-ten-pass-reconciliation.json",
+    "previous_guard": "release/UNIFIED_RELEASE_GUARD.json at the previous_main_commit",
+    "procedure": "Review current heads; restore affected code through a new non-destructive commit and a guarded plugin release. Restore only intended presentation files. No database migration occurred; never reset the real save. Native Site was not changed by this session."
+  },
+  "synchronization": {
+    "canonical_audio": "plugin/skills/desert-of-desolation-game/site-runtime/lib/",
+    "workflow": "Inspect both current artifacts; review deltas; update explicit component pins only for reviewed changes; run npm run verify; compare the Git tree to tested bytes; push with expected head; overlay changed plugin files with expected release; read back; then save a separate checkpoint.",
+    "native_site_gate": "Export the existing Site, reconcile rather than overwrite, verify its identity/authentication and persistence contracts, test isolated fixtures, then build/save/publish the matching existing Site and verify read-only live behavior.",
+    "automation": "GitHub CI detects tracked-source drift. No continuous Site/plugin auto-sync or automatic save bridge is claimed."
+  },
+  "next_step": "Obtain the existing native Site source/export and publication capability; inspect campaign ownership and transaction routes, then implement WP02-WP04 before claiming a coordinated playable release."
+}
