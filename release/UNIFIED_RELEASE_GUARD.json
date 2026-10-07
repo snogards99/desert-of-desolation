@@ -1,22 +1,27 @@
 {
-  "schema_version": 11,
-  "shared_release_id": "dod-alpha37-assessment-maintenance-2026-10-07",
-  "checkpoint_path": "checkpoints/2026-10-07-alpha37-maintenance.json",
+  "schema_version": 12,
+  "shared_release_id": "dod-alpha38-projectwide-synchronized-2026-10-07",
+  "checkpoint_path": "checkpoints/2026-10-07-alpha38-synchronized.json",
   "plugin": {
     "plugin_id": "Plugin_3352cc65ee508191abeb37ffa759294d",
-    "current_published_version": "1.5.1-alpha.37",
-    "current_release_id": "pluginrel_6ac6746d7d908191af93d988a5b8a14b",
+    "current_published_version": "1.5.1-alpha.38",
+    "current_release_id": "pluginrel_6ac67b89972c819197202788b96cb167",
     "scope": "WORKSPACE",
     "discoverability": "PRIVATE",
-    "published": true
+    "published": true,
+    "publication_readback_verified": true
   },
   "github": {
     "repository": "snogards99/desert-of-desolation",
     "branch": "main",
-    "implementation_commit": "fad52b9569102e13abd7ee0e520bdb0a1ac8932d",
-    "implementation_tree": "58dddb0102863dbede69ab1b430f8464a097673f",
-    "validation": {"workflow": "validate", "run_id": 37653103535, "conclusion": "success", "tests_passed": 84},
-    "plugin_source_parity": "14_TEXT_FILES_OVERLAID; 7_CORE_FILES_READ_BACK; FULL_ARCHIVE_PARITY_NOT_VERIFIED",
+    "implementation_commit": "203dae5d00f4a251eb8d16b515b4427b6c9994d3",
+    "implementation_tree": "5e563b0a1ec32b12cbcb31e902af6b74b1989a24",
+    "validation": {
+      "workflow": "validate",
+      "run_id": 37693835566,
+      "conclusion": "success"
+    },
+    "plugin_source_parity": "12_CORE_TEXT_ARTIFACTS_EXACT_MATCH; FULL_BINARY_PARITY_NOT_VERIFIED",
     "runtime_manifest": "plugin/RELEASE_COMPONENTS.json",
     "runtime_relative_import_closure": "PASS_ZERO_UNRESOLVED"
   },
@@ -26,7 +31,7 @@
     "inherited_source_version": 32,
     "inherited_projection_revision": 65,
     "fresh_deployment_verified": false,
-    "republished_by_alpha37": false,
+    "republished_by_alpha38": false,
     "publication_required": true,
     "deployment_id": null,
     "native_source_and_publish_action_available_in_session": false
@@ -38,16 +43,17 @@
     "binary_media_changed": false,
     "saved_mix_changed": false,
     "access_or_hosting_changed": false,
+    "stable_media_ids_changed": false,
     "unknown_rules_or_resources": "FAIL_CLOSED"
   },
-  "qa_scope": "Source contracts, deterministic session fixtures, production engine with simulated Web Audio, polling fixtures and syntax transpile. Not browser/device/listening or production-write verification.",
+  "qa_scope": "Alpha.38 source reconciliation, branch/main CI, Plugin Creator publication readback, and exact 12-file core text parity. Not live Site/browser/device/listening or full binary-media parity.",
   "open_gates": [
-    "Native Site source/export, campaign write authorization, transaction idempotency and supported gameplay resolver",
-    "Native Site build, save, publication and read-only deployed verification",
+    "Native Site source/export/build/save/publish and deployed browser verification",
+    "Server-side campaign write authorization, transaction/idempotency and resolver persistence",
     "Desktop/390px browser journeys, physical iPhone and actual listening",
-    "Gain and visual-policy authority, narrative and character aliases, complete media synchronization"
+    "Complete binary-media Plugin/GitHub parity"
   ],
   "coordinated_release_verified": false,
-  "previous_guard_commit": "4d64430e13f7da3cf4ccf14517086b0028ca29ce",
-  "status": "PLUGIN_MAINTENANCE_PUBLISHED_AND_SOURCE_TESTED; SITE_NOT_PUBLISHED; OVERALL_REMEDIATION_OPEN"
+  "previous_guard_commit": "515bf03af496c49708a58813bb13b625f5d2cdc1",
+  "status": "ALPHA38_PLUGIN_PUBLISHED_AND_SOURCE_SYNCHRONIZED; MAIN_CI_PASS; LIVE_SITE_NOT_REPUBLISHED"
 }
