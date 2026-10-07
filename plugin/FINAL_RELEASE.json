@@ -1,7 +1,7 @@
 {
   "plugin_id": "Plugin_3352cc65ee508191abeb37ffa759294d",
-  "version": "1.5.1-alpha.37",
-  "release_focus": "Accepted assessment repair: scene-safe audio sessions, pause/stop ownership, canonical shared audio and read-only refresh backoff; not a completed Alpha 2 release.",
+  "version": "1.5.1-alpha.38",
+  "release_focus": "Ten-pass project-wide reconciliation of active art/gain/alias/narrative policies while preserving alpha.37 audio/save runtime.",
   "plugin_scope": "WORKSPACE",
   "plugin_discoverability": "PRIVATE",
   "site_project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
@@ -11,14 +11,21 @@
   "site_observed_projection_revision": 65,
   "site_live_modified_this_release": false,
   "site_republish_required": true,
-  "site_republish_reason": "Alpha.37 changes Site source. Native Site export/build/save/publish and browser/device QA remain unavailable in this session; no live Site update is claimed.",
   "campaign_state_advanced": false,
   "stable_media_ids_preserved": true,
   "audio_asset_bytes_changed": false,
   "homepage_theme_base_gain": 0.16,
-  "qa_report": "ALPHA37_REMEDIATION_QA.json",
-  "magic_qa_report": "MAGIC_RECONCILIATION_QA.json",
-  "publication_status": "PUBLISHED_STATUS_AND_RELEASE_ID_MUST_BE_READ_FROM_EXTERNAL_CHECKPOINT",
-  "component_manifest": "RELEASE_COMPONENTS.json",
-  "site_observation_policy": "v32/projection65 are inherited observations, not fresh deployment verification."
+  "art_engine_version": "1.6.0",
+  "art_profile": "dod.pixel32-rgba",
+  "outdoor_phases": [
+    "DAY",
+    "DUSK",
+    "NIGHT"
+  ],
+  "qa_report": "ALPHA38_PROJECT_WIDE_QA.json",
+  "gain_authority": "GAIN_AUTHORITY.json",
+  "narrative_qa": "NARRATIVE_ALIGNMENT_QA.json",
+  "package_sync": "PACKAGE_SYNC_STATUS.json",
+  "publication_status": "CANDIDATE_UNTIL_PLUGIN_PUBLISH_AND_READBACK",
+  "github_write_surface": "AVAILABLE"
 }
