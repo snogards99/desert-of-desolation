@@ -1,0 +1,54 @@
+{
+  "checkpoint_schema":"dod.commit-checkpoint.v1",
+  "timestamp_utc":"2026-10-07T03:38:00Z",
+  "shared_release_id":"dod-alpha24-ten-pass-maintenance",
+  "canonical_source":{
+    "repository":"snogards99/desert-of-desolation",
+    "branch":"main",
+    "source_head_before_checkpoint":"0a58b4b3ec2e14a05a19a7ceaaf484af6ddb99eb",
+    "release_guard":"release/UNIFIED_RELEASE_GUARD.json"
+  },
+  "plugin":{
+    "plugin_id":"Plugin_3352cc65ee508191abeb37ffa759294d",
+    "version":"1.5.1-alpha.24",
+    "release_id":"pluginrel_6ac5bd619ac88191809dfc13820523ec",
+    "scope":"WORKSPACE",
+    "discoverability":"PRIVATE",
+    "status":"CURRENT_PUBLISHED_PLUGIN_RELEASE"
+  },
+  "site":{
+    "project_id":"appgprj_6ac3ddb2142c81918d529d4c7504e59d",
+    "recorded_version":28,
+    "recorded_deployment_id":"appgdep_6ac53efc570c8191874ecd5b279d7e2d",
+    "recorded_source_commit":"bfc027dc21493b02f37b5096f9fab1c117b2f9ef",
+    "status":"UNCHANGED_NOT_REPUBLISHED",
+    "note":"Alpha.24 Site source/profile improvements are committed, but no native Site publish action was available."
+  },
+  "github":{
+    "validation_run_id":37567581362,
+    "validation_conclusion":"success",
+    "obsolete_paths_removed":["vercel.json","api/","audio-renderer/",".devcontainer/","plugin/.app.json"],
+    "plugin_mcp_json":"EMPTY"
+  },
+  "qa":{
+    "ten_pass_audit":"plugin/ALPHA24_TEN_PASS_AUDIT.json",
+    "plugin_readback":"PASS",
+    "source_consistency":"PASS",
+    "campaign_state_advanced":false,
+    "stable_media_ids_changed":false,
+    "access_changed":false,
+    "live_browser_qa":"NOT_REPERFORMED",
+    "physical_device_qa":"NOT_REPERFORMED"
+  },
+  "open_items":[
+    "First-20 HD replacement imagery is incomplete; working legacy art remains fail-safe.",
+    "Live Site was not republished in this release.",
+    "Physical iPhone headphone/speaker listening remains an open evidence gate."
+  ],
+  "rollback":{
+    "previous_plugin_version":"1.5.1-alpha.23",
+    "previous_plugin_release":"pluginrel_6ac5b9487c348191b1830e724cddf7ee",
+    "previous_verified_checkpoint_commit":"590c4b54c81553fdd8cb65ed1228f4800aae8275"
+  },
+  "status":"VERIFIED_PLUGIN_AND_SOURCE; SITE_UNCHANGED; OPEN_HD_ART_AND_DEVICE_GATES"
+}
