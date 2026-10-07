@@ -1,7 +1,7 @@
 {
   "plugin_id": "Plugin_3352cc65ee508191abeb37ffa759294d",
-  "version": "1.5.1-alpha.34",
-  "release_focus": "Action multi-select/submit repair, final homepage cleanup, deterministic homepage-to-node audio handoff, first-cue Scene restart, and character portrait binding hardening",
+  "version": "1.5.1-alpha.36",
+  "release_focus": "Ten-pass project-wide hardening: reconcile published alpha.35 into canonical source, remove stale duplicate audio forks, correct configured-bus scene health, refresh Site QA evidence, and strengthen release regression gates",
   "plugin_scope": "WORKSPACE",
   "plugin_discoverability": "PRIVATE",
   "site_project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
@@ -14,12 +14,15 @@
   "campaign_state_advanced": false,
   "stable_media_ids_preserved": true,
   "audio_runtime_behavior_changed": true,
-  "source_actions_changed": true,
-  "character_portrait_bindings_changed": true,
+  "source_actions_changed": false,
+  "character_portrait_bindings_changed": false,
   "new_character_portrait_bytes_generated": false,
-  "qa_report": "ALPHA34_FINAL_RELEASE_QA.json",
-  "plugin_published_this_release": true,
-  "current_published_plugin_version": "1.5.1-alpha.34",
-  "current_published_plugin_release_id": "pluginrel_6ac6325cd794819187f554d195c92879",
-  "github_source_status": "ALPHA34_PLUGIN_PUBLISHED_AND_RUNTIME_VERIFIED; LIVE_SITE_V32_PENDING_NATIVE_REPUBLISH"
+  "qa_report": "ALPHA2_CANDIDATE_QA.json",
+  "plugin_published_this_release": false,
+  "current_published_plugin_version": "1.5.1-alpha.35",
+  "current_published_plugin_release_id": "pluginrel_6ac63501f2848191b047c6da6d540690",
+  "github_source_status": "ALPHA2_CANDIDATE_SOURCE_HARDENED_PENDING_FINAL_BRANCH_CI",
+  "milestone": "ALPHA_2_CANDIDATE",
+  "publication_status": "CANDIDATE_NOT_PUBLISHED",
+  "candidate_branch": "alpha2-candidate-20261007"
 }
