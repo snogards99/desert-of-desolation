@@ -23,10 +23,17 @@
       "finding": "Playback success was assumed and an unmapped character inherited Snogard's portrait.",
       "change": "Scene health reports active/missing enabled buses; wrong-character portrait fallback removed; current verified portrait URLs cache-busted.",
       "evidence": "alpha34 tests verify sceneHealth and neutral portrait-unavailable fallback."
+    },
+    {
+      "loop": 4,
+      "focus": "final homepage and Scene restart completion",
+      "finding": "Canonical alpha34 still exposed Home/legacy homepage labels and Scene startup did not explicitly prime the first node cue.",
+      "change": "Removed Home/legacy homepage controls and labels; Scene now hard-stops prior audio, preloads and starts the first current-node cue, then starts remaining node layers.",
+      "evidence": "alpha34 contract tests plus GitHub validate run 37616041386."
     }
   ],
   "verified": {
-    "github_ci_run": 37585696543,
+    "github_ci_run": 37616041386,
     "github_ci_conclusion": "success",
     "multi_select_actions": true,
     "shared_submit": true,
@@ -39,7 +46,13 @@
     "enabled_bus_health_reporting": true,
     "wrong_portrait_fallback_removed": true,
     "campaign_state_advanced": false,
-    "stable_media_ids_changed": false
+    "stable_media_ids_changed": false,
+    "homepage_home_navigation_removed": true,
+    "homepage_legacy_feature_buttons_removed": true,
+    "homepage_raurin_and_node_labels_removed": true,
+    "seekers_below_main_title": true,
+    "scene_click_hard_stops_audio": true,
+    "first_node_cue_preloaded_and_started_first": true
   },
   "limitations": [
     "Live Site source version 32 / projection revision 65 was not republished by this release source pass.",
