@@ -1,0 +1,56 @@
+{
+  "checkpoint_schema": "dod.commit-checkpoint.v1",
+  "timestamp_utc": "2026-10-07T05:49:00Z",
+  "shared_release_id": "dod-alpha33-state-driven-imagery",
+  "canonical_source": {
+    "repository": "snogards99/desert-of-desolation",
+    "branch": "main",
+    "artifact_source_head": "2c1b954c7cf6591f93f78c92b218b9cc5a005f96",
+    "release_guard_commit": "00757e899389b5ef249a8ee92d25389864f0cd30",
+    "release_guard_path": "release/UNIFIED_RELEASE_GUARD.json"
+  },
+  "plugin": {
+    "plugin_id": "Plugin_3352cc65ee508191abeb37ffa759294d",
+    "version": "1.5.1-alpha.33",
+    "release_id": "pluginrel_6ac5dcab5b688191b8fbe927a851e57f",
+    "scope": "WORKSPACE",
+    "discoverability": "PRIVATE",
+    "status": "CURRENT_PUBLISHED_PLUGIN_RELEASE"
+  },
+  "site": {
+    "project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
+    "observed_source_version": 32,
+    "observed_projection_revision": 65,
+    "status": "UNCHANGED_NOT_REPUBLISHED"
+  },
+  "qa": {
+    "github_validation_run_id": 37578099536,
+    "github_validation_conclusion": "success",
+    "changed_plugin_files_exact_match": true,
+    "resolver_tests": "9/9 PASS",
+    "optimizer_loops": 3,
+    "campaign_state_advanced": false,
+    "stable_media_ids_changed": false,
+    "audio_behavior_changed": false,
+    "new_image_bytes_generated": false
+  },
+  "implementation": [
+    "one primary scene image above narrative",
+    "heard/hidden creatures never visually revealed",
+    "combat ATTACK image reused across ordinary rounds",
+    "DEFEATED requires authoritative outcome and does not imply DEAD",
+    "unique/story/magic item imagery discovery-gated",
+    "last-image reuse requires same-node identity and still-legal state",
+    "time-of-day aliases and bounded preload preserved"
+  ],
+  "open_items": [
+    "Live Site was not republished in this release.",
+    "Browser/physical-device visual QA was not reperformed.",
+    "New treasure and monster image bytes remain separate art-production work; this release implements the state-selection system."
+  ],
+  "rollback": {
+    "previous_verified_source_checkpoint": "7d8754fc40807726e602b14ff5325f57d4aed8f2",
+    "previous_plugin_release": "pluginrel_6ac5cb836b388191adb4cf434c4034dc"
+  },
+  "status": "VERIFIED_PLUGIN_AND_SOURCE; SITE_UNCHANGED"
+}
