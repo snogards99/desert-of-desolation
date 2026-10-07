@@ -12,8 +12,9 @@
   "github":{
     "repository":"snogards99/desert-of-desolation",
     "branch":"main",
-    "artifact_source_head":"fbace86a1fafee5e71c5fb8b52aa5e9e6b4a5958",
-    "validation":{"workflow":"validate","run_id":37567536792,"conclusion":"success"},
+    "artifact_source_head":"24fb7f75b59f46957481d5b6231596fbabc8df29",
+    "validation":{"workflow":"validate","run_id":37567764556,"conclusion":"success"},
+    "source_mirror":"EXACT_MATCH_FOR_ALPHA24_CHANGED_PLUGIN_FILES",
     "obsolete_paths_removed":["vercel.json","api/","audio-renderer/",".devcontainer/","plugin/.app.json"],
     "plugin_mcp_config":"EMPTY"
   },
@@ -27,7 +28,7 @@
   },
   "qa":{
     "ten_pass_audit":"plugin/ALPHA24_TEN_PASS_AUDIT.json",
-    "source_consistency":"PASS",
+    "source_consistency":"PASS_EXACT_CHANGED_FILES",
     "campaign_state_advanced":false,
     "stable_media_ids_changed":false,
     "first20_hd_complete":false,
