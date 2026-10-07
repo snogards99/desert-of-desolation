@@ -1,13 +1,13 @@
 {
-  "schema_version": 8,
-  "shared_release_id": "dod-alpha34-home-scene-audio-final-source-2026-10-07",
+  "schema_version": 9,
+  "shared_release_id": "dod-alpha34-home-scene-audio-plugin-published-2026-10-07",
   "plugin": {
     "plugin_id": "Plugin_3352cc65ee508191abeb37ffa759294d",
-    "current_published_version": "1.5.1-alpha.33",
-    "current_release_id": "pluginrel_6ac5dcab5b688191b8fbe927a851e57f",
+    "current_published_version": "1.5.1-alpha.34",
+    "current_release_id": "pluginrel_6ac6325cd794819187f554d195c92879",
     "scope": "WORKSPACE",
     "discoverability": "PRIVATE",
-    "alpha34_published": false
+    "alpha34_published": true
   },
   "github": {
     "repository": "snogards99/desert-of-desolation",
@@ -33,14 +33,15 @@
       "Scene re-entry force-stops existing audio and restarts current-node audio without advancing state",
       "first current-node cue is buffered and started before remaining scene layers"
     ],
-    "source_head": "d3fe6755e6957a97f93af9392aa45ff85bdc9c13"
+    "source_head": "d3fe6755e6957a97f93af9392aa45ff85bdc9c13",
+    "release_guard_previous_commit": "5a93a3d701acd51193ef485564369ec666be518d"
   },
   "site": {
     "project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
     "observed_source_version": 32,
     "observed_projection_revision": 65,
     "republished_by_this_release": false,
-    "status": "SOURCE_READY; NATIVE_SITE_PUBLISH_ACTION_UNAVAILABLE_IN_CURRENT_TOOLSET"
+    "status": "ACTIVE_PUBLIC_BASELINE_UNCHANGED; NATIVE_SITE_PUBLISH_ACTION_UNAVAILABLE_IN_CURRENT_TOOLSET"
   },
   "qa": {
     "source_consistency": "PASS",
@@ -50,12 +51,14 @@
     "new_character_portrait_bytes_generated": false,
     "physical_device_audio_reverified": false,
     "final_homepage_contract": "PASS_SOURCE",
-    "first_cue_scene_audio_contract": "PASS_SOURCE"
+    "first_cue_scene_audio_contract": "PASS_SOURCE",
+    "plugin_overlay_contract": "PASS",
+    "plugin_post_publish_readback": "PASS"
   },
   "open_items": [
-    "Native live Site republish remains required because no ChatGPT Sites mutation/publish action is exposed in the current toolset.",
-    "Plugin publication remains at alpha.33; alpha.34 source is verified in GitHub but a complete alpha.34 plugin archive has not been promoted.",
-    "Physical iPhone speaker/headphone playback remains a device-only verification."
+    "Republish/sync alpha.34 into the existing ChatGPT Site when a native Site mutation/publish action is available.",
+    "Physical iPhone speaker/headphone playback remains a device-only verification.",
+    "New HD painterly character portrait bytes remain a separate art-production follow-up; alpha.34 only hardens current bindings."
   ],
-  "status": "ALPHA34_FINAL_SOURCE_VERIFIED; LIVE_SITE_AND_PLUGIN_PUBLICATION_PENDING_SUPPORTED_NATIVE_ACTION"
+  "status": "PLUGIN_ALPHA34_PUBLISHED_AND_VERIFIED; CANONICAL_SOURCE_COMMITTED; LIVE_SITE_PUBLICATION_PENDING_NATIVE_SITE_ACTION"
 }
