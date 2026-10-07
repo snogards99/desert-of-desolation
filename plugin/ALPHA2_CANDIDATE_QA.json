@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "milestone": "ALPHA_2_CANDIDATE",
+  "release": "1.5.1-alpha.36",
+  "candidate_branch": "alpha2-candidate-20261007",
+  "current_published_plugin": {
+    "version": "1.5.1-alpha.35",
+    "release_id": "pluginrel_6ac63501f2848191b047c6da6d540690"
+  },
+  "live_site_baseline": {
+    "source_version_number": 32,
+    "projection_revision": 65,
+    "status": "active",
+    "access_mode": "public",
+    "candidate_republished": false
+  },
+  "optimizer_passes": [
+    {
+      "pass": 1,
+      "focus": "authority and uncommitted drift",
+      "finding": "Plugin Creator was at alpha.35 while canonical Git remained alpha.34.",
+      "resolution": "Reconciled alpha.35 publication history into the candidate branch and advanced the review candidate to alpha.36."
+    },
+    {
+      "pass": 2,
+      "focus": "release metadata consistency",
+      "finding": "Package, validators, policies and release files referenced mixed alpha.34/alpha.35 states.",
+      "resolution": "Synchronized active candidate-bearing metadata to 1.5.1-alpha.36 while preserving historical release records."
+    },
+    {
+      "pass": 3,
+      "focus": "published package completeness",
+      "finding": "Alpha.35 existed as a valid Plugin Creator synchronization release but was absent from Git provenance.",
+      "resolution": "Added alpha.35 QA and historical checkpoint to canonical candidate history."
+    },
+    {
+      "pass": 4,
+      "focus": "Site evidence accuracy",
+      "finding": "SITE_RUNTIME_QA still described alpha.24 and Site v28.",
+      "resolution": "Refreshed QA to observed Site v32 / projection 65 and left unexposed deployment/source refs null rather than inventing them."
+    },
+    {
+      "pass": 5,
+      "focus": "runtime duplication",
+      "finding": "Top-level Site audio modules were stale forks of maintained lib modules.",
+      "resolution": "Converted audio-engine, campfire-test, media-policy, listening-scene and sound-settings compatibility entrypoints to canonical re-exports."
+    },
+    {
+      "pass": 6,
+      "focus": "audio health correctness",
+      "finding": "sceneHealth expected every enabled bus even when a node configured no cue for that bus, causing false missing-layer warnings.",
+      "resolution": "Expected/missing buses are now the intersection of configured scene buses and enabled nonzero mixer layers."
+    },
+    {
+      "pass": 7,
+      "focus": "stranded branch review",
+      "finding": "deploy-optimize-20261004 is 157 commits behind main with 10 unique commits restoring Vercel, MCP/API and external audio-renderer paths.",
+      "resolution": "Classified branch as superseded and excluded it from the candidate; no valuable current-architecture work was merged."
+    },
+    {
+      "pass": 8,
+      "focus": "architecture and dependency boundaries",
+      "finding": "Current main already removed obsolete external runtime requirements but lacked a candidate-level provenance record for alpha.35.",
+      "resolution": "Preserved empty plugin mcp.json and self-contained runtime policy; added release-history reconciliation."
+    },
+    {
+      "pass": 9,
+      "focus": "regression prevention",
+      "finding": "Existing validation would not detect stale compatibility forks or configured-bus health regression.",
+      "resolution": "Added validation and tests for canonical wrappers, configured-bus-only health, version synchronization and Site publication truthfulness."
+    },
+    {
+      "pass": 10,
+      "focus": "final release gate",
+      "finding": "Candidate needed a clean isolated branch and CI gate before being called finalized.",
+      "resolution": "Alpha 2 Candidate is isolated on this branch; final VERIFIED status is recorded only after branch CI passes."
+    }
+  ],
+  "preserved": {
+    "campaign_state_advanced": false,
+    "stable_media_ids_changed": false,
+    "node_master_count": 361,
+    "plugin_scope": "WORKSPACE",
+    "plugin_discoverability": "PRIVATE",
+    "site_access_mode": "public"
+  },
+  "open_external_gates": [
+    "Live ChatGPT Site has not been republished to this candidate because no native Site mutation/publish action is exposed in the current environment.",
+    "Physical iPhone speaker/headphone playback has not been reverified.",
+    "New HD painterly character portrait bytes remain pending separate art production."
+  ],
+  "status": "SOURCE_COMPLETE_PENDING_FINAL_BRANCH_CI"
+}
