@@ -1,10 +1,11 @@
 {
   "plugin_id": "Plugin_3352cc65ee508191abeb37ffa759294d",
-  "version": "1.5.1-alpha.33",
-  "release_focus": "Deterministic state-driven primary node imagery and discovery-safe treasure/creature presentation",
+  "version": "1.5.1-alpha.34",
+  "release_focus": "Action multi-select/submit repair, homepage-to-node audio handoff, node audio auto-start verification, and character portrait binding hardening",
   "plugin_scope": "WORKSPACE",
   "plugin_discoverability": "PRIVATE",
   "site_project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
+  "site_slug": "desert-of-desolation",
   "site_status": "active",
   "site_access_mode": "public",
   "site_observed_source_version": 32,
@@ -12,8 +13,9 @@
   "site_live_modified_this_release": false,
   "campaign_state_advanced": false,
   "stable_media_ids_preserved": true,
-  "audio_runtime_behavior_changed": false,
-  "scene_image_runtime_source_changed": true,
-  "new_image_bytes_generated": false,
-  "qa_report": "ALPHA33_STATE_IMAGE_QA.json"
+  "audio_runtime_behavior_changed": true,
+  "source_actions_changed": true,
+  "character_portrait_bindings_changed": true,
+  "new_character_portrait_bytes_generated": false,
+  "qa_report": "ALPHA34_FINAL_RELEASE_QA.json"
 }
