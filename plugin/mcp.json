@@ -1,9 +1,1 @@
-{
-  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
-  "mcpServers": {
-    "desert-of-desolation-audio": {
-      "type": "streamable-http",
-      "url": "https://desert-of-desolation-main.vercel.app/mcp"
-    }
-  }
-}
+{}
