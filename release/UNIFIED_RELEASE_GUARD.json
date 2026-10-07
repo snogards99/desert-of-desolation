@@ -1,10 +1,10 @@
 {
-  "schema_version": 3,
-  "shared_release_id": "dod-alpha28-runtime-coherence-2026-10-07",
+  "schema_version": 4,
+  "shared_release_id": "dod-alpha30-final-2026-10-07",
   "plugin": {
     "plugin_id": "Plugin_3352cc65ee508191abeb37ffa759294d",
-    "version": "1.5.1-alpha.28",
-    "release_id": "pluginrel_6ac5c8f9ac8081918d190361e33ce786",
+    "version": "1.5.1-alpha.30",
+    "release_id": "pluginrel_6ac5cb836b388191adb4cf434c4034dc",
     "scope": "WORKSPACE",
     "discoverability": "PRIVATE",
     "status": "PUBLISHED_CURRENT"
@@ -12,21 +12,15 @@
   "github": {
     "repository": "snogards99/desert-of-desolation",
     "branch": "main",
-    "artifact_source_head": "b16d3e0496b42ac552acf5d6ebc19547244e796e",
+    "artifact_source_head": "e12dc3f9fe7dd90be9937ea294f6bca1e97b1c61",
     "validation": {
       "workflow": "validate",
-      "run_id": 37571745890,
+      "run_id": 37572149986,
       "conclusion": "success"
     },
-    "source_mirror": "CURRENT_ALPHA28_TEXT_RUNTIME_AND_RELEASE_FILES_MIRRORED",
+    "source_mirror": "CURRENT_ALPHA30_RUNTIME_RELEASE_AND_POLICY_FILES_MIRRORED",
     "runtime_relative_import_closure": "PASS",
-    "obsolete_paths_removed": [
-      "vercel.json",
-      "api/",
-      "audio-renderer/",
-      ".devcontainer/",
-      "plugin/.app.json"
-    ],
+    "obsolete_paths_removed": ["vercel.json","api/","audio-renderer/",".devcontainer/","plugin/.app.json"],
     "plugin_mcp_config": "EMPTY"
   },
   "site": {
@@ -34,15 +28,16 @@
     "slug": "desert-of-desolation",
     "status": "active",
     "access_mode": "public",
-    "observed_source_version": 29,
-    "observed_projection_revision": 59,
-    "republished_by_alpha28": false,
-    "previous_v28_deployment_id": "appgdep_6ac53efc570c81918d529d4c7504e59d",
-    "deployment_id_for_v29": null,
-    "deployment_note": "Current Library Site metadata exposes source version/projection but not a v29 deployment ID; none is invented."
+    "observed_source_version": 30,
+    "observed_projection_revision": 61,
+    "republished_by_alpha30": false,
+    "deployment_id_for_v30": null,
+    "deployment_note": "The current Library Site artifact exposes source/projection metadata but not a v30 deployment identifier; none is invented.",
+    "historical_v28_deployment_id": "appgdep_6ac53efc570c8191874ecd5b279d7e2d",
+    "historical_v28_source_commit": "bfc027dc21493b02f37b5096f9fab1c117b2f9ef"
   },
   "qa": {
-    "release_qa": "plugin/ALPHA28_FINAL_RELEASE_QA.json",
+    "release_qa": "plugin/ALPHA30_FINAL_RELEASE_QA.json",
     "source_consistency": "PASS",
     "github_ci": "PASS",
     "runtime_import_closure": "PASS",
@@ -54,15 +49,20 @@
     "microphone_reverified_this_session": false,
     "physical_iphone_reverified_this_session": false
   },
+  "approval": {
+    "source_and_release_alignment": "APPROVED",
+    "live_site_identity_and_projection": "OBSERVED",
+    "device_only_evidence_gates": "OPEN_NONBLOCKING"
+  },
   "open_evidence_gates": [
     "browser audible play-stop-play and narration timing",
     "microphone permission/input on the live Site",
     "physical iPhone speaker/headphones and GPU performance"
   ],
   "rollback": {
-    "previous_plugin_release": "pluginrel_6ac5c7fd791c8191956a129e6256e33c",
-    "previous_source_checkpoint": "de8036fb5f1a390a16360585fa9d874537b2c843",
-    "previous_plugin_version": "1.5.1-alpha.27"
+    "previous_plugin_version": "1.5.1-alpha.29",
+    "previous_plugin_release": "pluginrel_6ac5cb5510908191ae93adb09651aee0",
+    "previous_verified_checkpoint": "de8036fb5f1a390a16360585fa9d874537b2c843"
   },
-  "status": "VERIFIED_PLUGIN_AND_SOURCE; SITE_V29_OBSERVED; DEVICE_EVIDENCE_GATES_OPEN"
+  "status": "VERIFIED_PLUGIN_AND_SOURCE; SITE_V30_OBSERVED; DEVICE_EVIDENCE_GATES_OPEN"
 }
