@@ -1,0 +1,68 @@
+{
+  "checkpoint_schema": "dod.commit-checkpoint.v1",
+  "timestamp_utc": "2026-10-07T05:12:00Z",
+  "shared_release_id": "dod-alpha30-site32-reconciled-2026-10-07",
+  "canonical_source": {
+    "repository": "snogards99/desert-of-desolation",
+    "branch": "main",
+    "runtime_source_commit": "f54a40dab5a3c24f577f1b54e77357246b4123cf",
+    "release_guard_commit": "55481bba6eddcbccbd0780e9d7e22a7041e4a6be",
+    "release_guard_path": "release/UNIFIED_RELEASE_GUARD.json"
+  },
+  "plugin": {
+    "plugin_id": "Plugin_3352cc65ee508191abeb37ffa759294d",
+    "version": "1.5.1-alpha.30",
+    "release_id": "pluginrel_6ac5cb836b388191adb4cf434c4034dc",
+    "scope": "WORKSPACE",
+    "discoverability": "PRIVATE",
+    "status": "CURRENT_PUBLISHED_PLUGIN_RELEASE"
+  },
+  "site": {
+    "project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
+    "slug": "desert-of-desolation",
+    "status": "active",
+    "access_mode": "public",
+    "observed_source_version": 32,
+    "observed_projection_revision": 65,
+    "deployment_id": null,
+    "deployment_note": "Current Site metadata surface does not expose a v32 deployment identifier; none is invented.",
+    "republished_by_this_checkpoint": false
+  },
+  "github": {
+    "source_restore_commit": "f54a40dab5a3c24f577f1b54e77357246b4123cf",
+    "source_restore_validation_run_id": 37575037518,
+    "source_restore_validation_conclusion": "success",
+    "interrupted_regression_commit": "ebcfaefbf6feb5e611f501641e2dd17ae655976e",
+    "regression_resolved": true
+  },
+  "qa": {
+    "source_consistency": "PASS",
+    "runtime_relative_import_closure": "PASS",
+    "active_release_metadata": "PASS_ALPHA30",
+    "github_validation": "PASS",
+    "live_site_identity_and_projection": "OBSERVED_V32_R65",
+    "campaign_state_advanced": false,
+    "access_changed": false,
+    "stable_media_ids_changed": false,
+    "architecture_rebuilt": false,
+    "browser_audio_reverified_this_session": false,
+    "microphone_reverified_this_session": false,
+    "physical_iphone_reverified_this_session": false
+  },
+  "approval": {
+    "coordinated_source_release_alignment": "APPROVED",
+    "site_observation": "APPROVED_AS_OBSERVED_METADATA_ONLY",
+    "unobserved_device_checks": "OPEN_NONBLOCKING_NOT_WAIVED"
+  },
+  "open_evidence_gates": [
+    "browser audible play-stop-play and narration timing",
+    "microphone permission/input on the live Site",
+    "physical iPhone speaker/headphones and GPU performance"
+  ],
+  "rollback": {
+    "previous_verified_guard_commit": "ed89f1587d3d28184579eeadf7f96a511775cdc5",
+    "previous_validated_alpha30_source_commit": "e12dc3f9fe7dd90be9937ea294f6bca1e97b1c61",
+    "historical_v28_deployment_id": "appgdep_6ac53efc570c8191874ecd5b279d7e2d"
+  },
+  "status": "VERIFIED_AND_COMMITTED; PLUGIN_ALPHA30_CURRENT; SITE_V32_R65_OBSERVED; DEVICE_EVIDENCE_GATES_OPEN"
+}
