@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "release": "1.5.1-alpha.37",
+  "scope": "MAINTENANCE_SOURCE_AND_PLUGIN_ONLY; NOT_A_COORDINATED_ALPHA2_RELEASE",
+  "started_from": {
+    "github_main": "4d64430e13f7da3cf4ccf14517086b0028ca29ce",
+    "plugin_release": "pluginrel_6ac65a421be88191b52f808901c53e41",
+    "source_export_commit": "d80dba829e46241f30ff88254f77f676294a0bf0",
+    "source_export_tree": "8464303f0af5cdfba9e6bc3a6f653439508a9143",
+    "github_tracked_files_verified": 164
+  },
+  "local_tests": {
+    "total": 84,
+    "passed": 84,
+    "failed": 0,
+    "inherited_suite": 17,
+    "session_fixtures": 43,
+    "production_engine_plus_simulated_web_audio": 8,
+    "save_polling_and_source_wiring": 11,
+    "canonical_entry_points": 5,
+    "source_pin_negative_checks": 2,
+    "typescript_syntax": {
+      "typescript": "5.8.3",
+      "files": 8,
+      "errors": [],
+      "scope": "SYNTAX_TRANSPILE_ONLY_NOT_TYPECHECK_OR_NATIVE_SITE_BUILD"
+    }
+  },
+  "ten_review_areas": [
+    {
+      "pass": 1,
+      "focus": "authority",
+      "result": "Full tracked GitHub snapshot verified against Git tree; native Site and plugin binary archive still separate."
+    },
+    {
+      "pass": 2,
+      "focus": "accepted candidate",
+      "result": "Accepted 33-test audio candidate reproduced, applied and extended."
+    },
+    {
+      "pass": 3,
+      "focus": "cue validation",
+      "result": "Explicit first cue, supported buses and distinct keys tested; no unrelated voice proves cue startup."
+    },
+    {
+      "pass": 4,
+      "focus": "failure recovery",
+      "result": "Required/optional failures distinguished; completed finite cue not missing; keyed retry does not restart active sibling."
+    },
+    {
+      "pass": 5,
+      "focus": "pause/restart ownership",
+      "result": "Introduction/campfire timer recovery tested; Site source effect no longer depends on playing state; homepage pause handled separately."
+    },
+    {
+      "pass": 6,
+      "focus": "60-second preview",
+      "result": "Deadline is installed before first possible bed voice; late optional startup cannot extend test."
+    },
+    {
+      "pass": 7,
+      "focus": "refresh reliability",
+      "result": "Hidden scheduling, bounded backoff, one poll in flight, stale indication and cleanup tested."
+    },
+    {
+      "pass": 8,
+      "focus": "canonical runtime",
+      "result": "Five legacy audio entry points re-export exact canonical implementations; production engine/session exercised under simulated APIs."
+    },
+    {
+      "pass": 9,
+      "focus": "evidence/version integrity",
+      "result": "Unchanged components and old QA retain byte hashes and original versions; modified pins fail closed."
+    },
+    {
+      "pass": 10,
+      "focus": "release closure",
+      "result": "Source prepared for guarded branch CI and overlay publication; final published IDs and readback must be recorded in the external checkpoint."
+    }
+  ],
+  "iteration_accounting": {
+    "completed_100_pass_program": false,
+    "current_batch_distinct_review_areas": 10,
+    "prior_accepted_local_batch": 1,
+    "stop_boundary": "Native Site write-auth/resolver/source/export/publish capabilities and physical-device/listening gates remain unavailable. No manufactured edit cycles."
+  },
+  "preservation": {
+    "campaign_api_writes": 0,
+    "saved_resources_modified": false,
+    "pending_actions_executed": false,
+    "binary_media_changed": false,
+    "saved_mix_changed": false,
+    "gain_changed": false,
+    "access_changed": false,
+    "hosting_changed": false
+  },
+  "open_findings": [
+    "F01 native Site parity",
+    "F02 campaign write authorization",
+    "F03 transaction/idempotency",
+    "F04 playable resolver",
+    "F05 live submission UX",
+    "F06 browser/accessibility",
+    "F07 live lifecycle verification",
+    "F08 gain/mix authority and listening",
+    "F09 visual policy/asset coverage",
+    "F10 first-person source narratives",
+    "F11 character aliases/ledger",
+    "F12 real device performance and server revision-aware projection",
+    "F13 profiling",
+    "F14 complete package and media reconciliation"
+  ],
+  "not_performed": [
+    "native Site build/typecheck/deployment",
+    "physical iPhone or actual listening",
+    "production write/security test",
+    "full plugin binary/media sync",
+    "full campaign playthrough"
+  ],
+  "scoring": "No new product score; baseline 4.5/10 retained as dated historical assessment only."
+}

@@ -16,7 +16,7 @@ test("choices select without immediate submission and use a shared submit path",
   assert.doesNotMatch(page,/onClick=\{\(\)=>act\(c\.text,c\.id\)\}/);
 });
 
-test("homepage theme is louder, Home-only, and stoppable",()=>{
+test("inherited homepage gain stays unchanged; Home-only ownership remains wired",()=>{
   assert.equal(pres.background_theme.base_gain,0.16);
   assert.match(page,/tabRef\.current!==['"]Home['"]/);
   assert.match(engine,/stopTheme\(/);

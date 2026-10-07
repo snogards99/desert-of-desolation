@@ -30,3 +30,9 @@ Stable media IDs must remain stable. GitHub stores source and intended runtime m
 ## Site
 
 Shared presentation/data remains canonical under `plugin/`. `site/` records the native Site identity and publication state. Do not claim a byte-for-byte Site export unless a supported Site source/export action actually produced one.
+
+## Component-aware maintenance releases
+
+The package version is not a claim that every inherited component was rewritten or retested. `plugin/RELEASE_COMPONENTS.json` pins unchanged component versions and SHA-256 hashes separately from the new package and runtime hashes. Historical QA retains its original evidence labels. Update pins only after reviewing the corresponding change; CI never regenerates them to hide drift.
+
+The canonical audio modules are under `site-runtime/lib/`. Legacy root entry points re-export them and executable compatibility tests require identical exports. A full native Site source/export is still required before claiming Site parity. The source-checkpoint workflow archives only tracked repository bytes, validates them first and supplies the exact commit/tree; it does not include live saves, credentials or an unseen Site export.

@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "release": "1.5.1-alpha.37",
+  "scope": "MAINTENANCE_PACKAGE_NOT_ALPHA2_READY",
+  "inherited": {
+    "policy": {
+      "path": "skills/desert-of-desolation-game/data/ACTIVE_POLICY_OVERRIDES.json",
+      "version_field": "release",
+      "version": "1.5.1-alpha.36",
+      "sha256": "1c4378d1bca26915b04e89f8a0778b18e4e7b34fd6d061e09298c07b3b439631"
+    },
+    "theme": {
+      "path": "skills/desert-of-desolation-game/data/VISUAL_THEME.json",
+      "version_field": "configured_in_plugin_version",
+      "version": "1.5.1-alpha.36",
+      "sha256": "6a1c1f35d9f20afb95f9c2b41365842711c70abc61048516424e79e2e72007ae"
+    },
+    "soundQA": {
+      "path": "skills/desert-of-desolation-game/data/SOUND_MIXER_QA.json",
+      "version_field": "reviewed_in_version",
+      "version": "1.5.1-alpha.36",
+      "sha256": "49b671afef3a23b3b00cff6e03c86698fd4f1b1d33e9305909e84422a4df6da7"
+    },
+    "art": {
+      "path": "skills/desert-of-desolation-art-direction/assets/art-engine.json",
+      "version_field": "plugin_release",
+      "version": "1.5.1-alpha.36",
+      "sha256": "2c0051cc5af3ce0ab70206f9968026f9f9d21c5cfacfaf6399ec205cfa9388b7"
+    },
+    "nodePolicy": {
+      "path": "skills/desert-of-desolation-game/data/imagery/NODE_IMAGE_STATE_POLICY.json",
+      "version_field": "release",
+      "version": "1.5.1-alpha.36",
+      "sha256": "b74d1dc6c91654f61a0747619c2a5eed05c466fda7c5d024d2aa22443375f88d"
+    }
+  },
+  "evidence_policy": "Inherited components retain their original version and byte hash; packaging them does not create fresh QA or approve unresolved art/gain policy changes.",
+  "runtime_sha256": {
+    "skills/desert-of-desolation-game/site-runtime/app/module-intros.css": "72a5da143ab81bf7ab6079ec48eb6e21b7839633bd257920d8b9d32b12630823",
+    "skills/desert-of-desolation-game/site-runtime/app/page.tsx": "03a6b3002ed141ac5be42154ff50ebcc7053dec42abeaa7f9e6cf50f46611764",
+    "skills/desert-of-desolation-game/site-runtime/audio-engine.mjs": "9a0f8f136ab256fcdbb51b80b809d4a58d28fa78614eeaaa7deb1132de8a3daa",
+    "skills/desert-of-desolation-game/site-runtime/campfire-test.mjs": "5ba3576f88e89074bb2d3d667ed0a547c74c817f4e62f16ca5570d6593ae4a7a",
+    "skills/desert-of-desolation-game/site-runtime/components/character-sheet.tsx": "a9874b833be2b51da76399abba767062baec5fa5a7c9983ff1e1b7c8d08a1884",
+    "skills/desert-of-desolation-game/site-runtime/components/introduction.tsx": "134dab8b3f3db946c97e6aaacf18b42e78b1f7ae4ee776cef1d355cf0d68db2e",
+    "skills/desert-of-desolation-game/site-runtime/components/microphone-input.tsx": "0123055d15ac976a3481ab5e8fed3ec871349f9a033ebf823cede11c7feca9b3",
+    "skills/desert-of-desolation-game/site-runtime/components/scene-plate.tsx": "7bd49d6f5f0c962176ace7240802f214a09724fd949d4d924b48e34a80bae6ad",
+    "skills/desert-of-desolation-game/site-runtime/components/sound-mixer.tsx": "95f5a716d284883f1aeb910faa1953ba2ac06bce3a1acb068b2bed812b8a99fc",
+    "skills/desert-of-desolation-game/site-runtime/components/story-plate.tsx": "3bffad8d9f0ad2a45f129953c8ae5f26fd76849bf19b8b50c870805ecce66cd1",
+    "skills/desert-of-desolation-game/site-runtime/lib/art-engine.mjs": "797ca0e7e58794b798071007a5946453bd1309b94be084b38589097eb85c76ff",
+    "skills/desert-of-desolation-game/site-runtime/lib/audio-engine.mjs": "00911a92454a6e5387b7d4c4099a04f0f70ac3369774eaaa697709ee33904c79",
+    "skills/desert-of-desolation-game/site-runtime/lib/browser-handoff.mjs": "bfec247adda6149d7ea078d51685a4d05ce14a309a184af160793df531ff4625",
+    "skills/desert-of-desolation-game/site-runtime/lib/campfire-test.mjs": "a0e40dc8cba45452e4c5d52b0e99d5e2222d3939fa5ce2260f26ac6b176a0d6f",
+    "skills/desert-of-desolation-game/site-runtime/lib/listening-scene.mjs": "ee4a0fbbe517cca59f36db9d28da3d20aec35c577417069313a84f47f4046bdc",
+    "skills/desert-of-desolation-game/site-runtime/lib/media-policy.mjs": "05c48f4613b5b3fbd66675b3833ebacae5c7410461119c5de2bae3743200e3aa",
+    "skills/desert-of-desolation-game/site-runtime/lib/module-boundaries.mjs": "16a3f3dab34128f4fa015862309830ee476e670abb0217c4316ad514801f199c",
+    "skills/desert-of-desolation-game/site-runtime/lib/module-introductions.json": "1ebfd351e687b5aa67e2a85a50f023c0ec17c0eaaba6dc92a6ab5adf9ee2ee1a",
+    "skills/desert-of-desolation-game/site-runtime/lib/save-poller.mjs": "ffd391340c2df26f2090006c106dfc97144437957784414b7089e774b42250f0",
+    "skills/desert-of-desolation-game/site-runtime/lib/scene-image-resolver.mjs": "509efbabebc8352a52afae5bbc3bc74d484bee4f939dae4902148253132ae152",
+    "skills/desert-of-desolation-game/site-runtime/lib/site-presentation.json": "f18319f82001f702b4630674f2fd714f827ed154ff3c9c99e7280e8c80752324",
+    "skills/desert-of-desolation-game/site-runtime/lib/sound-settings.mjs": "817ff30a51615fbebc147fb6d153d0aa621f163d307e16626cc92ab4b37646ec",
+    "skills/desert-of-desolation-game/site-runtime/lib/story-art.mjs": "5b1ab9a5b6b29da6f134049cac43859db0a08732719e2ec0347f8d4f0ec6bd76",
+    "skills/desert-of-desolation-game/site-runtime/listening-scene.mjs": "cb993fc925e41398ab0f4b9e79a9fe1d688284f02246311e4d073ef2b91dd5ac",
+    "skills/desert-of-desolation-game/site-runtime/media-policy.mjs": "a19e88bc5c8575afc8b842442224e74cf1f52fcfb6d4851f332305c1ab0b91d6",
+    "skills/desert-of-desolation-game/site-runtime/sound-mixer.tsx": "4f0768e8ac16ed52c8e1b1a9d29cb456a6a4ad1f5bf229e16f96c90ecb872c06",
+    "skills/desert-of-desolation-game/site-runtime/sound-settings.mjs": "ff0edc7724d4d4f2c25f7b070bec7125e9a518959fbb2ccf7b283a5d72531a1f"
+  },
+  "open_policy_findings": [
+    "F08: stored 0.16 theme gain conflicts with the report’s last retrieved explicit 0.08 instruction; no gain or saved mix is changed here.",
+    "F09: inherited HD/EVENING authoring configuration is not approval to supersede the current project’s pixel32 DAY/DUSK/NIGHT requirements; accepted bytes retained; authoring reconciliation open."
+  ]
+}

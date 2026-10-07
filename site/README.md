@@ -1,19 +1,11 @@
 # Desert of Desolation Site
 
-Existing ChatGPT Site project: `appgprj_6ac3ddb2142c81918d529d4c7504e59d`
+Existing ChatGPT Site: `appgprj_6ac3ddb2142c81918d529d4c7504e59d`, slug `desert-of-desolation`.
 
-Latest observed live state:
-- Slug: `desert-of-desolation`
-- Status: active
-- Access: public
-- Site source version: 32
-- Projection revision: 65
-- Live URL: `https://desert-of-desolation.nreach-1221.chatgpt.site`
+The inherited observation is public/active Site v32, projection 65. These values are not a fresh native deployment readback. This directory is not a full Site export: native server routes, dependency lockfiles, build configuration, persistence and deployment metadata are missing.
 
-Current plugin candidate: `1.5.1-alpha.36`.
+Alpha.37 maintenance source is canonical under `plugin/skills/desert-of-desolation-game/site-runtime/`. It contains scene-bound audio recovery, corrected pause/stop ownership and a visibility-aware read-only save poller. Earlier alpha.36 microphone source is retained. These changes are not claimed live until the existing Site is exported, reconciled, built, saved and published through native Sites tools.
 
-Alpha.36 reconciles stale source/QA metadata, corrects homepage-theme authority to 0.16, reconciles verified magic records, and adds a persistent feature-detected microphone dictation source control. Because the microphone is a real Site/UI delta, the live Site remains pending native republish; do not claim the control is live on v32 until a Site publish action and browser verification are observed.
+Before integration, preserve the live save and current source; compare the full Site with the pinned runtime rather than overwriting either. Test in isolated fixtures, not the player campaign. Verify write authorization, retry/idempotency and the supported resolver before a coordinated gameplay release. Keep public viewing separate from permission to mutate saves.
 
-The Site metadata surface does not expose the current deployment identifier or native source commit, so none is invented. A status summary reported `098b268939da8994f00bc8566840fa745b6d941d`; this value is retained as user-reported evidence only and is not a resolvable GitHub commit.
-
-GitHub stores source/test/release history; it is not a substitute host. Site and conversation saves remain separate.
+GitHub is source/test/history authority, not a replacement host. Site saves and ChatGPT checkpoints are still separate; no automatic state bridge is established here. See the current repository checkpoint for actual plugin/commit/deployment IDs and remaining gates.

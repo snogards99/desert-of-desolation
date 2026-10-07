@@ -12,6 +12,7 @@ import {SoundMixer} from '../components/sound-mixer';
 import {defaultMix,readMix,saveMix,type Mix} from '../lib/sound-settings.mjs';
 import {SoundSession,type SoundState} from '../lib/campfire-test.mjs';
 import {AudioEngine} from '../lib/audio-engine.mjs';
+import {createSavePoller} from '../lib/save-poller.mjs';
 import {CharacterSheet,type PartyMember} from '../components/character-sheet';
 import {Introduction,type IntroductionId} from '../components/introduction';
 import {MicrophoneInput} from '../components/microphone-input';
@@ -26,6 +27,7 @@ export default function Game(){
  const [g,setG]=useState<Game|null>(null),[campaign,setCampaign]=useState('dod-main'),[tab,setTab]=useState('Home'),[viewport,setViewport]=useState(390),[menu,setMenu]=useState(false),[text,setText]=useState(''),[notice,setNotice]=useState(''),[busy,setBusy]=useState(false),[playing,setPlaying]=useState(false),[listeningTest,setListeningTest]=useState(false),[audioStatus,setAudioStatus]=useState('Sound off'),[selected,setSelected]=useState('party.snogard');
  const [mix,setMix]=useState(defaultMix),[soundState,setSoundState]=useState<SoundState>({mode:'off',state:'stopped',elapsed:0,missing:[]}),[mixSaved,setMixSaved]=useState(true);
  const [introId,setIntroId]=useState<IntroductionId|null>(null),[selectedActions,setSelectedActions]=useState<string[]>([]);
+ const [saveStale,setSaveStale]=useState(false);
  const themeSuppressed=useRef(false),themeWanted=useRef(true),themeStarting=useRef(false);
  const mixRef=useRef(mix),session=useRef<SoundSession|null>(null);
  const mixer=useRef<AudioEngine|null>(null),currentGame=useRef<Game|null>(null),presented=useRef(''),audioRequest=useRef(0),requestSequence=useRef(0),activeCampaign=useRef(campaign),tabRef=useRef(tab),sceneRequested=useRef('');activeCampaign.current=campaign;currentGame.current=g;tabRef.current=tab;
@@ -51,25 +53,34 @@ export default function Game(){
  function navigate(next:string){const previous=tabRef.current;setMenu(false);tabRef.current=next;if(next==='Explore'){themeWanted.current=false;mixer.current?.stopTheme?.({fadeSeconds:.2});setIntroId('explore');setTab('Explore');void playIntroduction('explore');return}if(next==='Scene'){themeWanted.current=false;sound().stop();sceneRequested.current='';presented.current='';mixer.current?.stopTheme?.({fadeSeconds:.2});setTab('Scene');if(checkModuleEntry(currentGame.current))return;void startSceneAudio(currentGame.current,{force:true}).catch(()=>{});return}if(next==='Home'){sound().stop();sceneRequested.current='';setIntroId(null);themeWanted.current=true;setTab('Home');queueMicrotask(()=>void startWebsiteTheme());return}if(previous==='Home'){themeWanted.current=false;mixer.current?.stopTheme?.({fadeSeconds:.2});}if(introId){sound().stop();setIntroId(null);}setTab(next);}
  function finishIntroduction(){sound().stop();setIntroId(null);tabRef.current='Scene';setTab('Scene');void startSceneAudio(currentGame.current).catch(()=>{});}
  function issue(e:unknown){return e instanceof Error?e.message:'Please try again.';}
- async function load(id=campaign){const sequence=++requestSequence.current;const r=await fetch('/api/game?'+new URLSearchParams({campaign:id}),{cache:'no-store',credentials:'same-origin'});if(r.headers.get('content-type')?.includes('text/html'))throw Error('Your session needs refreshing. Reopen the Site in your browser.');const d=await r.json() as Game & {error?:string};if(!r.ok)throw Error(d.error||'Your saved expedition is temporarily unavailable.');if(sequence===requestSequence.current&&id===activeCampaign.current)setG(d);}
+ async function load(id=campaign){const sequence=++requestSequence.current;const r=await fetch('/api/game?'+new URLSearchParams({campaign:id}),{cache:'no-store',credentials:'same-origin'});if(r.headers.get('content-type')?.includes('text/html'))throw Error('Your session needs refreshing. Reopen the Site in your browser.');const d=await r.json() as Game & {error?:string};if(!r.ok)throw Error(d.error||'Your saved expedition is temporarily unavailable.');if(sequence===requestSequence.current&&id===activeCampaign.current){setG(d);setSaveStale(false);}}
  const loadFromEffect=useEffectEvent((id:string)=>load(id));
  const themeFromEffect=useEffectEvent(()=>startWebsiteTheme());
- const sceneFromEffect=useEffectEvent((game:Game)=>startSceneAudio(game));
+ const sceneFromEffect=useEffectEvent(()=>{
+ const game=currentGame.current;if(!game)return Promise.resolve();const key=game.campaign+':'+game.revision;
+ if((sceneRequested.current===key&&['loading','playing'].includes(sound().state))||(presented.current===key&&soundState.mode==='scene'&&playing))return Promise.resolve();
+ return startSceneAudio(game);
+ });
  useEffect(()=>{queueMicrotask(()=>{setG(null);setNotice('');setPlaying(false);setListeningTest(false);setAudioStatus('Sound off');});loadFromEffect(campaign).catch(e=>setNotice(issue(e)));session.current?.stop();mixer.current?.stop();presented.current='';audioRequest.current++;},[campaign]);
- useEffect(()=>{const timer=setInterval(()=>{loadFromEffect(campaign).catch(()=>{})},15000);return ()=>clearInterval(timer)},[campaign]);
+ useEffect(()=>{
+ const poller=createSavePoller({load:()=>loadFromEffect(campaign),isVisible:()=>document.visibilityState!=='hidden',onStatus:({stale}:{stale:boolean})=>setSaveStale(stale)});
+ const visibility=()=>poller.visibilityChanged();document.addEventListener('visibilitychange',visibility);poller.start();
+ return ()=>{poller.stop();document.removeEventListener('visibilitychange',visibility);};
+ },[campaign]);
  useEffect(()=>{const saved=readMix(storage());mixRef.current=saved;queueMicrotask(()=>setMix(saved));mixer.current?.applyMix(saved);
- if(tabRef.current==='Home')void themeFromEffect();const gesture=()=>{if(mixer.current?.context?.state!=='running'){themeStarting.current=false;if(tabRef.current==='Home')void themeFromEffect();else if(tabRef.current==='Scene'&&currentGame.current)void sceneFromEffect(currentGame.current);}};
+ if(tabRef.current==='Home')void themeFromEffect();const gesture=()=>{if(mixer.current?.context?.state!=='running'){themeStarting.current=false;if(tabRef.current==='Home')void themeFromEffect();else if(tabRef.current==='Scene'&&currentGame.current&&session.current?.mode==='scene'&&session.current.state==='error')void sceneFromEffect().catch(()=>{});}};
  window.addEventListener('pointerdown',gesture);window.addEventListener('keydown',gesture);return()=>{window.removeEventListener('pointerdown',gesture);window.removeEventListener('keydown',gesture);};},[]);
  useEffect(()=>{themeSuppressed.current=tab!=='Home'||menu||soundState.mode==='campfire';mixer.current?.setThemeSuppressed(themeSuppressed.current);if(tab!=='Home'){mixer.current?.stopTheme?.({fadeSeconds:.2});return;}
  if(!themeSuppressed.current&&themeWanted.current&&mixer.current?.context?.state==='running'&&soundState.mode==='off')void themeFromEffect();},[tab,menu,soundState.mode]);
- useEffect(()=>{if(tab!=='Scene'||introId||!g||!mix.enabled)return;const key=g.campaign+':'+g.revision;if((sceneRequested.current===key&&['loading','playing'].includes(sound().state))||(presented.current===key&&soundState.mode==='scene'&&playing))return;void sceneFromEffect(g);},[tab,g?.campaign,g?.revision,introId,mix.enabled,soundState.mode,playing]);
+ // Playback controls are not presentation revisions. Pause/Stop must not trigger autostart.
+ useEffect(()=>{if(tab!=='Scene'||introId||!mix.enabled)return;void sceneFromEffect().catch(()=>{});},[tab,g?.campaign,g?.revision,introId,mix.enabled]);
  useEffect(()=>{if(soundState.mode==='scene'&&playing&&!listeningTest&&g?.preload)void audio().preload(g.preload).catch(()=>{});},[g,playing,listeningTest,soundState.mode]);
  useEffect(()=>()=>{session.current?.stop();void mixer.current?.dispose();},[]);
  function stop(){themeWanted.current=false;audioRequest.current++;presented.current='';sceneRequested.current='';sound().stop();}
  function stopCampfire(){sound().stop();themeWanted.current=true;}
  async function campfire(){themeWanted.current=true;try{await sound().startCampfire();}catch(e){setAudioStatus('Sound: '+issue(e));}}
  async function sceneSound(){if(!g)return;const key=g.campaign+':'+g.revision;try{if(sound().mode==='scene'&&sound().state==='playing'&&presented.current===key)await sound().pause();else if(sound().mode==='scene'&&sound().state==='paused'&&presented.current===key)await sound().resume();else await startSceneAudio(g);}catch(e){setAudioStatus('Scene sound: '+issue(e));}}
- async function pause(){try{await sound().pause();}catch(e){setAudioStatus('Sound: '+issue(e));}}
+ async function pause(){try{if(tabRef.current==='Home'&&sound().mode==='off'){themeWanted.current=false;await audio().pause();setPlaying(false);setAudioStatus('Website theme paused');}else await sound().pause();}catch(e){setAudioStatus('Sound: '+issue(e));}}
  async function resume(){try{if(sound().state==='paused')await sound().resume();else if(tabRef.current==='Home'&&!menu){themeWanted.current=true;await startWebsiteTheme();}else if(tabRef.current==='Scene'&&currentGame.current)await startSceneAudio(currentGame.current);}catch(e){setAudioStatus('Sound: '+issue(e));}}
  function soundActions(){return <><div className="soundcontrols"><button className="gold" disabled={soundState.state==='loading'} onClick={soundState.mode==='campfire'?stopCampfire:campfire}>{soundState.mode==='campfire'?'Stop Campfire Test':'Campfire Test · 60s'}</button></div><p className="mixer-status" role="status">{audioStatus}</p>{soundState.mode==='campfire'&&<progress className="campfire-progress" aria-label="Campfire Test progress" max="60" value={soundState.elapsed}/>} {!mixSaved&&<p className="muted">Mix active. This browser could not save your preferences.</p>}</>;}
  async function act(value:string,choice?:string){if(!g||busy)return;setBusy(true);mixer.current?.cancelSpeculative();try{const r=await fetch('/api/game',{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json'},body:JSON.stringify({id:crypto.randomUUID(),campaign,revision:g.revision,text:value,choice})});if(r.headers.get('content-type')?.includes('text/html'))throw Error('Your session needs refreshing. Your action was not confirmed.');const d=await r.json() as {error?:string,message:string};if(!r.ok)throw Error(d.error||'Your action could not be confirmed.');setNotice(d.message);setText('');setSelectedActions([]);await load();}catch(e){setNotice(issue(e));}finally{setBusy(false);}}
@@ -84,6 +95,7 @@ export default function Game(){
  return <main data-dod-theme="moonlit-ink" data-view={tab.toLowerCase()} data-art-mode={presentation.mode} data-art-layout={presentation.layout}>
  <header className="game-header"><div className="header-tools"><Image src="/logos/icon-white.png" alt="Eye of Horus" width="44" height="44" unoptimized/><button className="menu-toggle" aria-label="Settings" title="Settings" aria-expanded={menu} aria-controls="expedition-menu" onClick={()=>setMenu(v=>!v)}><Settings aria-hidden="true"/></button></div></header>
  {menu&&<section id="expedition-menu" className="expedition-menu" aria-label="Settings"><div className="menu-carving" data-dod-site-ornament="true" aria-hidden="true">𓆣 · 𓇉 · 𓆣</div><label htmlFor="campaign">Saved expedition</label><select id="campaign" value={campaign} onChange={e=>setCampaign(e.target.value)}><option value="dod-main">Main campaign</option><option value="dod-demo-001">Saved demo</option></select><button onClick={()=>load().catch(e=>setNotice(issue(e)))}>Refresh save</button><span className="menu-record">Site record · Revision {g?.revision??'—'}</span><button disabled={!g} onClick={copyCheckpoint}>Copy checkpoint for ChatGPT</button><details className="menu-sound" open><summary>Sound &amp; ambience</summary><SoundMixer prefix="menu-mix" mix={mix} onChange={changeMix}/>{soundActions()}{introId&&<button onClick={()=>playIntroduction(introId)}>Replay narration</button>}{audioDock}</details></section>}
+ {saveStale&&<p role="status" className="notice">Save refresh failed; the displayed revision may be stale. Use Settings to refresh the save.</p>}
  {notice&&<p role="status" className="notice">{notice}<button aria-label="Dismiss notice" onClick={()=>setNotice('')}>Close</button></p>}
  {handoff&&<section className="notice"><label htmlFor="handoff">Checkpoint for ChatGPT</label><textarea id="handoff" readOnly value={handoff} onFocus={e=>e.currentTarget.select()}/><button onClick={()=>setHandoff('')}>Close checkpoint</button></section>}
  <div className="layout"><section className="game">

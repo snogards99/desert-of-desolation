@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "desert-of-desolation",
-  "version": "1.5.1-alpha.36",
-  "description": "Mobile-first Desert of Desolation campaign engine with reconciled alpha.36 source authority, deterministic state-driven imagery, discovery-gated magic, seven-bus sound, microphone dictation source, 361-node routing, bounded preload, and spoiler-safe fallbacks.",
+  "version": "1.5.1-alpha.37",
+  "description": "Desert of Desolation maintenance release with scene-safe audio recovery, bounded visibility-aware save refresh, and unchanged campaign data. Native Site publication and device listening remain separate verification gates.",
   "keywords": [
     "dnd",
     "adnd",
@@ -18,7 +18,7 @@
       "interface": {
         "displayName": "Desert of Desolation",
         "shortDescription": "Mobile-first desert RPG",
-        "longDescription": "Runs Desert of Desolation with synchronized alpha.36 release metadata, deterministic scene art, finite fail-closed magic, seven-bus audio, user-gesture-safe scene playback, and a persistent feature-detected microphone dictation control that never auto-submits player actions.",
+        "longDescription": "Runs Desert of Desolation with alpha.37 maintenance source: scene-bound audio recovery, first-cue diagnostics, safe pause/resume, canonical shared audio modules, and visibility-aware read-only save refresh. Existing media, seven-bus mix and gameplay state are preserved. This does not establish a fully resolved Site game loop.",
         "developerName": "Desert of Desolation Project",
         "category": "Games",
         "capabilities": [
