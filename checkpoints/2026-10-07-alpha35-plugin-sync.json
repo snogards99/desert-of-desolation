@@ -1,0 +1,25 @@
+{
+  "checkpoint_schema": "dod.commit-checkpoint.v1",
+  "timestamp_utc": "2026-10-07T12:03:14Z",
+  "shared_release_id": "dod-alpha35-plugin-package-sync",
+  "plugin": {
+    "plugin_id": "Plugin_3352cc65ee508191abeb37ffa759294d",
+    "version": "1.5.1-alpha.35",
+    "release_id": "pluginrel_6ac63501f2848191b047c6da6d540690",
+    "scope": "WORKSPACE",
+    "discoverability": "PRIVATE",
+    "status": "PUBLISHED_AND_READBACK_VERIFIED"
+  },
+  "site": {
+    "project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
+    "observed_source_version": 32,
+    "observed_projection_revision": 65,
+    "access_mode": "public",
+    "live_republished": false
+  },
+  "preserved": {
+    "campaign_state_advanced": false,
+    "stable_media_ids_changed": false
+  },
+  "status": "HISTORICAL_ALPHA35_PUBLICATION_RECONCILED_IN_ALPHA2_CANDIDATE"
+}
