@@ -1,0 +1,33 @@
+name: source-checkpoint
+on:
+  workflow_dispatch:
+  push:
+    branches: [work/alpha37-review-20261007]
+permissions:
+  contents: read
+jobs:
+  verified-source:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - name: Validate exact source
+        run: npm run verify
+      - name: Archive only tracked source
+        run: |
+          mkdir -p checkpoint
+          git rev-parse HEAD > checkpoint/COMMIT.txt
+          git ls-tree -r HEAD > checkpoint/TREE.txt
+          git archive --format=tar.gz HEAD > checkpoint/source.tar.gz
+          sha256sum checkpoint/source.tar.gz > checkpoint/SHA256SUMS
+      - uses: actions/upload-artifact@v7
+        with:
+          name: verified-source-${{ github.sha }}
+          path: checkpoint/
+          if-no-files-found: error
+          retention-days: 7
