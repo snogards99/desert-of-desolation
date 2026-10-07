@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "candidate": "1.5.1-alpha.34-candidate",
+  "scope": "ACTION_SELECTION_AUDIO_HANDOFF_PORTRAIT_BINDING",
+  "optimizer_loops": [
+    {
+      "loop": 1,
+      "focus": "interaction correctness",
+      "finding": "Choice buttons submitted immediately while the visible Submit control required free text.",
+      "change": "Choice buttons now toggle independent selected state; one or many choices plus optional free text share a single Submit path.",
+      "evidence": "Source contract test checks selection state and removal of direct per-choice submission."
+    },
+    {
+      "loop": 2,
+      "focus": "homepage-to-gameplay audio lifecycle",
+      "finding": "Homepage title audio was not scoped to Home and the Scene flow did not automatically own the audio lifecycle.",
+      "change": "Homepage theme is Home-only and explicitly fades/stops before introductions or Scene; Scene audio auto-starts per revision and user gestures retry blocked playback.",
+      "evidence": "Source tests check Home gating, stopTheme, startSceneAudio and removal of scene title-theme injection."
+    },
+    {
+      "loop": 3,
+      "focus": "verification and portrait safety",
+      "finding": "Playback could be assumed rather than checked, and an unmapped character inherited Snogard's portrait.",
+      "change": "Scene health reports active/missing buses; wrong-character portrait fallback is removed and current verified portrait URLs are cache-busted.",
+      "evidence": "Source tests check sceneHealth and portrait-unavailable fallback."
+    }
+  ],
+  "source_changes_committed": true,
+  "campaign_state_advanced": false,
+  "stable_media_ids_changed": false,
+  "audio_assets_regenerated": false,
+  "new_character_portrait_bytes_generated": false,
+  "live_site_republished": false,
+  "open_evidence": [
+    "Native live Site publish/integration has not been performed for this candidate.",
+    "Physical iPhone audio verification remains open.",
+    "Requested HD painterly character rerender bytes remain separate image-production work."
+  ]
+}
