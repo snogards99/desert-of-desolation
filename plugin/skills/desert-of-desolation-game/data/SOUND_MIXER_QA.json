@@ -1,10 +1,40 @@
 {
-  "schema_version":2,
-  "reviewed_in_version":"1.5.1-alpha.24",
-  "implementation":"Existing AudioEngine; one persistent context, seven semantic buses, master and layer multipliers, cue gain, ducking, crossfades, stale-cue cancellation, and conservative decoded-peak headroom before the existing compressor.",
-  "defaults":{"master":0.5,"Narrator":1.0,"Dialogue":0.9,"Creature":0.35,"Movement":0.25,"SFX":0.8,"Ambience":0.42,"Music":0.18,"theme_cue_output_before_master":0.10,"theme_speech_duck_gain":0.03125,"evidence":"Synchronized to SOUND_MIXER_PROFILE and SITE_PRESENTATION_PROFILE for alpha.24."},
-  "campfire":{"seconds":60,"presentation_only":true,"campaign_writes":false,"source_policy":"Use existing reviewed prerendered audio; ElevenLabs may create only genuinely missing audio when explicitly required."},
-  "tests":{"master_all_layers":"PASS_PREVIOUS_SIMULATION","each_layer_volume_and_mute":"PASS_PREVIOUS_SIMULATION","duplicate_loop_prevention":"PASS_PREVIOUS_SIMULATION","preference_reload_navigation":"PASS_PREVIOUS_STORAGE_ROUND_TRIP","speech_ducking":"PASS_CONFIG_CONSISTENCY; SUBJECTIVE_LISTENING_PENDING","max_mix_headroom":"PASS_CONFIG_CONSISTENCY; PHYSICAL_LISTENING_PENDING","mobile_layout":"PASS_STATIC_CONTRACT; LIVE_BROWSER_PENDING","campaign_state":"UNCHANGED"},
-  "remaining_limitations":["Live browser audio behavior for this release was not directly observed.","Physical iPhone headphone and speaker listening remain open evidence gates.","Browser autoplay policy may require a user gesture before music starts."],
-  "campaign_state_mutated":false
+  "schema_version": 2,
+  "reviewed_in_version": "1.5.1-alpha.24",
+  "implementation": "Existing AudioEngine; one persistent context, seven semantic buses, master and layer multipliers, cue gain, ducking, crossfades, stale-cue cancellation, and conservative decoded-peak headroom before the existing compressor.",
+  "defaults": {
+    "master": 0.5,
+    "Narrator": 1.0,
+    "Dialogue": 0.9,
+    "Creature": 0.35,
+    "Movement": 0.25,
+    "SFX": 0.8,
+    "Ambience": 0.42,
+    "Music": 0.18,
+    "theme_cue_output_before_master": 0.10,
+    "theme_speech_duck_gain": 0.03125,
+    "evidence": "Synchronized to SOUND_MIXER_PROFILE and SITE_PRESENTATION_PROFILE for alpha.24."
+  },
+  "campfire": {
+    "seconds": 60,
+    "presentation_only": true,
+    "campaign_writes": false,
+    "source_policy": "Use existing reviewed prerendered audio; ElevenLabs may create only genuinely missing audio when explicitly required."
+  },
+  "tests": {
+    "master_all_layers": "PASS_PREVIOUS_SIMULATION",
+    "each_layer_volume_and_mute": "PASS_PREVIOUS_SIMULATION",
+    "duplicate_loop_prevention": "PASS_PREVIOUS_SIMULATION",
+    "preference_reload_navigation": "PASS_PREVIOUS_STORAGE_ROUND_TRIP",
+    "speech_ducking": "PASS_CONFIG_CONSISTENCY; SUBJECTIVE_LISTENING_PENDING",
+    "max_mix_headroom": "PASS_CONFIG_CONSISTENCY; PHYSICAL_LISTENING_PENDING",
+    "mobile_layout": "PASS_STATIC_CONTRACT; LIVE_BROWSER_PENDING",
+    "campaign_state": "UNCHANGED"
+  },
+  "remaining_limitations": [
+    "Live browser audio behavior for this release was not directly observed.",
+    "Physical iPhone headphone and speaker listening remain open evidence gates.",
+    "Browser autoplay policy may require a user gesture before music starts."
+  ],
+  "campaign_state_mutated": false
 }
