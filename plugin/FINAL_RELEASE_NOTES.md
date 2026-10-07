@@ -1,14 +1,14 @@
-# Desert of Desolation 1.5.1-alpha.33
+# Desert of Desolation 1.5.1-alpha.34
 
-State-driven node-image release.
+UX and audio-lifecycle repair release. Campaign state is unchanged.
 
-- Adds a deterministic single-primary-image resolver for gameplay scenes.
-- Shows the environment on entry, visible creature state during encounters, ATTACK during combat, confirmed DEFEATED art after resolution, and discovery-gated unique item art when focused.
-- Prevents heard-only or hidden creatures from being visually revealed.
-- Separates DEFEATED from DEAD; death wording/art requires explicit authoritative confirmation.
-- Reuses ATTACK across ordinary combat rounds and permits last-image reuse only while that image remains legal for the same node/state.
-- Keeps time-of-day aliases, bounded preload, audio behavior, stable media IDs, campaign state, and Site access unchanged.
-- Adds an optimized implementation prompt and machine-readable node-image state policy.
-- No new art bytes were generated and the live Site was not republished in this release.
-
-- Final hardening requires a proven same-node identity before reusing the last image, preventing cross-node visual bleed.
+- Reworks action choices into selectable toggles. Players can select one or multiple suggested actions, add optional free-form detail, and submit once with the shared Submit control.
+- Removes immediate per-choice submission and enables Submit whenever a choice is selected or free-form text is present.
+- Restricts the homepage title theme to the Home view, raises its base gain from 0.10 to 0.16, and fades/stops it before narrated introductions or node audio.
+- Removes the homepage title theme from Scene and introduction playback so it cannot continue underneath story audio.
+- Requests node audio automatically on Scene entry and on each authoritative scene revision, with user-gesture retry when browser audio start is blocked.
+- Adds scene playback health reporting for enabled buses and surfaces missing buses instead of assuming sound started.
+- Aligns runtime Ambience default with the configured 0.42 mix.
+- Hardens character-sheet portrait bindings so an unmapped character never falls back to Snogard's portrait, and cache-busts the currently verified portrait files.
+- New HD painterly portrait bytes were not generated in this release and remain an explicit follow-up.
+- The observed live Site remains source version 32 / projection revision 65; this release does not claim a native Site republish or physical-device audio verification.
