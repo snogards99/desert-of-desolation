@@ -6,20 +6,27 @@ Runtime targets:
 - Plugin: `Plugin_3352cc65ee508191abeb37ffa759294d`
 - Site: `appgprj_6ac3ddb2142c81918d529d4c7504e59d`
 
-## Required release rule
+## Authority
+
+The plugin package plus active session/checkpoint state is runtime authority. GitHub is unified source/test/media/history authority. The Site is the browser presentation surface. No external renderer or hosting adapter is a game-state authority.
+
+## Verified release rule
+
 A coordinated release is VERIFIED only when:
-1. plugin version + release ID are recorded;
+1. plugin version and release ID are recorded;
 2. GitHub commit SHA is recorded;
 3. Site source/deployment reference is recorded when available;
-4. plugin manifests and Site presentation/configuration match repository copies;
-5. expected media inventory is fully present in GitHub or the release is explicitly PARTIAL;
-6. campaign state was not unintentionally advanced;
-7. rollback references are recorded.
+4. active plugin manifests/config match GitHub copies;
+5. campaign state was not unintentionally advanced;
+6. rollback references are recorded;
+7. every claimed browser/device check has actual evidence.
 
-Never silently prefer an older GitHub file over a newer published plugin file. For sync recovery, the current published plugin is authoritative unless a stronger verified checkpoint proves otherwise.
+Never silently overwrite a newer verified artifact with an older file solely because its timestamp or version label differs.
 
-## Media policy
-All runtime media should be versioned in GitHub under `plugin/assets/` or the corresponding canonical project path. Stable filenames and media IDs must not change during mirroring. Any transfer limitation must fail closed: mark synchronization PARTIAL and never claim full parity.
+## Media
 
-## Site policy
-Site-specific code/configuration belongs under `site/`; shared presentation/data remains canonical under `plugin/` until extracted into a verified shared package. Do not duplicate shared data without a generated/checksummed relationship.
+Stable media IDs must remain stable. GitHub stores source and intended runtime media when supported. Missing or unapproved optional media fails closed to another legal image, bundled media, text, or silence.
+
+## Site
+
+Shared presentation/data remains canonical under `plugin/`. `site/` records the native Site identity and publication state. Do not claim a byte-for-byte Site export unless a supported Site source/export action actually produced one.
