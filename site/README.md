@@ -1,17 +1,12 @@
 # Desert of Desolation Site
 
-This directory represents the Site side of the unified Desert of Desolation project.
+Existing Site project: `appgprj_6ac3ddb2142c81918d529d4c7504e59d`
 
-Current Site project: `appgprj_6ac3ddb2142c81918d529d4c7504e59d`
-Current recorded deployment: `appgdep_6ac47804515c81918d6b3e5f15d884f4`
-Current recorded Site source commit: `a48c6d7837e49276d045b145cb9fdf118b74cafe`
+Recorded live baseline:
+- Site version: 28
+- Deployment: `appgdep_6ac53efc570c8191874ecd5b279d7e2d`
+- Recorded native source commit: `bfc027dc21493b02f37b5096f9fab1c117b2f9ef`
 
-The authoritative Site presentation/configuration currently mirrored in GitHub is stored in the plugin source package:
-- `plugin/skills/desert-of-desolation-game/data/HOSTING_CONFIG.json`
-- `plugin/skills/desert-of-desolation-game/data/SITE_PRESENTATION_PROFILE.json`
-- `plugin/skills/desert-of-desolation-game/data/SITE_RUNTIME_QA.json`
-- `plugin/skills/desert-of-desolation-art-direction/assets/site-subtle.css`
-- `plugin/skills/desert-of-desolation-art-direction/assets/theme.css`
-- `plugin/skills/desert-of-desolation-art-direction/assets/theme.mjs`
+GitHub mirrors the active Site presentation contracts under the plugin source package, including `HOSTING_CONFIG.json`, `SITE_PRESENTATION_PROFILE.json`, `SITE_RUNTIME_QA.json`, and art-direction CSS.
 
-Native Site source must be copied here when a Sites source/export tool is available. Until then, do not claim that the repository contains a byte-for-byte export of the native Site project.
+Alpha.24 prepares improved source contracts and CSS but does not claim a new live Site deployment unless a native Site publish action is observed. Preserve the existing Site and its access policy; do not create a replacement project for routine maintenance.
