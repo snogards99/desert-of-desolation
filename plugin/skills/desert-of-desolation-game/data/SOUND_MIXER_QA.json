@@ -13,7 +13,7 @@
     "Music": 0.18,
     "theme_cue_output_before_master": 0.16,
     "theme_speech_duck_gain": 0.03125,
-    "evidence": "Alpha.33 changes scene-image selection only; audio defaults are unchanged and synchronized to SOUND_MIXER_PROFILE."
+    "evidence": "Alpha.34 synchronizes Ambience at 0.42, Home title theme at 0.16, hard Scene handoff, first-cue preload/start ordering, and enabled-bus health reporting."
   },
   "campfire": {
     "seconds": 60,
@@ -22,7 +22,7 @@
     "source_policy": "Use existing reviewed prerendered audio; ElevenLabs may create only genuinely missing audio when explicitly required."
   },
   "tests": {
-    "audio_behavior_change": "NONE",
+    "audio_behavior_change": "ALPHA34_HOME_TO_SCENE_LIFECYCLE_AND_FIRST_CUE_ORDERING",
     "campaign_state": "UNCHANGED",
     "homepage_to_scene_handoff": "PASS_SOURCE_TEST",
     "scene_auto_start": "PASS_SOURCE_TEST",
