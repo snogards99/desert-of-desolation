@@ -25,6 +25,10 @@ test("homepage theme is louder, Home-only, and stoppable",()=>{
 test("scene audio auto-starts without injecting the homepage theme",()=>{
   assert.match(page,/startSceneAudio/);
   assert.match(page,/g\?\.revision/);
+  assert.match(page,/startSceneAudio\(currentGame\.current,\{force:true\}\)/);
+  assert.match(session,/const \[first,\.\.\.rest\]=cues/);
+  assert.match(session,/await this\.engine\.buffer\(first\.media_id\)/);
+  assert.match(session,/await this\.engine\.play\(first\.media_id,first\.bus/);
   assert.match(session,/sceneHealth\(cues\)/);
   assert.match(engine,/sceneHealth\(cues=\[\]\)/);
   assert.doesNotMatch(session,/startTheme\(this\.theme,\{role:['"]scene['"]\}\)/);
@@ -35,4 +39,14 @@ test("missing portrait bindings never show another character",()=>{
   assert.doesNotMatch(sheet,/portraits\[member\.id\]\|\|['"]\/character-sheet\/snogard\.png['"]/);
   assert.ok(manifest.entries.every(e=>e.runtime_binding_verified===true));
   assert.ok(manifest.entries.every(e=>e.hd_painterly_rerender_status==="PENDING_NEW_IMAGE_BYTES"));
+});
+
+
+test("homepage cleanup removes legacy Home navigation and labels",()=>{
+  assert.doesNotMatch(page,/\['Home','Scene','Party','Journal'\]/);
+  assert.match(page,/\['Scene','Party','Journal'\]/);
+  assert.doesNotMatch(page,/home-features/);
+  assert.doesNotMatch(page,/AN ADVENTURE IN RAURIN/);
+  assert.doesNotMatch(page,/title-wordmark-header/);
+  assert.match(page,/home-seekers/);
 });
