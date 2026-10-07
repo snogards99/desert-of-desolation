@@ -16,8 +16,12 @@
     "source_version": "1.5.1-alpha.36",
     "validation": {
       "workflow": "validate",
-      "conclusion": "PENDING_FINAL_BRANCH_CI",
-      "requirement": "PASS before verified checkpoint"
+      "run_id": 37678912346,
+      "head_sha": "ae93e59cc6eeefbe1d0af8274e78e43e32b5f257",
+      "conclusion": "success",
+      "tests": 19,
+      "passed": 19,
+      "failed": 0
     },
     "implementation": [
       "reconciled published alpha.35 release history into canonical source",
@@ -37,7 +41,7 @@
     "status": "UNCHANGED_OBSERVED_BASELINE_NATIVE_PUBLISH_ACTION_UNAVAILABLE"
   },
   "qa": {
-    "source_consistency": "PENDING_CI",
+    "source_consistency": "PASS",
     "campaign_state_advanced": false,
     "stable_media_ids_changed": false,
     "node_master_count": 361,
@@ -45,10 +49,9 @@
     "new_character_portrait_bytes_generated": false
   },
   "open_items": [
-    "Final candidate branch CI must pass before the Alpha 2 checkpoint is marked VERIFIED.",
     "Native live Site republish remains unavailable in the current tool environment.",
     "Physical iPhone speaker/headphone playback remains an external evidence gate.",
     "New HD painterly character portrait bytes remain pending separate art production."
   ],
-  "status": "ALPHA2_CANDIDATE_SOURCE_COMPLETE_PENDING_BRANCH_CI; PUBLISHED_PLUGIN_ALPHA35; LIVE_SITE_V32_UNCHANGED"
+  "status": "ALPHA2_CANDIDATE_FINALIZED_AND_SOURCE_VERIFIED; PUBLISHED_PLUGIN_ALPHA35; LIVE_SITE_V32_UNCHANGED"
 }
