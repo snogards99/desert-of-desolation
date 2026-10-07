@@ -17,5 +17,9 @@
   "source_actions_changed": true,
   "character_portrait_bindings_changed": true,
   "new_character_portrait_bytes_generated": false,
-  "qa_report": "ALPHA34_FINAL_RELEASE_QA.json"
+  "qa_report": "ALPHA34_FINAL_RELEASE_QA.json",
+  "plugin_published_this_release": false,
+  "current_published_plugin_version": "1.5.1-alpha.33",
+  "current_published_plugin_release_id": "pluginrel_6ac5dcab5b688191b8fbe927a851e57f",
+  "github_source_status": "ALPHA34_VERIFIED_SOURCE_AHEAD_OF_PUBLISHED_PLUGIN"
 }
