@@ -1,57 +1,95 @@
 {
-  "schema_version": 9,
-  "shared_release_id": "dod-alpha34-ux-audio-final-2026-10-07",
+  "schema_version": 10,
+  "shared_release_id": "dod-alpha36-ten-pass-reconciliation-2026-10-07",
   "plugin": {
     "plugin_id": "Plugin_3352cc65ee508191abeb37ffa759294d",
-    "current_published_version": "1.5.1-alpha.34",
-    "current_release_id": "pluginrel_6ac6325cd794819187f554d195c92879",
+    "current_published_version": "1.5.1-alpha.36",
+    "current_release_id": "pluginrel_6ac65a421be88191b52f808901c53e41",
     "scope": "WORKSPACE",
     "discoverability": "PRIVATE",
-    "alpha34_published": true
+    "published": true
   },
   "github": {
     "repository": "snogards99/desert-of-desolation",
     "branch": "main",
-    "source_version": "1.5.1-alpha.34",
-    "artifact_source_head": "de4c7f695900c015d19990d7a631fc5da793bb9a",
+    "implementation_commit": "8ee71397e294442c9c8dcb3b65963f6d57253d17",
+    "validated_source_head": "3a359740d11c38a01e89ccc52451e22ed71b6363",
     "validation": {
       "workflow": "validate",
-      "run_id": 37617586659,
-      "conclusion": "success"
+      "run_id": 37639846046,
+      "conclusion": "success",
+      "initial_failed_run": 37639433212,
+      "repair": "Updated stale state-driven-node-images release expectation from alpha.34 to alpha.36."
     },
-    "implementation": [
-      "multi-select choice toggles and shared submit",
-      "Home dock item and legacy Explore/Company/Chronicle homepage controls removed",
-      "Raurin/current-node doorway labels removed and The Seekers of Ra placed below main title",
-      "Eye of Horus grouped with Settings in the top utility area",
-      "homepage theme restricted to Home at 0.16 base gain",
-      "Scene entry hard-stops prior audio and restarts current node audio",
-      "current node first cue is preloaded and started before remaining node layers",
-      "enabled-bus playback health reporting and user-gesture recovery",
-      "wrong-character portrait fallback removed and existing portrait URLs cache-refreshed"
-    ],
-    "source_head": "d3fe6755e6957a97f93af9392aa45ff85bdc9c13",
-    "release_guard_previous_commit": "5a93a3d701acd51193ef485564369ec666be518d"
+    "plugin_source_parity": "PASS_SAMPLED_EXACT_READBACK",
+    "runtime_relative_import_closure": "PASS_ZERO_UNRESOLVED",
+    "retired_mcp_provisioning_requirements": "SUPERSEDED_NONBLOCKING"
   },
   "site": {
     "project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
+    "slug": "desert-of-desolation",
+    "status": "active",
+    "access_mode": "public",
     "observed_source_version": 32,
     "observed_projection_revision": 65,
-    "republished_by_this_release": false,
-    "status": "UNCHANGED_OBSERVED_BASELINE_NATIVE_PUBLISH_ACTION_UNAVAILABLE"
+    "republished_by_alpha36": false,
+    "publication_required": true,
+    "publication_reason": "Alpha.36 adds a feature-detected microphone dictation control and corrected source/QA metadata. The microphone source is not claimed live until the native Site is republished and browser-verified.",
+    "native_publish_action_available_in_session": false,
+    "deployment_id_for_v32": null,
+    "deployment_note": "Current Site metadata exposes source/projection but not a current deployment identifier; none is invented."
+  },
+  "resolved": [
+    "alpha.35 published plugin was ahead of alpha.34 canonical GitHub source/checkpoints",
+    "stale HOSTING_CONFIG and SITE_RUNTIME_QA release/Site evidence",
+    "stale SITE_PRESENTATION_PROFILE and active release metadata",
+    "homepage theme metadata incorrectly recorded 0.10 while runtime and alpha.34 QA use 0.16",
+    "current bundled plugin files are readable; earlier HTTP 504s are not an active blocker",
+    "microphone input requested by the UX specification was absent from bundled Site source",
+    "Snogard compact record understated verified Sha'ir class mechanics",
+    "Cyrra +1 weapon enchantments and Ery/Bar cloak/boots possession had stale unresolved markers",
+    "GitHub state-driven image release test still hard-coded alpha.34"
+  ],
+  "magic_policy": {
+    "verified_mechanics_promoted": true,
+    "unconfirmed_magic_granted": false,
+    "custom_item_effects_without_source_payload": "FAIL_CLOSED",
+    "unrecorded_spell_preparations_or_usage": "UNKNOWN_NOT_REFILLED",
+    "site_general_magic": "QUEUED_FOR_ADJUDICATION"
+  },
+  "audio_policy": {
+    "homepage_theme_base_gain": 0.16,
+    "speech_duck_gain": 0.03125,
+    "ambience_default_gain": 0.42,
+    "scene_entry": "HARD_STOP_PREVIOUS_THEN_FIRST_CUE_BUFFER_START_BEFORE_REMAINING_LAYERS",
+    "latency_profiling": "LIVE_BROWSER_EVIDENCE_OPEN"
   },
   "qa": {
+    "optimizer_passes": 10,
     "source_consistency": "PASS",
     "github_ci": "PASS",
+    "runtime_import_closure": "PASS",
+    "microphone_source_contract": "PASS_STATIC",
+    "magic_reconciliation": "PASS_FAIL_CLOSED",
+    "portrait_identity_mapping": "PASS_STATIC",
     "campaign_state_advanced": false,
+    "access_changed": false,
     "stable_media_ids_changed": false,
-    "new_character_portrait_bytes_generated": false,
-    "physical_device_audio_reverified": false
+    "architecture_rebuilt": false
   },
-  "open_items": [
-    "Native live Site republish remains unavailable in the current tool environment; Site is still observed at source version 32 / projection revision 65.",
-    "Physical iPhone speaker/headphone playback remains an external evidence gate.",
-    "New HD painterly character portrait bytes remain pending; alpha34 retains verified existing portrait bindings."
+  "open_evidence_gates": [
+    "native Site republish of alpha.36 UI/runtime changes",
+    "live browser narration timing and first-cue download/decode latency",
+    "live browser play/stop/restart and mix intelligibility/quiet-gap listening",
+    "microphone permission and transcription input on the republished live Site",
+    "physical iPhone speaker/headphone and responsive-performance review",
+    "new HD painterly character portrait byte production",
+    "authoritative definitions for remaining custom item/ability effects and actual mutable spell/resource counters"
   ],
-  "status": "ALPHA34_PLUGIN_PUBLISHED_AND_RUNTIME_VERIFIED; CANONICAL_SOURCE_COMMITTED; LIVE_SITE_REPUBLISH_PENDING_NATIVE_SITE_TOOL"
+  "rollback": {
+    "previous_plugin_version": "1.5.1-alpha.35",
+    "previous_plugin_release_id": "pluginrel_6ac63501f2848191b047c6da6d540690",
+    "previous_verified_checkpoint": "c5639c3e2b38ed4cddda05727bbf40558583b64a"
+  },
+  "status": "PLUGIN_AND_CANONICAL_SOURCE_VERIFIED_ALPHA36; LIVE_SITE_V32_REPUBLISH_REQUIRED; DEVICE_EVIDENCE_GATES_OPEN"
 }
