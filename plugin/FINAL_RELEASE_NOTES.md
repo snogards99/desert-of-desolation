@@ -9,5 +9,5 @@ Ten-pass maintenance release focused on structural consistency, reader UX, and r
 - Synchronized current audio defaults and limited ElevenLabs to explicitly needed missing-audio authoring only.
 - Added alpha.24 mobile/readability CSS for scene-art sizing, readable measure, focus visibility, safe areas, loading stability, and reduced motion.
 - Separated recorded live Site evidence from source-only alpha.24 improvements; no browser or physical-device pass is fabricated.
-- Removed obsolete Vercel/MCP audio-renderer source and replaced it with project consistency checks.
+- GitHub release cleanup removes the obsolete Vercel/MCP audio-renderer path and replaces it with project consistency checks.
 - Campaign state, access settings, stable media IDs, rules, and existing working runtime fallbacks remain unchanged.
