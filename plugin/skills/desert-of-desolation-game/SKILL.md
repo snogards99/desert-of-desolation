@@ -39,7 +39,7 @@ Use `data/imagery/NODE_IMAGE_STATE_POLICY.json` and `site-runtime/lib/scene-imag
 The current ScenePlate supports backward-compatible environment/actor fields plus richer phase, actor-state, item, visibility, combat, and outcome fields. Existing legal media remain valid; no replacement art is implied by this release.
 
 ## Audio
-Use the existing seven-bus Sound Engine: Narrator, Dialogue, Creature, Movement, SFX, Ambience, and Music. Preserve one audio context, saved mix, ducking, crossfades, stale-cue cancellation, distance/movement behavior, and graceful failure. This release does not change the audio mix.
+Use the existing seven-bus Sound Engine: Narrator, Dialogue, Creature, Movement, SFX, Ambience, and Music. Preserve one audio context, saved mix, ducking, crossfades, stale-cue cancellation, distance/movement behavior, and graceful failure. Alpha.34 raises the configured Ambience default to 0.42, keeps the Home title theme isolated from story playback, and restarts Scene audio from the current node's first cue after a hard stop.
 
 ## Predictive preload
 Tier 0 current legal scene/media; Tier 1 one likely immediate interaction; Tier 2 at most two explicit player-safe alternatives. Do not preload all time variants, all monster states, hidden creature art, or undiscovered treasure.
