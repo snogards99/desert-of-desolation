@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "release": "1.5.1-alpha.38",
+  "canonical_party_ids": [
+    "party.snogard",
+    "party.malekith",
+    "party.vaelis",
+    "party.syrra",
+    "party.tal",
+    "party.zarvak"
+  ],
+  "alias_to_canonical": {
+    "party.snogard": "party.snogard",
+    "pc.snogard": "party.snogard",
+    "party.malekith": "party.malekith",
+    "party.vaelis": "party.vaelis",
+    "party.syrra": "party.syrra",
+    "party.tal": "party.tal",
+    "party.talanis": "party.tal",
+    "party.zarvak": "party.zarvak"
+  },
+  "display_aliases": {
+    "party.snogard": [
+      "Snogard Snoegnud"
+    ],
+    "party.malekith": [
+      "Azhar ibn Rashid al-Shams",
+      "Az"
+    ],
+    "party.vaelis": [
+      "Dakarai Neferhotep",
+      "Dak"
+    ],
+    "party.syrra": [
+      "Cyrra Neferet"
+    ],
+    "party.tal": [
+      "Eryon Neferhotep",
+      "Ery",
+      "Talanis"
+    ],
+    "party.zarvak": [
+      "Barak al-Sahra",
+      "Bar"
+    ]
+  },
+  "familiar_aliases": {
+    "fam.gene": [
+      "Gene",
+      "Gen",
+      "Genie"
+    ],
+    "fam.sekhem": [
+      "Sekhem"
+    ]
+  },
+  "rule": "Normalize identifiers only. Alias resolution never merges state from different campaigns or fabricates missing ledger entries."
+}
