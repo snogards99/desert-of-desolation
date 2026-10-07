@@ -1,7 +1,7 @@
 {
   "schema_version": 6,
-  "profile_id": "dod.site.presentation.alpha33",
-  "configured_in_plugin_version": "1.5.1-alpha.33",
+  "profile_id": "dod.site.presentation.alpha34",
+  "configured_in_plugin_version": "1.5.1-alpha.34",
   "architecture_policy": "PRESERVE_EXISTING_SITE_GAME_ENGINE_STATE_AND_HANDLERS; ADD_STATE_DRIVEN_PRIMARY_SCENE_IMAGE",
   "source_runtime": "ALPHA30_SITE_RUNTIME_PLUS_ALPHA33_SCENE_IMAGE_RESOLVER",
   "visual": {
