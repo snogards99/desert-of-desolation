@@ -1,0 +1,21 @@
+{
+  "schema_version":1,
+  "release":"1.5.1-alpha.24",
+  "passes":[
+    {"pass":1,"area":"version_authority","result":"FIXED","changes":["plugin/codex metadata aligned","active skills aligned","active policies aligned"]},
+    {"pass":2,"area":"architecture","result":"FIXED","changes":["ordinary play has no external server dependency","legacy Vercel/audio-renderer source removed from GitHub"]},
+    {"pass":3,"area":"art_direction","result":"FIXED","changes":["HD painterly art-engine 1.5.0 is current","pixel authoring retired to legacy fallback"]},
+    {"pass":4,"area":"time_and_visual_state","result":"FIXED","changes":["DAY/DUSK/EVENING/NIGHT synchronized","wrong-state/time fallback prohibited"]},
+    {"pass":5,"area":"audio","result":"FIXED","changes":["mixer defaults synchronized","ElevenLabs restricted to missing-audio authoring"]},
+    {"pass":6,"area":"site_evidence","result":"FIXED","changes":["recorded live Site baseline separated from source-only alpha.24 work","unverified browser/device gates remain open"]},
+    {"pass":7,"area":"reader_ux","result":"IMPROVED","changes":["reading measure and line height","focus-visible states","safe-area and narrow-screen rules","reduced-motion hardening"]},
+    {"pass":8,"area":"preload_and_fallback","result":"VERIFIED_POLICY","changes":["bounded preload retained","last-legal-image/text fallback retained","spoiler gates retained"]},
+    {"pass":9,"area":"legacy_cleanup","result":"FIXED","changes":["obsolete deployment source removed","historical pixel reference converted to tombstone","working legacy media retained until replacement"]},
+    {"pass":10,"area":"release_quality","result":"IMPROVED","changes":["new consistency validator","release guard refresh","rollback checkpoint"]}
+  ],
+  "campaign_state_advanced":false,
+  "stable_media_ids_changed":false,
+  "first20_hd_complete":false,
+  "live_site_republished":false,
+  "physical_device_qa":"NOT_PERFORMED"
+}
