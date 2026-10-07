@@ -89,5 +89,13 @@
     "Physical iPhone speaker/headphone playback has not been reverified.",
     "New HD painterly character portrait bytes remain pending separate art production."
   ],
-  "status": "SOURCE_COMPLETE_PENDING_FINAL_BRANCH_CI"
+  "status": "FINALIZED_CANDIDATE_SOURCE_VERIFIED",
+  "validation": {
+    "run_id": 37678912346,
+    "head_sha": "ae93e59cc6eeefbe1d0af8274e78e43e32b5f257",
+    "conclusion": "success",
+    "tests": 19,
+    "passed": 19,
+    "failed": 0
+  }
 }
