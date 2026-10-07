@@ -1,74 +1,52 @@
 {
-  "schema_version": 6,
-  "shared_release_id": "dod-alpha33-state-driven-imagery-2026-10-07",
+  "schema_version": 7,
+  "shared_release_id": "dod-alpha34-ux-audio-source-2026-10-07",
   "plugin": {
     "plugin_id": "Plugin_3352cc65ee508191abeb37ffa759294d",
-    "version": "1.5.1-alpha.33",
-    "release_id": "pluginrel_6ac5dcab5b688191b8fbe927a851e57f",
+    "current_published_version": "1.5.1-alpha.33",
+    "current_release_id": "pluginrel_6ac5dcab5b688191b8fbe927a851e57f",
     "scope": "WORKSPACE",
     "discoverability": "PRIVATE",
-    "status": "PUBLISHED_CURRENT"
+    "alpha34_published": false
   },
   "github": {
     "repository": "snogards99/desert-of-desolation",
     "branch": "main",
-    "artifact_source_head": "2c1b954c7cf6591f93f78c92b218b9cc5a005f96",
+    "source_version": "1.5.1-alpha.34",
+    "artifact_source_head": "e8fefdceea840be3cdc7374873e1f9047b72911c",
     "validation": {
       "workflow": "validate",
-      "run_id": 37578099536,
+      "run_id": 37585818416,
       "conclusion": "success"
     },
-    "source_mirror": "EXACT_MATCH_FOR_ALPHA33_CHANGED_PLUGIN_FILES",
-    "runtime_relative_import_closure": "PASS",
-    "state_driven_scene_tests": "PASS",
-    "plugin_mcp_config": "EMPTY"
+    "implementation": [
+      "multi-select choice toggles and shared submit",
+      "homepage theme restricted to Home and base gain raised to 0.16",
+      "homepage theme stopped before introduction/Scene audio",
+      "scene audio requested automatically on Scene entry/revision",
+      "enabled-bus playback health reporting and user-gesture recovery",
+      "wrong-character portrait fallback removed and existing portrait URLs cache-refreshed"
+    ]
   },
   "site": {
     "project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
-    "slug": "desert-of-desolation",
-    "status": "active",
-    "access_mode": "public",
     "observed_source_version": 32,
     "observed_projection_revision": 65,
     "republished_by_this_release": false,
-    "deployment_id_for_v32": null,
-    "note": "Alpha.33 updates the packaged Site runtime source and contracts; no native Site publish action was performed."
+    "status": "UNCHANGED_OBSERVED_BASELINE"
   },
   "qa": {
-    "release_qa": "plugin/ALPHA33_STATE_IMAGE_QA.json",
-    "source_consistency": "PASS_EXACT_CHANGED_FILES",
+    "source_consistency": "PASS",
     "github_ci": "PASS",
-    "optimizer_loops": 3,
-    "resolver_unit_tests": "9/9 PASS",
     "campaign_state_advanced": false,
-    "access_changed": false,
     "stable_media_ids_changed": false,
-    "audio_behavior_changed": false,
-    "new_image_bytes_generated": false,
-    "live_site_browser_visual_qa_reverified": false,
-    "physical_iphone_reverified": false
+    "new_character_portrait_bytes_generated": false,
+    "physical_device_audio_reverified": false
   },
-  "behavior": {
-    "primary_scene_image": "ONE_STATE_DRIVEN_IMAGE_ABOVE_TEXT",
-    "priority": [
-      "DISCOVERED_FOCUSED_ITEM",
-      "CONFIRMED_DEFEATED_CREATURE",
-      "ACTIVE_COMBAT_ATTACK",
-      "VISIBLE_CREATURE_ALERT_OR_NEUTRAL",
-      "LAST_LEGAL_IMAGE_SAME_NODE",
-      "CURRENT_TIME_MATCHED_ENVIRONMENT",
-      "TEXT_ONLY"
-    ],
-    "hidden_creature_policy": "HEARD_OR_HIDDEN_NEVER_REVEALS_ART",
-    "defeated_policy": "AUTHORITATIVE_OUTCOME_REQUIRED; DOES_NOT_IMPLY_DEAD",
-    "treasure_policy": "DISCOVERY_GATED; UNIDENTIFIED_MAGIC_PROPERTIES_HIDDEN"
-  },
-  "rollback": {
-    "previous_plugin_version": "1.5.1-alpha.30",
-    "previous_plugin_release": "pluginrel_6ac5cb836b388191adb4cf434c4034dc",
-    "previous_verified_checkpoint_commit": "7d8754fc40807726e602b14ff5325f57d4aed8f2",
-    "intermediate_alpha31_release": "pluginrel_6ac5dc154afc819181cd5817d8275160",
-    "intermediate_alpha32_release": "pluginrel_6ac5dc7390e081918f08c18978c48cb6"
-  },
-  "status": "VERIFIED_PLUGIN_AND_SOURCE; SITE_NOT_REPUBLISHED; DEVICE_EVIDENCE_GATES_OPEN"
+  "open_items": [
+    "Publish/sync the alpha34 source into the plugin and live Site when a supported publication path is available/authorized.",
+    "Generate and QA new HD painterly character portrait bytes; current release only verifies/busts cache on existing portraits.",
+    "Reverify audible playback on physical iPhone speaker/headphones."
+  ],
+  "status": "ALPHA34_SOURCE_VERIFIED; CURRENT_PLUGIN_ALPHA33; SITE_V32_UNCHANGED"
 }
