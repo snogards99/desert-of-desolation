@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "release": "1.5.1-alpha.39",
+  "scope": "ART_ENGINE_AND_TIME_ALIAS_CONSISTENCY_HARDENING",
+  "findings_repaired": [
+    {
+      "id": "A39-01",
+      "finding": "TIME_OF_DAY_POLICY mapped MORNING to DUSK while the active visual/node policy mapped MORNING to DAY.",
+      "repair": "All physical asset aliases now use MORNING -> DAY and EVENING/SUNSET/DAWN/SUNRISE -> DUSK."
+    },
+    {
+      "id": "A39-02",
+      "finding": "The executable art-direction planner still identified itself as 1.3.0 and emitted legacy DOD_PAINTED/DOD_INK modes while art-engine.json declared 1.6.0 DOD_PIXEL32.",
+      "repair": "Planner now identifies as 1.6.0, emits/accepts DOD_PIXEL32, and resolves MORNING to DAY and EVENING to DUSK."
+    },
+    {
+      "id": "A39-03",
+      "finding": "Existing CI did not exercise the art-direction executable planner or cross-check the time alias tables.",
+      "repair": "Release validation and tests now assert executable planner mode/version and aligned DAY/DUSK/NIGHT aliases."
+    }
+  ],
+  "preserved": {
+    "campaign_state_advanced": false,
+    "campaign_state_reset": false,
+    "audio_asset_bytes_changed": false,
+    "stable_media_ids_changed": false,
+    "saved_mix_changed": false,
+    "access_changed": false,
+    "gameplay_resolver_changed": false,
+    "unknown_magic_policy": "FAIL_CLOSED"
+  },
+  "site_evidence": {
+    "live_source_version": 32,
+    "live_projection_revision": 65,
+    "republished_in_alpha39": false,
+    "note": "Bundled Site/runtime source is synchronized, but no native Site mutation/publish tool is exposed in this environment."
+  },
+  "open_evidence_gates": [
+    "Native Site source/export/build/save/publish and deployed-browser verification",
+    "Server-side campaign write authorization, transaction/idempotency and resolver persistence",
+    "Physical iPhone and actual listening/accessibility journeys",
+    "Complete binary-media Plugin/GitHub byte parity"
+  ]
+}

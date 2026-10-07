@@ -1,7 +1,7 @@
 {
   "plugin_id": "Plugin_3352cc65ee508191abeb37ffa759294d",
-  "version": "1.5.1-alpha.38",
-  "release_focus": "Ten-pass project-wide reconciliation of active art/gain/alias/narrative policies while preserving alpha.37 audio/save runtime.",
+  "version": "1.5.1-alpha.39",
+  "release_focus": "Consistency hardening for the Art Engine and outdoor time-of-day presentation contract while preserving alpha.38 gameplay, audio, alias, magic, media and campaign state.",
   "plugin_scope": "WORKSPACE",
   "plugin_discoverability": "PRIVATE",
   "site_project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
@@ -10,6 +10,7 @@
   "site_observed_source_version": 32,
   "site_observed_projection_revision": 65,
   "site_live_modified_this_release": false,
+  "site_source_bundle_changed_this_release": true,
   "site_republish_required": true,
   "campaign_state_advanced": false,
   "stable_media_ids_preserved": true,
@@ -22,10 +23,10 @@
     "DUSK",
     "NIGHT"
   ],
-  "qa_report": "ALPHA38_PROJECT_WIDE_QA.json",
+  "qa_report": "ALPHA39_CONSISTENCY_QA.json",
   "gain_authority": "GAIN_AUTHORITY.json",
   "narrative_qa": "NARRATIVE_ALIGNMENT_QA.json",
   "package_sync": "PACKAGE_SYNC_STATUS.json",
-  "publication_status": "CANDIDATE_UNTIL_PLUGIN_PUBLISH_AND_READBACK",
+  "publication_status": "PUBLISHED_RELEASE_ID_RECORDED_EXTERNALLY_IN_GITHUB_RELEASE_GUARD_AFTER_MUTATION",
   "github_write_surface": "AVAILABLE"
 }

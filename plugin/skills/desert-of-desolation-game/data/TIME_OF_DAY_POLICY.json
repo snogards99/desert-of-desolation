@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "policy_id": "dod.time-of-day.egypt-daylight-v1",
+  "configured_in_plugin_version": "1.5.1-alpha.39",
+  "clock_authority": "WorldState.total_minutes",
+  "day_length_minutes": 1440,
+  "daylight_window": {
+    "sunrise_minute": 360,
+    "sunrise_time": "06:00",
+    "sunset_minute": 1200,
+    "sunset_time": "20:00",
+    "interpretation": "USER_APPROVED_GAME_DAYLIGHT_WINDOW"
+  },
+  "visual_phases": [
+    {
+      "id": "NIGHT",
+      "start_minute": 1200,
+      "end_minute": 359,
+      "wraps_midnight": true
+    },
+    {
+      "id": "MORNING",
+      "start_minute": 360,
+      "end_minute": 599,
+      "wraps_midnight": false
+    },
+    {
+      "id": "DAY",
+      "start_minute": 600,
+      "end_minute": 1019,
+      "wraps_midnight": false
+    },
+    {
+      "id": "EVENING",
+      "start_minute": 1020,
+      "end_minute": 1199,
+      "wraps_midnight": false
+    }
+  ],
+  "boundary_events": [
+    {
+      "minute": 360,
+      "event": "SUNRISE",
+      "from": "NIGHT",
+      "to": "MORNING"
+    },
+    {
+      "minute": 600,
+      "event": "MORNING_TO_DAY",
+      "from": "MORNING",
+      "to": "DAY"
+    },
+    {
+      "minute": 1020,
+      "event": "DAY_TO_EVENING",
+      "from": "DAY",
+      "to": "EVENING"
+    },
+    {
+      "minute": 1200,
+      "event": "SUNSET",
+      "from": "EVENING",
+      "to": "NIGHT"
+    }
+  ],
+  "runtime_rules": {
+    "advance_time_only_from_resolved_gameplay_duration": true,
+    "presentation_never_advances_time": true,
+    "recompute_phase_after_every_time_mutation": true,
+    "crossed_boundary_updates_outdoor_scene": true,
+    "indoor_scene_unaffected_unless_explicit_open_sky_or_exterior_view": true,
+    "exact_phase_variant_first": true,
+    "mismatched_lighting_variant_forbidden": true,
+    "fallback_order": [
+      "EXACT_PHASE_VARIANT",
+      "TIME_NEUTRAL_SAME_SCENE",
+      "TEXT_OR_APPROVED_NEUTRAL_BACKGROUND"
+    ]
+  },
+  "outdoor_context_values": [
+    "OUTDOOR",
+    "EXTERIOR",
+    "OPEN_AIR",
+    "COURTYARD_OPEN_SKY",
+    "ROOFTOP_OPEN_SKY"
+  ],
+  "variant_keys": [
+    "DAY",
+    "DUSK",
+    "NIGHT"
+  ],
+  "visual_asset_aliases": {
+    "DAWN": "DUSK",
+    "SUNRISE": "DUSK",
+    "MORNING": "DAY",
+    "EVENING": "DUSK",
+    "SUNSET": "DUSK"
+  }
+}

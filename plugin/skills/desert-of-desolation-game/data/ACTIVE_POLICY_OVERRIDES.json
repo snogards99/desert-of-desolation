@@ -1,5 +1,5 @@
 {
-  "release": "1.5.1-alpha.38",
+  "release": "1.5.1-alpha.39",
   "runtime_content_authority": "PLUGIN_PACKAGE_AND_ACTIVE_SESSION_STATE",
   "runtime_profile": "MOBILE_FIRST",
   "ordinary_runtime_external_dependencies": [],
@@ -35,6 +35,6 @@
     "NIGHT"
   ],
   "campaign_state_mutation_for_maintenance": "NONE",
-  "publication_policy": "DO_NOT_CLAIM_LIVE_SITE_REPUBLISH, BROWSER_AUDIO, MICROPHONE, OR DEVICE_QA WITHOUT DIRECT EVIDENCE",
+  "publication_policy": "DO_NOT_CLAIM_LIVE_SITE_REPUBLISH, BROWSER_AUDIO, MICROPHONE, DEVICE_QA, OR FULL BINARY PARITY WITHOUT DIRECT EVIDENCE",
   "magic_authority": "data/PARTY_MAGIC.json + per-character magic records; current live resource ledger overrides baseline; unknown uses remain unavailable"
 }

@@ -1,12 +1,11 @@
-# Desert of Desolation 1.5.1-alpha.38
+# Desert of Desolation 1.5.1-alpha.39
 
-Project-wide reconciliation after ten focused repair passes.
+Consistency-hardening release on top of alpha.38.
 
-- Restores the current Art Engine contract to 32-bit RGBA pixel art with DAY / DUSK / NIGHT outdoor variants only. Morning maps to DAY; dawn, evening and sunset map to DUSK. Existing legal imagery is preserved until intentionally replaced.
-- Centralizes character aliases so Ery's legacy `party.talanis` identifier resolves to canonical `party.tal` for presentation without duplicating or merging campaign state.
-- Preserves approved module-introduction wording exactly and records source-perspective policy instead of rewriting canonical copy.
-- Resolves homepage-theme gain authority at 0.16 without changing the saved mix or audio asset bytes.
-- Preserves alpha.37 scene-safe audio, bounded save polling, microphone no-auto-submit behavior, stable media IDs, campaign state, access, and fail-closed unknown magic.
-- Separates readable source mirroring from binary-media parity; the latter remains tool-bound because binary plugin bytes are not exposed through the current text file API.
+- Aligns the outdoor visual asset contract everywhere: DAY / DUSK / NIGHT only; MORNING maps to DAY; dawn, sunrise, evening and sunset map to DUSK.
+- Repairs the executable Art Engine planner so it matches art-engine 1.6.0 and the active 32-bit RGBA pixel-art contract instead of legacy DOD_PAINTED / DOD_INK modes.
+- Adds validation coverage for executable Art Engine mode/version and cross-file time-of-day aliases so this drift cannot silently recur.
+- Preserves alpha.38 audio/save behavior, seven-bus mix, character aliases, magic fail-closed behavior, media IDs, access settings and campaign state.
+- Does not claim native Site publication, physical-device listening, server-side write authorization, or complete binary-media parity without direct evidence.
 
-The existing live Site remains v32 / projection 65 and requires native republish before alpha.38 Site-source changes can be called live. Server-side write authorization/resolver persistence, browser/device/listening QA, and complete binary-media GitHub parity remain explicit evidence/tool boundaries.
+The live Site remains the previously observed source v32 / projection 65 until a native Site publish action is available and independently verified.
