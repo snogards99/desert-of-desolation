@@ -1,0 +1,49 @@
+{
+  "checkpoint_schema": "dod.commit-checkpoint.v1",
+  "timestamp_utc": "2026-10-07T03:25:00Z",
+  "shared_release_id": "dod-alpha23-verified-sync-2026-10-07",
+  "canonical_source": {
+    "repository": "snogards99/desert-of-desolation",
+    "branch": "main",
+    "source_head_before_checkpoint": "811b1f17d8e7aa915cfdaf53875e88d152e560e1",
+    "status": "ALIGNED_WITH_CURRENT_PLUGIN_RELEASE"
+  },
+  "plugin": {
+    "plugin_id": "Plugin_3352cc65ee508191abeb37ffa759294d",
+    "version": "1.5.1-alpha.23",
+    "release_id": "pluginrel_6ac5b9487c348191b1830e724cddf7ee",
+    "scope": "WORKSPACE",
+    "discoverability": "PRIVATE",
+    "status": "CURRENT_PUBLISHED_PLUGIN_RELEASE"
+  },
+  "site": {
+    "project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
+    "recorded_version": 28,
+    "recorded_deployment_id": "appgdep_6ac53efc570c8191874ecd5b279d7e2d",
+    "recorded_source_commit": "bfc027dc21493b02f37b5096f9fab1c117b2f9ef",
+    "status": "UNCHANGED_NOT_REPUBLISHED",
+    "note": "Native ChatGPT Sites edit/publish surface is not available in this session; no live Site claim is made."
+  },
+  "sync_verification": {
+    "plugin_json": "MATCH",
+    "codex_plugin_json": "MATCH",
+    "final_release": "MATCH",
+    "alpha23_qa": "MATCH",
+    "hosting_config": "MATCH",
+    "site_presentation_profile": "MATCH",
+    "sound_mixer_profile": "MATCH",
+    "source_drift_detected": false
+  },
+  "qa": {
+    "campaign_state_advanced": false,
+    "access_changed": false,
+    "media_ids_changed": false,
+    "architecture_rebuilt": false,
+    "result": "PASS_SOURCE_ALIGNMENT",
+    "live_browser_and_physical_device_gates": "UNCHANGED_OPEN"
+  },
+  "rollback": {
+    "previous_checkpoint_commit": "811b1f17d8e7aa915cfdaf53875e88d152e560e1",
+    "previous_plugin_release": "pluginrel_6ac5a85fb2d4819197c9258b8672b708"
+  }
+}
