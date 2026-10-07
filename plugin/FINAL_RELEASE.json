@@ -21,8 +21,11 @@
   "plugin_published_this_release": false,
   "current_published_plugin_version": "1.5.1-alpha.35",
   "current_published_plugin_release_id": "pluginrel_6ac63501f2848191b047c6da6d540690",
-  "github_source_status": "ALPHA2_CANDIDATE_SOURCE_HARDENED_PENDING_FINAL_BRANCH_CI",
+  "github_source_status": "ALPHA2_CANDIDATE_FINALIZED_BRANCH_CI_PASS; PUBLISHED_PLUGIN_REMAINS_ALPHA35",
   "milestone": "ALPHA_2_CANDIDATE",
   "publication_status": "CANDIDATE_NOT_PUBLISHED",
-  "candidate_branch": "alpha2-candidate-20261007"
+  "candidate_branch": "alpha2-candidate-20261007",
+  "validated_artifact_head": "ae93e59cc6eeefbe1d0af8274e78e43e32b5f257",
+  "validation_run_id": 37678912346,
+  "validation_conclusion": "success"
 }
