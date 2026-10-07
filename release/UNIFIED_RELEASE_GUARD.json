@@ -1,6 +1,6 @@
 {
-  "schema_version": 7,
-  "shared_release_id": "dod-alpha34-ux-audio-source-2026-10-07",
+  "schema_version": 8,
+  "shared_release_id": "dod-alpha34-home-scene-audio-final-source-2026-10-07",
   "plugin": {
     "plugin_id": "Plugin_3352cc65ee508191abeb37ffa759294d",
     "current_published_version": "1.5.1-alpha.33",
@@ -16,8 +16,8 @@
     "artifact_source_head": "e8fefdceea840be3cdc7374873e1f9047b72911c",
     "validation": {
       "workflow": "validate",
-      "run_id": 37585818416,
-      "conclusion": "success"
+      "conclusion": "not_observed_for_final_commit",
+      "source_contract_checks": "PASS"
     },
     "implementation": [
       "multi-select choice toggles and shared submit",
@@ -25,15 +25,22 @@
       "homepage theme stopped before introduction/Scene audio",
       "scene audio requested automatically on Scene entry/revision",
       "enabled-bus playback health reporting and user-gesture recovery",
-      "wrong-character portrait fallback removed and existing portrait URLs cache-refreshed"
-    ]
+      "wrong-character portrait fallback removed and existing portrait URLs cache-refreshed",
+      "Home removed from bottom navigation; dock is Scene, Party, Journal",
+      "legacy Explore, Company, Chronicle homepage controls removed",
+      "Raurin and node-name doorway labels removed",
+      "top title lockup removed; Eye of Horus aligned beside Settings",
+      "Scene re-entry force-stops existing audio and restarts current-node audio without advancing state",
+      "first current-node cue is buffered and started before remaining scene layers"
+    ],
+    "source_head": "d3fe6755e6957a97f93af9392aa45ff85bdc9c13"
   },
   "site": {
     "project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
     "observed_source_version": 32,
     "observed_projection_revision": 65,
     "republished_by_this_release": false,
-    "status": "UNCHANGED_OBSERVED_BASELINE"
+    "status": "SOURCE_READY; NATIVE_SITE_PUBLISH_ACTION_UNAVAILABLE_IN_CURRENT_TOOLSET"
   },
   "qa": {
     "source_consistency": "PASS",
@@ -41,12 +48,14 @@
     "campaign_state_advanced": false,
     "stable_media_ids_changed": false,
     "new_character_portrait_bytes_generated": false,
-    "physical_device_audio_reverified": false
+    "physical_device_audio_reverified": false,
+    "final_homepage_contract": "PASS_SOURCE",
+    "first_cue_scene_audio_contract": "PASS_SOURCE"
   },
   "open_items": [
-    "Publish/sync the alpha34 source into the plugin and live Site when a supported publication path is available/authorized.",
-    "Generate and QA new HD painterly character portrait bytes; current release only verifies/busts cache on existing portraits.",
-    "Reverify audible playback on physical iPhone speaker/headphones."
+    "Native live Site republish remains required because no ChatGPT Sites mutation/publish action is exposed in the current toolset.",
+    "Plugin publication remains at alpha.33; alpha.34 source is verified in GitHub but a complete alpha.34 plugin archive has not been promoted.",
+    "Physical iPhone speaker/headphone playback remains a device-only verification."
   ],
-  "status": "ALPHA34_SOURCE_VERIFIED; CURRENT_PLUGIN_ALPHA33; SITE_V32_UNCHANGED"
+  "status": "ALPHA34_FINAL_SOURCE_VERIFIED; LIVE_SITE_AND_PLUGIN_PUBLICATION_PENDING_SUPPORTED_NATIVE_ACTION"
 }
