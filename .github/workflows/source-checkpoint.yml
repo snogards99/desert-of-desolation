@@ -2,7 +2,7 @@ name: source-checkpoint
 on:
   workflow_dispatch:
   push:
-    branches: [work/alpha37-review-20261007]
+    branches: [work/alpha37-review-20261007, work/alpha40-gameplay-20261007]
 permissions:
   contents: read
 jobs:
