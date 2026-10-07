@@ -1,40 +1,36 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "engine_id": "dod.art-engine",
-  "engine_version": "1.5.0",
-  "plugin_release": "1.5.1-alpha.36",
+  "engine_version": "1.6.0",
+  "plugin_release": "1.5.1-alpha.38",
   "theme_id": "dod.moonlit-ink",
   "modes": {
     "site": "DOD_SITE",
-    "ordinary_gameplay": "DOD_ILLUSTRATED",
-    "major_presentation": "DOD_PAINTED_HD"
+    "ordinary_gameplay": "DOD_PIXEL32",
+    "major_presentation": "DOD_PIXEL32"
   },
   "rendering_profile": {
-    "id": "dod.hd-painted-module-realism",
-    "medium": "HIGH_DEFINITION_HAND_PAINTED_FANTASY_REALISM",
-    "palette": "UNRESTRICTED_FULL_COLOR",
-    "pixel_art": false,
+    "id": "dod.pixel32-rgba",
+    "medium": "32_BIT_PIXEL_ART",
+    "palette": "FULL_RGBA_32_BIT",
+    "pixel_art": true,
     "indexed_palette_limit": null,
-    "color_depth_style_constraint": null,
-    "master_resolution_policy": "HIGH_RESOLUTION_MASTER_WITH_RESPONSIVE_DERIVATIVES",
-    "scaling": "HIGH_QUALITY_RESAMPLING",
+    "color_depth_style_constraint": "32_BIT_RGBA_PIXEL_ART_WITH_FULL_PALETTE",
+    "master_resolution_policy": "PIXEL_ART_MASTER_WITH_RESPONSIVE_CRISP_DERIVATIVES",
+    "scaling": "PIXEL_EDGE_PRESERVING",
     "reference_priority": [
-      "I3_PHARAOH_COVER_PRIMARY",
-      "I4_OASIS_OF_THE_WHITE_PALM_COVER_SUPPORTING",
-      "I5_LOST_TOMB_OF_MARTEK_COVER_SUPPORTING"
+      "EXISTING_DESERT_OF_DESOLATION_SITE_LANGUAGE",
+      "I3_PHARAOH_MOOD_REFERENCE",
+      "I4_I5_SUPPORTING_MOOD_REFERENCE"
     ],
     "visual_rules": [
-      "CLASSIC_TSR_ERA_HAND_PAINTED_FANTASY_ILLUSTRATION",
-      "NATURALISTIC_ANATOMY_AND_PROPORTIONS",
-      "PAINTERLY_REALISM_NOT_PHOTOGRAPHIC_CGI",
-      "TACTILE_MATERIALS",
-      "UNRESTRICTED_NATURAL_COLOR",
-      "BELIEVABLE_DIRECTIONAL_LIGHT_AND_ATMOSPHERIC_DEPTH",
-      "SUBTLE_BRUSH_TEXTURE_AND_HUMAN_IRREGULARITY",
-      "RESTRAINED_SUPERNATURAL_GLOW",
-      "NO_PIXEL_ART",
+      "32_BIT_PIXEL_ART_WITH_FULL_COLOR_PALETTE",
+      "CLASSIC_ADVENTURE_MODULE_MOOD_WITHOUT_COPYING_COVER_COMPOSITION",
+      "READABLE_SILHOUETTES_AND_TACTILE_EGYPTIAN_DESERT_DETAILS",
+      "BELIEVABLE_DIRECTIONAL_LIGHT_WITH_RESTRAINED_SUPERNATURAL_GLOW",
+      "MOBILE_READABILITY_FIRST",
       "NO_ANIME_OR_CEL_SHADING",
-      "NO_GLOSSY_MODERN_CONCEPT_ART_LOOK",
+      "NO_GLOSSY_PHOTOREAL_CGI",
       "NO_FAKE_TEXT_OR_PSEUDO_HIEROGLYPHS"
     ]
   },
@@ -43,14 +39,14 @@
     "runtime_still_phases": [
       "DAY",
       "DUSK",
-      "EVENING",
       "NIGHT"
     ],
     "phase_aliases": {
       "DAWN": "DUSK",
       "SUNRISE": "DUSK",
-      "MORNING": "DUSK",
-      "SUNSET": "EVENING"
+      "MORNING": "DAY",
+      "EVENING": "DUSK",
+      "SUNSET": "DUSK"
     },
     "perspective_policy": "CONTROLLED_VARIATION_ALLOWED_WITH_CANONICAL_GEOGRAPHY_LOCK"
   },
@@ -77,22 +73,6 @@
       "UNKNOWN_MAGIC_PROPERTIES_MUST_NOT_BE_VISUALLY_DISCLOSED"
     ]
   },
-  "turn_image_resolver": {
-    "policy": "../desert-of-desolation-game/data/imagery/NODE_IMAGE_STATE_POLICY.json",
-    "display_position": "TOP_OF_GAMEPLAY_TEXT",
-    "single_primary_image": true,
-    "priority": [
-      "DISCOVERED_FOCUSED_ITEM",
-      "CONFIRMED_DEFEATED_CREATURE",
-      "ACTIVE_COMBAT_ATTACK",
-      "VISIBLE_CREATURE_ALERT_OR_NEUTRAL",
-      "LAST_LEGAL_IMAGE_SAME_NODE",
-      "CURRENT_TIME_MATCHED_ENVIRONMENT",
-      "TEXT_ONLY"
-    ],
-    "combat_round_default": "REUSE_ATTACK_IMAGE",
-    "fallback": "LAST_LEGAL_SAME_NODE_OR_CURRENT_ENVIRONMENT_OR_TEXT"
-  },
   "runtime_rules": {
     "presentation_does_not_advance_state": true,
     "audio_engine_ownership": "EXISTING_GAME_AUDIO_ENGINE",
@@ -100,18 +80,6 @@
     "predictive_preload": "CURRENT_PLUS_ONE_LIKELY_PLUS_TWO_PLAYER_SAFE_ALTERNATES_MAX",
     "preload_all_time_variants": false,
     "preload_all_monster_states": false,
-    "preload_undiscovered_treasure": false,
-    "state_inputs": [
-      "CURRENT_NODE",
-      "GAME_TIME",
-      "ENVIRONMENT_PHASE",
-      "CREATURE_VISIBILITY",
-      "CREATURE_STATE",
-      "COMBAT_STATE",
-      "OUTCOME_CONFIRMATION",
-      "DISCOVERED_ITEMS",
-      "FOCUSED_ITEM",
-      "LAST_VALID_IMAGE"
-    ]
+    "preload_undiscovered_treasure": false
   }
 }
