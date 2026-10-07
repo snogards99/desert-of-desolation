@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "release": "1.5.1-alpha.38",
+  "homepage_theme": {
+    "base_gain": 0.16,
+    "speech_duck_gain": 0.03125
+  },
+  "ambience_default": 0.42,
+  "music_bus_default": 0.18,
+  "master_default": 0.5,
+  "authority": "Current runtime site-presentation.json plus alpha.34+ accepted behavior and the later request to raise homepage music supersede the historical 0.08 assessment note.",
+  "change_in_alpha38": "NONE_TO_GAIN_VALUES; AUTHORITY_RECONCILED_ONLY",
+  "listening_status": "UNVERIFIED_LIVE_BROWSER_AND_PHYSICAL_DEVICE"
+}
