@@ -2,7 +2,7 @@
   "schema_version": 1,
   "theme_id": "dod.moonlit-ink",
   "theme_version": "1.5.1",
-  "configured_in_plugin_version": "1.5.1-alpha.34",
+  "configured_in_plugin_version": "1.5.1-alpha.36",
   "default_gameplay_art": "DOD_ILLUSTRATED",
   "presentation_art": "DOD_PAINTED_HD",
   "rendering_profile": "dod.hd-painted-module-realism",
