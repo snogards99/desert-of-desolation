@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "release": "1.5.1-alpha.38",
+  "result": "PASS_SOURCE_ALIGNMENT",
+  "policy": "Preserve approved source wording and grammatical perspective. Do not rewrite canonical module introductions merely to force first-person voice.",
+  "verified": {
+    "module_intro_ids": [
+      "explore",
+      "i3",
+      "i4",
+      "i5"
+    ],
+    "approved_copy_unchanged": true,
+    "transcription_qa_reference": "docs/INTRO_TRANSCRIPTION_QA.json",
+    "first_person_generated_rewrite": false,
+    "npc_first_person_rule": "Only source-bound or current-state NPC speech may use first person; never invent private knowledge."
+  },
+  "campaign_state_mutated": false
+}

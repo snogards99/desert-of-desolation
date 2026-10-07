@@ -1,13 +1,12 @@
-# Desert of Desolation 1.5.1-alpha.37
+# Desert of Desolation 1.5.1-alpha.38
 
-Scoped maintenance release from the approved Edition 2 assessment and accepted audio candidate. This is not a declaration of Alpha 2 readiness or a live Site deployment.
+Project-wide reconciliation after ten focused repair passes.
 
-Scene audio stays bound to the current cue plan. Required narration failures are separate from optional failures; finished cues are not reported missing; duplicate voice keys and unsupported buses are rejected. First-cue order, spatial options, pause/resume watchers and stale-session cancellation are covered by executable tests. Campfire playback is bounded from its earliest possible voice, and one unavailable file does not silence its whole bus.
+- Restores the current Art Engine contract to 32-bit RGBA pixel art with DAY / DUSK / NIGHT outdoor variants only. Morning maps to DAY; dawn, evening and sunset map to DUSK. Existing legal imagery is preserved until intentionally replaced.
+- Centralizes character aliases so Ery's legacy `party.talanis` identifier resolves to canonical `party.tal` for presentation without duplicating or merging campaign state.
+- Preserves approved module-introduction wording exactly and records source-perspective policy instead of rewriting canonical copy.
+- Resolves homepage-theme gain authority at 0.16 without changing the saved mix or audio asset bytes.
+- Preserves alpha.37 scene-safe audio, bounded save polling, microphone no-auto-submit behavior, stable media IDs, campaign state, access, and fail-closed unknown magic.
+- Separates readable source mirroring from binary-media parity; the latter remains tool-bound because binary plugin bytes are not exposed through the current text file API.
 
-The Site source no longer restarts audio merely because Pause or Stop changes playback state. Homepage pause retains its separate audio ownership. Read-only save refresh stops scheduling while hidden, avoids overlapping polls, backs off after failures and exposes a stale-save warning until a successful current-save read.
-
-Top-level audio, session, listening, media-policy and sound-settings entry points now re-export canonical lib implementations. Historical QA and art policies keep their original versions and byte hashes instead of being relabeled as new evidence. RELEASE_COMPONENTS.json pins runtime and inherited inputs; CI rejects drift.
-
-No campaign API writes, resource changes, pending-action execution, migrations, access changes, image/audio generation, binary replacement, saved-mix changes or hosting changes were made. Theme gain and visual-policy discrepancies remain disclosed in the component manifest, not silently approved.
-
-Repository tests and simulated Web Audio are separate from a full native Site build, browser QA, real decoding, physical iPhone checks and listening. State authorization/idempotency/resolver work still requires the missing native Site persistence source and supported authentication boundary. Complete plugin-binary/media synchronization is not certified.
+The existing live Site remains v32 / projection 65 and requires native republish before alpha.38 Site-source changes can be called live. Server-side write authorization/resolver persistence, browser/device/listening QA, and complete binary-media GitHub parity remain explicit evidence/tool boundaries.

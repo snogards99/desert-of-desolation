@@ -1,12 +1,12 @@
 {
-  "schema_version": 7,
-  "profile_id": "dod.site.presentation.alpha36",
-  "configured_in_plugin_version": "1.5.1-alpha.36",
-  "architecture_policy": "PRESERVE_EXISTING_SITE_GAME_ENGINE_STATE_AND_HANDLERS; RECONCILE_ALPHA34_UX_AUDIO_PLUS_ALPHA33_SCENE_IMAGE_AND_ADD_MIC_DICTATION",
-  "source_runtime": "ALPHA34_UX_AUDIO_PLUS_ALPHA33_SCENE_IMAGE_RESOLVER",
+  "schema_version": 8,
+  "profile_id": "dod.site.presentation.alpha38",
+  "configured_in_plugin_version": "1.5.1-alpha.38",
+  "architecture_policy": "PRESERVE_EXISTING_SITE_GAME_ENGINE_STATE_AND_HANDLERS; APPLY_ALPHA37_AUDIO_SAVE_MAINTENANCE_PLUS_ALPHA38_PIXEL32_ALIAS_GUARDS",
+  "source_runtime": "ALPHA37_MAINTENANCE_PLUS_ALPHA38_POLICY_ALIAS_GUARD",
   "visual": {
     "base_theme": "dod.moonlit-ink",
-    "art_engine": "dod.art-engine@1.5.0",
+    "art_engine": "dod.art-engine@1.6.0",
     "scope": [
       "HOME",
       "SCENE",
@@ -24,14 +24,16 @@
       "MOBILE_FIRST",
       "KEYBOARD_FOCUS_VISIBLE",
       "REDUCED_MOTION_SAFE",
-      "NO_HORIZONTAL_OVERFLOW"
+      "NO_HORIZONTAL_OVERFLOW",
+      "PIXEL32_ART_ENGINE_AUTHORITY",
+      "OUTDOOR_DAY_DUSK_NIGHT_ONLY"
     ],
     "node_title": "CURRENT_ALPHA34_SCENE_HEADING",
     "scene_image": "STATE_DRIVEN_SINGLE_PRIMARY_IMAGE_ABOVE_TEXT; CURRENT_ENVIRONMENT_OR_VISIBLE_CREATURE_OR_DISCOVERED_ITEM_ONLY",
     "scene_image_policy": "data/imagery/NODE_IMAGE_STATE_POLICY.json",
     "scene_image_resolver": "site-runtime/lib/scene-image-resolver.mjs",
-    "character_sheets": "TABBED_CURRENT_REV4.6_WITH_CHARACTER_SPECIFIC_PORTRAIT_BINDINGS",
-    "background": "CURRENT_DOD_MOONLIT_INK"
+    "character_sheets": "TABBED_CURRENT_REV4.6_WITH_CHARACTER_SPECIFIC_PORTRAIT_BINDINGS_AND_ALIAS_NORMALIZATION",
+    "background": "PRESERVE_CURRENT_HOMEPAGE_PYRAMID_IMAGERY_AND_EGYPTIAN_SITE_LANGUAGE"
   },
   "interaction": {
     "choices": "MULTI_SELECT_WITH_VISIBLE_ARIA_PRESSED_STATE",
@@ -50,9 +52,8 @@
       "stop_before_story": true
     },
     "scene_entry": {
-      "hard_stop_prior_audio": true,
-      "first_cue_buffer_and_start_before_remaining_layers": true,
-      "restart_on_scene_revision": true,
+      "alpha37_scene_safe_session": true,
+      "first_cue_order_preserved": true,
       "user_gesture_recovery": true
     }
   },
@@ -64,7 +65,7 @@
     "access_mode": "public",
     "source_version_number": 32,
     "projection_revision": 65,
-    "alpha36_republished": false,
-    "republish_required_for_microphone_delta": true
+    "alpha38_republished": false,
+    "republish_required_for_alpha38_runtime_delta": true
   }
 }

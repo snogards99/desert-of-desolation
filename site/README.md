@@ -1,11 +1,16 @@
 # Desert of Desolation Site
 
-Existing ChatGPT Site: `appgprj_6ac3ddb2142c81918d529d4c7504e59d`, slug `desert-of-desolation`.
+Existing ChatGPT Site project: `appgprj_6ac3ddb2142c81918d529d4c7504e59d`
 
-The inherited observation is public/active Site v32, projection 65. These values are not a fresh native deployment readback. This directory is not a full Site export: native server routes, dependency lockfiles, build configuration, persistence and deployment metadata are missing.
+Latest observed live state remains:
+- Slug: `desert-of-desolation`
+- Status: active
+- Access: public
+- Site source version: 32
+- Projection revision: 65
 
-Alpha.37 maintenance source is canonical under `plugin/skills/desert-of-desolation-game/site-runtime/`. It contains scene-bound audio recovery, corrected pause/stop ownership and a visibility-aware read-only save poller. Earlier alpha.36 microphone source is retained. These changes are not claimed live until the existing Site is exported, reconciled, built, saved and published through native Sites tools.
+Current plugin source release: `1.5.1-alpha.38`.
 
-Before integration, preserve the live save and current source; compare the full Site with the pinned runtime rather than overwriting either. Test in isolated fixtures, not the player campaign. Verify write authorization, retry/idempotency and the supported resolver before a coordinated gameplay release. Keep public viewing separate from permission to mutate saves.
+Alpha.38 adds source/runtime changes that require native Site republish before they are live: active 32-bit pixel-art policy, DAY/DUSK/NIGHT-only outdoor aliases, centralized character aliases, and inherited alpha.36/37 microphone/audio/save maintenance. The current tool surface does not expose native Site source/export/build/save/publish actions, so no live deployment is invented.
 
-GitHub is source/test/history authority, not a replacement host. Site saves and ChatGPT checkpoints are still separate; no automatic state bridge is established here. See the current repository checkpoint for actual plugin/commit/deployment IDs and remaining gates.
+GitHub is canonical source/test/release history, not the gameplay host. Binary plugin media parity remains separately open until exact binary bytes can be exported and checksummed.

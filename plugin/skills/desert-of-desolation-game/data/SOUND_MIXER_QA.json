@@ -1,7 +1,7 @@
 {
-  "schema_version": 4,
-  "reviewed_in_version": "1.5.1-alpha.36",
-  "implementation": "Existing AudioEngine; one persistent context, seven semantic buses, master and layer multipliers, cue gain, ducking, crossfades, stale-cue cancellation, headroom/limiter, hard scene restart, and first-cue-first start ordering.",
+  "schema_version": 5,
+  "reviewed_in_version": "1.5.1-alpha.38",
+  "implementation": "Alpha.37 scene-safe AudioEngine/SoundSession retained; alpha.38 reconciles gain authority only.",
   "defaults": {
     "master": 0.5,
     "Narrator": 1.0,
@@ -12,22 +12,16 @@
     "Ambience": 0.42,
     "Music": 0.18,
     "theme_cue_output_before_master": 0.16,
-    "theme_speech_duck_gain": 0.03125,
-    "evidence": "0.16 matches current site-presentation runtime and alpha.34 final QA."
+    "theme_speech_duck_gain": 0.03125
   },
+  "gain_authority": "GAIN_AUTHORITY.json",
   "tests": {
-    "seven_bus_architecture": "PASS_SOURCE",
-    "homepage_theme_home_only": "PASS_SOURCE",
-    "scene_hard_stop": "PASS_SOURCE",
-    "first_current_node_cue_precedes_remaining_layers": "PASS_SOURCE",
-    "enabled_bus_health_reporting": "PASS_SOURCE",
+    "audio_behavior_change": "NONE_IN_ALPHA38",
     "campaign_state": "UNCHANGED"
   },
   "remaining_limitations": [
-    "Actual first-cue network/download/decode latency requires live browser profiling.",
-    "Mix intelligibility, quiet gaps and narration timing require actual listening.",
-    "Physical iPhone headphone and speaker listening remain open evidence gates.",
-    "Browser autoplay policy may require a user gesture."
+    "Live browser audio behavior and first-cue timing are not reverified for alpha.38.",
+    "Physical iPhone speaker/headphone listening remains an open evidence gate."
   ],
   "campaign_state_mutated": false
 }

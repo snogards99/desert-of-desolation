@@ -1,0 +1,3 @@
+import test from "node:test";import assert from "node:assert/strict";import fs from "node:fs";const a=JSON.parse(fs.readFileSync("plugin/skills/desert-of-desolation-game/data/CHARACTER_ALIASES.json","utf8")),sheet=fs.readFileSync("plugin/skills/desert-of-desolation-game/site-runtime/components/character-sheet.tsx","utf8");
+test("legacy Ery identifier resolves to one canonical party id",()=>{assert.equal(a.alias_to_canonical["party.talanis"],"party.tal");assert.ok(a.canonical_party_ids.includes("party.tal"));assert.ok(!a.canonical_party_ids.includes("party.talanis"))});
+test("character sheet canonicalizes before portrait lookup",()=>{assert.match(sheet,/canonicalId\(member\.id\)/);assert.doesNotMatch(sheet,/'party\.talanis':'\/character-sheet\/eryon\.png'/)});
