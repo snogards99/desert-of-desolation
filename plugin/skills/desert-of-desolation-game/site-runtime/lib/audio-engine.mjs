@@ -1,6 +1,6 @@
 import {fallbackPath} from './media-policy.mjs';
 export const buses=['Narrator','Dialogue','Creature','Movement','SFX','Ambience','Music'];
-export const levels={Narrator:1,Dialogue:.9,Creature:.35,Movement:.25,SFX:.8,Ambience:.35,Music:.18};
+export const levels={Narrator:1,Dialogue:.9,Creature:.35,Movement:.25,SFX:.8,Ambience:.42,Music:.18};
 export class AudioEngine{
  constructor(urlForId=id=>'/api/media?id='+encodeURIComponent(id)){this.urlForId=urlForId;this.context=null;this.master=null;this.nodes=new Map();this.active=new Map();this.retiring=new Set();this.cache=new Map();this.pending=new Map();this.epoch=0;this.tokens=new Map();this.volume=.5;this.muted=false;this.themeConfig=null;this.themeToken=0;this.themePending=null;this.layers=Object.fromEntries(buses.map(bus=>[bus,{volume:levels[bus],enabled:true}]));this.busFactors={};this.playbackDeadline=null;this.themeSuppressed=false;}
  async unlock(){if(this.context?.state==='closed'){this.context=null;this.nodes.clear();this.active.clear();this.cache.clear();}if(!this.context){const C=globalThis.AudioContext||globalThis.webkitAudioContext;if(!C)throw Error('Audio unavailable');this.context=new C();this.master=this.context.createGain();const limiter=this.context.createDynamicsCompressor();limiter.threshold.value=-12;limiter.knee.value=12;limiter.ratio.value=8;limiter.attack.value=.003;limiter.release.value=.25;this.headroom=this.context.createGain();this.master.connect(this.headroom);this.headroom.connect(limiter);limiter.connect(this.context.destination);for(const name of buses){const g=this.context.createGain();g.gain.value=levels[name];g.connect(this.master);this.nodes.set(name,g);}this.setVolume(this.volume);this.duck();}await this.context.resume();this.scheduleTheme();if(this.context.state==='suspended'||this.context.state==='interrupted')throw Error('Tap Play again to resume sound.');}
@@ -40,7 +40,9 @@ let result;try{result=await this.context.decodeAudioData(bytes.slice(0));}catch(
 
  // A presentation-only voice on the existing Music bus. Never unlocks itself.
  setThemeSuppressed(value){this.themeSuppressed=!!value;this.duck();}
+ stopTheme({fadeSeconds=.2}={}){this.themeToken++;this.themeConfig=null;this.themePending=null;this.themeRender=null;const voice=this.active.get('SiteTheme');if(!voice)return;this.active.delete('SiteTheme');clearTimeout(voice.timer);const now=this.context?.currentTime??0;if(this.context&&fadeSeconds>0){voice.gain.gain.cancelScheduledValues(now);voice.gain.gain.setValueAtTime(voice.gain.gain.value,now);voice.gain.gain.linearRampToValueAtTime(0,now+fadeSeconds);try{voice.source.stop(now+fadeSeconds);}catch{}}else{try{voice.source.stop();}catch{}}this.duck();}
  hasAudibleCue(bus){const now=this.context?.currentTime??0;return [...this.active.values()].some(v=>v.bus===bus&&(!v.theme||v.themeRole==='scene'||!this.themeSuppressed)&&(v.endsAt??Infinity)>now);}
+ sceneHealth(cues=[]){const expected=buses.filter(bus=>this.layers[bus].enabled&&this.layers[bus].volume>0),configured=[...new Set(cues.map(c=>c.bus).filter(bus=>buses.includes(bus)))],active=expected.filter(bus=>this.hasAudibleCue(bus));return{contextState:this.context?.state??'uninitialized',expected,configured,active,missing:expected.filter(bus=>!active.includes(bus))};}
  async startTheme(config,{role='website'}={}){
   if(!config.enabled||!this.context||this.context.state!=='running')return;
   this.themeConfig=config;this.themeRole=role;
