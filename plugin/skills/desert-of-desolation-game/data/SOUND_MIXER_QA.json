@@ -1,17 +1,17 @@
 {
   "schema_version": 3,
-  "reviewed_in_version": "1.5.1-alpha.33",
+  "reviewed_in_version": "1.5.1-alpha.34-candidate",
   "implementation": "Existing AudioEngine; one persistent context, seven semantic buses, master and layer multipliers, cue gain, ducking, crossfades, stale-cue cancellation, and conservative decoded-peak headroom before the existing compressor.",
   "defaults": {
     "master": 0.5,
-    "Narrator": 1.0,
+    "Narrator": 1,
     "Dialogue": 0.9,
     "Creature": 0.35,
     "Movement": 0.25,
     "SFX": 0.8,
     "Ambience": 0.42,
     "Music": 0.18,
-    "theme_cue_output_before_master": 0.1,
+    "theme_cue_output_before_master": 0.16,
     "theme_speech_duck_gain": 0.03125,
     "evidence": "Alpha.33 changes scene-image selection only; audio defaults are unchanged and synchronized to SOUND_MIXER_PROFILE."
   },
@@ -23,11 +23,16 @@
   },
   "tests": {
     "audio_behavior_change": "NONE",
-    "campaign_state": "UNCHANGED"
+    "campaign_state": "UNCHANGED",
+    "homepage_to_scene_handoff": "PASS_SOURCE_TEST",
+    "scene_auto_start": "PASS_SOURCE_TEST",
+    "seven_bus_health_report": "PASS_SOURCE_TEST",
+    "autoplay_recovery": "PASS_SOURCE_TEST"
   },
   "remaining_limitations": [
-    "Live browser audio behavior was not reverified for alpha.33.",
-    "Physical iPhone headphone and speaker listening remain open evidence gates."
+    "Live Site was not republished in this source pass.",
+    "Physical iPhone headphone and speaker listening remain open evidence gates.",
+    "Character portrait HD rerender bytes remain pending; existing verified portraits are cache-refreshed only."
   ],
   "campaign_state_mutated": false
 }
