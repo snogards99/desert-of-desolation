@@ -1,0 +1,56 @@
+{
+  "checkpoint_schema": "dod.commit-checkpoint.v1",
+  "timestamp_utc": "2026-10-07T23:35:30Z",
+  "shared_release_id": "dod-alpha38-validate-notification-repair-2026-10-07",
+  "status": "VALIDATE_FAILURE_ROOT_CAUSE_REPAIRED; MAIN_CI_PASS; FEATURE_BRANCH_PUSH_SPAM_REDUCED",
+  "canonical_source": {
+    "repository": "snogards99/desert-of-desolation",
+    "branch": "main",
+    "starting_head": "4eacec06e8fe4f65866135e278236bf89a2fd95c",
+    "workflow_policy_commit": "02d4f465082c2fba0ad33c97410cd1a8c2217dc2"
+  },
+  "incident": {
+    "failed_run_id": 37701609647,
+    "failed_branch": "work/alpha38-sync-20261007",
+    "failed_commit": "142e3650c1e3192819b4135428391ba62ee07828",
+    "failed_job_id": 113066130857,
+    "root_cause": "Temporary sync branch retained alpha.37 release-consistency expectations and dereferenced RELEASE_COMPONENTS.inherited after alpha.38 changed to schema v2 active fields.",
+    "observed_result": "Validator passed; 83 of 84 tests passed; only active release metadata test failed."
+  },
+  "repairs": {
+    "branch_test_repair_commit": "88c0d3f77ecf9b7bfe2ef787310445bc72984d0b",
+    "branch_test_repair_run": {
+      "run_id": 37702952214,
+      "conclusion": "success"
+    },
+    "branch_workflow_policy_commit": "823b28282477c13bcfa7ef5c98f86387184bffcf",
+    "redundant_pr": 2,
+    "redundant_pr_state": "closed_unmerged",
+    "main_workflow_change": "validate push trigger restricted to main; pull_request validation preserved",
+    "main_workflow_commit": "02d4f465082c2fba0ad33c97410cd1a8c2217dc2",
+    "main_workflow_run": {
+      "run_id": 37703032163,
+      "conclusion": "success"
+    }
+  },
+  "release_preservation": {
+    "plugin_version": "1.5.1-alpha.38",
+    "plugin_release_id": "pluginrel_6ac67b89972c819197202788b96cb167",
+    "campaign_state_advanced": false,
+    "plugin_republished": false,
+    "site_republished": false,
+    "access_changed": false,
+    "media_changed": false
+  },
+  "workflow_policy": {
+    "main_pushes": "validate",
+    "pull_requests": "validate",
+    "direct_non_main_branch_pushes": "no standalone validate run",
+    "rationale": "Preserve CI coverage while avoiding redundant work-branch push runs and failure-notification noise."
+  },
+  "open_boundaries": [
+    "Native Site alpha.38 publication remains pending.",
+    "Binary-media Plugin/GitHub parity remains unverified.",
+    "Physical device/browser/listening QA remains separate."
+  ]
+}
