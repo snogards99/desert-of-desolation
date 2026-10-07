@@ -3,6 +3,10 @@ on:
   push:
   pull_request:
 
+concurrency:
+  group: validate-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   project-consistency:
     runs-on: ubuntu-24.04
@@ -12,5 +16,21 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: 22
+
+      - name: Settle rapid pushes
+        if: github.event_name == 'push'
+        id: freshness
+        shell: bash
+        run: |
+          sleep 15
+          latest="$(git ls-remote origin "refs/heads/${GITHUB_REF_NAME}" | awk '{print $1}')"
+          if [ "$latest" != "$GITHUB_SHA" ]; then
+            echo "run=false" >> "$GITHUB_OUTPUT"
+            echo "Superseded by $latest; skipping validation for $GITHUB_SHA."
+          else
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Verify project consistency
+        if: github.event_name != 'push' || steps.freshness.outputs.run == 'true'
         run: npm run verify
