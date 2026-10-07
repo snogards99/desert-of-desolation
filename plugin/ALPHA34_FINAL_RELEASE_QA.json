@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "release": "1.5.1-alpha.34",
+  "scope": "ACTION_SELECTION_AUDIO_HANDOFF_PORTRAIT_BINDING",
+  "optimizer_loops": [
+    {
+      "loop": 1,
+      "focus": "interaction correctness",
+      "finding": "Choice buttons submitted immediately while the only visible Submit path required free text.",
+      "change": "Choices now toggle persistent selection state; one or many choices plus optional free text use one Submit path.",
+      "evidence": "alpha34 contract tests verify selectedActions, aria-pressed, submitAction, and removal of direct per-choice submit."
+    },
+    {
+      "loop": 2,
+      "focus": "homepage-to-gameplay audio lifecycle",
+      "finding": "Homepage title audio could persist outside Home and node audio was not automatically owned by Scene entry/revision.",
+      "change": "Homepage theme is Home-only, louder at 0.16 base gain, and fades/stops before introductions/Scene; Scene audio auto-start is requested on entry/revision with user-gesture retry.",
+      "evidence": "alpha34 tests verify Home gating, stopTheme, startSceneAudio, and absence of title-theme injection into story playback."
+    },
+    {
+      "loop": 3,
+      "focus": "playback verification and portrait safety",
+      "finding": "Playback success was assumed and an unmapped character inherited Snogard's portrait.",
+      "change": "Scene health reports active/missing enabled buses; wrong-character portrait fallback removed; current verified portrait URLs cache-busted.",
+      "evidence": "alpha34 tests verify sceneHealth and neutral portrait-unavailable fallback."
+    }
+  ],
+  "verified": {
+    "github_ci_run": 37585696543,
+    "github_ci_conclusion": "success",
+    "multi_select_actions": true,
+    "shared_submit": true,
+    "homepage_theme_home_only": true,
+    "homepage_theme_base_gain": 0.16,
+    "homepage_theme_stops_before_story": true,
+    "scene_audio_auto_start_requested": true,
+    "scene_audio_revision_restart_requested": true,
+    "user_gesture_recovery": true,
+    "enabled_bus_health_reporting": true,
+    "wrong_portrait_fallback_removed": true,
+    "campaign_state_advanced": false,
+    "stable_media_ids_changed": false
+  },
+  "limitations": [
+    "Live Site source version 32 / projection revision 65 was not republished by this release source pass.",
+    "Physical iPhone speaker/headphone playback was not reverified.",
+    "New HD painterly character portrait bytes were not generated; existing verified portraits were rebound/cache-refreshed only."
+  ]
+}
