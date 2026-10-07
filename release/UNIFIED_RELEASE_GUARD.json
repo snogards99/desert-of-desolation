@@ -1,10 +1,10 @@
 {
-  "schema_version": 5,
-  "shared_release_id": "dod-alpha30-site32-reconciled-2026-10-07",
+  "schema_version": 6,
+  "shared_release_id": "dod-alpha33-state-driven-imagery-2026-10-07",
   "plugin": {
     "plugin_id": "Plugin_3352cc65ee508191abeb37ffa759294d",
-    "version": "1.5.1-alpha.30",
-    "release_id": "pluginrel_6ac5cb836b388191adb4cf434c4034dc",
+    "version": "1.5.1-alpha.33",
+    "release_id": "pluginrel_6ac5dcab5b688191b8fbe927a851e57f",
     "scope": "WORKSPACE",
     "discoverability": "PRIVATE",
     "status": "PUBLISHED_CURRENT"
@@ -12,14 +12,15 @@
   "github": {
     "repository": "snogards99/desert-of-desolation",
     "branch": "main",
-    "artifact_source_head": "f54a40dab5a3c24f577f1b54e77357246b4123cf",
+    "artifact_source_head": "2c1b954c7cf6591f93f78c92b218b9cc5a005f96",
     "validation": {
       "workflow": "validate",
-      "run_id": 37575037518,
+      "run_id": 37578099536,
       "conclusion": "success"
     },
-    "source_mirror": "RESTORED_TO_PREVIOUSLY_VALIDATED_ALPHA30_TREE_AFTER_INTERRUPTED_ALPHA28_SYNC",
+    "source_mirror": "EXACT_MATCH_FOR_ALPHA33_CHANGED_PLUGIN_FILES",
     "runtime_relative_import_closure": "PASS",
+    "state_driven_scene_tests": "PASS",
     "plugin_mcp_config": "EMPTY"
   },
   "site": {
@@ -29,39 +30,45 @@
     "access_mode": "public",
     "observed_source_version": 32,
     "observed_projection_revision": 65,
-    "republished_by_this_checkpoint": false,
+    "republished_by_this_release": false,
     "deployment_id_for_v32": null,
-    "deployment_note": "The current Library Site artifact exposes source/projection metadata but not a v32 deployment identifier; none is invented.",
-    "historical_v28_deployment_id": "appgdep_6ac53efc570c8191874ecd5b279d7e2d",
-    "historical_v28_source_commit": "bfc027dc21493b02f37b5096f9fab1c117b2f9ef"
+    "note": "Alpha.33 updates the packaged Site runtime source and contracts; no native Site publish action was performed."
   },
   "qa": {
-    "release_qa": "plugin/ALPHA30_FINAL_RELEASE_QA.json",
-    "source_consistency": "PASS",
+    "release_qa": "plugin/ALPHA33_STATE_IMAGE_QA.json",
+    "source_consistency": "PASS_EXACT_CHANGED_FILES",
     "github_ci": "PASS",
-    "runtime_import_closure": "PASS",
+    "optimizer_loops": 3,
+    "resolver_unit_tests": "9/9 PASS",
     "campaign_state_advanced": false,
     "access_changed": false,
     "stable_media_ids_changed": false,
-    "architecture_rebuilt": false,
-    "browser_audio_reverified_this_session": false,
-    "microphone_reverified_this_session": false,
-    "physical_iphone_reverified_this_session": false
+    "audio_behavior_changed": false,
+    "new_image_bytes_generated": false,
+    "live_site_browser_visual_qa_reverified": false,
+    "physical_iphone_reverified": false
   },
-  "approval": {
-    "source_and_release_alignment": "APPROVED",
-    "live_site_identity_and_projection": "OBSERVED",
-    "device_only_evidence_gates": "OPEN_NONBLOCKING"
+  "behavior": {
+    "primary_scene_image": "ONE_STATE_DRIVEN_IMAGE_ABOVE_TEXT",
+    "priority": [
+      "DISCOVERED_FOCUSED_ITEM",
+      "CONFIRMED_DEFEATED_CREATURE",
+      "ACTIVE_COMBAT_ATTACK",
+      "VISIBLE_CREATURE_ALERT_OR_NEUTRAL",
+      "LAST_LEGAL_IMAGE_SAME_NODE",
+      "CURRENT_TIME_MATCHED_ENVIRONMENT",
+      "TEXT_ONLY"
+    ],
+    "hidden_creature_policy": "HEARD_OR_HIDDEN_NEVER_REVEALS_ART",
+    "defeated_policy": "AUTHORITATIVE_OUTCOME_REQUIRED; DOES_NOT_IMPLY_DEAD",
+    "treasure_policy": "DISCOVERY_GATED; UNIDENTIFIED_MAGIC_PROPERTIES_HIDDEN"
   },
-  "open_evidence_gates": [
-    "browser audible play-stop-play and narration timing",
-    "microphone permission/input on the live Site",
-    "physical iPhone speaker/headphones and GPU performance"
-  ],
   "rollback": {
-    "previous_verified_alpha30_guard_commit": "ed89f1587d3d28184579eeadf7f96a511775cdc5",
-    "interrupted_regression_commit": "ebcfaefbf6feb5e611f501641e2dd17ae655976e",
-    "restore_commit": "f54a40dab5a3c24f577f1b54e77357246b4123cf"
+    "previous_plugin_version": "1.5.1-alpha.30",
+    "previous_plugin_release": "pluginrel_6ac5cb836b388191adb4cf434c4034dc",
+    "previous_verified_checkpoint_commit": "7d8754fc40807726e602b14ff5325f57d4aed8f2",
+    "intermediate_alpha31_release": "pluginrel_6ac5dc154afc819181cd5817d8275160",
+    "intermediate_alpha32_release": "pluginrel_6ac5dc7390e081918f08c18978c48cb6"
   },
-  "status": "VERIFIED_PLUGIN_AND_SOURCE; SITE_V32_OBSERVED; DEVICE_EVIDENCE_GATES_OPEN"
+  "status": "VERIFIED_PLUGIN_AND_SOURCE; SITE_NOT_REPUBLISHED; DEVICE_EVIDENCE_GATES_OPEN"
 }
