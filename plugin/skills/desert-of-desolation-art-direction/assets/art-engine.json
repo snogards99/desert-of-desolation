@@ -1,77 +1,10 @@
 {
-  "schema_version": 1,
-  "engine_id": "dod.art-engine",
-  "engine_version": "1.3.0",
-  "plugin_release": "1.5.1-alpha.8",
-  "theme_id": "dod.moonlit-ink",
-  "modes": {
-    "site": "DOD_SITE",
-    "ordinary_gameplay": "DOD_INK",
-    "major_presentation": "DOD_PAINTED"
-  },
-  "rendering_profile": {
-    "id": "dod.pixel32-rgba",
-    "medium": "FULL_COLOR_PIXEL_ART",
-    "storage": "PNG_RGBA_8_8_8_8",
-    "color_depth_bits": 32,
-    "indexed_palette_limit": null,
-    "alpha_supported": true,
-    "logical_mobile_canvas": [512, 768],
-    "primary_mobile_width_px": 390,
-    "scaling": "NEAREST_NEIGHBOR_WHEN_ENLARGED",
-    "pixel_rules": [
-      "DELIBERATE_PIXEL_CLUSTERS",
-      "CRISP_SILHOUETTES",
-      "CONTROLLED_HARD_EDGED_SHADING",
-      "SELECTIVE_DITHERING",
-      "NO_FAKE_PIXELATION_FILTER",
-      "NO_SMOOTH_PAINTERLY_RUNTIME_ART"
-    ],
-    "animation_status": "DEFERRED_STILLS_ONLY",
-    "first20_manifest": "../../desert-of-desolation-game/data/imagery/FIRST20_STILL_ART.json"
-  },
-  "surface_policy": {
-    "TITLE_SPLASH": {"mode":"DOD_SITE","responsive_master":true,"semantic_controls":true},
-    "HOME": {"mode":"DOD_SITE","responsive_master":true,"semantic_controls":true},
-    "CHAPTER_OPEN": {"mode":"DOD_PAINTED","pixel_profile":"dod.pixel32-rgba"},
-    "MAJOR_DISCOVERY": {"mode":"DOD_PAINTED","pixel_profile":"dod.pixel32-rgba"},
-    "CLIMAX": {"mode":"DOD_PAINTED","pixel_profile":"dod.pixel32-rgba"},
-    "EXPLORATION": {"mode":"DOD_INK","pixel_profile":"dod.pixel32-rgba"},
-    "NPC_DIALOGUE": {"mode":"DOD_INK","pixel_profile":"dod.pixel32-rgba"},
-    "COMBAT": {"mode":"DOD_INK","pixel_profile":"dod.pixel32-rgba"},
-    "JOURNAL": {"mode":"DOD_INK","pixel_profile":"dod.pixel32-rgba"},
-    "INVENTORY": {"mode":"DOD_INK","pixel_profile":"dod.pixel32-rgba"},
-    "MAP": {"mode":"DOD_INK","known_areas_only":true,"pixel_profile":"dod.pixel32-rgba"}
-  },
-  "time_of_day": {
-    "policy": "../../desert-of-desolation-game/data/TIME_OF_DAY_POLICY.json",
-    "clock_source": "WorldState.total_minutes",
-    "sunrise_minute": 360,
-    "sunset_minute": 1200,
-    "phases": ["MORNING","DAY","EVENING","NIGHT"],
-    "outdoor_exact_phase_required": true,
-    "same_composition_across_phases": true,
-    "mismatched_lighting_fallback_forbidden": true
-  },
-  "responsive_master": {
-    "breakpoint_px": 760,
-    "desktop": {"asset_id":"dod.ui.home.desktop.v1","skill_path":"reference-ui/home-desktop-approved.png","runtime_path":"assets/ui/dod.ui.home.desktop.v1.png","dimensions":[1536,1024]},
-    "mobile": {"asset_id":"dod.ui.home.mobile.v1","skill_path":"reference-ui/home-mobile-approved.png","runtime_path":"assets/ui/dod.ui.home.mobile.v1.png","dimensions":[941,1672]}
-  },
-  "runtime_rules": {
-    "master_images_role": "APPROVED_MASTER_UI_REFERENCE_AND_NONINTERACTIVE_SPLASH_POSTER",
-    "semantic_ui_required": true,
-    "do_not_use_invisible_hotspots_over_baked_controls": true,
-    "new_game_requires_existing_confirmation_reset_flow": true,
-    "continue_restores_authoritative_state": true,
-    "presentation_does_not_advance_state": true,
-    "audio_engine_ownership": "EXISTING_GAME_AUDIO_ENGINE",
-    "theme_must_not_create_audio_context": true,
-    "fail_closed_on_hidden_or_unapproved_art": true,
-    "missing_art_fallback": "TEXT_OR_APPROVED_BACKGROUND",
-    "predictive_preload": "CURRENT_PLUS_ONE_LIKELY_PLUS_TWO_PLAYER_SAFE_ALTERNATES_MAX",
-    "outdoor_scene_uses_authoritative_game_time": true,
-    "preload_all_time_variants": false,
-    "preload_all_monster_states": false
-  }
+  "schema_version":1,"engine_id":"dod.art-engine","engine_version":"1.5.0","plugin_release":"1.5.1-alpha.22","theme_id":"dod.moonlit-ink",
+  "modes":{"site":"DOD_SITE","ordinary_gameplay":"DOD_ILLUSTRATED","major_presentation":"DOD_PAINTED_HD"},
+  "rendering_profile":{"id":"dod.hd-painted-module-realism","medium":"HIGH_DEFINITION_HAND_PAINTED_FANTASY_REALISM","palette":"UNRESTRICTED_FULL_COLOR","pixel_art":false,"indexed_palette_limit":null,"color_depth_style_constraint":null,"master_resolution_policy":"HIGH_RESOLUTION_MASTER_WITH_RESPONSIVE_DERIVATIVES","scaling":"HIGH_QUALITY_RESAMPLING","reference_priority":["I3_PHARAOH_COVER_PRIMARY","I4_OASIS_OF_THE_WHITE_PALM_COVER_SUPPORTING","I5_LOST_TOMB_OF_MARTEK_COVER_SUPPORTING"],"visual_rules":["CLASSIC_TSR_ERA_HAND_PAINTED_FANTASY_ILLUSTRATION","NATURALISTIC_ANATOMY_AND_PROPORTIONS","PAINTERLY_REALISM_NOT_PHOTOGRAPHIC_CGI","TACTILE_STONE_SAND_CLOTH_METAL_WATER_BONE_SKIN","UNRESTRICTED_NATURAL_COLOR","BELIEVABLE_DIRECTIONAL_LIGHT_AND_ATMOSPHERIC_DEPTH","SUBTLE_BRUSH_TEXTURE_AND_HUMAN_IRREGULARITY","RESTRAINED_SUPERNATURAL_GLOW","AVOID_OVER_SYMMETRY_AND_GENERIC_AI_FANTASY_POLISH","NO_PIXEL_ART","NO_ANIME_OR_CEL_SHADING","NO_GLOSSY_MODERN_CONCEPT_ART_LOOK","NO_FAKE_TEXT_OR_PSEUDO_HIEROGLYPHS"],"quality_rejects":["MALFORMED_HANDS_OR_LIMBS","DUPLICATED_ANATOMY_OR_PROPS","MELTED_ORNAMENT","INCONSISTENT_WEAPONS_OR_COSTUME","IMPOSSIBLE_PERSPECTIVE","FLOATING_OBJECTS","FUSED_JEWELRY_OR_ARMOR","REPEATED_FACES","INCONSISTENT_LIGHTING","MEANINGLESS_DECORATIVE_CLUTTER","OVERSHARPENED_CGI_SURFACES"],"animation_status":"DEFERRED_STILLS_ONLY"},
+  "time_of_day":{"clock_source":"WorldState.total_minutes","runtime_still_phases":["DAY","DUSK","EVENING","NIGHT"],"phase_aliases":{"DAWN":"DUSK","SUNRISE":"DUSK","MORNING":"DUSK","SUNSET":"EVENING"},"perspective_policy":"CONTROLLED_VARIATION_ALLOWED","perspective_rules":["SAME_CANONICAL_GEOGRAPHY_AND_MAJOR_LANDMARKS","ALLOW_SLIGHT_LEFT_OR_RIGHT_APPROACH","ALLOW_MODEST_ELEVATED_OR_GROUND_LEVEL_VIEW","ALLOW_SLIGHTLY_CLOSER_OR_FARTHER_FRAMING","MATCH_PLAUSIBLE_PARTY_APPROACH","NEVER_CHANGE_ROUTE_LOGIC_OR_VISIBLE_STATE"]},
+  "monster_profile":{"style":"FULLY_RENDERED_CLASSIC_FANTASY_PAINTERLY_REALISM","states":["NEUTRAL","ALERT","ATTACK","DEFEATED"],"rules":["ONE_CANONICAL_DESIGN_ACROSS_STATES","ATTACK_DOES_NOT_CONFIRM_HIT","DEFEATED_REQUIRES_AUTHORITATIVE_STATE","PRESERVE_ANATOMY_FACE_EQUIPMENT_MARKINGS_COLORATION_AND_SCALE"]},
+  "treasure_profile":{"render_when":"DISCOVERED_AND_PLAYER_VISIBLE","priority":["MAGIC_ITEM","STORY_ITEM","UNIQUE_RELIC","KEY_OR_PUZZLE_OBJECT","DISTINCTIVE_TREASURE"],"rules":["ONE_STABLE_ITEM_ART_ID_PER_UNIQUE_ITEM","DO_NOT_RENDER_OR_PRELOAD_BEFORE_DISCOVERY_IF_SPOILER","UNKNOWN_MAGIC_PROPERTIES_MUST_NOT_BE_VISUALLY_DISCLOSED"]},
+  "turn_image_resolver":{"display_position":"TOP_OF_GAMEPLAY_TEXT","priority":["DISCOVERED_TREASURE","DEFEATED_CREATURE","COMBAT_ATTACK","VISIBLE_CREATURE_ALERT_OR_NEUTRAL","CURRENT_ENVIRONMENT","LAST_LEGAL_IMAGE"],"combat_round_default":"REUSE_ATTACK_IMAGE","post_combat_default":"DEFEATED_UNTIL_CONTEXT_MOVES_ON","fallback":"LAST_LEGAL_IMAGE_OR_CURRENT_ENVIRONMENT"},
+  "runtime_rules":{"presentation_does_not_advance_state":true,"audio_engine_ownership":"EXISTING_GAME_AUDIO_ENGINE","theme_must_not_create_audio_context":true,"fail_closed_on_hidden_or_unapproved_art":true,"predictive_preload":"CURRENT_PLUS_ONE_LIKELY_PLUS_TWO_PLAYER_SAFE_ALTERNATES_MAX","preload_all_time_variants":false,"preload_all_monster_states":false,"state_inputs":["CURRENT_NODE","GAME_TIME","ENVIRONMENT_PHASE","VISIBLE_CREATURE","CREATURE_STATE","COMBAT_STATE","DISCOVERED_ITEMS","LAST_VALID_IMAGE"]}
 }
