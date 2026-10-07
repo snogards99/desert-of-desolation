@@ -1,0 +1,17 @@
+# Desert of Desolation — Master Art Production Prompt
+
+Lock `dod.art-engine` v1.5.0 and `dod.hd-painted-module-realism` as the runtime visual authority. Primary painted reference is the supplied I3 Pharaoh cover; I4 Oasis of the White Palm and I5 Lost Tomb of Martek are supporting references. Reproduce their broad visual language, not exact compositions: classic TSR-era hand-painted fantasy illustration, naturalistic anatomy, tactile materials, unrestricted rich color, atmospheric shadow, strong silhouettes, restrained supernatural light, visible brush texture, believable wear and human irregularity. No pixel-art/32-bit/64-bit styling, indexed palettes, anime/cel shading, glossy modern concept art, plastic CGI surfaces, fake text, or generic AI-fantasy polish.
+
+For every node inspect canon/source facts, node and sensory descriptions, sound/ambience, visible state, creature bindings, treasure/discovery flags, game time and plausible party approach. Let sound affect visible atmosphere only when physically plausible; never invent a visual event for drama.
+
+Rebuild the first 20 authoritative nodes and supersede old runtime art only after replacement bytes pass QA. Indoor/enclosed locations normally receive one time-neutral painting. Outdoor/open-sky locations receive DAY, DUSK, EVENING and NIGHT. DAWN/SUNRISE/MORNING reuse DUSK; SUNSET uses EVENING. Variants may use slightly different plausible perspectives while preserving geography, architecture, route logic, scale, landmarks and visible state.
+
+Every visible monster or important creature gets one canonical design with NEUTRAL, ALERT, ATTACK and DEFEATED. ATTACK does not imply a hit; DEFEATED requires authoritative resolution. Every unique magic/story item, relic, key, puzzle object or distinctive treasure gets a stable dedicated image only when actually discovered; unidentified magical properties remain undisclosed.
+
+Display the current image at the top of gameplay text. Flow: environment on entry -> NEUTRAL/ALERT when creature visible -> ATTACK during combat -> DEFEATED after confirmed defeat -> treasure when discovered -> contextual environment. Reuse the last legal image or current environment when no new legal image exists. Selection is deterministic from node, time, environment phase, creature/state, combat, discovered items and last valid image.
+
+Coordinate with existing music, ambience, SFX, creature audio, narration and dialogue without rebuilding audio. Preserve campaign state, AD&D rules, stable IDs, source PDFs, Site access, fonts, legal/footer and bounded preload.
+
+Reject malformed anatomy, duplicated limbs/props, repeated faces, inconsistent weapons/costume, melted ornament, pseudo-writing, impossible perspective, floating objects, fused jewelry/armor, inconsistent lighting, excessive symmetry, meaningless clutter, oversharpened CGI surfaces and unsupported motifs. Never leak hidden monsters, doors, traps, treasure, puzzle solutions, identities, unidentified powers, future transformations, locations or outcomes through art or metadata.
+
+Production order: inspect -> first-20 asset ledger -> render one runtime asset at a time -> QA canon/spoilers/anatomy/continuity/mobile -> bind approved bytes -> update resolver/manifests -> verify audio/state untouched -> test representative flows -> publish -> commit. Contact sheets, collages, concept boards and atlases are never runtime assets.
