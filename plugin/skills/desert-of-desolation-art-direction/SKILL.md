@@ -3,7 +3,7 @@ name: desert-of-desolation-art-direction
 description: Apply the approved Desert of Desolation high-definition painted art engine, classic module-cover visual language, bundled typography, state-driven imagery, and responsive presentation to the game and existing ChatGPT Site. Preserve canon, discovery gates, media IDs, state, audio, and Site access.
 ---
 
-# Desert of Desolation Art Direction - 1.5.1-alpha.34
+# Desert of Desolation Art Direction - 1.5.1-alpha.36
 
 Use art engine `dod.art-engine` v1.5.0, theme `dod.moonlit-ink` v1.5.0, rendering profile `dod.hd-painted-module-realism`, and bundled Cinzel/Noto typography.
 
