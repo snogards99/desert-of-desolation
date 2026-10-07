@@ -2,7 +2,7 @@
   "interface": {
     "displayName": "Desert of Desolation",
     "shortDescription": "Mobile-first desert RPG",
-    "longDescription": "Runs Desert of Desolation with alpha.37 maintenance source: scene-bound audio recovery, first-cue diagnostics, safe pause/resume, canonical shared audio modules, and visibility-aware read-only save refresh. Existing media, seven-bus mix and gameplay state are preserved. This does not establish a fully resolved Site game loop.",
+    "longDescription": "Runs Desert of Desolation with alpha.38 project-wide source authority: 32-bit pixel-art authoring, DAY/DUSK/NIGHT outdoor presentation, scene-safe seven-bus audio, centralized character aliases, discovery-gated media, and fail-closed unknown magic. Native Site publication/device listening and server-side write authorization remain separate evidence gates.",
     "developerName": "Desert of Desolation Project",
     "category": "Games",
     "capabilities": [
@@ -17,8 +17,8 @@
     ]
   },
   "name": "desert-of-desolation",
-  "version": "1.5.1-alpha.37",
-  "description": "Desert of Desolation maintenance release with scene-safe audio recovery, bounded visibility-aware save refresh, and unchanged campaign data. Native Site publication and device listening remain separate verification gates.",
+  "version": "1.5.1-alpha.38",
+  "description": "Desert of Desolation alpha.38 project-wide reconciliation with pixel32 art authority, DAY/DUSK/NIGHT outdoor phases, centralized character aliases, verified audio gain authority, and preserved campaign state.",
   "author": {
     "name": "Workspace upload"
   },
