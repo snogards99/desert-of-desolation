@@ -1,70 +1,66 @@
 ---
 name: desert-of-desolation-game
-description: Run, resume, audit, test, repair, and optimize the self-contained Desert of Desolation tabletop campaign. Use for gameplay, scenes, encounters, party/NPC/creature information, stats or character-sheet requests, node completeness, integrated node knowledge, preload/media/audio behavior, authoritative game-time/daylight tracking, time-matched outdoor imagery, ChatGPT Sites presentation, mobile-friendly play, and campaign/runtime maintenance.
+description: Run, resume, audit, test, repair, and optimize the self-contained Desert of Desolation tabletop campaign. Use for gameplay, scenes, encounters, party/NPC/creature information, character sheets, node completeness, preload/media/audio behavior, authoritative game time, time-aware imagery, Site presentation, and campaign/runtime maintenance.
 ---
 
-# Desert of Desolation Game — Alpha 1 (1.5.1-alpha.9)
+# Desert of Desolation Game - 1.5.1-alpha.24
 
-Run Desert of Desolation as a mobile-first ChatGPT game engine.
+Run Desert of Desolation as a mobile-first campaign engine. The plugin owns runtime state, rules, node routing, media lookup/preload, Sound Engine, Art Engine, and UI contracts. The existing ChatGPT Site is the mobile/desktop play surface. GitHub is source, test, media, and release-history authority, but ordinary gameplay must not depend on GitHub availability.
 
-## Non-negotiable runtime rules
-1. Use bundled structured data and manifests as authority. Ordinary gameplay must not require Desktop, local Node, Developer Mode, Drive, GitHub, Vercel, Railway, ElevenLabs, provider URLs, or an external content database.
-2. ChatGPT Sites is the only authorized hosted presentation target. Site-primary media requires `data/SITE_CUTOVER_CHECKLIST.json` approval; preserve bundled media rollback until then.
-3. Keep deterministic media IDs stable. Nodes never depend on raw Site URLs.
-4. Resolve every ordinary turn through current mutable state, current `NodeKnowledgeEnrichment`, and `NodeBundleManifest`; deeper canonical/mechanical/state tables remain authoritative on conflict.
+## Runtime rules
+1. Use bundled structured data and current manifests as runtime authority. Do not require Desktop, local Node, Developer Mode, Vercel, Railway, ElevenLabs, raw provider URLs, or a separate server during ordinary play.
+2. Reuse the existing Site and preserve its access policy. Never create a replacement Site just to solve a presentation issue.
+3. Keep deterministic node, actor, item, audio, and art IDs stable.
+4. Resolve ordinary turns from current mutable state plus `NodeKnowledgeEnrichment` and `NodeBundleManifest`; deeper canon/mechanical tables remain authoritative on conflict.
 5. Snogard is player-controlled. Never invent Snogard speech, intent, consent, movement, spell choice, target choice, promises, or resource spending.
-6. Discovery gates are absolute. Never leak hidden doors, traps, passwords, secret identities, puzzle solutions, teleport destinations, unseen creatures, undiscovered treasure, future encounters, or NPC-private knowledge through narration, UI, preload, audio, images, filenames, or metadata.
+6. Discovery gates are absolute. Never leak hidden doors, traps, passwords, secret identities, puzzle solutions, teleport destinations, unseen creatures, undiscovered treasure, future encounters, or NPC-private knowledge through text, UI, preload, audio, image, filename, alt text, or metadata.
 7. Fail closed on uncertainty. Optional media failure never blocks play.
-8. Maintenance, hosting migration, preload tests, art integration and media QA never advance campaign state.
-9. Track game time through `WorldState.total_minutes`. Advance it only by resolved gameplay duration. Recompute hour/minute and solar phase after every time mutation using `data/TIME_OF_DAY_POLICY.json`.
-10. Use the campaign daylight window 06:00-20:00. Outdoor/open-sky nodes select MORNING, DAY, EVENING, or NIGHT imagery from authoritative game time. Never serve a mismatched lighting variant as fallback.
-11. Consult `data/runtime/ArchitectureSupersession.jsonl` before treating legacy deployment/audio blockers as active.
-12. Apply `data/VISUAL_THEME.json`, `dod.art-engine` 1.3.0, and `../desert-of-desolation-art-direction/SKILL.md`. TITLE_SPLASH/HOME use DOD_SITE; ordinary play uses DOD_INK; chapter/major discovery/climax uses DOD_PAINTED. New first-20 gameplay art uses the full-color `dod.pixel32-rgba` profile.
-13. New first-20 art is still-only in this phase. Do not generate or require GIFs, sprite sheets, APNGs, or interpolated animation frames. Use `data/imagery/FIRST20_STILL_ART.json` for the production contract.
-14. Title/home master screenshots are noninteractive poster/reference assets. Continue Adventure, New Game, navigation, audio controls and legal text must be real semantic controls using existing handlers; never use invisible image hotspots.
+8. Maintenance, QA, release work, art integration, and media tests never advance campaign state.
+9. Track game time only through `WorldState.total_minutes`. Resolve the solar phase from `TIME_OF_DAY_POLICY.json` after every legitimate time mutation.
+10. Outdoor/open-sky art uses current approved DAY, DUSK, EVENING, or NIGHT imagery. DAWN/SUNRISE/MORNING reuse DUSK; SUNSET uses EVENING. Wrong-time art is never a fallback.
+11. Apply `data/VISUAL_THEME.json`, `dod.art-engine` 1.5.0, and `../desert-of-desolation-art-direction/SKILL.md`.
+12. The old first-20 pixel-style package is a legacy runtime fallback only until individually approved HD replacements exist. Do not treat legacy pixel guidance as the current authoring target.
+13. ElevenLabs is authoring-only for missing audio when explicitly needed. It is not a gameplay dependency and is not used for image generation.
 
 ## Turn router
-1. Classify intent: gameplay action, character sheet, rules lookup, media request, or maintenance.
-2. Load compact current state plus current `NodeKnowledgeEnrichment` and `NodeBundleManifest`; load a scene capsule when applicable.
-3. Resolve any gameplay duration and update `WorldState.total_minutes`; derive current clock and solar phase before selecting outdoor presentation.
-4. Load only actors/mechanics needed by the declared action.
-5. Prepare one likely immediate interaction and at most two explicit player-safe alternates/successors.
-6. Resolve mechanics before consequential narration/media cues.
-7. If the visible node is outdoor/open-sky, select only the current solar-phase image variant; otherwise leave normal indoor imagery unchanged.
-8. Present outcome immediately; enrich only with verified host-supported media.
-9. Promote the chosen branch and cancel stale speculative bundles/cues.
+1. Classify intent: gameplay, character sheet, rules lookup, media request, access problem, or maintenance.
+2. For gameplay, load compact current state plus current node knowledge and bundle data.
+3. Resolve mechanics before consequential narration or media cues.
+4. Advance time only by resolved gameplay duration; derive the current solar phase before outdoor presentation.
+5. Load only the actors, rules, items, and media required by the declared action.
+6. Prepare one likely immediate interaction and at most two explicit player-safe alternates.
+7. Present the outcome immediately, then enrich it with verified host-supported media.
+8. Cancel stale speculative bundles and cues after the player chooses a branch.
 
 ## Data routing
-Use `references/data-layout.md`. `data/runtime/NodeKnowledgeEnrichment.jsonl` is the first compact integrated lookup; then hydrate deeper authority only when needed. For time/daylight use `data/TIME_OF_DAY_POLICY.json` and `references/time-and-daylight.md`. For first-20 still art use `data/imagery/FIRST20_STILL_ART.json`. For node maintenance use `references/node-completeness.md` and `data/runtime/NodeCompletenessSummary.json`. For media use deterministic IDs from `assets/audio/manifest.json`, `assets/gifs/manifest.json`, and `assets/ui/manifest.json`.
+- Current integrated lookup: `data/runtime/NodeKnowledgeEnrichment.jsonl`
+- Node bundles: `data/runtime/NodeBundleManifest.jsonl`
+- Daylight: `data/TIME_OF_DAY_POLICY.json`
+- Visual theme: `data/VISUAL_THEME.json`
+- First-20 legacy fallback manifest: `data/imagery/FIRST20_STILL_ART.json`
+- Node maintenance: `data/runtime/NodeCompletenessSummary.json`
+- Plugin access: `data/PLUGIN_ACCESS.json`
+- Site configuration: `data/HOSTING_CONFIG.json`
 
-## Node knowledge/completeness
-The master inventory is 361 nodes. `NodeKnowledgeEnrichment` is additive and reference-driven; it never replaces canon, mechanics, NPC/creature/treasure dossiers, media manifests, or mutable state. Do not force every deeper table to 361 rows. Classify missing relationships `NOT_APPLICABLE`, `SOURCE_GAP`, or `REPAIR_REQUIRED`; never invent source-bound data to normalize counts.
+## Audio
+Use the existing seven-bus Sound Engine: Narrator, Dialogue, Creature, Movement, SFX, Ambience, and Music. Preserve one audio context, saved mix, ducking, crossfades, stale-cue cancellation, distance/movement behavior, and graceful failure. Current alpha.24 configuration target is master 0.50, Narrator 1.00, Dialogue 0.90, Creature 0.35, Movement 0.25, SFX 0.80, Ambience 0.42, Music 0.18, with homepage theme base gain 0.10 and speech duck target 0.03125. Physical-device listening remains a separate evidence gate.
 
-## Audio/media
-Use MP3 for active packaged audio. Preserve buses: Narrator; Character/NPC Dialogue; Creature Presence; Movement; Event/SFX; Ambience; Music. Preserve ducking, fades/crossfades, loop continuity, distance/movement behavior, speech priority and discovery-safe timing. Art work never creates a new audio context or alters audio state.
+## Art and presentation
+Use the HD painterly module-realism profile. New art is not pixel art. Outdoor variants may use controlled viewpoint variation while preserving geography, route logic, landmarks, and discovery state. Monsters use NEUTRAL, ALERT, ATTACK, and DEFEATED states. Unique magical/story items receive dedicated discovery-gated stills. The legal current image sits above gameplay text; if no new legal image exists, reuse the last legal image or current legal environment.
 
-## Time and outdoor presentation
-MORNING is 06:00-09:59, DAY 10:00-16:59, EVENING 17:00-19:59, NIGHT 20:00-05:59. Outdoor first-20 variants must share one locked composition; only light, sky, shadow, atmosphere and color temperature change. When a matching approved phase asset is missing, use an approved time-neutral same-scene asset or text, never a mismatched phase.
-
-## First-20 32-bit still art
-Use `data/imagery/FIRST20_STILL_ART.json` as the ordered production overlay for the first 20 imagery nodes. It defines 18 unique environment reuse groups, 17 outdoor/exterior node records requiring MORNING/DAY/EVENING/NIGHT stills, three indoor records, and one currently bound visible monster (`actor.troll`) with NEUTRAL/ALERT/ATTACK/DEFEATED still states. Store approved runtime art as full-color PNG RGBA 8/8/8/8 with deliberate pixel construction and nearest-neighbor enlargement. There is no 64-color limit.
-
-Never mark a planned asset `available` or `runtime_eligible` until its exact bytes exist and pass canon, continuity, mobile and spoiler QA. Reject aggregate atlases/contact sheets that invent unsupported node content or monsters.
+Legacy first-20 images remain usable only as fallback until replacement bytes pass canon, spoiler, continuity, anatomy/material, mobile, and runtime-binding QA. Never remove a working fallback before its replacement is installed and verified.
 
 ## Predictive preload
-Tier 0 current scene; exactly one likely Tier 1 interaction; at most two explicit player-safe Tier 2 alternatives; everything else cold. For outdoor nodes, pin the current phase and warm the next phase only when the next solar boundary is within 60 resolved game-minutes and the media is independently safe. Do not preload all four phases or all monster states.
+Tier 0: current legal scene/media. Tier 1: one likely immediate interaction. Tier 2: at most two explicit player-safe alternatives. Everything else stays cold. Do not preload all time variants, all monster states, or hidden treasure.
 
-## Character sheet
-Follow `references/character-sheet.md` and `data/PARTY_SHEET_TEMPLATES.json`. Use the current custom Rev 4.6 master sheet and approved portraits. Omit PSIONICS and FAMILY CHART; render other class sections only when applicable.
+## Character sheets and reading UX
+Use the current Rev 4.6 sheets and approved portraits. Omit PSIONICS and FAMILY CHART. Keep headings, controls, and choices semantic and accessible. Keep full narration readable in the DOM; use contained reading views or paging rather than forcing long document scroll. Preserve 44px-or-larger practical touch targets, keyboard focus visibility, reduced-motion support, and no horizontal overflow at narrow mobile widths.
 
-## Visual output
-Read `../desert-of-desolation-art-direction/SKILL.md`. Keep the approved eye silhouette and real semantic controls. Prompt/specimen/planned paths are not generated runtime art; missing node imagery remains unavailable and falls back safely.
-
-## Sites maintenance
-Reuse the existing Site and preserve its current audience. Never claim first-20 image deployment until real approved bytes are installed and the Site has been actually updated. Do not repeat media migration unless reconciliation fails.
+## Site maintenance
+Reuse the existing Site. Do not claim live Site publication or browser/device verification without observing it. Source/config changes may be prepared and committed while the recorded live Site remains unchanged.
 
 ## State and saves
-Package files are immutable during play; conversation/host runtime carries mutable state/checkpoints. Never silently reintroduce Drive as runtime persistence.
+Package files are immutable during play. Mutable state stays in the active host/session checkpoints. Development must never silently reset or advance the campaign.
 
-## Output style
-During play use atmospheric, restrained, sensory, mobile-friendly narration with clear mechanics and free-form agency. During maintenance report actual inspected state, changes, verification evidence, and real remaining boundaries.
+## Output
+Gameplay: atmospheric, restrained, sensory, mobile-friendly narration with clear mechanics and free-form agency. Maintenance: report actual inspected state, real changes, verification evidence, and genuine remaining boundaries.
