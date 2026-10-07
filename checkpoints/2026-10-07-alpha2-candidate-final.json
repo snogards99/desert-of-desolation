@@ -1,0 +1,110 @@
+{
+  "checkpoint_schema": "dod.commit-checkpoint.v1",
+  "timestamp_utc": "2026-10-07T20:03:23Z",
+  "shared_release_id": "dod-alpha2-candidate-alpha36-2026-10-07",
+  "milestone": "ALPHA_2_CANDIDATE",
+  "status": "VERIFIED_ALPHA2_CANDIDATE_NOT_PUBLISHED",
+  "canonical_source": {
+    "repository": "snogards99/desert-of-desolation",
+    "branch": "alpha2-candidate-20261007",
+    "baseline_main_commit": "c5639c3e2b38ed4cddda05727bbf40558583b64a",
+    "validated_artifact_head": "6b2ea8d1ba7c94e52639cbb18e085a011ab1da57",
+    "ahead_of_main_commits": 32,
+    "behind_main_commits": 0,
+    "changed_file_count": 28,
+    "changed_files": [
+      "checkpoints/2026-10-07-alpha35-plugin-sync.json",
+      "package.json",
+      "plugin/.codex-plugin/plugin.json",
+      "plugin/ALPHA2_CANDIDATE_QA.json",
+      "plugin/ALPHA35_PLUGIN_SYNC_QA.json",
+      "plugin/FINAL_RELEASE.json",
+      "plugin/FINAL_RELEASE_NOTES.md",
+      "plugin/plugin.json",
+      "plugin/skills/desert-of-desolation-art-direction/SKILL.md",
+      "plugin/skills/desert-of-desolation-art-direction/assets/art-engine.json",
+      "plugin/skills/desert-of-desolation-game/SKILL.md",
+      "plugin/skills/desert-of-desolation-game/data/ACTIVE_POLICY_OVERRIDES.json",
+      "plugin/skills/desert-of-desolation-game/data/SITE_PRESENTATION_PROFILE.json",
+      "plugin/skills/desert-of-desolation-game/data/SITE_RUNTIME_QA.json",
+      "plugin/skills/desert-of-desolation-game/data/SOUND_MIXER_PROFILE.json",
+      "plugin/skills/desert-of-desolation-game/data/SOUND_MIXER_QA.json",
+      "plugin/skills/desert-of-desolation-game/data/VISUAL_THEME.json",
+      "plugin/skills/desert-of-desolation-game/data/imagery/NODE_IMAGE_STATE_POLICY.json",
+      "plugin/skills/desert-of-desolation-game/site-runtime/audio-engine.mjs",
+      "plugin/skills/desert-of-desolation-game/site-runtime/campfire-test.mjs",
+      "plugin/skills/desert-of-desolation-game/site-runtime/lib/audio-engine.mjs",
+      "plugin/skills/desert-of-desolation-game/site-runtime/listening-scene.mjs",
+      "plugin/skills/desert-of-desolation-game/site-runtime/media-policy.mjs",
+      "plugin/skills/desert-of-desolation-game/site-runtime/sound-settings.mjs",
+      "release/UNIFIED_RELEASE_GUARD.json",
+      "scripts/validate-project.mjs",
+      "tests/release-consistency.test.mjs",
+      "tests/state-driven-node-images.test.mjs"
+    ]
+  },
+  "validation": {
+    "workflow": "validate",
+    "run_id": 37679039447,
+    "job_id": 112990094291,
+    "conclusion": "success",
+    "consistency_check": "PASS",
+    "tests": 19,
+    "passed": 19,
+    "failed": 0
+  },
+  "plugin": {
+    "plugin_id": "Plugin_3352cc65ee508191abeb37ffa759294d",
+    "candidate_version": "1.5.1-alpha.36",
+    "candidate_published": false,
+    "current_published_version": "1.5.1-alpha.35",
+    "current_published_release_id": "pluginrel_6ac63501f2848191b047c6da6d540690",
+    "scope": "WORKSPACE",
+    "discoverability": "PRIVATE"
+  },
+  "site": {
+    "project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
+    "slug": "desert-of-desolation",
+    "live_url": "https://desert-of-desolation.nreach-1221.chatgpt.site",
+    "observed_source_version": 32,
+    "observed_projection_revision": 65,
+    "status": "active",
+    "access_mode": "public",
+    "candidate_republished": false
+  },
+  "completed": [
+    "Reconciled published alpha.35 Plugin Creator history into canonical source.",
+    "Converted stale top-level audio compatibility forks into thin re-exports of authoritative lib modules.",
+    "Corrected Scene audio health to report missing buses only when configured by the current node and enabled in the mixer.",
+    "Refreshed Site QA evidence to the observed source v32 / projection 65 baseline without inventing unavailable deployment metadata.",
+    "Hardened validation against release-version drift, compatibility-entrypoint drift, configured-bus audio regressions, unresolved imports, obsolete external renderer/MCP remnants, and Site publication overclaims.",
+    "Reviewed and excluded deploy-optimize-20261004 as superseded because its unique commits restore obsolete Vercel, MCP/API, and external audio-renderer architecture.",
+    "Preserved Scene/Party/Journal navigation, homepage cleanup, shared multi-select action submit, Home-only theme, hard Scene audio restart, first-cue ordering, state-driven imagery, legal/footer, fonts, discovery gates, and access policy."
+  ],
+  "preservation": {
+    "campaign_state_advanced": false,
+    "stable_media_ids_changed": false,
+    "node_master_count": 361,
+    "plugin_audience_changed": false,
+    "site_access_changed": false
+  },
+  "unresolved_external_gates": [
+    "Live ChatGPT Site cannot be republished to this candidate because no native Site mutation/publish action is exposed in the current environment.",
+    "Physical iPhone speaker/headphone playback has not been reverified for this candidate.",
+    "New HD painterly character portrait bytes remain pending separate art production."
+  ],
+  "rollback": {
+    "canonical_main_commit": "c5639c3e2b38ed4cddda05727bbf40558583b64a",
+    "published_plugin_version": "1.5.1-alpha.35",
+    "published_plugin_release_id": "pluginrel_6ac63501f2848191b047c6da6d540690",
+    "live_site_source_version": 32,
+    "live_site_projection_revision": 65
+  },
+  "promotion_instructions": [
+    "Review the alpha2-candidate-20261007 branch and this checkpoint.",
+    "When publication is explicitly authorized, merge the validated candidate to main without pulling in the superseded deploy-optimize-20261004 branch.",
+    "Publish plugin 1.5.1-alpha.36 from the merged canonical source and verify post-publication readback.",
+    "Republish the existing ChatGPT Site separately only when a native Site mutation/publish action is available, preserving project ID and public access.",
+    "After both targets are independently verified, write a coordinated published-release checkpoint."
+  ]
+}
