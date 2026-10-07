@@ -1,0 +1,55 @@
+{
+  "checkpoint_schema": "dod.commit-checkpoint.v1",
+  "timestamp_utc": "2026-10-07T03:19:00Z",
+  "shared_release_id": "dod-alpha23-site-maintenance-2026-10-07",
+  "canonical_source": {
+    "repository": "snogards99/desert-of-desolation",
+    "branch": "main",
+    "artifact_head_before_checkpoint": "7b5d4edd81f203298fddc3a0aa23d70a3047dfe1",
+    "maintenance_prompt_path": "plugin/skills/desert-of-desolation-game/references/site-maintenance-alpha23.md",
+    "qa_path": "plugin/ALPHA23_MAINTENANCE_QA.json"
+  },
+  "plugin": {
+    "plugin_id": "Plugin_3352cc65ee508191abeb37ffa759294d",
+    "version": "1.5.1-alpha.23",
+    "release_id": "pluginrel_6ac5b9487c348191b1830e724cddf7ee",
+    "scope": "WORKSPACE",
+    "discoverability": "PRIVATE",
+    "status": "CURRENT_PUBLISHED_PLUGIN_RELEASE"
+  },
+  "site": {
+    "project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
+    "recorded_version": 28,
+    "recorded_deployment_id": "appgdep_6ac53efc570c8191874ecd5b279d7e2d",
+    "recorded_source_commit": "bfc027dc21493b02f37b5096f9fab1c117b2f9ef",
+    "alpha23_live_status": "NOT_REPUBLISHED_OR_NATIVE_EDITOR_VERIFIED",
+    "alpha23_source_status": "READY_FOR_NATIVE_SITE_INTEGRATION",
+    "reason": "Native ChatGPT Sites edit/publish surface was unavailable in this session."
+  },
+  "qa": {
+    "passes": 3,
+    "campaign_state_advanced": false,
+    "verified": [
+      "alpha23 plugin release published",
+      "alpha23 manifests and maintenance contract synchronized to GitHub main",
+      "theme target raised from 0.08 to 0.10 in alpha23 profile",
+      "ambience target raised from 0.35 to 0.42 in alpha23 profile",
+      "additive responsive CSS includes top node title, multi-select highlighting, Submit styling, microphone states, character-sheet tabs, contained reading, moonlight overlay, dust overlay, darker green records and reduced-motion fallback",
+      "existing Site v28 hosting metadata reconciled into GitHub source"
+    ],
+    "open": [
+      "native Site component/event integration and publication",
+      "byte-level homepage MP3 silence trim/re-render",
+      "live browser audio/narration and microphone QA",
+      "full-body transparent character-render availability mapping",
+      "Explore mummy art asset creation/binding",
+      "physical iPhone listening and performance QA"
+    ]
+  },
+  "rollback": {
+    "plugin_previous_version": "1.5.1-alpha.22",
+    "plugin_previous_release": "pluginrel_6ac5a85fb2d4819197c9258b8672b708",
+    "repository_previous_checkpoint": "46e7d96f6d6191fc9fb01ab28ffcabf1e4b8f950"
+  },
+  "completion": "PLUGIN_AND_GITHUB_SOURCE_ALIGNED; LIVE_SITE_ALPHA23_PENDING_NATIVE_SITE_TOOL"
+}
