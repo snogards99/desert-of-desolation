@@ -1,0 +1,89 @@
+{
+  "checkpoint_schema": "dod.commit-checkpoint.v1",
+  "timestamp_utc": "2026-10-07T22:07:30Z",
+  "shared_release_id": "dod-alpha38-projectwide-synchronized-2026-10-07",
+  "status": "VERIFIED_PLUGIN_SOURCE_SYNC; SITE_PUBLICATION_PENDING_NATIVE_ACTION",
+  "canonical_source": {
+    "repository": "snogards99/desert-of-desolation",
+    "branch": "main",
+    "implementation_commit": "203dae5d00f4a251eb8d16b515b4427b6c9994d3",
+    "implementation_tree": "5e563b0a1ec32b12cbcb31e902af6b74b1989a24",
+    "release_guard_commit": "e373c74a86ef92235bd20f0bea2a9a877d6de8f5",
+    "release_guard_path": "release/UNIFIED_RELEASE_GUARD.json"
+  },
+  "validation": {
+    "implementation_ci": {
+      "workflow": "validate",
+      "run_id": 37693835566,
+      "conclusion": "success",
+      "head_sha": "203dae5d00f4a251eb8d16b515b4427b6c9994d3"
+    },
+    "release_guard_ci": {
+      "workflow": "validate",
+      "run_id": 37694065702,
+      "job_id": 113041169267,
+      "conclusion": "success",
+      "head_sha": "e373c74a86ef92235bd20f0bea2a9a877d6de8f5"
+    },
+    "core_text_parity": {
+      "checked": 12,
+      "exact_matches": 12,
+      "mismatches": 0
+    },
+    "full_binary_parity": "NOT_VERIFIED_TOOL_BOUNDARY"
+  },
+  "plugin": {
+    "plugin_id": "Plugin_3352cc65ee508191abeb37ffa759294d",
+    "version": "1.5.1-alpha.38",
+    "release_id": "pluginrel_6ac67b89972c819197202788b96cb167",
+    "scope": "WORKSPACE",
+    "discoverability": "PRIVATE",
+    "publication_status": "PUBLISHED_AND_READBACK_VERIFIED"
+  },
+  "site": {
+    "project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
+    "slug": "desert-of-desolation",
+    "live_url": "https://desert-of-desolation.nreach-1221.chatgpt.site",
+    "observed_source_version": 32,
+    "observed_projection_revision": 65,
+    "status": "active",
+    "access_mode": "public",
+    "alpha38_republished": false,
+    "fresh_deployment_verified": false,
+    "deployment_id": null
+  },
+  "synchronized_changes": [
+    "Promoted the verified alpha.38 source branch to GitHub main by fast-forward without force.",
+    "Preserved alpha.37 scene-safe audio, bounded save polling, microphone no-auto-submit behavior, stable media IDs and campaign state.",
+    "Adopted alpha.38 pixel32 art authority with DAY/DUSK/NIGHT outdoor phases.",
+    "Adopted centralized character aliases including party.talanis -> party.tal presentation normalization.",
+    "Preserved homepage theme gain authority at 0.16 with 0.03125 speech duck.",
+    "Verified 12 core text artifacts exactly match between current Plugin Creator alpha.38 and GitHub main.",
+    "Recorded post-publication truth externally without republishing or mutating the already-published alpha.38 package."
+  ],
+  "preservation": {
+    "campaign_api_writes": 0,
+    "campaign_advanced_or_reset": false,
+    "pending_actions_executed": false,
+    "stable_media_ids_changed": false,
+    "audio_asset_bytes_changed": false,
+    "saved_mix_changed": false,
+    "plugin_audience_changed": false,
+    "site_access_changed": false,
+    "hosting_changed": false
+  },
+  "unresolved_boundaries": [
+    "Native ChatGPT Site source/export/build/save/publish action is not exposed in the current environment, so alpha.38 Site-source deltas are not live.",
+    "Live desktop/390px browser journeys, microphone permission/input, physical iPhone speaker/headphone listening, and accessibility/device QA remain unverified.",
+    "Server-side campaign write authorization, transaction/idempotency, and resolver persistence remain unverified.",
+    "Complete binary-media Plugin/GitHub parity cannot be verified with the current text-oriented source API."
+  ],
+  "rollback": {
+    "previous_main_commit": "515bf03af496c49708a58813bb13b625f5d2cdc1",
+    "previous_plugin_release_id": "pluginrel_6ac6746d7d908191af93d988a5b8a14b",
+    "previous_plugin_version": "1.5.1-alpha.37",
+    "live_site_source_version": 32,
+    "live_site_projection_revision": 65
+  },
+  "next_release_rule": "Do not claim a coordinated Site+Plugin release until the existing Site is natively republished and independently verified. Until then, alpha.38 is the synchronized canonical plugin/source release and Site v32/projection65 remains the live Site baseline."
+}
