@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "release": "1.5.1-alpha.36",
+  "optimizer_loops": [
+    {
+      "loop": 1,
+      "focus": "authority",
+      "finding": "Plugin alpha.35 was newer than GitHub/checkpoint alpha.34.",
+      "change": "Promote a single alpha.36 coordinated candidate and require plugin/GitHub parity.",
+      "evidence": "Plugin metadata alpha.35; GitHub head/checkpoint alpha.34."
+    },
+    {
+      "loop": 2,
+      "focus": "plugin readability",
+      "finding": "Earlier 504 bundled-file reads were reported.",
+      "change": "Retry bounded current-release reads before treating this as a release blocker.",
+      "evidence": "Current alpha.35 reads for release, Site, audio, magic and runtime files succeeded."
+    },
+    {
+      "loop": 3,
+      "focus": "Site publication decision",
+      "finding": "Alpha.35 itself was package synchronization with no Site behavior delta.",
+      "change": "Do not republish solely for alpha.35; require republish only for alpha.36 microphone UI delta.",
+      "evidence": "ALPHA35_PLUGIN_SYNC_QA marks live_site_republished=false and runtime behavior unchanged."
+    },
+    {
+      "loop": 4,
+      "focus": "Site evidence",
+      "finding": "HOSTING_CONFIG and SITE_RUNTIME_QA still described older v30/v28 baselines.",
+      "change": "Reconcile both to observed Site v32 / projection 65 while preserving historical rollback references.",
+      "evidence": "Current Site library metadata reports source_version_number 32 and projection_revision 65."
+    },
+    {
+      "loop": 5,
+      "focus": "audio authority",
+      "finding": "Runtime site-presentation uses homepage theme base_gain 0.16 while SOUND_MIXER_PROFILE still said 0.10.",
+      "change": "Make 0.16 the active profile/QA value; preserve 0.03125 speech duck and seven-bus mix.",
+      "evidence": "site-runtime/lib/site-presentation.json base_gain 0.16 and ALPHA34_FINAL_RELEASE_QA."
+    },
+    {
+      "loop": 6,
+      "focus": "first-cue path",
+      "finding": "First-cue latency was an optimization opportunity, not a proven defect.",
+      "change": "Preserve hard-stop + first-cue buffer/start-before-rest ordering; record live network/decode timing as an evidence gate rather than fabricating a metric.",
+      "evidence": "SoundSession.startScene buffers and starts the first cue before Promise.all(rest)."
+    },
+    {
+      "loop": 7,
+      "focus": "magic authority",
+      "finding": "Compact Snogard record still marked several Sha'ir features as needing exact binding although the player DB already contains executable mechanics.",
+      "change": "Promote only the verified mechanics into the compact record; keep live-use counters fail-closed.",
+      "evidence": "Gold Box Player Character Spells_Abilities rows are SOURCE_2E_VERIFIED/EXECUTABLE."
+    },
+    {
+      "loop": 8,
+      "focus": "inventory/preparation reconciliation",
+      "finding": "Cyrra/Ery/Bar records contained possession/enchantment discrepancies; other preparations and custom powers remain undefined.",
+      "change": "Align confirmed State270 equipment facts; explicitly retain unknown preparations/charges/custom powers as unavailable.",
+      "evidence": "Rev 4.6 State270 Character_Sheets and AD&D 2E character records."
+    },
+    {
+      "loop": 9,
+      "focus": "character presentation",
+      "finding": "Portrait bindings are complete but still DOD_INK rather than newly generated HD painterly full-body bytes; microphone source was absent.",
+      "change": "Preserve correct portrait-to-character mapping, do not fabricate new art, and add feature-detected dictation source.",
+      "evidence": "assets/character-sheet/manifest.json and current CharacterSheet mapping; runtime source search found no microphone implementation."
+    },
+    {
+      "loop": 10,
+      "focus": "release closure",
+      "finding": "Release can only be approved if metadata, runtime imports, magic authority, GitHub tests and checkpoint references converge.",
+      "change": "Publish alpha.36, mirror exact changed source to GitHub, update validator/tests, run CI, then record guard/checkpoint separately.",
+      "evidence": "Acceptance gate defined for execution."
+    }
+  ],
+  "verified": {
+    "campaign_state_advanced": false,
+    "access_changed": false,
+    "stable_media_ids_changed": false,
+    "audio_asset_bytes_changed": false,
+    "observed_site_source_version": 32,
+    "observed_site_projection_revision": 65,
+    "runtime_homepage_theme_base_gain": 0.16,
+    "intro_transcription_exact_match_preexisting": true,
+    "microphone_source_present_after_repair": true
+  },
+  "open_evidence_gates": [
+    "Native Site republish of alpha.36 microphone UI delta",
+    "Live browser narration timing/play-stop/first-cue network+decode profiling",
+    "Live microphone permission/input verification",
+    "Physical iPhone speaker/headphone and GPU/performance review"
+  ],
+  "approval_policy": "Approve source/release consistency only after plugin readback and GitHub CI pass. Do not waive or relabel unperformed browser/device checks."
+}

@@ -10,10 +10,10 @@ Latest observed live state:
 - Projection revision: 65
 - Live URL: `https://desert-of-desolation.nreach-1221.chatgpt.site`
 
-The current Library Site artifact exposes source/projection metadata but not a v32 deployment ID, so none is invented.
+Current plugin candidate: `1.5.1-alpha.36`.
 
-Current plugin release: `1.5.1-alpha.30` / `pluginrel_6ac5cb836b388191adb4cf434c4034dc`.
+Alpha.36 reconciles stale source/QA metadata, corrects homepage-theme authority to 0.16, reconciles verified magic records, and adds a persistent feature-detected microphone dictation source control. Because the microphone is a real Site/UI delta, the live Site remains pending native republish; do not claim the control is live on v32 until a Site publish action and browser verification are observed.
 
-GitHub source was restored to the previously validated alpha.30 tree after an interrupted alpha.28 synchronization attempt. Validation run `37575037518` passed on the restore commit `f54a40dab5a3c24f577f1b54e77357246b4123cf`.
+The Site metadata surface does not expose the current deployment identifier or native source commit, so none is invented. A status summary reported `098b268939da8994f00bc8566840fa745b6d941d`; this value is retained as user-reported evidence only and is not a resolvable GitHub commit.
 
-GitHub records source/test/release history; it is not a substitute host. Do not claim a new Site deployment ID, browser-audio pass, microphone pass, or physical-device pass without direct evidence.
+GitHub stores source/test/release history; it is not a substitute host. Site and conversation saves remain separate.

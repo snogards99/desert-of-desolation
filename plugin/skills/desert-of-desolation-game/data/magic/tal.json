@@ -1,0 +1,123 @@
+{
+  "character_id": "party.tal",
+  "name": "Eryon Neferhotep (\"Ery\")",
+  "class_access": [
+    "Bard 3: two level-1 wizard slots, caster level 3. A spellbook and successfully learned spells are required; neither is established in the present ledger.",
+    "Scribe 4 does not independently grant spells."
+  ],
+  "capacity": [
+    {
+      "class": "wizard",
+      "level": 1,
+      "maximum": 2,
+      "caster_level": 3,
+      "bonus": 0,
+      "used": "Not recorded",
+      "available": "Preparation/usage must be recorded"
+    }
+  ],
+  "prepared_baseline_total": 0,
+  "fetched_spells": [],
+  "recommended_spells": [
+    {
+      "spell": "Detect Magic",
+      "level": 1,
+      "sphere_or_class": "Wizard",
+      "use": "Study an observed enchantment; candidate, not learned",
+      "casts": 0
+    },
+    {
+      "spell": "Read Magic",
+      "level": 1,
+      "sphere_or_class": "Wizard",
+      "use": "Read magical writing under its rules; candidate, not learned",
+      "casts": 0
+    },
+    {
+      "spell": "Comprehend Languages",
+      "level": 1,
+      "sphere_or_class": "Wizard",
+      "use": "Understand touched ordinary text/speech; candidate, not learned; does not solve ciphers",
+      "casts": 0
+    }
+  ],
+  "abilities": [
+    {
+      "ability": "Bard spellcasting",
+      "effect": "Two first-level slots at bard 3; learning and preparation records are empty, so no actual spell is granted.",
+      "uses": "Capacity 2; available casts unknown and therefore not executable until learned/prepared state is recorded."
+    },
+    {
+      "ability": "Calm sandstorms",
+      "effect": "Custom wind ability; storm size, action cost, duration and usage limit undefined.",
+      "uses": "Unavailable pending definition"
+    },
+    {
+      "ability": "Localized windstorm",
+      "effect": "Custom wind ability; damage, area, saves and usage limit undefined.",
+      "uses": "Unavailable pending definition"
+    },
+    {
+      "ability": "Guide desert winds",
+      "effect": "Custom wind utility; no free flight, desert-wide navigation or resource generation.",
+      "uses": "Unavailable pending definition"
+    }
+  ],
+  "magic_items": [
+    {
+      "item": "Thelarrs of the Winds",
+      "quantity": 1,
+      "equipped": "instrument",
+      "power": "Named custom enchantment; special powers are undefined.",
+      "enchantment": "Not confirmed numerically",
+      "charges": "Not recorded; zero executable charged uses until defined",
+      "casts": "No item spellcasting grants defined",
+      "recharge": "Not defined for custom active powers",
+      "limitation": "Only recorded effects apply",
+      "carrying": "Personal recorded gear"
+    },
+    {
+      "item": "Cloak of Elvenkind",
+      "quantity": 1,
+      "equipped": "Not recorded",
+      "power": "Recorded concealment/silent-movement gear; resolve environmental and class conditions. No automatic invisibility or discovery.",
+      "enchantment": "Not confirmed numerically",
+      "charges": "Not recorded; never assume unlimited expendable powers",
+      "casts": "No item spellcasting grants defined",
+      "recharge": "Not defined for custom active powers",
+      "limitation": "Only recorded effects apply",
+      "carrying": "Personal recorded gear",
+      "source_status": "CURRENT_REV4.6_STATE270_CONFIRMED"
+    },
+    {
+      "item": "Short Sword +1",
+      "quantity": 1,
+      "equipped": "weapon_melee_emergency",
+      "power": "Recorded weapon +1 from current named inventory; only verified hit/damage adjustments, no extra spell or special attack.",
+      "enchantment": 1,
+      "charges": "Not applicable unless a future active power is source-bound",
+      "casts": "No item spellcasting grants defined",
+      "recharge": "Not applicable",
+      "limitation": "No additional special powers recorded",
+      "carrying": "Personal recorded gear"
+    },
+    {
+      "item": "Dagger +1",
+      "quantity": 1,
+      "equipped": "weapon_backup",
+      "power": "Recorded weapon +1 from current named inventory; only verified hit/damage adjustments, no extra spell or special attack.",
+      "enchantment": 1,
+      "charges": "Not applicable unless a future active power is source-bound",
+      "casts": "No item spellcasting grants defined",
+      "recharge": "Not applicable",
+      "limitation": "No additional special powers recorded",
+      "carrying": "Personal recorded gear"
+    }
+  ],
+  "familiars": [],
+  "personality": "Ery sees magic as a language woven into old stories, inscriptions and desert winds; he records what he truly learns.",
+  "actions": "Guard the rear with arrows, describe known lore without solving unknown inscriptions, and propose wind support only when its effect is defined.",
+  "character_knowledge": "Knows own listed equipment and spell capacity. Learned/prepared bard spells are not established, so recommended spells are not executable.",
+  "racial_magic": "Drow ancestry does not grant unrecorded innate spells; racial mechanics remain undefined.",
+  "spell_parts": []
+}

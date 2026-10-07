@@ -1,34 +1,93 @@
 {
-  "schema_version": 2,
-  "release": "1.5.1-alpha.24",
+  "schema_version": 3,
+  "release": "1.5.1-alpha.36",
   "site_project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
   "site_url": "https://desert-of-desolation.nreach-1221.chatgpt.site",
   "mode": "MAINTENANCE_NONMUTATING",
   "recorded_live_baseline": {
-    "site_version": 28,
-    "deployment_id": "appgdep_6ac53efc570c8191874ecd5b279d7e2d",
-    "source_commit": "bfc027dc21493b02f37b5096f9fab1c117b2f9ef",
-    "alpha24_republished": false
+    "site_version": 32,
+    "projection_revision": 65,
+    "status": "active",
+    "access_mode": "public",
+    "native_source_commit": "NOT_EXPOSED_BY_CURRENT_SITE_METADATA",
+    "status_summary_reported_source_commit": "098b268939da8994f00bc8566840fa745b6d941d",
+    "reported_source_commit_evidence": "USER_STATUS_SUMMARY_ONLY_NOT_GITHUB_RESOLVED",
+    "alpha36_republished": false
   },
   "evidence_levels": {
-    "CONFIGURED": "Configuration exists but runtime behavior is not proven.",
-    "SIMULATED": "Automated or synthetic behavior passed; not audible physical proof.",
+    "CONFIGURED": "Configuration/source exists but live behavior is not proven.",
+    "SOURCE_VERIFIED": "Current bundled source or deterministic source test proves the contract.",
     "BROWSER_VERIFIED": "Observed through a real browser and user-gesture path.",
     "PHYSICAL_DEVICE_VERIFIED": "Observed on the named physical device and output."
   },
   "gates": [
-    {"id":"site_identity","status":"PASS_RECORDED","evidence":"Existing project ID and live URL preserved; duplicate Site not required."},
-    {"id":"audience_policy","status":"PASS_RECORDED","evidence":"Existing Site audience preserved; plugin remains workspace-private."},
-    {"id":"source_profile_alpha24","status":"PASS_CONFIGURED","evidence":"Alpha.24 presentation profile and CSS are packaged; live Site publication is not claimed."},
-    {"id":"audio_config_consistency","status":"PASS_STATIC","evidence":"Sound mixer profile and QA use the same current default gains and theme levels."},
-    {"id":"mobile_layout_contract","status":"PASS_STATIC","evidence":"Alpha.24 CSS includes narrow-width overflow, focus, reduced-motion, reading-width, and media-frame safeguards; live browser inspection remains open."},
-    {"id":"art_policy_consistency","status":"PASS_STATIC","evidence":"Active skills and policy now point to art-engine 1.5.0 HD painterly authoring; old pixel profile is legacy fallback only."},
-    {"id":"first20_hd_runtime_replacement","status":"OPEN","evidence":"Individual HD replacement bytes are not yet complete; legacy working art remains fail-safe."},
-    {"id":"browser_gesture_audio","status":"OPEN","evidence":"Current-release live browser play/stop/repeat evidence not observed in this maintenance session."},
-    {"id":"physical_iphone_headphones","status":"OPEN","evidence":"No new alpha.24 physical-device listening evidence."},
-    {"id":"physical_iphone_speaker","status":"OPEN","evidence":"No new alpha.24 physical-device listening evidence."}
+    {
+      "id": "site_identity",
+      "status": "PASS_OBSERVED",
+      "evidence": "Existing project remains active/public at v32 / projection 65."
+    },
+    {
+      "id": "alpha36_source_profile",
+      "status": "PASS_CONFIGURED",
+      "evidence": "Alpha.36 profiles and QA reconcile current v32 evidence and source contracts."
+    },
+    {
+      "id": "multi_select_submit",
+      "status": "PASS_SOURCE_VERIFIED",
+      "evidence": "Current page source toggles selectedActions and uses one submitAction path."
+    },
+    {
+      "id": "homepage_theme_gain",
+      "status": "PASS_SOURCE_VERIFIED",
+      "evidence": "site-presentation runtime base_gain 0.16; alpha.36 sound profile/QA matches it."
+    },
+    {
+      "id": "scene_audio_handoff",
+      "status": "PASS_SOURCE_VERIFIED",
+      "evidence": "Scene navigation hard-stops prior audio; SoundSession starts first buffered cue before remaining layers."
+    },
+    {
+      "id": "first_cue_latency_profile",
+      "status": "OPEN_BROWSER_MEASUREMENT",
+      "evidence": "Ordering is optimized in source; actual download/decode timing requires live browser network/audio observation."
+    },
+    {
+      "id": "microphone_source",
+      "status": "PASS_SOURCE_CONFIGURED",
+      "evidence": "Feature-detected microphone dictation component is bundled; it never auto-submits and is enabled for Scene input."
+    },
+    {
+      "id": "microphone_live_permission_input",
+      "status": "OPEN",
+      "evidence": "Requires native Site republish and live browser permission/input verification."
+    },
+    {
+      "id": "portrait_binding",
+      "status": "PASS_SOURCE_VERIFIED",
+      "evidence": "Six character IDs map to their own current inspected portrait; no wrong-character fallback."
+    },
+    {
+      "id": "hd_fullbody_portrait_upgrade",
+      "status": "OPEN_ART_FOLLOWUP",
+      "evidence": "Current 1254x1254 DOD_INK inspected portraits remain; no new HD painterly bytes are fabricated in this release."
+    },
+    {
+      "id": "browser_audio_listening",
+      "status": "OPEN",
+      "evidence": "No new direct listening for intelligibility/quiet gaps/narration timing."
+    },
+    {
+      "id": "physical_iphone_headphones",
+      "status": "OPEN",
+      "evidence": "No new physical-device evidence."
+    },
+    {
+      "id": "physical_iphone_speaker",
+      "status": "OPEN",
+      "evidence": "No new physical-device evidence."
+    }
   ],
   "campaign_state_mutation": "NONE",
   "spoiler_policy": "TEST_ONLY_DISCOVERY_SAFE_FIXTURES",
-  "reviewed_in_version": "1.5.1-alpha.24"
+  "reviewed_in_version": "1.5.1-alpha.36"
 }

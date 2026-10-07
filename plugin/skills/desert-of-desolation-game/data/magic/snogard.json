@@ -1,0 +1,185 @@
+{
+  "character_id": "party.snogard",
+  "name": "Snogard Snoegnud",
+  "class_access": [
+    "Priest 10: base daily slots 4/4/3/3/2, caster level 10; recorded bonus slots remain zero.",
+    "Sha’ir 9: gen-fetch wizard access through spell level 5; no ordinary wizard slots.",
+    "Control Temperature and Control Winds remain recorded campaign exceptions to ordinary cleric Weather-sphere access."
+  ],
+  "capacity": [],
+  "prepared_baseline_total": 16,
+  "fetched_spells": [
+    {
+      "spell": "Fireball",
+      "copies": 1,
+      "remaining": "Confirm current fetched ledger before use",
+      "execution": "Spell-specific mechanics and current fetched use must be valid before casting"
+    },
+    {
+      "spell": "Darkness 15' Radius",
+      "copies": 1,
+      "remaining": "Confirm current fetched ledger before use",
+      "execution": "Spell-specific mechanics and current fetched use must be valid before casting"
+    },
+    {
+      "spell": "Stoneskin",
+      "copies": 1,
+      "remaining": "Confirm current fetched ledger before use",
+      "execution": "Spell-specific mechanics and current fetched use must be valid before casting"
+    },
+    {
+      "spell": "Wall of Sand",
+      "copies": 1,
+      "remaining": "Confirm current fetched ledger before use",
+      "execution": "Spell-specific mechanics and current fetched use must be valid before casting"
+    },
+    {
+      "spell": "Wall of Fire",
+      "copies": 1,
+      "remaining": "Confirm current fetched ledger before use",
+      "execution": "Spell-specific mechanics and current fetched use must be valid before casting"
+    },
+    {
+      "spell": "Wall of Stone",
+      "copies": 1,
+      "remaining": "Confirm current fetched ledger before use",
+      "execution": "Spell-specific mechanics and current fetched use must be valid before casting"
+    }
+  ],
+  "recommended_spells": [],
+  "abilities": [
+    {
+      "ability": "Priest prayers",
+      "effect": "Each prepared copy is one cast; consume the matching preparation and slot only after resolution. Healing effects remain guarded where exact mechanics are missing.",
+      "uses": "16 baseline copies; current live ledger overrides baseline."
+    },
+    {
+      "ability": "Gen-fetch casting",
+      "effect": "One fetched copy is one cast; component inventory, knowledge, retrieval state and spell mechanics must resolve first.",
+      "uses": "Six named cache entries; current remaining casts require ledger confirmation."
+    },
+    {
+      "ability": "Recognize Genie Work",
+      "effect": "Sha’ir 3+ verified class feature: when deliberately checking, spend one round concentrating; chance is 5% per Sha’ir level (45% at level 9). It identifies qualifying genie-work only and does not reveal unrelated hidden enchantments.",
+      "uses": "No expendable count recorded; action/time cost still applies.",
+      "source_status": "SOURCE_2E_VERIFIED"
+    },
+    {
+      "ability": "Call Upon the Jann",
+      "effect": "Sha’ir 5+ verified class feature: usable in a desert or lonely place. Chance is 5% per Sha’ir level (45% at level 9) that a janni is within 10 miles; on success arrival is 2–8 turns. A failed call blocks another attempt in the same 10-mile area for 48 hours. Presence does not guarantee aid.",
+      "uses": "Maximum 1/day; current spent/remaining state must come from the live ledger. Missing usage state is not a free use.",
+      "source_status": "SOURCE_2E_VERIFIED"
+    },
+    {
+      "ability": "Elemental Protection",
+      "effect": "Sha’ir 7+ verified class feature: +2 on saves versus elemental attacks; qualifying elemental attackers suffer -2 to attack; elemental damage is reduced by 2 per die to a minimum of 1 per die. Benefits tied to Gene’s own element are not doubled until Gene’s elemental type is authoritatively set. Elemental-plane survival allowance is Sha’ir level in turns under the bound rule.",
+      "uses": "Passive while applicable; no expendable count recorded.",
+      "source_status": "SOURCE_2E_VERIFIED"
+    },
+    {
+      "ability": "Call a Genie",
+      "effect": "Sha’ir 9+ verified class feature: maximum once per week; 5% per Sha’ir level (45% at level 9) to call a djinni, dao, efreeti or marid under the bound class rule. A successful call arrives in 1d6 rounds; reaction/negotiation still determines assistance and the call is not control.",
+      "uses": "Maximum 1/week; current spent/remaining state must come from the live ledger. Missing usage state is not a free use.",
+      "source_status": "SOURCE_2E_VERIFIED"
+    },
+    {
+      "ability": "Gene — Emberlight",
+      "effect": "Campaign familiar power: harmless ember glow illuminates a 10-foot radius for one turn. No damage, detection or ignition.",
+      "uses": "1/day; one initial unspent use only if the live ledger has not already consumed it.",
+      "power_id": "gene_emberlight",
+      "maximum": 1,
+      "initial_remaining": 1,
+      "cost": "Uses Snogard’s magical action for the round; Gene must be present; explicit player permission."
+    },
+    {
+      "ability": "Sekhem — Serpent Ward",
+      "effect": "Campaign familiar power: +2 to Snogard’s next saving throw against poison within one turn, then ends. Does not cure existing poison; no stacking with another magical poison-save bonus.",
+      "uses": "1/day; one initial unspent use only if the live ledger has not already consumed it.",
+      "power_id": "sekhem_serpent_ward",
+      "maximum": 1,
+      "initial_remaining": 1,
+      "cost": "Uses Snogard’s magical action for the round; Sekhem must be within 10 feet; explicit player permission."
+    }
+  ],
+  "magic_items": [
+    {
+      "item": "Cloak of Elvenkind",
+      "quantity": 1,
+      "equipped": "cloak",
+      "power": "Recorded concealment/silent-movement gear; resolve environmental and class conditions. No automatic invisibility or discovery.",
+      "enchantment": "Not confirmed numerically",
+      "charges": "Not recorded; never assume unlimited expendable powers",
+      "casts": "No item spellcasting grants defined",
+      "recharge": "Not defined for custom active powers",
+      "limitation": "Only recorded effects apply",
+      "carrying": "Personal recorded gear"
+    },
+    {
+      "item": "Boots of Elvenkind",
+      "quantity": 1,
+      "equipped": "boots",
+      "power": "Recorded concealment/silent-movement gear; resolve environmental and class conditions. No automatic invisibility or discovery.",
+      "enchantment": "Not confirmed numerically",
+      "charges": "Not recorded; never assume unlimited expendable powers",
+      "casts": "No item spellcasting grants defined",
+      "recharge": "Not defined for custom active powers",
+      "limitation": "Only recorded effects apply",
+      "carrying": "Personal recorded gear"
+    },
+    {
+      "item": "Gold Ankh of Amun-Ra",
+      "quantity": 1,
+      "equipped": "",
+      "power": "Named custom enchantment; special powers are undefined.",
+      "enchantment": "Not confirmed numerically",
+      "charges": "Not recorded; zero executable charged uses until defined",
+      "casts": "No item spellcasting grants defined",
+      "recharge": "Not defined for custom active powers",
+      "limitation": "Only recorded effects apply",
+      "carrying": "Personal recorded gear"
+    },
+    {
+      "item": "Staff of Solar Authority",
+      "quantity": 1,
+      "equipped": "weapon_primary",
+      "power": "Named custom enchantment; special powers are undefined.",
+      "enchantment": "Not confirmed numerically",
+      "charges": "Not recorded; zero executable charged uses until defined",
+      "casts": "No item spellcasting grants defined",
+      "recharge": "Not defined for custom active powers",
+      "limitation": "Only recorded effects apply",
+      "carrying": "Personal recorded gear"
+    }
+  ],
+  "familiars": [
+    {
+      "name": "Gene",
+      "kind": "Elemental gen familiar and long-time friend",
+      "personality": "Loyal, alert and proud of being addressed as Genie as an honorific.",
+      "magic": "Fetch eligible wizard spells/components; recognize genie-work only through bound rules. Emberlight is a limited campaign power.",
+      "limits": "One retrieval at a time; no casting while away; one fetched copy, consumed once. Retrieval takes 1d6 + spell level rounds for eligible native wizard spells. Foreign/priest fetching remains unavailable without exact rules.",
+      "actions": "Watch rear/flanks from the hip pouch, warn from actual observations, ask before a retrieval or exposure to danger.",
+      "casts": "Does not add independent Fireballs or replenish priest slots.",
+      "remaining": "Location, health, current retrieval and fetched uses come from live state."
+    },
+    {
+      "name": "Sekhem",
+      "kind": "Cobra familiar/scout companion",
+      "personality": "Patient, watchful, attentive to vibrations and narrow passages.",
+      "magic": "Supports the magical partnership through scouting and warnings; no independent spells or supernatural senses recorded. Serpent Ward is a limited campaign power.",
+      "limits": "Sight/access/animal movement and exposure apply. Exact poison, combat, magical link and communication limits need definition.",
+      "actions": "Scout reachable tight spaces after an explicit command; return observations without revealing hidden contents from the story database.",
+      "casts": "Serpent Ward: maximum 1/day; shares Snogard’s magical action budget",
+      "remaining": "Location, health and action availability come from live state."
+    }
+  ],
+  "personality": "A deliberate elemental scholar and healer; magic is a responsibility to companions and the desert. Gene is a trusted friend, never a disposable resource; Sekhem is a patient scout.",
+  "actions": "Offer protective, healing, sand and stone solutions before destructive magic. Ask the player before Snogard speaks, casts, sends a familiar or spends anything.",
+  "character_knowledge": "Knows own listed equipment, verified class access, current recorded preparations/cache identities, and familiar limits. Live resource counters control remaining uses. No hidden tomb, monster or item secrets are granted.",
+  "racial_magic": "Drow ancestry does not grant unrecorded innate spells; racial mechanics remain undefined.",
+  "spell_parts": [
+    "magic/snogard-spells-1.json",
+    "magic/snogard-spells-2.json",
+    "magic/snogard-spells-3.json"
+  ]
+}

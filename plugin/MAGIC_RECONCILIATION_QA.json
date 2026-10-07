@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "release": "1.5.1-alpha.36",
+  "policy": "Promote only mechanics and possession facts already present in current authoritative project records. Missing counters remain unknown; no maintenance refill or invented charge is allowed.",
+  "resolved": [
+    {
+      "subject": "Snogard Sha'ir class features",
+      "items": [
+        "Recognize Genie Work",
+        "Call Upon the Jann",
+        "Elemental Protection",
+        "Call a Genie"
+      ],
+      "result": "Compact magic record aligned to existing SOURCE_2E_VERIFIED executable rows; per-day/week remaining uses still require live ledger."
+    },
+    {
+      "subject": "Cyrra weapons",
+      "items": [
+        "Twin Daggers +1",
+        "Short Bow +1"
+      ],
+      "result": "Rev 4.6 / State270 records confirm +1 weapon identity; no extra special power added."
+    },
+    {
+      "subject": "Eryon equipment",
+      "items": [
+        "Cloak of Elvenkind"
+      ],
+      "result": "Current Rev 4.6 / State270 sheet confirms possession; quantity aligned to 1."
+    },
+    {
+      "subject": "Barak equipment",
+      "items": [
+        "Cloak of Elvenkind",
+        "Boots of Elvenkind"
+      ],
+      "result": "Current Rev 4.6 / State270 sheet confirms possession; quantity aligned to 1."
+    }
+  ],
+  "unresolved_fail_closed": [
+    {
+      "subject": "Snogard custom items",
+      "items": [
+        "Gold Ankh of Amun-Ra",
+        "Staff of Solar Authority"
+      ],
+      "reason": "Source-defined identities exist but exact active powers/charges are not bound."
+    },
+    {
+      "subject": "Azhar",
+      "items": [
+        "Solar Cleave",
+        "current level-1 paladin prayer preparation",
+        "daily/weekly spent counters"
+      ],
+      "reason": "No source-bound preparation/custom payload or current use ledger."
+    },
+    {
+      "subject": "Dakarai",
+      "items": [
+        "current ranger prayer preparation"
+      ],
+      "reason": "No source-bound current preparation ledger."
+    },
+    {
+      "subject": "Eryon",
+      "items": [
+        "learned/prepared Bard spells",
+        "Thelarrs of the Winds",
+        "calm/localized/guide wind custom effects"
+      ],
+      "reason": "Spellbook/learning/preparation and exact custom mechanics are not established."
+    },
+    {
+      "subject": "Cyrra",
+      "items": [
+        "Ultimate Shadow special enhancement beyond recorded elven cloak/boots behavior"
+      ],
+      "reason": "Custom enhancement payload undefined."
+    },
+    {
+      "subject": "Barak",
+      "items": [
+        "camel fear-charge exact trigger/save/effect"
+      ],
+      "reason": "Custom ability identity only."
+    },
+    {
+      "subject": "Sekhem",
+      "items": [
+        "cobra chassis poison/combat mechanics"
+      ],
+      "reason": "Exact AD&D 2e cobra profile remains unresolved."
+    }
+  ],
+  "site_execution": "General magic submitted on the Site continues to await adjudication unless an exact resolver and current resource ledger are available. This is an intentional safety boundary, not a failed automatic-casting feature."
+}

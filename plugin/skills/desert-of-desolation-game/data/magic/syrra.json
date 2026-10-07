@@ -1,0 +1,84 @@
+{
+  "character_id": "party.syrra",
+  "name": "Cyrra Neferet",
+  "class_access": [
+    "No recorded spellcasting class or spell slots."
+  ],
+  "capacity": [],
+  "prepared_baseline_total": 0,
+  "fetched_spells": [],
+  "recommended_spells": [],
+  "abilities": [
+    {
+      "ability": "Ultimate Shadow",
+      "effect": "Recorded Cloak + Boots synergy; no invented invisibility, skill modifier or immunity.",
+      "uses": "Passive gear; exact custom enhancement undefined"
+    }
+  ],
+  "magic_items": [
+    {
+      "item": "Cloak of Elvenkind",
+      "quantity": 1,
+      "equipped": "cloak",
+      "power": "Recorded concealment/silent-movement gear; resolve environmental and class conditions. No automatic invisibility or discovery.",
+      "enchantment": "Not confirmed numerically",
+      "charges": "Not recorded; never assume unlimited expendable powers",
+      "casts": "No item spellcasting grants defined",
+      "recharge": "Not defined for custom active powers",
+      "limitation": "Only recorded effects apply",
+      "carrying": "Personal recorded gear"
+    },
+    {
+      "item": "Boots of Elvenkind",
+      "quantity": 1,
+      "equipped": "boots",
+      "power": "Recorded concealment/silent-movement gear; resolve environmental and class conditions. No automatic invisibility or discovery.",
+      "enchantment": "Not confirmed numerically",
+      "charges": "Not recorded; never assume unlimited expendable powers",
+      "casts": "No item spellcasting grants defined",
+      "recharge": "Not defined for custom active powers",
+      "limitation": "Only recorded effects apply",
+      "carrying": "Personal recorded gear"
+    },
+    {
+      "item": "Twin Daggers +1",
+      "quantity": 2,
+      "equipped": "weapon_secondary",
+      "power": "Current Rev 4.6 / State270 record confirms +1 weapon identity; apply only verified +1 weapon adjustment, with no additional special power.",
+      "enchantment": 1,
+      "charges": "Not applicable unless a future active power is source-bound",
+      "casts": "No item spellcasting grants defined",
+      "recharge": "Not applicable to the confirmed +1 weapon bonus",
+      "limitation": "No additional special powers recorded",
+      "carrying": "Personal recorded gear",
+      "source_status": "CURRENT_REV4.6_STATE270_CONFIRMED"
+    },
+    {
+      "item": "Short Bow +1",
+      "quantity": 1,
+      "equipped": "weapon_ranged",
+      "power": "Current Rev 4.6 / State270 record confirms +1 weapon identity; apply only verified +1 weapon adjustment, with no additional special power.",
+      "enchantment": 1,
+      "charges": "Not applicable unless a future active power is source-bound",
+      "casts": "No item spellcasting grants defined",
+      "recharge": "Not applicable to the confirmed +1 weapon bonus",
+      "limitation": "No additional special powers recorded",
+      "carrying": "Personal recorded gear",
+      "source_status": "CURRENT_REV4.6_STATE270_CONFIRMED"
+    },
+    {
+      "item": "Cloak of Shifting Sand",
+      "quantity": 0,
+      "carrying": "Transferred/consumed for expedition shelter; stale inventory row is not personal equipment",
+      "power": "No personal benefit",
+      "casts": 0,
+      "charges": "Not applicable"
+    }
+  ],
+  "familiars": [],
+  "personality": "Cyrra trusts quiet movement and patient observation; her enchanted gear supports practiced skill.",
+  "actions": "Scout with an exit route. Do not turn concealment into invisibility, automatic trap detection or guaranteed surprise.",
+  "character_knowledge": "Knows own listed equipment and verified +1 weapon identities. Custom stealth enhancement beyond recorded elven gear remains undefined; no hidden information is granted.",
+  "racial_magic": "Drow ancestry does not grant unrecorded innate spells; racial mechanics remain undefined.",
+  "spell_parts": []
+}

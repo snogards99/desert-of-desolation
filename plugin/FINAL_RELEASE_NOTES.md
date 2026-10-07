@@ -1,14 +1,12 @@
-# Desert of Desolation 1.5.1-alpha.34
+# Desert of Desolation 1.5.1-alpha.36
 
-UX and audio-lifecycle repair release. Campaign state is unchanged.
+Ten-pass reconciliation and repair release. No campaign advance, access change, architecture rebuild, media-ID churn, or audio-byte regeneration.
 
-- Reworks action choices into selectable toggles with one shared Submit path.
-- Removes the Home dock item and legacy Explore, Company, and Chronicle homepage buttons.
-- Removes the Raurin/current-node labels from the doorway and moves “The Seekers of Ra” below the main title graphic.
-- Keeps only the Eye of Horus and Settings together in the top utility area.
-- Restricts the homepage title theme to Home at 0.16 gain and stops it before story playback.
-- Makes Scene entry/re-entry hard-stop prior audio, preload and start the current node's first cue, then start remaining node layers.
-- Retains browser user-gesture recovery and enabled-bus playback health reporting.
-- Aligns runtime Ambience default with the configured 0.42 mix.
-- Hardens character portrait bindings so an unmapped character never falls back to Snogard's portrait.
-- The observed live Site remains source version 32 / projection revision 65; native Site republish and physical-device audio verification remain external evidence gates.
+- Reconciles the alpha.35 plugin package with canonical GitHub/release metadata.
+- Updates stale Site/config QA to the observed active public Site v32 / projection 65.
+- Corrects the homepage-theme profile to 0.16, matching the current runtime and alpha.34 QA.
+- Adds a persistent lower-right microphone dictation source control. It feature-detects browser speech recognition, requires an explicit user gesture, never auto-submits, and is enabled for Scene action text only.
+- Reconciles existing magic authority without inventing powers: verified Sha'ir class mechanics are promoted into Snogard's compact magic record; confirmed +1 weapons and recorded cloak/boots possession are aligned to Rev 4.6 / State270 records.
+- Undefined custom item powers, unknown charges, unrecorded paladin/ranger preparations, Ery's learned/prepared bard spells, and unresolved companion poison mechanics remain explicitly fail-closed.
+- The live Site is not claimed republished. Because microphone source is a real UI delta, Site v32 now requires a native republish before the feature can be considered live.
+- Browser audible timing, microphone permission/input, and physical iPhone speaker/headphone listening remain evidence gates until directly observed.

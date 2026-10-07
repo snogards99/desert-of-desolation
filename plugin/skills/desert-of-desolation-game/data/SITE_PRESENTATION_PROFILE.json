@@ -1,15 +1,14 @@
 {
-  "schema_version": 6,
-  "profile_id": "dod.site.presentation.alpha34",
-  "configured_in_plugin_version": "1.5.1-alpha.34",
-  "architecture_policy": "PRESERVE_EXISTING_SITE_GAME_ENGINE_STATE_AND_HANDLERS; ADD_STATE_DRIVEN_PRIMARY_SCENE_IMAGE",
-  "source_runtime": "ALPHA34_SITE_RUNTIME_PLUS_ALPHA33_SCENE_IMAGE_RESOLVER",
+  "schema_version": 7,
+  "profile_id": "dod.site.presentation.alpha36",
+  "configured_in_plugin_version": "1.5.1-alpha.36",
+  "architecture_policy": "PRESERVE_EXISTING_SITE_GAME_ENGINE_STATE_AND_HANDLERS; RECONCILE_ALPHA34_UX_AUDIO_PLUS_ALPHA33_SCENE_IMAGE_AND_ADD_MIC_DICTATION",
+  "source_runtime": "ALPHA34_UX_AUDIO_PLUS_ALPHA33_SCENE_IMAGE_RESOLVER",
   "visual": {
     "base_theme": "dod.moonlit-ink",
     "art_engine": "dod.art-engine@1.5.0",
     "scope": [
       "HOME",
-      "EXPLORE",
       "SCENE",
       "PARTY",
       "JOURNAL",
@@ -27,17 +26,35 @@
       "REDUCED_MOTION_SAFE",
       "NO_HORIZONTAL_OVERFLOW"
     ],
-    "node_title": "CENTERED_GLOWING_TOMB_DOORWAY_WITHOUT_PLACE_OR_NODE_LABELS",
+    "node_title": "CURRENT_ALPHA34_SCENE_HEADING",
     "scene_image": "STATE_DRIVEN_SINGLE_PRIMARY_IMAGE_ABOVE_TEXT; CURRENT_ENVIRONMENT_OR_VISIBLE_CREATURE_OR_DISCOVERED_ITEM_ONLY",
     "scene_image_policy": "data/imagery/NODE_IMAGE_STATE_POLICY.json",
     "scene_image_resolver": "site-runtime/lib/scene-image-resolver.mjs",
-    "background": "COORDINATED_VIEW_SPECIFIC_DIM_ART_WITH_TEXT_CONTRAST_OVERLAY"
+    "character_sheets": "TABBED_CURRENT_REV4.6_WITH_CHARACTER_SPECIFIC_PORTRAIT_BINDINGS",
+    "background": "CURRENT_DOD_MOONLIT_INK"
+  },
+  "interaction": {
+    "choices": "MULTI_SELECT_WITH_VISIBLE_ARIA_PRESSED_STATE",
+    "submission": "ONE_SHARED_SUBMIT_FOR_SELECTED_CHOICES_PLUS_OPTIONAL_FREE_TEXT",
+    "microphone": "PERSISTENT_LOWER_RIGHT_FEATURE_DETECTED_DICTATION; SCENE_ONLY_TRANSCRIPT_TARGET; NEVER_AUTO_SUBMIT"
   },
   "audio": {
     "context_owner": "EXISTING_GAME_AUDIO_ENGINE_ONLY",
     "controls": "SETTINGS_GEAR_ONLY",
     "autoplay_policy": "NEVER_BYPASS_USER_GESTURE_REQUIREMENTS",
-    "headroom_policy": "RETAIN_EXISTING_PRE_COMPRESSOR_GUARD_AND_COMPRESSOR"
+    "headroom_policy": "RETAIN_EXISTING_PRE_COMPRESSOR_GUARD_AND_COMPRESSOR",
+    "homepage_theme": {
+      "home_only": true,
+      "base_gain": 0.16,
+      "speech_duck_gain": 0.03125,
+      "stop_before_story": true
+    },
+    "scene_entry": {
+      "hard_stop_prior_audio": true,
+      "first_cue_buffer_and_start_before_remaining_layers": true,
+      "restart_on_scene_revision": true,
+      "user_gesture_recovery": true
+    }
   },
   "state_mutation": false,
   "campaign_advance_allowed_during_qa": false,
@@ -47,6 +64,7 @@
     "access_mode": "public",
     "source_version_number": 32,
     "projection_revision": 65,
-    "alpha34_republished": false
+    "alpha36_republished": false,
+    "republish_required_for_microphone_delta": true
   }
 }

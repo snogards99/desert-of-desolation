@@ -1,0 +1,77 @@
+{
+  "character_id": "party.zarvak",
+  "name": "Barak al-Sahra (\"Bar\")",
+  "class_access": [
+    "No recorded spellcasting class or spell slots.",
+    "Camel fear-charge is a custom handling ability, not a granted spell."
+  ],
+  "capacity": [],
+  "prepared_baseline_total": 0,
+  "fetched_spells": [],
+  "recommended_spells": [],
+  "abilities": [
+    {
+      "ability": "Camel fear-charge",
+      "effect": "Custom mounted ability; fear targets, save and frequency undefined. Do not label it a spell.",
+      "uses": "Unavailable pending definition"
+    }
+  ],
+  "magic_items": [
+    {
+      "item": "Cloak of Elvenkind",
+      "quantity": 1,
+      "equipped": "Not recorded",
+      "power": "Recorded concealment/silent-movement gear; resolve environmental and class conditions. No automatic invisibility or discovery.",
+      "enchantment": "Not confirmed numerically",
+      "charges": "Not recorded; never assume unlimited expendable powers",
+      "casts": "No item spellcasting grants defined",
+      "recharge": "Not defined for custom active powers",
+      "limitation": "Only recorded effects apply",
+      "carrying": "Personal recorded gear",
+      "source_status": "CURRENT_REV4.6_STATE270_CONFIRMED"
+    },
+    {
+      "item": "Boots of Elvenkind",
+      "quantity": 1,
+      "equipped": "Not recorded",
+      "power": "Recorded concealment/silent-movement gear; resolve environmental and class conditions. No automatic invisibility or discovery.",
+      "enchantment": "Not confirmed numerically",
+      "charges": "Not recorded; never assume unlimited expendable powers",
+      "casts": "No item spellcasting grants defined",
+      "recharge": "Not defined for custom active powers",
+      "limitation": "Only recorded effects apply",
+      "carrying": "Personal recorded gear",
+      "source_status": "CURRENT_REV4.6_STATE270_CONFIRMED"
+    },
+    {
+      "item": "Composite Combat Longbow +2",
+      "quantity": 1,
+      "equipped": "weapon_ranged",
+      "power": "Recorded weapon +2 from current named inventory; only verified hit/damage adjustments, no extra spell or special attack.",
+      "enchantment": 2,
+      "charges": "Not applicable unless a future active power is source-bound",
+      "casts": "No item spellcasting grants defined",
+      "recharge": "Not applicable",
+      "limitation": "No additional special powers recorded",
+      "carrying": "Personal recorded gear"
+    },
+    {
+      "item": "Composite Short Bow +1",
+      "quantity": 1,
+      "equipped": "weapon_ranged_alt",
+      "power": "Recorded weapon +1 from current named inventory; only verified hit/damage adjustments, no extra spell or special attack.",
+      "enchantment": 1,
+      "charges": "Not applicable unless a future active power is source-bound",
+      "casts": "No item spellcasting grants defined",
+      "recharge": "Not applicable",
+      "limitation": "No additional special powers recorded",
+      "carrying": "Personal recorded gear"
+    }
+  ],
+  "familiars": [],
+  "personality": "Bar values useful enchantment but keeps a practical count of water, arrows, animals and escape routes.",
+  "actions": "Open with a bow, protect the caravan and retreat route; report depleted resources instead of asking magic to erase every hardship.",
+  "character_knowledge": "Knows own listed equipment. Cloak/boots possession is confirmed; fear-charge mechanics remain undefined and unavailable.",
+  "racial_magic": "Drow ancestry does not grant unrecorded innate spells; racial mechanics remain undefined.",
+  "spell_parts": []
+}

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "release": "1.5.1-alpha.34",
+  "release": "1.5.1-alpha.36",
   "policy_id": "dod.node-image-state.v1",
   "display_position": "TOP_OF_GAMEPLAY_TEXT",
   "single_primary_image_per_turn": true,

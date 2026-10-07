@@ -1,10 +1,10 @@
 {
-  "schema_version": 3,
-  "reviewed_in_version": "1.5.1-alpha.34",
-  "implementation": "Existing AudioEngine; one persistent context, seven semantic buses, master and layer multipliers, cue gain, ducking, crossfades, stale-cue cancellation, and conservative decoded-peak headroom before the existing compressor.",
+  "schema_version": 4,
+  "reviewed_in_version": "1.5.1-alpha.36",
+  "implementation": "Existing AudioEngine; one persistent context, seven semantic buses, master and layer multipliers, cue gain, ducking, crossfades, stale-cue cancellation, headroom/limiter, hard scene restart, and first-cue-first start ordering.",
   "defaults": {
     "master": 0.5,
-    "Narrator": 1,
+    "Narrator": 1.0,
     "Dialogue": 0.9,
     "Creature": 0.35,
     "Movement": 0.25,
@@ -13,26 +13,21 @@
     "Music": 0.18,
     "theme_cue_output_before_master": 0.16,
     "theme_speech_duck_gain": 0.03125,
-    "evidence": "Alpha.34 synchronizes Ambience at 0.42, Home title theme at 0.16, hard Scene handoff, first-cue preload/start ordering, and enabled-bus health reporting."
-  },
-  "campfire": {
-    "seconds": 60,
-    "presentation_only": true,
-    "campaign_writes": false,
-    "source_policy": "Use existing reviewed prerendered audio; ElevenLabs may create only genuinely missing audio when explicitly required."
+    "evidence": "0.16 matches current site-presentation runtime and alpha.34 final QA."
   },
   "tests": {
-    "audio_behavior_change": "ALPHA34_HOME_TO_SCENE_LIFECYCLE_AND_FIRST_CUE_ORDERING",
-    "campaign_state": "UNCHANGED",
-    "homepage_to_scene_handoff": "PASS_SOURCE_TEST",
-    "scene_auto_start": "PASS_SOURCE_TEST",
-    "seven_bus_health_report": "PASS_SOURCE_TEST",
-    "autoplay_recovery": "PASS_SOURCE_TEST"
+    "seven_bus_architecture": "PASS_SOURCE",
+    "homepage_theme_home_only": "PASS_SOURCE",
+    "scene_hard_stop": "PASS_SOURCE",
+    "first_current_node_cue_precedes_remaining_layers": "PASS_SOURCE",
+    "enabled_bus_health_reporting": "PASS_SOURCE",
+    "campaign_state": "UNCHANGED"
   },
   "remaining_limitations": [
-    "Live Site was not republished in this source pass.",
+    "Actual first-cue network/download/decode latency requires live browser profiling.",
+    "Mix intelligibility, quiet gaps and narration timing require actual listening.",
     "Physical iPhone headphone and speaker listening remain open evidence gates.",
-    "Character portrait HD rerender bytes remain pending; existing verified portraits are cache-refreshed only."
+    "Browser autoplay policy may require a user gesture."
   ],
   "campaign_state_mutated": false
 }
