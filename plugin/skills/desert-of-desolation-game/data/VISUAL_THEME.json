@@ -1,1 +1,25 @@
-{"schema_version":1,"theme_id":"dod.moonlit-ink","theme_version":"1.4.0","configured_in_plugin_version":"1.5.1-alpha.22","default_gameplay_art":"DOD_ILLUSTRATED","presentation_art":"DOD_PAINTED_HD","rendering_profile":"dod.hd-painted-module-realism","palette_policy":"UNRESTRICTED_FULL_COLOR","pixel_art":false,"art_engine_version":"1.5.0","outdoor_physical_variants":["DAY","DUSK","EVENING","NIGHT"],"outdoor_phase_aliases":{"DAWN":"DUSK","SUNRISE":"DUSK","MORNING":"DUSK","SUNSET":"EVENING"},"perspective_policy":"CONTROLLED_VARIATION_ALLOWED_WITH_CANONICAL_GEOGRAPHY_LOCK","treasure_art":"DISCOVERY_GATED_UNIQUE_ITEM_STILLS","turn_image_policy":"TOP_OF_TEXT_STATE_DRIVEN","first20_generation_status":"PRODUCTION_RULES_LOCKED; NEW_RUNTIME_BYTES_REQUIRE_INDIVIDUAL_ASSET_QA","campaign_state_modified":false,"audio_modified":false,"access_policy":"PRESERVE_CURRENT_SITE_ACCESS; DO_NOT_CHANGE_WITH_ART_UPDATE","site_project_id":"appgprj_6ac3ddb2142c81918d529d4c7504e59d","site_url":"https://desert-of-desolation.nreach-1221.chatgpt.site"}
+{
+  "schema_version":1,
+  "theme_id":"dod.moonlit-ink",
+  "theme_version":"1.5.0",
+  "configured_in_plugin_version":"1.5.1-alpha.24",
+  "default_gameplay_art":"DOD_ILLUSTRATED",
+  "presentation_art":"DOD_PAINTED_HD",
+  "rendering_profile":"dod.hd-painted-module-realism",
+  "palette_policy":"UNRESTRICTED_FULL_COLOR",
+  "pixel_art":false,
+  "art_engine_version":"1.5.0",
+  "outdoor_physical_variants":["DAY","DUSK","EVENING","NIGHT"],
+  "outdoor_phase_aliases":{"DAWN":"DUSK","SUNRISE":"DUSK","MORNING":"DUSK","SUNSET":"EVENING"},
+  "perspective_policy":"CONTROLLED_VARIATION_ALLOWED_WITH_CANONICAL_GEOGRAPHY_LOCK",
+  "treasure_art":"DISCOVERY_GATED_UNIQUE_ITEM_STILLS",
+  "turn_image_policy":"TOP_OF_TEXT_STATE_DRIVEN",
+  "first20_generation_status":"HD_PRODUCTION_INCOMPLETE; LEGACY_RUNTIME_ART_RETAINED_AS_FAIL_SAFE_UNTIL_REPLACEMENTS_PASS_QA",
+  "legacy_first20_profile":"dod.pixel32-rgba",
+  "legacy_first20_authoring_allowed":false,
+  "campaign_state_modified":false,
+  "audio_modified":false,
+  "access_policy":"PRESERVE_CURRENT_SITE_ACCESS",
+  "site_project_id":"appgprj_6ac3ddb2142c81918d529d4c7504e59d",
+  "site_url":"https://desert-of-desolation.nreach-1221.chatgpt.site"
+}
