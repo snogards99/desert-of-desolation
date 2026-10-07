@@ -1,5 +1,5 @@
 {
-  "release": "1.5.1-alpha.36",
+  "release": "1.5.1-alpha.38",
   "runtime_content_authority": "PLUGIN_PACKAGE_AND_ACTIVE_SESSION_STATE",
   "runtime_profile": "MOBILE_FIRST",
   "ordinary_runtime_external_dependencies": [],
@@ -23,13 +23,18 @@
   "site_scene_resolver": "site-runtime/lib/scene-image-resolver.mjs",
   "active_audio_format": "MP3_RUNTIME_WITH_EXISTING_STABLE_MEDIA_IDS",
   "audio_engine": "EXISTING_SEVEN_BUS_SINGLE_CONTEXT_ENGINE",
-  "first20_authoring_profile": "dod.hd-painted-module-realism",
-  "first20_legacy_runtime_status": "LEGACY_FALLBACK_RETAINED_UNTIL_INDIVIDUAL_HD_REPLACEMENTS_PASS_QA",
+  "first20_authoring_profile": "dod.pixel32-rgba",
+  "first20_legacy_runtime_status": "EXISTING_LEGAL_ART_RETAINED; ALL_NEW_OR_REPLACEMENT_AUTHORING_FOLLOWS_PIXEL32",
   "first20_final_art_complete": false,
   "persistence": "ACTIVE_HOST_SESSION_AND_CHECKPOINTS; PACKAGE_IMMUTABLE_DURING_PLAY",
-  "visual_style_authority": "DOD_SITE_FOR_SITE; DOD_ILLUSTRATED_FOR_ORDINARY_PLAY; DOD_PAINTED_HD_FOR_MAJOR_PRESENTATION",
-  "visual_art_engine": "dod.art-engine@1.5.0",
+  "visual_style_authority": "DOD_SITE_FOR_SITE; DOD_PIXEL32_FOR_GAMEPLAY_AND_PRESENTATION",
+  "visual_art_engine": "dod.art-engine@1.6.0",
+  "outdoor_art_phases": [
+    "DAY",
+    "DUSK",
+    "NIGHT"
+  ],
   "campaign_state_mutation_for_maintenance": "NONE",
-  "publication_policy": "DO_NOT_CLAIM_LIVE_SITE_REPUBLISH_OR DEVICE_QA WITHOUT DIRECT EVIDENCE",
+  "publication_policy": "DO_NOT_CLAIM_LIVE_SITE_REPUBLISH, BROWSER_AUDIO, MICROPHONE, OR DEVICE_QA WITHOUT DIRECT EVIDENCE",
   "magic_authority": "data/PARTY_MAGIC.json + per-character magic records; current live resource ledger overrides baseline; unknown uses remain unavailable"
 }
