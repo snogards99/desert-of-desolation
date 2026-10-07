@@ -1,6 +1,6 @@
 {
-  "schema_version": 4,
-  "shared_release_id": "dod-alpha30-final-2026-10-07",
+  "schema_version": 5,
+  "shared_release_id": "dod-alpha30-site32-reconciled-2026-10-07",
   "plugin": {
     "plugin_id": "Plugin_3352cc65ee508191abeb37ffa759294d",
     "version": "1.5.1-alpha.30",
@@ -12,15 +12,14 @@
   "github": {
     "repository": "snogards99/desert-of-desolation",
     "branch": "main",
-    "artifact_source_head": "e12dc3f9fe7dd90be9937ea294f6bca1e97b1c61",
+    "artifact_source_head": "f54a40dab5a3c24f577f1b54e77357246b4123cf",
     "validation": {
       "workflow": "validate",
-      "run_id": 37572149986,
+      "run_id": 37575037518,
       "conclusion": "success"
     },
-    "source_mirror": "CURRENT_ALPHA30_RUNTIME_RELEASE_AND_POLICY_FILES_MIRRORED",
+    "source_mirror": "RESTORED_TO_PREVIOUSLY_VALIDATED_ALPHA30_TREE_AFTER_INTERRUPTED_ALPHA28_SYNC",
     "runtime_relative_import_closure": "PASS",
-    "obsolete_paths_removed": ["vercel.json","api/","audio-renderer/",".devcontainer/","plugin/.app.json"],
     "plugin_mcp_config": "EMPTY"
   },
   "site": {
@@ -28,11 +27,11 @@
     "slug": "desert-of-desolation",
     "status": "active",
     "access_mode": "public",
-    "observed_source_version": 30,
-    "observed_projection_revision": 61,
-    "republished_by_alpha30": false,
-    "deployment_id_for_v30": null,
-    "deployment_note": "The current Library Site artifact exposes source/projection metadata but not a v30 deployment identifier; none is invented.",
+    "observed_source_version": 32,
+    "observed_projection_revision": 65,
+    "republished_by_this_checkpoint": false,
+    "deployment_id_for_v32": null,
+    "deployment_note": "The current Library Site artifact exposes source/projection metadata but not a v32 deployment identifier; none is invented.",
     "historical_v28_deployment_id": "appgdep_6ac53efc570c8191874ecd5b279d7e2d",
     "historical_v28_source_commit": "bfc027dc21493b02f37b5096f9fab1c117b2f9ef"
   },
@@ -41,10 +40,10 @@
     "source_consistency": "PASS",
     "github_ci": "PASS",
     "runtime_import_closure": "PASS",
-    "intro_transcription_exact_match": true,
     "campaign_state_advanced": false,
-    "stable_media_ids_changed": false,
     "access_changed": false,
+    "stable_media_ids_changed": false,
+    "architecture_rebuilt": false,
     "browser_audio_reverified_this_session": false,
     "microphone_reverified_this_session": false,
     "physical_iphone_reverified_this_session": false
@@ -60,9 +59,9 @@
     "physical iPhone speaker/headphones and GPU performance"
   ],
   "rollback": {
-    "previous_plugin_version": "1.5.1-alpha.29",
-    "previous_plugin_release": "pluginrel_6ac5cb5510908191ae93adb09651aee0",
-    "previous_verified_checkpoint": "de8036fb5f1a390a16360585fa9d874537b2c843"
+    "previous_verified_alpha30_guard_commit": "ed89f1587d3d28184579eeadf7f96a511775cdc5",
+    "interrupted_regression_commit": "ebcfaefbf6feb5e611f501641e2dd17ae655976e",
+    "restore_commit": "f54a40dab5a3c24f577f1b54e77357246b4123cf"
   },
-  "status": "VERIFIED_PLUGIN_AND_SOURCE; SITE_V30_OBSERVED; DEVICE_EVIDENCE_GATES_OPEN"
+  "status": "VERIFIED_PLUGIN_AND_SOURCE; SITE_V32_OBSERVED; DEVICE_EVIDENCE_GATES_OPEN"
 }
