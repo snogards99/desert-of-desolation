@@ -1,6 +1,6 @@
 {
   "schema_version": 9,
-  "shared_release_id": "dod-alpha34-home-scene-audio-plugin-published-2026-10-07",
+  "shared_release_id": "dod-alpha34-ux-audio-final-2026-10-07",
   "plugin": {
     "plugin_id": "Plugin_3352cc65ee508191abeb37ffa759294d",
     "current_published_version": "1.5.1-alpha.34",
@@ -13,25 +13,22 @@
     "repository": "snogards99/desert-of-desolation",
     "branch": "main",
     "source_version": "1.5.1-alpha.34",
-    "artifact_source_head": "e8fefdceea840be3cdc7374873e1f9047b72911c",
+    "artifact_source_head": "de4c7f695900c015d19990d7a631fc5da793bb9a",
     "validation": {
       "workflow": "validate",
-      "conclusion": "not_observed_for_final_commit",
-      "source_contract_checks": "PASS"
+      "run_id": 37617586659,
+      "conclusion": "success"
     },
     "implementation": [
       "multi-select choice toggles and shared submit",
-      "homepage theme restricted to Home and base gain raised to 0.16",
-      "homepage theme stopped before introduction/Scene audio",
-      "scene audio requested automatically on Scene entry/revision",
+      "Home dock item and legacy Explore/Company/Chronicle homepage controls removed",
+      "Raurin/current-node doorway labels removed and The Seekers of Ra placed below main title",
+      "Eye of Horus grouped with Settings in the top utility area",
+      "homepage theme restricted to Home at 0.16 base gain",
+      "Scene entry hard-stops prior audio and restarts current node audio",
+      "current node first cue is preloaded and started before remaining node layers",
       "enabled-bus playback health reporting and user-gesture recovery",
-      "wrong-character portrait fallback removed and existing portrait URLs cache-refreshed",
-      "Home removed from bottom navigation; dock is Scene, Party, Journal",
-      "legacy Explore, Company, Chronicle homepage controls removed",
-      "Raurin and node-name doorway labels removed",
-      "top title lockup removed; Eye of Horus aligned beside Settings",
-      "Scene re-entry force-stops existing audio and restarts current-node audio without advancing state",
-      "first current-node cue is buffered and started before remaining scene layers"
+      "wrong-character portrait fallback removed and existing portrait URLs cache-refreshed"
     ],
     "source_head": "d3fe6755e6957a97f93af9392aa45ff85bdc9c13",
     "release_guard_previous_commit": "5a93a3d701acd51193ef485564369ec666be518d"
@@ -41,7 +38,7 @@
     "observed_source_version": 32,
     "observed_projection_revision": 65,
     "republished_by_this_release": false,
-    "status": "ACTIVE_PUBLIC_BASELINE_UNCHANGED; NATIVE_SITE_PUBLISH_ACTION_UNAVAILABLE_IN_CURRENT_TOOLSET"
+    "status": "UNCHANGED_OBSERVED_BASELINE_NATIVE_PUBLISH_ACTION_UNAVAILABLE"
   },
   "qa": {
     "source_consistency": "PASS",
@@ -49,16 +46,12 @@
     "campaign_state_advanced": false,
     "stable_media_ids_changed": false,
     "new_character_portrait_bytes_generated": false,
-    "physical_device_audio_reverified": false,
-    "final_homepage_contract": "PASS_SOURCE",
-    "first_cue_scene_audio_contract": "PASS_SOURCE",
-    "plugin_overlay_contract": "PASS",
-    "plugin_post_publish_readback": "PASS"
+    "physical_device_audio_reverified": false
   },
   "open_items": [
-    "Republish/sync alpha.34 into the existing ChatGPT Site when a native Site mutation/publish action is available.",
-    "Physical iPhone speaker/headphone playback remains a device-only verification.",
-    "New HD painterly character portrait bytes remain a separate art-production follow-up; alpha.34 only hardens current bindings."
+    "Native live Site republish remains unavailable in the current tool environment; Site is still observed at source version 32 / projection revision 65.",
+    "Physical iPhone speaker/headphone playback remains an external evidence gate.",
+    "New HD painterly character portrait bytes remain pending; alpha34 retains verified existing portrait bindings."
   ],
-  "status": "PLUGIN_ALPHA34_PUBLISHED_AND_VERIFIED; CANONICAL_SOURCE_COMMITTED; LIVE_SITE_PUBLICATION_PENDING_NATIVE_SITE_ACTION"
+  "status": "ALPHA34_PLUGIN_PUBLISHED_AND_RUNTIME_VERIFIED; CANONICAL_SOURCE_COMMITTED; LIVE_SITE_REPUBLISH_PENDING_NATIVE_SITE_TOOL"
 }
