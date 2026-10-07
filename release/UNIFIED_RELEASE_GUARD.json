@@ -20,7 +20,13 @@
     },
     "source_mirror": "CURRENT_ALPHA28_TEXT_RUNTIME_AND_RELEASE_FILES_MIRRORED",
     "runtime_relative_import_closure": "PASS",
-    "obsolete_paths_removed": ["vercel.json","api/","audio-renderer/",".devcontainer/","plugin/.app.json"],
+    "obsolete_paths_removed": [
+      "vercel.json",
+      "api/",
+      "audio-renderer/",
+      ".devcontainer/",
+      "plugin/.app.json"
+    ],
     "plugin_mcp_config": "EMPTY"
   },
   "site": {
@@ -54,8 +60,9 @@
     "physical iPhone speaker/headphones and GPU performance"
   ],
   "rollback": {
-    "previous_plugin_release": "pluginrel_6ac5c8f9ac8081918d190361e33ce786",
-    "previous_source_checkpoint": "de8036fb5f1a390a16360585fa9d874537b2c843"
+    "previous_plugin_release": "pluginrel_6ac5c7fd791c8191956a129e6256e33c",
+    "previous_source_checkpoint": "de8036fb5f1a390a16360585fa9d874537b2c843",
+    "previous_plugin_version": "1.5.1-alpha.27"
   },
   "status": "VERIFIED_PLUGIN_AND_SOURCE; SITE_V29_OBSERVED; DEVICE_EVIDENCE_GATES_OPEN"
 }
