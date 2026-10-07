@@ -1,1 +1,12 @@
-{"release":"1.5.1-alpha.22","art_engine":"dod.art-engine@1.5.0","requested_scope":"first 20 nodes plus monster and treasure state system","generation_attempt":{"status":"REJECTED_NOT_RUNTIME_INTEGRATED","reason":"image generation returned a composite concept/contact sheet rather than individual runtime assets","runtime_assets_created":0},"safety":{"campaign_state_modified":false,"audio_modified":false,"site_access_modified":false},"next_required_step":"Generate and QA individual node/environment/monster/item files one asset at a time before replacing existing runtime bytes."}
+{
+  "release":"1.5.1-alpha.24",
+  "art_engine":"dod.art-engine@1.5.0",
+  "rendering_profile":"dod.hd-painted-module-realism",
+  "master_prompt":"skills/desert-of-desolation-art-direction/references/MASTER_ART_PRODUCTION_PROMPT.md",
+  "requested_scope":"first 20 nodes plus node titles, creature states, and discovery-gated treasure art",
+  "production_status":"INCOMPLETE",
+  "runtime_policy":"KEEP_WORKING_LEGACY_FIRST20_ART_AS_FAIL_SAFE_UNTIL_EACH_HD_REPLACEMENT_EXISTS_AND_PASSES_QA",
+  "rejected_outputs":"CONTACT_SHEETS_COLLAGES_OR_UNSUPPORTED_COMPOSITES_ARE_REFERENCE_ONLY_AND_NEVER_RUNTIME_ELIGIBLE",
+  "safety":{"campaign_state_modified":false,"audio_modified":false,"site_access_modified":false},
+  "next_required_step":"Generate, QA, bind, and verify individual HD environment, actor-state, title, and discovered-item files before retiring corresponding legacy bytes."
+}
