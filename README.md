@@ -1,44 +1,33 @@
-# Desert of Desolation — v0.5.0-rc.2
+# Desert of Desolation - 1.5.1-alpha.24
 
-## Release-candidate architecture
+## Current architecture
 
-**Google Drive** is the sole authoritative store for campaign state, canon, manifests, checkpoints, and media identity.
+Desert of Desolation is a self-contained ChatGPT campaign project.
 
-**ChatGPT Desert of Desolation plugin** runs gameplay, AD&D resolution, narration, state orchestration, preload decisions, and session control.
+- **Desert plugin/app** owns runtime state, AD&D rules, node routing, asset lookup/preload, Sound Engine, Art Engine, and gameplay UI contracts.
+- **ChatGPT Site** is the existing mobile/desktop play surface.
+- **GitHub** is the unified source, test, media, release-history, and checkpoint repository.
+- **ElevenLabs** is authoring-only for genuinely missing audio when explicitly needed. It is not a gameplay dependency and is not used for imagery.
+- **Vercel, Railway, an external MCP audio renderer, Desktop, and local Node are not ordinary-play dependencies.**
 
-**GitHub** is mandatory for source, CI, tests, release provenance, and deployment of the advanced-audio renderer.
+Normal play must continue when optional media is unavailable. Discovery gates, stable IDs, campaign state, save/resume behavior, and text fallbacks are authoritative.
 
-**Stable HTTPS MCP renderer** is mandatory for normal-play audio readiness. It is built from this GitHub release line. The hosting vendor is replaceable presentation infrastructure and is never a game-state authority.
+## Release
 
-Railway is not used.
+Current source target: `1.5.1-alpha.24`.
+Plugin ID: `Plugin_3352cc65ee508191abeb37ffa759294d`.
+Existing Site project: `appgprj_6ac3ddb2142c81918d529d4c7504e59d`.
 
-## Renderer endpoints
+Alpha.24 is a ten-pass maintenance release: architecture cleanup, policy/version synchronization, HD-art direction consistency, audio-default reconciliation, reader/mobile UX hardening, bounded preload review, evidence cleanup, and removal of obsolete hosted-renderer source.
 
-The release deployment must expose:
+## Validation
 
-- `GET /healthz`
-- Streamable HTTP MCP at `/mcp`
+Run:
 
-The repository includes a hosted/serverless adapter in `api/`, a `vercel.json` deployment configuration, and a standalone development renderer under `audio-renderer/`.
+```sh
+npm run verify
+```
 
-Codespaces/devcontainers remain useful for development and local smoke testing, but normal gameplay does not depend on an ephemeral Codespace.
+Validation is source consistency only; it does not fabricate live Site, audible playback, or physical-device QA.
 
-## Session readiness gate
-
-Before normal play begins, verify once per session:
-
-1. Drive authority is reachable.
-2. Active plugin release matches the release candidate.
-3. GitHub release-line CI is green.
-4. Public `/healthz` succeeds.
-5. ChatGPT initializes `/mcp` and discovers renderer tools.
-6. The audio widget mounts and reports capabilities.
-7. A harmless same-epoch cue reaches READY -> QUEUED -> renderer-acknowledged PLAYING.
-
-After that, cache readiness for the session. Do not put GitHub/deployment checks on every turn.
-
-## Game maturity
-
-The authoritative Drive runtime already records green structural evidence for the campaign graph, combat, save/resume, preload planning, monster audio coverage, lossless masters, and campaign regression testing. Remaining source-uncertain AD&D/custom mechanics stay explicitly fail-closed instead of being invented.
-
-The final release blocker is `RG-AUDIOTRANSPORT`: prove the stable public renderer end-to-end without mutating campaign state.
+See `DEPLOYMENT.md`, `UNIFIED_SYNC_POLICY.md`, and the newest checkpoint under `checkpoints/`.
