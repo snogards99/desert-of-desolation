@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "release": "1.5.1-alpha.38",
+  "scope": "TEN_PASS_PROJECT_WIDE_RECONCILIATION",
+  "passes": [
+    {
+      "pass": 1,
+      "focus": "authority",
+      "result": "Alpha.37 verified as starting plugin/GitHub baseline; live Site remains inherited v32/projection65."
+    },
+    {
+      "pass": 2,
+      "focus": "native Site boundary",
+      "result": "No native Site source/export/publish mutation tool is exposed; server auth/transaction/resolver claims remain blocked."
+    },
+    {
+      "pass": 3,
+      "focus": "package parity",
+      "result": "883 plugin files vs 140 GitHub plugin files before alpha.38; readable text and binary parity separated."
+    },
+    {
+      "pass": 4,
+      "focus": "art authority",
+      "result": "Current project instruction restored: 32-bit RGBA pixel art and DAY/DUSK/NIGHT only."
+    },
+    {
+      "pass": 5,
+      "focus": "gain authority",
+      "result": "Homepage theme 0.16 retained as current source authority; historical 0.08 note superseded; no gain change."
+    },
+    {
+      "pass": 6,
+      "focus": "character identity",
+      "result": "party.talanis centralized as alias of canonical party.tal for presentation binding; no state merge."
+    },
+    {
+      "pass": 7,
+      "focus": "narrative alignment",
+      "result": "Approved module copy preserved exactly; source perspective recorded instead of forcing rewrites."
+    },
+    {
+      "pass": 8,
+      "focus": "audio/save preservation",
+      "result": "Alpha.37 scene-safe audio and bounded save polling retained unchanged."
+    },
+    {
+      "pass": 9,
+      "focus": "runtime policy closure",
+      "result": "Runtime art mode and time aliases updated to pixel32 DAY/DUSK/NIGHT contract."
+    },
+    {
+      "pass": 10,
+      "focus": "release closure",
+      "result": "Candidate will publish to the private plugin, mirror exact published text source to GitHub, pass branch/main CI, then record release guard and checkpoint. GitHub writes are available."
+    }
+  ],
+  "preserved": {
+    "campaign_state_advanced": false,
+    "access_changed": false,
+    "stable_media_ids_changed": false,
+    "audio_asset_bytes_changed": false,
+    "pending_actions_executed": false
+  },
+  "unresolved_tool_bound": [
+    "Native Site source/export/build/save/publish and deployed browser verification",
+    "Server-side campaign write authorization, transaction/idempotency and resolver persistence",
+    "Physical iPhone and actual listening/accessibility journeys"
+  ],
+  "github_write_surface": "AVAILABLE_CONFIRMED_BY_ISOLATED_BRANCH_PROBE"
+}
