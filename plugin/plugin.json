@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "desert-of-desolation",
-  "version": "1.5.1-alpha.33",
+  "version": "1.5.1-alpha.34",
   "description": "Mobile-first Desert of Desolation campaign engine with deterministic state-driven node imagery, discovery-gated treasure art, HD painterly presentation, seven-bus sound, 361-node routing, bounded preload, and spoiler-safe fallbacks.",
   "keywords": ["dnd","adnd","desert-of-desolation","tabletop","game","mobile","audio","sites"],
   "extensions": {"com.openai":{"interface":{"displayName":"Desert of Desolation","shortDescription":"Mobile-first desert RPG","longDescription":"Runs Desert of Desolation with deterministic state-driven scene art: environment on entry, visible creature states, combat attack art, confirmed-defeat art, and discovery-gated unique treasure images above the narrative, while preserving time-of-day, audio, bounded preload, stable IDs, and spoiler safety.","developerName":"Desert of Desolation Project","category":"Games","capabilities":["Read","Write"],"icon":"./assets/icon.png","defaultPrompt":["Start Desert of Desolation from the packaged campaign state with mobile-first presentation and predictive preload.","Resume Desert of Desolation and prepare the current integrated node knowledge, legal nearby interactions, spoiler-safe media cues, and mobile-friendly narration.","Show my character sheet."]}}}
