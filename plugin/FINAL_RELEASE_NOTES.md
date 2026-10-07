@@ -1,9 +1,14 @@
-# Desert of Desolation 1.5.1-alpha.30
+# Desert of Desolation 1.5.1-alpha.33
 
-Final coordinated repair release. No architecture rebuild, campaign advance, access change, or live Site behavior change.
+State-driven node-image release.
 
-- Preserves the observed active public ChatGPT Site source version 29 / projection revision 59.
-- Retains the alpha.27 bundled Site runtime dependency closure repair.
-- Synchronizes the active game policy, visual theme, sound QA, and art-engine release metadata to alpha.30.
-- Preserves Settings-only audio controls, narrated module introductions, seven semantic buses, stable media IDs, discovery gates, current legal/footer content, and current campaign state.
-- Browser audible playback, microphone permission/input, and physical iPhone listening remain evidence gates and are not falsely promoted to passed status.
+- Adds a deterministic single-primary-image resolver for gameplay scenes.
+- Shows the environment on entry, visible creature state during encounters, ATTACK during combat, confirmed DEFEATED art after resolution, and discovery-gated unique item art when focused.
+- Prevents heard-only or hidden creatures from being visually revealed.
+- Separates DEFEATED from DEAD; death wording/art requires explicit authoritative confirmation.
+- Reuses ATTACK across ordinary combat rounds and permits last-image reuse only while that image remains legal for the same node/state.
+- Keeps time-of-day aliases, bounded preload, audio behavior, stable media IDs, campaign state, and Site access unchanged.
+- Adds an optimized implementation prompt and machine-readable node-image state policy.
+- No new art bytes were generated and the live Site was not republished in this release.
+
+- Final hardening requires a proven same-node identity before reusing the last image, preventing cross-node visual bleed.

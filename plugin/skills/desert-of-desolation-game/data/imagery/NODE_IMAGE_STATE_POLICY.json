@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "release": "1.5.1-alpha.33",
+  "policy_id": "dod.node-image-state.v1",
+  "display_position": "TOP_OF_GAMEPLAY_TEXT",
+  "single_primary_image_per_turn": true,
+  "priority": [
+    "DISCOVERED_FOCUSED_ITEM",
+    "CONFIRMED_DEFEATED_CREATURE",
+    "ACTIVE_COMBAT_ATTACK",
+    "VISIBLE_CREATURE_ALERT_OR_NEUTRAL",
+    "LAST_LEGAL_IMAGE_SAME_NODE",
+    "CURRENT_TIME_MATCHED_ENVIRONMENT",
+    "TEXT_ONLY"
+  ],
+  "environment": {
+    "outdoor_phases": [
+      "DAY",
+      "DUSK",
+      "EVENING",
+      "NIGHT"
+    ],
+    "aliases": {
+      "DAWN": "DUSK",
+      "SUNRISE": "DUSK",
+      "MORNING": "DUSK",
+      "SUNSET": "EVENING"
+    },
+    "indoor_default": "TIME_NEUTRAL_UNLESS_VISIBLE_LIGHT_STATE_CHANGES"
+  },
+  "creature": {
+    "states": [
+      "NEUTRAL",
+      "ALERT",
+      "ATTACK",
+      "DEFEATED"
+    ],
+    "visibility_rule": "HIDDEN_OR_HEARD_ONLY_NEVER_REVEALS_CREATURE_ART",
+    "combat_rule": "IN_COMBAT_PREFERS_ATTACK_AND_MAY_REUSE_IT_ACROSS_ROUNDS",
+    "defeated_rule": "DEFEATED_REQUIRES_AUTHORITATIVE_OUTCOME_CONFIRMATION",
+    "death_rule": "DO_NOT_LABEL_DEAD_UNLESS_DEATH_IS_EXPLICITLY_CONFIRMED"
+  },
+  "treasure": {
+    "eligible": [
+      "MAGIC_ITEM",
+      "STORY_ITEM",
+      "UNIQUE_RELIC",
+      "KEY_OR_PUZZLE_OBJECT",
+      "DISTINCTIVE_TREASURE"
+    ],
+    "display_rule": "ONLY_AFTER_DISCOVERY_AND_WHILE_ITEM_IS_CURRENTLY_FOCUSED_OR_EXAMINED",
+    "unknown_properties": "DO_NOT_VISUALLY_REVEAL_UNIDENTIFIED_MAGIC"
+  },
+  "fallback": {
+    "last_image": "REUSE_ONLY_IF_STILL_LEGAL_FOR_SAME_NODE_AND_CURRENT_STATE",
+    "environment": "USE_CURRENT_LEGAL_ENVIRONMENT_BEFORE_SHOWING_WRONG_CREATURE_OR_ITEM_STATE",
+    "final": "TEXT_ONLY"
+  },
+  "preload": {
+    "tier0": "CURRENT_LEGAL_IMAGE",
+    "tier1": "ONE_LIKELY_IMMEDIATE_INTERACTION_IF_PLAYER_SAFE",
+    "tier2": "AT_MOST_TWO_EXPLICIT_PLAYER_SAFE_ALTERNATIVES",
+    "forbidden": [
+      "ALL_TIME_VARIANTS",
+      "ALL_MONSTER_STATES",
+      "UNDISCOVERED_TREASURE",
+      "HIDDEN_CREATURE_ART"
+    ]
+  },
+  "state_inputs": [
+    "CURRENT_NODE",
+    "GAME_TIME",
+    "ENVIRONMENT_PHASE",
+    "CREATURE_VISIBILITY",
+    "CREATURE_STATE",
+    "COMBAT_STATE",
+    "OUTCOME_CONFIRMATION",
+    "DISCOVERED_ITEMS",
+    "FOCUSED_ITEM",
+    "LAST_VALID_IMAGE"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "release": "1.5.1-alpha.33",
+  "scope": "STATE_DRIVEN_NODE_IMAGE_SELECTION_FINAL",
+  "optimizer_loops": [
+    {
+      "loop": 1,
+      "focus": "STATE_AND_SPOILER_CORRECTNESS",
+      "finding": "Original prompt could visually reveal a monster that was only heard and conflated defeated with dead.",
+      "change": "Require VISIBLE before creature art; require outcome confirmation for DEFEATED; death is separate.",
+      "evidence": "resolver unit tests cover heard-only and confirmed defeat."
+    },
+    {
+      "loop": 2,
+      "focus": "UX_AND_READER_FLOW",
+      "finding": "Existing ScenePlate rendered environment and actor together instead of one primary image.",
+      "change": "ScenePlate now resolves and renders exactly one primary image above narrative text.",
+      "evidence": "single-image component contract and resolver priority."
+    },
+    {
+      "loop": 3,
+      "focus": "FALLBACK_PRELOAD_AND_REUSE",
+      "finding": "Fallback wording allowed stale or wrong-state images and could encourage unnecessary unique art per round.",
+      "change": "Last image is reusable only when both current state and prior image identify the same node and the image still matches current state; otherwise use current environment or text; ATTACK may be reused across rounds.",
+      "evidence": "policy JSON plus resolver tests for same-node, discovery, time, and state legality."
+    }
+  ],
+  "unit_tests": {
+    "total": 9,
+    "passed": 9,
+    "failed": 0
+  },
+  "campaign_state_advanced": false,
+  "audio_behavior_changed": false,
+  "stable_media_ids_changed": false,
+  "new_image_bytes_generated": false,
+  "live_site_republished": false,
+  "open_evidence": [
+    "native live Site integration/publish not performed in this release",
+    "physical-device/browser visual QA not reperformed"
+  ]
+}

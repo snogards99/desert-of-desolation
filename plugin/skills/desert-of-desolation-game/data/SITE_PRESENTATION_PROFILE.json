@@ -1,13 +1,52 @@
 {
-  "schema_version":5,
-  "profile_id":"dod.site.presentation.alpha29",
-  "configured_in_plugin_version":"1.5.1-alpha.30",
-  "architecture_policy":"PRESERVE_EXISTING_SITE_GAME_ENGINE_STATE_AND_HANDLERS; RECONCILIATION_ONLY",
-  "source_runtime":"ALPHA25_SITE_RUNTIME_PRESERVED_WITH_ALPHA27_DEPENDENCY_CLOSURE",
-  "visual":{"base_theme":"dod.moonlit-ink","art_engine":"dod.art-engine@1.5.0","additive_css":"../../desert-of-desolation-art-direction/assets/site-subtle.css","refinement_css":"../../desert-of-desolation-art-direction/assets/site-refinement-alpha25.css","scope":["HOME","EXPLORE","SCENE","PARTY","JOURNAL","SETTINGS","LOADING","FALLBACK","LEGAL_FOOTER"],"rules":["NO_LAYOUT_REBUILD","NO_SECRET_ART","SEMANTIC_CONTROLS_PRESERVED","MOBILE_FIRST","KEYBOARD_FOCUS_VISIBLE","REDUCED_MOTION_SAFE","NO_HORIZONTAL_OVERFLOW"],"fonts":"Bundled Cinzel for display; readable existing serif for long narration; bundled Noto Egyptian only for authentic Unicode glyphs","node_title":"CENTERED_GLOWING_TOMB_DOORWAY_WITH_PLACE_AND_NODE_NO_REVISION","scene_image":"LEGAL_CURRENT_IMAGE_ABOVE_TEXT; CONTAIN_WITHOUT_CROPPING_CRITICAL_SUBJECT","decorative_detail":"LOW_OPACITY_EGYPTIAN_OR_DESERT_ORNAMENT_ONLY; NEVER_OBSCURE_TEXT_OR_CONTROLS","background":"COORDINATED_VIEW_SPECIFIC_DIM_ART_WITH_TEXT_CONTRAST_OVERLAY","overflow":"NO_DOCUMENT_HORIZONTAL_OVERFLOW_AT_320_375_390_430"},
-  "audio":{"context_owner":"EXISTING_GAME_AUDIO_ENGINE_ONLY","controls":"SETTINGS_GEAR_ONLY","start_stop_policy":"CANCEL_STALE_PENDING_AUDIO_AND_PREVIOUS_NODE_CUES_BEFORE_REPLACEMENT","autoplay_policy":"NEVER_BYPASS_USER_GESTURE_REQUIREMENTS","headroom_policy":"RETAIN_EXISTING_PRE_COMPRESSOR_GUARD_AND_COMPRESSOR","homepage_theme":{"enabled":true,"bus":"Music","repeat":"CROSSFADE_AFTER_NATURAL_END","navigation_policy":"KEEP_POSITION_WHEN_EXISTING_AUDIO_CONTEXT_PERSISTS","settings_policy":"SUPPRESS_WHILE_SETTINGS_OPEN_AND_RESTORE_ON_CLOSE","mute_policy":"HONOR_EXISTING_SOUND_OFF_AND_SAVED_VOLUME","failure_policy":"SILENCE_AND_CONTINUE"}},
-  "module_introductions":{"copy":"EXACT_SUPPLIED_COVER_COPY","narration_bus":"Narrator","music_bus":"Music","entry_policy":"VERIFIED_SOURCE_BOUND_IDS_ONLY_FAIL_CLOSED","seen_state":"BROWSER_PRESENTATION_STORAGE_ONLY"},
-  "state_mutation":false,
-  "campaign_advance_allowed_during_qa":false,
-  "live_site_evidence":{"project_id":"appgprj_6ac3ddb2142c81918d529d4c7504e59d","status":"active","access_mode":"public","source_version_number":30,"projection_revision":60}
+  "schema_version": 6,
+  "profile_id": "dod.site.presentation.alpha33",
+  "configured_in_plugin_version": "1.5.1-alpha.33",
+  "architecture_policy": "PRESERVE_EXISTING_SITE_GAME_ENGINE_STATE_AND_HANDLERS; ADD_STATE_DRIVEN_PRIMARY_SCENE_IMAGE",
+  "source_runtime": "ALPHA30_SITE_RUNTIME_PLUS_ALPHA33_SCENE_IMAGE_RESOLVER",
+  "visual": {
+    "base_theme": "dod.moonlit-ink",
+    "art_engine": "dod.art-engine@1.5.0",
+    "scope": [
+      "HOME",
+      "EXPLORE",
+      "SCENE",
+      "PARTY",
+      "JOURNAL",
+      "SETTINGS",
+      "LOADING",
+      "FALLBACK",
+      "LEGAL_FOOTER"
+    ],
+    "rules": [
+      "ONE_PRIMARY_SCENE_IMAGE",
+      "NO_SECRET_ART",
+      "SEMANTIC_CONTROLS_PRESERVED",
+      "MOBILE_FIRST",
+      "KEYBOARD_FOCUS_VISIBLE",
+      "REDUCED_MOTION_SAFE",
+      "NO_HORIZONTAL_OVERFLOW"
+    ],
+    "node_title": "CENTERED_GLOWING_TOMB_DOORWAY_WITH_PLACE_AND_NODE_NO_REVISION",
+    "scene_image": "STATE_DRIVEN_SINGLE_PRIMARY_IMAGE_ABOVE_TEXT; CURRENT_ENVIRONMENT_OR_VISIBLE_CREATURE_OR_DISCOVERED_ITEM_ONLY",
+    "scene_image_policy": "data/imagery/NODE_IMAGE_STATE_POLICY.json",
+    "scene_image_resolver": "site-runtime/lib/scene-image-resolver.mjs",
+    "background": "COORDINATED_VIEW_SPECIFIC_DIM_ART_WITH_TEXT_CONTRAST_OVERLAY"
+  },
+  "audio": {
+    "context_owner": "EXISTING_GAME_AUDIO_ENGINE_ONLY",
+    "controls": "SETTINGS_GEAR_ONLY",
+    "autoplay_policy": "NEVER_BYPASS_USER_GESTURE_REQUIREMENTS",
+    "headroom_policy": "RETAIN_EXISTING_PRE_COMPRESSOR_GUARD_AND_COMPRESSOR"
+  },
+  "state_mutation": false,
+  "campaign_advance_allowed_during_qa": false,
+  "live_site_evidence": {
+    "project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
+    "status": "active",
+    "access_mode": "public",
+    "source_version_number": 32,
+    "projection_revision": 65,
+    "alpha33_republished": false
+  }
 }
