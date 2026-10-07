@@ -1,0 +1,59 @@
+{
+  "checkpoint_schema":"dod.commit-checkpoint.v1",
+  "timestamp_utc":"2026-10-07T03:41:00Z",
+  "shared_release_id":"dod-alpha24-ten-pass-final",
+  "canonical_source":{
+    "repository":"snogards99/desert-of-desolation",
+    "branch":"main",
+    "artifact_source_head":"24fb7f75b59f46957481d5b6231596fbabc8df29",
+    "release_guard_commit":"f5773ccf9545539de7b029c6cc5b4efbbec2779f",
+    "release_guard_path":"release/UNIFIED_RELEASE_GUARD.json"
+  },
+  "plugin":{
+    "plugin_id":"Plugin_3352cc65ee508191abeb37ffa759294d",
+    "version":"1.5.1-alpha.24",
+    "release_id":"pluginrel_6ac5bd619ac88191809dfc13820523ec",
+    "scope":"WORKSPACE",
+    "discoverability":"PRIVATE",
+    "status":"CURRENT_PUBLISHED_PLUGIN_RELEASE"
+  },
+  "github":{
+    "validation_run_id":37567828761,
+    "validation_conclusion":"success",
+    "changed_plugin_files_exactly_mirrored":true,
+    "obsolete_paths_removed":["vercel.json","api/","audio-renderer/",".devcontainer/","plugin/.app.json"],
+    "plugin_mcp_json":"EMPTY",
+    "validator":"scripts/validate-project.mjs",
+    "tests":"tests/release-consistency.test.mjs"
+  },
+  "site":{
+    "project_id":"appgprj_6ac3ddb2142c81918d529d4c7504e59d",
+    "recorded_version":28,
+    "recorded_deployment_id":"appgdep_6ac53efc570c8191874ecd5b279d7e2d",
+    "recorded_source_commit":"bfc027dc21493b02f37b5096f9fab1c117b2f9ef",
+    "status":"UNCHANGED_NOT_REPUBLISHED",
+    "alpha24_source_profile_prepared":true
+  },
+  "qa":{
+    "ten_pass_audit":"plugin/ALPHA24_TEN_PASS_AUDIT.json",
+    "plugin_readback":"PASS",
+    "source_consistency":"PASS_EXACT_CHANGED_FILES",
+    "github_ci":"PASS",
+    "campaign_state_advanced":false,
+    "stable_media_ids_changed":false,
+    "access_changed":false,
+    "live_browser_qa":"NOT_REPERFORMED",
+    "physical_device_qa":"NOT_REPERFORMED"
+  },
+  "open_items":[
+    "First-20 HD replacement imagery remains incomplete; working legacy art is retained as fail-safe until individual replacements pass QA.",
+    "Live Site was not republished because a native Site publish action was not available in this session.",
+    "Physical iPhone headphone/speaker listening remains an open evidence gate."
+  ],
+  "rollback":{
+    "previous_plugin_version":"1.5.1-alpha.23",
+    "previous_plugin_release":"pluginrel_6ac5b9487c348191b1830e724cddf7ee",
+    "previous_verified_checkpoint_commit":"590c4b54c81553fdd8cb65ed1228f4800aae8275"
+  },
+  "status":"VERIFIED_PLUGIN_AND_SOURCE; SITE_UNCHANGED; HD_FIRST20_AND_DEVICE_GATES_OPEN"
+}
