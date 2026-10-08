@@ -1,74 +1,82 @@
 {
-  "schema_version": 13,
-  "shared_release_id": "dod-alpha39-consistency-hardened-2026-10-07",
-  "checkpoint_path": "checkpoints/2026-10-07-alpha39-consistency.json",
+  "schema_version": 14,
+  "shared_release_id": "dod-alpha40-gameplay-boundaries-2026-10-08",
+  "checkpoint_path": "checkpoints/2026-10-08-alpha40-gameplay-boundaries.json",
+  "status": "ALPHA40_PLUGIN_PUBLISHED_AND_SOURCE_MERGED; MAIN_CI_PASS; NATIVE_SITE_INTEGRATION_NOT_DEPLOYED",
+  "coordinated_release_verified": false,
   "plugin": {
     "plugin_id": "Plugin_3352cc65ee508191abeb37ffa759294d",
-    "current_published_version": "1.5.1-alpha.39",
-    "current_release_id": "pluginrel_6ac6d927a2fc8191a1644e16304c0b8e",
+    "current_published_version": "1.5.1-alpha.40",
+    "current_release_id": "pluginrel_6ac6e059f2548191b927bf5c1133cd2e",
     "scope": "WORKSPACE",
     "discoverability": "PRIVATE",
     "published": true,
     "publication_readback_verified": true,
-    "changed_text_parity": "14_OF_14_EXACT_MATCH_TO_GITHUB_MAIN"
+    "readback_scope": "Metadata and 13 core text files inspected, including page, scene component, client guard, transaction adapter, media resolver, handoff, profiles and integrity manifest. Not a full published-archive checksum comparison.",
+    "overlay_files": 17,
+    "overlay_sha256": "2d49bdbe8f0bacf93257c615354929de8421883f851205f455c61a6764800150",
+    "overlay_source_parity": "ALL_17_LOCAL_OVERLAY_FILES_BYTE_EQUAL_TO_TESTED_GIT_TREE",
+    "full_binary_parity": "NOT_VERIFIED"
   },
   "github": {
     "repository": "snogards99/desert-of-desolation",
     "branch": "main",
-    "implementation_commit": "845599b74d2b96ac4a3034393b436166799d0fae",
-    "implementation_tree": "9fb918303f417eedb06cbe49e5216a44cda4fde9",
-    "pull_request_validation": {
-      "run_id": 37703689702,
-      "conclusion": "success"
-    },
-    "validation": {
-      "workflow": "validate",
-      "run_id": 37703949786,
-      "conclusion": "success",
-      "tests_passed": 89,
-      "tests_failed": 0
-    },
-    "plugin_source_parity": "14_CHANGED_TEXT_ARTIFACTS_EXACT_MATCH; FULL_BINARY_PARITY_NOT_VERIFIED",
+    "implementation_commit": "1621fcff567742353ebe5f9d574cb2928af02546",
+    "merge_commit": "387b00254f218b2677baa59b6b376d35e3c738e7",
+    "implementation_tree": "fa6fce0b37f8f0d55e9efd8d24878195de1a6193",
+    "tested_local_tree_matches_remote": true,
+    "pull_request": 4,
+    "pull_request_validation": {"run_id": 37706566968, "job_id": 113082225337, "conclusion": "success", "tests_passed_in_log": 148, "tests_failed_in_log": 0},
+    "validation": {"workflow": "validate", "run_id": 37706861666, "job_id": 113083168831, "conclusion": "success", "verification_step_executed": true},
     "runtime_manifest": "plugin/RELEASE_COMPONENTS.json",
-    "runtime_relative_import_closure": "PASS_ZERO_UNRESOLVED"
+    "source_integrity_manifest": "plugin/SOURCE_INTEGRITY.json",
+    "source_integrity_sha256": "8cc1a0c570b29ec6c5648ea408550a21a54aa88f4e5d9a32f49268d1e4b23bef",
+    "source_pins_verified": 40
   },
   "site": {
     "project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
     "slug": "desert-of-desolation",
     "inherited_source_version": 32,
     "inherited_projection_revision": 65,
-    "source_bundle_commit": "845599b74d2b96ac4a3034393b436166799d0fae",
+    "source_bundle_commit": "387b00254f218b2677baa59b6b376d35e3c738e7",
     "fresh_deployment_verified": false,
-    "republished_by_alpha39": false,
+    "republished_by_alpha40": false,
+    "production_transaction_adapter_wired": false,
     "publication_required": true,
     "deployment_id": null,
-    "native_source_and_publish_action_available_in_session": false
+    "native_source_and_publish_action_available_in_session": false,
+    "integration_instructions": "site/ALPHA40_INTEGRATION.md"
   },
-  "repairs": [
-    "Executable art-direction planner now reports Art Engine 1.6.0 and emits/accepts DOD_PIXEL32 rather than legacy DOD_PAINTED/DOD_INK.",
-    "TIME_OF_DAY_POLICY physical asset aliases now align with active visual/node policy: MORNING -> DAY; dawn/sunrise/evening/sunset -> DUSK.",
-    "Release validation now checks executable Art Engine mode/version and cross-file outdoor time aliases."
-  ],
+  "qa": {
+    "report": "plugin/ALPHA40_TEN_PASS_QA.json",
+    "focused_implementation_passes": 10,
+    "unique_tests": 148,
+    "consecutive_full_suite_runs": 10,
+    "failed_runs": 0,
+    "typescript_sources": 8,
+    "typescript_scope": "SYNTAX_TRANSPILE_ONLY; NOT_NATIVE_SITE_FULL_TYPECHECK_OR_BUILD",
+    "round_trip_scope": "SYNTHETIC_ACTION_TRANSACTION_SAVE_PROJECTION_RELOAD_ONLY"
+  },
   "preservation": {
-    "campaign_api_writes": 0,
+    "real_campaign_api_writes": 0,
     "campaign_advanced_or_reset": false,
-    "pending_actions_executed": false,
+    "pending_real_actions_executed": false,
     "binary_media_changed": false,
     "audio_asset_bytes_changed": false,
     "saved_mix_changed": false,
     "access_or_hosting_changed": false,
     "stable_media_ids_changed": false,
-    "gameplay_resolver_changed": false,
+    "default_prompts_changed": false,
+    "footer_or_navigation_changed": false,
     "unknown_rules_or_resources": "FAIL_CLOSED"
   },
-  "qa_scope": "Alpha.39 Art Engine/time-alias consistency repair, pull-request/main CI, Plugin Creator publication readback, and exact 14-file changed-text parity. Not live Site publication/browser/device/listening or full binary-media parity.",
   "open_gates": [
-    "Native Site source/export/build/save/publish and deployed browser verification",
-    "Server-side campaign write authorization, transaction/idempotency and resolver persistence",
-    "Desktop/390px browser journeys, physical iPhone and actual listening",
-    "Complete binary-media Plugin/GitHub parity"
+    "Native Site source reconciliation, full build and publication",
+    "Production native authentication, durable atomic transactions and source-backed gameplay resolver integration",
+    "Deployed desktop/390px journeys, physical iPhone and actual audio listening",
+    "Complete plugin binary-media GitHub parity"
   ],
-  "coordinated_release_verified": false,
-  "previous_guard_commit": "e373c74a86ef92235bd20f0bea2a9a877d6de8f5",
-  "status": "ALPHA39_PLUGIN_PUBLISHED_AND_SOURCE_SYNCHRONIZED; MAIN_CI_PASS; LIVE_SITE_NOT_REPUBLISHED"
+  "previous_verified_checkpoint": "checkpoints/2026-10-07-alpha39-consistency.json",
+  "previous_main_commit": "33769f5574e7a7e5c072b12e544c53e0402fdf8d",
+  "previous_plugin_release_id": "pluginrel_6ac6d927a2fc8191a1644e16304c0b8e"
 }
