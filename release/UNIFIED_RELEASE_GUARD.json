@@ -1,8 +1,8 @@
 {
-  "schema_version": 15,
-  "shared_release_id": "dod-alpha41-stream-integrity-2026-10-08",
-  "checkpoint_path": "checkpoints/2026-10-08-alpha41-stream-integrity.json",
-  "status": "ALPHA41_PLUGIN_PUBLISHED_AND_SOURCE_MERGED; MAIN_CI_PASS; NATIVE_SITE_NOT_REPUBLISHED",
+  "schema_version": 16,
+  "shared_release_id": "dod-alpha41-release-boundary-audit-2026-10-08",
+  "checkpoint_path": "checkpoints/2026-10-08-alpha41-release-boundary-audit.json",
+  "status": "ALPHA41_PLUGIN_PUBLISHED_SOURCE_SYNCHRONIZED_AND_CI_GREEN; CURRENT_TOOLING_EXHAUSTED; NATIVE_SITE_DEVICE_AND_BINARY_GATES_OPEN",
   "coordinated_release_verified": false,
   "plugin": {
     "plugin_id": "Plugin_3352cc65ee508191abeb37ffa759294d",
@@ -12,76 +12,138 @@
     "discoverability": "PRIVATE",
     "published": true,
     "publication_readback_verified": true,
-    "readback_scope": "Metadata and all 11 changed text files inspected. Not a full published-archive checksum comparison.",
-    "overlay_files": 11,
-    "overlay_sha256": "2da042cb4224a9591746d32c6fba4a9094d6a1accead59a4d1e291120e51a89a",
-    "overlay_source_parity": "ALL_11_OVERLAY_FILES_BYTE_EQUAL_TO_TESTED_SOURCE",
-    "full_binary_parity": "NOT_VERIFIED_DOWNLOAD_HOST_DNS_UNAVAILABLE"
+    "changed_text_readback": "ALL_11_CHANGED_TEXT_FILES_INSPECTED",
+    "full_binary_parity": "NOT_VERIFIED_ARCHIVE_BYTES_UNAVAILABLE_TO_CURRENT_EXECUTION_SURFACE"
   },
   "github": {
     "repository": "snogards99/desert-of-desolation",
     "branch": "main",
     "implementation_commit": "ecd16a43ddfa7d439c4b65de78ca13f2f4e6087f",
     "merge_commit": "54d8ca91d99a676e6f5344cf26135c0b267c3e3c",
-    "implementation_tree": "2f3183ea808e6845d88cd98efd1bfd93023fb7e7",
-    "tested_source_tree_matches_remote": true,
-    "pull_request": 5,
-    "pull_request_validation": {"run_id": 37710542134, "job_id": 113095199148, "conclusion": "success", "verification_step_executed": true},
-    "validation": {"workflow": "validate", "run_id": 37710595925, "job_id": 113095370645, "conclusion": "success", "verification_step_executed": true},
-    "runtime_manifest": "plugin/RELEASE_COMPONENTS.json",
-    "source_integrity_manifest": "plugin/SOURCE_INTEGRITY.json",
-    "source_integrity_sha256": "ee78747d99c539d5b9ef68b01f1bc62c0bb47968ce7843336c99dbafff41b70c",
-    "source_pins_verified": 40
+    "previous_checkpoint_commit": "7a2cbb1465f954572c2ef48f6e45b2c5bc1f882d",
+    "recent_validate_runs": [
+      {
+        "run_id": 37710542134,
+        "scope": "pull_request_candidate",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 37710595925,
+        "scope": "main_implementation",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 37711591319,
+        "scope": "release_guard",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 37711672179,
+        "scope": "checkpoint",
+        "conclusion": "success"
+      }
+    ],
+    "current_source_tests": {
+      "unique_tests": 166,
+      "consecutive_full_runs": 10,
+      "passed_each_run": 166,
+      "failed_each_run": 0,
+      "skipped_each_run": 0,
+      "source_sha256_pins": 40
+    }
   },
+  "ten_pass_boundary_audit": [
+    {
+      "pass": 1,
+      "area": "authority",
+      "result": "PASS",
+      "evidence": "Plugin alpha.41 and GitHub main checkpoint agree on current release identity."
+    },
+    {
+      "pass": 2,
+      "area": "source_ci",
+      "result": "PASS",
+      "evidence": "All recent alpha.41 validate runs completed successfully."
+    },
+    {
+      "pass": 3,
+      "area": "failure_mail",
+      "result": "PASS_WITH_HISTORICAL_ONLY",
+      "evidence": "Only matched validate failure email is the already repaired alpha.38 temporary-branch incident."
+    },
+    {
+      "pass": 4,
+      "area": "plugin_readback",
+      "result": "PASS",
+      "evidence": "Current Plugin Creator metadata reports alpha.41 release pluginrel_6ac6ed42e1488191955c00d8e89f26ab."
+    },
+    {
+      "pass": 5,
+      "area": "native_site_tooling",
+      "result": "BLOCKED_PLATFORM",
+      "evidence": "No native ChatGPT Site source/edit/build/save/publish action is exposed in the current tool surface."
+    },
+    {
+      "pass": 6,
+      "area": "live_site_web_access",
+      "result": "BLOCKED_PLATFORM",
+      "evidence": "The public Site URL is not accessible through the available web inspection surface in this session."
+    },
+    {
+      "pass": 7,
+      "area": "project_source_recovery",
+      "result": "BLOCKED_PLATFORM",
+      "evidence": "Project/Library search found review and historical evidence but no editable native Site source/export."
+    },
+    {
+      "pass": 8,
+      "area": "plugin_archive_export",
+      "result": "PARTIAL",
+      "evidence": "Plugin Creator issued a current alpha.41 archive URL, but the execution surface could not retrieve the archive bytes."
+    },
+    {
+      "pass": 9,
+      "area": "binary_media_parity",
+      "result": "BLOCKED_BY_PASS_8",
+      "evidence": "Exact plugin/GitHub binary checksum parity cannot be established without readable archive bytes."
+    },
+    {
+      "pass": 10,
+      "area": "release_readiness",
+      "result": "BLOCKED_EXTERNAL_EVIDENCE",
+      "evidence": "Remaining gates require native Site integration/publication, production persistence/resolver proof, deployed browser/iPhone/audio evidence, and binary parity."
+    }
+  ],
   "site": {
     "project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
     "slug": "desert-of-desolation",
     "inherited_source_version": 32,
     "inherited_projection_revision": 65,
-    "source_bundle_commit": "54d8ca91d99a676e6f5344cf26135c0b267c3e3c",
+    "fresh_native_source_obtained": false,
     "fresh_deployment_verified": false,
     "republished_by_alpha41": false,
     "production_transaction_adapter_wired": false,
-    "publication_required": true,
-    "deployment_id": null,
     "native_source_and_publish_action_available_in_session": false,
-    "integration_instructions": "site/ALPHA40_INTEGRATION.md",
     "ordered_release_gates": "site/RELEASE_ACCEPTANCE.md"
-  },
-  "qa": {
-    "report": "plugin/ALPHA41_TEN_RUN_QA.json",
-    "unique_tests": 166,
-    "consecutive_full_suite_runs": 10,
-    "passed_each_run": 166,
-    "failed_each_run": 0,
-    "skipped_each_run": 0,
-    "new_regression_tests": 18,
-    "additional_lifecycle_failures_reproduced_and_fixed": 2,
-    "native_build_or_device_qa": false,
-    "scope": "SOURCE_AND_SYNTHETIC_TESTS_ONLY"
   },
   "preservation": {
     "real_campaign_api_writes": 0,
     "campaign_advanced_or_reset": false,
     "pending_real_actions_executed": false,
-    "binary_media_changed": false,
-    "audio_asset_bytes_changed": false,
+    "media_bytes_or_ids_changed": false,
     "saved_mix_changed": false,
-    "access_or_hosting_changed": false,
-    "stable_media_ids_changed": false,
     "default_prompts_changed": false,
     "footer_or_navigation_changed": false,
-    "unknown_rules_or_resources": "FAIL_CLOSED"
+    "access_or_hosting_changed": false
   },
-  "open_gates": [
-    "Existing native Site source, full typecheck/build and publication",
-    "Production native authorization, durable atomic transactions, source-backed resolver and correlated saved-action receipts",
-    "Native action-save-reload and multi-device journeys",
-    "Required canon/rules and scene/media completeness audit",
-    "Deployed desktop/390px journeys, physical iPhone and actual audio listening",
-    "Backup/restore, complete binary-media parity and distribution readiness"
+  "remaining_hard_boundaries": [
+    "Open the existing native Site editing context and obtain its actual source/build/deployment controls.",
+    "Reconcile alpha.41 bundled source into that existing Site and perform the native typecheck/build.",
+    "Wire and test production authentication, durable atomic transactions, source-backed resolver and correlated receipt/save persistence.",
+    "Verify one isolated native action-save-reload turn exactly once, then varied desktop/390px/iPhone journeys.",
+    "Perform actual speaker/headphone listening and microphone/browser lifecycle checks.",
+    "Obtain readable current plugin archive bytes and complete exact binary/media checksum parity.",
+    "Only after those gates pass, publish matching Site/plugin artifacts and mark coordinated_release_verified true."
   ],
-  "previous_verified_checkpoint": "checkpoints/2026-10-08-alpha40-gameplay-boundaries.json",
-  "previous_main_commit": "8d85fc74fefbb9e94a8c347338df5f17a0cd3fd4",
-  "previous_plugin_release_id": "pluginrel_6ac6e059f2548191b927bf5c1133cd2e"
+  "completion_rule": "Within this session's supported tooling, all reversible source/plugin/CI work is complete. Do not create another plugin-only release merely to restate blocked native Site/device evidence."
 }
