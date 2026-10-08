@@ -1,0 +1,113 @@
+{
+  "checkpoint_schema": "dod.commit-checkpoint.v2",
+  "timestamp_utc": "2026-10-08T00:17:43Z",
+  "shared_release_id": "dod-alpha40-gameplay-boundaries-2026-10-08",
+  "status": "PLUGIN_PUBLISHED_SOURCE_MERGED_AND_TESTED; NATIVE_SITE_DEPLOYMENT_AND_PRODUCTION_INTEGRATION_OPEN",
+  "coordinated_release_verified": false,
+  "canonical_source": {
+    "repository": "snogards99/desert-of-desolation",
+    "branch": "main",
+    "baseline_commit": "33769f5574e7a7e5c072b12e544c53e0402fdf8d",
+    "source_export_commit": "4f1a36a4a27b8d37665a807c921a54f92ef96dde",
+    "implementation_commit": "1621fcff567742353ebe5f9d574cb2928af02546",
+    "merge_commit": "387b00254f218b2677baa59b6b376d35e3c738e7",
+    "implementation_tree": "fa6fce0b37f8f0d55e9efd8d24878195de1a6193",
+    "tested_local_tree_matches_remote": true,
+    "release_guard_commit": "5c9635777bc1617e3c96fcd15fe289c36e03a633",
+    "release_guard_path": "release/UNIFIED_RELEASE_GUARD.json",
+    "pull_request": 4,
+    "pull_request_merged": true,
+    "checkpoint_policy": "This file follows the implementation and guard; read its own commit from Git history, not a circular self-reference."
+  },
+  "plugin": {
+    "plugin_id": "Plugin_3352cc65ee508191abeb37ffa759294d",
+    "version": "1.5.1-alpha.40",
+    "release_id": "pluginrel_6ac6e059f2548191b927bf5c1133cd2e",
+    "scope": "WORKSPACE",
+    "discoverability": "PRIVATE",
+    "published": true,
+    "overlay_files": 17,
+    "overlay_sha256": "2d49bdbe8f0bacf93257c615354929de8421883f851205f455c61a6764800150",
+    "local_overlay_parity": "ALL_17_FILES_BYTE_EQUAL_TO_TESTED_SOURCE",
+    "published_readback": "METADATA_AND_13_CORE_TEXT_FILES_INSPECTED; NOT_FULL_PUBLISHED_ARCHIVE_BYTE_PARITY",
+    "delete_paths": []
+  },
+  "site": {
+    "project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
+    "slug": "desert-of-desolation",
+    "source_version": 32,
+    "projection_revision": 65,
+    "evidence": "INHERITED_NOT_FRESH_NATIVE_DEPLOYMENT_OBSERVATION",
+    "bundled_source_release": "1.5.1-alpha.40",
+    "published_this_session": false,
+    "deployment_id": null,
+    "production_transaction_adapter_wired": false,
+    "integration_instructions": "site/ALPHA40_INTEGRATION.md"
+  },
+  "validation": {
+    "local_unique_tests": 148,
+    "consecutive_local_runs": 10,
+    "tests_passed_each_run": 148,
+    "tests_failed_each_run": 0,
+    "source_sha256_pins": 40,
+    "source_integrity_path": "plugin/SOURCE_INTEGRITY.json",
+    "source_integrity_sha256": "8cc1a0c570b29ec6c5648ea408550a21a54aa88f4e5d9a32f49268d1e4b23bef",
+    "negative_source_drift_tests": "PASS",
+    "typescript": {
+      "version": "5.8.3",
+      "files": 8,
+      "syntax_errors": 0,
+      "scope": "SYNTAX_TRANSPILE_ONLY_NOT_FULL_NATIVE_SITE_TYPECHECK_OR_BUILD"
+    },
+    "pull_request_ci": {
+      "run_id": 37706566968,
+      "job_id": 113082225337,
+      "conclusion": "success",
+      "tests_passed_in_log": 148,
+      "tests_failed_in_log": 0,
+      "skipped_tests_in_log": 0
+    },
+    "main_ci": {
+      "run_id": 37706861666,
+      "job_id": 113083168831,
+      "conclusion": "success",
+      "verification_step_executed": true
+    },
+    "checkpoint_ci": "VERIFY_AFTER_THIS_COMMIT; DO_NOT_TREAT_PREVIOUS_RUN_AS_THIS_FILE_VALIDATION"
+  },
+  "ten_pass_detail": "plugin/ALPHA40_TEN_PASS_QA.json",
+  "implemented": [
+    "Bounded JSON reads with campaign/revision and display-record validation.",
+    "Synchronous duplicate-submission lock and session-local uncertain receipt recovery; no automatic resend.",
+    "Campaign/scene-scoped draft preservation and pending-action recovery controls.",
+    "Native integration adapter for authorization, idempotent receipts, revision checks, history preservation and atomic state/receipt storage through required host callbacks.",
+    "Discovery-, visibility-, entity- and time-aware scene selection with failed-image fallback.",
+    "Bounded allowlisted checkpoint copying and isolated synthetic action-save-projection-reload test.",
+    "Complete runtime/shared-source checksum coverage with negative drift tests and release pin validation."
+  ],
+  "preservation": {
+    "real_campaign_api_writes": 0,
+    "campaign_advanced_or_reset": false,
+    "pending_real_actions_executed": false,
+    "existing_audio_or_image_bytes_changed": false,
+    "stable_media_ids_changed": false,
+    "saved_mix_changed": false,
+    "default_prompts_changed": false,
+    "footer_or_navigation_changed": false,
+    "access_or_hosting_changed": false,
+    "unverified_rules": "FAIL_CLOSED"
+  },
+  "remaining": [
+    "Obtain the existing native Site source and reconcile the bundled source; perform full typecheck/build and native publication.",
+    "Connect and test the actual native authentication, durable transaction, safe projection and existing source-backed resolver adapters. Synthetic in-memory tests do not establish production guarantees.",
+    "Verify deployed desktop/390px and physical iPhone journeys, microphone permissions and actual speaker/headphone listening.",
+    "Complete exact plugin binary/media export and GitHub parity verification."
+  ],
+  "synchronization": "Inspect actual main ref and current plugin release before editing; use tested coherent commits, not per-file pushes. Validate source checksums, tests and exact Git tree; publish a guarded text overlay preserving omitted media; inspect published readback; merge only the expected tested head; then record external release guard and checkpoint. No continuous auto-sync is claimed.",
+  "rollback": {
+    "previous_main_commit": "33769f5574e7a7e5c072b12e544c53e0402fdf8d",
+    "previous_plugin_version": "1.5.1-alpha.39",
+    "previous_plugin_release_id": "pluginrel_6ac6d927a2fc8191a1644e16304c0b8e",
+    "procedure": "Review current heads and restore only intended source through a new commit and guarded plugin update. Never reset the real campaign. No production database migration or native Site publication occurred."
+  }
+}
