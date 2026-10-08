@@ -1,0 +1,6 @@
+import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import os from 'node:os';import path from 'node:path';
+import {verifySourcePins,sourcePaths} from '../scripts/verify-source-pins.mjs';
+test('all packaged runtime files have exact source pins',()=>assert.ok(verifySourcePins().files>=30));
+function copy(){const root=fs.mkdtempSync(path.join(os.tmpdir(),'dod-pins-'));for(const p of [...sourcePaths('plugin'),'SOURCE_INTEGRITY.json']){const dest=path.join(root,'plugin',p);fs.mkdirSync(path.dirname(dest),{recursive:true});fs.copyFileSync(path.join('plugin',p),dest);}return root;}
+test('modified runtime bytes are rejected',()=>{const root=copy();try{fs.appendFileSync(path.join(root,'plugin/skills/desert-of-desolation-game/site-runtime/lib/game-client.mjs'),'\n// changed');assert.throws(()=>verifySourcePins(root),/Source hash mismatch/);}finally{fs.rmSync(root,{recursive:true,force:true});}});
+test('unlisted runtime source is rejected rather than silently unpinned',()=>{const root=copy();try{fs.writeFileSync(path.join(root,'plugin/skills/desert-of-desolation-game/site-runtime/lib/unlisted.mjs'),'');assert.throws(()=>verifySourcePins(root),/coverage mismatch/);}finally{fs.rmSync(root,{recursive:true,force:true});}});

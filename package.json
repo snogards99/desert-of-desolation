@@ -1,11 +1,13 @@
 {
   "name": "desert-of-desolation",
-  "version": "1.5.1-alpha.39",
+  "version": "1.5.1-alpha.40",
   "private": true,
   "type": "module",
-  "engines": {"node": ">=20"},
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
-    "check": "node scripts/validate-project.mjs",
+    "check": "node scripts/validate-project.mjs && node scripts/verify-source-pins.mjs",
     "test": "node --test tests/*.test.mjs",
     "verify": "npm run check && npm test"
   }

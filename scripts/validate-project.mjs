@@ -8,7 +8,7 @@ for(const [k,v,exp] of [
 ["theme",j("plugin/skills/desert-of-desolation-game/data/VISUAL_THEME.json").configured_in_plugin_version,release.active.theme],
 ["soundProfile",j("plugin/skills/desert-of-desolation-game/data/SOUND_MIXER_PROFILE.json").reviewed_in_version,release.active.sound_profile],
 ["soundQA",j("plugin/skills/desert-of-desolation-game/data/SOUND_MIXER_QA.json").reviewed_in_version,release.active.sound_qa],
-["artRelease",j("plugin/skills/desert-of-desolation-art-direction/assets/art-engine.json").plugin_release,expected],
+["artRelease",j("plugin/skills/desert-of-desolation-art-direction/assets/art-engine.json").plugin_release,release.active.art_release||expected],
 ["artEngine",j("plugin/skills/desert-of-desolation-art-direction/assets/art-engine.json").engine_version,release.active.art_engine],
 ["nodePolicy",j("plugin/skills/desert-of-desolation-game/data/imagery/NODE_IMAGE_STATE_POLICY.json").release,release.active.node_policy],
 ["aliases",j("plugin/skills/desert-of-desolation-game/data/CHARACTER_ALIASES.json").release,release.active.alias_authority],
@@ -22,7 +22,7 @@ for(const aliases of [theme.outdoor_phase_aliases,art.time_of_day.phase_aliases,
 const planner=read("plugin/skills/desert-of-desolation-art-direction/assets/art-engine.mjs"),sitePlanner=read("plugin/skills/desert-of-desolation-game/site-runtime/lib/art-engine.mjs");
 if(!planner.includes("ART_ENGINE_VERSION = '1.6.0'")||!planner.includes("DOD_PIXEL32")||planner.includes("DOD_PAINTED")||planner.includes("DOD_INK"))fail("art-direction executable planner drift");
 if(!sitePlanner.includes("ART_ENGINE_VERSION='1.6.0'")||!sitePlanner.includes("DOD_PIXEL32"))fail("site art planner drift");
-if(site.live_site_evidence?.source_version_number!==32||site.live_site_evidence?.projection_revision!==65||site.live_site_evidence?.alpha39_republished!==false||host.site_observed_source_version!==32||host.site_observed_projection_revision!==65||host.site_primary_cutover_approved!==false)fail("Site evidence drift");
+if(site.live_site_evidence?.source_version_number!==32||site.live_site_evidence?.projection_revision!==65||site.live_site_evidence?.republished_current_release!==false||host.site_observed_source_version!==32||host.site_observed_projection_revision!==65||host.site_primary_cutover_approved!==false)fail("Site evidence drift");
 const gain=j("plugin/GAIN_AUTHORITY.json"),sound=j("plugin/skills/desert-of-desolation-game/data/SOUND_MIXER_PROFILE.json"),soundQa=j("plugin/skills/desert-of-desolation-game/data/SOUND_MIXER_QA.json"),runtimeTheme=j("plugin/skills/desert-of-desolation-game/site-runtime/lib/site-presentation.json");
 if(gain.homepage_theme.base_gain!==.16||sound.theme_base_gain!==.16||soundQa.defaults.theme_cue_output_before_master!==.16||runtimeTheme.background_theme.base_gain!==.16)fail("gain authority drift");
 const aliases=j("plugin/skills/desert-of-desolation-game/data/CHARACTER_ALIASES.json");if(aliases.alias_to_canonical["party.talanis"]!=="party.tal")fail("character alias drift");

@@ -1,9 +1,9 @@
 {
   "schema_version": 9,
-  "profile_id": "dod.site.presentation.alpha39",
-  "configured_in_plugin_version": "1.5.1-alpha.39",
+  "profile_id": "dod.site.presentation.alpha40",
+  "configured_in_plugin_version": "1.5.1-alpha.40",
   "architecture_policy": "PRESERVE_EXISTING_SITE_GAME_ENGINE_STATE_AND_HANDLERS; APPLY_ALPHA37_AUDIO_SAVE_MAINTENANCE_PLUS_ALPHA38_ALIAS_GUARDS_PLUS_ALPHA39_PIXEL32_TIME_CONSISTENCY",
-  "source_runtime": "ALPHA37_MAINTENANCE_PLUS_ALPHA38_ALIAS_GUARD_PLUS_ALPHA39_PIXEL32_TIME_CONSISTENCY",
+  "source_runtime": "ALPHA40_GUARDED_GAME_CLIENT_WITH_INHERITED_AUDIO",
   "visual": {
     "base_theme": "dod.moonlit-ink",
     "art_engine": "dod.art-engine@1.6.0",
@@ -37,8 +37,9 @@
   },
   "interaction": {
     "choices": "MULTI_SELECT_WITH_VISIBLE_ARIA_PRESSED_STATE",
-    "submission": "ONE_SHARED_SUBMIT_FOR_SELECTED_CHOICES_PLUS_OPTIONAL_FREE_TEXT",
-    "microphone": "PERSISTENT_LOWER_RIGHT_FEATURE_DETECTED_DICTATION; SCENE_ONLY_TRANSCRIPT_TARGET; NEVER_AUTO_SUBMIT"
+    "submission": "SINGLE_FLIGHT_WITH_PERSISTENT_UNCERTAIN_RECEIPTS_AND_NO_AUTO_RETRY",
+    "microphone": "PERSISTENT_LOWER_RIGHT_FEATURE_DETECTED_DICTATION; SCENE_ONLY_TRANSCRIPT_TARGET; NEVER_AUTO_SUBMIT",
+    "drafts": "SESSION_LOCAL_CAMPAIGN_AND_SCENE_SCOPED"
   },
   "audio": {
     "context_owner": "EXISTING_GAME_AUDIO_ENGINE_ONLY",
@@ -66,6 +67,8 @@
     "source_version_number": 32,
     "projection_revision": 65,
     "alpha39_republished": false,
-    "republish_required_for_alpha39_runtime_delta": true
+    "republish_required_for_alpha39_runtime_delta": true,
+    "alpha40_republished": false,
+    "republished_current_release": false
   }
 }
