@@ -1,7 +1,7 @@
 {
   "plugin_id": "Plugin_3352cc65ee508191abeb37ffa759294d",
-  "version": "1.5.1-alpha.40",
-  "release_focus": "Ten focused passes: safe reads, single-flight actions, uncertain receipts, draft recovery, transaction adapters, fail-closed media, bounded checkpoint export, regression coverage and verified release synchronization.",
+  "version": "1.5.1-alpha.41",
+  "release_focus": "Apply the approved response/state repair patch and two additional cancellation fixes; preserve native integration gates.",
   "plugin_scope": "WORKSPACE",
   "plugin_discoverability": "PRIVATE",
   "site_project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
@@ -23,7 +23,7 @@
     "DUSK",
     "NIGHT"
   ],
-  "qa_report": "ALPHA40_TEN_PASS_QA.json",
+  "qa_report": "ALPHA41_TEN_RUN_QA.json",
   "gain_authority": "GAIN_AUTHORITY.json",
   "narrative_qa": "NARRATIVE_ALIGNMENT_QA.json",
   "package_sync": "PACKAGE_SYNC_STATUS.json",

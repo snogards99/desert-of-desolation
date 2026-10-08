@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "release": "1.5.1-alpha.41",
+  "scope": "SOURCE_REPAIRS_ONLY_NOT_NATIVE_SITE_RELEASE",
+  "baseline": {
+    "main_commit": "8d85fc74fefbb9e94a8c347338df5f17a0cd3fd4",
+    "implementation_commit": "1621fcff567742353ebe5f9d574cb2928af02546",
+    "implementation_tree": "fa6fce0b37f8f0d55e9efd8d24878195de1a6193",
+    "plugin_release_id": "pluginrel_6ac6e059f2548191b927bf5c1133cd2e"
+  },
+  "prepared_patch_sha256": "521f7097861a152648372976dd96c971172aa1e62029d1fe0d4531e6c7233a6e",
+  "tests": {
+    "baseline_tests": 148,
+    "prepared_patch_tests": 160,
+    "additional_response_lifecycle_tests": 6,
+    "additional_failures_reproduced_before_repair": 2,
+    "unique_tests": 166,
+    "consecutive_full_runs": 10,
+    "source_sha256_pins": 40,
+    "runs": [
+      {
+        "run": 1,
+        "started_utc": "2026-10-08T00:54:05.978854+00:00",
+        "exit_code": 0,
+        "tests": 166,
+        "pass": 166,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "log_sha256": "b8fe2a83eb862d45ace3b49d79e1e600e083dd5ae493ac43db186c5b649c9e72"
+      },
+      {
+        "run": 2,
+        "started_utc": "2026-10-08T00:54:06.807233+00:00",
+        "exit_code": 0,
+        "tests": 166,
+        "pass": 166,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "log_sha256": "056c3f35fc049b7373432228e8eac158e69143e277eec712cb0c265ec4e6c689"
+      },
+      {
+        "run": 3,
+        "started_utc": "2026-10-08T00:54:07.633405+00:00",
+        "exit_code": 0,
+        "tests": 166,
+        "pass": 166,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "log_sha256": "798b8b44ca975d02d0076c0bd4a619576195eeb4f8b327e232291436785a8181"
+      },
+      {
+        "run": 4,
+        "started_utc": "2026-10-08T00:54:08.452519+00:00",
+        "exit_code": 0,
+        "tests": 166,
+        "pass": 166,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "log_sha256": "3d09934f4d6ef24c1a5f3bf4cfb4c78676b7101464551d3cc1d04ece2c690b56"
+      },
+      {
+        "run": 5,
+        "started_utc": "2026-10-08T00:54:09.225381+00:00",
+        "exit_code": 0,
+        "tests": 166,
+        "pass": 166,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "log_sha256": "b066b58042351bab96439e7748d4e74a38752a1349efea060bce42af6e586cd0"
+      },
+      {
+        "run": 6,
+        "started_utc": "2026-10-08T00:54:10.047773+00:00",
+        "exit_code": 0,
+        "tests": 166,
+        "pass": 166,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "log_sha256": "025dc41dbaa2f60d08ca0a82bc3c50fbf1f46ca834e4d02b167caf061359611d"
+      },
+      {
+        "run": 7,
+        "started_utc": "2026-10-08T00:54:10.868485+00:00",
+        "exit_code": 0,
+        "tests": 166,
+        "pass": 166,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "log_sha256": "ad01ffe62a7eeeb86f631efff72b8d0449d7f8a9f37c7abcca79aaf2cdfdd807"
+      },
+      {
+        "run": 8,
+        "started_utc": "2026-10-08T00:54:11.592248+00:00",
+        "exit_code": 0,
+        "tests": 166,
+        "pass": 166,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "log_sha256": "6670b30358defdf9403d9d02b9689573f50d483c8fdd244b1454740d9f21660a"
+      },
+      {
+        "run": 9,
+        "started_utc": "2026-10-08T00:54:12.367085+00:00",
+        "exit_code": 0,
+        "tests": 166,
+        "pass": 166,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "log_sha256": "d55e116338a81533f57a9f76597c7265bb8738ae99c8107d973e743593e8355b"
+      },
+      {
+        "run": 10,
+        "started_utc": "2026-10-08T00:54:13.188647+00:00",
+        "exit_code": 0,
+        "tests": 166,
+        "pass": 166,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "log_sha256": "6d6b460e8a29ee14fd069d6e3679b19eea0185a7f60b64df7474bdc0acef620c"
+      }
+    ]
+  },
+  "repaired": [
+    "Incremental UTF-8 byte response limits and stalled stream cancellation.",
+    "Same-revision displayed state checks and party identity validation.",
+    "Rejected non-JSON bodies cancelled.",
+    "Bodies received after timeout are cancelled without reading."
+  ],
+  "preservation": {
+    "real_campaign_writes": 0,
+    "campaign_advanced_or_reset": false,
+    "audio_or_image_bytes_changed": false,
+    "saved_mix_changed": false,
+    "default_prompts_changed": false,
+    "footer_or_navigation_changed": false,
+    "audience_or_hosting_changed": false
+  },
+  "native_site": {
+    "project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
+    "source_version": 32,
+    "projection_revision": 65,
+    "evidence": "INHERITED_ONLY",
+    "published_this_session": false,
+    "native_editor_found": false,
+    "full_build_or_device_qa": false
+  },
+  "full_plugin_binary_parity": "NOT_VERIFIED_DOWNLOAD_HOST_DNS_UNAVAILABLE",
+  "release_gate_plan": "site/RELEASE_ACCEPTANCE.md",
+  "remote_publication_and_commit_evidence": "Recorded separately after successful mutation/readback in release/UNIFIED_RELEASE_GUARD.json and checkpoint."
+}

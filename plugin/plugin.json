@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "desert-of-desolation",
-  "version": "1.5.1-alpha.40",
-  "description": "Desert of Desolation alpha.40: guarded action submission, recoverable drafts and receipts, verified save reads, safe scene media and a tested native transaction adapter. Live Site publication remains separate.",
+  "version": "1.5.1-alpha.41",
+  "description": "Desert of Desolation alpha.41: streamed response limits, timeout cleanup and stricter saved-state integrity. Campaign, media, sound mix and native Site identity are preserved; production Site integration remains open.",
   "keywords": [
     "dnd",
     "adnd",
