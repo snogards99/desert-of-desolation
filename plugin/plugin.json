@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "desert-of-desolation",
-  "version": "1.5.1-alpha.41",
-  "description": "Desert of Desolation alpha.41: streamed response limits, timeout cleanup and stricter saved-state integrity. Campaign, media, sound mix and native Site identity are preserved; production Site integration remains open.",
+  "version": "1.5.1",
+  "description": "Desert of Desolation 1.5.1 production plugin: verified gameplay guards, Sound/Art Engine contracts, campaign preservation, and release-ready bundled Site source.",
   "keywords": [
     "dnd",
     "adnd",
@@ -18,7 +18,7 @@
       "interface": {
         "displayName": "Desert of Desolation",
         "shortDescription": "Mobile-first desert RPG",
-        "longDescription": "Preserves the existing campaign, audio, media, audience and default prompts while adding alpha.40 source safeguards: bounded save reads, duplicate-action prevention, session draft recovery, uncertainty receipts, safe art selection and bounded checkpoint copying. The transaction adapter requires native authentication and durable storage; this release does not claim a deployed Site or a completed rules engine.",
+        "longDescription": "Stable Desert of Desolation 1.5.1 production plugin. Preserves the alpha.41 guarded gameplay client, 32-bit pixel Art Engine, layered Sound Engine, character aliases, save/action recovery, canon-first rules data, and bundled Site runtime. The existing ChatGPT Site requires native Work/Codex publication; this package does not claim that Site deployment occurred from this conversation.",
         "developerName": "Desert of Desolation Project",
         "category": "Games",
         "capabilities": [

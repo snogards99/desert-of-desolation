@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "release": "1.5.1",
+  "scope": "STABLE_PRODUCTION_PROMOTION",
+  "source_baseline": "1.5.1-alpha.41",
+  "runtime_code_changed": false,
+  "inherited_verified_evidence": {
+    "unique_tests": 166,
+    "consecutive_full_runs": 10,
+    "passed_each_run": 166,
+    "failed_each_run": 0,
+    "skipped_each_run": 0,
+    "source_sha256_pins": 40,
+    "alpha41_plugin_release_id": "pluginrel_6ac6ed42e1488191955c00d8e89f26ab"
+  },
+  "promotion_checks": [
+    "Stable manifest/version synchronization",
+    "Source integrity pin refresh for changed release metadata",
+    "Repository npm run verify on the stable candidate",
+    "Plugin Creator guarded upload and changed-text readback",
+    "GitHub main validation after merge"
+  ],
+  "preserved": {
+    "real_campaign_writes": 0,
+    "campaign_advanced_or_reset": false,
+    "audio_or_image_bytes_changed": false,
+    "stable_media_ids_changed": false,
+    "saved_mix_changed": false,
+    "default_prompts_changed": false,
+    "footer_or_navigation_changed": false,
+    "access_or_hosting_changed": false
+  },
+  "site": {
+    "project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
+    "live_source_version_inherited": 32,
+    "live_projection_revision_inherited": 65,
+    "stable_1_5_1_republished": false,
+    "publish_surface_required": "CHATGPT_SITES_WORK_OR_CODEX"
+  }
+}

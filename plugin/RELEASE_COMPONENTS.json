@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "release": "1.5.1-alpha.41",
-  "scope": "STREAM_AND_SAVE_INTEGRITY_REPAIR",
+  "release": "1.5.1",
+  "scope": "PRODUCTION_STABLE_PROMOTION",
   "active": {
     "policy": "1.5.1-alpha.39",
     "theme": "1.5.1-alpha.39",
@@ -13,10 +13,10 @@
     "alias_authority": "1.5.1-alpha.38",
     "gain_authority": "1.5.1-alpha.38",
     "time_policy": "1.5.1-alpha.39",
-    "site_profile": "1.5.1-alpha.41",
+    "site_profile": "1.5.1",
     "art_release": "1.5.1-alpha.39",
-    "game_client": "1.5.1-alpha.41",
-    "transaction_adapter": "1.5.1-alpha.40"
+    "game_client": "1.5.1",
+    "transaction_adapter": "1.5.1"
   },
   "runtime_contracts": {
     "art_profile": "dod.pixel32-rgba",
@@ -42,12 +42,14 @@
     "production_transaction_adapter_wired": false,
     "response_limit_bytes": 2000000,
     "response_stream_cancellation": true,
-    "same_revision_displayed_state_integrity": true
+    "same_revision_displayed_state_integrity": true,
+    "production_site_source_ready": true,
+    "live_site_republish_required": true
   },
   "repaired_drift": [
-    "Response limits are enforced on streamed UTF-8 bytes before buffering the whole body.",
-    "Rejected and late responses are cancelled rather than left running.",
-    "Same-revision location, equipment, spell resources and party identity changes are rejected."
+    "Stable 1.5.1 promotes the source-identical alpha.41 runtime after ten green full-suite runs.",
+    "No gameplay, media, sound-mix, campaign-state or access behavior is changed by the stable promotion.",
+    "Native ChatGPT Site publication remains a separate Work/Codex action and is not fabricated by release metadata."
   ],
   "evidence_policy": "Source approval is distinct from native Site publication, browser listening, physical-device QA, server write authorization, transaction behavior, resolver persistence, and binary-media parity.",
   "source_integrity": "SOURCE_INTEGRITY.json"
