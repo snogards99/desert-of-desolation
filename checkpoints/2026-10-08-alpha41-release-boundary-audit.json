@@ -1,0 +1,99 @@
+{
+  "checkpoint_schema": "dod.commit-checkpoint.v2",
+  "timestamp_utc": "2026-10-08T01:20:00Z",
+  "shared_release_id": "dod-alpha41-release-boundary-audit-2026-10-08",
+  "status": "CURRENT_TOOLING_EXHAUSTED; SOURCE_PLUGIN_AND_CI_COMPLETE; FULL_RELEASE_BLOCKED_BY_NATIVE_SITE_DEVICE_AND_BINARY_EVIDENCE",
+  "coordinated_release_verified": false,
+  "canonical_source": {
+    "repository": "snogards99/desert-of-desolation",
+    "branch": "main",
+    "alpha41_merge_commit": "54d8ca91d99a676e6f5344cf26135c0b267c3e3c",
+    "previous_checkpoint_commit": "7a2cbb1465f954572c2ef48f6e45b2c5bc1f882d",
+    "boundary_guard_commit": "83ba4362f553a48d686f93aee802d1bcfb7fcba5",
+    "release_guard_path": "release/UNIFIED_RELEASE_GUARD.json",
+    "acceptance_plan": "site/RELEASE_ACCEPTANCE.md"
+  },
+  "plugin": {
+    "plugin_id": "Plugin_3352cc65ee508191abeb37ffa759294d",
+    "version": "1.5.1-alpha.41",
+    "release_id": "pluginrel_6ac6ed42e1488191955c00d8e89f26ab",
+    "published": true,
+    "scope": "WORKSPACE",
+    "discoverability": "PRIVATE",
+    "changed_text_readback": "11_OF_11_INSPECTED",
+    "current_archive_url_issued": true,
+    "current_archive_bytes_retrieved": false,
+    "binary_parity": "OPEN"
+  },
+  "source_validation": {
+    "unique_tests": 166,
+    "consecutive_full_runs": 10,
+    "passed_each_run": 166,
+    "failed_each_run": 0,
+    "skipped_each_run": 0,
+    "source_sha256_pins": 40,
+    "recent_ci": [
+      {
+        "run_id": 37710542134,
+        "conclusion": "success"
+      },
+      {
+        "run_id": 37710595925,
+        "conclusion": "success"
+      },
+      {
+        "run_id": 37711591319,
+        "conclusion": "success"
+      },
+      {
+        "run_id": 37711672179,
+        "conclusion": "success"
+      }
+    ],
+    "latest_failure_email": "Historical alpha.38 temporary-branch failure only; no newer validate failure email found."
+  },
+  "ten_pass_boundary_audit": [
+    "PASS 1: Current plugin and GitHub release authority resolved to alpha.41.",
+    "PASS 2: Alpha.41 PR, main, guard and checkpoint CI are green.",
+    "PASS 3: Failure-email search found no post-repair validate failure.",
+    "PASS 4: Published plugin metadata/readback remains alpha.41.",
+    "PASS 5: No native ChatGPT Site source/edit/build/save/publish action exists in the current tool inventory.",
+    "PASS 6: Available web inspection cannot reach the deployed Site from this execution surface.",
+    "PASS 7: Project/Library search found historical/review records but no editable native Site source export.",
+    "PASS 8: Current plugin archive export was requested successfully, but archive bytes could not be retrieved by the execution surface.",
+    "PASS 9: Full binary/media checksum parity therefore remains unprovable here.",
+    "PASS 10: Remaining release work is exclusively native Site integration/publication, production persistence/resolver verification, device/audio acceptance, binary parity and final coordinated publication."
+  ],
+  "site": {
+    "project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
+    "slug": "desert-of-desolation",
+    "inherited_source_version": 32,
+    "inherited_projection_revision": 65,
+    "native_source_obtained": false,
+    "alpha41_republished": false,
+    "production_transaction_adapter_wired": false,
+    "full_build_verified": false,
+    "deployed_browser_verified": false,
+    "physical_iphone_verified": false,
+    "actual_audio_listening_verified": false
+  },
+  "preservation": {
+    "real_campaign_api_writes": 0,
+    "campaign_advanced_or_reset": false,
+    "pending_real_actions_executed": false,
+    "media_bytes_or_ids_changed": false,
+    "saved_mix_changed": false,
+    "default_prompts_changed": false,
+    "footer_or_navigation_changed": false,
+    "access_or_hosting_changed": false
+  },
+  "remaining_hard_boundaries": [
+    "Native Site editing/export/build/publish access for the existing project.",
+    "Production authentication, atomic state+receipt persistence and source-backed gameplay resolver wiring.",
+    "One isolated native action-save-reload proof, followed by varied multi-device journeys.",
+    "Desktop/390px and physical iPhone interaction, microphone and actual speaker/headphone listening.",
+    "Readable plugin archive bytes for exact binary/media parity.",
+    "Final matching Site/plugin publication and rollback checkpoint."
+  ],
+  "resume_instruction": "Resume only from a session that exposes the existing Site's native editing source. Do not create a replacement Site and do not advance the real campaign during integration QA."
+}
