@@ -1,149 +1,90 @@
 {
-  "schema_version": 16,
-  "shared_release_id": "dod-alpha41-release-boundary-audit-2026-10-08",
-  "checkpoint_path": "checkpoints/2026-10-08-alpha41-release-boundary-audit.json",
-  "status": "ALPHA41_PLUGIN_PUBLISHED_SOURCE_SYNCHRONIZED_AND_CI_GREEN; CURRENT_TOOLING_EXHAUSTED; NATIVE_SITE_DEVICE_AND_BINARY_GATES_OPEN",
+  "schema_version": 17,
+  "shared_release_id": "dod-1.5.1-stable-production-2026-10-08",
+  "checkpoint_path": "checkpoints/2026-10-08-stable-1.5.1-production.json",
+  "status": "STABLE_1_5_1_PLUGIN_PUBLISHED_AND_SOURCE_MERGED; MAIN_CI_PASS; LIVE_SITE_REPUBLISH_PENDING_NATIVE_SITES_SURFACE",
   "coordinated_release_verified": false,
   "plugin": {
     "plugin_id": "Plugin_3352cc65ee508191abeb37ffa759294d",
-    "current_published_version": "1.5.1-alpha.41",
-    "current_release_id": "pluginrel_6ac6ed42e1488191955c00d8e89f26ab",
+    "current_published_version": "1.5.1",
+    "current_release_id": "pluginrel_6ac6f61338388191a83cdaa17c2f256e",
     "scope": "WORKSPACE",
     "discoverability": "PRIVATE",
     "published": true,
     "publication_readback_verified": true,
-    "changed_text_readback": "ALL_11_CHANGED_TEXT_FILES_INSPECTED",
+    "changed_text_parity": "10_OF_10_EXACT_MATCH_TO_GITHUB_MAIN",
+    "overlay_sha256": "a1262d4b35daa8b3e7416fc1f1e8be3a83818dfc14f2a11a1063260e1aed8132",
     "full_binary_parity": "NOT_VERIFIED_ARCHIVE_BYTES_UNAVAILABLE_TO_CURRENT_EXECUTION_SURFACE"
   },
   "github": {
     "repository": "snogards99/desert-of-desolation",
     "branch": "main",
-    "implementation_commit": "ecd16a43ddfa7d439c4b65de78ca13f2f4e6087f",
-    "merge_commit": "54d8ca91d99a676e6f5344cf26135c0b267c3e3c",
-    "previous_checkpoint_commit": "7a2cbb1465f954572c2ef48f6e45b2c5bc1f882d",
-    "recent_validate_runs": [
-      {
-        "run_id": 37710542134,
-        "scope": "pull_request_candidate",
-        "conclusion": "success"
-      },
-      {
-        "run_id": 37710595925,
-        "scope": "main_implementation",
-        "conclusion": "success"
-      },
-      {
-        "run_id": 37711591319,
-        "scope": "release_guard",
-        "conclusion": "success"
-      },
-      {
-        "run_id": 37711672179,
-        "scope": "checkpoint",
-        "conclusion": "success"
-      }
-    ],
-    "current_source_tests": {
+    "production_candidate_commit": "a3fbd6aabb7a06072e8d21e49ac14cbe998f34b8",
+    "production_candidate_tree": "3edd283eaf71312f032654bfec9b97bd3c42e181",
+    "merge_commit": "e59935fca6c396095726bdd5f8372638293a5d5d",
+    "pull_request": 6,
+    "pull_request_validation": {
+      "run_id": 37714195848,
+      "job_id": 113106804768,
+      "conclusion": "success",
+      "verification_step_executed": true
+    },
+    "main_validation": {
+      "run_id": 37714740984,
+      "job_id": 113108541740,
+      "conclusion": "success",
+      "verification_step_executed": true
+    },
+    "inherited_alpha41_tests": {
       "unique_tests": 166,
       "consecutive_full_runs": 10,
       "passed_each_run": 166,
       "failed_each_run": 0,
       "skipped_each_run": 0,
       "source_sha256_pins": 40
-    }
+    },
+    "runtime_code_changed_for_stable_promotion": false
   },
-  "ten_pass_boundary_audit": [
-    {
-      "pass": 1,
-      "area": "authority",
-      "result": "PASS",
-      "evidence": "Plugin alpha.41 and GitHub main checkpoint agree on current release identity."
-    },
-    {
-      "pass": 2,
-      "area": "source_ci",
-      "result": "PASS",
-      "evidence": "All recent alpha.41 validate runs completed successfully."
-    },
-    {
-      "pass": 3,
-      "area": "failure_mail",
-      "result": "PASS_WITH_HISTORICAL_ONLY",
-      "evidence": "Only matched validate failure email is the already repaired alpha.38 temporary-branch incident."
-    },
-    {
-      "pass": 4,
-      "area": "plugin_readback",
-      "result": "PASS",
-      "evidence": "Current Plugin Creator metadata reports alpha.41 release pluginrel_6ac6ed42e1488191955c00d8e89f26ab."
-    },
-    {
-      "pass": 5,
-      "area": "native_site_tooling",
-      "result": "BLOCKED_PLATFORM",
-      "evidence": "No native ChatGPT Site source/edit/build/save/publish action is exposed in the current tool surface."
-    },
-    {
-      "pass": 6,
-      "area": "live_site_web_access",
-      "result": "BLOCKED_PLATFORM",
-      "evidence": "The public Site URL is not accessible through the available web inspection surface in this session."
-    },
-    {
-      "pass": 7,
-      "area": "project_source_recovery",
-      "result": "BLOCKED_PLATFORM",
-      "evidence": "Project/Library search found review and historical evidence but no editable native Site source/export."
-    },
-    {
-      "pass": 8,
-      "area": "plugin_archive_export",
-      "result": "PARTIAL",
-      "evidence": "Plugin Creator issued a current alpha.41 archive URL, but the execution surface could not retrieve the archive bytes."
-    },
-    {
-      "pass": 9,
-      "area": "binary_media_parity",
-      "result": "BLOCKED_BY_PASS_8",
-      "evidence": "Exact plugin/GitHub binary checksum parity cannot be established without readable archive bytes."
-    },
-    {
-      "pass": 10,
-      "area": "release_readiness",
-      "result": "BLOCKED_EXTERNAL_EVIDENCE",
-      "evidence": "Remaining gates require native Site integration/publication, production persistence/resolver proof, deployed browser/iPhone/audio evidence, and binary parity."
-    }
-  ],
   "site": {
     "project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
     "slug": "desert-of-desolation",
+    "url": "https://desert-of-desolation.nreach-1221.chatgpt.site",
     "inherited_source_version": 32,
     "inherited_projection_revision": 65,
-    "fresh_native_source_obtained": false,
+    "stable_source_bundle_in_main": true,
+    "stable_publish_handoff": "site/PRODUCTION_PUBLISH_HANDOFF.md",
+    "stable_1_5_1_republished": false,
     "fresh_deployment_verified": false,
-    "republished_by_alpha41": false,
-    "production_transaction_adapter_wired": false,
-    "native_source_and_publish_action_available_in_session": false,
-    "ordered_release_gates": "site/RELEASE_ACCEPTANCE.md"
+    "deployment_id": null,
+    "native_sites_action_available_in_this_conversation": false,
+    "remote_desktop_fallback_status": "OFFLINE",
+    "publication_required": true
+  },
+  "production_promotion": {
+    "source_baseline": "1.5.1-alpha.41",
+    "stable_version": "1.5.1",
+    "behavior_change": false,
+    "rationale": "Promote the already-tested alpha.41 runtime to a stable production version while preserving all gameplay, campaign, media, mix, access and Site identity.",
+    "plugin_release_complete": true,
+    "canonical_source_release_complete": true,
+    "site_source_ready": true,
+    "live_site_release_complete": false
   },
   "preservation": {
     "real_campaign_api_writes": 0,
     "campaign_advanced_or_reset": false,
     "pending_real_actions_executed": false,
-    "media_bytes_or_ids_changed": false,
+    "audio_or_image_bytes_changed": false,
+    "stable_media_ids_changed": false,
     "saved_mix_changed": false,
     "default_prompts_changed": false,
     "footer_or_navigation_changed": false,
     "access_or_hosting_changed": false
   },
-  "remaining_hard_boundaries": [
-    "Open the existing native Site editing context and obtain its actual source/build/deployment controls.",
-    "Reconcile alpha.41 bundled source into that existing Site and perform the native typecheck/build.",
-    "Wire and test production authentication, durable atomic transactions, source-backed resolver and correlated receipt/save persistence.",
-    "Verify one isolated native action-save-reload turn exactly once, then varied desktop/390px/iPhone journeys.",
-    "Perform actual speaker/headphone listening and microphone/browser lifecycle checks.",
-    "Obtain readable current plugin archive bytes and complete exact binary/media checksum parity.",
-    "Only after those gates pass, publish matching Site/plugin artifacts and mark coordinated_release_verified true."
+  "remaining_platform_boundary": [
+    "Publish the stable 1.5.1 bundled runtime to the existing ChatGPT Site using the native Sites surface in Work or desktop Work/Codex.",
+    "Record the returned Site source/projection/deployment identifiers and verify the published page.",
+    "Optional evidence gates that cannot be executed from this conversation remain physical iPhone/listening and exact full binary archive parity."
   ],
-  "completion_rule": "Within this session's supported tooling, all reversible source/plugin/CI work is complete. Do not create another plugin-only release merely to restate blocked native Site/device evidence."
+  "release_policy": "Stable 1.5.1 is the production plugin and canonical production source. Do not create another plugin release solely because the native Site publish action is unavailable here; publish the existing Site from its supported native surface and append that evidence to this release."
 }
