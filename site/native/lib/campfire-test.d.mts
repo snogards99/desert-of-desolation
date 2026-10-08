@@ -1,0 +1,4 @@
+import type {AudioEngine} from './audio-engine.mjs';
+export type SoundState={mode:string,state:string,elapsed:number,missing:string[]};
+export const campfireCues:{at:number,bus:string,media_id:string,loop?:boolean,gain:number}[];
+export class SoundSession{constructor(engine:AudioEngine,theme:Parameters<AudioEngine['startTheme']>[0],onState?:(state:SoundState)=>void);mode:string;state:string;stop():void;startScene(cues:{media_id:string,bus:string,loop?:boolean,gain?:number}[]):Promise<void>;toggleScene(cues:{media_id:string,bus:string,loop?:boolean,gain?:number}[]):Promise<void>;startIntroduction(mediaId:string):Promise<void>;pause():Promise<void>;resume():Promise<void>;startCampfire():Promise<void>;audition(bus:string):Promise<void>;layerChanged(bus:string,wasEnabled:boolean):Promise<void>;tick():void;}

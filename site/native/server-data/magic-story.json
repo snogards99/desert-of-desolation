@@ -1,0 +1,15 @@
+{
+  "shared_release": "dod-magic-2026-10-06-v2",
+  "schema": 1,
+  "rules": [
+    "Apply at most one short atmospheric cue to a current visible scene. Never imply a mechanical effect from decorative light, sound or heat shimmer.",
+    "Resolve active enchantments before describing their effect; do not generate undiscovered traps, treasure, enemies or puzzle answers.",
+    "Characters may offer approaches from their own magic knowledge, but no automatic casting or Snogard intent.",
+    "Ambient magic has no free resources, damage, detection or immunity. Preserve free-form mundane solutions."
+  ],
+  "cues": {
+    "charter": "Old desert stories speak of prayers carried on hot winds and stone that remembers a name. The expedition\u2019s enchantments are precious; every powerful spell must earn its use.",
+    "desert": "Heat shimmers above the sand like a script the wind cannot keep. The desert feels steeped in old magic, but water, shade and careful travel still matter.",
+    "tomb": "The hush of worked stone gives every footstep the weight of a remembered ritual. Magic may offer a way forward; patient observation remains just as valuable."
+  }
+}

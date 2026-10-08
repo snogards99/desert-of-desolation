@@ -1,0 +1,1431 @@
+{
+  "shared_release": "dod-magic-2026-10-06-v2",
+  "schema": 1,
+  "campaign_id": "dod-main",
+  "adopted_campaign_rules": [
+    "A resolved cast consumes exactly one prepared/fetched copy and its matching slot, once. Knowledge/access is not a cast.",
+    "At most one spell or active magical power per actor per round, subject to casting time; familiars cannot supply extra caster actions.",
+    "After casting a spell of level 3 or higher, that caster must complete two intervening rounds before another level-3-or-higher cast. This is a campaign house rule, not an AD&D 2e default. Lower-level magic and ordinary actions remain possible.",
+    "Snogard keeps at most six fetched copies, at most one copy per named spell. The persisted cache is a campaign retention exception; it is never refreshed by a turn, sheet view, reload or encounter.",
+    "Gene fetches one spell at a time; fetch duration and risk resolve in game time. A spent Fireball cannot be used again until a new authorized retrieval succeeds and the recovery rule permits it.",
+    "Preparation needs actual rest/prayer/study and recorded resources. Level-up or maintenance never fills slots or restores spent magic.",
+    "Unknown item charges, companion spellcasting and custom effects grant zero executable uses until a definition is approved. Passive documented gear remains usable under its rules.",
+    "No blanket anti-magic or fabricated enemy immunity. Telegraph observed hazards, allow saves and counters, account for friendly fire, flammable belongings, confined space and relevant components.",
+    "NPCs preserve scarce magic when ordinary tactics can work; offer costly magical solutions with an explicit benefit and consequence. Snogard choices always belong to the player.",
+    "Gene Emberlight and Sekhem Serpent Ward are new finite campaign grants, each one initial use and at most 1/day thereafter. They share Snogard\u2019s magic-action budget, require explicit permission, and replenish only after resolved rest with a recorded reset. They never refresh priest preparations or fetched spells."
+  ],
+  "resource_ledger": {
+    "storage": "Current campaign/conversation checkpoint magic_resources keyed by campaign and character; Site reads this field if present.",
+    "required_fields": [
+      "prepared uses by spell id",
+      "slot uses by class/level",
+      "fetched copies remaining",
+      "last high-level cast round",
+      "Gene retrieval/spell/ready round",
+      "daily and weekly power uses/reset time",
+      "item charges",
+      "familiar location/health/conditions"
+    ],
+    "authority": "Live ledger overrides baseline; an absent usage value is unknown, never a free refill.",
+    "site_execution": "Site action submissions still await rules adjudication; no generic automatic spell resolver is claimed."
+  },
+  "characters": [
+    {
+      "character_id": "party.snogard",
+      "name": "Snogard Snoegnud",
+      "class_access": [
+        "Priest 10: base daily slots 4/4/3/3/2, caster level 10; recorded bonus slots remain zero.",
+        "Sha\u2019ir 9: gen-fetch wizard access through spell level 5; no ordinary wizard slots.",
+        "Control Temperature and Control Winds remain recorded campaign exceptions to ordinary cleric Weather-sphere access."
+      ],
+      "capacity": [],
+      "prepared_baseline_total": 16.0,
+      "spells": [
+        {
+          "spell_id": "create_water_priest",
+          "spell": "Create Water",
+          "level": 1.0,
+          "school": "Alteration",
+          "sphere": "Elemental (Water)",
+          "access": "Known",
+          "casts_remaining": 0,
+          "mechanics": {
+            "range": "30 yds.",
+            "components": "V,S,M",
+            "duration": "Permanent",
+            "casting_time": "1 rd.",
+            "area_of_effect": "Up to 27 cu. ft.",
+            "saving_throw": "None",
+            "material_components": "[{\"item\":\"water_drop\",\"quantity\":1,\"consumed\":false,\"note\":\"At least a drop of water; reverse uses a pinch of dust.\"}]",
+            "mechanics_json": "{\"gallons_per_caster_level\":4,\"clean_drinkable\":true,\"rainwater_equivalent\":true,\"dispel_window_rounds\":1,\"becomes_nonmagical_after_dispel_window\":true,\"cannot_target_inside_creature\":true,\"reverse\":\"destroy_water\",\"max_area_cubic_feet\":27}"
+          },
+          "execution": "Engine Ready",
+          "prepared": 0.0,
+          "used": 0.0
+        },
+        {
+          "spell_id": "create_food_water_priest",
+          "spell": "Create Food & Water",
+          "level": 3.0,
+          "school": "Alteration",
+          "sphere": "Creation",
+          "access": "Known",
+          "casts_remaining": 0,
+          "mechanics": {
+            "range": "10 yds.",
+            "components": "V,S",
+            "duration": "Special",
+            "casting_time": "1 turn",
+            "area_of_effect": "1 cu. ft./level",
+            "saving_throw": "None",
+            "material_components": "[]",
+            "mechanics_json": "{\"created_volume_cubic_feet_per_level\":1,\"food_human_sized_creatures_sustained_per_cubic_foot_per_day\":3,\"food_horse_sized_creatures_sustained_per_cubic_foot_per_day\":1,\"food_decay_hours\":24,\"purify_extends_food_hours\":24,\"water_mechanics_ref\":\"create_water_priest\"}"
+          },
+          "execution": "Engine Ready",
+          "prepared": 0.0,
+          "used": 0.0
+        },
+        {
+          "spell_id": "bless",
+          "spell": "Bless",
+          "level": 1.0,
+          "school": null,
+          "sphere": "All",
+          "access": "Known",
+          "casts_remaining": 0,
+          "mechanics": {
+            "range": "60 yards",
+            "components": "V,S,M",
+            "duration": "6 rounds",
+            "casting_time": "1 round",
+            "area_of_effect": "50-foot cube at completion; alternatively one item <=1 lb/caster level",
+            "saving_throw": "None",
+            "material_components": "[{\"item\":\"holy_water\",\"quantity\":1,\"consumed\":true}]",
+            "mechanics_json": "{\"material_component_text\":\"Holy water; reverse uses unholy water\",\"reverse\":\"Curse\",\"effects\":[\"Friendly creatures gain +1 morale, +1 saves against fear, and +1 attack rolls; only creatures not already engaged in melee qualify.\",\"Recipients fixed at completion; leaving does not remove effect and later entrants do not acquire it.\",\"Item blessing ends on use or duration expiry.\",\"Curse reduces enemy morale and attack rolls by 1; no added fear-save penalty.\"],\"restrictions\":[\"Multiple Bless spells do not stack.\"],\"source_sha256\":\"4c7424ad0bf5a2e4c64a78d251afc2f73f3edb29100bfe5b06df4ac5d554db4b\",\"runtime_executable\":true,\"runtime_handler\":\"effect.bless\",\"runtime_scope\":\"normal form only; reverse fails closed\"}"
+          },
+          "execution": "Engine Ready",
+          "prepared": 0.0,
+          "used": 0.0
+        },
+        {
+          "spell_id": "protection_from_evil",
+          "spell": "Protection from Evil",
+          "level": 1.0,
+          "school": null,
+          "sphere": "Protection",
+          "access": "Known",
+          "casts_remaining": 1.0,
+          "mechanics": {
+            "range": "Touch",
+            "components": "V,S,M",
+            "duration": "3 rounds/level",
+            "casting_time": "4",
+            "area_of_effect": "Creature touched; mobile barrier one foot from recipient",
+            "saving_throw": "None",
+            "material_components": "[{\"anyOf\":[\"holy_water\",\"burning_incense\"],\"quantity\":1,\"consumed\":true}]",
+            "mechanics_json": "{\"material_component_text\":\"Holy water OR burning incense; reverse: circle of unholy water OR smoldering dung\",\"reverse\":\"Protection from Good\",\"effects\":[\"Evil or evilly enchanted attackers suffer -2 attack; recipient gains +2 saves caused by those attacks.\",\"Blocks exercise of mental control and mind invasion/takeover without ending underlying charm or expelling an existing life force.\",\"Prevents bodily contact by extraplanar or conjured creatures; contact-dependent natural attacks fail and creatures recoil.\",\"Contact protection ends if recipient makes a melee attack against or forces barrier against blocked creature.\"],\"restrictions\":[\"Does not generally hedge out undead; ghoul-specific interaction requires canonical monster authority.\"],\"source_sha256\":\"a488c4300411dd97ad6de7de0280cbdc6256aecdf80ce5195e8375681358b1e0\",\"runtime_executable\":true,\"runtime_handler\":\"protection.from_evil\",\"runtime_scope\":\"normal form only; reverse fails closed\"}"
+          },
+          "execution": "Engine Ready",
+          "prepared": 1.0,
+          "used": 0.0
+        },
+        {
+          "spell_id": "continual_light",
+          "spell": "Continual Light",
+          "level": 3.0,
+          "school": null,
+          "sphere": "Creation; Guardian; Sun",
+          "access": "Known",
+          "casts_remaining": 0,
+          "mechanics": {
+            "range": "120 yards",
+            "components": "V,S",
+            "duration": "Permanent until negated",
+            "casting_time": "6",
+            "area_of_effect": "60-foot-radius globe; air, object, or creature",
+            "saving_throw": "Special: creature saves versus spell",
+            "material_components": "[]",
+            "mechanics_json": "{\"reverse\":\"Continual Darkness\",\"effects\":[\"Illumination as bright as full daylight; apply only established creature bright-light penalties.\",\"On successful creature save light appears about one foot behind it; on failure centered on and moves with creature.\",\"Successful casting on visual organs blinds; use canonical blindness handling only.\",\"Light-proof covering blocks a small affected object's effect until removed.\",\"Overlap with magical darkness restores prevailing lighting; direct cast against similar or weaker magical darkness cancels both.\",\"Reverse creates pitch blackness like Darkness with this entry's greater duration and area.\"],\"restrictions\":[\"Light/Darkness and blindness dependencies require runtime authority; no unsupported sunlight vulnerabilities or damage.\"],\"source_sha256\":\"4c7424ad0bf5a2e4c64a78d251afc2f73f3edb29100bfe5b06df4ac5d554db4b\",\"runtime_executable\":true,\"runtime_handler\":\"environment.continual_light\",\"runtime_scope\":\"normal light zone only; reverse and blindness cases fail closed\"}"
+          },
+          "execution": "Engine Ready",
+          "prepared": 0.0,
+          "used": 0.0
+        },
+        {
+          "spell_id": "dispel_magic",
+          "spell": "Dispel Magic",
+          "level": 3.0,
+          "school": null,
+          "sphere": "All",
+          "access": "Known",
+          "casts_remaining": 1.0,
+          "mechanics": {
+            "range": "60 yards",
+            "components": "V,S",
+            "duration": "Instantaneous",
+            "casting_time": "6",
+            "area_of_effect": "30-foot cube or one item",
+            "saving_throw": "None in header; carried item uses carrier saving throw against direct suppression",
+            "material_components": "[]",
+            "mechanics_json": "{\"effects\":[\"Checks each spell/spell-like effect and potion in area; can disrupt casting/use at instant of dispel; own magic dispels automatically.\",\"Otherwise roll d20 against 11 + effect creator level - dispeller level; natural 20 succeeds and natural 1 fails.\",\"Effect levels: caster level/HD; wand 6th; staff 8th; potion 12th; other item 12th unless special; successful potion dispel destroys it.\",\"An enchanted item itself requires a direct cast; successful direct suppression makes it nonoperational 1d4 rounds; carried items get carrier save; unattended items automatically suppressed.\",\"Suppressed interdimensional interfaces close; physical item properties remain.\",\"Artifacts/relics are not subject to the spell, though their spell-like effects may be adjudicated separately.\"],\"restrictions\":[\"No automatic artifact outcome; requires adjudicated effect eligibility.\"],\"source_sha256\":\"4c7424ad0bf5a2e4c64a78d251afc2f73f3edb29100bfe5b06df4ac5d554db4b\",\"runtime_executable\":true,\"runtime_handler\":\"magic.dispel\",\"runtime_scope\":\"active Effects rows; item, potion, artifact, and casting-interruption cases remain fail-closed\"}"
+          },
+          "execution": "Engine Ready",
+          "prepared": 1.0,
+          "used": 0.0
+        },
+        {
+          "spell_id": "fireball",
+          "spell": "Fireball",
+          "level": null,
+          "school": null,
+          "sphere": null,
+          "access": "Source Listed Not Executable",
+          "casts_remaining": 0,
+          "mechanics": {},
+          "execution": "Exact Spell Mechanics Require Binding",
+          "prepared": 0.0,
+          "used": 0.0
+        },
+        {
+          "spell_id": "wall_of_sand",
+          "spell": "Wall Of Sand",
+          "level": null,
+          "school": null,
+          "sphere": null,
+          "access": "Source Listed Not Executable",
+          "casts_remaining": 0,
+          "mechanics": {},
+          "execution": "Exact Spell Mechanics Require Binding",
+          "prepared": 0.0,
+          "used": 0.0
+        },
+        {
+          "spell_id": "mirror_image",
+          "spell": "Mirror Image",
+          "level": null,
+          "school": null,
+          "sphere": null,
+          "access": "Source Listed Not Executable",
+          "casts_remaining": 0,
+          "mechanics": {},
+          "execution": "Exact Spell Mechanics Require Binding",
+          "prepared": 0.0,
+          "used": 0.0
+        },
+        {
+          "spell_id": "fly",
+          "spell": "Fly",
+          "level": null,
+          "school": null,
+          "sphere": null,
+          "access": "Source Listed Not Executable",
+          "casts_remaining": 0,
+          "mechanics": {},
+          "execution": "Exact Spell Mechanics Require Binding",
+          "prepared": 0.0,
+          "used": 0.0
+        },
+        {
+          "spell_id": "summon_elemental",
+          "spell": "Summon Elemental",
+          "level": null,
+          "school": null,
+          "sphere": null,
+          "access": "Source Listed Not Executable",
+          "casts_remaining": 0,
+          "mechanics": {},
+          "execution": "Exact Spell Mechanics Require Binding",
+          "prepared": 0.0,
+          "used": 0.0
+        },
+        {
+          "spell_id": "cure_light_wounds",
+          "spell": "Cure Light Wounds",
+          "level": null,
+          "school": null,
+          "sphere": null,
+          "access": "Cleric Prayer Eligible L1 5",
+          "casts_remaining": 2.0,
+          "mechanics": {},
+          "execution": "Exact Spell Mechanics Require Binding",
+          "prepared": 2.0,
+          "used": 0.0
+        },
+        {
+          "spell_id": "sanctuary",
+          "spell": "Sanctuary",
+          "level": null,
+          "school": null,
+          "sphere": null,
+          "access": "Cleric Prayer Eligible L1 5",
+          "casts_remaining": 0,
+          "mechanics": {},
+          "execution": "Exact Spell Mechanics Require Binding",
+          "prepared": 0.0,
+          "used": 0.0
+        },
+        {
+          "spell_id": "aid",
+          "spell": "Aid",
+          "level": null,
+          "school": null,
+          "sphere": null,
+          "access": "Cleric Prayer Eligible L1 5",
+          "casts_remaining": 0,
+          "mechanics": {},
+          "execution": "Exact Spell Mechanics Require Binding",
+          "prepared": 0.0,
+          "used": 0.0
+        },
+        {
+          "spell_id": "resist_fire_priest",
+          "spell": "Resist Fire Priest",
+          "level": null,
+          "school": null,
+          "sphere": null,
+          "access": "Cleric Prayer Eligible L1 5",
+          "casts_remaining": 2.0,
+          "mechanics": {},
+          "execution": "Exact Spell Mechanics Require Binding",
+          "prepared": 2.0,
+          "used": 0.0
+        },
+        {
+          "spell_id": "flame_blade",
+          "spell": "Flame Blade",
+          "level": null,
+          "school": null,
+          "sphere": null,
+          "access": "Cleric Prayer Eligible L1 5",
+          "casts_remaining": 0,
+          "mechanics": {},
+          "execution": "Exact Spell Mechanics Require Binding",
+          "prepared": 0.0,
+          "used": 0.0
+        },
+        {
+          "spell_id": "slow_poison",
+          "spell": "Slow Poison",
+          "level": null,
+          "school": null,
+          "sphere": null,
+          "access": "Cleric Prayer Eligible L1 5",
+          "casts_remaining": 0,
+          "mechanics": {},
+          "execution": "Exact Spell Mechanics Require Binding",
+          "prepared": 0.0,
+          "used": 0.0
+        },
+        {
+          "spell_id": "produce_flame_priest",
+          "spell": "Produce Flame",
+          "level": 2.0,
+          "school": "Alteration",
+          "sphere": "Elemental (Fire)",
+          "access": "Known",
+          "casts_remaining": 1.0,
+          "mechanics": {
+            "range": "0",
+            "components": "V,S",
+            "duration": "1 rd./level",
+            "casting_time": "5",
+            "area_of_effect": "Special",
+            "saving_throw": "None",
+            "material_components": "[]",
+            "mechanics_json": "{\"missile_range_yards\":40,\"damage\":\"1d4+1\",\"ignition_diameter_feet\":3,\"max_flames_per_level\":1,\"max_flames_per_round\":1,\"miss_resolution\":\"grenadelike\",\"can_snuff_magical_flame\":true,\"cannot_snuff_secondary_fire\":true,\"underwater_function\":false}"
+          },
+          "execution": "Engine Ready",
+          "prepared": 1.0,
+          "used": 0.0
+        },
+        {
+          "spell_id": "cure_disease",
+          "spell": "Cure Disease",
+          "level": null,
+          "school": null,
+          "sphere": null,
+          "access": "Cleric Prayer Eligible L1 5",
+          "casts_remaining": 0,
+          "mechanics": {},
+          "execution": "Exact Spell Mechanics Require Binding",
+          "prepared": 0.0,
+          "used": 0.0
+        },
+        {
+          "spell_id": "protection_from_fire_priest",
+          "spell": "Protection From Fire",
+          "level": 3.0,
+          "school": "Abjuration",
+          "sphere": "Protection, Elemental (Fire)",
+          "access": "Cleric Prayer Eligible L1 5",
+          "casts_remaining": 1.0,
+          "mechanics": {
+            "range": "Touch",
+            "components": "V,S,M",
+            "duration": "Special",
+            "casting_time": "6",
+            "area_of_effect": "1 creature",
+            "saving_throw": "None",
+            "material_components": "[{\"item\":\"holy_symbol\",\"quantity\":1,\"consumed\":false}]",
+            "mechanics_json": "{\"max_duration_turns_per_level\":1,\"self_mode\":{\"normal_and_magical_fire_immunity_until_absorption\":true,\"absorption_hp_per_level\":12},\"other_mode\":{\"normal_fire_immunity\":true,\"save_bonus_vs_fire\":4,\"magical_fire_damage_multiplier\":0.5}}"
+          },
+          "execution": "Engine Ready",
+          "prepared": 1.0,
+          "used": 0.0
+        },
+        {
+          "spell_id": "meld_into_stone",
+          "spell": "Meld Into Stone",
+          "level": null,
+          "school": null,
+          "sphere": null,
+          "access": "Cleric Prayer Eligible L1 5",
+          "casts_remaining": "Not prepared or fetched by this knowledge entry",
+          "mechanics": {},
+          "execution": "Exact Spell Mechanics Require Binding"
+        },
+        {
+          "spell_id": "stone_shape_priest",
+          "spell": "Stone Shape",
+          "level": 3.0,
+          "school": "Alteration",
+          "sphere": "Elemental (Earth)",
+          "access": "Known",
+          "casts_remaining": 1.0,
+          "mechanics": {
+            "range": "Touch",
+            "components": "V,S,M",
+            "duration": "Permanent",
+            "casting_time": "1 rd.",
+            "area_of_effect": "9 cu. ft. + 1 cu. ft./level",
+            "saving_throw": "None",
+            "material_components": "[{\"item\":\"soft_clay\",\"quantity\":1,\"consumed\":true}]",
+            "mechanics_json": "{}"
+          },
+          "execution": "Engine Ready",
+          "prepared": 1.0,
+          "used": 0.0
+        },
+        {
+          "spell_id": "cure_serious_wounds",
+          "spell": "Cure Serious Wounds",
+          "level": null,
+          "school": null,
+          "sphere": null,
+          "access": "Cleric Prayer Eligible L1 5",
+          "casts_remaining": 1.0,
+          "mechanics": {},
+          "execution": "Exact Spell Mechanics Require Binding",
+          "prepared": 1.0,
+          "used": 0.0
+        },
+        {
+          "spell_id": "protection_from_evil_10ft_priest",
+          "spell": "Protection From Evil 10Ft Priest",
+          "level": null,
+          "school": null,
+          "sphere": null,
+          "access": "Cleric Prayer Eligible L1 5",
+          "casts_remaining": 0,
+          "mechanics": {},
+          "execution": "Exact Spell Mechanics Require Binding",
+          "prepared": 0.0,
+          "used": 0.0
+        },
+        {
+          "spell_id": "neutralize_poison",
+          "spell": "Neutralize Poison",
+          "level": null,
+          "school": null,
+          "sphere": null,
+          "access": "Cleric Prayer Eligible L1 5",
+          "casts_remaining": "Not prepared or fetched by this knowledge entry",
+          "mechanics": {},
+          "execution": "Exact Spell Mechanics Require Binding"
+        },
+        {
+          "spell_id": "cure_critical_wounds",
+          "spell": "Cure Critical Wounds",
+          "level": null,
+          "school": null,
+          "sphere": null,
+          "access": "Cleric Prayer Eligible L1 5",
+          "casts_remaining": 1.0,
+          "mechanics": {},
+          "execution": "Exact Spell Mechanics Require Binding",
+          "prepared": 1.0,
+          "used": 0.0
+        },
+        {
+          "spell_id": "flame_strike",
+          "spell": "Flame Strike",
+          "level": null,
+          "school": null,
+          "sphere": null,
+          "access": "Cleric Prayer Eligible L1 5",
+          "casts_remaining": 0,
+          "mechanics": {},
+          "execution": "Exact Spell Mechanics Require Binding",
+          "prepared": 0.0,
+          "used": 0.0
+        },
+        {
+          "spell_id": "raise_dead",
+          "spell": "Raise Dead",
+          "level": null,
+          "school": null,
+          "sphere": null,
+          "access": "Cleric Prayer Eligible L1 5",
+          "casts_remaining": "Not prepared or fetched by this knowledge entry",
+          "mechanics": {},
+          "execution": "Exact Spell Mechanics Require Binding"
+        },
+        {
+          "spell_id": "burning_hands",
+          "spell": "Burning Hands",
+          "level": null,
+          "school": null,
+          "sphere": null,
+          "access": "Shair Gen Fetch Eligible L1 5",
+          "casts_remaining": "Not prepared or fetched by this knowledge entry",
+          "mechanics": {},
+          "execution": "Exact Spell Mechanics Require Binding"
+        },
+        {
+          "spell_id": "shield",
+          "spell": "Shield",
+          "level": null,
+          "school": null,
+          "sphere": null,
+          "access": "Shair Gen Fetch Eligible L1 5",
+          "casts_remaining": "Not prepared or fetched by this knowledge entry",
+          "mechanics": {},
+          "execution": "Exact Spell Mechanics Require Binding"
+        },
+        {
+          "spell_id": "protection_from_evil_wizard",
+          "spell": "Protection From Evil Wizard",
+          "level": null,
+          "school": null,
+          "sphere": null,
+          "access": "Shair Gen Fetch Eligible L1 5",
+          "casts_remaining": "Not prepared or fetched by this knowledge entry",
+          "mechanics": {},
+          "execution": "Exact Spell Mechanics Require Binding"
+        },
+        {
+          "spell_id": "flaming_sphere",
+          "spell": "Flaming Sphere",
+          "level": null,
+          "school": null,
+          "sphere": null,
+          "access": "Shair Gen Fetch Eligible L1 5",
+          "casts_remaining": "Not prepared or fetched by this knowledge entry",
+          "mechanics": {},
+          "execution": "Exact Spell Mechanics Require Binding"
+        },
+        {
+          "spell_id": "darkness_15_radius",
+          "spell": "Darkness 15 Radius",
+          "level": null,
+          "school": null,
+          "sphere": null,
+          "access": "Shair Gen Fetch Eligible L1 5",
+          "casts_remaining": "Not prepared or fetched by this knowledge entry",
+          "mechanics": {},
+          "execution": "Exact Spell Mechanics Require Binding"
+        },
+        {
+          "spell_id": "resist_fire_wizard",
+          "spell": "Resist Fire Wizard",
+          "level": null,
+          "school": null,
+          "sphere": null,
+          "access": "Shair Gen Fetch Eligible L1 5",
+          "casts_remaining": "Not prepared or fetched by this knowledge entry",
+          "mechanics": {},
+          "execution": "Exact Spell Mechanics Require Binding"
+        },
+        {
+          "spell_id": "flame_arrow",
+          "spell": "Flame Arrow",
+          "level": null,
+          "school": null,
+          "sphere": null,
+          "access": "Shair Gen Fetch Eligible L1 5",
+          "casts_remaining": "Not prepared or fetched by this knowledge entry",
+          "mechanics": {},
+          "execution": "Exact Spell Mechanics Require Binding"
+        },
+        {
+          "spell_id": "protection_from_normal_missiles",
+          "spell": "Protection From Normal Missiles",
+          "level": null,
+          "school": null,
+          "sphere": null,
+          "access": "Shair Gen Fetch Eligible L1 5",
+          "casts_remaining": "Not prepared or fetched by this knowledge entry",
+          "mechanics": {},
+          "execution": "Exact Spell Mechanics Require Binding"
+        },
+        {
+          "spell_id": "fire_shield",
+          "spell": "Fire Shield",
+          "level": null,
+          "school": null,
+          "sphere": null,
+          "access": "Shair Gen Fetch Eligible L1 5",
+          "casts_remaining": "Not prepared or fetched by this knowledge entry",
+          "mechanics": {},
+          "execution": "Exact Spell Mechanics Require Binding"
+        },
+        {
+          "spell_id": "wall_of_fire",
+          "spell": "Wall Of Fire",
+          "level": null,
+          "school": null,
+          "sphere": null,
+          "access": "Shair Gen Fetch Eligible L1 5",
+          "casts_remaining": "Not prepared or fetched by this knowledge entry",
+          "mechanics": {},
+          "execution": "Exact Spell Mechanics Require Binding"
+        },
+        {
+          "spell_id": "stoneskin",
+          "spell": "Stoneskin",
+          "level": null,
+          "school": null,
+          "sphere": null,
+          "access": "Shair Gen Fetch Eligible L1 5",
+          "casts_remaining": "Not prepared or fetched by this knowledge entry",
+          "mechanics": {},
+          "execution": "Exact Spell Mechanics Require Binding"
+        },
+        {
+          "spell_id": "minor_globe_invulnerability",
+          "spell": "Minor Globe Invulnerability",
+          "level": null,
+          "school": null,
+          "sphere": null,
+          "access": "Shair Gen Fetch Eligible L1 5",
+          "casts_remaining": "Not prepared or fetched by this knowledge entry",
+          "mechanics": {},
+          "execution": "Exact Spell Mechanics Require Binding"
+        },
+        {
+          "spell_id": "wall_of_stone",
+          "spell": "Wall Of Stone",
+          "level": null,
+          "school": null,
+          "sphere": null,
+          "access": "Shair Gen Fetch Eligible L1 5",
+          "casts_remaining": "Not prepared or fetched by this knowledge entry",
+          "mechanics": {},
+          "execution": "Exact Spell Mechanics Require Binding"
+        },
+        {
+          "spell_id": "passwall",
+          "spell": "Passwall",
+          "level": null,
+          "school": null,
+          "sphere": null,
+          "access": "Shair Gen Fetch Eligible L1 5",
+          "casts_remaining": "Not prepared or fetched by this knowledge entry",
+          "mechanics": {},
+          "execution": "Exact Spell Mechanics Require Binding"
+        },
+        {
+          "spell_id": "transmute_rock_to_mud",
+          "spell": "Transmute Rock To Mud",
+          "level": null,
+          "school": null,
+          "sphere": null,
+          "access": "Shair Gen Fetch Eligible L1 5",
+          "casts_remaining": "Not prepared or fetched by this knowledge entry",
+          "mechanics": {},
+          "execution": "Exact Spell Mechanics Require Binding"
+        },
+        {
+          "spell_id": "conjure_elemental",
+          "spell": "Conjure Elemental",
+          "level": null,
+          "school": null,
+          "sphere": null,
+          "access": "Shair Gen Fetch Eligible L1 5",
+          "casts_remaining": "Not prepared or fetched by this knowledge entry",
+          "mechanics": {},
+          "execution": "Exact Spell Mechanics Require Binding"
+        },
+        {
+          "spell_id": "shadow_door",
+          "spell": "Shadow Door",
+          "level": null,
+          "school": null,
+          "sphere": null,
+          "access": "Shair Gen Fetch Eligible L1 5",
+          "casts_remaining": "Not prepared or fetched by this knowledge entry",
+          "mechanics": {},
+          "execution": "Exact Spell Mechanics Require Binding"
+        },
+        {
+          "spell_id": "endure_heat_cold_priest",
+          "spell": "Endure Cold/Endure Heat",
+          "level": 1.0,
+          "school": "Alteration",
+          "sphere": "Protection",
+          "access": "Known",
+          "casts_remaining": 1.0,
+          "mechanics": {
+            "range": "Touch",
+            "components": "V,S",
+            "duration": "1 _ hrs./level",
+            "casting_time": "1 rd.",
+            "area_of_effect": "Creature touched",
+            "saving_throw": "None",
+            "material_components": "[]",
+            "mechanics_json": "{\"normal_temperature_low_f\":-30,\"normal_temperature_high_f\":130,\"beyond_limit_damage_per_degree_per_hour\":1,\"breaks_on_nonnormal_heat_or_cold\":true,\"break_round_damage_absorption\":10,\"incompatible_effects\":[\"resist_fire\",\"resist_cold\"]}"
+          },
+          "execution": "Engine Ready",
+          "prepared": 1.0,
+          "used": 0.0
+        },
+        {
+          "spell_id": "dust_devil_priest",
+          "spell": "Dust Devil",
+          "level": 2.0,
+          "school": "Conjuration/Summoning",
+          "sphere": "Elemental (Air)",
+          "access": "Known",
+          "casts_remaining": 1.0,
+          "mechanics": {
+            "range": "30 yds.",
+            "components": "V,S",
+            "duration": "2 rds./level",
+            "casting_time": "2 rds.",
+            "area_of_effect": "5 x 4 ft. cone",
+            "saving_throw": "None",
+            "material_components": "[]",
+            "mechanics_json": "{\"summoned_ac\":4,\"summoned_hd\":2,\"movement_feet_per_round\":180,\"attacks\":[{\"damage\":\"1d4\"}],\"normal_weapons_affect\":true,\"max_separation_yards\":30,\"extinguishes_small_nonmagical_open_flames\":true,\"gas_cloud_control\":\"hold_or_push_only\",\"loose_dust_cloud_diameter_feet\":10,\"blind_inside\":true,\"blind_rounds_after_exit\":1,\"casting_concentration_save\":\"spell\",\"air_native_single_hit_dispels\":true}"
+          },
+          "execution": "Engine Ready",
+          "prepared": 1.0,
+          "used": 0.0
+        },
+        {
+          "spell_id": "control_temperature_priest",
+          "spell": "Control Temperature, 10' Radius",
+          "level": 4.0,
+          "school": "Alteration",
+          "sphere": "Weather",
+          "access": "Recorded campaign Weather-sphere exception",
+          "casts_remaining": 1.0,
+          "mechanics": {
+            "range": "0",
+            "components": "V,S,M",
+            "duration": "4 turns + 1 turn/level",
+            "casting_time": "7",
+            "area_of_effect": "10-ft. radius",
+            "saving_throw": "None",
+            "material_components": "[{\"item\":\"willow_bark_or_raspberry_leaves\",\"quantity\":1,\"consumed\":true,\"note\":\"Willow bark lowers temperature; raspberry leaves raise it.\"}]",
+            "mechanics_json": "{\"temperature_delta_f_per_level\":10,\"radius_feet\":10,\"duration_minutes_base\":40,\"duration_minutes_per_level\":10,\"magical_heat_cold_damage_reduction_per_level\":5,\"collapses_after_absorbing_magical_heat_cold\":true}"
+          },
+          "execution": "Engine Ready",
+          "prepared": 1.0,
+          "used": 0.0
+        },
+        {
+          "spell_id": "earthmaw_priest",
+          "spell": "Earthmaw",
+          "level": 4.0,
+          "school": null,
+          "sphere": "Elemental (earth)",
+          "access": "Known",
+          "casts_remaining": 1.0,
+          "mechanics": {
+            "range": "50 yards",
+            "components": "V,S,M",
+            "duration": "1 round",
+            "casting_time": "7",
+            "area_of_effect": "10-foot diameter circle",
+            "saving_throw": "Neg.",
+            "material_components": "[{\"item\":\"predatory_creature_tooth\",\"quantity\":1,\"consumed\":true}]",
+            "mechanics_json": "{\"diameter_feet\":10,\"duration_rounds\":1,\"attack_hit_dice_equals_caster_level\":true,\"damage_die\":\"d4\",\"damage_dice_per_level\":1,\"swallow_natural_rolls\":[19,20],\"burial_depth_dice\":\"2d4\",\"suffocation_rounds\":\"floor(CON/3)\",\"valid_substrates\":[\"loose_earth\",\"packed_earth\",\"sand\",\"vegetation_covered_soil\"],\"invalid_substrates\":[\"pavement\",\"stone_floor\",\"building_surface\",\"tree_occupied\"]}"
+          },
+          "execution": "Engine Ready",
+          "prepared": 1.0,
+          "used": 0.0
+        },
+        {
+          "spell_id": "control_winds_priest",
+          "spell": "Control Winds",
+          "level": 5.0,
+          "school": "Alteration",
+          "sphere": "Weather",
+          "access": "Recorded campaign Weather-sphere exception",
+          "casts_remaining": 1.0,
+          "mechanics": {
+            "range": "0",
+            "components": "V,S",
+            "duration": "1 turn/level",
+            "casting_time": "8",
+            "area_of_effect": "40-ft./level radius",
+            "saving_throw": "None",
+            "material_components": "[]",
+            "mechanics_json": "{\"wind_force_steps_per_3_levels\":1,\"radius_feet_per_level\":40,\"calm_eye_radius_feet\":40,\"change_mph_per_round\":3,\"duration_minutes_per_level\":10,\"concentration_rounds_to_change_setting\":1,\"wind_bands_mph\":{\"light_breeze\":[2,7],\"moderate_breeze\":[8,18],\"strong_breeze\":[19,31],\"gale\":[32,54],\"storm\":[55,72],\"hurricane\":[73,176]},\"threshold_effects\":[{\"mph_gt\":19,\"effects\":[\"drive_small_flyers\",\"severely_affect_missiles\",\"sailing_difficult\"]},{\"mph_gt\":32,\"effects\":[\"drive_man_sized_flyers\",\"minor_ship_damage\"]},{\"mph_gt\":55,\"effects\":[\"drive_all_flyers\",\"uproot_small_trees\",\"damage_wood_structures_roofs\",\"endanger_ships\"]},{\"mph_gt\":73,\"effects\":[\"hurricane_force\"]}]}"
+          },
+          "execution": "Engine Ready",
+          "prepared": 1.0,
+          "used": 0.0
+        }
+      ],
+      "fetched_spells": [
+        {
+          "spell": "Fireball",
+          "copies": 1,
+          "remaining": "Confirm current fetched ledger before use",
+          "execution": "Spell-specific mechanics must be bound before casting"
+        },
+        {
+          "spell": "Darkness 15' Radius",
+          "copies": 1,
+          "remaining": "Confirm current fetched ledger before use",
+          "execution": "Spell-specific mechanics must be bound before casting"
+        },
+        {
+          "spell": "Stoneskin",
+          "copies": 1,
+          "remaining": "Confirm current fetched ledger before use",
+          "execution": "Spell-specific mechanics must be bound before casting"
+        },
+        {
+          "spell": "Wall of Sand",
+          "copies": 1,
+          "remaining": "Confirm current fetched ledger before use",
+          "execution": "Spell-specific mechanics must be bound before casting"
+        },
+        {
+          "spell": "Wall of Fire",
+          "copies": 1,
+          "remaining": "Confirm current fetched ledger before use",
+          "execution": "Spell-specific mechanics must be bound before casting"
+        },
+        {
+          "spell": "Wall of Stone",
+          "copies": 1,
+          "remaining": "Confirm current fetched ledger before use",
+          "execution": "Spell-specific mechanics must be bound before casting"
+        }
+      ],
+      "recommended_spells": [],
+      "abilities": [
+        {
+          "ability": "Priest prayers",
+          "effect": "Each prepared copy is one cast; consume the matching preparation and slot only after resolution. Healing effects remain guarded where exact mechanics are missing.",
+          "uses": "16 baseline copies; see per-spell counts"
+        },
+        {
+          "ability": "Gen-fetch casting",
+          "effect": "One fetched copy is one cast; component inventory, knowledge and spell mechanics must resolve first.",
+          "uses": "Six named cache entries; current remaining casts require ledger confirmation"
+        },
+        {
+          "ability": "Recognize Genie Work",
+          "effect": "Sha\u2019ir 3+ recognition ability; no omniscient identification of hidden enchantments.",
+          "uses": "No expendable count recorded"
+        },
+        {
+          "ability": "Call Upon the Jann",
+          "effect": "Sha\u2019ir 5+; exact invocation and response rules required; never guaranteed service.",
+          "uses": "1/day; spent and remaining not recorded"
+        },
+        {
+          "ability": "Elemental Protection",
+          "effect": "Sha\u2019ir 7+; protection extent and conditions require exact source binding.",
+          "uses": "No expendable count recorded"
+        },
+        {
+          "ability": "Call a Genie",
+          "effect": "Sha\u2019ir 9+; invocation is not control or guaranteed aid.",
+          "uses": "1/week; spent and remaining not recorded"
+        },
+        {
+          "ability": "Gene \u2014 Emberlight",
+          "effect": "New campaign familiar power: a harmless ember glow illuminates a 10-foot radius for one turn. No damage, detection or ignition.",
+          "uses": "1/day; one initial unspent use of this newly granted power",
+          "power_id": "gene_emberlight",
+          "maximum": 1,
+          "initial_remaining": 1,
+          "cost": "Uses Snogard\u2019s magical action for the round; Gene must be present; explicit player permission."
+        },
+        {
+          "ability": "Sekhem \u2014 Serpent Ward",
+          "effect": "New campaign familiar power: +2 to Snogard\u2019s next saving throw against poison within one turn, then ends. Does not cure existing poison; no stacking with another magical poison-save bonus.",
+          "uses": "1/day; one initial unspent use of this newly granted power",
+          "power_id": "sekhem_serpent_ward",
+          "maximum": 1,
+          "initial_remaining": 1,
+          "cost": "Uses Snogard\u2019s magical action for the round; Sekhem must be within 10 feet; explicit player permission."
+        }
+      ],
+      "magic_items": [
+        {
+          "item": "Cloak of Elvenkind",
+          "quantity": 1.0,
+          "equipped": "cloak",
+          "power": "Recorded concealment/silent-movement gear; resolve environmental and class conditions. No automatic invisibility or discovery.",
+          "enchantment": "Not confirmed numerically",
+          "charges": "Not recorded; never assume unlimited expendable powers",
+          "casts": "No item spellcasting grants defined",
+          "recharge": "Not defined for custom active powers",
+          "limitation": "Only recorded effects apply",
+          "carrying": "Personal recorded gear"
+        },
+        {
+          "item": "Boots of Elvenkind",
+          "quantity": 1.0,
+          "equipped": "boots",
+          "power": "Recorded concealment/silent-movement gear; resolve environmental and class conditions. No automatic invisibility or discovery.",
+          "enchantment": "Not confirmed numerically",
+          "charges": "Not recorded; never assume unlimited expendable powers",
+          "casts": "No item spellcasting grants defined",
+          "recharge": "Not defined for custom active powers",
+          "limitation": "Only recorded effects apply",
+          "carrying": "Personal recorded gear"
+        },
+        {
+          "item": "Gold Ankh of Amun-Ra",
+          "quantity": 1.0,
+          "equipped": "",
+          "power": "Named custom enchantment; special powers are undefined.",
+          "enchantment": "Not confirmed numerically",
+          "charges": "Not recorded; never assume unlimited expendable powers",
+          "casts": "No item spellcasting grants defined",
+          "recharge": "Not defined for custom active powers",
+          "limitation": "Only recorded effects apply",
+          "carrying": "Personal recorded gear"
+        },
+        {
+          "item": "Staff of Solar Authority",
+          "quantity": 1.0,
+          "equipped": "weapon_primary",
+          "power": "Named custom enchantment; special powers are undefined.",
+          "enchantment": "Not confirmed numerically",
+          "charges": "Not recorded; never assume unlimited expendable powers",
+          "casts": "No item spellcasting grants defined",
+          "recharge": "Not defined for custom active powers",
+          "limitation": "Only recorded effects apply",
+          "carrying": "Personal recorded gear"
+        }
+      ],
+      "familiars": [
+        {
+          "name": "Gene",
+          "kind": "Elemental gen familiar and long-time friend",
+          "personality": "Loyal, alert and proud of being addressed as Genie as an honorific.",
+          "magic": "Fetch eligible wizard spells/components; recognize genie-work only through bound rules. Emberlight is a newly granted, limited campaign power.",
+          "limits": "One retrieval at a time; no casting while away; one fetched copy, consumed once. Retrieval takes 1d6 + spell level rounds for eligible native wizard spells. Foreign/priest fetching remains unavailable without exact rules.",
+          "actions": "Watch rear/flanks from the hip pouch, warn from actual observations, ask before a retrieval or exposure to danger.",
+          "casts": "Does not add independent Fireballs or replenish priest slots.",
+          "remaining": "Location, health, current retrieval and fetched uses come from live state."
+        },
+        {
+          "name": "Sekhem",
+          "kind": "Cobra familiar/scout companion",
+          "personality": "Patient, watchful, attentive to vibrations and narrow passages.",
+          "magic": "Supports the magical partnership through scouting and warnings; no independent spells or supernatural senses recorded. Serpent Ward is a newly granted, limited campaign power; it grants no other spells.",
+          "limits": "Sight/access/animal movement and exposure apply. Exact poison, combat, magical link and communication limits need definition.",
+          "actions": "Scout reachable tight spaces after an explicit command; return observations without revealing hidden contents from the story database.",
+          "casts": "Serpent Ward: 1/day; shares Snogard\u2019s magical action budget",
+          "remaining": "Location, health and action availability come from live state."
+        }
+      ],
+      "personality": "A deliberate elemental scholar and healer; magic is a responsibility to companions and the desert. Gene is a trusted friend, never a disposable resource; Sekhem is a patient scout.",
+      "actions": "Offer protective, healing, sand and stone solutions before destructive magic. Ask the player before Snogard speaks, casts, sends a familiar or spends anything.",
+      "character_knowledge": "Knows own listed equipment, verified class access, preparations, and familiar limits. Recommendations are options to learn/prepare; no hidden tomb, monster or item secrets granted.",
+      "racial_magic": "Drow ancestry does not grant unrecorded innate spells; racial mechanics remain undefined."
+    },
+    {
+      "character_id": "party.malekith",
+      "name": "Azhar ibn Rashid al-Shams (\"Az\")",
+      "class_access": [
+        "Paladin 9: one level-1 priest slot, caster level 1; Combat, Divination, Healing and Protection spheres; no Wisdom bonus."
+      ],
+      "capacity": [
+        {
+          "class": "priest",
+          "level": 1,
+          "maximum": 1,
+          "caster_level": 1,
+          "bonus": 0,
+          "used": "Not recorded",
+          "available": "Preparation/usage must be recorded"
+        }
+      ],
+      "prepared_baseline_total": 0,
+      "spells": [],
+      "fetched_spells": [],
+      "recommended_spells": [
+        {
+          "spell": "Protection from Evil",
+          "level": 1,
+          "sphere_or_class": "Protection",
+          "use": "Protect a vulnerable ally; candidate, not prepared",
+          "casts": 0
+        },
+        {
+          "spell": "Cure Light Wounds",
+          "level": 1,
+          "sphere_or_class": "Healing",
+          "use": "Emergency healing; candidate, not prepared",
+          "casts": 0
+        }
+      ],
+      "abilities": [
+        {
+          "ability": "Lay on Hands",
+          "effect": "Standard paladin reference: up to 18 HP by touch at level 9; declare target and record use.",
+          "uses": "1/day; spent and remaining not recorded"
+        },
+        {
+          "ability": "Detect Evil",
+          "effect": "Standard paladin detection requires deliberate concentration and applicable evil conditions; never reveals hidden identities automatically.",
+          "uses": "At will; no free omniscience"
+        },
+        {
+          "ability": "Aura of Protection",
+          "effect": "Standard paladin proximity protection; validate range, enemy qualification and stacking before adjustment.",
+          "uses": "Passive while applicable"
+        },
+        {
+          "ability": "Turn Undead",
+          "effect": "Paladin 9 turns as cleric 7; resolve target table and encounter attempt limits.",
+          "uses": "Encounter attempts require recorded adjudication"
+        },
+        {
+          "ability": "Cure Disease",
+          "effect": "Standard paladin 9 reference: two uses per week; no restoration performed by sheet update.",
+          "uses": "2/week; spent and remaining not recorded"
+        },
+        {
+          "ability": "Solar Cleave",
+          "effect": "Custom solar attack; damage, cost, targets and recharge are not defined.",
+          "uses": "Unavailable pending definition"
+        }
+      ],
+      "magic_items": [
+        {
+          "item": "Malik \u2014 Scimitar of the Burning Sun +3",
+          "quantity": 1.0,
+          "equipped": "weapon_primary",
+          "power": "Recorded weapon +3 from current named inventory; only verified hit/damage adjustments, no extra spell or special attack.",
+          "enchantment": 3,
+          "charges": "Not recorded; never assume unlimited expendable powers",
+          "casts": "No item spellcasting grants defined",
+          "recharge": "Not defined for custom active powers",
+          "limitation": "No additional special powers recorded",
+          "carrying": "Personal recorded gear"
+        },
+        {
+          "item": "Cloak of Elvenkind",
+          "quantity": 1.0,
+          "equipped": "cloak",
+          "power": "Recorded concealment/silent-movement gear; resolve environmental and class conditions. No automatic invisibility or discovery.",
+          "enchantment": "Not confirmed numerically",
+          "charges": "Not recorded; never assume unlimited expendable powers",
+          "casts": "No item spellcasting grants defined",
+          "recharge": "Not defined for custom active powers",
+          "limitation": "Only recorded effects apply",
+          "carrying": "Personal recorded gear"
+        }
+      ],
+      "familiars": [],
+      "personality": "Az treats sacred magic as a promise of protection, saving his brief prayer for a vulnerable ally.",
+      "actions": "Hold the line with Malik, offer healing or protection when justified, and preserve the single prayer for a decisive need.",
+      "character_knowledge": "Knows own listed equipment, verified class access, preparations, and familiar limits. Recommendations are options to learn/prepare; no hidden tomb, monster or item secrets granted.",
+      "racial_magic": "Drow ancestry does not grant unrecorded innate spells; racial mechanics remain undefined."
+    },
+    {
+      "character_id": "party.vaelis",
+      "name": "Dakarai \"Dak\" Neferhotep",
+      "class_access": [
+        "Ranger 8: one level-1 priest slot, caster level 1; Animal and Plant spheres only; no Wisdom bonus."
+      ],
+      "capacity": [
+        {
+          "class": "priest",
+          "level": 1,
+          "maximum": 1,
+          "caster_level": 1,
+          "bonus": 0,
+          "used": "Not recorded",
+          "available": "Preparation/usage must be recorded"
+        }
+      ],
+      "prepared_baseline_total": 0,
+      "spells": [],
+      "fetched_spells": [],
+      "recommended_spells": [
+        {
+          "spell": "Invisibility to Animals",
+          "level": 1,
+          "sphere_or_class": "Animal",
+          "use": "Avoid animal disturbance; candidate, not prepared",
+          "casts": 0
+        },
+        {
+          "spell": "Entangle",
+          "level": 1,
+          "sphere_or_class": "Plant",
+          "use": "Only when actual vegetation supports the spell; candidate, not prepared",
+          "casts": 0
+        }
+      ],
+      "abilities": [
+        {
+          "ability": "Ranger prayers",
+          "effect": "One daily first-level Animal/Plant prayer; preparation not recorded.",
+          "uses": "Capacity 1; current preparation and remaining unknown"
+        },
+        {
+          "ability": "Eye of Horus",
+          "effect": "Falcon-spirit scouting intent; report actual sensory observations, distance and access. No remote omniscience or automatic bonus.",
+          "uses": "Companion availability and action budget require current state"
+        }
+      ],
+      "magic_items": [
+        {
+          "item": "Composite Longbow +3",
+          "quantity": 1.0,
+          "equipped": "weapon_ranged",
+          "power": "Recorded weapon +3 from current named inventory; only verified hit/damage adjustments, no extra spell or special attack.",
+          "enchantment": 3,
+          "charges": "Not recorded; never assume unlimited expendable powers",
+          "casts": "No item spellcasting grants defined",
+          "recharge": "Not defined for custom active powers",
+          "limitation": "No additional special powers recorded",
+          "carrying": "Personal recorded gear"
+        },
+        {
+          "item": "Composite Short Bow +2",
+          "quantity": 1.0,
+          "equipped": "weapon_ranged_alt",
+          "power": "Recorded weapon +2 from current named inventory; only verified hit/damage adjustments, no extra spell or special attack.",
+          "enchantment": 2,
+          "charges": "Not recorded; never assume unlimited expendable powers",
+          "casts": "No item spellcasting grants defined",
+          "recharge": "Not defined for custom active powers",
+          "limitation": "No additional special powers recorded",
+          "carrying": "Personal recorded gear"
+        },
+        {
+          "item": "Cloak of Elvenkind",
+          "quantity": 1.0,
+          "equipped": "cloak",
+          "power": "Recorded concealment/silent-movement gear; resolve environmental and class conditions. No automatic invisibility or discovery.",
+          "enchantment": "Not confirmed numerically",
+          "charges": "Not recorded; never assume unlimited expendable powers",
+          "casts": "No item spellcasting grants defined",
+          "recharge": "Not defined for custom active powers",
+          "limitation": "Only recorded effects apply",
+          "carrying": "Personal recorded gear"
+        },
+        {
+          "item": "Eye of Horus",
+          "quantity": 1.0,
+          "equipped": "familiar",
+          "power": "Falcon-spirit companion, not a spell battery. Sensory scouting only after declared/resolved action.",
+          "enchantment": "Not confirmed numerically",
+          "charges": "Not recorded; never assume unlimited expendable powers",
+          "casts": "No item spellcasting grants defined",
+          "recharge": "Not defined for custom active powers",
+          "limitation": "Only recorded effects apply",
+          "carrying": "Personal recorded companion"
+        }
+      ],
+      "familiars": [],
+      "personality": "Dak regards magic as part of careful scouting, not a substitute for watching tracks and exits.",
+      "actions": "Use bows first; offer the one animal/plant prayer when appropriate. Eye of Horus must report only what it can actually observe.",
+      "character_knowledge": "Knows own listed equipment, verified class access, preparations, and familiar limits. Recommendations are options to learn/prepare; no hidden tomb, monster or item secrets granted.",
+      "racial_magic": "Drow ancestry does not grant unrecorded innate spells; racial mechanics remain undefined."
+    },
+    {
+      "character_id": "party.syrra",
+      "name": "Cyrra Neferet",
+      "class_access": [
+        "No recorded spellcasting class or spell slots."
+      ],
+      "capacity": [],
+      "prepared_baseline_total": 0,
+      "spells": [],
+      "fetched_spells": [],
+      "recommended_spells": [],
+      "abilities": [
+        {
+          "ability": "Ultimate Shadow",
+          "effect": "Recorded Cloak + Boots synergy; no invented invisibility, skill modifier or immunity.",
+          "uses": "Passive gear; exact custom enhancement undefined"
+        }
+      ],
+      "magic_items": [
+        {
+          "item": "Cloak of Elvenkind",
+          "quantity": 1.0,
+          "equipped": "cloak",
+          "power": "Recorded concealment/silent-movement gear; resolve environmental and class conditions. No automatic invisibility or discovery.",
+          "enchantment": "Not confirmed numerically",
+          "charges": "Not recorded; never assume unlimited expendable powers",
+          "casts": "No item spellcasting grants defined",
+          "recharge": "Not defined for custom active powers",
+          "limitation": "Only recorded effects apply",
+          "carrying": "Personal recorded gear"
+        },
+        {
+          "item": "Boots of Elvenkind",
+          "quantity": 1.0,
+          "equipped": "boots",
+          "power": "Recorded concealment/silent-movement gear; resolve environmental and class conditions. No automatic invisibility or discovery.",
+          "enchantment": "Not confirmed numerically",
+          "charges": "Not recorded; never assume unlimited expendable powers",
+          "casts": "No item spellcasting grants defined",
+          "recharge": "Not defined for custom active powers",
+          "limitation": "Only recorded effects apply",
+          "carrying": "Personal recorded gear"
+        },
+        {
+          "item": "Twin Daggers +1",
+          "quantity": 2.0,
+          "equipped": "weapon_secondary",
+          "power": "Named custom enchantment; special powers are undefined.",
+          "enchantment": "Not confirmed numerically",
+          "charges": "Not recorded; never assume unlimited expendable powers",
+          "casts": "No item spellcasting grants defined",
+          "recharge": "Not defined for custom active powers",
+          "limitation": "Master sheet lists +1; runtime inventory does not confirm this enchantment. Resolve the discrepancy before applying it.",
+          "carrying": "Personal recorded gear"
+        },
+        {
+          "item": "Short Bow +1",
+          "quantity": 1.0,
+          "equipped": "weapon_ranged",
+          "power": "Named custom enchantment; special powers are undefined.",
+          "enchantment": "Not confirmed numerically",
+          "charges": "Not recorded; never assume unlimited expendable powers",
+          "casts": "No item spellcasting grants defined",
+          "recharge": "Not defined for custom active powers",
+          "limitation": "Master sheet lists +1; runtime inventory does not confirm this enchantment. Resolve the discrepancy before applying it.",
+          "carrying": "Personal recorded gear"
+        },
+        {
+          "item": "Cloak of Shifting Sand",
+          "quantity": 0,
+          "carrying": "Transferred/consumed for expedition shelter; stale inventory row is not personal equipment",
+          "power": "No personal benefit",
+          "casts": 0,
+          "charges": "Not applicable"
+        }
+      ],
+      "familiars": [],
+      "personality": "Cyrra trusts quiet movement and patient observation; her enchanted gear supports practiced skill.",
+      "actions": "Scout with an exit route. Do not turn concealment into invisibility, automatic trap detection or guaranteed surprise.",
+      "character_knowledge": "Knows own listed equipment, verified class access, preparations, and familiar limits. Recommendations are options to learn/prepare; no hidden tomb, monster or item secrets granted.",
+      "racial_magic": "Drow ancestry does not grant unrecorded innate spells; racial mechanics remain undefined."
+    },
+    {
+      "character_id": "party.tal",
+      "name": "Eryon Neferhotep (\"Ery\")",
+      "class_access": [
+        "Bard 3: two level-1 wizard slots, caster level 3. A spellbook and successfully learned spells are required; neither is established in the present ledger.",
+        "Scribe 4 does not independently grant spells."
+      ],
+      "capacity": [
+        {
+          "class": "wizard",
+          "level": 1,
+          "maximum": 2,
+          "caster_level": 3,
+          "bonus": 0,
+          "used": "Not recorded",
+          "available": "Preparation/usage must be recorded"
+        }
+      ],
+      "prepared_baseline_total": 0,
+      "spells": [],
+      "fetched_spells": [],
+      "recommended_spells": [
+        {
+          "spell": "Detect Magic",
+          "level": 1,
+          "sphere_or_class": "Wizard",
+          "use": "Study an observed enchantment; candidate, not learned",
+          "casts": 0
+        },
+        {
+          "spell": "Read Magic",
+          "level": 1,
+          "sphere_or_class": "Wizard",
+          "use": "Read magical writing under its rules; candidate, not learned",
+          "casts": 0
+        },
+        {
+          "spell": "Comprehend Languages",
+          "level": 1,
+          "sphere_or_class": "Wizard",
+          "use": "Understand touched ordinary text/speech; candidate, not learned; does not solve ciphers",
+          "casts": 0
+        }
+      ],
+      "abilities": [
+        {
+          "ability": "Bard spellcasting",
+          "effect": "Two first-level slots at bard 3; learning and preparation records are empty, so no actual spell granted.",
+          "uses": "Capacity 2; available casts unknown"
+        },
+        {
+          "ability": "Calm sandstorms",
+          "effect": "Custom wind ability; storm size, action cost, duration and usage limit undefined.",
+          "uses": "Unavailable pending definition"
+        },
+        {
+          "ability": "Localized windstorm",
+          "effect": "Custom wind ability; damage, area, saves and usage limit undefined.",
+          "uses": "Unavailable pending definition"
+        },
+        {
+          "ability": "Guide desert winds",
+          "effect": "Custom wind utility; no free flight, desert-wide navigation or resource generation.",
+          "uses": "Unavailable pending definition"
+        }
+      ],
+      "magic_items": [
+        {
+          "item": "Thelarrs of the Winds",
+          "quantity": 1.0,
+          "equipped": "instrument",
+          "power": "Named custom enchantment; special powers are undefined.",
+          "enchantment": "Not confirmed numerically",
+          "charges": "Not recorded; never assume unlimited expendable powers",
+          "casts": "No item spellcasting grants defined",
+          "recharge": "Not defined for custom active powers",
+          "limitation": "Only recorded effects apply",
+          "carrying": "Personal recorded gear"
+        },
+        {
+          "item": "Cloak of Elvenkind",
+          "quantity": "Listed in character master; possession requires reconciliation",
+          "equipped": "Not recorded",
+          "power": "Recorded concealment/silent-movement gear; resolve environmental and class conditions. No automatic invisibility or discovery.",
+          "enchantment": "Not confirmed numerically",
+          "charges": "Not recorded; never assume unlimited expendable powers",
+          "casts": "No item spellcasting grants defined",
+          "recharge": "Not defined for custom active powers",
+          "limitation": "Only recorded effects apply",
+          "carrying": "Master record"
+        },
+        {
+          "item": "Short Sword +1",
+          "quantity": 1.0,
+          "equipped": "weapon_melee_emergency",
+          "power": "Recorded weapon +1 from current named inventory; only verified hit/damage adjustments, no extra spell or special attack.",
+          "enchantment": 1,
+          "charges": "Not recorded; never assume unlimited expendable powers",
+          "casts": "No item spellcasting grants defined",
+          "recharge": "Not defined for custom active powers",
+          "limitation": "No additional special powers recorded",
+          "carrying": "Personal recorded gear"
+        },
+        {
+          "item": "Dagger +1",
+          "quantity": 1.0,
+          "equipped": "weapon_backup",
+          "power": "Recorded weapon +1 from current named inventory; only verified hit/damage adjustments, no extra spell or special attack.",
+          "enchantment": 1,
+          "charges": "Not recorded; never assume unlimited expendable powers",
+          "casts": "No item spellcasting grants defined",
+          "recharge": "Not defined for custom active powers",
+          "limitation": "No additional special powers recorded",
+          "carrying": "Personal recorded gear"
+        }
+      ],
+      "familiars": [],
+      "personality": "Ery sees magic as a language woven into old stories, inscriptions and desert winds; he records what he truly learns.",
+      "actions": "Guard the rear with arrows, describe known lore without solving unknown inscriptions, and propose wind support only when its effect is defined.",
+      "character_knowledge": "Knows own listed equipment, verified class access, preparations, and familiar limits. Recommendations are options to learn/prepare; no hidden tomb, monster or item secrets granted.",
+      "racial_magic": "Drow ancestry does not grant unrecorded innate spells; racial mechanics remain undefined."
+    },
+    {
+      "character_id": "party.zarvak",
+      "name": "Barak al-Sahra (\"Bar\")",
+      "class_access": [
+        "No recorded spellcasting class or spell slots.",
+        "Camel fear-charge is a custom handling ability, not a granted spell."
+      ],
+      "capacity": [],
+      "prepared_baseline_total": 0,
+      "spells": [],
+      "fetched_spells": [],
+      "recommended_spells": [],
+      "abilities": [
+        {
+          "ability": "Camel fear-charge",
+          "effect": "Custom mounted ability; fear targets, save and frequency undefined. Do not label it a spell.",
+          "uses": "Unavailable pending definition"
+        }
+      ],
+      "magic_items": [
+        {
+          "item": "Cloak of Elvenkind",
+          "quantity": "Listed in character master; possession requires reconciliation",
+          "equipped": "Not recorded",
+          "power": "Recorded concealment/silent-movement gear; resolve environmental and class conditions. No automatic invisibility or discovery.",
+          "enchantment": "Not confirmed numerically",
+          "charges": "Not recorded; never assume unlimited expendable powers",
+          "casts": "No item spellcasting grants defined",
+          "recharge": "Not defined for custom active powers",
+          "limitation": "Only recorded effects apply",
+          "carrying": "Master record"
+        },
+        {
+          "item": "Boots of Elvenkind",
+          "quantity": "Listed in character master; possession requires reconciliation",
+          "equipped": "Not recorded",
+          "power": "Recorded concealment/silent-movement gear; resolve environmental and class conditions. No automatic invisibility or discovery.",
+          "enchantment": "Not confirmed numerically",
+          "charges": "Not recorded; never assume unlimited expendable powers",
+          "casts": "No item spellcasting grants defined",
+          "recharge": "Not defined for custom active powers",
+          "limitation": "Only recorded effects apply",
+          "carrying": "Master record"
+        },
+        {
+          "item": "Composite Combat Longbow +2",
+          "quantity": 1.0,
+          "equipped": "weapon_ranged",
+          "power": "Recorded weapon +2 from current named inventory; only verified hit/damage adjustments, no extra spell or special attack.",
+          "enchantment": 2,
+          "charges": "Not recorded; never assume unlimited expendable powers",
+          "casts": "No item spellcasting grants defined",
+          "recharge": "Not defined for custom active powers",
+          "limitation": "No additional special powers recorded",
+          "carrying": "Personal recorded gear"
+        },
+        {
+          "item": "Composite Short Bow +1",
+          "quantity": 1.0,
+          "equipped": "weapon_ranged_alt",
+          "power": "Recorded weapon +1 from current named inventory; only verified hit/damage adjustments, no extra spell or special attack.",
+          "enchantment": 1,
+          "charges": "Not recorded; never assume unlimited expendable powers",
+          "casts": "No item spellcasting grants defined",
+          "recharge": "Not defined for custom active powers",
+          "limitation": "No additional special powers recorded",
+          "carrying": "Personal recorded gear"
+        }
+      ],
+      "familiars": [],
+      "personality": "Bar values useful enchantment but keeps a practical count of water, arrows, animals and escape routes.",
+      "actions": "Open with a bow, protect the caravan and retreat route; report depleted resources instead of asking magic to erase every hardship.",
+      "character_knowledge": "Knows own listed equipment, verified class access, preparations, and familiar limits. Recommendations are options to learn/prepare; no hidden tomb, monster or item secrets granted.",
+      "racial_magic": "Drow ancestry does not grant unrecorded innate spells; racial mechanics remain undefined."
+    }
+  ]
+}

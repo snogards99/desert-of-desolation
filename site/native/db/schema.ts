@@ -1,0 +1,5 @@
+import { sqliteTable, text, integer, primaryKey } from 'drizzle-orm/sqlite-core';
+export const campaigns = sqliteTable('campaigns',{id:text('id').primaryKey(),state:text('state').notNull(),revision:integer('revision').notNull()});
+export const actions = sqliteTable('actions',{id:text('id').primaryKey(),campaign:text('campaign').notNull(),text:text('text').notNull(),status:text('status').notNull(),created:text('created').notNull()});
+export const campaignOwners=sqliteTable('campaign_owners',{campaign:text('campaign').primaryKey(),subject:text('subject').notNull()});
+export const actionReceipts=sqliteTable('action_receipts',{campaign:text('campaign').notNull(),id:text('id').notNull(),subject:text('subject').notNull(),expectedRevision:integer('expected_revision').notNull(),fingerprint:text('fingerprint').notNull(),response:text('response').notNull(),nextState:text('next_state').notNull(),nextRevision:integer('next_revision').notNull(),text:text('text').notNull(),status:text('status').notNull(),created:text('created').notNull()},t=>[primaryKey({columns:[t.campaign,t.id]})]);

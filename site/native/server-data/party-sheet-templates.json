@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "template": "AD&D 2E Character Sheet Rev 4.6 — Custom Party Alpha 1",
+  "excluded_sections": [
+    "PSIONICS",
+    "FAMILY CHART"
+  ],
+  "unknown_value": "EM_DASH",
+  "authority": "Current mutable campaign state and runtime tables override this recorded master baseline.",
+  "actors": {
+    "party.snogard": {
+      "name": "solar",
+      "title": "The solar sage",
+      "portrait": "snogard",
+      "canonical_alias": "party.snogard",
+      "symbol": "𓋹"
+    },
+    "party.malekith": {
+      "name": "guardian",
+      "title": "The sun’s defender",
+      "portrait": "azhar",
+      "canonical_alias": "party.malekith",
+      "symbol": "𓆣"
+    },
+    "party.vaelis": {
+      "name": "falcon",
+      "title": "The desert pathfinder",
+      "portrait": "dakarai",
+      "canonical_alias": "party.vaelis",
+      "symbol": "𓅃"
+    },
+    "party.syrra": {
+      "name": "veil",
+      "title": "The silent shadow",
+      "portrait": "cyrra",
+      "canonical_alias": "party.syrra",
+      "symbol": "𓂀"
+    },
+    "party.tal": {
+      "name": "scribe",
+      "title": "The keeper of chronicles",
+      "portrait": "eryon",
+      "canonical_alias": "party.talanis",
+      "symbol": "𓏞"
+    },
+    "party.zarvak": {
+      "name": "caravan",
+      "title": "The caravan sentinel",
+      "portrait": "barak",
+      "canonical_alias": "party.zarvak",
+      "symbol": "𓊖"
+    }
+  }
+}

@@ -1,0 +1,58 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import {projectSheet} from '../lib/character-sheet.mjs';
+import {magicBudget,beginRetrieval} from '../lib/magic-budget.mjs';
+import {magicAtmosphere} from '../lib/magic-story.mjs';
+const read=p=>JSON.parse(fs.readFileSync(p));
+const data=read('server-data/game.json'),profiles=read('server-data/character-sheets.json'),magic=read('shared/party-magic.json');
+assert.equal(magic.characters.length,6);assert.equal(new Set(magic.characters.map(c=>c.character_id)).size,6);
+const main=data.HotRuntimeSnapshot.find(x=>x.campaign_id==='dod-main'),demo=data.HotRuntimeSnapshot.find(x=>x.campaign_id==='dod-demo-001');
+const sheet=(id,state=main)=>projectSheet(data.Characters.find(c=>c.character_id===id&&c.campaign_id===state.campaign_id),data,profiles,state);
+assert.equal(sheet('party.malekith').magic.spell_slots[0].maximum,1);
+assert.equal(sheet('party.vaelis').magic.spell_slots[0].maximum,1);
+assert.equal(sheet('party.tal').magic.spell_slots[0].maximum,2);
+assert.equal(sheet('party.tal').magic.prepared_spells.length,0);
+assert.equal(sheet('party.tal').magic.knowledge.length,0);
+for(const id of ['party.syrra','party.zarvak']){assert.equal(sheet(id).sections.magic,false);assert(sheet(id).magicItems.length>0);assert(sheet(id).magicCharacter.actions);}
+assert.equal(sheet('party.snogard').companions.length,2);
+assert.equal(sheet('party.snogard').magic.powers.filter(x=>x.power_id).length,2);
+const state=structuredClone(main);state.magic_resources={characters:{'party.snogard':{prepared_used:{produce_flame_priest:1},fetched_remaining:{Fireball:0},last_high_level_cast_round:5,powers:{sekhem_serpent_ward:{remaining:0}}}}};
+const altered=sheet('party.snogard',state);
+assert.equal(altered.magic.prepared_spells.find(x=>x.spell==='produce flame').available,0);
+assert.equal(altered.magic.knowledge.find(x=>x.spell_id==='produce_flame_priest').casts_remaining,0);
+assert.equal(altered.magic.fetched_cache.find(x=>x.spell==='Fireball').remaining,0);
+assert.equal(altered.magic.powers.find(x=>x.power_id==='sekhem_serpent_ward').remaining,0);
+assert.equal(altered.magic.recovery.next_high_level_cast_round,8);
+assert.equal(sheet('party.snogard',demo).magicCharacter,null);
+assert.equal(sheet('party.syrra').inventory.find(x=>x.name==='Cloak of Shifting Sand').quantity,0);
+const cast={round:5,level:3,kind:'fetched',key:'Fireball',remaining:1,consent:true,mechanicsReady:true};
+assert(magicBudget(cast).allowed);
+assert(!magicBudget({...cast,remaining:0}).allowed);
+assert(!magicBudget({...cast,remaining:undefined}).allowed);
+assert(!magicBudget({...cast,consent:false}).allowed);
+assert(!magicBudget({...cast,mechanicsReady:false}).allowed);
+for(const round of [5,6,7])assert(!magicBudget({...cast,round,ledger:{last_high_level_cast_round:5}}).allowed);
+assert(magicBudget({...cast,round:8,ledger:{last_high_level_cast_round:5}}).allowed);
+assert(!magicBudget({...cast,level:1,ledger:{last_magic_round:5}}).allowed);
+assert(magicBudget({...cast,level:1,round:6,ledger:{last_high_level_cast_round:5}}).allowed);
+assert(!magicBudget({...cast,kind:'power',level:0,companionPresent:false}).allowed);
+const fetch={spell:'Fireball',level:3,roll:4,round:7,consent:true,eligible:true,ledger:{fetched_remaining:{Fireball:0}}};
+assert.equal(beginRetrieval(fetch).gene_retrieval.ready_round,14);
+assert(!beginRetrieval({...fetch,ledger:{...fetch.ledger,gene_retrieval:{spell:'Wall of Stone'}}}).allowed);
+assert(!beginRetrieval({...fetch,ledger:{fetched_remaining:{Fireball:1}}}).allowed);
+assert(!beginRetrieval({...fetch,ledger:{fetched_remaining:{a:1,b:1,c:1,d:1,e:1,f:1}}}).allowed);
+assert(!beginRetrieval({...fetch,ledger:{}}).allowed);
+assert.equal(magicAtmosphere(demo,{node_id:'charter'}),'');
+assert(magicAtmosphere(main,{node_id:'dod.prologue.bralizzar.charter'}));
+assert.equal(magicAtmosphere(main,undefined),'');
+console.log('PASS: all six magic assessments, class capacities, spell knowledge vs preparation, two familiar powers, depleted ledger projection, campaign isolation, high-level recovery, one-use copies, single retrieval and discovery-safe atmosphere.');
+// Optimization regression cases: malformed records never display bonus casts or refill powers.
+for(const bad of [-1,0.5,NaN,'0',null]){
+ const malformed=structuredClone(main);malformed.magic_resources={characters:{'party.snogard':{prepared_used:{produce_flame_priest:bad},slot_used:{'priest:1':bad},fetched_remaining:{Fireball:bad},powers:{gene_emberlight:{remaining:bad}}}}};
+ const m=sheet('party.snogard',malformed).magic;
+ assert.equal(m.prepared_spells.find(x=>x.spell==='produce flame').available,'Requires resource review');
+ assert.equal(m.spell_slots[0].available,'Requires resource review');
+ assert.equal(m.powers.find(x=>x.power_id==='gene_emberlight').remaining,'Requires resource review');
+ assert.equal(m.fetched_cache.find(x=>x.spell==='Fireball').remaining,'Requires resource review');
+}
+console.log('PASS: invalid, fractional, missing and negative ledger counters never increase available magic.');

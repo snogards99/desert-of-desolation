@@ -1,0 +1,1 @@
+export function createSavePoller(options:{load:()=>Promise<unknown>,isVisible?:()=>boolean,onStatus?:(status:{stale:boolean})=>void,intervalMs?:number}):{start():void;stop():void;visibilityChanged():void};

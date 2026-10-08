@@ -1,0 +1,1423 @@
+{
+  "schema_version": "dod.scene-still-bindings.v1",
+  "plugin_version": "1.5.1-alpha.11",
+  "art_engine": "dod.art-engine@1.3.0",
+  "rendering_profile": "dod.pixel32-rgba",
+  "phase_aliases": {
+    "DAWN": "DUSK",
+    "MORNING": "DUSK",
+    "EVENING": "DUSK"
+  },
+  "nodes": [
+    {
+      "node_id": "dod.bralizzar.entry",
+      "environment_id": "bg.location.bralizzar_room",
+      "actor_ids": []
+    },
+    {
+      "node_id": "dod.citadel_martek.entry",
+      "environment_id": "bg.default.garden",
+      "actor_ids": []
+    },
+    {
+      "node_id": "dod.crypt_badr.entry",
+      "environment_id": "bg.location.badr_entry",
+      "actor_ids": []
+    },
+    {
+      "node_id": "dod.desert_wilderness.entry",
+      "environment_id": "bg.default.desert_trail",
+      "actor_ids": []
+    },
+    {
+      "node_id": "dod.lost_city_phoenix.entry",
+      "environment_id": "bg.location.phoenix_city",
+      "actor_ids": []
+    },
+    {
+      "node_id": "dod.medinat_muskawoon.entry",
+      "environment_id": "bg.location.medinat",
+      "actor_ids": []
+    },
+    {
+      "node_id": "dod.northknife_pass.entry",
+      "environment_id": "bg.location.northknife_ford",
+      "actor_ids": []
+    },
+    {
+      "node_id": "dod.oasis_white_palm.entry",
+      "environment_id": "bg.default.oasis",
+      "actor_ids": []
+    },
+    {
+      "node_id": "dod.prologue.bralizzar.charter",
+      "environment_id": "bg.location.bralizzar_room",
+      "actor_ids": []
+    },
+    {
+      "node_id": "dod.prologue.frontier.last_camp",
+      "environment_id": "bg.default.camp",
+      "actor_ids": []
+    },
+    {
+      "node_id": "dod.pyramid_amun_re.entry",
+      "environment_id": "bg.location.pyramid_entry",
+      "actor_ids": []
+    },
+    {
+      "node_id": "dod.skysea.entry",
+      "environment_id": "bg.default.skysea",
+      "actor_ids": []
+    },
+    {
+      "node_id": "dod.sunken_city_pazar.entry",
+      "environment_id": "bg.location.pazar_entry",
+      "actor_ids": []
+    },
+    {
+      "node_id": "dod.temple_set.entry",
+      "environment_id": "bg.location.set_entry",
+      "actor_ids": []
+    },
+    {
+      "node_id": "dod.troll_cave.aftermath.withdrawn",
+      "environment_id": "bg.default.cave_mouth",
+      "actor_ids": []
+    },
+    {
+      "node_id": "dod.troll_cave.entry.choice",
+      "environment_id": "bg.default.cave",
+      "actor_ids": [
+        "actor.troll"
+      ]
+    },
+    {
+      "node_id": "i3.A",
+      "environment_id": "bg.default.sand",
+      "actor_ids": []
+    },
+    {
+      "node_id": "i3.B",
+      "environment_id": "bg.location.sule_gates",
+      "actor_ids": []
+    },
+    {
+      "node_id": "i3.C",
+      "environment_id": "bg.default.sand",
+      "actor_ids": []
+    },
+    {
+      "node_id": "i3.D",
+      "environment_id": "bg.default.hills",
+      "actor_ids": []
+    }
+  ],
+  "environments": [
+    {
+      "environment_id": "bg.location.bralizzar_room",
+      "scene_context": "INDOOR",
+      "mode": "DOD_INK",
+      "assets": [
+        {
+          "asset_id": "dod.env.bg.location.bralizzar_room.neutral",
+          "phase": "NEUTRAL",
+          "mode": "DOD_INK",
+          "sha256": "f698ce29bd01343cc1182a4bef137d677a33ce53d20c09470c49a5f5397e41c1",
+          "bytes": 1891108,
+          "package_path": "assets/images/stills/f698ce29bd01343cc1182a4bef137d677a33ce53d20c09470c49a5f5397e41c1.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "CANONICAL_MASTER",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        }
+      ]
+    },
+    {
+      "environment_id": "bg.default.garden",
+      "scene_context": "OUTDOOR",
+      "mode": "DOD_PAINTED",
+      "assets": [
+        {
+          "asset_id": "dod.env.bg.default.garden.day",
+          "phase": "DAY",
+          "mode": "DOD_PAINTED",
+          "sha256": "cfd16a9151e22064a3d9e5c210967f1388e915a8e15340cddea3b0880a7c7eb3",
+          "bytes": 3464281,
+          "package_path": "assets/images/stills/cfd16a9151e22064a3d9e5c210967f1388e915a8e15340cddea3b0880a7c7eb3.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "CANONICAL_MASTER",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        },
+        {
+          "asset_id": "dod.env.bg.default.garden.evening",
+          "phase": "DUSK",
+          "mode": "DOD_PAINTED",
+          "sha256": "4c4534573a9a4c412a6eb17b99475bef2374bada7fe1090a33db67cf7d335362",
+          "bytes": 3070542,
+          "package_path": "assets/images/stills/4c4534573a9a4c412a6eb17b99475bef2374bada7fe1090a33db67cf7d335362.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "REFERENCE_LOCKED_LIGHTING_EDITS",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        },
+        {
+          "asset_id": "dod.env.bg.default.garden.night",
+          "phase": "NIGHT",
+          "mode": "DOD_PAINTED",
+          "sha256": "37a958be216f05a3a9a66367ff3914a208479f59f2331acf7fa3c21874cc93cc",
+          "bytes": 2762534,
+          "package_path": "assets/images/stills/37a958be216f05a3a9a66367ff3914a208479f59f2331acf7fa3c21874cc93cc.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "REFERENCE_LOCKED_LIGHTING_EDITS",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        }
+      ]
+    },
+    {
+      "environment_id": "bg.location.badr_entry",
+      "scene_context": "OUTDOOR",
+      "mode": "DOD_PAINTED",
+      "assets": [
+        {
+          "asset_id": "dod.env.bg.location.badr_entry.day",
+          "phase": "DAY",
+          "mode": "DOD_PAINTED",
+          "sha256": "85e49dc4bf3d346505a420c5c5c6810103cac8fb1438a9f168f535fadcdb4bfc",
+          "bytes": 2941022,
+          "package_path": "assets/images/stills/85e49dc4bf3d346505a420c5c5c6810103cac8fb1438a9f168f535fadcdb4bfc.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "CANONICAL_MASTER",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        },
+        {
+          "asset_id": "dod.env.bg.location.badr_entry.evening",
+          "phase": "DUSK",
+          "mode": "DOD_PAINTED",
+          "sha256": "31143db3a91ed3d862878fb42a8f3dfe899f0ce13a7f58a0702d112b8eb8e216",
+          "bytes": 2807986,
+          "package_path": "assets/images/stills/31143db3a91ed3d862878fb42a8f3dfe899f0ce13a7f58a0702d112b8eb8e216.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "REFERENCE_LOCKED_LIGHTING_EDITS",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        },
+        {
+          "asset_id": "dod.env.bg.location.badr_entry.night",
+          "phase": "NIGHT",
+          "mode": "DOD_PAINTED",
+          "sha256": "53ff933bb18d1dec46162f78d6a8bf800e347b2d51660e5ba234d85e1bd38b9f",
+          "bytes": 2265140,
+          "package_path": "assets/images/stills/53ff933bb18d1dec46162f78d6a8bf800e347b2d51660e5ba234d85e1bd38b9f.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "REFERENCE_LOCKED_LIGHTING_EDITS",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        }
+      ]
+    },
+    {
+      "environment_id": "bg.default.desert_trail",
+      "scene_context": "OUTDOOR",
+      "mode": "DOD_INK",
+      "assets": [
+        {
+          "asset_id": "dod.env.bg.default.desert_trail.day",
+          "phase": "DAY",
+          "mode": "DOD_INK",
+          "sha256": "da03feaed105db824101d9a44afd726bc1003bd323c8b50a7f87926a76b2ac55",
+          "bytes": 2485492,
+          "package_path": "assets/images/stills/da03feaed105db824101d9a44afd726bc1003bd323c8b50a7f87926a76b2ac55.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "CANONICAL_MASTER",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        },
+        {
+          "asset_id": "dod.env.bg.default.desert_trail.evening",
+          "phase": "DUSK",
+          "mode": "DOD_INK",
+          "sha256": "76f016da11b11a794812ae6f79dbac8215bd75724707847a90bac9139686501d",
+          "bytes": 2689141,
+          "package_path": "assets/images/stills/76f016da11b11a794812ae6f79dbac8215bd75724707847a90bac9139686501d.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "REFERENCE_LOCKED_LIGHTING_EDITS",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        },
+        {
+          "asset_id": "dod.env.bg.default.desert_trail.night",
+          "phase": "NIGHT",
+          "mode": "DOD_INK",
+          "sha256": "a8840cce1c5943c1a6460299b5e126611c7b4becca3a73ee760ae08880997f7b",
+          "bytes": 2105996,
+          "package_path": "assets/images/stills/a8840cce1c5943c1a6460299b5e126611c7b4becca3a73ee760ae08880997f7b.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "REFERENCE_LOCKED_LIGHTING_EDITS",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        }
+      ]
+    },
+    {
+      "environment_id": "bg.location.phoenix_city",
+      "scene_context": "OUTDOOR",
+      "mode": "DOD_PAINTED",
+      "assets": [
+        {
+          "asset_id": "dod.env.bg.location.phoenix_city.day",
+          "phase": "DAY",
+          "mode": "DOD_PAINTED",
+          "sha256": "f428b3f07a86c84455d3f819bb59b811585f7fad0bf0ecf1d650f31f4495a270",
+          "bytes": 2310330,
+          "package_path": "assets/images/stills/f428b3f07a86c84455d3f819bb59b811585f7fad0bf0ecf1d650f31f4495a270.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "CANONICAL_MASTER",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        },
+        {
+          "asset_id": "dod.env.bg.location.phoenix_city.evening",
+          "phase": "DUSK",
+          "mode": "DOD_PAINTED",
+          "sha256": "d1ca251d7a744418aff583470e514d067ec68d2c1c81f24ff5b8dc419aa363a1",
+          "bytes": 2271547,
+          "package_path": "assets/images/stills/d1ca251d7a744418aff583470e514d067ec68d2c1c81f24ff5b8dc419aa363a1.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "REFERENCE_LOCKED_LIGHTING_EDITS",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        },
+        {
+          "asset_id": "dod.env.bg.location.phoenix_city.night",
+          "phase": "NIGHT",
+          "mode": "DOD_PAINTED",
+          "sha256": "e091863b29d16b948d4d9de39c122fdecf70c119754fb0ab181438e01ac0e914",
+          "bytes": 1945189,
+          "package_path": "assets/images/stills/e091863b29d16b948d4d9de39c122fdecf70c119754fb0ab181438e01ac0e914.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "REFERENCE_LOCKED_LIGHTING_EDITS",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        }
+      ]
+    },
+    {
+      "environment_id": "bg.location.medinat",
+      "scene_context": "OUTDOOR",
+      "mode": "DOD_PAINTED",
+      "assets": [
+        {
+          "asset_id": "dod.env.bg.location.medinat.day",
+          "phase": "DAY",
+          "mode": "DOD_PAINTED",
+          "sha256": "dc56952056215b0e63e6492570938ffd4f9d9bd5936686774dd9a0ac2d92c6dc",
+          "bytes": 2549956,
+          "package_path": "assets/images/stills/dc56952056215b0e63e6492570938ffd4f9d9bd5936686774dd9a0ac2d92c6dc.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "CANONICAL_MASTER",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        },
+        {
+          "asset_id": "dod.env.bg.location.medinat.evening",
+          "phase": "DUSK",
+          "mode": "DOD_PAINTED",
+          "sha256": "2c7d4622b6b43f0d6768d6795334440746622aebd5f79c09dbbd01cd2c3a5d23",
+          "bytes": 2658039,
+          "package_path": "assets/images/stills/2c7d4622b6b43f0d6768d6795334440746622aebd5f79c09dbbd01cd2c3a5d23.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "REFERENCE_LOCKED_LIGHTING_EDITS",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        },
+        {
+          "asset_id": "dod.env.bg.location.medinat.night",
+          "phase": "NIGHT",
+          "mode": "DOD_PAINTED",
+          "sha256": "92af5d737b1fca744c8d9ee961cea23166ac3c85d7c69c3033ca4f315efb785b",
+          "bytes": 2280139,
+          "package_path": "assets/images/stills/92af5d737b1fca744c8d9ee961cea23166ac3c85d7c69c3033ca4f315efb785b.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "REFERENCE_LOCKED_LIGHTING_EDITS",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        }
+      ]
+    },
+    {
+      "environment_id": "bg.location.northknife_ford",
+      "scene_context": "OUTDOOR",
+      "mode": "DOD_INK",
+      "assets": [
+        {
+          "asset_id": "dod.env.bg.location.northknife_ford.day",
+          "phase": "DAY",
+          "mode": "DOD_INK",
+          "sha256": "495020231aba7036fc2121826842427f63e32b8dfb4aa7fa4a92dd16d5dbaa16",
+          "bytes": 3547764,
+          "package_path": "assets/images/stills/495020231aba7036fc2121826842427f63e32b8dfb4aa7fa4a92dd16d5dbaa16.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "CANONICAL_MASTER",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        },
+        {
+          "asset_id": "dod.env.bg.location.northknife_ford.evening",
+          "phase": "DUSK",
+          "mode": "DOD_INK",
+          "sha256": "63950d2b0ec41cca7d1bc61c199d0f7224962aa0a949d360f9fd5ee87107ce0d",
+          "bytes": 3331844,
+          "package_path": "assets/images/stills/63950d2b0ec41cca7d1bc61c199d0f7224962aa0a949d360f9fd5ee87107ce0d.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "REFERENCE_LOCKED_LIGHTING_EDITS",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        },
+        {
+          "asset_id": "dod.env.bg.location.northknife_ford.night",
+          "phase": "NIGHT",
+          "mode": "DOD_INK",
+          "sha256": "8c3dd70910e2f949b7fb1a353ccdaa6fc146bf15e0e09473251ee423f29d435b",
+          "bytes": 3034535,
+          "package_path": "assets/images/stills/8c3dd70910e2f949b7fb1a353ccdaa6fc146bf15e0e09473251ee423f29d435b.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "REFERENCE_LOCKED_LIGHTING_EDITS",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        }
+      ]
+    },
+    {
+      "environment_id": "bg.default.oasis",
+      "scene_context": "OUTDOOR",
+      "mode": "DOD_PAINTED",
+      "assets": [
+        {
+          "asset_id": "dod.env.bg.default.oasis.day",
+          "phase": "DAY",
+          "mode": "DOD_PAINTED",
+          "sha256": "a36fe3955d5284693e34dea2adee2575c83d0da39ef98185871fa78f8e8db888",
+          "bytes": 3235740,
+          "package_path": "assets/images/stills/a36fe3955d5284693e34dea2adee2575c83d0da39ef98185871fa78f8e8db888.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "CANONICAL_MASTER",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        },
+        {
+          "asset_id": "dod.env.bg.default.oasis.evening",
+          "phase": "DUSK",
+          "mode": "DOD_PAINTED",
+          "sha256": "4c4223dfc0753e01435d8bcc4c195696bb00b1a4e679465c2554c102d4685f4c",
+          "bytes": 3108988,
+          "package_path": "assets/images/stills/4c4223dfc0753e01435d8bcc4c195696bb00b1a4e679465c2554c102d4685f4c.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "REFERENCE_LOCKED_LIGHTING_EDITS",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        },
+        {
+          "asset_id": "dod.env.bg.default.oasis.night",
+          "phase": "NIGHT",
+          "mode": "DOD_PAINTED",
+          "sha256": "3e42345387cc3c4275c382c087cfe05b2c998420ed57dee7c6e0fd4691ce29bc",
+          "bytes": 2864123,
+          "package_path": "assets/images/stills/3e42345387cc3c4275c382c087cfe05b2c998420ed57dee7c6e0fd4691ce29bc.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "REFERENCE_LOCKED_LIGHTING_EDITS",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        }
+      ]
+    },
+    {
+      "environment_id": "bg.default.camp",
+      "scene_context": "OUTDOOR",
+      "mode": "DOD_INK",
+      "assets": [
+        {
+          "asset_id": "dod.env.bg.default.camp.day",
+          "phase": "DAY",
+          "mode": "DOD_INK",
+          "sha256": "422cc02685712b7761132f05c5dbce1ed6897a3178a150c18077ff4d971e0d4c",
+          "bytes": 3160236,
+          "package_path": "assets/images/stills/422cc02685712b7761132f05c5dbce1ed6897a3178a150c18077ff4d971e0d4c.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "CANONICAL_MASTER",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        },
+        {
+          "asset_id": "dod.env.bg.default.camp.evening",
+          "phase": "DUSK",
+          "mode": "DOD_INK",
+          "sha256": "bb899848a62d0cf4c6980fcbcc7a5141e8bae550212a49456cf54191318606cc",
+          "bytes": 3033025,
+          "package_path": "assets/images/stills/bb899848a62d0cf4c6980fcbcc7a5141e8bae550212a49456cf54191318606cc.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "REFERENCE_LOCKED_LIGHTING_EDITS",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        },
+        {
+          "asset_id": "dod.env.bg.default.camp.night",
+          "phase": "NIGHT",
+          "mode": "DOD_INK",
+          "sha256": "faae76251751c21ea0cc321a0e2abeecb0bf7b32e5f37d6ef224d4d8d429f6a9",
+          "bytes": 2524378,
+          "package_path": "assets/images/stills/faae76251751c21ea0cc321a0e2abeecb0bf7b32e5f37d6ef224d4d8d429f6a9.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "REFERENCE_LOCKED_LIGHTING_EDITS",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        }
+      ]
+    },
+    {
+      "environment_id": "bg.location.pyramid_entry",
+      "scene_context": "OUTDOOR",
+      "mode": "DOD_PAINTED",
+      "assets": [
+        {
+          "asset_id": "dod.env.bg.location.pyramid_entry.day",
+          "phase": "DAY",
+          "mode": "DOD_PAINTED",
+          "sha256": "723e2b7d3594cf8fd3a1f8eef8ea45085569f5c217c4661d5a7e8dba9c16244d",
+          "bytes": 2260222,
+          "package_path": "assets/images/stills/723e2b7d3594cf8fd3a1f8eef8ea45085569f5c217c4661d5a7e8dba9c16244d.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "CANONICAL_MASTER",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        },
+        {
+          "asset_id": "dod.env.bg.location.pyramid_entry.evening",
+          "phase": "DUSK",
+          "mode": "DOD_PAINTED",
+          "sha256": "53021652757dfc66371c88c3f5a0c016325dca4d2464ed04f834f2e1eeddc1f5",
+          "bytes": 2417867,
+          "package_path": "assets/images/stills/53021652757dfc66371c88c3f5a0c016325dca4d2464ed04f834f2e1eeddc1f5.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "REFERENCE_LOCKED_LIGHTING_EDITS",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        },
+        {
+          "asset_id": "dod.env.bg.location.pyramid_entry.night",
+          "phase": "NIGHT",
+          "mode": "DOD_PAINTED",
+          "sha256": "1087e4e4bb0e724397d81c63b59d07ba03eec4db58039294719e9f35b7ef0076",
+          "bytes": 2182260,
+          "package_path": "assets/images/stills/1087e4e4bb0e724397d81c63b59d07ba03eec4db58039294719e9f35b7ef0076.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "REFERENCE_LOCKED_LIGHTING_EDITS",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        }
+      ]
+    },
+    {
+      "environment_id": "bg.default.skysea",
+      "scene_context": "OUTDOOR",
+      "mode": "DOD_PAINTED",
+      "assets": [
+        {
+          "asset_id": "dod.env.bg.default.skysea.day",
+          "phase": "DAY",
+          "mode": "DOD_PAINTED",
+          "sha256": "d1c82aff03f98c352de85757d61a70e5215be3edfe21163be2e86a70663d5e64",
+          "bytes": 1992513,
+          "package_path": "assets/images/stills/d1c82aff03f98c352de85757d61a70e5215be3edfe21163be2e86a70663d5e64.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "CANONICAL_MASTER",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        },
+        {
+          "asset_id": "dod.env.bg.default.skysea.evening",
+          "phase": "DUSK",
+          "mode": "DOD_PAINTED",
+          "sha256": "f858f7f36147d2e05954425c3913ae5d2a588a588b1b21f19950a22e6eb168e2",
+          "bytes": 2252887,
+          "package_path": "assets/images/stills/f858f7f36147d2e05954425c3913ae5d2a588a588b1b21f19950a22e6eb168e2.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "REFERENCE_LOCKED_LIGHTING_EDITS",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        },
+        {
+          "asset_id": "dod.env.bg.default.skysea.night",
+          "phase": "NIGHT",
+          "mode": "DOD_PAINTED",
+          "sha256": "ed6a914dcdc507c7181131117725dffc24a074addd1df8d961fd3d0fc5a0e710",
+          "bytes": 2352627,
+          "package_path": "assets/images/stills/ed6a914dcdc507c7181131117725dffc24a074addd1df8d961fd3d0fc5a0e710.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "REFERENCE_LOCKED_LIGHTING_EDITS",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        }
+      ]
+    },
+    {
+      "environment_id": "bg.location.pazar_entry",
+      "scene_context": "OUTDOOR",
+      "mode": "DOD_PAINTED",
+      "assets": [
+        {
+          "asset_id": "dod.env.bg.location.pazar_entry.day",
+          "phase": "DAY",
+          "mode": "DOD_PAINTED",
+          "sha256": "e492939bba6fe03f4710b58f4e6e7c74427fa142c21289979eaf8fd075737966",
+          "bytes": 2292240,
+          "package_path": "assets/images/stills/e492939bba6fe03f4710b58f4e6e7c74427fa142c21289979eaf8fd075737966.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "CANONICAL_MASTER",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        },
+        {
+          "asset_id": "dod.env.bg.location.pazar_entry.evening",
+          "phase": "DUSK",
+          "mode": "DOD_PAINTED",
+          "sha256": "1e5020edb06781b8791b8c6a54b077b438be71eb59ad4f9e0e93e960cabafdba",
+          "bytes": 2554433,
+          "package_path": "assets/images/stills/1e5020edb06781b8791b8c6a54b077b438be71eb59ad4f9e0e93e960cabafdba.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "REFERENCE_LOCKED_LIGHTING_EDITS",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        },
+        {
+          "asset_id": "dod.env.bg.location.pazar_entry.night",
+          "phase": "NIGHT",
+          "mode": "DOD_PAINTED",
+          "sha256": "06520fa3fc8a1b70a6bc83dfd43c197b36b65ab9d4d8612d98283c8a050adf59",
+          "bytes": 2150993,
+          "package_path": "assets/images/stills/06520fa3fc8a1b70a6bc83dfd43c197b36b65ab9d4d8612d98283c8a050adf59.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "REFERENCE_LOCKED_LIGHTING_EDITS",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        }
+      ]
+    },
+    {
+      "environment_id": "bg.location.set_entry",
+      "scene_context": "OUTDOOR",
+      "mode": "DOD_PAINTED",
+      "assets": [
+        {
+          "asset_id": "dod.env.bg.location.set_entry.day",
+          "phase": "DAY",
+          "mode": "DOD_PAINTED",
+          "sha256": "05ee3b9184831c4fe810992a04c48428e3a5399fb4011913a926d60636e96ce1",
+          "bytes": 2922181,
+          "package_path": "assets/images/stills/05ee3b9184831c4fe810992a04c48428e3a5399fb4011913a926d60636e96ce1.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "CANONICAL_MASTER",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        },
+        {
+          "asset_id": "dod.env.bg.location.set_entry.evening",
+          "phase": "DUSK",
+          "mode": "DOD_PAINTED",
+          "sha256": "33904e0341ae217a03bcf75b2f64ce0cebc563a53ae6401e4e085ddf8e6528af",
+          "bytes": 2771578,
+          "package_path": "assets/images/stills/33904e0341ae217a03bcf75b2f64ce0cebc563a53ae6401e4e085ddf8e6528af.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "REFERENCE_LOCKED_LIGHTING_EDITS",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        },
+        {
+          "asset_id": "dod.env.bg.location.set_entry.night",
+          "phase": "NIGHT",
+          "mode": "DOD_PAINTED",
+          "sha256": "7d134cb1c59e1c8e73b29d13c755a7a3cb116f331a718f6f9cdefec90a5403b4",
+          "bytes": 2377629,
+          "package_path": "assets/images/stills/7d134cb1c59e1c8e73b29d13c755a7a3cb116f331a718f6f9cdefec90a5403b4.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "REFERENCE_LOCKED_LIGHTING_EDITS",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        }
+      ]
+    },
+    {
+      "environment_id": "bg.default.cave_mouth",
+      "scene_context": "OUTDOOR",
+      "mode": "DOD_INK",
+      "assets": [
+        {
+          "asset_id": "dod.env.bg.default.cave_mouth.day",
+          "phase": "DAY",
+          "mode": "DOD_INK",
+          "sha256": "b2963a12727f4430b73e014295bbdcde1108979a34f9c9caa71f35eeabb7943c",
+          "bytes": 3331468,
+          "package_path": "assets/images/stills/b2963a12727f4430b73e014295bbdcde1108979a34f9c9caa71f35eeabb7943c.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "CANONICAL_MASTER",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        },
+        {
+          "asset_id": "dod.env.bg.default.cave_mouth.evening",
+          "phase": "DUSK",
+          "mode": "DOD_INK",
+          "sha256": "34b25c045ab1dde3922781a64abb8e8951fc65d7e3339125fd1335e7b98884d6",
+          "bytes": 3216752,
+          "package_path": "assets/images/stills/34b25c045ab1dde3922781a64abb8e8951fc65d7e3339125fd1335e7b98884d6.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "REFERENCE_LOCKED_LIGHTING_EDITS",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        },
+        {
+          "asset_id": "dod.env.bg.default.cave_mouth.night",
+          "phase": "NIGHT",
+          "mode": "DOD_INK",
+          "sha256": "f24d3bf2253641ebf501089a812a5f0d3b364f4403b15b45fd5968eed42d9d1a",
+          "bytes": 2733150,
+          "package_path": "assets/images/stills/f24d3bf2253641ebf501089a812a5f0d3b364f4403b15b45fd5968eed42d9d1a.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "REFERENCE_LOCKED_LIGHTING_EDITS",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        }
+      ]
+    },
+    {
+      "environment_id": "bg.default.cave",
+      "scene_context": "INDOOR",
+      "mode": "DOD_INK",
+      "assets": [
+        {
+          "asset_id": "dod.env.bg.default.cave.neutral",
+          "phase": "NEUTRAL",
+          "mode": "DOD_INK",
+          "sha256": "7b3d00949fe158d3c80364a412318f0607e033b2c6495ab72c6e49bdf9ad0b61",
+          "bytes": 2926444,
+          "package_path": "assets/images/stills/7b3d00949fe158d3c80364a412318f0607e033b2c6495ab72c6e49bdf9ad0b61.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "CANONICAL_MASTER",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        }
+      ]
+    },
+    {
+      "environment_id": "bg.default.sand",
+      "scene_context": "OUTDOOR",
+      "mode": "DOD_INK",
+      "assets": [
+        {
+          "asset_id": "dod.env.bg.default.sand.day",
+          "phase": "DAY",
+          "mode": "DOD_INK",
+          "sha256": "75b7a3924127859426aa1aad5edadf35a7ca37e64b86426c9090499163f357ce",
+          "bytes": 2718888,
+          "package_path": "assets/images/stills/75b7a3924127859426aa1aad5edadf35a7ca37e64b86426c9090499163f357ce.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "CANONICAL_MASTER",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        },
+        {
+          "asset_id": "dod.env.bg.default.sand.evening",
+          "phase": "DUSK",
+          "mode": "DOD_INK",
+          "sha256": "191a57f44a0343c01913ba375179d7f99ee11e01c506d43bd10d0324246a9d7d",
+          "bytes": 2567264,
+          "package_path": "assets/images/stills/191a57f44a0343c01913ba375179d7f99ee11e01c506d43bd10d0324246a9d7d.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "REFERENCE_LOCKED_LIGHTING_EDITS",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        },
+        {
+          "asset_id": "dod.env.bg.default.sand.night",
+          "phase": "NIGHT",
+          "mode": "DOD_INK",
+          "sha256": "1bd08dda55cac383bdb8a1f2c642c765ae01f02bcad09503599b0dceceb5e4f2",
+          "bytes": 2333159,
+          "package_path": "assets/images/stills/1bd08dda55cac383bdb8a1f2c642c765ae01f02bcad09503599b0dceceb5e4f2.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "REFERENCE_LOCKED_LIGHTING_EDITS",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        }
+      ]
+    },
+    {
+      "environment_id": "bg.location.sule_gates",
+      "scene_context": "OUTDOOR",
+      "mode": "DOD_PAINTED",
+      "assets": [
+        {
+          "asset_id": "dod.env.bg.location.sule_gates.day",
+          "phase": "DAY",
+          "mode": "DOD_PAINTED",
+          "sha256": "8e4b19277e8548b8ac214a85ad4847a190847002a231477a1a06d341bf30ac6c",
+          "bytes": 2147947,
+          "package_path": "assets/images/stills/8e4b19277e8548b8ac214a85ad4847a190847002a231477a1a06d341bf30ac6c.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "CANONICAL_MASTER",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        },
+        {
+          "asset_id": "dod.env.bg.location.sule_gates.evening",
+          "phase": "DUSK",
+          "mode": "DOD_PAINTED",
+          "sha256": "7f4eea6c547c88d1207bbbf2712ac72630f07218d542766e90f2be557f937944",
+          "bytes": 2255121,
+          "package_path": "assets/images/stills/7f4eea6c547c88d1207bbbf2712ac72630f07218d542766e90f2be557f937944.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "REFERENCE_LOCKED_LIGHTING_EDITS",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        },
+        {
+          "asset_id": "dod.env.bg.location.sule_gates.night",
+          "phase": "NIGHT",
+          "mode": "DOD_PAINTED",
+          "sha256": "651ca13d6a4f98bb55c09a3e5e31e7574bfb1aa838c048ef902b84a8d66e8578",
+          "bytes": 1980831,
+          "package_path": "assets/images/stills/651ca13d6a4f98bb55c09a3e5e31e7574bfb1aa838c048ef902b84a8d66e8578.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "REFERENCE_LOCKED_LIGHTING_EDITS",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        }
+      ]
+    },
+    {
+      "environment_id": "bg.default.hills",
+      "scene_context": "OUTDOOR",
+      "mode": "DOD_INK",
+      "assets": [
+        {
+          "asset_id": "dod.env.bg.default.hills.day",
+          "phase": "DAY",
+          "mode": "DOD_INK",
+          "sha256": "f0b543850899d84e709d3505864573e16f2533e9f6d16ad2527da4a440dab41a",
+          "bytes": 2898737,
+          "package_path": "assets/images/stills/f0b543850899d84e709d3505864573e16f2533e9f6d16ad2527da4a440dab41a.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "CANONICAL_MASTER",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        },
+        {
+          "asset_id": "dod.env.bg.default.hills.evening",
+          "phase": "DUSK",
+          "mode": "DOD_INK",
+          "sha256": "c3d185f69e7c694b6c5f385e6a413221c289a795424f70feeb16a0f88b44bd14",
+          "bytes": 2728705,
+          "package_path": "assets/images/stills/c3d185f69e7c694b6c5f385e6a413221c289a795424f70feeb16a0f88b44bd14.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "REFERENCE_LOCKED_LIGHTING_EDITS",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        },
+        {
+          "asset_id": "dod.env.bg.default.hills.night",
+          "phase": "NIGHT",
+          "mode": "DOD_INK",
+          "sha256": "5a61564ac76a4c7e7b021b89c92271eb87a949d8053a006af7f6014285f85521",
+          "bytes": 2432072,
+          "package_path": "assets/images/stills/5a61564ac76a4c7e7b021b89c92271eb87a949d8053a006af7f6014285f85521.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "REFERENCE_LOCKED_LIGHTING_EDITS",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        }
+      ]
+    }
+  ],
+  "actors": [
+    {
+      "actor_id": "actor.troll",
+      "canonical_design_ref": "NEUTRAL",
+      "visibility_rule": "RESOLVER_WRITTEN_CURRENT_VISIBLE_GRANT",
+      "defeated_rule": "EXPLICIT_RESOLVED_DEFEAT_REQUIRED_NOT_ZERO_HP",
+      "assets": [
+        {
+          "asset_id": "dod.actor.troll.neutral",
+          "state": "NEUTRAL",
+          "mode": "DOD_INK",
+          "sha256": "c9f1b61994d0e5a8f2e336b8d10c6cf754214db276e4d088e44c5e4f98d9326d",
+          "bytes": 1932694,
+          "package_path": "assets/images/stills/c9f1b61994d0e5a8f2e336b8d10c6cf754214db276e4d088e44c5e4f98d9326d.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "CANONICAL_MASTER",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        },
+        {
+          "asset_id": "dod.actor.troll.alert",
+          "state": "ALERT",
+          "mode": "DOD_INK",
+          "sha256": "943dd64841fea8485952085c0f8c0773d8b3671bd2dcfb07c349d58d05deb40d",
+          "bytes": 2159822,
+          "package_path": "assets/images/stills/943dd64841fea8485952085c0f8c0773d8b3671bd2dcfb07c349d58d05deb40d.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "CANONICAL_MASTER",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        },
+        {
+          "asset_id": "dod.actor.troll.attack",
+          "state": "ATTACK",
+          "mode": "DOD_INK",
+          "sha256": "d3978d5768be61badea51bc320fbbd9d87543a740d2027bd42d7a7d89f0fda14",
+          "bytes": 2021869,
+          "package_path": "assets/images/stills/d3978d5768be61badea51bc320fbbd9d87543a740d2027bd42d7a7d89f0fda14.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "CANONICAL_MASTER",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        },
+        {
+          "asset_id": "dod.actor.troll.defeated",
+          "state": "DEFEATED",
+          "mode": "DOD_INK",
+          "sha256": "79062b85bd9fc786e0c8ef32de3e3f06fd8ebd47ff91f848a46d6d8ca0b52b68",
+          "bytes": 1469919,
+          "package_path": "assets/images/stills/79062b85bd9fc786e0c8ef32de3e3f06fd8ebd47ff91f848a46d6d8ca0b52b68.png",
+          "width": 1024,
+          "height": 1536,
+          "format": "PNG_RGBA_8_8_8_8",
+          "available": true,
+          "runtime_eligible": true,
+          "qa": {
+            "accepted": true,
+            "authority": "USER_ACCEPTED_IMAGE_QA",
+            "canon": "USER_ACCEPTED_INTERNAL_VISUAL_DIRECTION",
+            "spoilers": "CURRENT_VISIBLE_GRANTS_ONLY",
+            "continuity": "CANONICAL_MASTER",
+            "mobile": "PORTRAIT_2_3_CONTAIN_390PX_PIXELATED"
+          }
+        }
+      ]
+    }
+  ],
+  "legacy_asset_aliases": {
+    "dod.env.bg.default.garden.morning": "dod.env.bg.default.garden.evening",
+    "dod.env.bg.default.garden.dawn": "dod.env.bg.default.garden.evening",
+    "dod.env.bg.location.badr_entry.morning": "dod.env.bg.location.badr_entry.evening",
+    "dod.env.bg.location.badr_entry.dawn": "dod.env.bg.location.badr_entry.evening",
+    "dod.env.bg.default.desert_trail.morning": "dod.env.bg.default.desert_trail.evening",
+    "dod.env.bg.default.desert_trail.dawn": "dod.env.bg.default.desert_trail.evening",
+    "dod.env.bg.location.phoenix_city.morning": "dod.env.bg.location.phoenix_city.evening",
+    "dod.env.bg.location.phoenix_city.dawn": "dod.env.bg.location.phoenix_city.evening",
+    "dod.env.bg.location.medinat.morning": "dod.env.bg.location.medinat.evening",
+    "dod.env.bg.location.medinat.dawn": "dod.env.bg.location.medinat.evening",
+    "dod.env.bg.location.northknife_ford.morning": "dod.env.bg.location.northknife_ford.evening",
+    "dod.env.bg.location.northknife_ford.dawn": "dod.env.bg.location.northknife_ford.evening",
+    "dod.env.bg.default.oasis.morning": "dod.env.bg.default.oasis.evening",
+    "dod.env.bg.default.oasis.dawn": "dod.env.bg.default.oasis.evening",
+    "dod.env.bg.default.camp.morning": "dod.env.bg.default.camp.evening",
+    "dod.env.bg.default.camp.dawn": "dod.env.bg.default.camp.evening",
+    "dod.env.bg.location.pyramid_entry.morning": "dod.env.bg.location.pyramid_entry.evening",
+    "dod.env.bg.location.pyramid_entry.dawn": "dod.env.bg.location.pyramid_entry.evening",
+    "dod.env.bg.default.skysea.morning": "dod.env.bg.default.skysea.evening",
+    "dod.env.bg.default.skysea.dawn": "dod.env.bg.default.skysea.evening",
+    "dod.env.bg.location.pazar_entry.morning": "dod.env.bg.location.pazar_entry.evening",
+    "dod.env.bg.location.pazar_entry.dawn": "dod.env.bg.location.pazar_entry.evening",
+    "dod.env.bg.location.set_entry.morning": "dod.env.bg.location.set_entry.evening",
+    "dod.env.bg.location.set_entry.dawn": "dod.env.bg.location.set_entry.evening",
+    "dod.env.bg.default.cave_mouth.morning": "dod.env.bg.default.cave_mouth.evening",
+    "dod.env.bg.default.cave_mouth.dawn": "dod.env.bg.default.cave_mouth.evening",
+    "dod.env.bg.default.sand.morning": "dod.env.bg.default.sand.evening",
+    "dod.env.bg.default.sand.dawn": "dod.env.bg.default.sand.evening",
+    "dod.env.bg.location.sule_gates.morning": "dod.env.bg.location.sule_gates.evening",
+    "dod.env.bg.location.sule_gates.dawn": "dod.env.bg.location.sule_gates.evening",
+    "dod.env.bg.default.hills.morning": "dod.env.bg.default.hills.evening",
+    "dod.env.bg.default.hills.dawn": "dod.env.bg.default.hills.evening",
+    "dod.scene.bralizzar.charter.interior.v1": "dod.env.bg.location.bralizzar_room.neutral",
+    "dod.journal.actor.troll.living.v1": "dod.actor.troll.neutral"
+  }
+}

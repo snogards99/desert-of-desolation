@@ -1,0 +1,58 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import {magicBudget,beginRetrieval,completeRetrieval,spendMagic} from '../lib/magic-budget.mjs';
+import {projectSheet} from '../lib/character-sheet.mjs';
+import {magicAtmosphere} from '../lib/magic-story.mjs';
+const read=p=>JSON.parse(fs.readFileSync(p));
+const party=read('shared/party-magic.json'),data=read('server-data/game.json'),profiles=read('server-data/character-sheets.json');
+const actor=data.Characters.find(c=>c.campaign_id==='dod-main'&&c.character_id==='party.snogard'),main=data.HotRuntimeSnapshot.find(c=>c.campaign_id==='dod-main');
+const cast={round:5,level:3,kind:'fetched',key:'Fireball',remaining:1,consent:true,mechanicsReady:true,encounterId:'fight-a'};
+for(const remaining of [-1,.1,NaN,Infinity,'1',2])assert(!magicBudget({...cast,remaining}).allowed);
+for(const invalid of [-1,.5,NaN])assert(!magicBudget({...cast,ledger:{last_high_level_cast_round:invalid}}).allowed);
+assert(!magicBudget({...cast,consent:'yes'}).allowed);
+assert(!magicBudget({...cast,mechanicsReady:'yes'}).allowed);
+assert(!magicBudget({...cast,key:'__proto__'}).allowed);
+assert(magicBudget({...cast,round:1,encounterId:'fight-b',ledger:{encounter_id:'fight-a',last_magic_round:5,last_high_level_cast_round:5}}).allowed);
+assert(!magicBudget({...cast,round:4,ledger:{encounter_id:'fight-a',last_magic_round:5}}).allowed);
+const input={character_id:'party.snogard',revision:0,encounter_id:'fight-a',fetched_remaining:{Fireball:1},prepared_used:{produce_flame_priest:0},slot_used:{'priest:2':0},powers:{gene_emberlight:{remaining:0}},item_charges:{staff:1}};
+const request={...cast,actionId:'cast-1',expectedRevision:0};
+const original=JSON.stringify(input),spent=spendMagic({request,ledger:input});
+assert(spent.allowed);assert.equal(spent.ledger.fetched_remaining.Fireball,0);assert.equal(JSON.stringify(input),original);
+assert.equal(spendMagic({request,ledger:spent.ledger}).duplicate,true);
+assert(!spendMagic({request:{...request,actionId:'cast-2'},ledger:spent.ledger}).allowed);
+assert(!spendMagic({request:{...request,actionId:'cast-3',expectedRevision:1,round:8},ledger:spent.ledger}).allowed);
+assert(!spendMagic({request:{...request,kind:'power',key:'unknown',level:0},ledger:input,initialPowerUses:99}).allowed);
+assert(!spendMagic({request:{...request,kind:'power',key:'gene_emberlight',level:0},ledger:input}).allowed);
+assert(spendMagic({request:{...request,kind:'power',key:'sekhem_serpent_ward',level:0},ledger:input}).allowed);
+const preparation={...request,kind:'prepared',key:'produce_flame_priest',level:2,slotKey:'priest:2'};
+const prayer=spendMagic({request:preparation,ledger:input,preparedMaximum:1,slotMaximum:4});
+assert(prayer.allowed);assert.equal(prayer.ledger.prepared_used.produce_flame_priest,1);assert.equal(prayer.ledger.slot_used['priest:2'],1);
+assert(!spendMagic({request:preparation,ledger:input,preparedMaximum:1}).allowed);
+const cache={revision:1,fetched_remaining:{Fireball:0}};
+const fetching=beginRetrieval({spell:'Fireball',level:3,roll:4,round:7,ledger:cache,consent:true,eligible:true,encounterId:'fight-a'});
+const pending={...cache,gene_retrieval:fetching.gene_retrieval};
+assert(!completeRetrieval({round:13,ledger:pending,success:true,encounterId:'fight-a'}).allowed);
+assert(!completeRetrieval({round:14,ledger:pending,success:true,encounterId:'fight-b'}).allowed);
+const fetched=completeRetrieval({round:14,ledger:pending,success:true,encounterId:'fight-a'});
+assert(fetched.allowed&&fetched.fetched);assert.equal(fetched.ledger.fetched_remaining.Fireball,1);assert.equal(fetched.ledger.gene_retrieval,null);assert.equal(pending.fetched_remaining.Fireball,0);
+const failed=completeRetrieval({round:14,ledger:pending,success:false,encounterId:'fight-a'});assert.equal(failed.ledger.fetched_remaining.Fireball,0);assert.equal(failed.ledger.gene_retrieval,null);
+assert(!beginRetrieval({spell:'Fireball',level:3,roll:4,round:7,ledger:cache,consent:true,eligible:true,companionPresent:false}).allowed);
+const fixture=structuredClone(main);fixture.magic_resources={campaign_id:'dod-main',characters:{'party.snogard':{powers:{gene_emberlight:{remaining:0}},familiars:{Gene:{location:'hip pouch',health:'healthy',secret_goal:'hidden'}}}}};
+const sheet=projectSheet(actor,data,profiles,fixture);
+assert.equal(sheet.magicCharacter.abilities.find(x=>x.power_id==='gene_emberlight').remaining,0);
+assert.equal(sheet.companions[0].current_state.location,'hip pouch');assert(!JSON.stringify(sheet.companions).includes('secret_goal'));
+assert(sheet.mounts.some(x=>x.name==='riding camel'));assert.equal(sheet.weapons[0].qty,1);
+assert.equal(magicAtmosphere(main,{node_id:'future-node',campaign_id:'dod-main'}),'');
+assert.equal(magicAtmosphere(main,{node_id:main.scene_id,campaign_id:'dod-demo-001'}),'');
+const base='plugin-magic-update/skills/desert-of-desolation-game/data/';
+const index=read(base+'PARTY_MAGIC.json');assert.equal(index.shared_release,party.shared_release);
+for(const ref of index.characters){const record=read(base+ref.record);const {spell_parts,...actorRecord}=record;const spells=spell_parts.flatMap(part=>read(base+part).spells);assert.deepEqual({...actorRecord,spells},party.characters.find(c=>c.character_id===ref.character_id));for(const part of [ref.record,...spell_parts])assert(fs.statSync(base+part).size<16000);}
+assert(fs.statSync(base+'PARTY_MAGIC.json').size<16000);
+console.log('PASS optimization: corrupt counters, explicit permission, encounter clocks, immutable duplicate-safe spending, atomic prepared slots, no invented grants, retrieval success/failure/time, familiar state whitelist, mounts/weapon quantity, visible-scene atmosphere and lossless bounded knowledge shards.');
+
+assert(!spendMagic({request:{...request,characterId:'party.tal',kind:'power',key:'sekhem_serpent_ward',level:0},ledger:input}).allowed);
+assert(!spendMagic({request:{...preparation,slotKey:'priest:1'},ledger:input,preparedMaximum:1,slotMaximum:4}).allowed);
+
+assert.equal(magicBudget({...request,remaining:1,ledger:spent.ledger}).duplicate,true);
+
+assert(!magicBudget({...cast,level:0}).allowed);assert(!magicBudget({...cast,level:6}).allowed);

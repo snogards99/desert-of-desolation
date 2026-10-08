@@ -1,0 +1,1035 @@
+{
+  "schema_version": 1,
+  "policy": "USER_APPROVED_CAMPAIGN_EXCEPTIONS; RECORDED_STATE_RETAINED; DERIVED_VALUES_DO_NOT_GRANT_RESOURCES",
+  "entries": [
+    {
+      "campaign_id": "dod-main",
+      "character_id": "party.snogard",
+      "scores": {
+        "STR": 12.0,
+        "DEX": 16.0,
+        "CON": 15.0,
+        "INT": 17.0,
+        "WIS": 18.0,
+        "CHA": 16.0
+      },
+      "ability_origin": "Recorded campaign ability scores; racial adjustments already included",
+      "rolls": [],
+      "modifiers": {
+        "Strength": {
+          "Melee hit": 0,
+          "Melee damage": 0,
+          "Weight allowance lb": 45
+        },
+        "Dexterity": {
+          "Reaction": 1,
+          "Missile attack": 1,
+          "AC adjustment": -2
+        },
+        "Constitution": {
+          "HP per eligible hit die": 1,
+          "System shock %": 90,
+          "Resurrection survival %": 94
+        },
+        "Wisdom": {
+          "Mental magic defense": 4
+        },
+        "Intelligence": {
+          "Additional languages / optional NWP slots": 6
+        },
+        "Charisma": {
+          "Henchman limit": 8,
+          "Loyalty base": 4,
+          "Reaction": 5
+        }
+      },
+      "core_class": "Cleric",
+      "core_level": 10,
+      "core_thac0": 14,
+      "core_saves": {
+        "PPDM": 6,
+        "RSW": 10,
+        "PP": 9,
+        "BW": 12,
+        "Spells": 11
+      },
+      "class_ability_minimums": {
+        "WIS": 9,
+        "INT": 9
+      },
+      "requirements_pass": true,
+      "hit_dice_reference": "d8; after level 9, +2 HP per level",
+      "exceptions": [
+        "Drow and established custom class/kit combinations retained by user approval.",
+        "Recorded HP, AC, THAC0 and saves retain campaign adjustments; core references are separate."
+      ],
+      "ledger_note": "XP history, custom-item charges/weights and unknown spell selections are not granted by character generation.",
+      "core_hp_ceiling": 83,
+      "generated_alignment": "Neutral Good"
+    },
+    {
+      "campaign_id": "dod-main",
+      "character_id": "party.malekith",
+      "scores": {
+        "STR": "18/42",
+        "DEX": 15,
+        "CON": 17,
+        "INT": 11,
+        "WIS": 16,
+        "CHA": 17
+      },
+      "ability_origin": "Recorded campaign ability scores; racial adjustments already included",
+      "rolls": [],
+      "modifiers": {
+        "Strength": {
+          "Melee hit": 1,
+          "Melee damage": 3,
+          "Weight allowance lb": 135
+        },
+        "Dexterity": {
+          "Reaction": 0,
+          "Missile attack": 0,
+          "AC adjustment": -1
+        },
+        "Constitution": {
+          "HP per eligible hit die": 3,
+          "System shock %": 97,
+          "Resurrection survival %": 98
+        },
+        "Wisdom": {
+          "Mental magic defense": 2
+        },
+        "Intelligence": {
+          "Additional languages / optional NWP slots": 2
+        },
+        "Charisma": {
+          "Henchman limit": 10,
+          "Loyalty base": 6,
+          "Reaction": 6
+        }
+      },
+      "core_class": "Paladin",
+      "core_level": 9,
+      "core_thac0": 12,
+      "core_saves": {
+        "PPDM": 8,
+        "RSW": 10,
+        "PP": 9,
+        "BW": 9,
+        "Spells": 11
+      },
+      "class_ability_minimums": {
+        "STR": 12,
+        "CON": 9,
+        "WIS": 13,
+        "CHA": 17
+      },
+      "requirements_pass": true,
+      "hit_dice_reference": "d10; after level 9, +3 HP per level",
+      "exceptions": [
+        "Drow and established custom class/kit combinations retained by user approval.",
+        "Recorded HP, AC, THAC0 and saves retain campaign adjustments; core references are separate.",
+        "Drow paladin is a campaign exception to core PHB race/class availability."
+      ],
+      "ledger_note": "XP history, custom-item charges/weights and unknown spell selections are not granted by character generation.",
+      "core_hp_ceiling": 117,
+      "generated_alignment": "Lawful Good"
+    },
+    {
+      "campaign_id": "dod-main",
+      "character_id": "party.vaelis",
+      "scores": {
+        "STR": 15,
+        "DEX": 18,
+        "CON": 15,
+        "INT": 13,
+        "WIS": 16,
+        "CHA": 11
+      },
+      "ability_origin": "Recorded campaign ability scores; racial adjustments already included",
+      "rolls": [],
+      "modifiers": {
+        "Strength": {
+          "Melee hit": 0,
+          "Melee damage": 0,
+          "Weight allowance lb": 55
+        },
+        "Dexterity": {
+          "Reaction": 2,
+          "Missile attack": 2,
+          "AC adjustment": -4
+        },
+        "Constitution": {
+          "HP per eligible hit die": 1,
+          "System shock %": 90,
+          "Resurrection survival %": 94
+        },
+        "Wisdom": {
+          "Mental magic defense": 2
+        },
+        "Intelligence": {
+          "Additional languages / optional NWP slots": 3
+        },
+        "Charisma": {
+          "Henchman limit": 4,
+          "Loyalty base": 0,
+          "Reaction": 0
+        }
+      },
+      "core_class": "Ranger",
+      "core_level": 8,
+      "core_thac0": 13,
+      "core_saves": {
+        "PPDM": 10,
+        "RSW": 12,
+        "PP": 11,
+        "BW": 12,
+        "Spells": 13
+      },
+      "class_ability_minimums": {
+        "STR": 13,
+        "DEX": 13,
+        "CON": 14,
+        "WIS": 14
+      },
+      "requirements_pass": true,
+      "hit_dice_reference": "d10; after level 9, +3 HP per level",
+      "exceptions": [
+        "Drow and established custom class/kit combinations retained by user approval.",
+        "Recorded HP, AC, THAC0 and saves retain campaign adjustments; core references are separate."
+      ],
+      "ledger_note": "XP history, custom-item charges/weights and unknown spell selections are not granted by character generation.",
+      "core_hp_ceiling": 88,
+      "generated_alignment": "Neutral Good"
+    },
+    {
+      "campaign_id": "dod-main",
+      "character_id": "party.syrra",
+      "scores": {
+        "STR": 13,
+        "DEX": 17,
+        "CON": 15,
+        "INT": 16,
+        "WIS": 14,
+        "CHA": 15
+      },
+      "ability_origin": "Recorded campaign ability scores; racial adjustments already included",
+      "rolls": [],
+      "modifiers": {
+        "Strength": {
+          "Melee hit": 0,
+          "Melee damage": 0,
+          "Weight allowance lb": 45
+        },
+        "Dexterity": {
+          "Reaction": 2,
+          "Missile attack": 2,
+          "AC adjustment": -3
+        },
+        "Constitution": {
+          "HP per eligible hit die": 1,
+          "System shock %": 90,
+          "Resurrection survival %": 94
+        },
+        "Wisdom": {
+          "Mental magic defense": 0
+        },
+        "Intelligence": {
+          "Additional languages / optional NWP slots": 5
+        },
+        "Charisma": {
+          "Henchman limit": 7,
+          "Loyalty base": 3,
+          "Reaction": 3
+        }
+      },
+      "core_class": "Thief",
+      "core_level": 5,
+      "core_thac0": 18,
+      "core_saves": {
+        "PPDM": 12,
+        "RSW": 12,
+        "PP": 11,
+        "BW": 15,
+        "Spells": 13
+      },
+      "class_ability_minimums": {
+        "DEX": 9
+      },
+      "requirements_pass": true,
+      "hit_dice_reference": "d6; after level 10, +2 HP per level",
+      "exceptions": [
+        "Drow and established custom class/kit combinations retained by user approval.",
+        "Recorded HP, AC, THAC0 and saves retain campaign adjustments; core references are separate.",
+        "Recorded THAC0 15 differs from core Thief 5 base 18; retained custom-class combat baseline.",
+        "Recorded max HP 45 exceeds the single-core-class ceiling 35; retained custom-class HP overlay.",
+        "Recorded ninja/thief percentages and extra attacks require the retained custom kit and item rules; not a newly allocated core thief point pool."
+      ],
+      "ledger_note": "XP history, custom-item charges/weights and unknown spell selections are not granted by character generation.",
+      "core_hp_ceiling": 35,
+      "generated_alignment": "Neutral"
+    },
+    {
+      "campaign_id": "dod-main",
+      "character_id": "party.tal",
+      "scores": {
+        "STR": 9,
+        "DEX": 15,
+        "CON": 12,
+        "INT": 18,
+        "WIS": 16,
+        "CHA": 16
+      },
+      "ability_origin": "Recorded campaign ability scores; racial adjustments already included",
+      "rolls": [],
+      "modifiers": {
+        "Strength": {
+          "Melee hit": 0,
+          "Melee damage": 0,
+          "Weight allowance lb": 35
+        },
+        "Dexterity": {
+          "Reaction": 0,
+          "Missile attack": 0,
+          "AC adjustment": -1
+        },
+        "Constitution": {
+          "HP per eligible hit die": 0,
+          "System shock %": 80,
+          "Resurrection survival %": 85
+        },
+        "Wisdom": {
+          "Mental magic defense": 2
+        },
+        "Intelligence": {
+          "Additional languages / optional NWP slots": 7
+        },
+        "Charisma": {
+          "Henchman limit": 8,
+          "Loyalty base": 4,
+          "Reaction": 5
+        }
+      },
+      "core_class": "Bard",
+      "core_level": 3,
+      "core_thac0": 19,
+      "core_saves": {
+        "PPDM": 13,
+        "RSW": 14,
+        "PP": 12,
+        "BW": 16,
+        "Spells": 15
+      },
+      "class_ability_minimums": {
+        "DEX": 12,
+        "INT": 13,
+        "CHA": 15
+      },
+      "requirements_pass": true,
+      "hit_dice_reference": "d6; after level 10, +2 HP per level",
+      "exceptions": [
+        "Drow and established custom class/kit combinations retained by user approval.",
+        "Recorded HP, AC, THAC0 and saves retain campaign adjustments; core references are separate.",
+        "Drow bard is a campaign exception to core PHB race/class availability.",
+        "Recorded THAC0 18 differs from core Bard 3 base 19; retained custom-class combat baseline.",
+        "Recorded max HP 32 exceeds the single-core-class ceiling 18; retained custom-class HP overlay."
+      ],
+      "ledger_note": "XP history, custom-item charges/weights and unknown spell selections are not granted by character generation.",
+      "core_hp_ceiling": 18,
+      "generated_alignment": "Neutral Good"
+    },
+    {
+      "campaign_id": "dod-main",
+      "character_id": "party.zarvak",
+      "scores": {
+        "STR": 16,
+        "DEX": 17,
+        "CON": 16,
+        "INT": 11,
+        "WIS": 15,
+        "CHA": 9
+      },
+      "ability_origin": "Recorded campaign ability scores; racial adjustments already included",
+      "rolls": [],
+      "modifiers": {
+        "Strength": {
+          "Melee hit": 0,
+          "Melee damage": 1,
+          "Weight allowance lb": 70
+        },
+        "Dexterity": {
+          "Reaction": 2,
+          "Missile attack": 2,
+          "AC adjustment": -3
+        },
+        "Constitution": {
+          "HP per eligible hit die": 2,
+          "System shock %": 95,
+          "Resurrection survival %": 96
+        },
+        "Wisdom": {
+          "Mental magic defense": 1
+        },
+        "Intelligence": {
+          "Additional languages / optional NWP slots": 2
+        },
+        "Charisma": {
+          "Henchman limit": 4,
+          "Loyalty base": 0,
+          "Reaction": 0
+        }
+      },
+      "core_class": "Fighter",
+      "core_level": 5,
+      "core_thac0": 16,
+      "core_saves": {
+        "PPDM": 11,
+        "RSW": 13,
+        "PP": 12,
+        "BW": 13,
+        "Spells": 14
+      },
+      "class_ability_minimums": {
+        "STR": 9
+      },
+      "requirements_pass": true,
+      "hit_dice_reference": "d10; after level 9, +3 HP per level",
+      "exceptions": [
+        "Drow and established custom class/kit combinations retained by user approval.",
+        "Recorded HP, AC, THAC0 and saves retain campaign adjustments; core references are separate."
+      ],
+      "ledger_note": "XP history, custom-item charges/weights and unknown spell selections are not granted by character generation.",
+      "core_hp_ceiling": 60,
+      "generated_alignment": "Neutral Good"
+    },
+    {
+      "campaign_id": "dod-demo-001",
+      "character_id": "party.snogard",
+      "scores": {
+        "WIS": 16,
+        "INT": 13,
+        "STR": 13,
+        "DEX": 13,
+        "CON": 11,
+        "CHA": 10
+      },
+      "ability_origin": "Generated: 2E Method V; seeded 4d6 discard lowest, arrange to qualify; elf Dex +1 / Con -1",
+      "rolls": [
+        [
+          5,
+          2,
+          6,
+          1
+        ],
+        [
+          5,
+          1,
+          5,
+          3
+        ],
+        [
+          1,
+          4,
+          4,
+          4
+        ],
+        [
+          6,
+          2,
+          1,
+          4
+        ],
+        [
+          6,
+          5,
+          5,
+          4
+        ],
+        [
+          5,
+          3,
+          2,
+          1
+        ]
+      ],
+      "modifiers": {
+        "Strength": {
+          "Melee hit": 0,
+          "Melee damage": 0,
+          "Weight allowance lb": 45
+        },
+        "Dexterity": {
+          "Reaction": 0,
+          "Missile attack": 0,
+          "AC adjustment": 0
+        },
+        "Constitution": {
+          "HP per eligible hit die": 0,
+          "System shock %": 75,
+          "Resurrection survival %": 80
+        },
+        "Wisdom": {
+          "Mental magic defense": 2
+        },
+        "Intelligence": {
+          "Additional languages / optional NWP slots": 3
+        },
+        "Charisma": {
+          "Henchman limit": 4,
+          "Loyalty base": 0,
+          "Reaction": 0
+        }
+      },
+      "core_class": "Cleric",
+      "core_level": 10,
+      "core_thac0": 14,
+      "core_saves": {
+        "PPDM": 6,
+        "RSW": 10,
+        "PP": 9,
+        "BW": 12,
+        "Spells": 11
+      },
+      "class_ability_minimums": {
+        "WIS": 9,
+        "INT": 9
+      },
+      "requirements_pass": true,
+      "hit_dice_reference": "d8; after level 9, +2 HP per level",
+      "exceptions": [
+        "Drow and established custom class/kit combinations retained by user approval.",
+        "Recorded HP, AC, THAC0 and saves retain campaign adjustments; core references are separate."
+      ],
+      "ledger_note": "XP history, custom-item charges/weights and unknown spell selections are not granted by character generation.",
+      "core_hp_ceiling": 74,
+      "generated_alignment": "Neutral Good"
+    },
+    {
+      "campaign_id": "dod-demo-001",
+      "character_id": "party.malekith",
+      "scores": {
+        "CHA": 18,
+        "WIS": 16,
+        "STR": 14,
+        "CON": 11,
+        "DEX": 12,
+        "INT": 9
+      },
+      "ability_origin": "Generated: 2E Method V; seeded 4d6 discard lowest, arrange to qualify; elf Dex +1 / Con -1",
+      "rolls": [
+        [
+          1,
+          2,
+          6,
+          1
+        ],
+        [
+          1,
+          6,
+          6,
+          6
+        ],
+        [
+          3,
+          4,
+          3,
+          4
+        ],
+        [
+          4,
+          3,
+          4,
+          6
+        ],
+        [
+          6,
+          6,
+          1,
+          4
+        ],
+        [
+          5,
+          2,
+          3,
+          4
+        ]
+      ],
+      "modifiers": {
+        "Strength": {
+          "Melee hit": 0,
+          "Melee damage": 0,
+          "Weight allowance lb": 55
+        },
+        "Dexterity": {
+          "Reaction": 0,
+          "Missile attack": 0,
+          "AC adjustment": 0
+        },
+        "Constitution": {
+          "HP per eligible hit die": 0,
+          "System shock %": 75,
+          "Resurrection survival %": 80
+        },
+        "Wisdom": {
+          "Mental magic defense": 2
+        },
+        "Intelligence": {
+          "Additional languages / optional NWP slots": 2
+        },
+        "Charisma": {
+          "Henchman limit": 15,
+          "Loyalty base": 8,
+          "Reaction": 7
+        }
+      },
+      "core_class": "Paladin",
+      "core_level": 9,
+      "core_thac0": 12,
+      "core_saves": {
+        "PPDM": 8,
+        "RSW": 10,
+        "PP": 9,
+        "BW": 9,
+        "Spells": 11
+      },
+      "class_ability_minimums": {
+        "STR": 12,
+        "CON": 9,
+        "WIS": 13,
+        "CHA": 17
+      },
+      "requirements_pass": true,
+      "hit_dice_reference": "d10; after level 9, +3 HP per level",
+      "exceptions": [
+        "Drow and established custom class/kit combinations retained by user approval.",
+        "Recorded HP, AC, THAC0 and saves retain campaign adjustments; core references are separate.",
+        "Drow paladin is a campaign exception to core PHB race/class availability."
+      ],
+      "ledger_note": "XP history, custom-item charges/weights and unknown spell selections are not granted by character generation.",
+      "core_hp_ceiling": 90,
+      "generated_alignment": "Lawful Good"
+    },
+    {
+      "campaign_id": "dod-demo-001",
+      "character_id": "party.vaelis",
+      "scores": {
+        "CON": 17,
+        "WIS": 14,
+        "STR": 14,
+        "DEX": 15,
+        "INT": 10,
+        "CHA": 10
+      },
+      "ability_origin": "Generated: 2E Method V; seeded 4d6 discard lowest, arrange to qualify; elf Dex +1 / Con -1",
+      "rolls": [
+        [
+          5,
+          3,
+          2,
+          2
+        ],
+        [
+          3,
+          6,
+          2,
+          5
+        ],
+        [
+          3,
+          6,
+          6,
+          6
+        ],
+        [
+          6,
+          2,
+          2,
+          2
+        ],
+        [
+          6,
+          4,
+          3,
+          4
+        ],
+        [
+          5,
+          1,
+          5,
+          4
+        ]
+      ],
+      "modifiers": {
+        "Strength": {
+          "Melee hit": 0,
+          "Melee damage": 0,
+          "Weight allowance lb": 55
+        },
+        "Dexterity": {
+          "Reaction": 0,
+          "Missile attack": 0,
+          "AC adjustment": -1
+        },
+        "Constitution": {
+          "HP per eligible hit die": 3,
+          "System shock %": 97,
+          "Resurrection survival %": 98
+        },
+        "Wisdom": {
+          "Mental magic defense": 0
+        },
+        "Intelligence": {
+          "Additional languages / optional NWP slots": 2
+        },
+        "Charisma": {
+          "Henchman limit": 4,
+          "Loyalty base": 0,
+          "Reaction": 0
+        }
+      },
+      "core_class": "Ranger",
+      "core_level": 8,
+      "core_thac0": 13,
+      "core_saves": {
+        "PPDM": 10,
+        "RSW": 12,
+        "PP": 11,
+        "BW": 12,
+        "Spells": 13
+      },
+      "class_ability_minimums": {
+        "STR": 13,
+        "DEX": 13,
+        "CON": 14,
+        "WIS": 14
+      },
+      "requirements_pass": true,
+      "hit_dice_reference": "d10; after level 9, +3 HP per level",
+      "exceptions": [
+        "Drow and established custom class/kit combinations retained by user approval.",
+        "Recorded HP, AC, THAC0 and saves retain campaign adjustments; core references are separate."
+      ],
+      "ledger_note": "XP history, custom-item charges/weights and unknown spell selections are not granted by character generation.",
+      "core_hp_ceiling": 104,
+      "generated_alignment": "Neutral Good"
+    },
+    {
+      "campaign_id": "dod-demo-001",
+      "character_id": "party.syrra",
+      "scores": {
+        "DEX": 18,
+        "STR": 17,
+        "CON": 12,
+        "INT": 10,
+        "WIS": 10,
+        "CHA": 10
+      },
+      "ability_origin": "Generated: 2E Method V; seeded 4d6 discard lowest, arrange to qualify; elf Dex +1 / Con -1",
+      "rolls": [
+        [
+          6,
+          6,
+          3,
+          5
+        ],
+        [
+          4,
+          2,
+          3,
+          3
+        ],
+        [
+          5,
+          1,
+          2,
+          3
+        ],
+        [
+          3,
+          2,
+          5,
+          2
+        ],
+        [
+          4,
+          5,
+          4,
+          4
+        ],
+        [
+          6,
+          6,
+          5,
+          3
+        ]
+      ],
+      "modifiers": {
+        "Strength": {
+          "Melee hit": 1,
+          "Melee damage": 1,
+          "Weight allowance lb": 85
+        },
+        "Dexterity": {
+          "Reaction": 2,
+          "Missile attack": 2,
+          "AC adjustment": -4
+        },
+        "Constitution": {
+          "HP per eligible hit die": 0,
+          "System shock %": 80,
+          "Resurrection survival %": 85
+        },
+        "Wisdom": {
+          "Mental magic defense": 0
+        },
+        "Intelligence": {
+          "Additional languages / optional NWP slots": 2
+        },
+        "Charisma": {
+          "Henchman limit": 4,
+          "Loyalty base": 0,
+          "Reaction": 0
+        }
+      },
+      "core_class": "Thief",
+      "core_level": 5,
+      "core_thac0": 18,
+      "core_saves": {
+        "PPDM": 12,
+        "RSW": 12,
+        "PP": 11,
+        "BW": 15,
+        "Spells": 13
+      },
+      "class_ability_minimums": {
+        "DEX": 9
+      },
+      "requirements_pass": true,
+      "hit_dice_reference": "d6; after level 10, +2 HP per level",
+      "exceptions": [
+        "Drow and established custom class/kit combinations retained by user approval.",
+        "Recorded HP, AC, THAC0 and saves retain campaign adjustments; core references are separate.",
+        "Recorded THAC0 15 differs from core Thief 5 base 18; retained custom-class combat baseline.",
+        "Recorded max HP 45 exceeds the single-core-class ceiling 30; retained custom-class HP overlay.",
+        "Recorded ninja/thief percentages and extra attacks require the retained custom kit and item rules; not a newly allocated core thief point pool."
+      ],
+      "ledger_note": "XP history, custom-item charges/weights and unknown spell selections are not granted by character generation.",
+      "core_hp_ceiling": 30,
+      "generated_alignment": "Neutral"
+    },
+    {
+      "campaign_id": "dod-demo-001",
+      "character_id": "party.tal",
+      "scores": {
+        "CHA": 18,
+        "INT": 17,
+        "DEX": 17,
+        "STR": 11,
+        "CON": 7,
+        "WIS": 6
+      },
+      "ability_origin": "Generated: 2E Method V; seeded 4d6 discard lowest, arrange to qualify; elf Dex +1 / Con -1",
+      "rolls": [
+        [
+          6,
+          6,
+          5,
+          4
+        ],
+        [
+          6,
+          3,
+          4,
+          6
+        ],
+        [
+          2,
+          6,
+          6,
+          6
+        ],
+        [
+          3,
+          2,
+          3,
+          1
+        ],
+        [
+          3,
+          2,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          3,
+          6
+        ]
+      ],
+      "modifiers": {
+        "Strength": {
+          "Melee hit": 0,
+          "Melee damage": 0,
+          "Weight allowance lb": 40
+        },
+        "Dexterity": {
+          "Reaction": 2,
+          "Missile attack": 2,
+          "AC adjustment": -3
+        },
+        "Constitution": {
+          "HP per eligible hit die": 0,
+          "System shock %": 55,
+          "Resurrection survival %": 60
+        },
+        "Wisdom": {
+          "Mental magic defense": -1
+        },
+        "Intelligence": {
+          "Additional languages / optional NWP slots": 6
+        },
+        "Charisma": {
+          "Henchman limit": 15,
+          "Loyalty base": 8,
+          "Reaction": 7
+        }
+      },
+      "core_class": "Bard",
+      "core_level": 3,
+      "core_thac0": 19,
+      "core_saves": {
+        "PPDM": 13,
+        "RSW": 14,
+        "PP": 12,
+        "BW": 16,
+        "Spells": 15
+      },
+      "class_ability_minimums": {
+        "DEX": 12,
+        "INT": 13,
+        "CHA": 15
+      },
+      "requirements_pass": true,
+      "hit_dice_reference": "d6; after level 10, +2 HP per level",
+      "exceptions": [
+        "Drow and established custom class/kit combinations retained by user approval.",
+        "Recorded HP, AC, THAC0 and saves retain campaign adjustments; core references are separate.",
+        "Drow bard is a campaign exception to core PHB race/class availability.",
+        "Recorded THAC0 18 differs from core Bard 3 base 19; retained custom-class combat baseline.",
+        "Recorded max HP 32 exceeds the single-core-class ceiling 18; retained custom-class HP overlay."
+      ],
+      "ledger_note": "XP history, custom-item charges/weights and unknown spell selections are not granted by character generation.",
+      "core_hp_ceiling": 18,
+      "generated_alignment": "Neutral Good"
+    },
+    {
+      "campaign_id": "dod-demo-001",
+      "character_id": "party.zarvak",
+      "scores": {
+        "STR": 17,
+        "DEX": 18,
+        "CON": 13,
+        "INT": 11,
+        "WIS": 9,
+        "CHA": 7
+      },
+      "ability_origin": "Generated: 2E Method V; seeded 4d6 discard lowest, arrange to qualify; elf Dex +1 / Con -1",
+      "rolls": [
+        [
+          5,
+          6,
+          1,
+          3
+        ],
+        [
+          3,
+          5,
+          3,
+          1
+        ],
+        [
+          6,
+          5,
+          6,
+          3
+        ],
+        [
+          6,
+          6,
+          5,
+          3
+        ],
+        [
+          2,
+          2,
+          1,
+          5
+        ],
+        [
+          1,
+          1,
+          2,
+          4
+        ]
+      ],
+      "modifiers": {
+        "Strength": {
+          "Melee hit": 1,
+          "Melee damage": 1,
+          "Weight allowance lb": 85
+        },
+        "Dexterity": {
+          "Reaction": 2,
+          "Missile attack": 2,
+          "AC adjustment": -4
+        },
+        "Constitution": {
+          "HP per eligible hit die": 0,
+          "System shock %": 85,
+          "Resurrection survival %": 90
+        },
+        "Wisdom": {
+          "Mental magic defense": 0
+        },
+        "Intelligence": {
+          "Additional languages / optional NWP slots": 2
+        },
+        "Charisma": {
+          "Henchman limit": 3,
+          "Loyalty base": -2,
+          "Reaction": -1
+        }
+      },
+      "core_class": "Fighter",
+      "core_level": 5,
+      "core_thac0": 16,
+      "core_saves": {
+        "PPDM": 11,
+        "RSW": 13,
+        "PP": 12,
+        "BW": 13,
+        "Spells": 14
+      },
+      "class_ability_minimums": {
+        "STR": 9
+      },
+      "requirements_pass": true,
+      "hit_dice_reference": "d10; after level 9, +3 HP per level",
+      "exceptions": [
+        "Drow and established custom class/kit combinations retained by user approval.",
+        "Recorded HP, AC, THAC0 and saves retain campaign adjustments; core references are separate.",
+        "Recorded max HP 58 exceeds the single-core-class ceiling 50; retained custom-class HP overlay."
+      ],
+      "ledger_note": "XP history, custom-item charges/weights and unknown spell selections are not granted by character generation.",
+      "core_hp_ceiling": 50,
+      "generated_alignment": "Neutral Good"
+    }
+  ],
+  "rule_references": [
+    "PHB Tables 1\u20136: abilities",
+    "PHB Table 13: class minimums",
+    "PHB Tables 53 and 60: THAC0 and saving throws",
+    "PHB character generation: Method V and elf racial adjustments"
+  ]
+}

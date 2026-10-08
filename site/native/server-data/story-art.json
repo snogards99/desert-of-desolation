@@ -1,0 +1,58 @@
+{
+  "engine": "dod.art-engine@1.3.0",
+  "scenes": [
+    {
+      "id": "dod.scene.bralizzar.charter.interior.v1",
+      "node_id": "dod.prologue.bralizzar.charter",
+      "src": "/art/story/bralizzar-charter.png",
+      "alt": "The charter table in the shaded upper room of Bralizzar's caravan house",
+      "width": 1536,
+      "height": 1024,
+      "environment": "INDOOR",
+      "phase": "NEUTRAL",
+      "mode": "DOD_INK",
+      "profile": "dod.pixel32-rgba",
+      "available": true,
+      "approved": true,
+      "player_visible": true,
+      "sha256": "43d662127adfb3ed549554f4820e6ec126810e323906f423dea56673886c45c4",
+      "storage": "PNG_RGBA_8_8_8_8"
+    }
+  ],
+  "monsters": [
+    {
+      "id": "dod.journal.actor.troll.living.v1",
+      "actor_id": "actor.troll",
+      "src": "/art/story/troll-alive.png",
+      "alt": "A living troll, standing in a neutral pose",
+      "width": 1024,
+      "height": 1536,
+      "state": "NEUTRAL",
+      "mode": "DOD_INK",
+      "profile": "dod.pixel32-rgba",
+      "available": true,
+      "approved": true,
+      "sha256": "a9fa57972d20774f2e68da06b842b92febc7779861b485981d0f43ebad75baa8",
+      "storage": "PNG_RGBA_8_8_8_8"
+    }
+  ],
+  "confirmed_kills": [
+    {
+      "instance_id": "troll-cave-troll-demo-001",
+      "actor_id": "actor.troll",
+      "campaign_id": "dod-demo-001",
+      "name": "Troll",
+      "location_label": "Troll Cave",
+      "summary": "The troll was permanently destroyed after the encounter. This portrait records its living form.",
+      "outcome": "KILLED",
+      "permanently_destroyed": true,
+      "player_visible": true,
+      "minimum_revision": 58,
+      "minimum_minutes": 5150,
+      "source_evidence": [
+        "runtime/MonsterInstances.jsonl: troll-cave-troll-demo-001 status=dead; permanent_destruction=true",
+        "runtime/ChapterRuntime.jsonl: dod-demo-001/troll_cave troll_permanently_destroyed=true"
+      ]
+    }
+  ]
+}

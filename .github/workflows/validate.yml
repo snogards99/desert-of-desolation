@@ -35,3 +35,22 @@ jobs:
       - name: Verify project consistency
         if: github.event_name != 'push' || steps.freshness.outputs.run == 'true'
         run: npm run verify
+  native-site:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: site/native
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - name: Install the native locked dependencies
+        run: npx --yes pnpm@11.25.0 install --frozen-lockfile
+      - name: Native typecheck
+        run: node node_modules/typescript/bin/tsc --noEmit --incremental false
+      - name: Native Worker build and module closure
+        run: npm run build
+      - name: Isolated native D1 and built Worker tests
+        run: node --test tests/*.test.mjs
