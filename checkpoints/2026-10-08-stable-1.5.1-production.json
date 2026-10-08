@@ -1,8 +1,8 @@
 {
   "checkpoint_schema": "dod.commit-checkpoint.v2",
-  "timestamp_utc": "2026-10-08T01:52:00Z",
+  "timestamp_utc": "2026-10-08T14:55:00Z",
   "shared_release_id": "dod-1.5.1-stable-production-2026-10-08",
-  "status": "STABLE_PLUGIN_PUBLISHED; CANONICAL_PRODUCTION_SOURCE_MERGED_AND_VALIDATED; LIVE_SITE_NATIVE_PUBLISH_PENDING",
+  "status": "STABLE_1_5_1_PLUGIN_AND_EXISTING_SITE_PUBLISHED; NATIVE_BUILD_ISOLATED_ROUND_TRIP_AND_GITHUB_VALIDATION_PASS; LIVE_OWNER_BROWSER_UI_PENDING",
   "coordinated_release_verified": false,
   "canonical_source": {
     "repository": "snogards99/desert-of-desolation",
@@ -14,7 +14,9 @@
     "release_guard_path": "release/UNIFIED_RELEASE_GUARD.json",
     "pull_request": 6,
     "publish_handoff": "site/PRODUCTION_PUBLISH_HANDOFF.md",
-    "checkpoint_policy": "Read this checkpoint's own commit from Git history; no circular self-reference."
+    "checkpoint_policy": "Read this checkpoint's own commit from Git history; no circular self-reference.",
+    "native_integration_commit": "df091dd4273eff4c373f5dc92817d909d5d07d47",
+    "deployment_evidence_commit": "010ff0fbf90b3966b63cb30435a6f1c95d98abce"
   },
   "plugin": {
     "plugin_id": "Plugin_3352cc65ee508191abeb37ffa759294d",
@@ -32,7 +34,11 @@
     "overlay_sha256": "a1262d4b35daa8b3e7416fc1f1e8be3a83818dfc14f2a11a1063260e1aed8132",
     "runtime_source_baseline": "1.5.1-alpha.41",
     "runtime_code_changed_for_stable_promotion": false,
-    "full_binary_parity": "NOT_VERIFIED_CURRENT_EXECUTION_SURFACE"
+    "full_binary_parity": "NOT_VERIFIED_CURRENT_EXECUTION_SURFACE",
+    "current_readback_parity": {
+      "checked": 4,
+      "mismatches": []
+    }
   },
   "validation": {
     "inherited_alpha41": {
@@ -61,22 +67,109 @@
       "conclusion": "success",
       "verification_step_executed": true
     },
-    "plugin_readback": "10_OF_10_CHANGED_TEXT_FILES_EXACT_MATCH_TO_MAIN"
+    "plugin_readback": "4_OF_4_CRITICAL_RELEASE_TEXT_FILES_EXACT_MATCH_TO_CURRENT_MAIN; NO_PLUGIN_FILES_CHANGED",
+    "native": {
+      "locked_dependency_install": "PASS",
+      "typecheck": "PASS",
+      "build_and_import_module_closure": "PASS",
+      "native_tests": {
+        "passed": 4,
+        "failed": 0,
+        "skipped": 0,
+        "command": "node --test tests/native-d1.test.mjs tests/native-http.test.mjs"
+      },
+      "repository_tests": {
+        "passed": 166,
+        "failed": 0,
+        "skipped": 0,
+        "source_pins": 40
+      },
+      "isolated_round_trip": {
+        "result": "PASS",
+        "environment": "Isolated Miniflare D1 and built native Worker; local browser preview fixture",
+        "supported_action": "prologue.charter.depart",
+        "initial_revision": 2,
+        "saved_revision": 3,
+        "scene_before": "dod.prologue.bralizzar.charter",
+        "scene_after": "dod.prologue.frontier.last_camp",
+        "durable_state_commits": 1,
+        "action_journal_rows": 1,
+        "receipt_rows": 1,
+        "reload_identical": true,
+        "duplicate_submit": "PASS",
+        "concurrent_duplicate": "PASS",
+        "stale_revision": "PASS",
+        "unauthorized_access": "PASS",
+        "rollback_on_journal_collision": "PASS",
+        "unknown_choice_fail_closed": "PASS",
+        "queued_action_gameplay_unchanged": "PASS",
+        "source_scene_audio_selection": "PASS"
+      },
+      "client_guards": {
+        "uncertain_request_no_auto_resubmit": "PASS automated stable client tests",
+        "draft_receipt_recovery": "PASS automated tests and preview reload",
+        "microphone_never_auto_submits": "PASS source and automated tests; actual microphone permission not exercised",
+        "missing_media": "PASS built Worker response and browser preview fallback"
+      }
+    },
+    "current_ci": {
+      "scope": "pull_request",
+      "commit_sha": "df091dd4273eff4c373f5dc92817d909d5d07d47",
+      "run_id": 37796102992,
+      "url": "https://github.com/snogards99/desert-of-desolation/actions/runs/37796102992",
+      "conclusion": "success",
+      "verification_step_executed": true,
+      "jobs": [
+        {
+          "id": 113375870793,
+          "name": "project-consistency",
+          "result": "success"
+        },
+        {
+          "id": 113375871235,
+          "name": "native-site",
+          "result": "success"
+        }
+      ]
+    },
+    "historical_ci_note": "Existing success run IDs refer to earlier commits; none are claimed as CI for this handoff."
   },
   "site": {
     "project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
     "slug": "desert-of-desolation",
     "url": "https://desert-of-desolation.nreach-1221.chatgpt.site",
-    "last_observed_source_version": 32,
-    "last_observed_projection_revision": 65,
+    "last_observed_source_version": 36,
+    "last_observed_projection_revision": null,
     "source_bundle_release": "1.5.1",
     "production_source_ready": true,
-    "stable_1_5_1_republished": false,
-    "deployment_id": null,
+    "stable_1_5_1_republished": true,
+    "deployment_id": "appgdep_6ac7136db60081918bac4a1b2ee7939d",
     "native_sites_tool_available_in_conversation": false,
     "remote_desktop_device": "DESKTOP1",
     "remote_desktop_status": "OFFLINE",
-    "exact_publish_instruction": "site/PRODUCTION_PUBLISH_HANDOFF.md"
+    "exact_publish_instruction": "site/PRODUCTION_PUBLISH_HANDOFF.md",
+    "projection_revision_note": "No numeric projection supplied by native Sites. Exact native source/version/deployment/Worker revision are used instead.",
+    "inherited_source_version": 32,
+    "inherited_projection_revision": 65,
+    "stable_source_bundle_in_main": true,
+    "stable_publish_handoff": "site/PRODUCTION_PUBLISH_HANDOFF.md",
+    "fresh_deployment_verified": true,
+    "native_sites_action_available_in_this_conversation": true,
+    "remote_desktop_fallback_status": "CLOUD_BROWSER_NATIVE_PREVIEW_AND_PUBLIC_PRODUCTION_HOME_AVAILABLE",
+    "publication_required": false,
+    "source_version_number": 36,
+    "native_source_commit": "e9c6074d4e8d23e7820f2cb9625b3b9cde3f1de6",
+    "version_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d~appgver_b2521426e77c8191b32c2b84c10c5cbc",
+    "provider_deployment_id": "site---6ac3ddb2142c81918d529d4c7504e59d",
+    "publication_timestamp": "2026-10-08T03:52:25.819492+00:00",
+    "environment_revision": 7,
+    "access_mode": "public",
+    "build_result": "PASS",
+    "isolated_gameplay_round_trip": "PASS_ON_SEPARATE_D1",
+    "owner_authenticated_live_ui": "UNVERIFIED_SIGN_IN_CANCELLED",
+    "evidence_path": "site/PRODUCTION_DEPLOYMENT_EVIDENCE_2026-10-08.json",
+    "authenticated_live_save_http": "200_WITH_NATIVE_AUTHENTICATED_EMAIL_CLAIM_VERIFIED_FROM_WORKER_LOGS",
+    "worker_version_id": "0f7014cd-7a74-4566-bddd-a99ea7bcba6c"
   },
   "preservation": {
     "real_campaign_api_writes": 0,
@@ -87,20 +180,43 @@
     "saved_mix_changed": false,
     "default_prompts_changed": false,
     "footer_or_navigation_changed": false,
-    "access_or_hosting_changed": false
+    "access_or_hosting_changed": false,
+    "real_campaign_api_write_requests": 0,
+    "real_campaign_advanced": false,
+    "real_campaign_reset": false,
+    "production_receipt_rows": 0,
+    "real_campaign_revision_before": 3,
+    "real_campaign_revision_after": 3,
+    "baseline_and_post_publish_state_rows_exact_match": true,
+    "baseline_native_source": "098b268939da8994f00bc8566840fa745b6d941d",
+    "public_media_bytes_identical_to_baseline": true,
+    "public_asset_manifest": "site/NATIVE_PUBLIC_ASSET_SHA256.json",
+    "r2_media_mutated": false,
+    "site_id_url_audience_preserved": true
   },
   "release_state": {
-    "plugin_production_release": "COMPLETE",
-    "github_production_source": "COMPLETE",
-    "github_validation": "COMPLETE",
-    "native_site_publish": "PENDING_PLATFORM_ACTION",
-    "coordinated_plugin_site_release": "NOT_YET_VERIFIED"
+    "plugin_production_release": "COMPLETE_UNCHANGED",
+    "github_production_source": "COMMITTED",
+    "github_validation": "PASS_CANONICAL_AND_NATIVE_CI",
+    "native_site_publish": "COMPLETE_VERSION_36",
+    "native_build_typecheck": "PASS",
+    "isolated_round_trip": "PASS",
+    "coordinated_plugin_site_release": "NOT_YET_FULLY_VERIFIED"
   },
-  "remaining_action": "Open the existing Site project in a ChatGPT Sites-capable Work/Codex session and execute site/PRODUCTION_PUBLISH_HANDOFF.md. Record the returned Site source/projection/deployment references; do not create a replacement Site.",
+  "remaining_action": "Finish owner-authenticated browser scene/party/art review. Native backend authenticated GET is verified HTTP 200; isolated equivalent native gameplay writes passed. Do not advance the real campaign.",
   "rollback": {
     "previous_plugin_version": "1.5.1-alpha.41",
     "previous_plugin_release_id": "pluginrel_6ac6ed42e1488191955c00d8e89f26ab",
     "previous_checkpoint_commit": "eaac08e277fab10dc3fdb992a44b989ff1cf8294",
-    "procedure": "Use reviewed commits and guarded Plugin Creator update; never reset the real campaign."
-  }
+    "procedure": "Restore a reviewed saved native version on the same Site without resetting D1 or R2; retain backward-compatible new receipt/ownership tables. Never rewind the campaign.",
+    "site_source_version": 32,
+    "native_source_commit": "098b268939da8994f00bc8566840fa745b6d941d",
+    "site_deployment_id": "appgdep_6ac5cc2d500481918fe3b3366b0c0a69",
+    "github_pre_handoff_commit": "e55465a5b38fc239ad25dd840f55beb2d294a9ca",
+    "plugin_keep_release": "pluginrel_6ac6f61338388191a83cdaa17c2f256e"
+  },
+  "remaining_evidence_boundaries": [
+    "Owner-authenticated live saved-scene/character/scene-art inspection and live browser action round trip were not performed. Isolated equivalent native Worker + D1 tests passed; production writes were deliberately not used.",
+    "Physical iPhone, actual listening quality, OS reduced-motion emulation and full Plugin Creator binary archive parity were not verified."
+  ]
 }

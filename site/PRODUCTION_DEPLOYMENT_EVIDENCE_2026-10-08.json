@@ -19,14 +19,39 @@
   },
   "github": {
     "native_integration_commit": "c52259933a64b214119dec16aed97693fbf0e6c9",
-    "preserved_concurrent_review_commit": "e42d6bf9209a1a048664d56c418b56ab7ddabdeb"
+    "preserved_concurrent_review_commit": "e42d6bf9209a1a048664d56c418b56ab7ddabdeb",
+    "corrected_native_snapshot_commit": "df091dd4273eff4c373f5dc92817d909d5d07d47",
+    "validation": {
+      "scope": "pull_request",
+      "commit_sha": "df091dd4273eff4c373f5dc92817d909d5d07d47",
+      "run_id": 37796102992,
+      "url": "https://github.com/snogards99/desert-of-desolation/actions/runs/37796102992",
+      "conclusion": "success",
+      "verification_step_executed": true,
+      "jobs": [
+        {
+          "id": 113375870793,
+          "name": "project-consistency",
+          "result": "success"
+        },
+        {
+          "id": 113375871235,
+          "name": "native-site",
+          "result": "success"
+        }
+      ]
+    }
   },
   "plugin": {
     "id": "Plugin_3352cc65ee508191abeb37ffa759294d",
     "version": "1.5.1",
     "release_id": "pluginrel_6ac6f61338388191a83cdaa17c2f256e",
     "modified": false,
-    "metadata_only_new_release": false
+    "metadata_only_new_release": false,
+    "current_critical_text_parity": {
+      "checked": 4,
+      "mismatches": []
+    }
   },
   "native_validation": {
     "locked_dependency_install": "PASS",
@@ -106,7 +131,30 @@
       "campaigns"
     ],
     "unauthenticated_campaign_request": "403 owner sign-in required; native login reaches OpenAI",
-    "owner_session": "UNVERIFIED: secure browser sign-in cancelled; no auth bypass or forged identity used"
+    "owner_session": "UNVERIFIED: secure browser sign-in cancelled; no auth bypass or forged identity used",
+    "authenticated_save_http": {
+      "result": "PASS",
+      "status": 200,
+      "worker_version_id": "0f7014cd-7a74-4566-bddd-a99ea7bcba6c",
+      "evidence": "Native Worker logs show authenticated email header present on GET /api/game?campaign=dod-main; no values or cookies copied",
+      "requests": [
+        {
+          "timestamp_ms": 1791466761502,
+          "status": 200,
+          "worker_version_id": "0f7014cd-7a74-4566-bddd-a99ea7bcba6c"
+        },
+        {
+          "timestamp_ms": 1791466749913,
+          "status": 200,
+          "worker_version_id": "0f7014cd-7a74-4566-bddd-a99ea7bcba6c"
+        },
+        {
+          "timestamp_ms": 1791466690896,
+          "status": 200,
+          "worker_version_id": "0f7014cd-7a74-4566-bddd-a99ea7bcba6c"
+        }
+      ]
+    }
   },
   "preservation": {
     "real_campaign_api_write_requests": 0,
@@ -139,6 +187,12 @@
       "defect": "Native dispatch supplies authenticated email, not user ID",
       "repair": "Use canonical verified email subject; regression test without user-ID header",
       "superseded_version": 35
+    },
+    {
+      "defect": "Duplicate generated migration remained in canonical source snapshot",
+      "repair": "Removed from GitHub snapshot; actual deployed native source/archive already excluded it",
+      "corrected_commit": "df091dd4273eff4c373f5dc92817d909d5d07d47",
+      "ci_result": "success"
     }
   ],
   "remaining_evidence_boundaries": [
