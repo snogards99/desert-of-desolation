@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "release": "1.5.1-alpha.40",
-  "scope": "GAMEPLAY_BOUNDARY_HARDENING",
+  "release": "1.5.1-alpha.41",
+  "scope": "STREAM_AND_SAVE_INTEGRITY_REPAIR",
   "active": {
     "policy": "1.5.1-alpha.39",
     "theme": "1.5.1-alpha.39",
@@ -13,9 +13,9 @@
     "alias_authority": "1.5.1-alpha.38",
     "gain_authority": "1.5.1-alpha.38",
     "time_policy": "1.5.1-alpha.39",
-    "site_profile": "1.5.1-alpha.40",
+    "site_profile": "1.5.1-alpha.41",
     "art_release": "1.5.1-alpha.39",
-    "game_client": "1.5.1-alpha.40",
+    "game_client": "1.5.1-alpha.41",
     "transaction_adapter": "1.5.1-alpha.40"
   },
   "runtime_contracts": {
@@ -39,12 +39,15 @@
     "auto_resubmit": false,
     "pending_receipt_recovery": true,
     "session_draft_recovery": true,
-    "production_transaction_adapter_wired": false
+    "production_transaction_adapter_wired": false,
+    "response_limit_bytes": 2000000,
+    "response_stream_cancellation": true,
+    "same_revision_displayed_state_integrity": true
   },
   "repaired_drift": [
-    "Submission lock precedes asynchronous work; unknown writes are not automatically retried.",
-    "Same-campaign revisions are validated before display; refresh preserves drafts.",
-    "Media identity, current visibility, discovery and outdoor phase are required for selection."
+    "Response limits are enforced on streamed UTF-8 bytes before buffering the whole body.",
+    "Rejected and late responses are cancelled rather than left running.",
+    "Same-revision location, equipment, spell resources and party identity changes are rejected."
   ],
   "evidence_policy": "Source approval is distinct from native Site publication, browser listening, physical-device QA, server write authorization, transaction behavior, resolver persistence, and binary-media parity.",
   "source_integrity": "SOURCE_INTEGRITY.json"

@@ -1,11 +1,11 @@
-# Desert of Desolation 1.5.1-alpha.40
+# Desert of Desolation 1.5.1-alpha.41
 
-Gameplay-boundary and recovery improvements in ten focused passes. The live Site is not republished by this source release.
+Maintenance release for the approved response and saved-state repair patch.
 
-The bundled page validates save identity/revisions and uses bounded reads. Action submission is single-flight, retains uncertain receipts across reloads when session storage is available, and never automatically retries a write. Scene-scoped drafts survive refreshes; accepted actions clear only their own draft. Accessible pending-action controls offer refresh and journal review.
+- Enforces the 2,000,000-byte response limit while streaming, including multibyte UTF-8 and declared lengths.
+- Cancels oversized, timed-out, rejected non-JSON and late-response bodies. Unsupported nonstreaming responses fail closed.
+- Rejects same-revision changes to displayed location, equipment, spell resources and party records; key order alone is not a state change.
+- Rejects duplicate and empty party IDs and preserves uncertain-action duplicate guards.
+- Adds 18 response/state regression cases over alpha.40. Fresh ten-run results are in ALPHA41_TEN_RUN_QA.json.
 
-An integration adapter implements authorization, revision checks, idempotent receipts, history preservation and state/receipt atomicity through required native host callbacks. Tests use synthetic state and in-memory storage only. It is not wired to production and adds no replacement rules engine, database or hosting service.
-
-Scene media now requires current visibility/discovery/focus and valid lighting; failed images degrade to text with explicit retry. Checkpoint copying is bounded and allowlisted. Exact SHA-256 coverage protects runtime and shared-policy source from drift. Existing media bytes, saved mix, campaign state, access and default prompts are unchanged.
-
-Native Site source/build/publication, real database/security integration, physical iPhone/listening QA, and complete binary-media synchronization remain open.
+No real campaign actions, media bytes/IDs, saved sound mix, default prompts, hosting or audience are changed. The native Site has not been republished. No production authentication, transaction, resolver, browser or physical-device evidence is inferred from these source tests.

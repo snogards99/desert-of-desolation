@@ -1,14 +1,14 @@
 {
   "schema_version": 2,
-  "release": "1.5.1-alpha.40",
+  "release": "1.5.1-alpha.41",
   "inherited_alpha38_audit": {
     "plugin_files": 883,
     "github_plugin_files": 140,
     "missing_from_github": 752,
     "note": "Historical pre-alpha38 count retained as provenance only; not reclassified as alpha39 parity."
   },
-  "readable_text_sync": "CHANGED_TEXT_REQUIRES_EXACT_POST_PUBLICATION_READBACK; SEE_EXTERNAL_RELEASE_CHECKPOINT",
-  "binary_media_sync": "NOT_VERIFIED; BINARY_EXPORT_ATTEMPT_NOT_MATERIALIZED",
+  "readable_text_sync": "GUARDED_TEXT_OVERLAY; FINAL_COMMIT_AND_READBACK_EVIDENCE_IN_EXTERNAL_RELEASE_GUARD",
+  "binary_media_sync": "NOT_VERIFIED; UNCHANGED_MEDIA_OMITTED_FROM_OVERLAY",
   "binary_boundary": "Current text/source synchronization does not establish complete byte-for-byte parity for all bundled binary media.",
   "policy": "Never claim full plugin/GitHub binary parity until exact bytes can be checksummed.",
   "campaign_state_mutated": false

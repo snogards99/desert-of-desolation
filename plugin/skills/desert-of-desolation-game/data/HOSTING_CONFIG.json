@@ -1,7 +1,7 @@
 {
   "schema_version": 8,
   "source_plugin_id": "Plugin_3352cc65ee508191abeb37ffa759294d",
-  "configured_in_version": "1.5.1-alpha.40",
+  "configured_in_version": "1.5.1-alpha.41",
   "provider": "CHATGPT_SITES",
   "deployment_status": "DIRECT_BROWSER_SITE_PUBLISHED_ACTIVE",
   "site_project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
@@ -37,7 +37,7 @@
     "physical_iphone_listening_qa_reverified_this_session": false
   },
   "site_primary_cutover_approved": false,
-  "site_primary_cutover_note": "Alpha.40 changes bundled client and integration-adapter source only. Native Site source/build/publish, database authentication and device/listening verification remain required.",
+  "site_primary_cutover_note": "Alpha.41 updates bundled response/state guards only. Native source, production integration, build, publication and device/listening evidence remain required.",
   "default_access_path": "DIRECT_BROWSER",
   "automatic_site_plugin_provisioning": false,
   "save_sync_policy": "SEPARATE_SITE_D1_AND_CHATGPT_CHECKPOINTS; COPY_PLAYER_VISIBLE_SUMMARY_FOR_MANUAL_REVIEW",

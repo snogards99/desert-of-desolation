@@ -15,12 +15,49 @@ export function validateSnapshot(data,campaign,current=null){
   if(!object(data)||data.campaign!==campaign)fail('CAMPAIGN_MISMATCH','The response belongs to a different expedition. Refresh your save.');
   if(!nat(data.revision)||!nat(data.time)||!['scene','location','place','title','narrative'].every(k=>string(data[k],k==='narrative'?100000:1000))||!data.scene||!Array.isArray(data.choices)||data.choices.length>100||!Array.isArray(data.party)||data.party.length>100||!Array.isArray(data.journal)||data.journal.length>5000)
     fail('INVALID_SAVE','The saved expedition response is incomplete. Your current display has been preserved.');
-  if(data.choices.some(x=>!object(x)||!string(x.id,128)||!x.id||!string(x.text))||new Set(data.choices.map(x=>x.id)).size!==data.choices.length||data.party.some(x=>!object(x)||!string(x.id,128)||!string(x.name,200)||!Number.isFinite(x.hp)||!Number.isFinite(x.max))||data.journal.some(x=>!object(x)||!string(x.text,10000)||!string(x.status,200)||!string(x.created,100)))
+  if(data.choices.some(x=>!object(x)||!string(x.id,128)||!x.id||!string(x.text))||new Set(data.choices.map(x=>x.id)).size!==data.choices.length||data.party.some(x=>!object(x)||!string(x.id,128)||!x.id||!string(x.name,200)||!Number.isFinite(x.hp)||!Number.isFinite(x.max))||new Set(data.party.map(x=>x.id)).size!==data.party.length||data.journal.some(x=>!object(x)||!string(x.text,10000)||!string(x.status,200)||!string(x.created,100)))
     fail('INVALID_SAVE','The saved expedition contains invalid display records. Refresh rather than submitting.');
-  const core=s=>JSON.stringify([s.scene,s.time,s.narrative,s.choices,s.party.map(x=>[x.id,x.hp,x.max])]);
+  // Compare authoritative displayed state, including equipment and spell resources.
+  // Presentation-only media URLs may refresh independently. Object key order is not state.
+  const stable=value=>JSON.stringify(value,(_key,item)=>object(item)?Object.fromEntries(Object.keys(item).sort().map(key=>[key,item[key]])):item);
+  const core=s=>stable([s.scene,s.location,s.place,s.title,s.time,s.narrative,s.magicAtmosphere??null,s.choices,s.party,s.journal]);
   if(current?.campaign===campaign&&(data.revision<current.revision||(data.revision===current.revision&&core(data)!==core(current))))
     fail('STALE_SAVE','An older or inconsistent save was rejected. Your newer state has been preserved.');
   return data;
+}
+const MAX_RESPONSE_BYTES=2000000;
+async function readBoundedBody(response,controller,write){
+  const oversized=()=>new GameClientError('RESPONSE_TOO_LARGE','The response exceeded the safe display limit.',write);
+  const invalid=()=>new GameClientError('INVALID_RESPONSE','The response could not be read safely. Refresh your save.',write);
+  const length=response.headers.get('content-length');
+  if(length&&/^\d+$/.test(length)&&Number(length)>MAX_RESPONSE_BYTES){
+    try{Promise.resolve(response.body?.cancel()).catch(()=>{});}catch{}
+    controller.abort();throw oversized();
+  }
+  // Native fetch streams are required; do not buffer an unbounded legacy text() body.
+  if(response.body===null)return '';
+  if(typeof response.body?.getReader!=='function')throw invalid();
+  const reader=response.body.getReader(),decoder=new TextDecoder('utf-8',{fatal:true}),chunks=[];
+  let bytes=0,completed=false;
+  const cancel=()=>{try{Promise.resolve(reader.cancel()).catch(()=>{});}catch{}};
+  controller.signal.addEventListener('abort',cancel,{once:true});
+  try{
+    while(true){
+      const {done,value}=await reader.read();
+      if(controller.signal.aborted)throw new GameClientError('TIMEOUT','The response timed out. Refresh the saved record before sending another action.',write);
+      if(done){completed=true;break;}
+      if(!(value instanceof Uint8Array))throw invalid();
+      bytes+=value.byteLength;
+      if(bytes>MAX_RESPONSE_BYTES){controller.abort();throw oversized();}
+      try{chunks.push(decoder.decode(value,{stream:true}));}catch{throw invalid();}
+    }
+    try{chunks.push(decoder.decode());}catch{throw invalid();}
+    return chunks.join('');
+  }finally{
+    controller.signal.removeEventListener('abort',cancel);
+    if(!completed)cancel();
+    try{reader.releaseLock();}catch{}
+  }
 }
 export async function requestJson(fetchImpl,url,init={},timeoutMs=15000){
   if(typeof fetchImpl!=='function'||!Number.isFinite(timeoutMs)||timeoutMs<=0||timeoutMs>120000)throw new TypeError('A fetch function and bounded timeout are required.');
@@ -28,8 +65,11 @@ export async function requestJson(fetchImpl,url,init={},timeoutMs=15000){
   const timeout=new Promise((_,reject)=>{timer=setTimeout(()=>{controller.abort();reject(new GameClientError('TIMEOUT',write?'The action timed out. It may already be saved; check the journal before sending again.':'Save refresh timed out. The current display is unchanged.',write));},timeoutMs);});
   try{return await Promise.race([timeout,(async()=>{
     const r=await fetchImpl(url,{...init,signal:controller.signal,credentials:'same-origin'});
-    if(!/application\/(?:[\w.+-]*\+)?json\b/i.test(r.headers.get('content-type')||''))throw new GameClientError('INVALID_RESPONSE','Your session needs refreshing. No action or save result has been confirmed.',write);
-    const text=await r.text();if(text.length>2000000)throw new GameClientError('RESPONSE_TOO_LARGE','The response exceeded the safe display limit.',write);
+    const discard=()=>{try{Promise.resolve(r.body?.cancel()).catch(()=>{});}catch{}controller.abort();};
+    // Some injected transports can resolve after abort. Never consume their late body.
+    if(controller.signal.aborted){discard();throw new GameClientError('TIMEOUT','The response arrived after the deadline. Refresh the saved record.',write);}
+    if(!/application\/(?:[\w.+-]*\+)?json\b/i.test(r.headers.get('content-type')||'')){discard();throw new GameClientError('INVALID_RESPONSE','Your session needs refreshing. No action or save result has been confirmed.',write);}
+    const text=await readBoundedBody(r,controller,write);
     let data;try{data=JSON.parse(text);}catch{throw new GameClientError('INVALID_RESPONSE','The response could not be read. Refresh your save.',write);}
     if(!r.ok)throw new GameClientError('HTTP_'+r.status,typeof data?.error==='string'?data.error.slice(0,1000):'The request was not confirmed. Check your saved expedition.',write);
     return data;
