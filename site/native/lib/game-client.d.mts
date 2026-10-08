@@ -1,6 +1,6 @@
 type Store=Pick<Storage,'getItem'|'setItem'|'removeItem'>;
-type Command={campaign:string,revision:number,text:string,choice?:string,id:string};
-type Receipt={command:Command,phase:string,message:string};
+type Command={campaign:string,revision:number,text:string,choice?:string,choices?:string[],id:string};
+type Receipt={command:Command,phase:string,message:string,status?:string};
 export class GameClientError extends Error {code:string;uncertain:boolean;}
 export function validateCommand(command:unknown):Command;
 export function requestJson(fetchImpl:typeof fetch,url:string,init?:RequestInit,timeoutMs?:number):Promise<unknown>;

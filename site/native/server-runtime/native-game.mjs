@@ -1,3 +1,4 @@
+import {preparedActionPlan} from './prepared-actions.mjs';
 import {createActionService} from './action-service.mjs';
 export class NativeGameError extends Error {constructor(code){super(code);this.code=code;}}
 const fail=code=>{throw new NativeGameError(code);};
@@ -62,14 +63,13 @@ export function createNativeGameService(db,source,ownerEmail){
    return JSON.parse(committed.response);
   },
   resolve:async(s,c)=>{
-   const choice=source.StoryChoices.find(x=>x.choice_id===c.choice&&x.node_id===s.raw.scene_id&&x.visibility==='PLAYER'&&x.active!==false&&x.active!=='FALSE');
-   if(c.choice&&!choice)fail('UNSUPPORTED_ACTION');
-   const target=choice?.choice_id==='prologue.charter.depart'?source.StoryNodes.find(x=>x.node_id===choice.success_target_node):null;
-   const resolved=!!target,raw=structuredClone(s.raw);
-   if(resolved){raw.scene_id=target.node_id;raw.location_id=target.location_id;delete raw.presentation;}
+   const plan=preparedActionPlan(source,s.raw.scene_id,c);
+   if(plan.invalid)fail('UNSUPPORTED_ACTION');
+   const {target}=plan,resolved=plan.resolved,raw=structuredClone(s.raw);
+   if(resolved&&target){raw.scene_id=target.node_id;raw.location_id=target.location_id;delete raw.presentation;}
    return {status:resolved?'RESOLVED':'QUEUED',message:'internal',state:{...s,revision:s.revision+1,raw,journal:[...s.journal,{id:c.id,text:c.text,status:resolved?'RESOLVED_EXPLICIT_TRANSITION':'QUEUED_RULES_RESOLUTION',created:new Date().toISOString()}]}};
   },
-  project:async(s,_grant,outcome)=>({campaign:s.campaign,revision:s.revision,message:outcome.status==='RESOLVED'?'Your chosen passage is saved.':'Action saved for adjudication. Exact rules resolution is required; gameplay is unchanged.'})
+  project:async(s,_grant,outcome)=>({campaign:s.campaign,revision:s.revision,message:outcome.status==='RESOLVED'?'Selected action resolved and saved. Additional typed details are recorded without applying unverified effects.':'This action needs rules adjudication and did not advance the scene. Your request is recorded in the journal; your draft remains available. Select a prepared departure or approach to continue where available.'})
  });
  return {authorize,load,handle};
 }

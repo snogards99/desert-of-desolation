@@ -9,7 +9,8 @@ const fail=(code,message)=>{throw new GameClientError(code,message);};
 export function validateCommand(command){
   if(!object(command)||!string(command.id,128)||!command.id||!string(command.campaign,128)||!command.campaign||!nat(command.revision)||!string(command.text)||!command.text.trim()||(command.choice!==undefined&&(!string(command.choice,128)||!command.choice)))
     fail('INVALID_COMMAND','Review the action and current save before submitting (maximum 2,000 characters).');
-  return {id:command.id,campaign:command.campaign,revision:command.revision,text:command.text.trim(),...(command.choice===undefined?{}:{choice:command.choice})};
+  if(command.choices!==undefined&&(!Array.isArray(command.choices)||!command.choices.length||command.choices.length>100||command.choices.some(x=>!string(x,128)||!x)||new Set(command.choices).size!==command.choices.length||command.choice!==undefined))fail('INVALID_COMMAND','Review the selected actions before submitting.');
+  return {id:command.id,campaign:command.campaign,revision:command.revision,text:command.text.trim(),...(command.choice===undefined?{}:{choice:command.choice}),...(command.choices===undefined?{}:{choices:[...command.choices]})};
 }
 export function validateSnapshot(data,campaign,current=null){
   if(!object(data)||data.campaign!==campaign)fail('CAMPAIGN_MISMATCH','The response belongs to a different expedition. Refresh your save.');
@@ -99,7 +100,7 @@ export function createActionGate({fetchImpl=globalThis.fetch,storage=null,uuid=(
       try{
         const data=await requestJson(fetchImpl,'/api/game',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(command)},timeoutMs);
         if(!object(data)||!string(data.message)||!data.message||(data.id!==undefined&&data.id!==command.id)||(data.campaign!==undefined&&data.campaign!==command.campaign))throw new GameClientError('INVALID_RECEIPT','The action receipt did not match. Check the journal before sending again.',true);
-        p={command,phase:'accepted',message:data.message};remember(p);return structuredClone(p);
+        p={command,phase:'accepted',message:data.message,status:data.status};remember(p);return structuredClone(p);
       }catch(e){remember({command,phase:'unknown',message:e.message});throw e;}
     }
   };

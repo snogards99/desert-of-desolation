@@ -20,5 +20,13 @@ test('built native Worker HTTP action-save-reload and guards on isolated D1',asy
   assert.equal((await mf.dispatchFetch(origin+'/api/art?campaign=dod-main&revision=3&slot=environment')).status,503);
   assert.equal((await mf.dispatchFetch(origin+'/api/media?id=unknown')).status,404);
   assert.equal((await db.prepare('SELECT COUNT(*) AS n FROM action_receipts').first()).n,1);
+  const approach={id:'isolated-approach',campaign:'dod-main',revision:3,text:'Break camp, cautiously',choices:['prologue.camp.approach']};
+  const advance=await post(approach);assert.equal(advance.status,200);const advanceReceipt=await advance.json();assert.equal(advanceReceipt.status,'RESOLVED');
+  assert.deepEqual(await (await post(approach)).json(),advanceReceipt);
+  assert.equal((await post({...approach,choices:['prologue.camp.scout']})).status,409);
+  const cave=await (await get()).json();assert.equal(cave.scene,'dod.troll_cave.entry.choice');assert.equal(cave.revision,4);assert.equal(cave.journal.length,2);
+  assert.deepEqual(await (await get()).json(),cave);
+  assert.equal((await db.prepare('SELECT COUNT(*) AS n FROM action_receipts').first()).n,2);
+
  }finally{await mf.dispose();}
 });

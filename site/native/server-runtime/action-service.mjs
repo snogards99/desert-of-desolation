@@ -11,7 +11,7 @@ export function createActionService({authorize,transact,resolve,project}={}){
     return transact(command.campaign,async tx=>{
       const grant=await authorize(principal,command.campaign,tx);
       if(!grant||grant.campaign!==command.campaign||typeof grant.subject!=='string'||!grant.subject)reject('FORBIDDEN');
-      const fingerprint=JSON.stringify([grant.subject,command.campaign,command.revision,command.text,command.choice??null]);
+      const fingerprint=JSON.stringify([grant.subject,command.campaign,command.revision,command.text,command.choice??null,...(command.choices?[command.choices]:[])]);
       // The host must serialize this callback and roll back ALL writes on throw.
       const previous=await tx.getReceipt(command.id);
       if(previous){if(previous.fingerprint!==fingerprint)reject('IDEMPOTENCY_CONFLICT');return structuredClone(previous.response);}
