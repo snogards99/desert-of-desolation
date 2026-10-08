@@ -1,8 +1,8 @@
 {
-  "schema_version": 17,
+  "schema_version": 18,
   "shared_release_id": "dod-1.5.1-stable-production-2026-10-08",
   "checkpoint_path": "checkpoints/2026-10-08-stable-1.5.1-production.json",
-  "status": "STABLE_1_5_1_PLUGIN_PUBLISHED_AND_SOURCE_MERGED; MAIN_CI_PASS; LIVE_SITE_REPUBLISH_PENDING_NATIVE_SITES_SURFACE",
+  "status": "STABLE_1_5_1_PLUGIN_AND_EXISTING_SITE_PUBLISHED; NATIVE_BUILD_AND_ISOLATED_ROUND_TRIP_PASS; LIVE_OWNER_SESSION_AND_CURRENT_CI_PENDING",
   "coordinated_release_verified": false,
   "plugin": {
     "plugin_id": "Plugin_3352cc65ee508191abeb37ffa759294d",
@@ -14,7 +14,12 @@
     "publication_readback_verified": true,
     "changed_text_parity": "10_OF_10_EXACT_MATCH_TO_GITHUB_MAIN",
     "overlay_sha256": "a1262d4b35daa8b3e7416fc1f1e8be3a83818dfc14f2a11a1063260e1aed8132",
-    "full_binary_parity": "NOT_VERIFIED_ARCHIVE_BYTES_UNAVAILABLE_TO_CURRENT_EXECUTION_SURFACE"
+    "full_binary_parity": "NOT_VERIFIED_ARCHIVE_BYTES_UNAVAILABLE_TO_CURRENT_EXECUTION_SURFACE",
+    "current_readback_parity": {
+      "checked": 4,
+      "mismatches": []
+    },
+    "immutable_release_snapshot_note": "Published plugin Site v32/projection65 fields describe its original release snapshot. Current production deployment is recorded here; no new plugin release was created."
   },
   "github": {
     "repository": "snogards99/desert-of-desolation",
@@ -30,10 +35,10 @@
       "verification_step_executed": true
     },
     "main_validation": {
-      "run_id": 37714740984,
-      "job_id": 113108541740,
-      "conclusion": "success",
-      "verification_step_executed": true
+      "commit_sha": "010ff0fbf90b3966b63cb30435a6f1c95d98abce",
+      "run_id": null,
+      "conclusion": "NO_RUN_CREATED_BY_CONNECTOR_PUSH",
+      "verification_step_executed": false
     },
     "inherited_alpha41_tests": {
       "unique_tests": 166,
@@ -43,7 +48,16 @@
       "skipped_each_run": 0,
       "source_sha256_pins": 40
     },
-    "runtime_code_changed_for_stable_promotion": false
+    "runtime_code_changed_for_stable_promotion": false,
+    "native_integration_commit": "c52259933a64b214119dec16aed97693fbf0e6c9",
+    "deployment_evidence_commit": "010ff0fbf90b3966b63cb30435a6f1c95d98abce",
+    "historical_main_validation": {
+      "run_id": 37714740984,
+      "job_id": 113108541740,
+      "conclusion": "success",
+      "verification_step_executed": true
+    },
+    "native_site_validation_job_added": true
   },
   "site": {
     "project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
@@ -53,22 +67,34 @@
     "inherited_projection_revision": 65,
     "stable_source_bundle_in_main": true,
     "stable_publish_handoff": "site/PRODUCTION_PUBLISH_HANDOFF.md",
-    "stable_1_5_1_republished": false,
-    "fresh_deployment_verified": false,
-    "deployment_id": null,
-    "native_sites_action_available_in_this_conversation": false,
-    "remote_desktop_fallback_status": "OFFLINE",
-    "publication_required": true
+    "stable_1_5_1_republished": true,
+    "fresh_deployment_verified": true,
+    "deployment_id": "appgdep_6ac7136db60081918bac4a1b2ee7939d",
+    "native_sites_action_available_in_this_conversation": true,
+    "remote_desktop_fallback_status": "CLOUD_BROWSER_NATIVE_PREVIEW_AND_PUBLIC_PRODUCTION_HOME_AVAILABLE",
+    "publication_required": false,
+    "source_version_number": 36,
+    "native_source_commit": "e9c6074d4e8d23e7820f2cb9625b3b9cde3f1de6",
+    "version_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d~appgver_b2521426e77c8191b32c2b84c10c5cbc",
+    "provider_deployment_id": "site---6ac3ddb2142c81918d529d4c7504e59d",
+    "publication_timestamp": "2026-10-08T03:52:25.819492+00:00",
+    "environment_revision": 7,
+    "access_mode": "public",
+    "build_result": "PASS",
+    "isolated_gameplay_round_trip": "PASS_ON_SEPARATE_D1",
+    "owner_authenticated_live_ui": "UNVERIFIED_SIGN_IN_CANCELLED",
+    "evidence_path": "site/PRODUCTION_DEPLOYMENT_EVIDENCE_2026-10-08.json"
   },
   "production_promotion": {
     "source_baseline": "1.5.1-alpha.41",
     "stable_version": "1.5.1",
-    "behavior_change": false,
+    "behavior_change": "Native ownership and persistence integration repaired; packaged stable runtime source and rule guards retained.",
     "rationale": "Promote the already-tested alpha.41 runtime to a stable production version while preserving all gameplay, campaign, media, mix, access and Site identity.",
     "plugin_release_complete": true,
     "canonical_source_release_complete": true,
     "site_source_ready": true,
-    "live_site_release_complete": false
+    "live_site_release_complete": true,
+    "native_integration_changed": true
   },
   "preservation": {
     "real_campaign_api_writes": 0,
@@ -82,9 +108,9 @@
     "access_or_hosting_changed": false
   },
   "remaining_platform_boundary": [
-    "Publish the stable 1.5.1 bundled runtime to the existing ChatGPT Site using the native Sites surface in Work or desktop Work/Codex.",
-    "Record the returned Site source/projection/deployment identifiers and verify the published page.",
-    "Optional evidence gates that cannot be executed from this conversation remain physical iPhone/listening and exact full binary archive parity."
+    "Owner-authenticated live saved-scene/character/scene-art inspection and live browser action round trip were not performed. Isolated equivalent native Worker + D1 tests passed; production writes were deliberately not used.",
+    "Physical iPhone, actual listening quality, OS reduced-motion emulation and full Plugin Creator binary archive parity were not verified.",
+    "Current GitHub Actions validation must be directly observed; connector push did not create a run. A pull-request validation trigger is being attempted."
   ],
   "release_policy": "Stable 1.5.1 is the production plugin and canonical production source. Do not create another plugin release solely because the native Site publish action is unavailable here; publish the existing Site from its supported native surface and append that evidence to this release."
 }
