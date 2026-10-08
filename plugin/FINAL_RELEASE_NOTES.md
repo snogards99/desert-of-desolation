@@ -1,11 +1,12 @@
-# Desert of Desolation 1.5.1-alpha.41
+# Desert of Desolation 1.5.1
 
-Maintenance release for the approved response and saved-state repair patch.
+Stable production promotion of the verified alpha.41 source.
 
-- Enforces the 2,000,000-byte response limit while streaming, including multibyte UTF-8 and declared lengths.
-- Cancels oversized, timed-out, rejected non-JSON and late-response bodies. Unsupported nonstreaming responses fail closed.
-- Rejects same-revision changes to displayed location, equipment, spell resources and party records; key order alone is not a state change.
-- Rejects duplicate and empty party IDs and preserves uncertain-action duplicate guards.
-- Adds 18 response/state regression cases over alpha.40. Fresh ten-run results are in ALPHA41_TEN_RUN_QA.json.
+- Promotes the tested gameplay client without changing runtime behavior.
+- Keeps streamed UTF-8 response limits, timeout/body cancellation, same-revision state integrity, duplicate-action prevention, session draft recovery and uncertainty receipts.
+- Keeps the 32-bit RGBA Art Engine contract and DAY / DUSK / NIGHT outdoor variants.
+- Keeps the layered Sound Engine, saved mix, ducking, fades and stable media IDs unchanged.
+- Preserves campaign state, default prompts, access, footer, navigation and hosting identity.
+- Bundles the production-ready Site runtime and an exact publish handoff for the existing ChatGPT Site.
 
-No real campaign actions, media bytes/IDs, saved sound mix, default prompts, hosting or audience are changed. The native Site has not been republished. No production authentication, transaction, resolver, browser or physical-device evidence is inferred from these source tests.
+Release boundary: this stable plugin can be published from Plugin Creator in the current conversation. The existing ChatGPT Site can only be edited/published through ChatGPT Sites in Work/Codex, so this package does not claim that native deployment occurred here.

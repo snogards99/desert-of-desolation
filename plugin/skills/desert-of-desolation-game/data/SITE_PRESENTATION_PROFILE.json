@@ -1,9 +1,9 @@
 {
   "schema_version": 9,
-  "profile_id": "dod.site.presentation.alpha41",
-  "configured_in_plugin_version": "1.5.1-alpha.41",
+  "profile_id": "dod.site.presentation.1.5.1",
+  "configured_in_plugin_version": "1.5.1",
   "architecture_policy": "PRESERVE_EXISTING_SITE_GAME_ENGINE_STATE_AND_HANDLERS; APPLY_ALPHA37_AUDIO_SAVE_MAINTENANCE_PLUS_ALPHA38_ALIAS_GUARDS_PLUS_ALPHA39_PIXEL32_TIME_CONSISTENCY",
-  "source_runtime": "ALPHA41_STREAM_AND_SAVE_INTEGRITY_WITH_ALPHA40_GAMEPLAY_GUARDS",
+  "source_runtime": "STABLE_1_5_1_WITH_ALPHA41_STREAM_AND_SAVE_INTEGRITY_AND_ALPHA40_GAMEPLAY_GUARDS",
   "visual": {
     "base_theme": "dod.moonlit-ink",
     "art_engine": "dod.art-engine@1.6.0",
@@ -70,6 +70,8 @@
     "republish_required_for_alpha39_runtime_delta": true,
     "alpha40_republished": false,
     "republished_current_release": false,
-    "alpha41_republished": false
+    "alpha41_republished": false,
+    "stable_1_5_1_republished": false,
+    "republish_required_for_stable_1_5_1": true
   }
 }
