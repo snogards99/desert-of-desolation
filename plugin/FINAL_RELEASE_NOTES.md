@@ -1,11 +1,11 @@
-# Desert of Desolation 1.5.1-alpha.39
+# Desert of Desolation 1.5.1-alpha.40
 
-Consistency-hardening release on top of alpha.38.
+Gameplay-boundary and recovery improvements in ten focused passes. The live Site is not republished by this source release.
 
-- Aligns the outdoor visual asset contract everywhere: DAY / DUSK / NIGHT only; MORNING maps to DAY; dawn, sunrise, evening and sunset map to DUSK.
-- Repairs the executable Art Engine planner so it matches art-engine 1.6.0 and the active 32-bit RGBA pixel-art contract instead of legacy DOD_PAINTED / DOD_INK modes.
-- Adds validation coverage for executable Art Engine mode/version and cross-file time-of-day aliases so this drift cannot silently recur.
-- Preserves alpha.38 audio/save behavior, seven-bus mix, character aliases, magic fail-closed behavior, media IDs, access settings and campaign state.
-- Does not claim native Site publication, physical-device listening, server-side write authorization, or complete binary-media parity without direct evidence.
+The bundled page validates save identity/revisions and uses bounded reads. Action submission is single-flight, retains uncertain receipts across reloads when session storage is available, and never automatically retries a write. Scene-scoped drafts survive refreshes; accepted actions clear only their own draft. Accessible pending-action controls offer refresh and journal review.
 
-The live Site remains the previously observed source v32 / projection 65 until a native Site publish action is available and independently verified.
+An integration adapter implements authorization, revision checks, idempotent receipts, history preservation and state/receipt atomicity through required native host callbacks. Tests use synthetic state and in-memory storage only. It is not wired to production and adds no replacement rules engine, database or hosting service.
+
+Scene media now requires current visibility/discovery/focus and valid lighting; failed images degrade to text with explicit retry. Checkpoint copying is bounded and allowlisted. Exact SHA-256 coverage protects runtime and shared-policy source from drift. Existing media bytes, saved mix, campaign state, access and default prompts are unchanged.
+
+Native Site source/build/publication, real database/security integration, physical iPhone/listening QA, and complete binary-media synchronization remain open.

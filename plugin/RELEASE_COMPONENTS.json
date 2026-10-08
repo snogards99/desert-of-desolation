@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "release": "1.5.1-alpha.39",
-  "scope": "CONSISTENCY_HARDENING",
+  "release": "1.5.1-alpha.40",
+  "scope": "GAMEPLAY_BOUNDARY_HARDENING",
   "active": {
     "policy": "1.5.1-alpha.39",
     "theme": "1.5.1-alpha.39",
@@ -13,7 +13,10 @@
     "alias_authority": "1.5.1-alpha.38",
     "gain_authority": "1.5.1-alpha.38",
     "time_policy": "1.5.1-alpha.39",
-    "site_profile": "1.5.1-alpha.39"
+    "site_profile": "1.5.1-alpha.40",
+    "art_release": "1.5.1-alpha.39",
+    "game_client": "1.5.1-alpha.40",
+    "transaction_adapter": "1.5.1-alpha.40"
   },
   "runtime_contracts": {
     "art_profile": "dod.pixel32-rgba",
@@ -32,11 +35,17 @@
     "homepage_theme_base_gain": 0.16,
     "alias_normalization": true,
     "microphone_never_auto_submits": true,
-    "campaign_state_mutation_for_qa": false
+    "campaign_state_mutation_for_qa": false,
+    "auto_resubmit": false,
+    "pending_receipt_recovery": true,
+    "session_draft_recovery": true,
+    "production_transaction_adapter_wired": false
   },
   "repaired_drift": [
-    "TIME_OF_DAY_POLICY visual MORNING alias now matches the DAY asset contract.",
-    "Art-direction executable planner now matches art-engine 1.6.0 and emits/accepts DOD_PIXEL32 instead of legacy DOD_PAINTED/DOD_INK."
+    "Submission lock precedes asynchronous work; unknown writes are not automatically retried.",
+    "Same-campaign revisions are validated before display; refresh preserves drafts.",
+    "Media identity, current visibility, discovery and outdoor phase are required for selection."
   ],
-  "evidence_policy": "Source approval is distinct from native Site publication, browser listening, physical-device QA, server write authorization, transaction behavior, resolver persistence, and binary-media parity."
+  "evidence_policy": "Source approval is distinct from native Site publication, browser listening, physical-device QA, server write authorization, transaction behavior, resolver persistence, and binary-media parity.",
+  "source_integrity": "SOURCE_INTEGRITY.json"
 }

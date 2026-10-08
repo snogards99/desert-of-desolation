@@ -1,0 +1,21 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {resolveSceneImage as resolve} from '../plugin/skills/desert-of-desolation-game/site-runtime/lib/scene-image-resolver.mjs';
+import {browserHandoff} from '../plugin/skills/desert-of-desolation-game/site-runtime/lib/browser-handoff.mjs';
+const image=src=>({src});
+test('unknown creature visibility never reveals a supplied actor',()=>assert.equal(resolve({actor:image('/secret'),environment:image('/room')}).image.src,'/room'));
+test('explicit hidden state overrides old visible metadata',()=>assert.equal(resolve({actor:image('/secret'),creatureVisibility:'VISIBLE'},{creatureVisibility:'HIDDEN'}).image,null));
+test('unidentified or unfocused treasure never displays',()=>{assert.equal(resolve({item:image('/secret')}).image,null);assert.equal(resolve({itemId:'key',item:image('/key'),itemDiscovered:true},{focusedItemId:null}).image,null);});
+test('revoked discovery and focus override old art metadata',()=>assert.equal(resolve({items:{key:image('/key')},focusedItemId:'key',discoveredItemIds:['key']},{discoveredItemIds:[]}).image,null));
+test('focused discovered treasure remains visible',()=>assert.equal(resolve({items:{key:image('/key')}},{focusedItemId:'key',discoveredItemIds:['key']}).image.src,'/key'));
+test('confirmed defeat overrides stale combat flag',()=>assert.equal(resolve({actorStates:{ATTACK:image('/attack'),DEFEATED:image('/defeated')}},{creatureVisibility:'VISIBLE',creatureState:'DEFEATED',outcomeConfirmed:true,inCombat:true}).image.src,'/defeated'));
+test('outdoor missing phase never falls back to wrong daylight',()=>{assert.equal(resolve({outdoor:true,phase:'DAY',environment:image('/day')},{phase:'NIGHT'}).image,null);assert.equal(resolve({outdoor:true,environment:image('/unknown')},{phase:'NIGHT'}).image,null);});
+test('explicit neutral outdoor fallback is legal',()=>assert.equal(resolve({outdoor:true,environment:{...image('/neutral'),timeNeutral:true}},{phase:'NIGHT'}).image.src,'/neutral'));
+test('indoor scenes ignore outdoor variants and game clock',()=>assert.equal(resolve({environmentContext:'INDOOR',environment:image('/room'),environmentByPhase:{DAY:image('/outside')}},{phase:'DAY'}).image.src,'/room'));
+test('failed images fall back without reusing a failed last image',()=>assert.equal(resolve({environment:image('/room'),actor:image('/bad'),creatureVisibility:'VISIBLE'},{nodeId:'n',failedSources:['/bad']},{nodeId:'n',image:image('/bad'),kind:'creature',creatureState:'NEUTRAL'}).image.src,'/room'));
+test('unsafe image URL schemes are rejected',()=>{for(const src of ['javascript:alert(1)','//unapproved.example/x','data:text/html,bad'])assert.equal(resolve({environment:image(src)}).image,null);});
+test('last creature image cannot switch entity identity',()=>assert.equal(resolve({}, {nodeId:'n',creatureId:'new',creatureVisibility:'VISIBLE',inCombat:true},{nodeId:'n',creatureId:'old',creatureState:'ATTACK',kind:'creature',image:image('/old')}).image,null));
+test('checkpoint export omits unknown fields and bounds long journals',()=>{const data=JSON.parse(browserHandoff({campaign:'fixture',revision:1,scene:'test',privateNotes:'secret',narrative:'n'.repeat(7000),journal:Array.from({length:25},()=>({text:'Visible',status:'QUEUED',created:'2026-10-07',dmSecret:'secret'}))}));assert.equal(data.kind,'PLAYER_VISIBLE_SUMMARY_NOT_SAVE_IMPORT');assert.equal(data.journal.length,20);assert.equal(data.narrative.length,6000);assert.equal(data.truncated,true);assert.equal(JSON.stringify(data).includes('secret'),false);});
+test('page guards pending actions, stale saves and campaign-scoped image reuse',()=>{const page=fs.readFileSync('plugin/skills/desert-of-desolation-game/site-runtime/app/page.tsx','utf8');assert.match(page,/actions\(\)\.submit/);assert.match(page,/validateSnapshot/);assert.match(page,/aria-busy=\{busy\}/);assert.match(page,/busy\|\|!!pendingAction\|\|saveStale/);assert.ok(page.includes("key={g.campaign+':'+g.scene}"));assert.doesNotMatch(page,/useEffect\(\(\)=>\{setSelectedActions\(\[\]\);setText\(''\);\}/);});
+
+test('checkpoint records individual field truncation too',()=>assert.equal(JSON.parse(browserHandoff({journal:[{text:'x'.repeat(501),status:'QUEUED',created:'now'}]})).truncated,true));

@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "release": "1.5.1-alpha.40",
+  "scope": "TEN_FOCUSED_IMPLEMENTATION_AND_VERIFICATION_PASSES",
+  "baseline": {
+    "main_commit": "33769f5574e7a7e5c072b12e544c53e0402fdf8d",
+    "source_export_commit": "4f1a36a4a27b8d37665a807c921a54f92ef96dde",
+    "plugin_release": "pluginrel_6ac6d927a2fc8191a1644e16304c0b8e",
+    "tracked_files_verified": 183
+  },
+  "passes": [
+    {
+      "pass": 1,
+      "focus": "Authority and reproducible source export",
+      "result": "Verified 183 tracked files against the Git tree; alpha.39 baseline passed 89 tests; current source archive recovered through GitHub artifacts."
+    },
+    {
+      "pass": 2,
+      "focus": "Bounded and revision-aware save reads",
+      "result": "JSON/content/campaign/schema checks, response size limits and timeout handling; older and same-revision inconsistent state is rejected."
+    },
+    {
+      "pass": 3,
+      "focus": "Single-flight action receipts",
+      "result": "A synchronous per-campaign lock prevents double submission; unknown writes retain their original receipt and are never automatically resent."
+    },
+    {
+      "pass": 4,
+      "focus": "Draft preservation and reload recovery",
+      "result": "Session-local drafts are campaign/scene scoped; valid selections and text survive refresh; invalid selections are filtered without inventing actions."
+    },
+    {
+      "pass": 5,
+      "focus": "Site integration and accessible recovery controls",
+      "result": "Page uses the client guard, pending receipt/journal review controls, stale-save submission blocking and campaign-scoped image identity."
+    },
+    {
+      "pass": 6,
+      "focus": "Native transaction integration adapter",
+      "result": "Required host authorization/resolver/projection/atomic-storage callbacks; duplicate, stale, unauthorized, rollback, safe-projection and history tests pass using synthetic state only."
+    },
+    {
+      "pass": 7,
+      "focus": "Discovery-safe and phase-correct media",
+      "result": "Explicit current creature visibility and focused discovery required; wrong-time outdoor fallbacks, entity mismatch and unsafe URLs are rejected; broken images degrade to text."
+    },
+    {
+      "pass": 8,
+      "focus": "Bounded checkpoint and isolated round trip",
+      "result": "Allowlisted checkpoint summaries exclude raw journal/private fields; synthetic action -> transaction -> save -> scene projection -> reload test passes."
+    },
+    {
+      "pass": 9,
+      "focus": "Regression and source integrity",
+      "result": "148 tests passed in ten consecutive runs; exact source SHA-256 coverage and negative drift tests; 8 TypeScript sources transpile without syntax errors."
+    },
+    {
+      "pass": 10,
+      "focus": "Guarded release synchronization",
+      "result": "Overlay contains only changed plugin text files. Commit, CI, publication readback and checkpoint references are recorded externally after the corresponding operations; native Site publication is not claimed."
+    }
+  ],
+  "tests": {
+    "unique_tests": 148,
+    "repeated_runs": [
+      {
+        "run": 1,
+        "exit_code": 0,
+        "tests": 148,
+        "pass": 148,
+        "fail": 0
+      },
+      {
+        "run": 2,
+        "exit_code": 0,
+        "tests": 148,
+        "pass": 148,
+        "fail": 0
+      },
+      {
+        "run": 3,
+        "exit_code": 0,
+        "tests": 148,
+        "pass": 148,
+        "fail": 0
+      },
+      {
+        "run": 4,
+        "exit_code": 0,
+        "tests": 148,
+        "pass": 148,
+        "fail": 0
+      },
+      {
+        "run": 5,
+        "exit_code": 0,
+        "tests": 148,
+        "pass": 148,
+        "fail": 0
+      },
+      {
+        "run": 6,
+        "exit_code": 0,
+        "tests": 148,
+        "pass": 148,
+        "fail": 0
+      },
+      {
+        "run": 7,
+        "exit_code": 0,
+        "tests": 148,
+        "pass": 148,
+        "fail": 0
+      },
+      {
+        "run": 8,
+        "exit_code": 0,
+        "tests": 148,
+        "pass": 148,
+        "fail": 0
+      },
+      {
+        "run": 9,
+        "exit_code": 0,
+        "tests": 148,
+        "pass": 148,
+        "fail": 0
+      },
+      {
+        "run": 10,
+        "exit_code": 0,
+        "tests": 148,
+        "pass": 148,
+        "fail": 0
+      }
+    ],
+    "typescript": {
+      "version": "5.8.3",
+      "files": 8,
+      "errors": [],
+      "scope": "SYNTAX_TRANSPILE_ONLY_NOT_NATIVE_SITE_TYPECHECK_OR_BUILD"
+    }
+  },
+  "preserved": {
+    "real_campaign_api_writes": 0,
+    "campaign_advanced_or_reset": false,
+    "existing_audio_bytes_changed": false,
+    "stable_media_ids_changed": false,
+    "saved_mix_changed": false,
+    "default_prompts_changed": false,
+    "footer_or_navigation_changed": false,
+    "access_or_hosting_changed": false
+  },
+  "not_verified": [
+    "Native Site full typecheck/build/publication",
+    "Live database authorization, transaction atomicity and resolver integration",
+    "Physical iPhone, browser journey and actual listening",
+    "Complete plugin binary/media parity"
+  ],
+  "release_truth": "Use the external release guard/checkpoint for actual commit, publication and CI IDs. This bundled report does not certify live deployment."
+}
