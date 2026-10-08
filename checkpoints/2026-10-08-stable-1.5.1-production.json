@@ -1,0 +1,106 @@
+{
+  "checkpoint_schema": "dod.commit-checkpoint.v2",
+  "timestamp_utc": "2026-10-08T01:52:00Z",
+  "shared_release_id": "dod-1.5.1-stable-production-2026-10-08",
+  "status": "STABLE_PLUGIN_PUBLISHED; CANONICAL_PRODUCTION_SOURCE_MERGED_AND_VALIDATED; LIVE_SITE_NATIVE_PUBLISH_PENDING",
+  "coordinated_release_verified": false,
+  "canonical_source": {
+    "repository": "snogards99/desert-of-desolation",
+    "branch": "main",
+    "production_candidate_commit": "a3fbd6aabb7a06072e8d21e49ac14cbe998f34b8",
+    "production_candidate_tree": "3edd283eaf71312f032654bfec9b97bd3c42e181",
+    "merge_commit": "e59935fca6c396095726bdd5f8372638293a5d5d",
+    "release_guard_commit": "4d71aa6b0e409ceeb24ac739eadbe6503f419203",
+    "release_guard_path": "release/UNIFIED_RELEASE_GUARD.json",
+    "pull_request": 6,
+    "publish_handoff": "site/PRODUCTION_PUBLISH_HANDOFF.md",
+    "checkpoint_policy": "Read this checkpoint's own commit from Git history; no circular self-reference."
+  },
+  "plugin": {
+    "plugin_id": "Plugin_3352cc65ee508191abeb37ffa759294d",
+    "version": "1.5.1",
+    "release_id": "pluginrel_6ac6f61338388191a83cdaa17c2f256e",
+    "scope": "WORKSPACE",
+    "discoverability": "PRIVATE",
+    "published": true,
+    "publication_readback_verified": true,
+    "changed_text_parity": {
+      "checked": 10,
+      "exact_matches": 10,
+      "mismatches": 0
+    },
+    "overlay_sha256": "a1262d4b35daa8b3e7416fc1f1e8be3a83818dfc14f2a11a1063260e1aed8132",
+    "runtime_source_baseline": "1.5.1-alpha.41",
+    "runtime_code_changed_for_stable_promotion": false,
+    "full_binary_parity": "NOT_VERIFIED_CURRENT_EXECUTION_SURFACE"
+  },
+  "validation": {
+    "inherited_alpha41": {
+      "unique_tests": 166,
+      "consecutive_full_runs": 10,
+      "passed_each_run": 166,
+      "failed_each_run": 0,
+      "skipped_each_run": 0,
+      "source_sha256_pins": 40
+    },
+    "production_pr_ci": {
+      "run_id": 37714195848,
+      "job_id": 113106804768,
+      "conclusion": "success",
+      "verification_step_executed": true
+    },
+    "production_main_ci": {
+      "run_id": 37714740984,
+      "job_id": 113108541740,
+      "conclusion": "success",
+      "verification_step_executed": true
+    },
+    "production_guard_ci": {
+      "run_id": 37714866782,
+      "job_id": 113108935277,
+      "conclusion": "success",
+      "verification_step_executed": true
+    },
+    "plugin_readback": "10_OF_10_CHANGED_TEXT_FILES_EXACT_MATCH_TO_MAIN"
+  },
+  "site": {
+    "project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
+    "slug": "desert-of-desolation",
+    "url": "https://desert-of-desolation.nreach-1221.chatgpt.site",
+    "last_observed_source_version": 32,
+    "last_observed_projection_revision": 65,
+    "source_bundle_release": "1.5.1",
+    "production_source_ready": true,
+    "stable_1_5_1_republished": false,
+    "deployment_id": null,
+    "native_sites_tool_available_in_conversation": false,
+    "remote_desktop_device": "DESKTOP1",
+    "remote_desktop_status": "OFFLINE",
+    "exact_publish_instruction": "site/PRODUCTION_PUBLISH_HANDOFF.md"
+  },
+  "preservation": {
+    "real_campaign_api_writes": 0,
+    "campaign_advanced_or_reset": false,
+    "pending_real_actions_executed": false,
+    "audio_or_image_bytes_changed": false,
+    "stable_media_ids_changed": false,
+    "saved_mix_changed": false,
+    "default_prompts_changed": false,
+    "footer_or_navigation_changed": false,
+    "access_or_hosting_changed": false
+  },
+  "release_state": {
+    "plugin_production_release": "COMPLETE",
+    "github_production_source": "COMPLETE",
+    "github_validation": "COMPLETE",
+    "native_site_publish": "PENDING_PLATFORM_ACTION",
+    "coordinated_plugin_site_release": "NOT_YET_VERIFIED"
+  },
+  "remaining_action": "Open the existing Site project in a ChatGPT Sites-capable Work/Codex session and execute site/PRODUCTION_PUBLISH_HANDOFF.md. Record the returned Site source/projection/deployment references; do not create a replacement Site.",
+  "rollback": {
+    "previous_plugin_version": "1.5.1-alpha.41",
+    "previous_plugin_release_id": "pluginrel_6ac6ed42e1488191955c00d8e89f26ab",
+    "previous_checkpoint_commit": "eaac08e277fab10dc3fdb992a44b989ff1cf8294",
+    "procedure": "Use reviewed commits and guarded Plugin Creator update; never reset the real campaign."
+  }
+}
