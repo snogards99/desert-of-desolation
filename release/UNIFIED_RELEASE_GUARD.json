@@ -1,36 +1,36 @@
 {
-  "schema_version": 14,
-  "shared_release_id": "dod-alpha40-gameplay-boundaries-2026-10-08",
-  "checkpoint_path": "checkpoints/2026-10-08-alpha40-gameplay-boundaries.json",
-  "status": "ALPHA40_PLUGIN_PUBLISHED_AND_SOURCE_MERGED; MAIN_CI_PASS; NATIVE_SITE_INTEGRATION_NOT_DEPLOYED",
+  "schema_version": 15,
+  "shared_release_id": "dod-alpha41-stream-integrity-2026-10-08",
+  "checkpoint_path": "checkpoints/2026-10-08-alpha41-stream-integrity.json",
+  "status": "ALPHA41_PLUGIN_PUBLISHED_AND_SOURCE_MERGED; MAIN_CI_PASS; NATIVE_SITE_NOT_REPUBLISHED",
   "coordinated_release_verified": false,
   "plugin": {
     "plugin_id": "Plugin_3352cc65ee508191abeb37ffa759294d",
-    "current_published_version": "1.5.1-alpha.40",
-    "current_release_id": "pluginrel_6ac6e059f2548191b927bf5c1133cd2e",
+    "current_published_version": "1.5.1-alpha.41",
+    "current_release_id": "pluginrel_6ac6ed42e1488191955c00d8e89f26ab",
     "scope": "WORKSPACE",
     "discoverability": "PRIVATE",
     "published": true,
     "publication_readback_verified": true,
-    "readback_scope": "Metadata and 13 core text files inspected, including page, scene component, client guard, transaction adapter, media resolver, handoff, profiles and integrity manifest. Not a full published-archive checksum comparison.",
-    "overlay_files": 17,
-    "overlay_sha256": "2d49bdbe8f0bacf93257c615354929de8421883f851205f455c61a6764800150",
-    "overlay_source_parity": "ALL_17_LOCAL_OVERLAY_FILES_BYTE_EQUAL_TO_TESTED_GIT_TREE",
-    "full_binary_parity": "NOT_VERIFIED"
+    "readback_scope": "Metadata and all 11 changed text files inspected. Not a full published-archive checksum comparison.",
+    "overlay_files": 11,
+    "overlay_sha256": "2da042cb4224a9591746d32c6fba4a9094d6a1accead59a4d1e291120e51a89a",
+    "overlay_source_parity": "ALL_11_OVERLAY_FILES_BYTE_EQUAL_TO_TESTED_SOURCE",
+    "full_binary_parity": "NOT_VERIFIED_DOWNLOAD_HOST_DNS_UNAVAILABLE"
   },
   "github": {
     "repository": "snogards99/desert-of-desolation",
     "branch": "main",
-    "implementation_commit": "1621fcff567742353ebe5f9d574cb2928af02546",
-    "merge_commit": "387b00254f218b2677baa59b6b376d35e3c738e7",
-    "implementation_tree": "fa6fce0b37f8f0d55e9efd8d24878195de1a6193",
-    "tested_local_tree_matches_remote": true,
-    "pull_request": 4,
-    "pull_request_validation": {"run_id": 37706566968, "job_id": 113082225337, "conclusion": "success", "tests_passed_in_log": 148, "tests_failed_in_log": 0},
-    "validation": {"workflow": "validate", "run_id": 37706861666, "job_id": 113083168831, "conclusion": "success", "verification_step_executed": true},
+    "implementation_commit": "ecd16a43ddfa7d439c4b65de78ca13f2f4e6087f",
+    "merge_commit": "54d8ca91d99a676e6f5344cf26135c0b267c3e3c",
+    "implementation_tree": "2f3183ea808e6845d88cd98efd1bfd93023fb7e7",
+    "tested_source_tree_matches_remote": true,
+    "pull_request": 5,
+    "pull_request_validation": {"run_id": 37710542134, "job_id": 113095199148, "conclusion": "success", "verification_step_executed": true},
+    "validation": {"workflow": "validate", "run_id": 37710595925, "job_id": 113095370645, "conclusion": "success", "verification_step_executed": true},
     "runtime_manifest": "plugin/RELEASE_COMPONENTS.json",
     "source_integrity_manifest": "plugin/SOURCE_INTEGRITY.json",
-    "source_integrity_sha256": "8cc1a0c570b29ec6c5648ea408550a21a54aa88f4e5d9a32f49268d1e4b23bef",
+    "source_integrity_sha256": "ee78747d99c539d5b9ef68b01f1bc62c0bb47968ce7843336c99dbafff41b70c",
     "source_pins_verified": 40
   },
   "site": {
@@ -38,24 +38,27 @@
     "slug": "desert-of-desolation",
     "inherited_source_version": 32,
     "inherited_projection_revision": 65,
-    "source_bundle_commit": "387b00254f218b2677baa59b6b376d35e3c738e7",
+    "source_bundle_commit": "54d8ca91d99a676e6f5344cf26135c0b267c3e3c",
     "fresh_deployment_verified": false,
-    "republished_by_alpha40": false,
+    "republished_by_alpha41": false,
     "production_transaction_adapter_wired": false,
     "publication_required": true,
     "deployment_id": null,
     "native_source_and_publish_action_available_in_session": false,
-    "integration_instructions": "site/ALPHA40_INTEGRATION.md"
+    "integration_instructions": "site/ALPHA40_INTEGRATION.md",
+    "ordered_release_gates": "site/RELEASE_ACCEPTANCE.md"
   },
   "qa": {
-    "report": "plugin/ALPHA40_TEN_PASS_QA.json",
-    "focused_implementation_passes": 10,
-    "unique_tests": 148,
+    "report": "plugin/ALPHA41_TEN_RUN_QA.json",
+    "unique_tests": 166,
     "consecutive_full_suite_runs": 10,
-    "failed_runs": 0,
-    "typescript_sources": 8,
-    "typescript_scope": "SYNTAX_TRANSPILE_ONLY; NOT_NATIVE_SITE_FULL_TYPECHECK_OR_BUILD",
-    "round_trip_scope": "SYNTHETIC_ACTION_TRANSACTION_SAVE_PROJECTION_RELOAD_ONLY"
+    "passed_each_run": 166,
+    "failed_each_run": 0,
+    "skipped_each_run": 0,
+    "new_regression_tests": 18,
+    "additional_lifecycle_failures_reproduced_and_fixed": 2,
+    "native_build_or_device_qa": false,
+    "scope": "SOURCE_AND_SYNTHETIC_TESTS_ONLY"
   },
   "preservation": {
     "real_campaign_api_writes": 0,
@@ -71,12 +74,14 @@
     "unknown_rules_or_resources": "FAIL_CLOSED"
   },
   "open_gates": [
-    "Native Site source reconciliation, full build and publication",
-    "Production native authentication, durable atomic transactions and source-backed gameplay resolver integration",
+    "Existing native Site source, full typecheck/build and publication",
+    "Production native authorization, durable atomic transactions, source-backed resolver and correlated saved-action receipts",
+    "Native action-save-reload and multi-device journeys",
+    "Required canon/rules and scene/media completeness audit",
     "Deployed desktop/390px journeys, physical iPhone and actual audio listening",
-    "Complete plugin binary-media GitHub parity"
+    "Backup/restore, complete binary-media parity and distribution readiness"
   ],
-  "previous_verified_checkpoint": "checkpoints/2026-10-07-alpha39-consistency.json",
-  "previous_main_commit": "33769f5574e7a7e5c072b12e544c53e0402fdf8d",
-  "previous_plugin_release_id": "pluginrel_6ac6d927a2fc8191a1644e16304c0b8e"
+  "previous_verified_checkpoint": "checkpoints/2026-10-08-alpha40-gameplay-boundaries.json",
+  "previous_main_commit": "8d85fc74fefbb9e94a8c347338df5f17a0cd3fd4",
+  "previous_plugin_release_id": "pluginrel_6ac6e059f2548191b927bf5c1133cd2e"
 }
