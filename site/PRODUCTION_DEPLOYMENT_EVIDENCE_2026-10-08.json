@@ -1,0 +1,156 @@
+{
+  "schema": "dod.native-production-evidence.v1",
+  "release": "1.5.1",
+  "site": {
+    "project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
+    "url": "https://desert-of-desolation.nreach-1221.chatgpt.site",
+    "access_mode": "public",
+    "source_version_number": 36,
+    "version_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d~appgver_b2521426e77c8191b32c2b84c10c5cbc",
+    "native_source_commit": "e9c6074d4e8d23e7820f2cb9625b3b9cde3f1de6",
+    "deployment_id": "appgdep_6ac7136db60081918bac4a1b2ee7939d",
+    "provider_deployment_id": "site---6ac3ddb2142c81918d529d4c7504e59d",
+    "status": "succeeded",
+    "publication_timestamp": "2026-10-08T03:52:25.819492+00:00",
+    "environment_revision": 7,
+    "archive_sha256": "114e231b6044c2a4bd1e14d692cc7f70a55e05229a36ca54e5b3eb81d60df26c",
+    "archive_file_count": 125,
+    "archive_bytes": 53760000
+  },
+  "github": {
+    "native_integration_commit": "c52259933a64b214119dec16aed97693fbf0e6c9",
+    "preserved_concurrent_review_commit": "e42d6bf9209a1a048664d56c418b56ab7ddabdeb"
+  },
+  "plugin": {
+    "id": "Plugin_3352cc65ee508191abeb37ffa759294d",
+    "version": "1.5.1",
+    "release_id": "pluginrel_6ac6f61338388191a83cdaa17c2f256e",
+    "modified": false,
+    "metadata_only_new_release": false
+  },
+  "native_validation": {
+    "locked_dependency_install": "PASS",
+    "typecheck": "PASS",
+    "build_and_import_module_closure": "PASS",
+    "native_tests": {
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "command": "node --test tests/native-d1.test.mjs tests/native-http.test.mjs"
+    },
+    "repository_tests": {
+      "passed": 166,
+      "failed": 0,
+      "skipped": 0,
+      "source_pins": 40
+    },
+    "isolated_round_trip": {
+      "result": "PASS",
+      "environment": "Isolated Miniflare D1 and built native Worker; local browser preview fixture",
+      "supported_action": "prologue.charter.depart",
+      "initial_revision": 2,
+      "saved_revision": 3,
+      "scene_before": "dod.prologue.bralizzar.charter",
+      "scene_after": "dod.prologue.frontier.last_camp",
+      "durable_state_commits": 1,
+      "action_journal_rows": 1,
+      "receipt_rows": 1,
+      "reload_identical": true,
+      "duplicate_submit": "PASS",
+      "concurrent_duplicate": "PASS",
+      "stale_revision": "PASS",
+      "unauthorized_access": "PASS",
+      "rollback_on_journal_collision": "PASS",
+      "unknown_choice_fail_closed": "PASS",
+      "queued_action_gameplay_unchanged": "PASS",
+      "source_scene_audio_selection": "PASS"
+    },
+    "client_guards": {
+      "uncertain_request_no_auto_resubmit": "PASS automated stable client tests",
+      "draft_receipt_recovery": "PASS automated tests and preview reload",
+      "microphone_never_auto_submits": "PASS source and automated tests; actual microphone permission not exercised",
+      "missing_media": "PASS built Worker response and browser preview fallback"
+    }
+  },
+  "presentation": {
+    "desktop": {
+      "surface": "Cloud browser supervised native preview and live production homepage",
+      "preview_width": 1363,
+      "preview_content_width": 1348,
+      "preview_scroll_width": 1348,
+      "horizontal_overflow": false
+    },
+    "mobile": {
+      "surface": "390px iframe using exact native browser preview",
+      "frame_width": 390,
+      "content_width": 375,
+      "scroll_width": 375,
+      "horizontal_overflow": false,
+      "physical_device": false
+    },
+    "character_sheets": "PASS native preview; detailed sheets and canonical alias projection preserved",
+    "scene_art": "Native source policy verified; local missing-R2 fallback verified; production owner scene unverified",
+    "settings_sound_controls": "PASS native preview and live homepage UI",
+    "audio_playback": "Preview campfire reached playing; audible quality was not listened to",
+    "legal_footer": "Preserved source and visible live control",
+    "keyboard_focus": "Visible focus CSS and usable controls inspected",
+    "reduced_motion": "CSS inspected; OS preference/browser emulation not exercised"
+  },
+  "production_readback": {
+    "homepage": "HTTP 200 and live cloud browser rendering",
+    "access_policy": "public, active",
+    "native_tables": [
+      "action_receipts",
+      "actions",
+      "campaign_owners",
+      "campaigns"
+    ],
+    "unauthenticated_campaign_request": "403 owner sign-in required; native login reaches OpenAI",
+    "owner_session": "UNVERIFIED: secure browser sign-in cancelled; no auth bypass or forged identity used"
+  },
+  "preservation": {
+    "real_campaign_api_write_requests": 0,
+    "real_campaign_advanced": false,
+    "real_campaign_reset": false,
+    "pending_real_actions_executed": false,
+    "production_receipt_rows": 0,
+    "real_campaign_revision_before": 3,
+    "real_campaign_revision_after": 3,
+    "baseline_and_post_publish_state_rows_exact_match": true,
+    "baseline_native_source": "098b268939da8994f00bc8566840fa745b6d941d",
+    "public_media_bytes_identical_to_baseline": true,
+    "public_asset_manifest": "site/NATIVE_PUBLIC_ASSET_SHA256.json",
+    "r2_media_mutated": false,
+    "saved_mix_changed": false,
+    "site_id_url_audience_preserved": true
+  },
+  "repairs": [
+    {
+      "defect": "Duplicate generated migration file",
+      "repair": "Removed; ordered journal closure regression check",
+      "published": false
+    },
+    {
+      "defect": "Sites deployment splitter rejected trigger SQL with incomplete input",
+      "failed_deployment_id": "appgdep_6ac70c28f00c819183bad4c8f4f1b04c",
+      "repair": "Guarded single-statement receipt/CAS/journal writes in one atomic D1 batch"
+    },
+    {
+      "defect": "Native dispatch supplies authenticated email, not user ID",
+      "repair": "Use canonical verified email subject; regression test without user-ID header",
+      "superseded_version": 35
+    }
+  ],
+  "remaining_evidence_boundaries": [
+    "Owner-authenticated live saved-scene/character/scene-art inspection and live browser action round trip were not performed. Isolated equivalent native Worker + D1 tests passed; production writes were deliberately not used.",
+    "Physical iPhone, actual listening quality, OS reduced-motion emulation and full Plugin Creator binary archive parity were not verified."
+  ],
+  "rollback": {
+    "site_source_version": 32,
+    "native_source_commit": "098b268939da8994f00bc8566840fa745b6d941d",
+    "site_deployment_id": "appgdep_6ac5cc2d500481918fe3b3366b0c0a69",
+    "github_pre_handoff_commit": "e55465a5b38fc239ad25dd840f55beb2d294a9ca",
+    "plugin_keep_release": "pluginrel_6ac6f61338388191a83cdaa17c2f256e",
+    "procedure": "Restore a reviewed saved native version on the same Site without resetting D1 or R2; retain backward-compatible new receipt/ownership tables. Never rewind the campaign."
+  }
+}
