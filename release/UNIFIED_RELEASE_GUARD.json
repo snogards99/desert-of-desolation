@@ -2,7 +2,7 @@
   "schema_version": 18,
   "shared_release_id": "dod-1.5.1-stable-production-2026-10-08",
   "checkpoint_path": "checkpoints/2026-10-08-stable-1.5.1-production.json",
-  "status": "STABLE_1_5_1_PLUGIN_AND_EXISTING_SITE_PUBLISHED; NATIVE_BUILD_AND_ISOLATED_ROUND_TRIP_PASS; LIVE_OWNER_SESSION_AND_CURRENT_CI_PENDING",
+  "status": "STABLE_1_5_1_PLUGIN_AND_EXISTING_SITE_PUBLISHED; NATIVE_BUILD_ISOLATED_ROUND_TRIP_AND_GITHUB_VALIDATION_PASS; LIVE_OWNER_BROWSER_UI_PENDING",
   "coordinated_release_verified": false,
   "plugin": {
     "plugin_id": "Plugin_3352cc65ee508191abeb37ffa759294d",
@@ -34,12 +34,6 @@
       "conclusion": "success",
       "verification_step_executed": true
     },
-    "main_validation": {
-      "commit_sha": "010ff0fbf90b3966b63cb30435a6f1c95d98abce",
-      "run_id": null,
-      "conclusion": "NO_RUN_CREATED_BY_CONNECTOR_PUSH",
-      "verification_step_executed": false
-    },
     "inherited_alpha41_tests": {
       "unique_tests": 166,
       "consecutive_full_runs": 10,
@@ -49,7 +43,7 @@
       "source_sha256_pins": 40
     },
     "runtime_code_changed_for_stable_promotion": false,
-    "native_integration_commit": "c52259933a64b214119dec16aed97693fbf0e6c9",
+    "native_integration_commit": "df091dd4273eff4c373f5dc92817d909d5d07d47",
     "deployment_evidence_commit": "010ff0fbf90b3966b63cb30435a6f1c95d98abce",
     "historical_main_validation": {
       "run_id": 37714740984,
@@ -57,7 +51,28 @@
       "conclusion": "success",
       "verification_step_executed": true
     },
-    "native_site_validation_job_added": true
+    "native_site_validation_job_added": true,
+    "current_validation": {
+      "scope": "pull_request",
+      "commit_sha": "df091dd4273eff4c373f5dc92817d909d5d07d47",
+      "run_id": 37796102992,
+      "url": "https://github.com/snogards99/desert-of-desolation/actions/runs/37796102992",
+      "conclusion": "success",
+      "verification_step_executed": true,
+      "jobs": [
+        {
+          "id": 113375870793,
+          "name": "project-consistency",
+          "result": "success"
+        },
+        {
+          "id": 113375871235,
+          "name": "native-site",
+          "result": "success"
+        }
+      ]
+    },
+    "final_checkpoint_policy": "This checkpoint commit is identified through Git history; its final main workflow is checked after merge and reported separately to avoid circular commit/run references."
   },
   "site": {
     "project_id": "appgprj_6ac3ddb2142c81918d529d4c7504e59d",
@@ -83,7 +98,9 @@
     "build_result": "PASS",
     "isolated_gameplay_round_trip": "PASS_ON_SEPARATE_D1",
     "owner_authenticated_live_ui": "UNVERIFIED_SIGN_IN_CANCELLED",
-    "evidence_path": "site/PRODUCTION_DEPLOYMENT_EVIDENCE_2026-10-08.json"
+    "evidence_path": "site/PRODUCTION_DEPLOYMENT_EVIDENCE_2026-10-08.json",
+    "worker_version_id": "0f7014cd-7a74-4566-bddd-a99ea7bcba6c",
+    "authenticated_live_save_http": "200_WITH_NATIVE_AUTHENTICATED_EMAIL_CLAIM_VERIFIED_FROM_WORKER_LOGS"
   },
   "production_promotion": {
     "source_baseline": "1.5.1-alpha.41",
@@ -109,8 +126,7 @@
   },
   "remaining_platform_boundary": [
     "Owner-authenticated live saved-scene/character/scene-art inspection and live browser action round trip were not performed. Isolated equivalent native Worker + D1 tests passed; production writes were deliberately not used.",
-    "Physical iPhone, actual listening quality, OS reduced-motion emulation and full Plugin Creator binary archive parity were not verified.",
-    "Current GitHub Actions validation must be directly observed; connector push did not create a run. A pull-request validation trigger is being attempted."
+    "Physical iPhone, actual listening quality, OS reduced-motion emulation and full Plugin Creator binary archive parity were not verified."
   ],
   "release_policy": "Stable 1.5.1 is the production plugin and canonical production source. Do not create another plugin release solely because the native Site publish action is unavailable here; publish the existing Site from its supported native surface and append that evidence to this release."
 }

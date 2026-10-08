@@ -1,8 +1,8 @@
 {
   "checkpoint_schema": "dod.commit-checkpoint.v2",
-  "timestamp_utc": "2026-10-08T14:49:00Z",
+  "timestamp_utc": "2026-10-08T14:55:00Z",
   "shared_release_id": "dod-1.5.1-stable-production-2026-10-08",
-  "status": "STABLE_1_5_1_PLUGIN_AND_EXISTING_SITE_PUBLISHED; NATIVE_BUILD_AND_ISOLATED_ROUND_TRIP_PASS; LIVE_OWNER_SESSION_AND_CURRENT_CI_PENDING",
+  "status": "STABLE_1_5_1_PLUGIN_AND_EXISTING_SITE_PUBLISHED; NATIVE_BUILD_ISOLATED_ROUND_TRIP_AND_GITHUB_VALIDATION_PASS; LIVE_OWNER_BROWSER_UI_PENDING",
   "coordinated_release_verified": false,
   "canonical_source": {
     "repository": "snogards99/desert-of-desolation",
@@ -15,7 +15,7 @@
     "pull_request": 6,
     "publish_handoff": "site/PRODUCTION_PUBLISH_HANDOFF.md",
     "checkpoint_policy": "Read this checkpoint's own commit from Git history; no circular self-reference.",
-    "native_integration_commit": "c52259933a64b214119dec16aed97693fbf0e6c9",
+    "native_integration_commit": "df091dd4273eff4c373f5dc92817d909d5d07d47",
     "deployment_evidence_commit": "010ff0fbf90b3966b63cb30435a6f1c95d98abce"
   },
   "plugin": {
@@ -113,10 +113,24 @@
       }
     },
     "current_ci": {
-      "commit_sha": "010ff0fbf90b3966b63cb30435a6f1c95d98abce",
-      "run_id": null,
-      "conclusion": "NO_RUN_CREATED_BY_CONNECTOR_PUSH",
-      "verification_step_executed": false
+      "scope": "pull_request",
+      "commit_sha": "df091dd4273eff4c373f5dc92817d909d5d07d47",
+      "run_id": 37796102992,
+      "url": "https://github.com/snogards99/desert-of-desolation/actions/runs/37796102992",
+      "conclusion": "success",
+      "verification_step_executed": true,
+      "jobs": [
+        {
+          "id": 113375870793,
+          "name": "project-consistency",
+          "result": "success"
+        },
+        {
+          "id": 113375871235,
+          "name": "native-site",
+          "result": "success"
+        }
+      ]
     },
     "historical_ci_note": "Existing success run IDs refer to earlier commits; none are claimed as CI for this handoff."
   },
@@ -153,7 +167,9 @@
     "build_result": "PASS",
     "isolated_gameplay_round_trip": "PASS_ON_SEPARATE_D1",
     "owner_authenticated_live_ui": "UNVERIFIED_SIGN_IN_CANCELLED",
-    "evidence_path": "site/PRODUCTION_DEPLOYMENT_EVIDENCE_2026-10-08.json"
+    "evidence_path": "site/PRODUCTION_DEPLOYMENT_EVIDENCE_2026-10-08.json",
+    "authenticated_live_save_http": "200_WITH_NATIVE_AUTHENTICATED_EMAIL_CLAIM_VERIFIED_FROM_WORKER_LOGS",
+    "worker_version_id": "0f7014cd-7a74-4566-bddd-a99ea7bcba6c"
   },
   "preservation": {
     "real_campaign_api_writes": 0,
@@ -181,13 +197,13 @@
   "release_state": {
     "plugin_production_release": "COMPLETE_UNCHANGED",
     "github_production_source": "COMMITTED",
-    "github_validation": "CURRENT_RUN_PENDING",
+    "github_validation": "PASS_CANONICAL_AND_NATIVE_CI",
     "native_site_publish": "COMPLETE_VERSION_36",
     "native_build_typecheck": "PASS",
     "isolated_round_trip": "PASS",
     "coordinated_plugin_site_release": "NOT_YET_FULLY_VERIFIED"
   },
-  "remaining_action": "Complete owner-authenticated live read-only UI verification and observe current GitHub Actions validation. No further Site or plugin release is needed solely to append evidence.",
+  "remaining_action": "Finish owner-authenticated browser scene/party/art review. Native backend authenticated GET is verified HTTP 200; isolated equivalent native gameplay writes passed. Do not advance the real campaign.",
   "rollback": {
     "previous_plugin_version": "1.5.1-alpha.41",
     "previous_plugin_release_id": "pluginrel_6ac6ed42e1488191955c00d8e89f26ab",
@@ -201,7 +217,6 @@
   },
   "remaining_evidence_boundaries": [
     "Owner-authenticated live saved-scene/character/scene-art inspection and live browser action round trip were not performed. Isolated equivalent native Worker + D1 tests passed; production writes were deliberately not used.",
-    "Physical iPhone, actual listening quality, OS reduced-motion emulation and full Plugin Creator binary archive parity were not verified.",
-    "Current GitHub Actions validation must be directly observed; connector push did not create a run. A pull-request validation trigger is being attempted."
+    "Physical iPhone, actual listening quality, OS reduced-motion emulation and full Plugin Creator binary archive parity were not verified."
   ]
 }
